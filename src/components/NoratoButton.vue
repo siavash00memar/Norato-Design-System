@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import NoratoIcon from './NoratoIcon.vue'
 
-type ButtonVariant = 'primary' | 'secondary' | 'inverse' | 'ghost'
+type ButtonVariant = 'primary' | 'secondary' | 'inverse'
 type ButtonIcon = 'arrow-left' | 'arrow-right'
 
 const props = withDefaults(
@@ -30,7 +30,6 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary: 'bg-norato-primary text-norato-text-primary border-transparent',
   secondary: 'bg-transparent text-norato-text-primary border-norato-primary',
   inverse: 'bg-transparent text-norato-primary border-norato-primary',
-  ghost: 'bg-transparent text-norato-muted border-transparent hover:bg-norato-soft',
 }
 
 const isDisabled = computed(() => props.disabled || props.loading)
