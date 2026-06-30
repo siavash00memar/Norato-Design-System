@@ -1,0 +1,1675 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norato Component Index</title>
+    <style>
+      @font-face {
+        font-family: "Estedad";
+        src: local("Estedad Black"), local("Estedad-Black"), local("Estedad");
+        font-weight: 900;
+      }
+
+      @font-face {
+        font-family: "Vazir";
+        src: local("Vazir"), local("Vazirmatn");
+        font-weight: 400 800;
+      }
+
+      :root {
+        --ink: #303030;
+        --muted: #777;
+        --subtle: #a1a1a1;
+        --line: #e8e8e8;
+        --soft: #f5f5f5;
+        --field: #fafafa;
+        --white: #fff;
+        --yellow: #fdc101;
+        --blue: #134f89;
+        --blue-soft: #eef6ff;
+        --radius: 6px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 86% 7%, rgba(253, 193, 1, 0.14), transparent 26%),
+          linear-gradient(180deg, #fbfbfb 0%, #f2f2f2 100%);
+        color: var(--ink);
+        direction: rtl;
+        font-family: "Vazir", Tahoma, Arial, sans-serif;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      h1,
+      h2,
+      h3,
+      .display {
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-weight: 900;
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 32px 0 48px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+      }
+
+      .topbar h1 {
+        font-size: 28px;
+      }
+
+      .topbar p,
+      .detail-copy {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      .view {
+        display: none;
+      }
+
+      .view.active {
+        display: block;
+      }
+
+      .index-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .index-toolbar {
+        display: flex;
+        align-items: end;
+        justify-content: flex-start;
+        margin-bottom: 18px;
+      }
+
+      .sort-field {
+        display: grid;
+        gap: 6px;
+        width: min(220px, 100%);
+      }
+
+      .sort-field label {
+        color: var(--ink);
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .sort-field select {
+        height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--white);
+        color: var(--ink);
+        direction: rtl;
+        padding: 0 12px;
+        outline: 0;
+      }
+
+      .sort-field select:focus {
+        border-color: var(--yellow);
+        box-shadow: 0 0 0 3px rgba(253, 193, 1, 0.16);
+      }
+
+      .letter-section {
+        display: grid;
+        gap: 6px;
+        border: 1px solid #efefef;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.76);
+        padding: 10px;
+      }
+
+      .letter-heading {
+        direction: ltr;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 900;
+        padding: 0 2px 4px;
+      }
+
+      .letter-heading::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+      }
+
+      .component-card {
+        display: grid;
+        grid-template-columns: minmax(160px, 1fr) 112px;
+        min-height: 38px;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        cursor: pointer;
+        padding: 8px 12px;
+        text-align: right;
+        transition: 0.16s ease;
+      }
+
+      .component-card:hover {
+        border-color: var(--yellow);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+        transform: translateY(-1px);
+      }
+
+      .component-name {
+        direction: ltr;
+        display: block;
+        margin-bottom: 0;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      .component-meta {
+        text-align: right;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .detail-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .back-button {
+        display: inline-flex;
+        height: 36px;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 25px;
+        background: var(--yellow);
+        color: var(--ink);
+        cursor: pointer;
+        padding: 0 14px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .preview-shell {
+        min-height: 560px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background:
+          linear-gradient(90deg, rgba(232, 232, 232, 0.72) 1px, transparent 1px),
+          linear-gradient(rgba(232, 232, 232, 0.72) 1px, transparent 1px),
+          var(--white);
+        background-size: 32px 32px;
+        padding: 34px;
+      }
+
+      .figma-wrap {
+        width: fit-content;
+        max-width: 100%;
+        border: 1px dashed #d3d3d3;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.88);
+        padding: 24px;
+      }
+
+      .figma-wrap:has(.fields-example) {
+        border: 0;
+        background: transparent;
+        padding: 0;
+      }
+
+      .similar {
+        margin-top: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        padding: 16px;
+      }
+
+      .similar h3 {
+        margin: 0 0 12px;
+        font-size: 16px;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--ink);
+        cursor: pointer;
+        padding: 7px 12px;
+        direction: ltr;
+        font-size: 13px;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .norato-button {
+        height: 36px;
+        min-width: 121px;
+        border: 0;
+        border-radius: 25px;
+        background: var(--yellow);
+        color: #000;
+        padding: 0 18px;
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.013px;
+      }
+
+      .norato-button.secondary {
+        border: 2px solid var(--yellow);
+        background: transparent;
+        color: #000;
+      }
+
+      .norato-button.muted {
+        border: 2px solid var(--yellow);
+        background: #303030;
+        color: var(--yellow);
+      }
+
+      .nav-forward,
+      .nav-back {
+        position: relative;
+        display: inline-flex;
+        height: 36px;
+        align-items: center;
+        border-radius: 25px;
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.013px;
+      }
+
+      .nav-forward {
+        width: 121px;
+        justify-content: center;
+        border: 0;
+        background: var(--yellow);
+        color: #000;
+      }
+
+      .nav-forward svg {
+        position: absolute;
+        left: 6px;
+        width: 24px;
+        height: 24px;
+        transform: scaleX(-1);
+      }
+
+      .nav-back {
+        width: 90px;
+        justify-content: flex-end;
+        border: 2px solid var(--subtle);
+        background: transparent;
+        color: #1a1a1a;
+        padding-left: 14px;
+        padding-right: 18px;
+      }
+
+      .nav-back svg {
+        position: absolute;
+        left: 18px;
+        width: 24px;
+        height: 24px;
+        color: var(--subtle);
+      }
+
+      .message-box {
+        display: grid;
+        width: 312px;
+        min-height: 60px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 3px 10px rgba(48, 48, 48, 0.06);
+        padding: 14px 24px;
+        text-align: center;
+        color: #fff;
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.8;
+      }
+
+      .message-box.welcome {
+        width: 320px;
+        min-height: 86px;
+        border-color: transparent;
+        background: rgba(217, 217, 217, 0.4);
+        color: #000;
+        font-size: 18px;
+      }
+
+      .message-box.sub {
+        width: 360px;
+        min-height: 58px;
+        border-color: transparent;
+        border-radius: 0;
+        background: var(--blue);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        color: #fff;
+      }
+
+      .task-card,
+      .question-card,
+      .options-card,
+      .field-group,
+      .upload-card,
+      .tree-card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        box-shadow: 0 3px 10px rgba(48, 48, 48, 0.06);
+      }
+
+      .task-card {
+        width: 312px;
+        min-height: 105px;
+        border-radius: 15px;
+        border: 0;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 22px;
+        text-align: center;
+      }
+
+      .task-card p {
+        margin: 0 0 14px;
+        color: #fff;
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.8;
+      }
+
+      .time-row {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        color: var(--subtle);
+        font-size: 13px;
+      }
+
+      .time-row strong {
+        color: #fff;
+        font-weight: 400;
+      }
+
+      .time-row svg {
+        color: #fec300;
+      }
+
+      .progress {
+        display: flex;
+        width: 312px;
+        align-items: center;
+        gap: 14px;
+        direction: ltr;
+      }
+
+      .close-btn {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--subtle);
+        font-size: 22px;
+      }
+
+      .track {
+        height: 7px;
+        flex: 1;
+        overflow: hidden;
+        border-radius: 5px;
+        background: #d9d9d9;
+      }
+
+      .bar {
+        width: 12%;
+        height: 100%;
+        border-radius: 5px;
+        background: #fec300;
+      }
+
+      .question-layout {
+        display: grid;
+        grid-template-columns: 360px 360px;
+        gap: 44px;
+        align-items: start;
+      }
+
+      .question-card {
+        width: 360px;
+        min-height: 170px;
+        border: 0;
+        border-radius: 0;
+        background: #f2f2f2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 16px 24px;
+      }
+
+      .question-card h3 {
+        margin: 0 0 8px;
+        color: var(--blue);
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 12px;
+      }
+
+      .question-card p {
+        margin: 0;
+        color: #1a1a1a;
+        font-family: "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .options-card {
+        width: 360px;
+        min-height: 212px;
+        border: 0;
+        border-radius: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        padding: 16px 18px;
+      }
+
+      .option {
+        display: flex;
+        width: 324px;
+        min-height: 36px;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 25px;
+        background: var(--soft);
+        padding: 7px 10px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        color: #1a1a1a;
+        font-size: 12px;
+        font-weight: 300;
+        cursor: pointer;
+      }
+
+      .option:last-child {
+        margin-bottom: 0;
+      }
+
+      .option.active {
+        border-color: var(--line);
+        background: var(--soft);
+        color: #1a1a1a;
+      }
+
+      .radio-dot {
+        display: grid;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 2px solid #e8e8e8;
+        border-radius: 50%;
+        background: var(--white);
+      }
+
+      .active .radio-dot {
+        border-color: var(--yellow);
+        background: var(--white);
+      }
+
+      .active .radio-dot::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--yellow);
+        transform: translate(-50%, -50%);
+      }
+
+      .text-sample {
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: 25px;
+        background: var(--white);
+        padding: 14px 22px;
+        text-align: center;
+        line-height: 1.9;
+      }
+
+      .text-sample.small {
+        width: 159px;
+        min-height: 77px;
+        font-size: 12px;
+      }
+
+      .text-sample.medium {
+        width: 338px;
+        min-height: 77px;
+        font-size: 14px;
+      }
+
+      .text-sample.large {
+        width: 317px;
+        min-height: 120px;
+        font-size: 14px;
+      }
+
+      .field {
+        display: grid;
+        grid-template-columns: auto 270px;
+        gap: 8px;
+        align-items: center;
+        direction: rtl;
+      }
+
+      .field input,
+      .searchbox input,
+      .datebox input {
+        width: 100%;
+        height: 36px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        color: #a1a1a1;
+        outline: 0;
+        padding: 0 12px;
+        text-align: right;
+        font-size: 11px;
+        font-weight: 400;
+      }
+
+      .searchbox input {
+        color: #a1a1a1;
+        font-size: 11px;
+      }
+
+      .field span,
+      .datebox span {
+        color: #000;
+        font-size: 12px;
+        font-weight: 300;
+        white-space: nowrap;
+      }
+
+      .field span {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: right;
+      }
+
+      .field input {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .searchbox {
+        position: relative;
+        width: 300px;
+      }
+
+      .searchbox input {
+        padding-left: 36px;
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        color: #2563ff;
+      }
+
+      .tag {
+        display: inline-flex;
+        width: 201px;
+        height: 26px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border-radius: 25px;
+        background: var(--white);
+        padding: 1px 6px 1px 4px;
+        font-size: 13px;
+      }
+
+      .tag button {
+        border: 0;
+        background: transparent;
+        color: var(--subtle);
+        cursor: pointer;
+      }
+
+      .tagbox {
+        width: 324px;
+        min-height: 88px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--soft);
+        padding: 12px;
+      }
+
+      .field-group {
+        width: 360px;
+        min-height: 160px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        padding: 18px 18px 12px;
+      }
+
+      .field-group h3,
+      .upload-card h3 {
+        margin: 0 0 12px;
+        text-align: right;
+        font-size: 14px;
+      }
+
+      .field-inner {
+        display: grid;
+        gap: 24px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        padding: 12px;
+      }
+
+      .field-group-row {
+        display: grid;
+        grid-template-columns: auto 270px;
+        gap: 8px;
+        align-items: center;
+        direction: rtl;
+      }
+
+      .field-group-row > span {
+        color: #000;
+        font-size: 12px;
+        font-weight: 300;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .field-group-box {
+        position: relative;
+      }
+
+      .field-group-box input {
+        width: 100%;
+        height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: #a1a1a1;
+        outline: 0;
+        padding: 0 40px 0 16px;
+        text-align: right;
+        font-size: 11px;
+        font-weight: 400;
+      }
+
+      .field-group-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #000;
+      }
+
+      .datebox {
+        display: grid;
+        grid-template-columns: auto 120px;
+        gap: 10px;
+        align-items: center;
+        direction: rtl;
+      }
+
+      .datebox span {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: right;
+      }
+
+      .datebox input {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .date-picker {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .date-picker-label {
+        color: var(--ink);
+        font-family: "Lalezar", "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: normal;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .date-picker-field {
+        display: inline-flex;
+        align-items: center;
+        direction: ltr;
+      }
+
+      .date-picker-icon {
+        display: grid;
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        place-items: center;
+        border-radius: 999px 0 0 999px;
+        background: #fdc101;
+        color: #1a1a1a;
+      }
+
+      .date-picker-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .date-picker-box {
+        display: flex;
+        width: 146px;
+        height: 36px;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        border-top: 1px solid #e4e4e4;
+        border-right: 1px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
+        border-radius: 0 999px 999px 0;
+        background: var(--white);
+        padding: 0 24px;
+      }
+
+      .date-picker-box span {
+        color: #a1a1a1;
+        font-family: "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .link-list {
+        display: grid;
+        width: 360px;
+        gap: 14px;
+        line-height: 1.8;
+      }
+
+      .link-list a {
+        color: var(--blue);
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .select-mark {
+        display: inline-grid;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 2px solid #e8e8e8;
+        border-radius: 50%;
+        background: var(--white);
+      }
+
+      .select-mark.active {
+        border-color: var(--yellow);
+        background: var(--white);
+      }
+
+      .select-mark.active::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--yellow);
+        transform: translate(-50%, -50%);
+      }
+
+      .radio-sample,
+      .radio-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        outline: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        appearance: none;
+      }
+
+      .radio-sample:focus,
+      .radio-sample:focus-visible,
+      .radio-label:focus,
+      .radio-label:focus-visible {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      .radio-sample .select-mark,
+      .radio-label .select-mark {
+        width: 40px;
+        height: 40px;
+        border-width: 4px;
+      }
+
+      .radio-sample .select-mark.active::after,
+      .radio-label .select-mark.active::after {
+        width: 18px;
+        height: 18px;
+      }
+
+      .gender-icon {
+        display: inline-grid;
+        width: 30px;
+        height: 40px;
+        place-items: center;
+        color: #326fe6;
+      }
+
+      .gender-icon svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .select-mark.check {
+        border-radius: var(--radius);
+      }
+
+      .select-mark.check.active {
+        border-color: var(--yellow);
+        background: var(--yellow);
+      }
+
+      .select-mark.check.active::after {
+        position: static;
+        width: 11px;
+        height: 6px;
+        border-left: 2px solid var(--white);
+        border-bottom: 2px solid var(--white);
+        border-radius: 0;
+        background: transparent;
+        transform: rotate(-45deg);
+      }
+
+      .check-demo {
+        display: grid;
+        gap: 14px;
+        justify-items: center;
+      }
+
+      .component-hint {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.8;
+        text-align: center;
+      }
+
+      .check-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        font: inherit;
+        outline: 0;
+        padding: 0;
+      }
+
+      .check-toggle:focus,
+      .check-toggle:focus-visible {
+        outline: 0;
+        box-shadow: none;
+      }
+
+      .check-square {
+        display: inline-grid;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 2px solid #e8e8e8;
+        border-radius: 6px;
+        background: var(--white);
+      }
+
+      .active .check-square {
+        border-color: var(--yellow);
+        background: var(--yellow);
+      }
+
+      .active .check-square::after {
+        content: "";
+        width: 11px;
+        height: 6px;
+        border-right: 2px solid var(--white);
+        border-bottom: 2px solid var(--white);
+        transform: rotate(45deg);
+      }
+
+      .fields-example {
+        width: 724px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+      }
+
+      .fields-example h3 {
+        margin: 0 40px 20px 0;
+        text-align: right;
+        font-size: 15px;
+        line-height: 1.2;
+      }
+
+      .fields-card {
+        --fields-label-width: 96px;
+        --fields-control-gap: 12px;
+        --fields-input-width: 430px;
+        --fields-date-width: 182px;
+        display: grid;
+        justify-items: end;
+        width: 724px;
+        gap: 28px;
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+        padding: 28px 36px;
+      }
+
+      .fields-example .gender {
+        display: grid;
+        grid-template-columns: var(--fields-label-width) max-content;
+        width: 100%;
+        align-items: center;
+        justify-content: end;
+        gap: var(--fields-control-gap);
+        direction: rtl;
+      }
+
+      .fields-example .fields-gender-options {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        direction: rtl;
+      }
+
+      .fields-example .stack {
+        display: grid;
+        width: 100%;
+        gap: 28px;
+        justify-items: end;
+      }
+
+      .fields-example .field,
+      .fields-example .date-picker {
+        display: grid;
+        grid-template-columns: var(--fields-label-width) max-content;
+        width: 100%;
+        align-items: center;
+        justify-content: end;
+        gap: var(--fields-control-gap);
+        direction: rtl;
+      }
+
+      .fields-example .field span,
+      .fields-example .date-picker-label,
+      .fields-example .gender strong {
+        font-family: "Lalezar", "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+
+      .fields-example .radio-label {
+        font-family: "Lalezar", "Estedad", "Vazir", Tahoma, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--ink);
+      }
+
+      .fields-example .radio-label > span:last-child {
+        font-size: 13px;
+        line-height: 1;
+      }
+
+      .fields-example .field input {
+        width: var(--fields-input-width);
+        height: 36px;
+        border-width: 1px;
+        border-radius: 999px;
+        padding: 0 20px;
+        color: #1a1a1a;
+        font-size: 13px;
+        text-align: right;
+      }
+
+      .fields-example .field input::placeholder {
+        color: #a1a1a1;
+        font-size: 12px;
+      }
+
+      .fields-example .date-picker-field {
+        width: var(--fields-date-width);
+      }
+
+      .fields-example .date-picker-box {
+        width: calc(var(--fields-date-width) - 36px);
+      }
+
+      .fields-example .radio-label .select-mark {
+        width: 24px;
+        height: 24px;
+        border-width: 2px;
+      }
+
+      .fields-example .radio-label .select-mark.active::after {
+        width: 10px;
+        height: 10px;
+      }
+
+      .fields-example .gender-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .gender {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 28px;
+        margin-bottom: 18px;
+      }
+
+      .gender span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .upload-card {
+        width: 324px;
+        min-height: 416px;
+        border: 0;
+        border-radius: 25px;
+        box-shadow: 0 10px 8px rgba(0, 0, 0, 0.25);
+        padding: 18px 24px 24px;
+      }
+
+      .dropzone {
+        display: grid;
+        height: 176px;
+        place-items: center;
+        border: 0;
+        border-radius: 25px;
+        background: var(--soft);
+        color: var(--muted);
+        text-align: center;
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+
+      .conditions {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .pic-drag {
+        width: 360px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: linear-gradient(135deg, #dce7f2, #f7e4cf 55%, #94b5a8);
+      }
+
+      .drag-panel {
+        display: flex;
+        height: 78px;
+        align-items: center;
+        justify-content: flex-start;
+        border-top: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.92);
+        padding: 18px;
+      }
+
+      .drag-handle {
+        display: grid;
+        width: 43px;
+        height: 26px;
+        place-items: center;
+        border-radius: var(--radius);
+        background: var(--soft);
+        color: var(--subtle);
+      }
+
+      .field-drag {
+        display: grid;
+        grid-template-columns: auto 270px;
+        gap: 10px;
+        align-items: center;
+        direction: rtl;
+      }
+
+      .field-drag > span:last-child {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: right;
+      }
+
+      .field-drag-box {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .field-drag-box {
+        display: flex;
+        height: 36px;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 0 10px;
+      }
+
+      .like-btn {
+        display: grid;
+        width: 52px;
+        height: 36px;
+        place-items: center;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--white);
+        color: var(--muted);
+      }
+
+      .like-btn.active {
+        border-color: var(--blue);
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .tree-card {
+        width: 324px;
+        min-height: 450px;
+        border-radius: 25px;
+        padding: 12px;
+      }
+
+      .tree-row {
+        display: flex;
+        height: 36px;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: var(--radius);
+        background: var(--soft);
+        padding: 0 12px;
+        margin-top: 8px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .tree-panel {
+        border: 1px solid var(--line);
+        border-top: 0;
+        border-radius: 0 0 var(--radius) var(--radius);
+        padding: 12px;
+      }
+
+      .tree-panel .option {
+        width: 100%;
+        min-height: 36px;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 0 0 12px;
+      }
+
+      .tree-panel .option.active {
+        background: transparent;
+      }
+
+      .tree-footer {
+        height: 25px;
+        border-radius: 0 0 var(--radius) var(--radius);
+        background: var(--soft);
+        margin-top: 8px;
+      }
+
+      svg {
+        display: block;
+      }
+
+      @media (max-width: 960px) {
+        .page {
+          width: min(100% - 24px, 760px);
+          padding-top: 20px;
+        }
+
+        .topbar,
+        .detail-header {
+          display: grid;
+          align-items: start;
+        }
+
+        .preview-shell {
+          min-height: 420px;
+          padding: 18px;
+        }
+
+        .question-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .option,
+        .message-box,
+        .message-box.welcome,
+        .message-box.sub,
+        .task-card,
+        .progress,
+        .searchbox,
+        .field-group,
+        .upload-card,
+        .tree-card,
+        .pic-drag {
+          width: 100%;
+        }
+
+        .field,
+        .field-drag {
+          grid-template-columns: auto minmax(0, 270px);
+          justify-content: start;
+        }
+
+        .fields-example .field {
+          grid-template-columns: var(--fields-label-width) max-content;
+        }
+
+        .fields-example .date-picker {
+          grid-template-columns: var(--fields-label-width) max-content;
+        }
+
+        .component-card {
+          grid-template-columns: minmax(0, 1fr) 120px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .fields-example,
+        .fields-card {
+          width: 100%;
+        }
+
+        .fields-card {
+          --fields-label-width: 88px;
+          --fields-control-gap: 12px;
+          --fields-input-width: minmax(0, 1fr);
+          --fields-date-width: 182px;
+          padding: 24px 20px;
+        }
+
+        .fields-example .field {
+          grid-template-columns: var(--fields-label-width) minmax(0, 1fr);
+        }
+
+        .fields-example .date-picker {
+          width: calc(var(--fields-label-width) + var(--fields-control-gap) + var(--fields-date-width));
+          grid-template-columns: var(--fields-label-width) var(--fields-date-width);
+        }
+
+        .component-card {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .component-meta {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section id="indexView" class="view active">
+        <header class="topbar">
+          <div>
+            <h1>فهرست کامپوننت‌های نوراتو</h1>
+            <p>روی نام هر کامپوننت کلیک کنید تا نسخه‌ی جزئی آن را ببینید.</p>
+          </div>
+        </header>
+        <div class="index-toolbar">
+          <div class="sort-field">
+            <label for="indexSort">نمایش بر اساس</label>
+            <select id="indexSort" aria-label="نمایش بر اساس">
+              <option value="alphabet">حروف الفبا</option>
+              <option value="group">شباهت</option>
+            </select>
+          </div>
+        </div>
+        <div id="componentIndex" class="index-grid" aria-label="فهرست کامپوننت‌ها"></div>
+      </section>
+
+      <section id="detailView" class="view">
+        <header class="detail-header">
+          <div>
+            <h2 id="detailTitle">Component</h2>
+            <p class="detail-copy">نمایش تک‌کامپوننت انتخاب‌شده از فهرست Design Kit نوراتو.</p>
+          </div>
+          <button id="backButton" class="back-button" type="button">بازگشت به فهرست</button>
+        </header>
+
+        <div class="preview-shell">
+          <div id="componentPreview" class="figma-wrap"></div>
+        </div>
+
+        <aside class="similar">
+          <h3>کامپوننت‌های مشابه</h3>
+          <div id="similarList" class="chips"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const icon = {
+        search: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>',
+        caretDown: '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 9h12l-6 7-6-7Z"></path></svg>',
+        chevronDown: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg>',
+        close: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"></path></svg>',
+        clock: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>',
+        calendar: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2v4M16 2v4M3 10h18"></path><rect x="3" y="5" width="18" height="16" rx="3"></rect></svg>',
+        upload: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 16V4m0 0L7 9m5-5 5 5"></path><path d="M5 16v3h14v-3"></path></svg>',
+        drag: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7h8M8 12h8M8 17h8"></path></svg>',
+        arrowBack: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>',
+        man: '<svg viewBox="0 0 24 32" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="3.2"></circle><path d="M8 9h8c1.1 0 2 .9 2 2v8h-3v13h-6V19H6v-8c0-1.1.9-2 2-2Z"></path></svg>',
+        woman: '<svg viewBox="0 0 24 32" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="3.2"></circle><path d="M8.7 9h6.6l5 14h-4.2L17 32h-4l-.6-9h-.8l-.6 9H7l.9-9H3.7l5-14Z"></path></svg>',
+      }
+
+      const render = {
+        "Navigation Butt": () => '<div class="row"><button class="nav-forward" type="button">متن' + icon.arrowBack + '</button><button class="nav-back" type="button">' + icon.arrowBack + 'متن</button></div>',
+        "Simple Butt": () => '<div class="row"><button class="norato-button">متن</button><button class="norato-button secondary">متن</button><button class="norato-button muted">متن</button></div>',
+        "Intro Message": () => '<div class="message-box">به فصل اول ماجراجویی نوراتو خوش اومدی</div>',
+        "Page Welcom Message": () => '<div class="message-box welcome display">به نوراتو خوش‌آمدید</div>',
+        "Page Sub Message": () => '<div class="message-box sub">مسیری برای پیمودن</div>',
+        "Page Task Description": () => '<div class="task-card"><p>در این فعالیت باید به ۴۰ تا سوال جواب بدی</p><div class="time-row">' + icon.clock + '<span>زمان تقریبی مورد نیاز :</span><strong>۱۵ دقیقه</strong></div></div>',
+        "Page Progress Bar": () => '<div class="progress"><button class="close-btn">' + icon.close + '</button><div class="track"><div class="bar"></div></div></div>',
+        "Multi Choise Test": () => '<div class="question-layout"><article class="question-card"><h3>سوال ۱</h3><p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله.</p></article><div class="options-card"><div class="option active"><span>لورم ایپسوم متن ساختگی با تولید سادگی</span><span class="radio-dot"></span></div><div class="option"><span>لورم ایپسوم متن ساختگی با تولید</span><span class="radio-dot"></span></div><div class="option"><span>لورم ایپسوم متن ساختگی با تولید</span><span class="radio-dot"></span></div><div class="option"><span>لورم ایپسوم متن ساختگی با تولید</span><span class="radio-dot"></span></div></div></div>',
+        "Text": () => '<div class="row"><div class="text-sample small">لورم ایپسوم</div><div class="text-sample medium">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</div><div class="text-sample large">لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با تولید سادگی لورم ایپسوم متن ساختگی با تولید سادگی</div></div>',
+        "Simple Field": () => '<label class="field"><input value="لورم ایپسوم متن ساختگی با تولید"><span>تایتل</span></label>',
+        "Search Box": () => '<div class="searchbox"><input value="لورم ایپسوم متن ساختگی با تولید"><span class="search-icon">' + icon.search + '</span></div>',
+        "Tags": () => '<span class="tag"><span>لورم ایپسوم متن ساختگی با تولید</span><button type="button">' + icon.close + '</button></span>',
+        "Tag Box": () => '<div class="stack"><h3 class="display" style="margin:0;text-align:right;font-size:15px">تایتل</h3><div class="tagbox"><span class="tag"><span>لورم ایپسوم متن ساختگی با تولید</span><button type="button">' + icon.close + '</button></span></div></div>',
+        "Field Group": () => '<section class="field-group"><h3 class="display">تایتل</h3><div class="field-inner"><label class="field-group-row"><span>تایتل</span><div class="field-group-box"><input value="لورم ایپسوم متن ساختگی با تولید" readonly><span class="field-group-icon">' + icon.caretDown + '</span></div></label><label class="field-group-row"><span>تایتل</span><div class="field-group-box"><input value="لورم ایپسوم متن ساختگی با تولید" readonly><span class="field-group-icon">' + icon.caretDown + '</span></div></label></div></section>',
+        "Hyper Link": () => '<div class="link-list"><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a><a href="#" style="color:var(--muted)">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a><a href="#" style="color:var(--ink)">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></div>',
+        "Clickable Links": () => '<div class="stack"><a href="#" style="color:var(--blue);font-weight:800;text-align:center">متن ساختگی</a><a href="#" style="color:var(--ink);text-align:center">متن ساختگی</a></div>',
+        "Date Picker": () => '<label class="date-picker"><span class="date-picker-label">تاریخ</span><div class="date-picker-field" dir="ltr"><div class="date-picker-icon">' + icon.calendar + '</div><div class="date-picker-box"><span>/</span><span>/</span></div></div></label>',
+        "Radio Buttons": () => '<div class="row"><span class="gender"><button class="radio-label active" type="button" data-radio-group="radio-gender-demo"><span class="select-mark active"></span>مرد</button><button class="radio-label" type="button" data-radio-group="radio-gender-demo"><span class="select-mark"></span>زن</button></span></div>',
+        "Check box": () => '<div class="check-demo"><p class="component-hint">برای مشاهده رفتار این کامپوننت روی آن کلیک کنید</p><button class="check-toggle active" type="button" aria-pressed="true"><span class="select-mark check active"></span><span class="check-label">انتخاب شده</span></button></div>',
+        "Fields Example": () => '<section class="fields-example"><h3 class="display">اطلاعات زیر را تکمیل کن</h3><div class="fields-card"><div class="gender"><strong>جنسیت</strong><div class="fields-gender-options"><button class="radio-label active" type="button" data-radio-group="fields-gender"><span class="select-mark active"></span><span class="gender-icon">' + icon.man + '</span><span>مرد</span></button><button class="radio-label" type="button" data-radio-group="fields-gender"><span class="select-mark"></span><span class="gender-icon">' + icon.woman + '</span><span>زن</span></button></div></div><div class="stack"><label class="field"><span>نام</span><input placeholder="نام خود را بنویسید"></label><label class="field"><span>نام خانوادگی</span><input placeholder="نام خانوادگی خود را بنویسید"></label><label class="date-picker"><span class="date-picker-label">تاریخ تولد</span><div class="date-picker-field" dir="ltr"><div class="date-picker-icon">' + icon.calendar + '</div><div class="date-picker-box"><span>/</span><span>/</span></div></div></label></div></div></section>',
+        "Pic Upload": () => '<section class="upload-card"><h3 class="display">تایتل</h3><div class="dropzone">' + icon.upload + '<span>لورم ایپسوم متن</span></div><p class="conditions"><strong style="color:var(--ink)">لورم ایپسوم متن</strong><br>شرط اول شرط دوم شرط سوم</p><div class="row" style="justify-content:space-between"><button class="norato-button">متن</button><button class="norato-button secondary">متن</button></div></section>',
+        "Pic Drag": () => '<div class="row"><div class="pic-drag" style="height:78px"><div class="drag-panel" style="border-top:0"><span class="drag-handle">' + icon.drag + '</span></div></div><div class="pic-drag" style="height:406px;display:flex;align-items:flex-end"><div class="drag-panel" style="width:100%"><span class="drag-handle">' + icon.drag + '</span></div></div></div>',
+        "Field Drag": () => '<label class="field-drag"><span class="field-drag-box"><span style="color:var(--subtle)">' + icon.drag + '</span><strong>تایتل</strong></span><span style="font-size:11px;color:#1a1a1a;font-weight:300">تایتل عدد</span></label>',
+        "Information Text": () => '<p style="width:304px;margin:0;text-align:center;font-size:14px;line-height:1.8;color:var(--muted)">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>',
+        "Multi Select Tree View": () => '<section class="tree-card"><div class="searchbox" style="width:300px"><input value="لورم ایپسوم متن ساختگی با تولید"><span class="search-icon">' + icon.search + '</span></div><div class="tree-row"><span>لورم ایپسوم</span><span>⌄</span></div><div class="tree-panel"><div class="option tree-option active"><span>لورم ایپسوم متن ساختگی</span><span class="check-square"></span></div><div class="option tree-option active"><span>لورم ایپسوم متن ساختگی</span><span class="check-square"></span></div><div class="option tree-option active"><span>لورم ایپسوم متن ساختگی</span><span class="check-square"></span></div><div class="option tree-option active"><span>لورم ایپسوم متن ساختگی</span><span class="check-square"></span></div></div><div class="tree-row"><span>لورم ایپسوم</span><span>⌄</span></div><div class="tree-row"><span>صنایع</span><span>⌄</span></div><div class="tree-row"><span>شیمی</span><span>⌄</span></div><div class="tree-footer"></div></section>',
+        "Pic Upload / Like": () => '<div class="row"><button class="like-btn active">Like</button><button class="like-btn">Like</button><button class="like-btn active">Dislike</button><button class="like-btn">Dislike</button></div>',
+      }
+
+      const components = [
+        { name: "Navigation Butt", group: "Buttons", similar: ["Simple Butt"] },
+        { name: "Simple Butt", group: "Buttons", similar: ["Navigation Butt"] },
+        { name: "Intro Message", group: "Messages", similar: ["Page Welcom Message", "Page Sub Message", "Information Text", "Text"] },
+        { name: "Page Welcom Message", group: "Messages", similar: ["Intro Message", "Page Sub Message", "Text"] },
+        { name: "Page Sub Message", group: "Messages", similar: ["Intro Message", "Page Welcom Message", "Information Text"] },
+        { name: "Page Task Description", group: "Messages", similar: ["Intro Message", "Information Text"] },
+        { name: "Page Progress Bar", group: "Progress", similar: ["Navigation Butt", "Multi Choise Test"] },
+        { name: "Multi Choise Test", group: "Question", similar: ["Radio Buttons", "Check box", "Multi Select Tree View"] },
+        { name: "Text", group: "Typography", similar: ["Intro Message", "Information Text", "Hyper Link"] },
+        { name: "Simple Field", group: "Fields", similar: ["Search Box", "Date Picker", "Field Group", "Fields Example", "Field Drag"] },
+        { name: "Search Box", group: "Fields", similar: ["Simple Field", "Multi Select Tree View"] },
+        { name: "Tags", group: "Tags", similar: ["Tag Box"] },
+        { name: "Tag Box", group: "Tags", similar: ["Tags", "Simple Field", "Field Group"] },
+        { name: "Field Group", group: "Fields", similar: ["Simple Field", "Date Picker", "Fields Example", "Tag Box"] },
+        { name: "Hyper Link", group: "Links", similar: ["Clickable Links", "Text"] },
+        { name: "Clickable Links", group: "Links", similar: ["Hyper Link"] },
+        { name: "Date Picker", group: "Fields", similar: ["Simple Field", "Fields Example"] },
+        { name: "Radio Buttons", group: "Selection", similar: ["Check box", "Multi Choise Test", "Fields Example"] },
+        { name: "Check box", group: "Selection", similar: ["Radio Buttons", "Multi Select Tree View"] },
+        { name: "Fields Example", group: "Fields", similar: ["Simple Field", "Date Picker", "Radio Buttons", "Field Group"] },
+        { name: "Pic Upload", group: "Media", similar: ["Pic Drag", "Pic Upload / Like"] },
+        { name: "Pic Drag", group: "Media", similar: ["Pic Upload", "Field Drag"] },
+        { name: "Field Drag", group: "Fields", similar: ["Simple Field", "Pic Drag"] },
+        { name: "Information Text", group: "Messages", similar: ["Text", "Intro Message"] },
+        { name: "Multi Select Tree View", group: "Selection", similar: ["Search Box", "Check box", "Radio Buttons"] },
+        { name: "Pic Upload / Like", group: "Media", similar: ["Pic Upload", "Simple Butt"] },
+      ]
+
+      const indexView = document.getElementById("indexView")
+      const detailView = document.getElementById("detailView")
+      const componentIndex = document.getElementById("componentIndex")
+      const componentPreview = document.getElementById("componentPreview")
+      const detailTitle = document.getElementById("detailTitle")
+      const similarList = document.getElementById("similarList")
+      const backButton = document.getElementById("backButton")
+      const indexSort = document.getElementById("indexSort")
+
+      function showIndex() {
+        detailView.classList.remove("active")
+        indexView.classList.add("active")
+        history.replaceState(null, "", location.pathname)
+      }
+
+      function showDetail(name) {
+        const item = components.find((component) => component.name === name)
+        if (!item) return
+        indexView.classList.remove("active")
+        detailView.classList.add("active")
+        detailTitle.textContent = item.name
+        componentPreview.innerHTML = render[item.name]()
+        bindComponentInteractions()
+        similarList.innerHTML = item.similar
+          .map((similar) => '<button class="chip" type="button" data-name="' + similar + '">' + similar + "</button>")
+          .join("")
+        history.replaceState(null, "", "#" + encodeURIComponent(item.name))
+        window.scrollTo({ top: 0, behavior: "smooth" })
+      }
+
+      function bindComponentInteractions() {
+        componentPreview.querySelectorAll(".option").forEach((option) => {
+          option.addEventListener("click", () => {
+            if (option.classList.contains("tree-option")) {
+              option.classList.toggle("active")
+              return
+            }
+            const parent = option.parentElement
+            if (!parent) return
+            parent.querySelectorAll(".option").forEach((item) => item.classList.remove("active"))
+            option.classList.add("active")
+          })
+        })
+
+        componentPreview.querySelectorAll("[data-radio-group]").forEach((control) => {
+          control.addEventListener("click", () => {
+            const group = control.getAttribute("data-radio-group")
+            componentPreview.querySelectorAll('[data-radio-group="' + group + '"]').forEach((item) => {
+              item.classList.remove("active")
+              item.querySelector(".select-mark")?.classList.remove("active")
+            })
+            control.classList.add("active")
+            control.querySelector(".select-mark")?.classList.add("active")
+          })
+        })
+
+        componentPreview.querySelectorAll(".check-toggle").forEach((control) => {
+          control.addEventListener("click", () => {
+            const isActive = control.classList.toggle("active")
+            control.setAttribute("aria-pressed", String(isActive))
+            control.querySelector(".select-mark")?.classList.toggle("active", isActive)
+            const label = control.querySelector(".check-label")
+            if (label) label.textContent = isActive ? "انتخاب شده" : "انتخاب نشده"
+          })
+        })
+      }
+
+      const sortedComponents = [...components].sort((a, b) => a.name.localeCompare(b.name, "en"))
+      const alphabeticalGroups = sortedComponents.reduce((groups, component) => {
+        const letter = component.name.charAt(0).toUpperCase()
+        if (!groups[letter]) groups[letter] = []
+        groups[letter].push(component)
+        return groups
+      }, {})
+      const similarGroups = sortedComponents.reduce((groups, component) => {
+        if (!groups[component.group]) groups[component.group] = []
+        groups[component.group].push(component)
+        return groups
+      }, {})
+
+      function createComponentCard(component) {
+        return (
+          '<button class="component-card" type="button" data-name="' +
+          component.name +
+          '"><span class="component-name">' +
+          component.name +
+          '</span><span class="component-meta">' +
+          component.group +
+          '</span></button>'
+        )
+      }
+
+      function renderIndex(mode) {
+        const sections = mode === "group"
+          ? Object.keys(similarGroups)
+              .sort((a, b) => a.localeCompare(b, "en"))
+              .map(
+                (group) =>
+                  '<section class="letter-section"><div class="letter-heading">' +
+                  group +
+                  '</div>' +
+                  similarGroups[group].map(createComponentCard).join("") +
+                  '</section>',
+              )
+          : Object.keys(alphabeticalGroups)
+              .sort((a, b) => a.localeCompare(b, "en"))
+              .map(
+                (letter) =>
+                  '<section class="letter-section"><div class="letter-heading">' +
+                  letter +
+                  '</div>' +
+                  alphabeticalGroups[letter].map(createComponentCard).join("") +
+                  '</section>',
+              )
+
+        componentIndex.innerHTML = sections.join("")
+      }
+
+      renderIndex("alphabet")
+
+      componentIndex.addEventListener("click", (event) => {
+        const card = event.target.closest("[data-name]")
+        if (card) showDetail(card.dataset.name)
+      })
+
+      similarList.addEventListener("click", (event) => {
+        const chip = event.target.closest("[data-name]")
+        if (chip) showDetail(chip.dataset.name)
+      })
+
+      backButton.addEventListener("click", showIndex)
+      indexSort?.addEventListener("change", () => renderIndex(indexSort.value))
+
+      const initial = decodeURIComponent(location.hash.replace("#", ""))
+      if (initial) showDetail(initial)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: #f7f7f7;
+    color: theme('colors.norato.ink');
+    font-family: theme('fontFamily.norato');
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .norato-section {
+    @apply rounded-norato border border-norato-line bg-white p-5 shadow-norato-sm;
+  }
+
+  .norato-section-title {
+    @apply mb-4 text-right text-sm font-bold text-norato-ink;
+  }
+
+  .norato-fields-example {
+    @apply grid justify-items-end gap-5;
+  }
+
+  .norato-fields-example__title {
+    margin: 0;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  .norato-fields-example__card {
+    width: min(100%, 720px);
+    display: grid;
+    justify-items: end;
+    gap: 28px;
+    border: 1px solid #f3f3f3;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    padding: 28px 36px;
+  }
+
+  .norato-fields-example__row {
+    --norato-fields-label-width: 96px;
+    --norato-fields-control-gap: 12px;
+    display: grid;
+    grid-template-columns: var(--norato-fields-label-width) max-content;
+    align-items: center;
+    justify-content: end;
+    column-gap: var(--norato-fields-control-gap);
+    direction: rtl;
+    width: 100%;
+  }
+
+  .norato-fields-example__label {
+    color: #1a1a1a;
+    font-family: 'Lalezar', theme('fontFamily.norato');
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .norato-fields-example__gender-options {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    direction: rtl;
+  }
+
+  .norato-gender-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: #1a1a1a;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .norato-gender-option__text {
+    font-family: 'Lalezar', theme('fontFamily.norato');
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .norato-gender-option__icon {
+    color: #356ae6;
+  }
+
+  .norato-gender-option__mark {
+    position: relative;
+    display: inline-grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    border: 2px solid #e4e4e4;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  .norato-gender-option.is-active .norato-gender-option__mark {
+    border-color: #fdc101;
+  }
+
+  .norato-gender-option.is-active .norato-gender-option__mark::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #fdc101;
+  }
+
+  .norato-fields-example__input {
+    width: min(100%, 430px);
+    height: 36px;
+    border: 1px solid #e4e4e4;
+    border-radius: 999px;
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 13px;
+    line-height: 1;
+    outline: 0;
+    padding: 0 20px;
+    text-align: right;
+  }
+
+  .norato-fields-example__input::placeholder {
+    color: #a1a1a1;
+    font-size: 12px;
+  }
+
+  .norato-fields-example__date {
+    display: inline-flex;
+    width: 182px;
+    height: 36px;
+    align-items: center;
+  }
+
+  .norato-fields-example__date-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    flex: 0 0 36px;
+    place-items: center;
+    border: 0;
+    border-radius: 999px 0 0 999px;
+    background: #fdc101;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .norato-fields-example__date-box {
+    width: 146px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    border-top: 1px solid #e4e4e4;
+    border-right: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    border-radius: 0 999px 999px 0;
+    background: #fff;
+  }
+
+  .norato-fields-example__date-box span {
+    color: #a1a1a1;
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .norato-fields-example__card {
+    padding: 24px 20px;
+  }
+
+  .norato-fields-example__row {
+    --norato-fields-label-width: 88px;
+  }
+
+  .norato-fields-example__input {
+    width: min(100%, 360px);
+  }
+}
+
+@media (max-width: 560px) {
+  .norato-fields-example__card {
+    gap: 20px;
+  }
+
+  .norato-fields-example__row {
+    grid-template-columns: 88px minmax(0, 1fr);
+  }
+
+  .norato-fields-example__input {
+    width: 100%;
+  }
+}
