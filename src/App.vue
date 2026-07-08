@@ -53,8 +53,11 @@ const tags = ref(['لورم ایپسوم متن ساختگی با تولید', '
             <div class="mb-6 flex flex-wrap gap-3">
               <NoratoButton>متن</NoratoButton>
               <NoratoButton variant="secondary">متن</NoratoButton>
-              <NoratoButton variant="ghost">متن</NoratoButton>
+              <div class="rounded-section bg-norato-text-primary p-component-sm">
+                <NoratoButton variant="inverse">متن</NoratoButton>
+              </div>
               <NoratoButton disabled>متن</NoratoButton>
+              <NoratoButton loading>متن</NoratoButton>
             </div>
             <NoratoProgress :value="36" />
           </div>

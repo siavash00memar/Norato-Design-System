@@ -28,7 +28,7 @@ defineProps<{
     </div>
     <footer class="flex items-center justify-between gap-3">
       <NoratoButton variant="primary">متن</NoratoButton>
-      <NoratoButton variant="ghost">متن</NoratoButton>
+      <NoratoButton variant="secondary">متن</NoratoButton>
     </footer>
   </section>
 </template>
