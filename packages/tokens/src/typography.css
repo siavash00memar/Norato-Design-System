@@ -1,0 +1,32 @@
+:root {
+  --norato-font-body: 'Vazirmatn', Tahoma, sans-serif;
+  --norato-font-heading: 'Estedad', 'Vazirmatn', Tahoma, sans-serif;
+
+  --norato-type-body-regular-size: 13px;
+  --norato-type-body-regular-line-height: 1.6;
+  --norato-type-body-regular-weight: 400;
+  --norato-type-body-small-size: 12px;
+  --norato-type-body-small-line-height: 1.6;
+  --norato-type-body-caption-size: 11px;
+  --norato-type-body-caption-line-height: 1.5;
+  --norato-type-body-min-size: 10px;
+
+  --norato-type-body-medium-size: 13px;
+  --norato-type-body-medium-line-height: 1.5;
+  --norato-type-body-medium-weight: 500;
+  --norato-type-body-bold-size: 13px;
+  --norato-type-body-bold-line-height: 1.5;
+  --norato-type-body-bold-weight: 700;
+
+  --norato-type-heading-title-size: 14px;
+  --norato-type-heading-title-line-height: 1.5;
+  --norato-type-heading-title-weight: 700;
+  --norato-type-heading-small-size: 13px;
+  --norato-type-heading-small-line-height: 1.5;
+  --norato-type-heading-medium-size: 13px;
+  --norato-type-heading-medium-line-height: 1.5;
+  --norato-type-heading-label-size: 12px;
+  --norato-type-heading-label-line-height: 1.5;
+  --norato-type-heading-caption-size: 11px;
+  --norato-type-heading-caption-line-height: 1.5;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@norato/design-system",
+  "private": true,
+  "version": "0.2.0",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "check:tokens": "node scripts/check-tokens.mjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  }
+}

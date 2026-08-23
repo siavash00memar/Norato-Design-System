@@ -1,0 +1,37 @@
+:root {
+  --norato-space-1: 4px;
+  --norato-space-2: 8px;
+  --norato-space-3: 12px;
+  --norato-space-4: 16px;
+  --norato-space-6: 24px;
+  --norato-space-8: 32px;
+  --norato-space-12: 48px;
+  --norato-space-16: 64px;
+
+  --norato-radius-card: 12px;
+  --norato-radius-control: 25px;
+  --norato-radius-tag: 6px;
+  --norato-border-thin: 1px;
+  --norato-border-focus: 2px;
+
+  --norato-control-target-min: 48px;
+  --norato-control-visual-height: 36px;
+  --norato-icon-sm: 18px;
+  --norato-icon-md: 24px;
+  --norato-readable-measure: 65ch;
+
+  --norato-gutter-compact: 16px;
+  --norato-gutter-medium: 24px;
+  --norato-gutter-expanded: 32px;
+  --norato-gutter-large: 48px;
+  --norato-gutter-extra-large: 64px;
+}
+
+[dir='rtl'] { direction: rtl; }
+
+.norato-readable { max-inline-size: var(--norato-readable-measure); }
+.norato-gutter { padding-inline: var(--norato-gutter-compact); }
+@media (min-width: 600px) { .norato-gutter { padding-inline: var(--norato-gutter-medium); } }
+@media (min-width: 840px) { .norato-gutter { padding-inline: var(--norato-gutter-expanded); } }
+@media (min-width: 1200px) { .norato-gutter { padding-inline: var(--norato-gutter-large); } }
+@media (min-width: 1600px) { .norato-gutter { padding-inline: var(--norato-gutter-extra-large); } }

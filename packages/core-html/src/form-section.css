@@ -1,0 +1,22 @@
+.norato-form-section {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: center;
+  direction: rtl;
+}
+
+.norato-form-section__titles {
+  display: grid;
+  justify-items: end;
+  align-content: center;
+  min-inline-size: max-content;
+}
+
+.norato-form-section__fields {
+  display: grid;
+  justify-items: start;
+  min-inline-size: 0;
+}
+
+.norato-form-section__field { inline-size: min(100%, 65ch); }
