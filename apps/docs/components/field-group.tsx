@@ -1,0 +1,4 @@
+"use client"
+import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+export function FieldGroup() { return <section className="field-group-example" aria-labelledby="field-group-title"><h3 id="field-group-title">عنوان</h3><div className="field-group-box"><div><Select><SelectTrigger aria-label="انتخاب اول"><SelectValue placeholder="لورم ایپسوم متن ساختگی با تولید" /></SelectTrigger><SelectContent><SelectItem value="one">گزینه اول</SelectItem><SelectItem value="two">گزینه دوم</SelectItem></SelectContent></Select><Label>عنوان</Label></div><div><Select><SelectTrigger aria-label="انتخاب دوم"><SelectValue placeholder="لورم ایپسوم متن ساختگی با تولید" /></SelectTrigger><SelectContent><SelectItem value="three">گزینه سوم</SelectItem><SelectItem value="four">گزینه چهارم</SelectItem></SelectContent></Select><Label>عنوان</Label></div></div></section> }

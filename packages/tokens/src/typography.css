@@ -1,6 +1,7 @@
 :root {
-  --norato-font-body: 'Vazirmatn', Tahoma, sans-serif;
-  --norato-font-heading: 'Estedad', 'Vazirmatn', Tahoma, sans-serif;
+  --norato-font-body: 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
+  --norato-font-heading: 'Estedad', 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
+  --norato-font-heading-black: 'Estedad', 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
 
   --norato-type-body-regular-size: 13px;
   --norato-type-body-regular-line-height: 1.6;
@@ -21,6 +22,7 @@
   --norato-type-heading-title-size: 14px;
   --norato-type-heading-title-line-height: 1.5;
   --norato-type-heading-title-weight: 700;
+  --norato-type-heading-black-weight: 900;
   --norato-type-heading-small-size: 13px;
   --norato-type-heading-small-line-height: 1.5;
   --norato-type-heading-medium-size: 13px;

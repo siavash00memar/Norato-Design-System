@@ -1,0 +1,7 @@
+"use client"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+export function FieldExample() {
+  return <section className="field-example" aria-labelledby="field-example-title"><h3 id="field-example-title">اطلاعات زیر را تکمیل کن</h3><div className="field-example-card"><div className="field-example-content"><div className="field-example-row field-example-gender"><Label>جنسیت</Label><RadioGroup defaultValue="male" aria-label="جنسیت"><label><span>زن</span><img className="gender-icon" src="/icons/gender-woman.svg" alt="" /><RadioGroupItem value="female" name="gender" /></label><label><span>مرد</span><img className="gender-icon" src="/icons/gender-man.svg" alt="" /><RadioGroupItem value="male" name="gender" /></label></RadioGroup></div><div className="field-example-row"><Input placeholder="نام خود را بنویسید" /><Label>نام</Label></div><div className="field-example-row"><Input placeholder="نام خانوادگی خود را بنویسید" /><Label>نام خانوادگی</Label></div><div className="field-example-row"><div className="figma-date-control"><button type="button" aria-label="باز کردن تقویم" className="figma-date-icon"><img src="https://www.figma.com/api/mcp/asset/b1a9b508-9ae1-4484-9ea4-29cfe73b8165.svg" alt="" /></button><Input aria-label="تاریخ تولد" /></div><Label>تاریخ تولد</Label></div></div></div></section>
+}

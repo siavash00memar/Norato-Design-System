@@ -1,4 +1,14 @@
 :root {
+  --norato-component-padding-block: 12px;
+  --norato-component-padding-inline: 18px;
+  --norato-frame-mobile-width: 360px;
+  --norato-content-gutter-compact: 24px;
+  --norato-content-width-mobile: 312px;
+  --norato-action-row-height: 36px;
+  --norato-field-label-gap: 6px;
+  --norato-field-group-gap: 8px;
+  --norato-message-card-padding: 12px;
+  --norato-progress-height: 48px;
   --norato-space-1: 4px;
   --norato-space-2: 8px;
   --norato-space-3: 12px;
@@ -15,6 +25,7 @@
   --norato-border-focus: 2px;
 
   --norato-control-target-min: 48px;
+  --norato-touch-target-min: 48px;
   --norato-control-visual-height: 36px;
   --norato-icon-sm: 18px;
   --norato-icon-md: 24px;
@@ -31,6 +42,7 @@
 
 .norato-readable { max-inline-size: var(--norato-readable-measure); }
 .norato-gutter { padding-inline: var(--norato-gutter-compact); }
+@media (min-width: 360px) { .norato-gutter { padding-inline: var(--norato-content-gutter-compact); } }
 @media (min-width: 600px) { .norato-gutter { padding-inline: var(--norato-gutter-medium); } }
 @media (min-width: 840px) { .norato-gutter { padding-inline: var(--norato-gutter-expanded); } }
 @media (min-width: 1200px) { .norato-gutter { padding-inline: var(--norato-gutter-large); } }
