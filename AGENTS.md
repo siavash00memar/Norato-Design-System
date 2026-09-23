@@ -2,7 +2,7 @@
 
 ## Mission
 
-Build and maintain Norato as a reusable, RTL-first Persian design system for Vue and Next.js. The legacy static HTML/CSS site is fallback-only and is not the primary implementation target.
+Build and maintain Norato as a reusable, RTL-first Persian design system for Vue.js 3.
 
 ## Required workflow
 
@@ -25,7 +25,7 @@ Do not skip, merge, or silently backfill a stage. Do not begin implementation wh
 - Never use Lalezar; any former Lalezar display role MUST use Estedad Black (weight 900).
 - Use semantic Norato tokens; do not add page-local raw design values.
 - Preserve the minimum 48px interaction target.
-- Keep Vue and Next.js contracts equivalent. Do not add new feature behavior to the legacy static HTML/CSS site.
+- Keep all component contracts aligned with Vue.js 3. Do not add new feature behavior outside the Vue.js 3 implementation.
 - Evaluate shadcn primitives before custom implementations.
 - Update the feature spec, plan, checklist, tasks, and error log when decisions or defects are found.
 - Before changing a component visual, audit and remove or neutralize its legacy selectors; never stack undocumented temporary overrides. Record recurring CSS conflicts in `docs/error-log.md`.

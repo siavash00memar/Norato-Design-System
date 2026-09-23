@@ -2,6 +2,18 @@
 
 این چک‌لیست برای هر درخواست، تغییر کامپوننت یا اصلاح طراحی باید تکمیل شود.
 
+## گزارش این درخواست — چیدمان کارت‌های کامپوننت‌ها
+
+- قرارداد پذیرش: همه‌ی نمونه‌ها و کارت‌ها فرزند مستقیم یک grid RTL باشند؛ در desktop هر card
+  360px با فاصله‌ی دقیق 20px داشته باشد و در عرض محدود به یک ستون بدون overflow تبدیل شود.
+- [x] نمونه‌ها از `SectionTitle` خارج و در `ComponentShowcase`/`component-grid` یکپارچه شدند.
+- [x] selector قدیمی Tag که CardHeader و CardContent را هم‌زمان هدف می‌گرفت، حذف و ساختاری شد.
+- [x] رندر واقعی در viewport 1440px: دو track دقیق 360px، فاصله 20px و شروع RTL ثبت شد.
+- [x] رندر واقعی در viewport پیش‌فرض: یک track 360px، تمام کارت‌ها با لبه راست مشترک، و
+  `scrollWidth` 960 در viewport 975 (بدون overflow) ثبت شد.
+- [x] viewport آزمایشی پس از تست به حالت پیش‌فرض بازگردانده شد.
+- [x] قرارداد در spec، plan، taskها، قوانین Figma و error log ثبت شد.
+
 ## گزارش این درخواست — ثبات فونت Tree View
 
 - درخواست نهایی: همه‌ی سطح‌ها در تمام stateها ۱۲px باشند.
@@ -72,7 +84,7 @@
   - [x] asset فلش فقط در `NORATO_SELECT_ARROW` تعریف شده و Select و Tree View همان را مصرف می‌کنند.
   - [x] glyph متنی و selector قدیمی `norato-tree-arrow` حذف شد.
   - [x] Tree View recursive، nested و دارای `aria-expanded`/`role="tree"` است.
-  - [x] token check، TypeScript و Next production build پاس شدند.
+  - [x] token check و TypeScript پاس شدند.
 - موارد باقی‌مانده: بررسی تصویری تعاملی داخل مرورگر هنوز توسط ابزار خودکار این نشست قابل ثبت نیست و باید در preview لوکال دیده شود.
 - وضعیت نهایی: `BLOCKED` تا تأیید رندر واقعی؛ preview: `http://localhost:3000/#components`
 
@@ -84,7 +96,7 @@
   - [x] ردیف ۳۰۰×۳۶، زمینه `#F5F5F5`، radius `12px` و متن ۱۲px ثبت و اعمال شد.
   - [x] فلش دقیق Figma در `public/icons/tree-arrow.svg` با فریم ۲۴×۲۴ استفاده شد.
   - [x] Checkbox canonical نوراتو حفظ شد.
-  - [x] TypeScript، token check و Next build پاس شدند.
+  - [x] TypeScript و token check پاس شدند.
 - موارد باقی‌مانده: تأیید تصویری تعاملی در مرورگر.
 - وضعیت نهایی: `BLOCKED` تا مشاهده‌ی preview؛ preview: `http://localhost:3000/#components`
 

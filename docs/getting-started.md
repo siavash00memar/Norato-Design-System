@@ -4,12 +4,21 @@
 
 فایل [index.html](./index.html) را در مرورگر باز کنید.
 
+## اجرای اپ اصلی Vue
+
+```bash
+pnpm install
+pnpm --filter @norato/vue-app dev
+```
+
+اپ اصلی و تنها سطح محصول نوراتو در `apps/vue` با Vue.js 3 قرار دارد. `apps/docs` مقصد قابلیت‌های جدید
+نیست.
+
 ## ساختار پکیج‌ها
 
 - `packages/tokens`: رنگ، تایپوگرافی، فاصله، radius و layout
 - `packages/core-html`: HTML/CSS و markup پایه
 - `packages/vue`: آداپترهای Vue
-- `packages/next`: آداپترهای Next.js
 - `packages/components`: قراردادها و inventory کامپوننت‌ها
 
 ## کامپوننت‌های نسخهٔ 0.2.0

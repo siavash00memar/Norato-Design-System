@@ -2,7 +2,8 @@
 
 <!--
 Sync Impact Report
-- Version change: 1.0.0 → 1.1.0
+- Version change: 1.1.0 → 1.2.0
+- Added Principle IX: Vue-First Product Surface.
 - Added Principle VIII: Process Integrity and Evidence-Based Clarification.
 - Expanded Spec-Driven Quality Gates with a no-skip rule and explicit uncertainty handling.
 - Added mandatory question protocol for material unknowns and conflict resolution.
@@ -61,6 +62,15 @@ deferred rather than being fabricated.
 **Rationale:** A complete audit trail prevents undocumented drift and makes every design-system decision
 reviewable, reproducible, and safe to implement.
 
+### IX. Vue.js 3-Only Product Surface
+The primary runnable product and documentation surface MUST be implemented with Vue.js 3. New product
+components, routes, examples, and interaction behavior MUST target Vue unless an approved specification
+explicitly records a different integration boundary. Existing Next.js code MAY remain only as a
+temporary migration reference or documented legacy surface; it MUST NOT receive new feature behavior.
+
+**Rationale:** A single primary framework prevents split contracts and keeps the design system aligned
+with the product implementation target.
+
 ## Design System Constraints
 
 Norato will use shadcn/ui as a composable starting point and may use Radix/Base primitives when
@@ -107,4 +117,4 @@ When a conflict exists, a more specific approved specification may refine a prin
 silently contradict it. Complexity, custom primitives, and deviations from shadcn/ui or reference
 systems MUST be justified in the relevant artifact.
 
-**Version**: 1.1.0 | **Ratified**: 2026-08-23 | **Last Amended**: 2026-08-23
+**Version**: 1.2.0 | **Ratified**: 2026-08-23 | **Last Amended**: 2026-09-23
