@@ -3,6 +3,7 @@ withDefaults(defineProps<{ label: string; variant?: 'primary' | 'secondary' | 'i
   variant: 'primary',
   type: 'button',
   disabled: false,
+  pressed: undefined,
 });
 </script>
 

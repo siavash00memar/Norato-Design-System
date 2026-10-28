@@ -1,0 +1,42 @@
+[
+  {
+    "path": "site/index.html",
+    "line": 13,
+    "declarations": "--blue:#356ae6;--blue-dark:#214fba;--yellow:#fdc101;--ink:#141923;--muted:#596273;--line:#e5eaf2;--pale:#f4f8ff;--sky:#e5f2ff;--radius:26px"
+  },
+  {
+    "path": "site/entekhabreshte.html",
+    "line": 11,
+    "declarations": "--blue:#356ae6;--blue-dark:#214fba;--yellow:#fdc101;--ink:#141923;--muted:#596273;--line:#dfe9f7;--pale:#eff6ff"
+  },
+  {
+    "path": "site/majarajooyi.html",
+    "line": 13,
+    "declarations": "--blue:#356ae6;--deep:#173b83;--yellow:#ffc52e;--ink:#131b2b;--muted:#52617a;--line:#dce8f9;--pale:#f2f7ff"
+  },
+  {
+    "path": "site/about.html",
+    "line": 13,
+    "declarations": "--blue:#356ae6;--blue-dark:#214fba;--yellow:#fdc101;--ink:#141923;--muted:#596273;--line:#e2eaf5"
+  },
+  {
+    "path": "site/contact.html",
+    "line": 13,
+    "declarations": "--blue:#356ae6;--ink:#141923;--muted:#596273;--yellow:#fdc101;--line:#dfe8f5"
+  },
+  {
+    "path": "site/typography.css",
+    "line": 19,
+    "declarations": "\n  --font-ui:\"Vazirmatn\",\"Vazirmatn Fallback\",Tahoma,Arial,sans-serif;\n  --font-display:\"Estedad\",\"Estedad Fallback\",Tahoma,sans-serif;\n  --type-body:16px;\n  --type-support:15px;\n  --type-action:15px;\n  --type-label:13px;\n  --type-h1:clamp(37px,4.2vw,56px);\n  --type-h2:clamp(28px,3vw,37px);\n  --type-h3:clamp(21px,2vw,24px);\n"
+  },
+  {
+    "path": "site/typography.css",
+    "line": 68,
+    "declarations": "--type-h1:clamp(35px,8vw,43px);--type-h2:clamp(27px,6vw,33px);--type-h3:22px"
+  },
+  {
+    "path": "site/typography.css",
+    "line": 80,
+    "declarations": "--type-h1:35px;--type-h2:28px"
+  }
+]

@@ -1,4 +1,6 @@
 :root {
+  --norato-sidebar-width: 256px;
+  --norato-layout-content-max: 1200px;
   --norato-component-padding-block: 12px;
   --norato-component-padding-inline: 18px;
   --norato-frame-mobile-width: 360px;
@@ -13,16 +15,38 @@
   --norato-space-2: 8px;
   --norato-space-3: 12px;
   --norato-space-4: 16px;
+  --norato-space-5: 20px;
   --norato-space-6: 24px;
   --norato-space-8: 32px;
   --norato-space-12: 48px;
   --norato-space-16: 64px;
 
+  /* Observed source values; these names document values and do not assert a global product scale. */
+  --norato-space-observed-2: 2px;
+  --norato-space-observed-5: 5px;
+  --norato-space-observed-6: 6px;
+  --norato-space-observed-10: 10px;
+  --norato-radius-observed-5: 5px;
+  --norato-radius-observed-36: 36px;
+  --norato-radius-observed-50: 50px;
+  --norato-elevation-box: 0 2px 4px #00000026;
+  --norato-elevation-modal: 0 10px 8px #00000040;
+  --norato-elevation-pressed: inset 2px 4px 4px #0000002e;
+  --norato-elevation-chatbot: 0 2px 10px #00000026;
+  --norato-elevation-drop: 0 -4px 10px #0000001a;
+  --norato-elevation-new: 0 2px 12px #00000026;
+  --norato-elevation-main-page: -2px 3px 4px #0000001a;
+
+  --norato-motion-duration-press: 140ms;
+  --norato-motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
   --norato-radius-card: 12px;
   --norato-radius-control: 25px;
+  --norato-radius-pill: var(--norato-radius-observed-50);
   --norato-radius-tag: 6px;
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
+  --norato-border-medium: 2px;
 
   --norato-control-target-min: 48px;
   --norato-touch-target-min: 48px;

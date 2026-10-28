@@ -46,3 +46,11 @@ specs/010-next-shadcn-site/     # feature artifacts
 3. Keep Tree View on the existing canonical Checkbox component and user-provided SVG states.
 4. Apply one final, documented Tree View visual contract matching the Figma hierarchy.
 5. Validate the rendered page, keyboard expansion/selection, RTL order, and TypeScript output.
+
+## Amendment Plan — Components Card Grid
+
+1. Remove specimen rendering from the page-title container so it cannot create a competing layout.
+2. Compose all examples as direct children of one shadcn Card/Grid showcase.
+3. Use 360px desktop tracks with 20px gaps and RTL-start alignment; collapse to one fluid track below the breakpoint.
+4. Audit and replace the legacy Tag selector that targets arbitrary child `div` elements.
+5. Validate the actual local render at the current viewport and at a wide viewport, then restore the browser viewport.

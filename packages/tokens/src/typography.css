@@ -4,6 +4,8 @@
   --norato-font-heading-black: 'Estedad', 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
 
   --norato-type-body-regular-size: 13px;
+  --norato-type-doc-body-size: 16px;
+  --norato-type-doc-small-size: 14px;
   --norato-type-body-regular-line-height: 1.6;
   --norato-type-body-regular-weight: 400;
   --norato-type-body-small-size: 12px;
@@ -31,4 +33,17 @@
   --norato-type-heading-label-line-height: 1.5;
   --norato-type-heading-caption-size: 11px;
   --norato-type-heading-caption-line-height: 1.5;
+
+  /* Readability aliases for the documentation product surface; Figma component tokens stay unchanged. */
+  --norato-type-doc-compact-size: 14px;
+  --norato-type-doc-caption-size: 12px;
+  --norato-type-doc-label-size: 15px;
+  --norato-type-doc-section-size: 18px;
+  --norato-type-doc-display-size: clamp(2rem, 4vw, 3.5rem);
+  --norato-type-doc-page-title-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  --norato-type-doc-body-line-height: 1.7;
+  --norato-type-doc-heading-line-height: 1.2;
+  --norato-type-doc-section-line-height: 1.4;
+  --norato-type-doc-label-line-height: 1.5;
+  --norato-type-doc-label-tracking: 0.04em;
 }

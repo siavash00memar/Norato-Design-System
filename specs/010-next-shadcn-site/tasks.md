@@ -10,6 +10,7 @@
 - [ ] T008 Update error log and feature artifacts with findings.
 - [x] T028 Add Figma `8818:9982` Third Button variant to the shared Button primitive and docs example.
 - [x] T029 Keep all Tree View levels at 12px across interaction states, preserving their font-family roles.
+- [x] T030 Place Components-page specimens and general cards in one RTL 360px/20px responsive no-overflow grid.
 
 ## Amendment Tasks — Tree View Fidelity Correction
 

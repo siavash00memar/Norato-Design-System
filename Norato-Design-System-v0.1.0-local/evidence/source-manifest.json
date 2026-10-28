@@ -1,0 +1,88 @@
+{
+  "captured": "2026-10-26",
+  "version": "0.1.0",
+  "authority": "Current edited site/ files; initial ZIP explicitly excluded",
+  "projectRelativeToBundle": "..",
+  "files": [
+    {
+      "path": "site/index.html",
+      "bytes": 52651,
+      "sha256": "66138c0138c55f84e530e4627ccbb0aa3ddea0eebf3117e833b3612ac1e32226"
+    },
+    {
+      "path": "site/entekhabreshte.html",
+      "bytes": 105785,
+      "sha256": "422264033684ee51db0edd406dc0fab4828ae11e5f5d8c44fcead085d2e6a3f6"
+    },
+    {
+      "path": "site/majarajooyi.html",
+      "bytes": 43640,
+      "sha256": "83bd12a034e759e2ed4f9b17584bc4ec0df7eecfb07354954396549203cd8432"
+    },
+    {
+      "path": "site/about.html",
+      "bytes": 34022,
+      "sha256": "66122a4a6f4b618dfbc032ffdbb5e2c5b8bab0df5c088e81dc55bf4bf6838224"
+    },
+    {
+      "path": "site/contact.html",
+      "bytes": 22345,
+      "sha256": "306fd5425b2cf73ab9398c5f7efa5703e225e4c9b007c991e7a85003f5d09181"
+    },
+    {
+      "path": "site/typography.css",
+      "bytes": 4445,
+      "sha256": "65dc849a0a0ab45ef7b7d0ff24fa5aa27d95467c7d728dd4829ff7cea54b4792"
+    },
+    {
+      "path": "site/majarajooyi.css",
+      "bytes": 20042,
+      "sha256": "a763b9093011acab5f0683a69bab26c745dbb2b9527e72249633d44b8265d581"
+    },
+    {
+      "path": "site/adventure-quest.css",
+      "bytes": 7155,
+      "sha256": "b25e1764139d825c9adc882fee1a28dba2438a600e5161ee12dc65abd9bdd9ab"
+    },
+    {
+      "path": "site/adventure-quest.js",
+      "bytes": 5411,
+      "sha256": "d2bec3f52a679ae53e17625513c140b009f6dad5b6cd91ca077103d931034d87"
+    },
+    {
+      "path": "site/video-facade.js",
+      "bytes": 849,
+      "sha256": "3c4d5eae1850eb012d3681d552532dce45bdfc393741dc22be20b2a096c458e6"
+    },
+    {
+      "path": "site/assets/fonts/fonts.css",
+      "bytes": 3387,
+      "sha256": "fd8990f9197fcf509db7e40f3fa1d7a226bcee2249b22f6918ad41b0d0e4ac4e"
+    },
+    {
+      "path": "site/assets/fonts/README.md",
+      "bytes": 795,
+      "sha256": "e721b6d83908395e977cfd9bab3f6e751105d5888e71d0ee72b622adb4a5d316"
+    },
+    {
+      "path": "site/assets/fonts/estedad-core.c916dcc4d484.woff2",
+      "bytes": 41632,
+      "sha256": "c916dcc4d484aea1e361e8b01856abd75558e593485db6f1e7f8dc1fb8b2b4d9"
+    },
+    {
+      "path": "site/assets/fonts/vazirmatn-core.dda7b15e8d19.woff2",
+      "bytes": 85104,
+      "sha256": "dda7b15e8d19828eb80a5ca456c7e02c0a5e1719bb3ec999bec57cf7ed4d762f"
+    },
+    {
+      "path": "site/assets/fonts/Estedad-OFL.txt",
+      "bytes": 4388,
+      "sha256": "0417da48fc44780476e074f02f8400028ee704b3e222be5855fa6d960b9200ca"
+    },
+    {
+      "path": "site/assets/fonts/Vazirmatn-OFL.txt",
+      "bytes": 4391,
+      "sha256": "17e355067c8284f47743a1ee3b1ef7ff684ff0601eda357f9353b10b3016ab31"
+    }
+  ]
+}

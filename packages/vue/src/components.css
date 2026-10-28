@@ -1,0 +1,38 @@
+.norato-button,.norato-field,.norato-select,.norato-textarea,.norato-date-picker__input,.norato-date-picker__trigger{font:inherit;box-sizing:border-box}
+.norato-button{display:inline-flex;align-items:center;justify-content:center;gap:var(--norato-space-2);min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-4);border:var(--norato-border-medium) solid transparent;border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-weight:var(--norato-type-body-bold-weight);cursor:pointer;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-button[data-variant="primary"]{background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
+.norato-button[data-variant="secondary"]{background:var(--norato-color-surface-default);border:var(--norato-border-medium) solid var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill);color:var(--norato-color-text-primary)}
+.norato-button[data-variant="inverse"]{background:var(--norato-color-text-primary);color:var(--norato-color-surface-default)}
+.norato-button[data-variant="destructive"]{background:var(--norato-color-status-error);color:var(--norato-color-surface-default)}
+.norato-button:hover:not(:disabled):not(:focus-visible){transform:translateY(calc(-1 * var(--norato-border-thin)))}
+.norato-button[data-variant="primary"]:hover:not(:disabled){background:var(--norato-color-brand-yellow)}
+.norato-button[data-variant="secondary"]:hover:not(:disabled){background:var(--norato-color-info-container);border-color:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
+.norato-button:active:not(:disabled){transform:translateY(0)}
+.norato-button:focus-visible,.norato-field:focus-visible,.norato-select:focus-visible,.norato-textarea:focus-visible,.norato-date-picker__input:focus-visible,.norato-date-picker__trigger:focus-visible,.norato-choice input:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
+.norato-button:disabled,.norato-field:disabled,.norato-select:disabled,.norato-textarea:disabled,.norato-date-picker__input:disabled,.norato-date-picker__trigger:disabled{background:var(--norato-color-surface-muted);border-color:var(--norato-color-border-default);color:var(--norato-color-text-disabled);cursor:not-allowed}
+.norato-button--icon-only{inline-size:var(--norato-control-target-min);padding-inline:0}
+.norato-button__progress{inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);border:var(--norato-border-focus) solid currentColor;border-inline-start-color:transparent;border-radius:50%;animation:norato-spin .8s linear infinite}
+@keyframes norato-spin{to{transform:rotate(360deg)}}
+.norato-field-group,.norato-select-group,.norato-textarea-group,.norato-date-picker{display:grid;gap:var(--norato-field-group-gap);inline-size:100%;text-align:start}
+.norato-field__label,.norato-select__label,.norato-textarea__label,.norato-date-picker__label{color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-bold-weight)}
+.norato-field,.norato-select,.norato-textarea,.norato-date-picker__input{inline-size:100%;min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-strong);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);color:var(--norato-color-text-primary)}
+.norato-field::placeholder,.norato-textarea::placeholder,.norato-date-picker__input::placeholder{color:var(--norato-color-text-placeholder);opacity:1}
+.norato-select{cursor:pointer}
+.norato-textarea{min-block-size:calc(var(--norato-control-target-min) * 3);padding-block:var(--norato-space-3);resize:vertical}
+.norato-field-group.is-invalid .norato-field,.norato-select-group.is-invalid .norato-select,.norato-textarea-group.is-invalid .norato-textarea,.norato-date-picker.is-invalid .norato-date-picker__input{border-color:var(--norato-color-status-error)}
+.norato-field__message,.norato-select__message,.norato-textarea__message,.norato-date-picker__message{margin:0;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-field__error,.norato-select__error,.norato-textarea__error,.norato-date-picker__error,.norato-choice__error{color:var(--norato-color-status-error)}
+.norato-choice-group{display:grid;gap:var(--norato-space-1);min-inline-size:0;margin:0;padding:0;border:0}
+.norato-choice-group legend{margin-block-end:var(--norato-space-2);color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-bold-weight)}
+.norato-choice{display:flex;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-2);border-radius:var(--norato-radius-card);cursor:pointer}
+.norato-choice:hover:has(input:not(:disabled)){background:var(--norato-color-surface-subtle)}
+.norato-choice input{inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);margin:0;accent-color:var(--norato-color-brand-blue);flex:none}
+.norato-choice input:disabled+span{color:var(--norato-color-text-disabled)}
+.norato-choice__error{margin:0;font-size:var(--norato-type-body-small-size)}
+.norato-date-picker__control{display:grid;grid-template-columns:minmax(0,1fr) var(--norato-control-target-min);gap:var(--norato-space-2)}
+.norato-date-picker__input[readonly]{cursor:default}
+.norato-date-picker__trigger{min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min);border:var(--norato-border-thin) solid var(--norato-color-border-strong);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);color:var(--norato-color-brand-blue);cursor:pointer}
+.norato-choice-group[aria-invalid="true"] legend{color:var(--norato-color-status-error)}
+@media(prefers-reduced-motion:reduce){.norato-button,.norato-button__progress{transition:none;animation-duration:.01ms;animation-iteration-count:1}}
+
+.norato-button:active:not(:disabled):not(:focus-visible){transform:scale(.97)}

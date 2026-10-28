@@ -4,6 +4,12 @@
 
 Build and maintain Norato as a reusable, RTL-first Persian design system for Vue.js 3.
 
+## Terminator (project-wide)
+
+- Apply the Terminator skill at `C:\Users\s.memar\.agents\skills\terminator\SKILL.md` to all substantive project work: use evidence-first reasoning, inspect authoritative sources, verify changes, and report uncertainty honestly.
+- If that file is unavailable in a future environment, preserve these behaviors and state that the full skill reference could not be loaded; never claim it was applied without reading it.
+- Keep its use subordinate to the user's current request and all higher-priority instructions.
+
 ## Required workflow
 
 Every feature MUST follow this exact sequence:

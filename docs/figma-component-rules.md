@@ -1,5 +1,16 @@
 # Norato Figma Component Rules
 
+## File-wide evidence and typography policy
+
+- Current reference: Figma file `WWw9btcZcWPxJGpWw8fko5`, 14 chapters `9678:58478`–`9678:60263`; see [figma-source-ledger.md](figma-source-ledger.md) for extracted values and uncertainty.
+- Brand Yellow is `#FDC101`; brand Blue is `#134F89`. Old direct link blues `#2A60E7` and `#2D81FF` remain documented as inconsistent legacy instances, not brand tokens.
+- Observed info/tag pairs are kept distinct: Info `#FFF8E0/#FBEAB2`; Tag Blue `#E4F2FF/#B0D7FE`.
+- Source spacing values are evidence, not a regular product scale. Documentation-only page gutters/gaps are not promoted to component tokens.
+- Source radii `5/12/25/36/50px`, observed component surface `25px`, and observed elevation styles live as evidence-named tokens; component-specific accepted contracts remain authoritative.
+- Figma includes legacy Lalezar text roles and reports unavailable legacy font layers. Norato policy maps title roles to Estedad and body/input roles to Vazirmatn; never load Lalezar.
+- The Figma extraction says global error/success/focus colors are not known. Preserve the existing Norato state colors and do not describe them as Figma-derived.
+- Documentation page grammar: compact identity/status, yellow divider, numbered RTL title, visual content sections, source/evidence rail, and footer. It applies to the documentation presentation, not as a new component API.
+
 این سند رجیستری مرکزی تصمیم‌های بصری و فاصله‌ای کامپوننت‌های نوراتو است. هر تصمیم جدید باید ابتدا در قرارداد همان کامپوننت و سپس در این رجیستری ثبت شود.
 
 ## قواعد مشترک
@@ -10,6 +21,9 @@
 - placeholder با Vazir، اندازه ۱۲px و رنگ `#a1a1a1` است.
 - فاصله‌ی متن از Radio/Checkbox برابر ۶px است.
 - padding containerها: افقی ۱۸px و عمودی ۱۲px.
+- Documentation component-layout rule: every component example, including Figma specimens and
+  general shadcn Cards, is a direct member of one RTL responsive grid. Desktop cards are 360px wide
+  with 20px gaps; at a narrower content width the grid becomes one fluid column without overflow.
 
 ## Button
 
@@ -136,3 +150,83 @@
 - Tree View Child spacing rule: direct Children of the same Parent have exactly 0px vertical
   spacing. This applies only to Child siblings; Leaf rows inside an expanded Child retain their
   own Figma-derived compact spacing.
+- Norato design system updates (2026-10-27): preserve Norato yellow and blue as the only brand accents; use glass surfaces as a neutral treatment; component inventory status must distinguish Implemented, Adapted, Proposed and Deferred; new runtime behavior targets Vue 3 and remains RTL-first.
+# اصلاح داشبورد مستندات و نمونه‌های Vue — 2026-10-27
+
+- renderer قدیمی جزئیات کامپوننت با متن عمومی حذف شد؛ هر route فقط قرارداد مستقل همان خانواده را نشان می‌دهد.
+- کارت‌های inventory از همان نمونهٔ اختصاصی component page استفاده می‌کنند؛ specimenهای غیرفعال `inert` هستند تا کنترل بی‌عمل وارد ترتیب Tab نشود.
+- rail دوم دیگر فهرست تکراری ۴۹ کامپوننت را نمایش نمی‌دهد؛ مسیرهای اصلی و sectionهای صفحه را نگه می‌دارد.
+- راهنمای تیم، source exportها و محدودیت adapterهای فعلی را از نمونه‌های پیشنهادی جدا می‌کند.
+- تصمیم بصری: داشبورد برای اسکن‌پذیری و خوانایی ساده‌تر شده؛ رنگ، فونت و RTL نوراتو حفظ شده‌اند. این تغییر زبان بصری Figma کامپوننت‌ها را تغییر نمی‌دهد.
+
+## Button card interaction rule — 2026-10-28
+
+- Button detail uses balanced RTL card layout with separate Preview, Vue usage, and nine independent contract cards.
+- Each contract variant has a visual sample. Only actual `NoratoButton` API variants may be marked executable; contract-only options remain explicitly visual references.
+- Copy controls expose a 48px minimum target, visible focus, accessible name, and live success/failure feedback. Other component families adopt this presentation only after the Button pattern is reviewed.
+
+## Button accent and compact spacing rule — 2026-10-28
+
+- Primary fill uses Norato yellow with dark text. Secondary uses a 2px Norato-yellow stroke and dark text.
+- Button variant/state samples align content to the top with consistent gaps; sample buttons keep intrinsic width. Button preview uses compact specimen padding.
+- The focus indicator keeps the contrast outline paired with the yellow ring.
+- Button → Anatomy documentation presents the assembled primary sample and an RTL exploded map: Container is the empty enclosing outline; optional Leading Icon, Label and optional Trailing Icon are separate contents and the label appears once. Icon layers are explicitly conceptual because the current Vue adapter does not support icon slots.
+
+## Button type and shape rule — 2026-10-28
+
+- Button labels use Estedad Bold.
+- Button silhouettes use `--norato-radius-pill` (the observed 50px radius) for fully rounded ends at every Button height; copy controls, fields and surrounding cards do not inherit this shape.
+
+## Button vertical documentation and minimal card treatment — 2026-10-28
+
+- Button detail keeps Preview, Vue usage, and each contract section in one vertical column at every viewport width. Variant/state/size examples remain inside their relevant card.
+- Button contract copy is Persian-first; API names and tokens render as isolated LTR code units. Keep explanatory rows short and copyable.
+- Use a quiet surface and semantic border with compact token spacing; retain heading hierarchy, focus indication, copy target size, and the approved yellow button treatment.
+
+## Button documentation hierarchy — 2026-10-28
+
+- Apply the restrained editorial hierarchy only to the Button documentation shell: compact metadata/title, 15px section headings, 14px body, and subtle separators instead of repeated outlined/shadowed cards.
+- Keep code and copy controls quiet while preserving 48px hit targets and visible keyboard focus.
+- Do not alter Button specimen, variant, state, or size example styling as part of this page-level treatment.
+
+## Button Vue usage code block color — 2026-10-28
+
+- Use semantic `--norato-color-surface-code` (`#484848`) for the Button usage snippet and `--norato-color-text-on-code` (`#ffffff`) for its code text.
+- Scope this treatment to the Button documentation usage block. Inline code, component specimens, and other pages retain their existing roles.
+
+## Button variant gallery layout — 2026-10-28
+
+- Arrange the nine individual variant cards in three columns on desktop so all rows are complete. At tablet widths use two columns and center an unmatched final card; at narrow mobile use one column.
+- The pale sample well should hug the visual sample. Keep each Button sample's shape, type, color, size, explanatory label, support status, and copy behavior unchanged.
+- Keep card padding compact and consistent; retain the 48px minimum target for copy controls.
+
+## Button variant sample surfaces and duplicate entry — 2026-10-28
+
+- Variant samples sit directly on the page surface; do not place a gray demo well behind them. The variant treatment itself (for example, Tertiary's subtle fill) remains visible.
+- The Button gallery and contract expose seven distinct types (168 type × size × state combinations). `Danger` is the single destructive treatment; the visually identical visual-only `Danger Solid` entry is removed. `Inverse` remains a separate supported API visual example.
+
+## Button top specimen — 2026-10-28
+
+- The top Button specimen shows the yellow Primary and yellow-outline Secondary, plus a neutral gray-outline pill labeled «انصراف».
+- Inverse/Destructive stay available in the API gallery but do not appear in the top specimen. The cancellation sample is visual-only and does not add an API variant.
+
+## Component documentation rollout — 2026-10-28
+
+- Each component keeps its own route and nine-part contract. Do not group components or reuse Button-specific contract content as a stand-in for other families.
+- The compact, vertical editorial hierarchy from Button applies to non-Button documentation; keep family-specific specimens intact and use semantic tokens, RTL and accessible focus/target sizes.
+- Every useful contract section has an individually operable copy action with clear success/failure feedback.
+- Only display copyable Vue usage when the named adapter exists and the snippet matches its real props/events/model. Proposal visuals and contract-only axes are visibly labeled and never presented as executable behavior.
+- In batch 1, Input/Select examples may use `v-model` with actual `NoratoField`/`NoratoSelect` props. Checkbox/Radio examples use `NoratoChoiceGroup` with `v-model:selected`, `kind`, `id`, `label`, `options`; error and disabled examples must use supported props. ChoiceGroup has no loading or size props.
+- Button-specific approved sample, gallery, state/size axes and CSS are excluded from this general treatment.
+
+## Button playground presentation (2026-10-28)
+
+- Controls in the executable Button playground use clear RTL labels, 48px interaction targets, visible selected states and restrained motion. Respect reduced-motion preferences.
+- The Vue code copy action stays adjacent to the generated snippet. The playground remains separate from inert visual specimens.
+- Playground dropdown triggers use a centered chevron inset from the left edge in RTL. Playground switches show only their track and label, without an enclosing pill or card.
+- The Button playground variant and HTML type controls use in-page Vue listboxes with RTL placement and a yellow selected state. Their menus open below the trigger rather than through the operating system popup.
+
+## Persian numeral presentation (2026-10-28)
+
+- All user-facing numbers in the Vue documentation UI use Persian digit glyphs, including dynamic counts, section indices, sizes and component previews.
+- Executable code, token identifiers, resolved technical values and editable input values keep their machine-readable spelling; copy actions preserve the source value.

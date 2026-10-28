@@ -1,0 +1,1198 @@
+{
+  "version": "0.1.0",
+  "scope": "Static package integrity, source evidence and opaque contrast; not a full accessibility audit",
+  "baselineAvailable": true,
+  "passed": true,
+  "checks": [
+    {
+      "check": "token schema: color.brand.blue",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.brand.blue",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.brand.blue-dark",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.brand.blue-dark",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.brand.yellow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.brand.yellow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.text.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.text.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.text.secondary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.text.secondary",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.surface.subtle",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.surface.subtle",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.surface.sky",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.surface.sky",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.border.subtle",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.border.subtle",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.surface.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.surface.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.border.input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.border.input",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.danger.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.danger.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.warning.surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: color.warning.surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.danger.surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.success.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.success.surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.warning.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.action.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.action.hover",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.action.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.highlight.default",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.highlight.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.focus.ring",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.focus.halo",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.control.border",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.disabled.surface",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: color.disabled.text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.family.ui",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.family.display",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.support",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.support",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.label",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.page-title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.section-title",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.marketing-h1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.marketing-h1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.marketing-h2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.marketing-h2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.size.marketing-h3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.size.marketing-h3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.weight.regular",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.weight.medium",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: font.weight.strong",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: font.weight.strong",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: line-height.body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: line-height.body",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: line-height.heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: line-height.heading",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: line-height.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: line-height.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.0",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.6",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.8",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.10",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.12",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: space.16",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: radius.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: radius.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: radius.card",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: radius.card",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: radius.panel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: radius.panel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: radius.feature",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: radius.feature",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: radius.pill",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: size.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: size.control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: size.control-small",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: size.control-large",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: size.control-large",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: size.icon",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: layout.content-max",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: layout.content-max",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: layout.gutter",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: layout.gutter-mobile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: breakpoint.mobile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: breakpoint.tablet",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: shadow.card",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: shadow.card",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: shadow.panel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: shadow.panel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: shadow.highlight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: shadow.highlight",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: motion.fast",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token source locator: motion.fast",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: motion.standard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: motion.ease",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: layer.sticky",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "token schema: layer.overlay",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Generated CSS matches JSON",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Consolidated handbook matches source documents",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Contrast report matches JSON",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Contrast: body",
+      "passed": true,
+      "detail": "17.6017:1"
+    },
+    {
+      "check": "Contrast: support",
+      "passed": true,
+      "detail": "6.1414:1"
+    },
+    {
+      "check": "Contrast: blue action",
+      "passed": true,
+      "detail": "4.8214:1"
+    },
+    {
+      "check": "Contrast: yellow action",
+      "passed": true,
+      "detail": "10.7328:1"
+    },
+    {
+      "check": "Contrast: error",
+      "passed": true,
+      "detail": "5.9771:1"
+    },
+    {
+      "check": "Contrast: success",
+      "passed": true,
+      "detail": "6.8117:1"
+    },
+    {
+      "check": "Contrast: warning",
+      "passed": true,
+      "detail": "7.2286:1"
+    },
+    {
+      "check": "Contrast: control boundary",
+      "passed": true,
+      "detail": "4.0002:1"
+    },
+    {
+      "check": "Contrast: focus outer halo",
+      "passed": true,
+      "detail": "17.6017:1"
+    },
+    {
+      "check": "All consumed CSS tokens exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Unique HTML ids: index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Persian RTL: index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #main",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #top",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #overview",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #colors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #type",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #components",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #patterns",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #handoff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #components",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "HTML fragment #top",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> assets/fonts/vazirmatn-core.dda7b15e8d19.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> assets/fonts/estedad-core.c916dcc4d484.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../tokens.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> reference.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> reference.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../provenance.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../components.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../templates/feature-brief.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../tokens.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../delivery.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: index.html -> ../AGENTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: delivery.md -> templates/feature-brief.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: foundations.md -> provenance.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: foundations.md -> evidence/contrast.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: NORATO-DESIGN-SYSTEM.md -> provenance.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: NORATO-DESIGN-SYSTEM.md -> evidence/contrast.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: NORATO-DESIGN-SYSTEM.md -> templates/feature-brief.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: NORATO-DESIGN-SYSTEM.md -> evidence/source-manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: provenance.md -> evidence/source-manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> NORATO-DESIGN-SYSTEM.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> reference/index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> foundations.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> components.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> delivery.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> templates/feature-brief.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> AGENTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> foundations.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> components.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> patterns.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> delivery.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> public-web.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> provenance.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> tokens.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> tokens.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> AGENTS.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> reference/index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> evidence/source-manifest.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> evidence/README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> verification.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> contrast.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> browser-verification.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> edited-landing-desktop.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> edited-landing-mobile.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> reference-desktop.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Local link: README.md -> reference-mobile.png",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "CSS asset: assets/fonts/vazirmatn-core.dda7b15e8d19.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "CSS asset: assets/fonts/estedad-core.c916dcc4d484.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/index.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/entekhabreshte.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/majarajooyi.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/about.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/contact.html",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/typography.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/majarajooyi.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/adventure-quest.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/adventure-quest.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/video-facade.js",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/fonts.css",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/README.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/estedad-core.c916dcc4d484.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/vazirmatn-core.dda7b15e8d19.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/Estedad-OFL.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Edited baseline unchanged: site/assets/fonts/Vazirmatn-OFL.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Extracted value has source evidence: color.brand.blue",
+      "passed": true,
+      "detail": "site/index.html|:root|--blue"
+    },
+    {
+      "check": "Extracted value has source evidence: color.brand.blue-dark",
+      "passed": true,
+      "detail": "site/index.html|:root|--blue-dark"
+    },
+    {
+      "check": "Extracted value has source evidence: color.brand.yellow",
+      "passed": true,
+      "detail": "site/index.html|:root|--yellow"
+    },
+    {
+      "check": "Extracted value has source evidence: color.text.default",
+      "passed": true,
+      "detail": "site/index.html|:root|--ink"
+    },
+    {
+      "check": "Extracted value has source evidence: color.text.secondary",
+      "passed": true,
+      "detail": "site/index.html|:root|--muted"
+    },
+    {
+      "check": "Extracted value has source evidence: color.surface.subtle",
+      "passed": true,
+      "detail": "site/index.html|:root|--pale"
+    },
+    {
+      "check": "Extracted value has source evidence: color.surface.sky",
+      "passed": true,
+      "detail": "site/index.html|:root|--sky"
+    },
+    {
+      "check": "Extracted value has source evidence: color.border.subtle",
+      "passed": true,
+      "detail": "site/index.html|:root|--line"
+    },
+    {
+      "check": "Extracted value has source evidence: color.surface.default",
+      "passed": true,
+      "detail": "site/index.html|body|background"
+    },
+    {
+      "check": "Extracted value has source evidence: color.border.input",
+      "passed": true,
+      "detail": "site/contact.html|.field input,.field select|border"
+    },
+    {
+      "check": "Extracted value has source evidence: color.danger.text",
+      "passed": true,
+      "detail": "site/contact.html|.service-error|color"
+    },
+    {
+      "check": "Extracted value has source evidence: color.warning.surface",
+      "passed": true,
+      "detail": "site/majarajooyi.css|.manifesto-panel|background"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.body",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-body"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.support",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-support"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.action",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-action"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.label",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-label"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.marketing-h1",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-h1"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.marketing-h2",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-h2"
+    },
+    {
+      "check": "Extracted value has source evidence: font.size.marketing-h3",
+      "passed": true,
+      "detail": "site/typography.css|:root|--type-h3"
+    },
+    {
+      "check": "Extracted value has source evidence: font.weight.strong",
+      "passed": true,
+      "detail": "site/typography.css|main h1,main h2,main h3,main h4|font-weight"
+    },
+    {
+      "check": "Extracted value has source evidence: line-height.body",
+      "passed": true,
+      "detail": "site/typography.css|body|line-height"
+    },
+    {
+      "check": "Extracted value has source evidence: line-height.heading",
+      "passed": true,
+      "detail": "site/typography.css|main h2|line-height"
+    },
+    {
+      "check": "Extracted value has source evidence: line-height.control",
+      "passed": true,
+      "detail": "site/typography.css|.nav-cta,.button,.btn,.submit,.norato-cta-button,.advisor-link,.access-action|line-height"
+    },
+    {
+      "check": "Extracted value has source evidence: radius.control",
+      "passed": true,
+      "detail": "site/contact.html|.service-trigger|border-radius"
+    },
+    {
+      "check": "Extracted value has source evidence: radius.card",
+      "passed": true,
+      "detail": "site/index.html|.path-card|border-radius"
+    },
+    {
+      "check": "Extracted value has source evidence: radius.panel",
+      "passed": true,
+      "detail": "site/contact.html|.panel|border-radius"
+    },
+    {
+      "check": "Extracted value has source evidence: radius.feature",
+      "passed": true,
+      "detail": "site/index.html|.grades|border-radius"
+    },
+    {
+      "check": "Extracted value has source evidence: size.control",
+      "passed": true,
+      "detail": "site/contact.html|.field input,.field select|height"
+    },
+    {
+      "check": "Extracted value has source evidence: size.control-large",
+      "passed": true,
+      "detail": "site/index.html|.btn|min-height"
+    },
+    {
+      "check": "Extracted value has source evidence: layout.content-max",
+      "passed": true,
+      "detail": "site/index.html|.container|width"
+    },
+    {
+      "check": "Extracted value has source evidence: shadow.card",
+      "passed": true,
+      "detail": "site/index.html|.path-card|box-shadow"
+    },
+    {
+      "check": "Extracted value has source evidence: shadow.panel",
+      "passed": true,
+      "detail": "site/contact.html|.form-panel|box-shadow"
+    },
+    {
+      "check": "Extracted value has source evidence: shadow.highlight",
+      "passed": true,
+      "detail": "site/index.html|.nav-cta|box-shadow"
+    },
+    {
+      "check": "Extracted value has source evidence: motion.fast",
+      "passed": true,
+      "detail": "site/index.html|.btn|transition"
+    },
+    {
+      "check": "Copied font/license unchanged: estedad-core.c916dcc4d484.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Copied font/license unchanged: vazirmatn-core.dda7b15e8d19.woff2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Copied font/license unchanged: Estedad-OFL.txt",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Copied font/license unchanged: Vazirmatn-OFL.txt",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

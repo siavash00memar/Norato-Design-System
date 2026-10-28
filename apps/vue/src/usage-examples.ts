@@ -1,0 +1,8 @@
+/** Copyable, reviewed API examples keyed by the canonical catalog's `usageKey`. */
+export const usageExamples: Readonly<Record<string, string>> = {
+  button: `<script setup lang="ts">\nimport { NoratoButton } from '@norato/vue'\n<\/script>\n\n<template>\n  <NoratoButton label="ذخیرهٔ تغییرات" variant="primary" />\n<\/template>`,
+  input: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoField } from '@norato/vue'\nconst name = ref('')\n<\/script>\n<template><NoratoField id="full-name" v-model="name" label="نام و نام خانوادگی" /></template>`,
+  select: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoSelect } from '@norato/vue'\nconst city = ref('')\nconst options = [{ value: 'tehran', label: 'تهران' }]\n<\/script>\n<template><NoratoSelect id="city" v-model="city" label="شهر" :options="options" /></template>`,
+  checkbox: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoChoiceGroup } from '@norato/vue'\nconst selected = ref<string[]>([])\nconst options = [{ value: 'design', label: 'طراحی محصول' }]\n<\/script>\n<template><NoratoChoiceGroup v-model:selected="selected" kind="checkbox" id="topics" label="موضوع‌ها" :options="options" /></template>`,
+  radio: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoChoiceGroup } from '@norato/vue'\nconst selected = ref<string[]>([])\nconst options = [{ value: 'monthly', label: 'ماهانه' }]\n<\/script>\n<template><NoratoChoiceGroup v-model:selected="selected" kind="radio" id="plan" label="دوره" :options="options" /></template>`,
+}

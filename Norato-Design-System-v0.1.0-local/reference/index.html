@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="مرجع داخلی طراحی و توسعهٔ محصولات نوراتو، استخراج‌شده از لندینگ اصلاح‌شده.">
+  <title>دیزاین سیستم نوراتو · نسخهٔ ۰٫۱</title>
+  <link rel="preload" href="assets/fonts/vazirmatn-core.dda7b15e8d19.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/estedad-core.c916dcc4d484.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="reference.css">
+  <script src="reference.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">رفتن به محتوای اصلی</a>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="نوراتو، ابتدای مرجع"><span>نوراتو</span><i aria-hidden="true">✦</i><span class="brand-divider"></span><span class="brand-note">زبان طراحی محصولات</span></a>
+      <a class="version" href="../README.md"><span class="status-dot" aria-hidden="true"></span>پیش‌نویس ۰٫۱٫۰</a>
+    </div>
+  </header>
+  <div class="shell" id="top">
+    <aside class="sidebar" aria-label="راهنمای مرجع">
+      <p class="sidebar-title">راهنمای طراحی</p>
+      <nav aria-label="بخش‌های دیزاین سیستم">
+        <a href="#overview"><span>۰۱</span>مبنای مشترک</a>
+        <a href="#colors"><span>۰۲</span>رنگ و معنا</a>
+        <a href="#type"><span>۰۳</span>صدای نوشتاری</a>
+        <a href="#components"><span>۰۴</span>اجزای رابط</a>
+        <a href="#patterns"><span>۰۵</span>صفحهٔ نمونه</a>
+        <a href="#handoff"><span>۰۶</span>از طراحی تا کد</a>
+      </nav>
+      <div class="sidebar-note"><span class="mini-star" aria-hidden="true">✦</span><strong>از نسخهٔ اصلاح‌شده</strong><p>مبنای این مرجع، فایل‌های فعلی لندینگ است؛ نسخهٔ اولیهٔ ZIP مرجع طراحی نیست.</p><a href="../provenance.md">مشاهدهٔ منشأ و حدود اعتبار ←</a></div>
+    </aside>
+    <main id="main">
+      <section class="hero" id="overview" aria-labelledby="hero-title">
+        <span class="eyebrow">NORATO DESIGN SYSTEM <span aria-hidden="true">/</span> 0.1</span>
+        <h1 id="hero-title">یک زبان مشترک،<br>برای همهٔ مسیرهای <em>نوراتو.</em></h1>
+        <p class="hero-description">از رنگ و تایپوگرافی تا فرم و نتیجه؛ مرجعی برای اینکه هر تجربهٔ تازه، ادامهٔ آشنای همان خانواده باشد.</p>
+        <div class="hero-actions"><a class="button highlight" href="#components">دیدن اجزای رابط <span aria-hidden="true">←</span></a><a class="text-link" href="../README.md">خواندن راهنمای استفاده <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-footer"><span><i class="tiny-dot" aria-hidden="true"></i>فارسی و راست‌به‌چپ</span><span>مستقل از فریم‌ورک</span><span>برای توسعه‌دهندهٔ انسانی و AI</span></div>
+      </section>
+
+      <div class="baseline-strip"><div><strong>هویت استخراج‌شده</strong><p>آبی و زرد فعلی، استعداد، وزیرمتن و سطوح روشن.</p></div><span class="strip-arrow" aria-hidden="true">←</span><div><strong>قراردادهای پیشنهادی اپ</strong><p>نقش اجزا، حالت‌ها، الگوهای صفحه و معیار پذیرش.</p></div></div>
+
+      <section class="guide-section" id="colors" aria-labelledby="colors-title">
+        <div class="section-heading"><div><span class="section-number">۰۲ / FOUNDATIONS</span><h2 id="colors-title">رنگ، با یک نقش روشن</h2></div><span class="tag extracted">پالت پایه: استخراج‌شده</span></div>
+        <p class="section-intro">آبی به مسیر جهت می‌دهد، زرد لحظهٔ مهم را برجسته می‌کند. نقش‌های تعاملی، قرارداد پیشنهادی این نسخه‌اند.</p>
+        <div class="palette">
+          <article class="swatch blue"><div class="swatch-face"><span>آبی نوراتو</span><i aria-hidden="true">↗</i></div><div class="swatch-meta"><strong>برند و اقدام</strong><code>#356AE6</code></div></article>
+          <article class="swatch yellow"><div class="swatch-face"><span>زرد نوراتو</span><i aria-hidden="true">✦</i></div><div class="swatch-meta"><strong>تأکید و شروع</strong><code>#FDC101</code></div></article>
+          <article class="swatch ink"><div class="swatch-face"><span>متن اصلی</span><i aria-hidden="true">آ</i></div><div class="swatch-meta"><strong>خوانایی و تمرکز</strong><code>#141923</code></div></article>
+          <article class="swatch pale"><div class="swatch-face"><span>سطح ملایم</span><i aria-hidden="true">▦</i></div><div class="swatch-meta"><strong>زمینه و گروه‌بندی</strong><code>#F4F8FF</code></div></article>
+        </div>
+        <div class="color-note"><span class="note-symbol" aria-hidden="true">!</span><p><strong>زرد با متن تیره.</strong> سفید روی زرد و زرد روی سفید برای متن عادی مناسب نیستند. رنگ‌های وضعیت همراه متن و نشانه استفاده می‌شوند.</p></div>
+      </section>
+
+      <section class="guide-section" id="type" aria-labelledby="type-title">
+        <div class="section-heading"><div><span class="section-number">۰۳ / TYPOGRAPHY</span><h2 id="type-title">روشن، خوانا، آشنا</h2></div><span class="tag extracted">خانواده و نقش: استخراج‌شده</span></div>
+        <div class="type-panel"><div class="type-spec"><span class="type-family">استعداد</span><code>Estedad · 800</code><span>عنوان‌ها و تأکیدهای بزرگ</span></div><div class="type-sample"><p class="display-sample">مسیر روشن‌تر،<br>با انتخاب آگاهانه‌تر.</p></div></div>
+        <div class="type-panel"><div class="type-spec"><span class="type-family ui-family">وزیرمتن</span><code>Vazirmatn · 400–800</code><span>متن، برچسب و کنترل‌ها</span></div><div class="type-sample"><p class="body-sample">گزینه‌هایت را بررسی کن، تفاوت‌ها را ببین و قدم بعدی را با اطمینان بیشتری بردار.</p><div class="type-scale"><span>بدنه <b>۱۶</b></span><span>توضیح <b>۱۵</b></span><span>برچسب <b>۱۳</b></span></div></div></div>
+        <p class="caption">فونت‌ها از فایل‌های محلی نسخهٔ اصلاح‌شده بارگذاری می‌شوند. اندازهٔ عنوان صفحهٔ اپ و تراکم رابط، پیشنهاد این نسخه است.</p>
+      </section>
+
+      <section class="guide-section" id="components" aria-labelledby="components-title">
+        <div class="section-heading"><div><span class="section-number">۰۴ / COMPONENTS</span><h2 id="components-title">اجزا، با رفتار قابل پیش‌بینی</h2></div><a class="text-link" href="../components.md">قرارداد کامل اجزا ←</a></div>
+        <div class="demo-grid">
+          <article class="demo-card"><div class="demo-heading"><h3>اقدام‌ها</h3><span class="tag proposed">نگاشت پیشنهادی</span></div><p class="demo-description">آبی برای کار اصلی در اپ؛ زرد برای اقدام برجسته در زمینهٔ مناسب.</p><div class="button-stack"><button class="button standard" type="button" data-feedback="این نمونه فقط بازخورد دکمهٔ آبی را نشان می‌دهد.">ذخیرهٔ اولویت‌ها <span aria-hidden="true">←</span></button><button class="button highlight" type="button" data-feedback="این نمونه فقط بازخورد اقدام برجسته را نشان می‌دهد.">شروع مسیر <span aria-hidden="true">✦</span></button><button class="button secondary" type="button" data-feedback="در این مرجع، مسیر بازگشت واقعی تعریف نشده است.">بازگشت به گزینه‌ها</button><button class="button" type="button" disabled>در دسترس نیست</button></div><p class="caption">با Tab فوکوس دو لایه را ببین؛ حالت hover و فشار هم قابل بررسی است.</p></article>
+          <article class="demo-card"><div class="demo-heading"><h3>فرم و بازخورد</h3><span class="tag proposed">قرارداد پیشنهادی</span></div><p class="demo-description">با فرم خالی یا نام کوتاه، پیام خطا را بررسی کن. این نمونه داده‌ای ذخیره نمی‌کند.</p><form id="demo-form" novalidate><div class="field"><label for="demo-name">نام و نام خانوادگی <span class="required">(اجباری)</span></label><input id="demo-name" name="displayName" autocomplete="off" placeholder="برای مثال: سارا احمدی" aria-describedby="name-hint name-error"><span class="field-hint" id="name-hint">در این نمونه دست‌کم ۳ نویسه بنویس.</span><span class="field-error" id="name-error" hidden></span></div><div class="field"><label for="demo-service">مسیر مورد نظر</label><select id="demo-service" name="service"><option>انتخاب رشته</option><option>ماجراجویی دانش‌آموزی</option><option>همراهی مشاور</option></select></div><button class="button standard full" id="demo-submit" type="submit">بررسی نمونهٔ فرم</button><p id="form-result" class="form-result" role="status" aria-live="polite"></p></form></article>
+        </div>
+        <div class="status-grid"><div class="notice info"><strong>اطلاع</strong><p>این صفحه مرجع بررسی طراحی است.</p></div><div class="notice success"><strong>موفقیت</strong><p>نمونهٔ پیام پس از انجام واقعی کار.</p></div><div class="notice warning"><strong>نیاز به توجه</strong><p>پیش از ادامه، اطلاعات را مرور کن.</p></div><div class="notice danger"><strong>خطا</strong><p>ذخیره انجام نشد؛ دوباره تلاش کن.</p></div></div>
+        <p class="caption">رنگ‌های تکمیلی موفقیت و هشدار پیشنهادی‌اند. این چهار کادر، نمونهٔ ثابت وضعیت هستند.</p>
+        <fieldset class="choice-panel"><legend>نمونهٔ انتخاب تکی · قرارداد پیشنهادی C03</legend><div class="choices"><label class="choice"><input type="radio" name="path" value="discover" checked><span><strong>شناخت خود</strong><small>کشف علاقه‌ها و توانایی‌ها</small></span></label><label class="choice"><input type="radio" name="path" value="compare"><span><strong>بررسی انتخاب‌ها</strong><small>مقایسه و اولویت‌بندی گزینه‌ها</small></span></label></div></fieldset>
+      </section>
+
+      <section class="guide-section" id="patterns" aria-labelledby="patterns-title">
+        <div class="section-heading"><div><span class="section-number">۰۵ / PRODUCT PATTERN</span><h2 id="patterns-title">همان خانواده، برای یک کار واقعی</h2></div><span class="tag proposed">الگوی اپ: پیشنهادی</span></div>
+        <p class="section-intro">نمونهٔ زیر زبان بصری نوراتو را در یک فهرست کاربردی نشان می‌دهد. همهٔ داده‌ها ساختگی‌اند؛ این صفحه به اپ یا API متصل نیست.</p>
+        <div class="app-preview">
+          <div class="app-topline"><span class="app-product"><span class="tiny-star" aria-hidden="true">✦</span>نوراتو / انتخاب رشته</span><span class="sample-badge">دادهٔ نمونه</span></div>
+          <div class="app-page-heading"><div><span class="eyebrow small">یک قدم به تصمیم روشن‌تر</span><h3>فهرست انتخاب‌های من</h3><p>گزینه‌ها را مرور کن و انتخاب‌هایت را دقیق‌تر بشناس.</p></div><a class="button highlight" href="../templates/feature-brief.md">شرح فیچر نمونه <span aria-hidden="true">↗</span></a></div>
+          <div class="filter-row"><div class="search-field"><label for="sample-search">جست‌وجوی گزینه‌ها</label><input id="sample-search" type="search" placeholder="نام رشته یا شهر" autocomplete="off" aria-controls="sample-results"></div><p class="result-count" id="result-count" role="status" aria-live="polite">۳ گزینهٔ نمایشی</p></div>
+          <div class="table-wrap" id="sample-results" role="region" aria-label="جدول انتخاب‌های نمونه؛ در عرض کم قابل پیمایش" tabindex="0"><table><caption class="visually-hidden">انتخاب‌های ساختگی برای نمایش طراحی جدول</caption><thead><tr><th scope="col">اولویت</th><th scope="col">رشته و دانشگاه</th><th scope="col">شهر</th><th scope="col">وضعیت نمونه</th></tr></thead><tbody id="sample-rows"><tr data-search="مهندسی کامپیوتر دانشگاه نمونه تهران"><td><span class="rank">۰۱</span></td><th scope="row"><strong>مهندسی کامپیوتر</strong><small>دانشگاه نمونهٔ اول</small></th><td>تهران</td><td><span class="table-status">در حال بررسی</span></td></tr><tr data-search="روانشناسی دانشگاه نمونه شیراز"><td><span class="rank">۰۲</span></td><th scope="row"><strong>روان‌شناسی</strong><small>دانشگاه نمونهٔ دوم</small></th><td>شیراز</td><td><span class="table-status">در حال بررسی</span></td></tr><tr data-search="طراحی صنعتی دانشگاه نمونه اصفهان"><td><span class="rank">۰۳</span></td><th scope="row"><strong>طراحی صنعتی</strong><small>دانشگاه نمونهٔ سوم</small></th><td>اصفهان</td><td><span class="table-status">در حال بررسی</span></td></tr></tbody></table></div>
+          <div class="empty-state" id="sample-empty" hidden><span aria-hidden="true">⌕</span><h4>با این جست‌وجو گزینه‌ای پیدا نشد.</h4><p>عبارت دیگری بنویس یا جست‌وجو را پاک کن.</p><button class="button secondary" type="button" id="clear-search">پاک‌کردن جست‌وجو</button></div>
+          <div class="app-bottomline"><span>نمونهٔ بصری P03 / C07</span><span>اطلاعات آموزشی واقعی یا توصیهٔ تحصیلی نیست.</span></div>
+        </div>
+      </section>
+
+      <section class="handoff" id="handoff" aria-labelledby="handoff-title"><div><span class="section-number">۰۶ / HANDOFF</span><h2 id="handoff-title">از ظاهر مشترک،<br>به اجرای قابل بررسی.</h2><p>همراه هر فیچر، هدف و رفتار را تعریف کن؛ اجزا، توکن‌ها و معیارهای پذیرش را از این مرجع بگیر.</p></div><div class="handoff-links"><a href="../tokens.json"><span><strong>توکن‌های طراحی</strong><small>مقدار، نوع، وضعیت و منبع</small></span><span aria-hidden="true">↗</span></a><a href="../delivery.md"><span><strong>راهنمای تحویل و پذیرش</strong><small>پایلوت، مهاجرت و بررسی خروجی</small></span><span aria-hidden="true">↗</span></a><a href="../AGENTS.md"><span><strong>راهنمای عامل‌های AI</strong><small>دستورهای قابل ارجاع در مخزن محصول</small></span><span aria-hidden="true">↗</span></a></div></section>
+      <footer class="footer"><span>نوراتو · دیزاین سیستم ۰٫۱٫۰</span><span>پیش‌نویس برای بررسی؛ کتابخانهٔ production نیست.</span><a href="#top">بازگشت به بالا ↑</a></footer>
+    </main>
+  </div>
+  <p class="feedback-toast" id="global-feedback" role="status" aria-live="polite" hidden></p>
+</body>
+</html>

@@ -1,5 +1,2 @@
-export const noratoV1Inventory = {
-  sourceSection: '8772:1368',
-  representative: ['Button', 'Field'],
-  planned: ['Tag', 'Search', 'Checkbox', 'Radio', 'Date Picker', 'Upload', 'Tree View'],
-} as const;
+/** @deprecated Import the full, typed componentCatalog from `@norato/components`. */
+export { componentCatalog as noratoV1Inventory } from './catalog'

@@ -1,0 +1,114 @@
+{
+  "method": "WCAG sRGB relative luminance; unrounded values compared to thresholds",
+  "scope": "Opaque color pairs only; not an accessibility audit",
+  "pairs": [
+    {
+      "pair": "body",
+      "foreground": "color.text.default",
+      "background": "color.surface.default",
+      "ratio": 17.60169928511674,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "support",
+      "foreground": "color.text.secondary",
+      "background": "color.surface.default",
+      "ratio": 6.141422322055167,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "blue action",
+      "foreground": "color.action.text",
+      "background": "color.action.default",
+      "ratio": 4.821352072488645,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "yellow action",
+      "foreground": "color.highlight.text",
+      "background": "color.highlight.default",
+      "ratio": 10.732806553678868,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "error",
+      "foreground": "color.danger.text",
+      "background": "color.danger.surface",
+      "ratio": 5.977084271598387,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "success",
+      "foreground": "color.success.text",
+      "background": "color.success.surface",
+      "ratio": 6.811651629293788,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "warning",
+      "foreground": "color.warning.text",
+      "background": "color.warning.surface",
+      "ratio": 7.228603795504299,
+      "minimum": 4.5,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "control boundary",
+      "foreground": "color.control.border",
+      "background": "color.surface.default",
+      "ratio": 4.000158305493147,
+      "minimum": 3,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "focus outer halo",
+      "foreground": "color.focus.halo",
+      "background": "color.surface.default",
+      "ratio": 17.60169928511674,
+      "minimum": 3,
+      "passes": true,
+      "required": true
+    },
+    {
+      "pair": "yellow alone on white: avoid",
+      "foreground": "color.brand.yellow",
+      "background": "color.surface.default",
+      "ratio": 1.639990360124718,
+      "minimum": 3,
+      "passes": false,
+      "required": false
+    },
+    {
+      "pair": "white on yellow: avoid",
+      "foreground": "color.surface.default",
+      "background": "color.brand.yellow",
+      "ratio": 1.639990360124718,
+      "minimum": 4.5,
+      "passes": false,
+      "required": false
+    },
+    {
+      "pair": "legacy pale input border: do not use as only boundary",
+      "foreground": "color.border.input",
+      "background": "color.surface.default",
+      "ratio": 1.3862654789513749,
+      "minimum": 3,
+      "passes": false,
+      "required": false
+    }
+  ]
+}

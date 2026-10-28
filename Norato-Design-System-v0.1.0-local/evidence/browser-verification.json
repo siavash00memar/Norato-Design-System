@@ -1,0 +1,213 @@
+{
+  "version": "0.1.0",
+  "scope": "Reference browser behavior and rendering; no screen-reader or complete WCAG audit",
+  "checks": [
+    {
+      "name": "Edited landing fonts verified in browser",
+      "passed": true,
+      "detail": {
+        "h1": {
+          "fontFamily": "Estedad, \"Estedad Fallback\", Tahoma, sans-serif",
+          "fontSize": "56px",
+          "fontWeight": "800",
+          "color": "rgb(20, 25, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "0px"
+        },
+        "body": {
+          "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "color": "rgb(20, 25, 35)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "borderRadius": "0px"
+        },
+        "cta": {
+          "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "800",
+          "color": "rgb(23, 33, 58)",
+          "backgroundColor": "rgb(253, 193, 1)",
+          "borderRadius": "13px"
+        },
+        "card": {
+          "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "color": "rgb(20, 25, 35)",
+          "backgroundColor": "rgb(220, 238, 255)",
+          "borderRadius": "20px"
+        },
+        "fontsLoaded": true
+      }
+    },
+    {
+      "name": "Edited contact final CSS overrides verified",
+      "passed": true,
+      "detail": {
+        "input": {
+          "height": "54px",
+          "backgroundColor": "rgb(249, 251, 255)",
+          "borderRadius": "13px"
+        },
+        "submit": {
+          "height": "54px",
+          "backgroundColor": "rgb(253, 193, 1)",
+          "borderRadius": "13px"
+        },
+        "panel": {
+          "height": "572.172px",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "24px"
+        }
+      }
+    },
+    {
+      "name": "Reference fonts load from local package",
+      "passed": true
+    },
+    {
+      "name": "No page-level horizontal overflow at 320px",
+      "passed": true,
+      "detail": {
+        "viewport": 320,
+        "body": 320,
+        "document": 320
+      }
+    },
+    {
+      "name": "No page-level horizontal overflow at 390px",
+      "passed": true,
+      "detail": {
+        "viewport": 390,
+        "body": 390,
+        "document": 390
+      }
+    },
+    {
+      "name": "No page-level horizontal overflow at 768px",
+      "passed": true,
+      "detail": {
+        "viewport": 768,
+        "body": 768,
+        "document": 768
+      }
+    },
+    {
+      "name": "No page-level horizontal overflow at 1024px",
+      "passed": true,
+      "detail": {
+        "viewport": 1024,
+        "body": 1024,
+        "document": 1024
+      }
+    },
+    {
+      "name": "No page-level horizontal overflow at 1440px",
+      "passed": true,
+      "detail": {
+        "viewport": 1440,
+        "body": 1440,
+        "document": 1440
+      }
+    },
+    {
+      "name": "Invalid form associates error and focuses invalid field",
+      "passed": true
+    },
+    {
+      "name": "Form loading prevents duplicate submit and clearly reports simulation",
+      "passed": true
+    },
+    {
+      "name": "Search filters results, exposes distinct empty state and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Native radio group supports keyboard selection",
+      "passed": true
+    },
+    {
+      "name": "Keyboard skip link and visible two-layer focus work",
+      "passed": true,
+      "detail": {
+        "outline": "solid",
+        "shadow": "rgb(20, 25, 35) 0px 0px 0px 6px"
+      }
+    },
+    {
+      "name": "Reduced motion disables smooth scrolling",
+      "passed": true
+    },
+    {
+      "name": "Long Persian input remains editable at narrow viewport",
+      "passed": true
+    },
+    {
+      "name": "200% text enlargement proxy has no page overflow",
+      "passed": true,
+      "detail": {
+        "width": 768,
+        "actual": 768
+      }
+    },
+    {
+      "name": "No JavaScript exceptions or failed resource responses",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "baselineStyles": {
+    "h1": {
+      "fontFamily": "Estedad, \"Estedad Fallback\", Tahoma, sans-serif",
+      "fontSize": "56px",
+      "fontWeight": "800",
+      "color": "rgb(20, 25, 35)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px"
+    },
+    "body": {
+      "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(20, 25, 35)",
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "borderRadius": "0px"
+    },
+    "cta": {
+      "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+      "fontSize": "15px",
+      "fontWeight": "800",
+      "color": "rgb(23, 33, 58)",
+      "backgroundColor": "rgb(253, 193, 1)",
+      "borderRadius": "13px"
+    },
+    "card": {
+      "fontFamily": "Vazirmatn, \"Vazirmatn Fallback\", Tahoma, Arial, sans-serif",
+      "fontSize": "16px",
+      "fontWeight": "400",
+      "color": "rgb(20, 25, 35)",
+      "backgroundColor": "rgb(220, 238, 255)",
+      "borderRadius": "20px"
+    },
+    "fontsLoaded": true
+  },
+  "baselineContactStyles": {
+    "input": {
+      "height": "54px",
+      "backgroundColor": "rgb(249, 251, 255)",
+      "borderRadius": "13px"
+    },
+    "submit": {
+      "height": "54px",
+      "backgroundColor": "rgb(253, 193, 1)",
+      "borderRadius": "13px"
+    },
+    "panel": {
+      "height": "572.172px",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "borderRadius": "24px"
+    }
+  },
+  "passed": true
+}

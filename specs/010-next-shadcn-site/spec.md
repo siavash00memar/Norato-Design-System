@@ -78,3 +78,7 @@ NOT be applied to Leaf siblings within an expanded Child.
 
 Tree View labels MUST remain 12px across collapsed, expanded, checked, and indeterminate states.
 Parents use Estedad Bold; Child and Leaf labels use Vazir Bold.
+
+The Components page MUST arrange every Figma specimen and general component card in one responsive,
+RTL-start-aligned grid. Each desktop card track is exactly 360px with a 20px gap; the grid collapses
+to one fluid column when the available content width cannot accommodate a 360px track without overflow.

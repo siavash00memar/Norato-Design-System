@@ -1,0 +1,10 @@
+{
+  "name": "@norato/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./css": "./src/index.css"
+  },
+  "style": "./src/index.css"
+}

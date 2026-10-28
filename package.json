@@ -4,7 +4,8 @@
   "version": "0.2.0",
   "packageManager": "pnpm@10.0.0",
   "scripts": {
-    "check:tokens": "node scripts/check-tokens.mjs"
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:catalog": "node scripts/check-component-catalog.mjs"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17",

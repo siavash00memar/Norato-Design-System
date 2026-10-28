@@ -9,6 +9,9 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@norato/components": "workspace:*",
+    "@norato/tokens": "workspace:*",
+    "@norato/vue": "workspace:*",
     "vue": "^3.5.0"
   },
   "devDependencies": {
