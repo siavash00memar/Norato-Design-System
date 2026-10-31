@@ -6,7 +6,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | --- | --- | --- | --- | --- |
 | [ ] | Split Button | split-button | Proposed | Lemon desktop/mobile compared; connected preview, Vue split/dropdown menu, and dedicated Variants/States/Sizes galleries built. Four runtime sizes measured; final DoD pending. |
 | [ ] | Input | input | Implemented | Lemon desktop/mobile render compared; 390px overflow corrected (document 375px); field 48px, specimen 123px. Live value, error, disabled, loading, required, `aria-busy`, and Tab focus ring checked. Remaining family variants and final visual DoD pending. |
-| [ ] | Select | select | Implemented | Pending visual and behavior comparison |
+| [ ] | Select | select | Implemented | Lemon and Norato compared on desktop and at 390px mobile; Norato document width 1521px/375px at 1536px/390px. Single preview frame 122px desktop/98px mobile; control 512×48px desktop/318×48px mobile, RTL and no stretched control. Live native single-select changed value by selection and ArrowDown/Enter; required, invalid, disabled, loading, `aria-busy`, associated status, and 2px visible focus ring checked. Lemon glass menu, search, grouping and multi-select remain unsupported; family DoD stays open. |
 | [ ] | Combobox | combobox | Proposed | Pending visual and behavior comparison |
 | [ ] | Checkbox | checkbox | Implemented | Pending visual and behavior comparison |
 | [ ] | Radio Button | radio | Implemented | Pending visual and behavior comparison |

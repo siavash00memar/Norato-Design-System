@@ -371,3 +371,9 @@
 - Correction: preview now uses the approved Norato Button silhouette in one connected shell. The experimental Vue adapter has independent 48px-or-larger action/toggle targets and a semantic token menu.
 - Browser defect found during QA: at 390px viewport, menu aligned to the toggle's physical left edge extended to x≈432px, outside the 390px viewport. Mobile placement now anchors its right edge to the control, measuring x≈167–359px; no page overflow. Desktop left-edge alignment remains.
 - Remaining: size API, full family variant/gallery fidelity and final DoD review. Status stays Proposed.
+## 2026-10-31 — Select live playground and Lemon parity gap
+
+- Finding: the catalog labeled the adapter as implemented without describing its scope, and the detail page had only disabled examples.
+- Correction: added a live controlled native-select playground and loading semantics (`aria-busy`, associated polite status); removed a duplicate live announcement.
+- Browser evidence: desktop and 390px Lemon/Norato comparison verified RTL, a 48px field, 375px mobile document width, keyboard value changes, required/error/disabled/loading and visible focus. The former two-field preview frame measured about 343px tall on mobile; replacing it with one default field reduced the specimen frame to 98px mobile and 122px desktop, without changing the 48px control.
+- Remaining: Lemon’s glass menu, search, groups and multi-select remain unsupported by the adapter; Select DoD stays open.

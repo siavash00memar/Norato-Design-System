@@ -527,7 +527,12 @@
 - [x] Input در موبایل ۳۹۰px کنار Lemon بازبینی شد؛ پس از اصلاح شکست مسیر بلند در کد اجرایی، عرض سند Norato برابر ۳۷۵px در viewport ۳۹۰px است. فیلد ۴۸px و قاب ۱۲۳px است.
 - [x] Tab از ورودی به کنترل بعدی حرکت کرد و focus-visible حلقهٔ ۲px زرد با outline آبی نشان داد.
 - [x] حالت Loading در NoratoField با `aria-busy` و پیام status زندهٔ مرتبط اعلام می‌شود؛ Error با متن و `aria-invalid` همراه است و Disabled ورودی را غیرفعال می‌کند.
-- [ ] مقایسه و اصلاح ۴۷ کامپوننت دیگر باقی است.
+- [x] Select در Lemon و Norato روی desktop و viewport موبایل ۳۹۰px مقایسه شد؛ عرض سند موبایل هر دو ۳۷۵px است. قاب نمونهٔ تک‌فیلدی Norato حدود ۱۲۲px در desktop و ۹۸px در mobile؛ کنترل در RTL به‌ترتیب ۵۱۲×۴۸px و ۳۱۸×۴۸px است و عمودی کش نیامده.
+- [x] انتخاب مقدار Select با رویداد change و ArrowDown/Enter بررسی شد؛ مقدار انتخاب‌شده در وضعیت زنده منعکس می‌شود. گزینهٔ disabled، required، error/`aria-invalid`، loading/`aria-busy` و status مرتبط، و غیرفعال شدن کنترل بررسی شدند.
+- [x] فوکوس صفحه‌کلیدی Select با `:focus-visible` و حلقهٔ دوپیکسلی زرد با outline آبی در desktop اندازه‌گیری شد.
+- [x] کنترل‌های تغییر وضعیت playground حداقل target ۴۸px دارند؛ عرض سند در ۳۹۰px اندازه‌گیری شد و overflow ندارد.
+- [ ] Select هنوز با Lemon parity کامل ندارد: منوی شیشه‌ای اجرایی، جست‌وجو، گروه‌بندی، چندانتخابی، Chips/Summary و تأیید/انصراف در adapter نیست؛ DoD این خانواده باز است.
+- [ ] تکمیل نهایی Input و Select و بررسی ۴۶ خانوادهٔ باقی‌مانده باز است.
 ## گزارش درخواست — Split Button با مرجع Lemon (در جریان، 2026-10-31)
 
 - [x] صفحهٔ Split Button در Lemon و Norato در دسکتاپ و موبایل ۳۹۰px به‌صورت دیداری مقایسه شد؛ رنگ Primary مطابق نوراتو زرد است.

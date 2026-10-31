@@ -67,6 +67,7 @@
 - فاصله‌ی frame فلش از لبه‌ی چپ: ۶px
 - فاصله‌ی متن و frame فلش: ۶px
 - فلش از asset واقعی Figma/Material استفاده می‌کند.
+- الزام مشترک Norato برای target تعاملی ۴۸px بر اندازهٔ مرجع ۳۶px مقدم است؛ رندر مرورگر فعلی ۴۸px است. adapter بومی تنها single-select را اجرا می‌کند؛ منوی Lemon و Multi Select هنوز در محدودهٔ تکمیل‌اند.
 
 ## Date Picker
 
