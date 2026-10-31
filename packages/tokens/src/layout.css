@@ -30,6 +30,7 @@
   --norato-radius-observed-36: 36px;
   --norato-radius-observed-50: 50px;
   --norato-elevation-box: 0 2px 4px #00000026;
+  --norato-layer-popover: 10;
   --norato-elevation-modal: 0 10px 8px #00000040;
   --norato-elevation-pressed: inset 2px 4px 4px #0000002e;
   --norato-elevation-chatbot: 0 2px 10px #00000026;
@@ -49,6 +50,10 @@
   --norato-border-medium: 2px;
 
   --norato-control-target-min: 48px;
+  --norato-split-button-visual-small: var(--norato-space-8);
+  --norato-split-button-visual-medium: calc(var(--norato-space-8) + var(--norato-space-2));
+  --norato-split-button-visual-large: var(--norato-control-target-min);
+  --norato-split-button-visual-xlarge: calc(var(--norato-control-target-min) + var(--norato-space-2));
   --norato-touch-target-min: 48px;
   --norato-control-visual-height: 36px;
   --norato-icon-sm: 18px;

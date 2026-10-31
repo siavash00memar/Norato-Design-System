@@ -5,7 +5,9 @@
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی یک کپسول پیوستهٔ دو‌بخشی با جداکننده است. رنگ Primary از زرد Norato می‌آید و ترکیب/نسبت اجزا از Lemon گرفته شده است. نمونهٔ Vue اجرایی در پایین آن آزمایشی است؛ تا پایان DoD وضعیت خانواده Proposed می‌ماند.
+
+گالری‌های Variants، Sizes و States مانند صفحهٔ Button مستقل‌اند: شش ترکیب پایهٔ Split/Dropdown با adapter آزمایشی، چهار اندازهٔ اجرایی و پنج حالت مستند. نمونهٔ تعاملی بالا منوی Open واقعی را اجرا می‌کند.
 
 ## Overview
 
@@ -26,6 +28,8 @@
 ## Sizes
 
 - **Split Button:** Small 32px، Medium 40px، Large 48px، XLarge 56px
+
+`size` در adapter آزمایشی چهار مقدار `small`، `medium`، `large` (پیش‌فرض) و `xlarge` دارد. ارتفاع بصری به‌ترتیب ۳۲، ۴۰، ۴۸ و ۵۶ پیکسل است؛ هدف تعاملی دو اندازهٔ اول حداقل ۴۸ پیکسل باقی می‌ماند.
 
 ## States
 
@@ -52,6 +56,10 @@
 ### جهت RTL
 
 فلش منو سمت چپ دکمه قرار می‌گیره و منو زیرش، از لبه‌ی چپ باز میشه.
+
+### Vue 3 API آزمایشی
+
+`NoratoSplitButton` با `id`، `label` و `items` (آرایهٔ `{ value, label, disabled? }`) کار می‌کند. `mode` برابر `split` یا `dropdown` است؛ `variant` برای Split شامل `primary`، `secondary` و `destructive` و برای Dropdown شامل `primary`، `secondary` و `tertiary` است. `size` چهار مقدار `small`، `medium`، `large` و `xlarge` دارد. `disabled` و `loading` هر دو اکشن را متوقف می‌کنند. اکشن اصلی رویداد `primary-action` و انتخاب منو رویداد `select` با `value` را منتشر می‌کند. پشتیبانی آیکن هنوز وجود ندارد.
 
 ## Accessibility
 

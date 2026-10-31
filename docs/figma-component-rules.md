@@ -46,6 +46,18 @@
 - border: `#e8e8e8`
 - radius: ۲۵px
 
+## Split Button — Lemon visual parity, 2026-10-31
+
+- The top specimen follows `https://lemonui.ir/#split-button`: one connected capsule, a single divider, main action on the right and menu toggle on the physical left in RTL. Norato yellow Primary and semantic tokens replace Lemon's dark palette.
+- Both runtime segments must be separate 48px-or-larger Tab targets. The menu opens below the toggle with its left edge aligned to the toggle's left edge; ArrowDown/ArrowUp, Home/End, Escape and outside-click behavior follow the documented Vue contract.
+- Split Button size API implements Small/Medium/Large/XLarge with 32/40/48/56px visual capsules; Small/Medium keep 48px native button targets. Verify both visual size and target geometry in the browser.
+
+## Input — Lemon visual parity, 2026-10-31
+
+- Use `https://lemonui.ir/#input` for the visual arrangement of the top specimen: one compact, labeled field with helper text. Preserve Norato semantic colors, Estedad/Vazirmatn, RTL label/helper placement and the 48px control target.
+- The top Input specimen is inert and uses an LTR email placeholder inside an RTL field group. The separate Vue playground exercises the actual `NoratoField` adapter; do not imply that its generic text API implements the other Input families or four sizes.
+- Keep the field's rendered height independent of the preview frame. Current desktop measurement: field 48px, group about 97px, frame about 147px.
+
 ## Select
 
 - مرجع: Figma `8775:23875`

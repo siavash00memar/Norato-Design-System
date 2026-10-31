@@ -9,8 +9,8 @@ const planOptions = [{ value: 'monthly', label: 'ماهانه' }, { value: 'year
 <template>
   <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button' }" aria-hidden="true" inert>
     <div v-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /><span class="sample-button-cancel">انصراف</span></div>
-    <div v-else-if="name==='Split Button'" class="sample-split"><button class="button primary">ذخیره</button><button class="button primary sample-caret" aria-label="گزینه‌های بیشتر">⌄</button></div>
-    <div v-else-if="name==='Input'" class="sample-form-controls"><NoratoField id="specimen-full-name" model-value="نگار محمدی" label="نام و نام خانوادگی" helper-text="این نام در نمایهٔ شما نمایش داده می‌شود." :disabled="true" /><NoratoField id="specimen-error-name" label="نام کاربری" model-value="" placeholder="مثلاً negar" error-text="این نام قبلاً انتخاب شده است." :disabled="true" /></div>
+    <div v-else-if="name==='Split Button'" class="sample-split"><NoratoButton label="ذخیره" /><NoratoButton label="⌄" icon-only accessible-label="گزینه‌های بیشتر" /></div>
+    <div v-else-if="name==='Input'" class="sample-form-controls sample-input-specimen"><NoratoField id="specimen-email" label="ایمیل" placeholder="name@example.com" helper-text="ایمیل کاری‌ات را وارد کن." dir="ltr" /></div>
     <div v-else-if="name==='Select'" class="sample-form-controls"><NoratoSelect id="specimen-city" label="شهر" model-value="tehran" :options="[{value:'tehran',label:'تهران'},{value:'shiraz',label:'شیراز'},{value:'disabled',label:'گزینهٔ غیرفعال',disabled:true}]" :disabled="true" /><NoratoSelect id="specimen-error-city" label="استان" :options="[{value:'tehran',label:'تهران'}]" error-text="یک استان انتخاب کنید." :disabled="true" /></div>
     <div v-else-if="name==='Combobox'" class="sample-combo"><input class="doc-input" value="طرا" aria-label="جست‌وجوی گزینه" /><div class="sample-options"><span>طراحی رابط کاربری</span><b>طراحی محصول</b></div></div>
     <div v-else-if="name==='Checkbox'" class="sample-form-controls"><NoratoChoiceGroup kind="checkbox" id="specimen-topics" label="موضوع‌های موردعلاقه" :options="topicOptions" :selected="['design']" /><NoratoChoiceGroup kind="checkbox" id="specimen-required-topics" label="انتخاب موضوع" :options="topicOptions.slice(0,2)" error-text="حداقل یک موضوع انتخاب کنید." /></div>
@@ -32,7 +32,7 @@ const planOptions = [{ value: 'monthly', label: 'ماهانه' }, { value: 'year
     <div v-else-if="name==='Command Palette'" class="sample-command"><div>⌕　جست‌وجوی دستور… <kbd>Esc</kbd></div><span>صفحات</span><b>▦　کامپوننت‌ها <kbd>↵</kbd></b><span>اقدام‌ها</span><i>＋　ساخت پروژه</i></div>
     <div v-else-if="name==='Tree View'" class="sample-tree"><b>⌄　📁 پروژه‌ها</b><span>　⌄　📁 لمون</span><i>　　▧　README.md</i><span>　›　📁 نوراتو</span></div>
     <div v-else-if="name==='Alert'" class="sample-alert"><b>✓　تغییرات ذخیره شد</b><span>اطلاعات پروژه با موفقیت به‌روزرسانی شد.</span><button>بستن</button></div>
-    <div v-else-if="name==='Banner'" class="sample-banner"><b>🍋　نسخهٔ جدید آماده است</b><span>لمون ۱٫۱ با قابلیت‌های تازه منتشر شد.</span><button>مشاهده</button><i>×</i></div>
+    <div v-else-if="name==='Banner'" class="sample-banner"><b>نسخهٔ جدید آماده است</b><span>نوراتو با قابلیت‌های تازه منتشر شد.</span><button>مشاهده</button><i>×</i></div>
     <div v-else-if="name==='Toast'" class="sample-toast"><b>✓</b><span><strong>فایل حذف شد</strong><small>report.pdf به سطل زباله رفت</small></span><button>برگردان</button></div>
     <div v-else-if="name==='Tooltip'" class="sample-tooltip"><span>دکمهٔ آیکنی　ⓘ</span><b>کپی پیوند</b></div>
     <div v-else-if="name==='Progress'" class="sample-progress"><b>بارگذاری فایل <span>۶۲٪</span></b><i><em /></i></div>
@@ -50,12 +50,12 @@ const planOptions = [{ value: 'monthly', label: 'ماهانه' }, { value: 'year
     <div v-else-if="name==='Timeline'" class="sample-timeline"><b>سفارش ثبت شد <small>۱۰:۲۰</small></b><span>│</span><b>پرداخت تأیید شد <small>۱۰:۲۲</small></b></div>
     <div v-else-if="name==='Charts'" class="sample-chart"><header>فروش ماهانه <small>نیمهٔ اول ۱۴۰۵</small></header><div><i v-for="h in [35,62,45,80,56,92]" :key="h" :style="{height:`${h}%`}" /></div><footer>فروردین　اردیبهشت　خرداد</footer></div>
     <div v-else-if="name==='Divider'" class="sample-divider"><i />یا<i /></div>
-    <details v-else-if="name==='Accordion'" class="sample-accordion" open><summary>لمون رایگانه؟ <b>⌃</b></summary><p>آره؛ استفاده از لمون برای پروژه‌ها رایگانه.</p></details>
+    <details v-else-if="name==='Accordion'" class="sample-accordion" open><summary>نوراتو رایگان است؟ <b>⌃</b></summary><p>بله؛ می‌توانید از نوراتو در پروژه‌های خود استفاده کنید.</p></details>
     <div v-else-if="name==='Modal'" class="sample-modal"><b>این پروژه حذف شود؟</b><span>همهٔ فایل‌ها برای همیشه پاک می‌شوند.</span><footer><button>انصراف</button><button>حذف پروژه</button></footer></div>
     <div v-else-if="name==='Drawer'" class="sample-drawer"><header>فیلترها <b>×</b></header><label><input type="checkbox" checked /> فقط موارد موجود</label><button>اعمال فیلتر</button></div>
     <div v-else-if="name==='Popover'" class="sample-popover"><span>اشتراک‌گذاری　⌄</span><div><b>پیوند اشتراک</b><small>پیوند نمونه ۱۲۳</small></div></div>
     <div v-else-if="name==='Image'" class="sample-image"><span>تصویر محصول</span><b>+۱۲</b></div>
     <div v-else-if="name==='Carousel'" class="sample-carousel"><header>پیشنهادهای امروز <span>‹　›</span></header><div><i>کفش ورزشی</i><i>کیف روزمره</i><i>لباس تمرین</i></div><footer>●　○　○</footer></div>
-    <div v-else-if="name==='Chat'" class="sample-chat"><b>سارا　<span>آنلاین</span></b><p class="incoming">فایل لمون رو دیدی؟</p><p class="outgoing">آره، خیلی تمیز شده 🍋</p><footer>پیام…　➤</footer></div>
+    <div v-else-if="name==='Chat'" class="sample-chat"><b>سارا　<span>آنلاین</span></b><p class="incoming">فایل نوراتو را دیدی؟</p><p class="outgoing">بله، ساختار کامپوننت‌ها روشن است.</p><footer>پیام…　➤</footer></div>
   </div>
 </template>

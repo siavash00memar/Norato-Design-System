@@ -9,6 +9,7 @@ export type PrimitiveDecision = {
  */
 export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   button: { candidate: 'shadcn/button', decision: 'Customize with Norato tokens before custom build.' },
+  'split-button': { candidate: 'shadcn/button + dropdown-menu', decision: 'Use the existing Norato Button silhouette and native Vue button/menu semantics; a dropdown primitive is not installed in this package. Verify keyboard and RTL behavior before maturity upgrade.' },
   input: { candidate: 'shadcn/input + label contract', decision: 'Compose with Norato RTL and validation contract.' },
   tag: { candidate: 'shadcn/badge', decision: 'Review semantics before use; not a generic button.' },
   checkbox: { candidate: 'shadcn/checkbox', decision: 'Use native keyboard and selected semantics.' },
