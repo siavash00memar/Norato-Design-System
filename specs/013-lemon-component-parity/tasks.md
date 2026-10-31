@@ -21,7 +21,7 @@ Status: active. Visual reference: https://lemonui.ir/ (especially each matching 
 - [ ] T007 Analyze: measure actual renders and compare each family with Lemon and Button; log vertical stretch causes.
 - [ ] T008 Implement Input to the approved contract; verify browser render, keyboard/focus, disabled/loading/invalid, responsive layout, tokens, TypeScript, build, and request checklist.
 - [ ] T009 Repeat the full analysis, implementation, and verification for each remaining catalog family, respecting its true runtime maturity.
-- [ ] T009a Select: keep the live controlled native single-select and its loading semantics, then implement and verify the missing Lemon glass menu, search/grouping, and Multi Select chips/summary/confirm behavior before closing its DoD.
+- [ ] T009a Select: replace native select with a Reka-backed Norato-token dropdown; implement searchable/grouped single and staged multi selection, chips/summary, confirm/cancel, sizes/label placement and states; verify keyboard, focus, RTL, mobile and all technical gates before closing its DoD.
 - [ ] T010 Final audit: compare all component pages at desktop and mobile widths; run catalog, token, TypeScript, build, and request-validation checks; update error log and handoff evidence.
 
 No item is complete solely because a source file exists. A component is complete only after actual browser validation and its documentation reflects supported behavior.

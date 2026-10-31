@@ -16,3 +16,10 @@
 
 - Several families are Proposed, so their visual specimen must stay labeled inert until supported Vue behavior exists.
 - Lemon's 32/40px controls conflict with Norato's 48px minimum target for interactive controls; preserve the Norato rule and document the visual difference.
+
+## Select refinement analysis
+
+- Use Reka UI Select primitives for the trigger, listbox, groups, item focus, RTL and portal positioning; style through Norato tokens. Use controlled draft state around multiple selection so only Confirm commits and Cancel/Escape restore the previous value.
+- Search is optional, appears inside the open menu, and filters grouped options without changing the committed value. If Select's primitive cannot safely host an editable filter while preserving its focus model, use Reka Combobox composition for the search surface and document that boundary.
+- Keep option rows and trigger at least 48px high. Lemon's four visual size labels may vary typography/padding, but never below the Norato interaction target.
+- Check the installed Reka API and keyboard semantics before coding. The component remains incomplete until single/multiple, groups/search, confirm/cancel, RTL, focus, responsive placement and all states work in the actual browser.

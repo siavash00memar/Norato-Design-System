@@ -19,3 +19,11 @@
 
 - User clarified “Persuading goal” as a persistent objective to complete all 48 component families other than Button without stopping mid-project. The objective remains active until every family's DoD passes.
 - Input was compared in the actual desktop browser render. Its top preview was reduced from two vertically stacked examples to one Lemon-aligned field; the rendered input is 48px and the preview frame is about 147px. Mobile parity and the other 47 families remain unverified.
+
+## Select implementation refinement
+
+- Acceptance contract from Lemon's Select page: a single-choice dropdown, glass menu with optional search and groups, and multiple choice shown as chips or a summary with explicit cancel/confirm controls.
+- Norato keeps semantic palette/tokens, RTL, a minimum 48px target for triggers and option rows, four size variants, error/disabled/loading/required/read-only states, and Vue controlled `modelValue` semantics.
+- Single selection updates immediately. Multi-selection is staged while the menu is open; Confirm emits the selected array, while Cancel/Escape restore the committed value.
+- Search filters options in-place and preserves the selected value when the query is cleared. Disabled items are skipped by keyboard navigation.
+- Reka UI is the evaluated Vue primitive candidate for focus management, RTL and keyboard behavior. No new behavior is accepted until the primitive version, public API and browser interactions are verified.
