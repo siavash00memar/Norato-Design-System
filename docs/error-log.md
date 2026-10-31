@@ -364,6 +364,7 @@
 - Remaining verification: mobile viewport comparison and full keyboard/focus review are open; do not mark Input complete yet.
 - Browser recheck: at 430px viewport the preview input measured 48px, specimen frame 123px, and document scroll width 429px; no horizontal overflow. Loading and Disabled both disable editing; Error sets `aria-invalid="true"` and references its text.
 - Accessibility correction: Field now marks its group `aria-busy` while loading and exposes a polite, associated loading status. Token, catalog and TypeScript checks pass; final visual comparison and keyboard/focus review remain open.
+- Mobile QA at 390×844 found document overflow (429px) caused by the long inline adapter path in the implementation header; code sample wrapping alone did not resolve it. Added mobile wrapping for inline code and sample code. Recheck measured document width 375px, field 48px, specimen 123px, and no overflowing descendants. Tab reached the next checkbox with visible 2px yellow focus ring and blue contrast outline. Loading exposed `aria-busy=true`, an associated live status, and disabled input.
 ## 2026-10-31 — Split Button disconnected preview and clipped mobile menu
 
 - Finding: the former preview used two independently rounded yellow pills; Lemon uses one connected capsule with a divider. The toggle measured about 41px wide, below Norato's 48px target.

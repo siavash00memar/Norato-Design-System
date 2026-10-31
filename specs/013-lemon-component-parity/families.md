@@ -5,7 +5,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | Done | Family | Slug | Current maturity | Evidence |
 | --- | --- | --- | --- | --- |
 | [ ] | Split Button | split-button | Proposed | Lemon desktop/mobile compared; connected preview, Vue split/dropdown menu, and dedicated Variants/States/Sizes galleries built. Four runtime sizes measured; final DoD pending. |
-| [ ] | Input | input | Implemented | Lemon/desktop render compared; top specimen corrected; live value, error, disabled, loading, required and focus checked. Mobile and full DoD pending. |
+| [ ] | Input | input | Implemented | Lemon desktop/mobile render compared; 390px overflow corrected (document 375px); field 48px, specimen 123px. Live value, error, disabled, loading, required, `aria-busy`, and Tab focus ring checked. Remaining family variants and final visual DoD pending. |
 | [ ] | Select | select | Implemented | Pending visual and behavior comparison |
 | [ ] | Combobox | combobox | Proposed | Pending visual and behavior comparison |
 | [ ] | Checkbox | checkbox | Implemented | Pending visual and behavior comparison |

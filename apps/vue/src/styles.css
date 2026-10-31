@@ -411,6 +411,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .component-doc>.component-doc-head .eyebrow,.component-doc>.source-note{font-size:var(--norato-type-body-caption-size)}
 .component-doc .usage-code{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--norato-color-surface-code);color:var(--norato-color-text-on-code)}
 .component-doc .usage-code code{color:inherit}
+@media(max-width:599px){.component-doc,.component-doc .doc-section,.component-doc .usage-code{min-inline-size:0;max-inline-size:100%}.component-doc .usage-code code{display:block;max-inline-size:100%;white-space:pre-wrap;overflow-wrap:anywhere}.component-doc code{overflow-wrap:anywhere;word-break:break-word}}
 .sample-form-controls{display:grid;gap:var(--norato-space-4);width:min(100%,32rem);text-align:start}
 .sample-form-controls .norato-field-group,.sample-form-controls .norato-select-group{gap:var(--norato-space-1)}
 .sample-input-specimen{justify-self:center}
