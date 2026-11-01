@@ -16,6 +16,7 @@
 6. Add reviewed Vue usage examples and update package exports, component catalog/primitive map if readiness metadata requires it, contracts, design rules and family evidence.
 7. In the actual browser, review every family's visual states, keyboard behavior, focus, disabled/loading/error/read-only semantics, ARIA associations, target sizes, RTL/LTR, desktop/mobile bounds and equal-viewport Lemon comparison. Independently inspect a screen reader when available.
 8. Run token, catalog, Vue typecheck, production build and diff gates; resolve regressions; update request checklist and push all changes to GitHub.
+9. After visual audit, style Input's 41 inert family-state cards as compact controls and state descriptions. Match Lemon's two-column card rhythm at 390px, use Norato tokens, show success/error clearly and keep state specimens inert. Re-run browser render review and all technical gates.
 
 ## Constraints
 

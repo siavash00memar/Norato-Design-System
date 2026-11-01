@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## گزارش مقایسهٔ گالری States در Input — Lemon و Norato، موبایل (2026-11-01)
+
+- [x] Lemon و Norato در viewport یکسان 390×844 باز شدند. Lemon برای Stateها کارت‌های توصیفی دو ستونه دارد؛ گالری Norato پیش از اصلاح، ۴۱ مورد را به‌صورت یک‌ستونه و بدون کنترل نمونه نمایش می‌داد.
+- [x] Norato اکنون هر ۴۱ خانواده/حالت را با mini-control محدود و anatomy خانوادهٔ مربوط نشان می‌دهد؛ Error قرمز و دارای پیام، Success سبز با تیک، Disabled خاکستری، Loading دارای spinner، Active دارای حلقهٔ focus، Hover و Typing با مرز برند، Read-only با سطح ملایم و Filled با متن دارند.
+- [x] چیدمان Norato در عرض ۳۹۰px دو ستون 167.5px در ظرف 343px دارد؛ همهٔ ۴۱ کارت در قاب‌اند، document width برابر 375px است. Previewهای حالت `aria-hidden` و inert هستند؛ تفاوت رفتار باید در playground زنده سنجیده شود.
+- [x] Error در گالری به‌درستی `invalid` و Success به‌درستی `success` نگاشت می‌شوند؛ قبلاً Success به Default می‌افتاد. Search Typing نیز اکنون حالت مستقل دارد.
+- [x] console مرورگر پس از اصلاح خالی از error بود؛ `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript/production build و `git diff --check` پاس شدند. Vite برای chunk 681.86KB هشدار >500KB می‌دهد.
+- [ ] checkpoint اصلاح گالری باید commit/push شود؛ ماتریس تعاملی/focus کامل و screen-reader مستقل نیز باز هستند.
+
 ## گزارش بازبینی Input و اصلاح اندازه‌ها — موبایل و دسکتاپ (2026-11-01)
 
 - [x] صفحهٔ واقعی Lemon و نوراتو در مرورگر بررسی شد؛ viewport موبایل Lemon و نوراتو 390×844 بود. زبان/جهت Norato `fa`/`rtl`، document width برابر 375px و overflow افقی نداشت.

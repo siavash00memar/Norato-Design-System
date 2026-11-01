@@ -144,6 +144,41 @@ const stateKind = (entry: Entry) => {
   return 'default'
 }
 
+const inputStateKind = (entry: Entry) => {
+  const state = `${entry.label} ${entry.detail}`.toLocaleLowerCase()
+  if (/success|موفق/.test(state)) return 'success'
+  if (/typing|تایپ/.test(state)) return 'typing'
+  return stateKind(entry)
+}
+
+const inputStateValue = (entry: Entry) => {
+  const family = entry.detail.toLocaleLowerCase()
+  if (family.includes('otp')) return '• • • •'
+  if (family.includes('password')) return '••••••'
+  if (family.includes('amount')) return '۱٬۲۵۰٬۰۰۰'
+  if (family.includes('search')) return /typing|تایپ/i.test(entry.label) ? 'عبارت جست‌وجو' : 'عبارت را بنویسید'
+  if (family.includes('phone')) return '۹۱۲ ۳۴۵ ۶۷۸۹'
+  if (family.includes('number')) return '۱۲'
+  if (family.includes('text area')) return 'متن نمونه'
+  return 'مقدار نمونه'
+}
+
+const inputStateDescription = (entry: Entry) => {
+  const state = entry.label.toLocaleLowerCase()
+  if (/success|موفق/.test(state)) return `${entry.detail} · مقدار تأیید شده است.`
+  if (/error|invalid|خطا|نامعتبر/.test(state)) return `${entry.detail} · مقدار نیاز به بازبینی دارد.`
+  if (/disabled|غیرفعال/.test(state)) return `${entry.detail} · ورودی در دسترس نیست.`
+  if (/loading|بارگذاری/.test(state)) return `${entry.detail} · پردازش در حال انجام است.`
+  if (/read.?only|فقط.?خواندنی/.test(state)) return `${entry.detail} · مقدار فقط برای مشاهده است.`
+  if (/hover|شناور/.test(state)) return `${entry.detail} · نشانگر روی فیلد قرار دارد.`
+  if (/active|pressed|فعال/.test(state)) return `${entry.detail} · فیلد در حال ویرایش است.`
+  if (/filled|پرشده/.test(state)) return `${entry.detail} · فیلد مقدار دارد.`
+  if (/typing|تایپ/.test(state)) return `${entry.detail} · عبارت در حال نوشته‌شدن است.`
+  return `${entry.detail} · آمادهٔ دریافت مقدار.`
+}
+
+const isInputFamily = (entry: Entry, family: string) => entry.detail.toLocaleLowerCase().includes(family)
+
 const selectStateDescription = (entry: Entry) => {
   const state = entry.label.toLocaleLowerCase()
   const family = entry.detail.toLocaleLowerCase()
@@ -370,8 +405,24 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
-        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
-          <div v-if="name === 'Input'" class="input-state-sample" :data-state="stateKind(entry)" aria-hidden="true" inert><small>{{ entry.detail }}</small><i><b>{{ /otp/i.test(entry.detail) ? '• • • •' : /password/i.test(entry.detail) ? '••••••' : /amount/i.test(entry.detail) ? '۱٬۲۵۰٬۰۰۰' : /search/i.test(entry.detail) ? 'جست‌وجو' : 'نمونهٔ مقدار' }}</b><span v-if="/loading/i.test(entry.label)">◌</span><span v-else-if="/error|invalid/i.test(entry.label)">!</span></i></div>
+        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
+          <div v-if="name === 'Input'" class="input-state-sample" aria-hidden="true" inert>
+            <header class="input-state-heading"><strong>{{ entry.label }}</strong><small>{{ entry.detail }}</small></header>
+            <div class="input-state-field" :data-state="inputStateKind(entry)" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'otp') ? 'ltr' : 'rtl'">
+              <span v-if="isInputFamily(entry, 'phone')" class="input-state-prefix" dir="ltr">+۹۸</span>
+              <span v-if="isInputFamily(entry, 'otp')" class="input-state-otp" aria-hidden="true"><i>۴</i><i>۸</i><i /><i /></span>
+              <span v-else-if="isInputFamily(entry, 'number')" class="input-state-stepper" aria-hidden="true"><i>−</i><i>+</i></span>
+              <span v-else-if="isInputFamily(entry, 'text area')" class="input-state-textarea" :data-state="inputStateKind(entry)">{{ inputStateValue(entry) }}</span>
+              <b v-else class="input-state-value" :class="{ 'is-placeholder': inputStateKind(entry) === 'default' && !isInputFamily(entry, 'amount') }" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'amount') ? 'ltr' : 'auto'">{{ inputStateValue(entry) }}</b>
+              <span v-if="isInputFamily(entry, 'amount')" class="input-state-currency">تومان</span>
+              <span v-if="isInputFamily(entry, 'password')" class="input-state-action" aria-hidden="true">◉</span>
+              <span v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) === 'typing'" class="input-state-action" aria-hidden="true">×</span>
+              <kbd v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) !== 'loading'" class="input-state-shortcut" dir="ltr">Ctrl K</kbd>
+              <span v-if="inputStateKind(entry) === 'loading'" class="input-state-spinner" aria-hidden="true" />
+              <span v-else-if="inputStateKind(entry) === 'invalid'" class="input-state-status" aria-hidden="true">!</span>
+              <span v-else-if="inputStateKind(entry) === 'success'" class="input-state-status" aria-hidden="true">✓</span>
+            </div>
+          </div>
           <div v-else-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
@@ -382,6 +433,9 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <template v-else-if="name === 'Radio Button' || name === 'Switch'">
             <div class="field-state-heading"><strong>{{ entry.label }}</strong><small class="field-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
             <small class="field-state-description">{{ fieldStateDescription(entry, name) }}</small>
+          </template>
+          <template v-else-if="name === 'Input'">
+            <small class="input-state-description">{{ inputStateDescription(entry) }}</small>
           </template>
           <template v-else>
             <strong>{{ entry.label }}</strong>

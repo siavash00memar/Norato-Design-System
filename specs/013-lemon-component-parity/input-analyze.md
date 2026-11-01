@@ -25,6 +25,13 @@
 - Password toggle and Search clear/shortcut controls introduce additional focus targets and require 48px sizing, accessible names and disabled semantics.
 - The large total of documented visual combinations makes full screenshot coverage impractical; prioritize full rendered state matrices plus focused live checks for every unique state/interaction.
 
+## Post-implementation visual audit — States gallery
+
+- Lemon mobile renders descriptive State cards in two columns; this audit found Norato's 41 Input state records were one-column text cards without field boundaries.
+- Error/Success were visually indistinct, Success mapped to `default`, and Search Typing also mapped to `default`.
+- Decision: compact inert family-specific mini-controls, two mobile columns, Norato-token state styling, family/state descriptions; no new runtime API. The live playground remains the source of behavior.
+- Browser result after correction: 41 cards, two 167.5px columns inside a 343px mobile grid, 375px document, distinct focus/error/success/disabled/loading/typing treatments, and `aria-hidden` + `inert` on all specimens.
+
 ## Readiness
 
 The required sequence reached Analyze. Implementation may proceed against the confirmed contract. Do not mark family maturity as complete until the full DoD evidence exists.

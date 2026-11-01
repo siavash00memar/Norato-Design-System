@@ -61,6 +61,7 @@
 - The user's approved DoD requires the Button-style page structure: Preview, live Vue playground, then nine independently copyable contract sections.
 - Lemon's 32/40/48/56px are reference sizes. Norato's interactive target floor is 48px: single-line controls measure 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measure 48/52/56/60px and wrap without horizontal overflow; three-row Textarea measures 103/108/120/128px. Hide native Number spinners beside Norato's own 48px step actions.
 - State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
+- The 41 Input family/state cards follow Lemon's two-column mobile card rhythm and use a compact, bounded mini-control for the specific family state. Keep Error/Success/Disabled/Loading and active/typing treatments visibly distinct. These specimens remain inert; never substitute them for adapter behavior checks.
 
 ## Select
 

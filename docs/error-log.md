@@ -594,3 +594,11 @@
 - **Correction:** use `BigInt` for exact digit grouping. Continue showing spelled-out words only for safe nonnegative integers so the text cannot claim a rounded value.
 - **Browser evidence:** entered `9007199254740993`; the field displayed `۹٬۰۰۷٬۱۹۹٬۲۵۴٬۷۴۰٬۹۹۳`, with no amount words, then the playground amount was restored to its default.
 - **Prevention:** preserve large integer values as strings/BigInt in financial display paths; do not pass through floating point formatting.
+
+## ERR-057 — Input States gallery omitted visual state treatments (2026-11-01)
+
+- **Component:** Input documentation page / inert States gallery
+- **Finding:** at 390×844 the 41 family/state records rendered in one text-only column. Error had no field treatment, Success mapped to Default, and Search Typing was also treated as Default; the result differed from Lemon's compact two-column state cards.
+- **Correction:** added 41 bounded family-specific mini-controls, two-column mobile and three-column wide layouts, tokenized active/error/success/disabled/loading/read-only/typing visuals, and concise state descriptions. `inputStateKind` now maps Success and Typing correctly. The specimens remain inert and the playground remains the behavior source.
+- **Browser evidence:** Lemon/Norato viewport 390×844; Norato grid 343px wide with two 167.5px columns, all 41 cards fit, document 375px. Error red, success green with check, disabled muted, loading spinner, active focus ring, hover/typing brand border. Gallery subtree is aria-hidden/inert.
+- **Prevention:** render reference states as bounded specimens and verify visual state mapping, not just the text label or class count.

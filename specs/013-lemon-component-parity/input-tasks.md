@@ -8,7 +8,9 @@
 6. [x] Update CSS and neutralize conflicting textarea sizing; maintain proportions and minimum 48px targets.
 7. [x] Add real playground coverage, contract-specific input family galleries and reviewed examples/exports.
 8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; four sizes, OTP wrapping, success/loading, read-only, stacked number and mobile non-overflow are checked, but full state/focus coverage remains incomplete.
-9. [x] Run token/catalog/typecheck/build/diff gates after the latest size and native-spinner corrections; update docs/catalog/readiness and log remaining browser evidence.
+9. [x] Re-run token/catalog/typecheck/build/diff gates after the States gallery revision; update docs/catalog/readiness and log remaining browser evidence.
 10. [x] Exact-integer Amount refinement `93f2507` is pushed to `origin/master`; local and remote refs were checked equal.
 11. [x] Translate the accepted minimum target and no-stretch rules into measured sizes; remove native Number spinners that duplicated Norato actions, preserving ArrowUp bounds.
 12. [x] Preserve exact Amount digit grouping above JavaScript's safe integer range with `BigInt`; suppress misleading spelled-out text when the value is unsafe.
+13. [x] Rebuild the 41 inert Input States cards with family-specific bounded mini-controls, distinct state styling/copy and Lemon-aligned responsive two-column mobile rhythm; correct Success/Typing state mapping.
+14. [ ] Same-viewport 390×844 Lemon/Norato, inertness, 41 cards, state treatments, no overflow, empty error console and technical gates were verified; commit/push this checkpoint.

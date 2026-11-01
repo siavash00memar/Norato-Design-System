@@ -34,3 +34,8 @@ Should Input implement all eight Lemon subtypes as executable Vue controls, or s
 ## Preview-scope history
 
 Earlier preview-only notes in `input-preview-*` recorded a temporary bounded investigation before the user expanded the family scope. They are superseded by the later explicit decision above: implement all eight adapters and a matching family playground while keeping the top reference specimen inert. No material family-level API decision remains open.
+
+## Post-implementation gallery clarification
+
+- No new interaction, props, or runtime API is required. The 41 States entries are inert visual references; all behavior stays in the eight adapters/playground.
+- Use Lemon's compact state-card hierarchy and two-column mobile composition as the presentation reference. Keep Norato's palette, tokenized glass surfaces and descriptions of the actual family state.

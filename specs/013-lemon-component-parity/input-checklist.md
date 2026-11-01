@@ -16,11 +16,12 @@
 - [x] Lemon and Norato mobile top previews were visually reviewed at 390×844: Norato document is 375px wide, its bounded glass frame does not overflow, and the preview field is 48px high. Prior matched measurements recorded Lemon frame 327.2×300px/field 321.4×41px and Norato frame 320×288px; after the size refinement desktop field geometry is 50/52/56/60px outside and 62/64/68/72px inside. The current desktop viewport was 1280×720.
 - [x] At all four mobile sizes, document width remained 375px; six OTP cells wrap at Large/XLarge without horizontal overflow, with cell sizes 48/52/56/60px. Textarea height increases monotonically (103/108/120/128px) and does not stretch to the gallery height.
 - [x] Native number spinners are hidden where the dedicated stepper exists; mobile screenshot shows one pair of increment/decrement actions and ArrowUp still respects max (`98→99`).
-- [ ] Complete supported state/size matrices remain open for all eight controls; selected RTL/LTR behavior and shared action focus were measured.
+- [x] All 41 documented Input family/state references now render bounded mini controls in Lemon-like state cards. At 390×844 the 343px gallery uses two 167.5px columns; every card fits and the document remains 375px. Default/Hover/Active/Error/Disabled/Loading/Success/Read-only/Filled/Typing show their correct state color or treatment; Error and Success have descriptions, OTP/Number/Amount/Phone/Search use their own anatomy. Gallery is inert and hidden from assistive technology; interactive behaviors remain in the playground.
+- [ ] Complete live state/size and focus-target matrices remain open for all eight controls; the inert gallery is a visual reference, not proof that every runtime combination has been exercised.
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
-- [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue TypeScript) and `git diff --check` pass. Current production JS chunk is 678.91KB; Vite warns that it exceeds 500KB.
-- [ ] Request checklist, contract, catalog maturity and family ledger truthfully record remaining work.
-- [x] Exact-integer Amount refinement `93f2507` is pushed; local `HEAD` and `origin/master` both resolve to `93f25072124a583750c425ffb2b7701679d8e7f2`. Earlier checkpoints `9e40131` and `663af1f` are historical.
+- [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue TypeScript) and `git diff --check` pass. Current production JS chunk is 681.86KB; Vite warns that it exceeds 500KB.
+- [x] Request checklist, Input contract, catalog maturity and family ledger record remaining work without closing the DoD prematurely.
+- [ ] Latest gallery checkpoint passes gates but is not yet pushed; current latest pushed commit is docs checkpoint `7563b40`. Earlier implementation checkpoints `93f2507`, `9e40131` and `663af1f` are historical.
 
 ## Remaining evidence
 
