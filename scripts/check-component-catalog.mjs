@@ -22,7 +22,7 @@ for (const [fieldIndex, label] of [[1, 'id'], [2, 'slug'], [3, 'name']]) {
 }
 
 const listedContracts = new Set()
-const allowedUsageKeys = new Set(['button', 'input', 'select', 'checkbox', 'radio'])
+const allowedUsageKeys = new Set(['button', 'input', 'select', 'combobox', 'checkbox', 'radio'])
 const requiredContractSections = ['Overview', 'Anatomy', 'Variants', 'Sizes', 'States', 'Parts', 'Usage', 'Accessibility', 'Tokens']
 const specimenSource = fs.readFileSync(path.join(root, 'apps/vue/src/ComponentSpecimen.vue'), 'utf8')
 const usageSource = fs.readFileSync(path.join(root, 'apps/vue/src/usage-examples.ts'), 'utf8')
@@ -43,9 +43,9 @@ for (const row of rows) {
 
   const adapter = extras.match(/adapter: \{ module: '([^']+)', exportName: '([^']+)' \}/)
   const usageKey = extras.match(/usageKey: '([^']+)'/)
-  if (status === 'Implemented') {
-    if (!adapter) fail(`${name}: Implemented requires a Vue adapter and export.`)
-    if (!usageKey || !allowedUsageKeys.has(usageKey[1])) fail(`${name}: Implemented requires a known usage example.`)
+  if (status === 'Implemented' || (status === 'Adapted' && (adapter || usageKey))) {
+    if (!adapter) fail(`${name}: ${status} requires a Vue adapter and export.`)
+    if (!usageKey || !allowedUsageKeys.has(usageKey[1])) fail(`${name}: ${status} requires a known usage example.`)
     if (usageKey && !usageSource.includes(`  ${usageKey[1]}:`)) fail(`${name}: usage example ${usageKey[1]} is missing.`)
     if (adapter) {
       const componentPath = path.join(root, 'packages/vue/src/components', adapter[1])
@@ -53,7 +53,7 @@ for (const row of rows) {
       const exports = fs.readFileSync(path.join(root, 'packages/vue/src/index.ts'), 'utf8')
       if (!exports.includes(`as ${adapter[2]}`)) fail(`${name}: Vue entry does not export ${adapter[2]}.`)
     }
-  } else if (adapter || usageKey) fail(`${name}: non-implemented records cannot advertise an executable adapter or usage snippet.`)
+  } else if (status !== 'Adapted' && (adapter || usageKey)) fail(`${name}: non-implemented records cannot advertise an executable adapter or usage snippet.`)
 }
 
 const contractFiles = fs.readdirSync(path.join(root, 'docs/component-contracts')).filter(file => file.endsWith('.md') && file !== 'README.md')

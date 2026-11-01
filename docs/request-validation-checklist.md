@@ -552,3 +552,18 @@
 - [x] گالری اختصاصی Variants/States/Sizes مانند Button اضافه شد؛ شش ترکیب پایه و چهار ارتفاع بصری در موبایل دیده شدند و سرریز نداشتند.
 - [x] ArrowUp، Home/End، Tab خروج از منو، گونه‌های Primary/Secondary/Destructive/Tertiary و فوکوس دیداری در مرورگر بررسی شدند.
 - [x] چهار اندازهٔ Split Button اکنون در API اجرایی هستند؛ در مرورگر ظاهر ۳۲/۴۰/۴۸/۵۶px و هدف تعاملی حداقل ۴۸px برای Small/Medium اندازه‌گیری شد. DoD کامل و تغییر وضعیت Proposed هنوز باز است.
+
+## گزارش درخواست — شروع adapter اجرایی Combobox با مرجع Lemon (در جریان، 2026-11-01)
+
+- [x] صفحهٔ Lemon Combobox و صفحهٔ Norato در مرورگر مشاهده شدند؛ مرجع ۹ بخش مستقل و preview فشرده دارد. مرجع Lemon در این نوبت در desktop دیده شد؛ mobile Lemon هنوز بررسی نشده است.
+- [x] Combobox از Proposed به Adapted تغییر کرد؛ adapter، export، usage example و playground تعاملی به مسیر مستقل متصل شدند.
+- [x] در صفحهٔ Norato هر ۹ بخش قرارداد، بخش Vue اجرایی و نمونهٔ پیش‌نمایش دیده شد.
+- [x] فیلتر فارسی و متن تطبیق‌یافته، ArrowDown و Enter، ثبت مقدار انتخاب‌شده، پیام بدون نتیجه، خطا/`aria-invalid`/`aria-describedby` و Disabled در مرورگر بررسی شدند.
+- [x] ایراد جای‌گذاری پنل به‌علت نبود `ComboboxAnchor` شناسایی و رفع شد؛ پنل پس از اصلاح هم‌راستا با فیلد و درون viewport موبایل باز شد.
+- [x] viewport محلی 390×844: ارتفاع فیلد 50px، جهت گروه RTL و عرض سند 375px در برابر viewport 390px اندازه‌گیری شد؛ overflow افقی وجود نداشت.
+- [x] صفحهٔ desktop در viewport 1280×900 باز شد؛ نمونهٔ Combobox داخل قاب 584×129px و فیلد 512×50px دیده شد. اندازه‌گیری جزئیات desktop Lemon و mobile Lemon هنوز انجام نشده است.
+- [x] `pnpm check:tokens` و Vue typecheck و production build موفق شدند.
+- [x] `pnpm check:catalog` پس از اصلاح قاعدهٔ validator برای adapterهای اختیاری Adapted موفق شد؛ `pnpm check:tokens` و `git diff --check` نیز موفق شدند.
+- [x] Vue typecheck و production build موفق شدند؛ build هشدار bundle بالای 500KB داد.
+- [x] صفحه‌کلید: فهرست باز شد، گزینهٔ فعال `aria-activedescendant` گرفت و Escape منو را بست؛ پنل با فاصلهٔ حدود ۹px زیر کنترل و هم‌عرض فیلد اندازه‌گیری شد.
+- [ ] DoD باز است: Multi، چهار اندازه، loading/recent/create، Clear، keyboard/focus matrix کامل، مقایسهٔ Lemon در mobile و اندازه‌گیری هم‌ارز desktop تکمیل نشده‌اند.

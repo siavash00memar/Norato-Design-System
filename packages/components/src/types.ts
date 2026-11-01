@@ -17,7 +17,7 @@ export type ComponentRecord = {
   contractPath: string
   /** Key consumed by the visual specimen renderer. */
   specimenKey: string
-  /** Verified Vue package entry, present only for implemented components. */
+  /** Verified Vue package entry for implemented or adapted components. */
   adapter?: { module: string; exportName: string }
   /** Key for a documented usage snippet. */
   usageKey?: string

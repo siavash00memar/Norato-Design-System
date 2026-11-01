@@ -397,3 +397,9 @@
 - New implementation: Reka-backed Select with grouped glass menu, search and staged multi-selection. Browser verified single selection after filtering with ArrowDown/Enter, plus multi-selection Cancel and Confirm; the committed value did not change before Confirm.
 - Focus defect: the first implementation focused an option before the search input. Scheduling focus after the popup render made the search input the focused element on open.
 - Remaining: full mobile and state-by-state DoD review; do not treat passing build or these focused interactions as complete parity.
+
+## 2026-11-01 — Combobox popper missing anchor
+
+- Finding: browser typing and filtering updated `aria-expanded`, but Reka's popup wrapper remained translated by -200%, outside the visible page because the field was not registered as `ComboboxAnchor`.
+- Correction: wrapped the field in `ComboboxAnchor as-child`; the results panel now aligns to the field and stays in the mobile viewport. Browser confirmed Persian results and the empty message.
+- Remaining: multi-select, sizes, loading/recent/create states, Clear control, and full desktop/mobile visual DoD are still open.

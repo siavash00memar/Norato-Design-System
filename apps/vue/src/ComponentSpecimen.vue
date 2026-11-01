@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import './component-specimen.css'
-import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect } from '@norato/vue'
+import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox } from '@norato/vue'
 defineProps<{ name: string; compact?: boolean }>()
 const topicOptions = [{ value: 'design', label: 'طراحی محصول' }, { value: 'research', label: 'پژوهش کاربر' }, { value: 'disabled', label: 'گزینهٔ غیرفعال', disabled: true }]
 const planOptions = [{ value: 'monthly', label: 'ماهانه' }, { value: 'yearly', label: 'سالانه' }, { value: 'disabled', label: 'گزینهٔ غیرفعال', disabled: true }]
@@ -12,7 +12,7 @@ const planOptions = [{ value: 'monthly', label: 'ماهانه' }, { value: 'year
     <div v-else-if="name==='Split Button'" class="sample-split"><NoratoButton label="ذخیره" /><NoratoButton label="⌄" icon-only accessible-label="گزینه‌های بیشتر" /></div>
     <div v-else-if="name==='Input'" class="sample-form-controls sample-input-specimen"><NoratoField id="specimen-email" label="ایمیل" placeholder="name@example.com" helper-text="ایمیل کاری‌ات را وارد کن." dir="ltr" /></div>
     <div v-else-if="name==='Select'" class="sample-form-controls sample-input-specimen sample-select-specimen"><NoratoSelect id="specimen-city" label="شهر" model-value="tehran" :options="[{value:'tehran',label:'تهران'},{value:'shiraz',label:'شیراز'},{value:'disabled',label:'گزینهٔ غیرفعال',disabled:true}]" /></div>
-    <div v-else-if="name==='Combobox'" class="sample-combo"><input class="doc-input" value="طرا" aria-label="جست‌وجوی گزینه" /><div class="sample-options"><span>طراحی رابط کاربری</span><b>طراحی محصول</b></div></div>
+    <div v-else-if="name==='Combobox'" class="sample-form-controls sample-combobox-specimen"><NoratoCombobox id="specimen-combobox" label="مهارت‌ها" model-value="design" :options="[{value:'design',label:'طراحی محصول'},{value:'research',label:'پژوهش کاربر'},{value:'writing',label:'طراحی رابط کاربری'}]" /></div>
     <div v-else-if="name==='Checkbox'" class="sample-form-controls"><NoratoChoiceGroup kind="checkbox" id="specimen-topics" label="موضوع‌های موردعلاقه" :options="topicOptions" :selected="['design']" /><NoratoChoiceGroup kind="checkbox" id="specimen-required-topics" label="انتخاب موضوع" :options="topicOptions.slice(0,2)" error-text="حداقل یک موضوع انتخاب کنید." /></div>
     <div v-else-if="name==='Radio Button'" class="sample-form-controls"><NoratoChoiceGroup kind="radio" id="specimen-plan" label="دورهٔ اشتراک" :options="planOptions" :selected="['monthly']" /><NoratoChoiceGroup kind="radio" id="specimen-required-plan" label="انتخاب دوره" :options="planOptions.slice(0,2)" error-text="یک دوره انتخاب کنید." /></div>
     <div v-else-if="name==='Switch'" class="sample-switch-row"><span><b>اعلان‌ها</b><small>پیام‌های جدید را خبر بده</small></span><button class="sample-switch" role="switch" aria-checked="true" aria-label="اعلان‌ها"><i /></button></div>
