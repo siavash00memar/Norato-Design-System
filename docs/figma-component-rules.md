@@ -332,3 +332,12 @@
 - Dropzone supports click, Enter/Space and drag/drop. Advertise formats and per-file maximum size before selection; keep invalid file reasons visible.
 - A locally selected file is not an uploaded file. Network transfer and truthful progress are controlled by the host application; preserve retryable error details.
 - Use fixed square/circular tile geometry and 48px minimum action targets; do not stretch preview parts to fill the available column.
+
+## Navbar — 2026-11-01
+
+- Use Lemon's six-part composition and 41 documented variant combinations; preserve the Button-like page structure of inert Preview, executable playground/copy example and nine contract sections.
+- Retain Norato's semantic blue/yellow palette, RTL navigation order, Vazirmatn body and Estedad headings. Brand sits at inline-end, primary links follow it and actions sit at inline-start.
+- Support App/Website/Centered × Bar/Floating/Transparent on desktop and Default/Back/Search/Large Title × Bar/Transparent on mobile. Mobile drawer and grouped links remain keyboard operable.
+- Keep every link/action target at least 48px while nav text and logo stay intrinsic; bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
+- Use Reka NavigationMenu for website link/disclosure semantics and Reka Dialog for the modal mobile drawer. Do not use a desktop `menubar` role for site navigation.
+- Transparent headers require a host background with readable contrast; do not assume or invent an image layer.

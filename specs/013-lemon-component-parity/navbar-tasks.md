@@ -6,6 +6,6 @@
 - [x] T004 Plan: evaluate installed Reka NavigationMenu/Dialog and document the implementation/verification sequence.
 - [x] T005 Checklist: create measurable DoD before editing runtime or styles.
 - [x] T006 Analyze: inspect existing Navbar contract, preview selectors, app detail-page renderer, available exports/tokens and installed primitives.
-- [ ] T007 Implement the public Navbar adapter, inert specimen, interactive playground, copy example and synchronized package/docs/catalog records.
-- [ ] T008 Compare and verify the actual desktop/mobile browser render and interactive matrix against Lemon.
+- [x] T007 Implement the public Navbar adapter, inert specimen, interactive playground, copy example and synchronized package/docs/catalog records; current state is truthfully `Adapted` while DoD gates remain open.
+- [ ] T008 Desktop 1280×720 comparison and nine-layout/style geometry checks are complete; mobile render and full interactive matrix remain open.
 - [ ] T009 Run technical and behavior gates, record evidence/limitations, push and verify GitHub parity.

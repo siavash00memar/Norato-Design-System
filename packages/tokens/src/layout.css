@@ -29,6 +29,16 @@
   --norato-file-upload-preview-frame-inline-size: 640px;
   --norato-file-upload-preview-frame-mobile-inline-size: 320px;
   --norato-file-upload-preview-frame-block-size: 288px;
+  --norato-navbar-preview-frame-inline-size: 640px;
+  --norato-navbar-preview-frame-mobile-inline-size: 320px;
+  --norato-navbar-preview-frame-block-size: 288px;
+  --norato-navbar-preview-frame-radius: 24px;
+  --norato-navbar-preview-inner-inline-size: 520px;
+  --norato-navbar-preview-grid-size: 14px;
+  --norato-navbar-preview-dot-size: var(--norato-border-thin);
+  --norato-navbar-mega-menu-max-inline-size: 560px;
+  --norato-navbar-drawer-inline-size: 360px;
+  --norato-navbar-matrix-card-inline-size: 180px;
   --norato-file-upload-preview-inner-inline-size: 380px;
   --norato-file-upload-preview-inner-block-size: 160px;
   --norato-file-upload-preview-grid-size: 14px;

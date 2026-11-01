@@ -22,7 +22,7 @@ const button = componentBySlug.get('button')
 | Primitive implementation notes | `src/primitive-map.ts` | Decision ledger keyed by catalog ID; not a second inventory or readiness source |
 | Legacy inventory import | `src/inventory.ts` | Deprecated alias to the complete catalog; migrate new consumers to `componentCatalog` |
 
-`ComponentStatus` means: `Implemented` has a verified public Vue adapter and usage example; `Adapted` is composable from existing primitives without a dedicated adapter; `Proposed` has a contract/design but no ready runtime API; `Deferred` is intentionally postponed. A file or visual sample alone never establishes implementation readiness.
+`ComponentStatus` means: `Implemented` has a verified public Vue adapter and usage example with its required DoD gates complete; `Adapted` has partial runtime support or a composition mapped to existing primitives, but one or more DoD gates remain open; `Proposed` has a contract/design but no ready runtime API; `Deferred` is intentionally postponed. Check the catalog, component contract, adapter exports, and request-validation log for the exact API and remaining checks. A file or visual sample alone never establishes implementation readiness.
 
 Tags are searchable metadata, not instructions to group component pages. IDs, slugs and contract paths are explicit and must not be generated from labels. Keep each component's route independent.
 

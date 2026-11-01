@@ -1,74 +1,83 @@
 # Navbar — قرارداد کامپوننت نوراتو
 
 **حوزه:** Navigation  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Adapted — adapter اجرایی Vue منتشر شده؛ بررسی نهایی DoD مرورگری ادامه دارد.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بالای صفحه نمایش بصری و غیرفعال است؛ تغییر حالت و رفتار فقط در playground اجرایی زیر بخش Preview انجام می‌شود.
 
 ## Overview
 
-قرارداد طراحی Norato: هدر بالای صفحه برای اپ و وب‌سایت، به‌علاوه‌ی نسخه‌ی موبایل، مگامنو و منوی کشویی موبایل.
+هدر ناوبری راست‌به‌چپ با سه چیدمان دسکتاپ App، Website و Centered، سه سبک Bar، Floating و Transparent، نسخهٔ واکنش‌گرای موبایل، زیرمنوی چندستونه و drawer موبایل. پالت آبی/زرد و توکن‌های معنایی Norato حفظ می‌شوند.
 
 ## Anatomy
 
-- **Brand** — لوگو و اسم، سمت راست
-- **Nav Links** — لینک‌ها؛ فعال روی شیشه‌ی روشن‌تر
-- **Actions** — جستجو، اعلان و دکمه‌ها سمت چپ
-- **Avatar** — حساب کاربری
+- **Brand** — نشان و نام در سمت راست؛ محتوای سفارشی از slot `brand`.
+- **Nav Links** — پیوندهای اصلی، حالت صفحهٔ جاری، شمارنده و disclosure زیرمنو.
+- **Actions** — slotهای `search`، `actions` و `avatar` در سمت چپ.
+- **Mobile Header** — یکی از Default، Back، Search یا Large Title همراه منوی موبایل.
+- **Mega Menu** — گروه پیوندهای فرزند با صفحه‌کلید وب و جهت RTL.
+- **Mobile Menu** — drawer مودال دارای focus management و بستن با Escape.
 
 ## Variants
 
-- **Navbar (9 variant):** Type: App، Website، Centered؛ Style: Bar، Floating، Transparent
-- **Navbar Mobile (8 variant):** Type: Default، Back، Search، Large Title؛ Style: Bar، Transparent
-- **Nav Link (20 variant):** Style: Pill، Underline؛ Size: Small، Medium؛ State: Default، Hover، Active، Disabled، Focus
-- **Brand (2 variant):** Size: Small، Medium
-- **Mega Menu (1 variant):** محور variant مشخص نشده
-- **Mobile Menu (1 variant):** محور variant مشخص نشده
+- **Navbar (۹):** Type: App، Website، Centered × Style: Bar، Floating، Transparent.
+- **Navbar Mobile (۸):** Type: Default، Back، Search، Large Title × Style: Bar، Transparent.
+- **Nav Link (۲۰):** Style: Pill، Underline × Size: Small، Medium × State: Default، Hover، Active، Disabled، Focus.
+- **Brand (۲):** Size: Small، Medium.
+- **Mega Menu (۱)** و **Mobile Menu (۱)** بر اساس قرارداد مرجع.
+- مجموع خانواده: ۴۱ حالت ترکیبی مرجع؛ playground ورودی‌های اصلی را قابل تغییر می‌کند.
 
 ## Sizes
 
-- **Nav Link:** Small، Medium
-- **Brand:** Small، Medium
+- Nav Link: Small یا Medium؛ هر پیوند تعاملی حداقل ارتفاع ۴۸px دارد.
+- Brand: Small یا Medium؛ اندازهٔ نشان intrinsic می‌ماند.
+- Drawer حداکثر در عرض viewport محدود می‌شود؛ قاب/لوگو و متن در ستون محتوا کشیده نمی‌شوند.
 
 ## States
 
-- **Nav Link:** Default، Hover، Active، Disabled، Focus
+- Nav Link: Default، Hover، Active، Disabled، Focus.
+- Navbar: فعال، Disabled و حالت‌های باز/بستهٔ زیرمنو و drawer.
+- Search موبایل مقدار controlled دارد. Back رویداد `back` را منتشر می‌کند.
+- لینک بدون `href` به‌صورت غیرفعال نمایش داده می‌شود؛ `activeHref` یا `current` وضعیت فعلی را تعیین می‌کند.
 
 ## Parts
 
-- **Navbar — 9 variant:** نوار بالای صفحه در ۳ چیدمان. ابعاد/حالت‌ها: Type: App، Website، Centered؛ Style: Bar، Floating، Transparent
-- **Navbar Mobile — 8 variant:** هدر موبایل ۳۹۰ پیکسلی. ابعاد/حالت‌ها: Type: Default، Back، Search، Large Title؛ Style: Bar، Transparent
-- **Nav Link — 20 variant:** لینک ناوبری با آیکن، شمارنده و زیرمنو. ابعاد/حالت‌ها: Style: Pill، Underline؛ Size: Small، Medium؛ State: Default، Hover، Active، Disabled، Focus
-- **Brand — 2 variant:** لوگو و اسم برند. ابعاد/حالت‌ها: Size: Small، Medium
-- **Mega Menu — 1 variant:** منوی بزرگ چندستونی.
-- **Mobile Menu — 1 variant:** منوی کشویی موبایل.
+### `NoratoNavbar`
+
+Props: `id` (اجباری)، `links`، `type` (`app|website|centered`)، `style` (`bar|floating|transparent`)، `mobileType` (`default|back|search|large-title`)، `mobileStyle` (`bar|transparent`)، `linkStyle` (`pill|underline`)، `linkSize` (`small|medium`)، `brand`، `brandHref`، `activeHref`، `mobileTitle`، `search`، `searchPlaceholder`، `navigationLabel`، `mobileNavigationLabel`، `disabled` و `dir`.
+
+`NoratoNavbarLink`: `label`، `href?`، `icon?`، `count?`، `current?`، `disabled?` و `children?: NoratoNavbarLink[]`.
+
+`v-model:search` مقدار جست‌وجوی موبایل را کنترل می‌کند. رویدادها: `update:search(value)`، `back` و `navigate(item)`. Slotها: `brand`، `search`، `actions`، `avatar`، `mobile-actions`، `mobile-title-actions` و `mobile-search`.
+
+چیدمان دسکتاپ با Reka NavigationMenu و منوی موبایل با Reka Dialog اجرا می‌شود. وب‌سایت از نقش `menubar` استفاده نمی‌کند. Adapter مسیریابی یا مقصد فرضی ایجاد نمی‌کند.
 
 ## Usage
 
 ### راهنمای کاربرد Norato
 
-- لینک‌ها رو به ۵ تا ۷ تا محدود کن.
-- لینک صفحه‌ی فعلی رو با حالت Active مشخص کن.
+- تعداد پیوندها را به ۵ تا ۷ محدود کن و صفحهٔ جاری را با `current` یا `activeHref` مشخص کن.
+- برای گروه‌های فرزند، `children` بده؛ برای محتوای اپلیکیشن از slotهای اکشن استفاده کن.
+- سبک Transparent را فقط روی پس‌زمینه‌ای انتخاب کن که کنتراست متن را حفظ کند.
+- جزئیات مسیر Vue در [نمونهٔ کپی‌پذیر `apps/vue/src/usage-examples.ts`](../../apps/vue/src/usage-examples.ts) است.
 
-### محدودیت‌های کاربرد
+### محدودیت‌ها
 
-- اکشن‌های زیاد رو توی هدر جمع نکن.
-- روی تصویر شلوغ از Transparent بدون سایه استفاده نکن؛ خوانا نیست.
+- Router، احراز هویت، دادهٔ اعلان و جست‌وجوی شبکه در اختیار برنامهٔ میزبان است.
+- `style="bar"` sticky است و داخل ظرف scroll‌شونده ممکن است به context والد وابسته باشد.
 
 ### جهت RTL
 
-لوگو سمت راست، بعد لینک‌ها و اکشن‌ها سمت چپ.
+پیش‌فرض `dir="rtl"` است: Brand راست، پیوندها پس از آن و اکشن‌ها چپ. URL و شمارندهٔ فنی LTR باقی می‌مانند.
 
 ## Accessibility
 
-Navbar باید نقش navigation داشته باشه و ترتیب Tab از راست شروع بشه.
+NavigationMenu نقش navigation، مدیریت focus و پیمایش صفحه‌کلید وب را فراهم می‌کند. لینک صفحهٔ جاری `aria-current="page"` دارد؛ پیوندهای disabled یا بی‌مقصد tab نمی‌گیرند. drawer عنوان/شرح نام‌گذاری‌شده، focus containment و بستن با Escape را از Dialog دریافت می‌کند. همهٔ هدف‌ها حداقل ۴۸×۴۸px و focus ring قابل‌مشاهده دارند. رفتار motion با `prefers-reduced-motion` محدود می‌شود.
 
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+این قرارداد جای آزمون مستقل صفحه‌خوان را نمی‌گیرد.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+Surface، border، متن، برند، focus، شعاع، سایه و فاصله از توکن‌های semantic/layout Norato مصرف می‌شوند. نسبت قاب، عرض drawer/مگامنو و گرید preview توکن component-specific دارند. Lemon فقط منبع composition است؛ رنگ انتخاب و برند همان Norato می‌ماند.

@@ -641,3 +641,11 @@
 - **Correction:** extract a pure typed validator and add Node built-in tests for extension/MIME/wildcard/empty accept, exact size boundary, partial acceptance, all rejection reasons, remaining count, single mode, and invalid numeric limits. Invalid maximum counts now fail closed.
 - **Evidence:** `pnpm test:file-upload` passes five tests; Vue typecheck/build and repository gates are run with this change. This does not certify native chooser, real drag/drop or screen-reader behavior.
 - **Prevention:** keep validation decision functions independent of UI events and test boundary conditions even when browser file injection is unavailable.
+
+## ERR-063 — Navbar Back mobile variant hid its menu trigger (2026-11-02)
+
+- **Component:** Navbar mobile header
+- **Finding:** the Back variant hid the entire top bar at the mobile breakpoint, and the CSS rule that hid its menu trigger also matched any trigger placed in the Back title row. That made the modal mobile drawer unreachable in this variant.
+- **Correction:** add a dedicated 48px menu trigger to the Back title row and scope the hide rule to the now-hidden top bar.
+- **Evidence:** source selector and DOM path reviewed; the actual narrow viewport interaction remains unverified because the available browser interface did not expose viewport control.
+- **Prevention:** check reachability of the mobile menu in each mobile header variant, not only Default.
