@@ -29,7 +29,7 @@ const snippet = computed(() => {
   <div class="button-playground date-picker-playground" dir="rtl">
     <header><strong>آزمایش Date Picker اجرایی</strong><span>هفت حالت انتخاب تاریخ شمسی، با صفحه‌کلید و نشانگرهای قابل دسترس.</span></header>
     <div class="button-playground-preview date-picker-playground-preview">
-      <NoratoDatePicker id="date-picker-playground" v-model="value" label="تاریخ تحویل" :type="type" :size="size" :disabled="disabled" :error-text="invalid ? 'تاریخ انتخاب‌شده در دسترس نیست' : undefined" :holidays="['1405-08-03']" />
+      <NoratoDatePicker id="date-picker-playground" v-model="value" label="تاریخ تحویل" :type="type" :size="size" :disabled="disabled" :error-text="invalid ? 'تاریخ انتخاب‌شده در دسترس نیست' : undefined" :holidays="['1405-08-03']" :disabled-dates="['1405-08-04']" />
     </div>
     <div class="button-playground-toggles date-picker-playground-toggles">
       <label class="select-playground-setting"><span>حالت</span><select v-model="type"><option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label }}</option></select></label>

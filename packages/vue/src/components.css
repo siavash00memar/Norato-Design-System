@@ -179,7 +179,7 @@
 .norato-date-picker__wheel label{min-inline-size:0;}
 .norato-date-picker__wheel select{inline-size:100%;block-size:200px;scroll-snap-type:y mandatory;}
 .norato-date-picker__wheel option{min-block-size:var(--norato-control-target-min);padding:var(--norato-space-2);text-align:center;scroll-snap-align:center;}
-@media(max-width:480px){.norato-date-picker__panel{inline-size:min(calc(100vw - 32px), 360px);}.norato-date-picker__week [role="gridcell"],.norato-date-picker__week [role="columnheader"]{inline-size:40px;min-inline-size:40px;min-block-size:var(--norato-control-target-min);}}
+@media(max-width:480px){.norato-date-picker__panel{inline-size:min(calc(100vw - 32px), 360px);}.norato-date-picker__week [role="gridcell"]{inline-size:var(--norato-date-picker-day-size);min-inline-size:var(--norato-date-picker-day-size);min-block-size:var(--norato-control-target-min);}.norato-date-picker__week [role="columnheader"]{inline-size:40px;min-inline-size:40px;min-block-size:var(--norato-control-target-min);}}
 .norato-choice-group[aria-invalid="true"] legend{color:var(--norato-color-status-error)}
 .norato-radio-group{display:grid;gap:var(--norato-space-1);min-inline-size:0;margin:0;padding:0;border:0}
 .norato-radio-group legend{margin-block-end:var(--norato-space-2);color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-bold-weight)}

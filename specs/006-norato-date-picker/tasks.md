@@ -6,10 +6,10 @@
 - [x] T004 Plan gate: record Jalali adapter, Vue composition, token, page, and validation strategy.
 - [x] T005 Checklist gate: review requirements for completeness, traceability, and verifiability.
 - [x] T006 Analyze gate: resolve cross-artifact consistency before implementation.
-- [ ] T007 Add and verify a maintained Jalali conversion dependency; record its supported algorithm range and license.
+- [x] T007 Add and verify `@internationalized/date` 3.12.4; record its PersianCalendar 33-year arithmetic cycle, full-year range, Apache-2.0 license, and the narrower Norato wheel window.
 - [x] T008 Implement a typed controlled Jalali date adapter and date/time/range value contract.
 - [x] T009 Implement Date Input and all seven modes: Single, Range, Range + Presets, Date & Time, Month, Year, Wheel.
-- [ ] T010 Implement navigation, RTL weekday order, today/outside/Friday/holiday/selected/range/disabled states, and keyboard behavior.
+- [x] T010 Implement navigation, RTL weekday order, today/outside/Friday/holiday/selected/range/disabled states, and keyboard behavior; browser-verified arrows, PageUp/Down, Home/End, Enter, Escape, and focus restoration.
 - [x] T011 Replace legacy date-picker selectors/specimen with token-based bounded geometry; remove vertical stretch.
 - [x] T012 Add a Vue playground for mode, size, value, disabled/error, range endpoints, and time selection; match Button page structure.
 - [x] T013 Update API usage example, contract/catalog/primitive map, Figma rules, request validation checklist, and error log.
