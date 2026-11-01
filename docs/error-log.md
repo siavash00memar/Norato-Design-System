@@ -562,3 +562,12 @@
 - **Finding:** the Segmented Control evidence section ended with an unrelated Switch matrix item, obscuring the actual remaining Segmented checks. Also, the first attempt to change playground values with `setValue` did not mutate the Vue component state; only real menu selections are valid evidence.
 - **Correction:** replaced the cross-family checklist entry with the Switch-specific pending item and recorded only browser-observed Segmented settings from actual popup interactions.
 - **Prevention:** keep per-family acceptance rows within their matching headings; confirm live state changes in generated Vue usage and accessibility tree before recording them.
+
+## ERR-054 — Radio empty-state simulation disagreed with status and generated code (2026-11-01)
+
+- **Component:** Radio playground
+- **Finding:** enabling “بدون انتخاب” rendered an empty radio group while the live status and Vue snippet still reported the retained monthly value. Choosing an option while this mode was active kept the group empty. Selected + error also announced “یک دوره انتخاب کنید.”
+- **Correction:** derive the rendered model, status and generated `ref` from one effective value; selecting an option clears the empty simulation. Error status now reports the error without claiming no option is selected.
+- **Browser evidence:** on `#component-radio`, all radio values were 0 with `undefined` and “بدون انتخاب” in status/code. Selecting quarterly changed the radio value, unchecked the empty simulation, and updated status and snippet to `quarterly`. Required + empty showed the required message and prop; selected + error exposed the actual error and a non-contradictory status. Initial monthly/20px/default state was restored.
+- **Prevention:** verify generated examples against the effective runtime model for simulated states; always test leaving empty/error modes through the component interaction, not only by toggling controls.
+- **Remaining:** this playground fix does not close Radio's independent screen-reader or full visual state matrix DoD.

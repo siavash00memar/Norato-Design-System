@@ -54,3 +54,5 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] The 12 checked/value/size combinations for Default/Error/Disabled were measured; targets stayed 48px and focus ring was 2px. The page contains Preview, executable Vue playground, and all nine contract sections.
 - [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 - [ ] Full 20-cell focus/hover visual matrix and independent screen-reader review remain open; do not close Radio DoD yet.
+- [x] Radio playground empty simulation, visible status and generated Vue value now share one effective model; selecting from empty clears the simulation. Required-empty and selected-error feedback were browser-verified.
+- [x] After the playground correction, token/catalog/type/build/diff gates passed; production build warns that the 642.00KB chunk exceeds 500KB.

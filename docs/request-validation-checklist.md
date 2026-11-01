@@ -142,6 +142,17 @@
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پس از ثبت آزمون موفق شدند؛ build هشدار chunk بزرگ‌تر از 500KB دارد.
 - [ ] ماتریس کامل ۲۰ حالت focus/hover و اجرای صفحه‌خوان مستقل همچنان برای بستن DoD لازم‌اند.
 
+## اصلاح همگامی playground رادیو (2026-11-01)
+
+- [x] بازتولید در `#component-radio`: بعد از «بدون انتخاب»، هر سه radio خالی بودند اما status/snippet هنوز ماهانه را نشان می‌دادند؛ انتخاب از حالت خالی نیز نمی‌توانست خالی‌بودن را کنار بگذارد.
+- [x] پس از اصلاح، رندر خالی، متن status و snippet همگی `undefined` را نشان دادند. انتخاب سه‌ماهه خالی‌بودن را خاموش کرد و radio، status و snippet روی `quarterly` همگام شدند.
+- [x] Required + empty پیام «انتخاب یک دوره الزامی است.» و prop `required` را نشان داد؛ Error با سه‌ماههٔ منتخب، پیام خطای درست را داد و وضعیت «بدون انتخاب» گزارش نشد.
+- [x] Regression صفحه‌کلید: پس از خالی‌کردن گروه، با Shift+Tab به رادیو بدون انتخاب رسیدم؛ Space سالانه را انتخاب کرد، حالت خالی را بست و value/status/snippet را به `yearly` همگام کرد. ArrowDown/Up در گروه عادی نیز انتخاب controlled را تغییر داد و برگرداند.
+- [x] اندازهٔ ۱۶px و disabled پس از اصلاح دوباره رندر شدند؛ snippet هر دو prop را منعکس کرد. اندازهٔ ۲۰px، ماهانهٔ منتخب، و حالت‌های required/error/disabled/empty به وضعیت عادی برگشتند.
+- [x] Playground به حالت اولیهٔ ماهانه، بدون required/error/disabled/empty و اندازهٔ ۲۰ برگشت.
+- [ ] این اصلاح ماتریس کامل ۲۰ حالت بصری و صفحه‌خوان مستقل را نمی‌بندد؛ آن بررسی‌ها همچنان بازند.
+- [x] پس از اصلاح و ثبت مستندات `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` موفق شدند؛ build هشدار chunk 642.00KB بالاتر از 500KB دارد.
+
 ## گزارش این درخواست — استانداردسازی صفحه‌های کامپوننت، batch 1 (2026-10-28)
 
 - [x] چهار مسیر مستقل Input، Select، Checkbox و Radio Button با قراردادهای ۹‌بخشی خودشان بررسی شدند.

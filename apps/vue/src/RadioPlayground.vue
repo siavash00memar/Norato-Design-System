@@ -15,16 +15,22 @@ const options = [
   { value: 'quarterly', label: 'سه‌ماهه', description: 'دو ماه رایگان' },
   { value: 'yearly', label: 'سالانه' },
 ]
-const stateText = computed(() => options.find(option => option.value === value.value)?.label ?? 'بدون انتخاب')
-const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoRadioGroup } from '@norato/vue'\nconst period = ref<string | undefined>(${value.value ? `'${value.value}'` : 'undefined'})\nconst options = [\n  { value: 'monthly', label: 'ماهانه' },\n  { value: 'quarterly', label: 'سه‌ماهه', description: 'دو ماه رایگان' },\n  { value: 'yearly', label: 'سالانه' },\n]\n<\\/script>\n\n<template>\n  <NoratoRadioGroup id="period" v-model="period" label="دورهٔ اشتراک" :options="options" :size="${size.value}"${required.value ? ' required' : ''}${disabled.value ? ' disabled' : ''}${invalid.value ? ' error-text="انتخاب دوره با خطا روبه‌روست."' : ''} />\n</template>`)
+const effectiveValue = computed(() => showEmpty.value ? undefined : value.value)
+const stateText = computed(() => options.find(option => option.value === effectiveValue.value)?.label ?? 'بدون انتخاب')
+const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoRadioGroup } from '@norato/vue'\nconst period = ref<string | undefined>(${effectiveValue.value ? `'${effectiveValue.value}'` : 'undefined'})\nconst options = [\n  { value: 'monthly', label: 'ماهانه' },\n  { value: 'quarterly', label: 'سه‌ماهه', description: 'دو ماه رایگان' },\n  { value: 'yearly', label: 'سالانه' },\n]\n<\\/script>\n\n<template>\n  <NoratoRadioGroup id="period" v-model="period" label="دورهٔ اشتراک" :options="options" :size="${size.value}"${required.value ? ' required' : ''}${disabled.value ? ' disabled' : ''}${invalid.value ? ' error-text="انتخاب دوره با خطا روبه‌روست."' : ''} />\n</template>`)
+
+function selectPeriod(next: string | undefined) {
+  value.value = next
+  showEmpty.value = false
+}
 </script>
 
 <template>
   <div class="button-playground" dir="rtl">
     <header><strong>آزمایش Radio اجرایی</strong><span>یک گزینه را انتخاب کنید؛ با کلیدهای جهت بین گزینه‌ها جابه‌جا شوید.</span></header>
     <div class="button-playground-preview radio-playground-preview">
-      <NoratoRadioGroup id="radio-playground-period" :model-value="showEmpty ? undefined : value" @update:model-value="next => value = next" label="دورهٔ اشتراک" :options="options" :size="size" :required="required" :required-message="required && showEmpty ? 'انتخاب یک دوره الزامی است.' : undefined" :disabled="disabled" :error-text="invalid ? 'انتخاب دوره با خطا روبه‌روست.' : undefined" />
-      <span role="status" aria-live="polite">{{ disabled ? 'گروه غیرفعال است' : invalid ? 'یک دوره انتخاب کنید.' : `انتخاب‌شده: ${stateText}` }}</span>
+      <NoratoRadioGroup id="radio-playground-period" :model-value="effectiveValue" @update:model-value="selectPeriod" label="دورهٔ اشتراک" :options="options" :size="size" :required="required" :required-message="required && showEmpty ? 'انتخاب یک دوره الزامی است.' : undefined" :disabled="disabled" :error-text="invalid ? 'انتخاب دوره با خطا روبه‌روست.' : undefined" />
+      <span role="status" aria-live="polite">{{ disabled ? 'گروه غیرفعال است' : invalid ? 'خطا در انتخاب دوره.' : `انتخاب‌شده: ${stateText}` }}</span>
     </div>
     <div class="button-playground-toggles">
       <label class="button-playground-switch"><input v-model="required" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>الزامی</span></label>
