@@ -22,7 +22,7 @@ Status: active. Visual reference: https://lemonui.ir/ (especially each matching 
 - [ ] T008 Implement Input to the approved contract; verify browser render, keyboard/focus, disabled/loading/invalid, responsive layout, tokens, TypeScript, build, and request checklist.
 - [ ] T009 Repeat the full analysis, implementation, and verification for each remaining catalog family, respecting its true runtime maturity.
 - [ ] T009a Select: replace native select with a Reka-backed Norato-token dropdown; implement searchable/grouped single and staged multi selection, chips/summary, confirm/cancel, sizes/label placement and states; verify keyboard, focus, RTL, mobile and all technical gates before closing its DoD.
-- [ ] T009b Combobox: add the Vue adapter, catalog/export/usage integration, and an interactive page playground; compare the Lemon preview and verify filtering, keyboard selection, empty/error/disabled states, RTL, responsive geometry and technical gates. Remaining multi/size/loading/recent/create variants keep its DoD open.
+- [ ] T009b Combobox: adapter, catalog/export/usage integration, playground, single/multi, sizes, inside/outside labels, clear, recent/loading/empty/create states are implemented. Complete the remaining Lemon desktop/mobile review and behavior/accessibility matrix, then close only after all technical gates pass.
 - [ ] T010 Final audit: compare all component pages at desktop and mobile widths; run catalog, token, TypeScript, build, and request-validation checks; update error log and handoff evidence.
 
 No item is complete solely because a source file exists. A component is complete only after actual browser validation and its documentation reflects supported behavior.

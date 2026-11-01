@@ -5,6 +5,7 @@ export { default as NoratoSplitButton } from './components/NoratoSplitButton.vue
 export { default as NoratoField } from './components/NoratoField.vue'
 export { default as NoratoSelect } from './components/NoratoSelect.vue'
 export { default as NoratoCombobox } from './components/NoratoCombobox.vue'
+export type { NoratoComboboxOption } from './components/NoratoCombobox.vue'
 export { default as NoratoDatePicker } from './components/NoratoDatePicker.vue'
 export { default as NoratoChoiceGroup } from './components/NoratoChoiceGroup.vue'
 export { default as NoratoTextarea } from './components/NoratoTextarea.vue'

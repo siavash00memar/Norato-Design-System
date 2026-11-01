@@ -7,7 +7,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Split Button | split-button | Proposed | Lemon desktop/mobile compared; connected preview, Vue split/dropdown menu, and dedicated Variants/States/Sizes galleries built. Four runtime sizes measured; final DoD pending. |
 | [ ] | Input | input | Implemented | Lemon desktop/mobile render compared; 390px overflow corrected (document 375px); field 48px, specimen 123px. Live value, error, disabled, loading, required, `aria-busy`, and Tab focus ring checked. Remaining family variants and final visual DoD pending. |
 | [ ] | Select | select | Implemented | Lemon and Norato compared on desktop and 390px mobile; specimen field width/frame aligned and no stretch verified. Reka glass menu supports grouped search, staged multi-select, keyboard, errors, loading, disabled, read-only, sizes, inside/outside labels, compact Chips and Summary. Final menu/state visual DoD remains open. |
-| [ ] | Combobox | combobox | Adapted | Single-select adapter and page playground started; multi/size/loading/create variants and Lemon DoD remain open |
+| [ ] | Combobox | combobox | Adapted | Single/multi, sizes, labels, clear, recent/loading/empty/create implemented; final Lemon DoD and full interaction matrix remain open |
 | [ ] | Checkbox | checkbox | Implemented | Pending visual and behavior comparison |
 | [ ] | Radio Button | radio | Implemented | Pending visual and behavior comparison |
 | [ ] | Switch | switch | Proposed | Pending visual and behavior comparison |

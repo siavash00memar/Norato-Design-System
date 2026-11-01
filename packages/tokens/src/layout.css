@@ -8,6 +8,10 @@
   --norato-content-width-mobile: 312px;
   --norato-select-preview-inline-size: 300px;
   --norato-select-preview-frame-min-block-size: 296px;
+  --norato-combobox-preview-inline-size: 310px;
+  --norato-combobox-preview-frame-inline-size: 640px;
+  --norato-combobox-preview-frame-mobile-inline-size: 320px;
+  --norato-combobox-preview-frame-min-block-size: 288px;
   --norato-action-row-height: 36px;
   --norato-field-label-gap: 6px;
   --norato-field-group-gap: 8px;

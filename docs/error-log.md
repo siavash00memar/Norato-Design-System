@@ -402,4 +402,10 @@
 
 - Finding: browser typing and filtering updated `aria-expanded`, but Reka's popup wrapper remained translated by -200%, outside the visible page because the field was not registered as `ComboboxAnchor`.
 - Correction: wrapped the field in `ComboboxAnchor as-child`; the results panel now aligns to the field and stays in the mobile viewport. Browser confirmed Persian results and the empty message.
-- Remaining: multi-select, sizes, loading/recent/create states, Clear control, and full desktop/mobile visual DoD are still open.
+- Follow-up implementation: multi-select, compact chips, four sizes, inside/outside labels, loading/recent/create states and Clear are now in the adapter. Full visual and interaction DoD remains open.
+
+## 2026-11-01 — Combobox mobile width and inside-label stretch
+
+- Finding: on 390px viewport, Reka's unbounded root wrapper widened the playground field to 401px and the document to 417px. The inside XLarge label stacked above a 56px row and reached 84px.
+- Correction: constrain the Reka wrapper and field to their parent, and position the inside label within a 56px/64px field. After correction the document width is 375px at a 390px viewport; outside fields measure 50px for Small/Medium/Large and 58px for XLarge. Inside XLarge is 64px with a 56px control row.
+- Visual correction: the default preview now uses a 310px field in a 320px mobile frame, with Norato's semantic accent wash and a search icon, matching Lemon's preview composition while preserving Norato colors and the 48px interaction floor.

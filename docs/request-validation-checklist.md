@@ -567,3 +567,18 @@
 - [x] Vue typecheck و production build موفق شدند؛ build هشدار bundle بالای 500KB داد.
 - [x] صفحه‌کلید: فهرست باز شد، گزینهٔ فعال `aria-activedescendant` گرفت و Escape منو را بست؛ پنل با فاصلهٔ حدود ۹px زیر کنترل و هم‌عرض فیلد اندازه‌گیری شد.
 - [ ] DoD باز است: Multi، چهار اندازه، loading/recent/create، Clear، keyboard/focus matrix کامل، مقایسهٔ Lemon در mobile و اندازه‌گیری هم‌ارز desktop تکمیل نشده‌اند.
+
+## ادامهٔ بررسی درخواست — تکمیل رفتارهای Combobox و رفع سرریز (2026-11-01)
+
+- [x] API و playground اکنون controlled single/multi، چیپ فشرده، چهار size، برچسب داخل/بیرون، clear، recent options، loading، empty، create و error/disabled/required را پوشش می‌دهند.
+- [x] انتخاب تکی با ArrowDown/Enter، انتخاب چندتایی دو گزینه با ثبت آرایه، چیپ `+۱` در همان ارتفاع ۵۰px، پاک‌کردن جست‌وجو پس از انتخاب، ساخت و ثبت گزینهٔ تازه و نمایش اخیرها در مرورگر اجرا شد.
+- [x] Loading در مرورگر `aria-busy=true`، status زنده و سه خط skeleton نشان داد. Error به پیامش اشاره می‌کند و `aria-invalid=true` و `required` بومی را می‌گذارد؛ Disabled هم ورودی و هم trigger را غیرفعال می‌کند.
+- [x] اندازهٔ بیرونی فیلد در حالت label بیرونی: Small/Medium/Large برابر ۵۰px، XLarge برابر ۵۸px؛ در حالت XLarge/داخل: قاب ۶۴px و ردیف تعاملی ۵۶px. حداقل hit area رعایت شد.
+- [x] Lemon در viewport موبایل 390×844 و Norato در همان viewport بازبینی شدند؛ فیلد preview در هر دو حدود ۳۱۰px است. Norato قاب 320×288px دارد، RTL است، و عرض سند 375px بدون overflow است.
+- [x] پنل در موبایل زیر فیلد باز شد، با فیلد هم‌عرض ماند، گزینهٔ فارسی را bold کرد و پس از انتخاب بسته شد. `aria-activedescendant` با گزینهٔ فعال تنظیم شد.
+- [x] سرریز playground ناشی از wrapper Reka (سند 417px در viewport 390px) با محدودکردن wrapper/فیلد رفع شد؛ پس از اصلاح عرض سند 375px است.
+- [ ] مرور کامل بصری دسکتاپ با اندازه‌گیری دقیق کارت و همهٔ variantها، صفحه‌خوان واقعی، فوکوس همهٔ اکشن‌ها و ماتریس کامل Lemon هنوز باز است؛ DoD Combobox بسته نشود.
+- [x] گیت‌های فنی بعد از این batch اجرا شدند و نتیجهٔ آن‌ها در انتهای همین گزارش ثبت شده است.
+- [x] گیت‌ها پس از تغییرات جدید اجرا شدند: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` همگی موفق شدند.
+- [x] production build هشدار bundle بالای ۵۰۰KB داد (518.24KB minified)، ولی build موفق بود.
+- [ ] DoD همچنان باز است: صفحه‌خوان واقعی و review همهٔ variantها/حالت‌ها و تمام اکشن‌های focus دیده نشده‌اند؛ کوچک‌شدن frameها و کمبودهای بصری با شواهد تازه در نوبت بعد بازبینی شوند.

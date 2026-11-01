@@ -237,6 +237,11 @@
 - In batch 1, Input/Select examples may use `v-model` with actual `NoratoField`/`NoratoSelect` props. Checkbox/Radio examples use `NoratoChoiceGroup` with `v-model:selected`, `kind`, `id`, `label`, `options`; error and disabled examples must use supported props. ChoiceGroup has no loading or size props.
 - Button-specific approved sample, gallery, state/size axes and CSS are excluded from this general treatment.
 
+## Combobox multi-selection height — 2026-11-01
+
+- Keep multi-selection compact on one line: show the first selected label and a localized `+N` count, not a wrapping stack of chips. Chips remain visual tokens below 48px; the field and its clear/chevron actions retain at least 48px targets.
+- Keep the suggestion menu anchored 8px below the field, matching text bold, and every semantic brand/focus color on Norato tokens. Small/Medium Lemon sizes remain 48px interactive controls to satisfy Norato's global target rule; XLarge is 56px.
+
 ## Button playground presentation (2026-10-28)
 
 - Controls in the executable Button playground use clear RTL labels, 48px interaction targets, visible selected states and restrained motion. Respect reduced-motion preferences.
