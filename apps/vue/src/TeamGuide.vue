@@ -36,7 +36,7 @@ import { NoratoSelect } from '@norato/vue'
 const city = ref('')
 const options = [{ value: 'tehran', label: 'تهران' }]
 &lt;/script&gt;
-&lt;template&gt;&lt;NoratoSelect id="city" v-model="city" label="شهر" :options="options" /&gt;&lt;/template&gt;</code></pre><p>از select بومی استفاده می‌کند و رفتار صفحه‌کلید مرورگر را حفظ می‌کند.</p></div>
+&lt;template&gt;&lt;NoratoSelect id="city" v-model="city" label="شهر" :options="options" /&gt;&lt;/template&gt;</code></pre><p>منوی RTL با Reka UI، انتخاب کنترل‌شده، جست‌وجو و چندانتخابی مرحله‌ای را پشتیبانی می‌کند.</p></div>
       <div class="usage-example"><h3>Checkbox و Radio</h3><pre><code>&lt;script setup lang="ts"&gt;
 import { ref } from 'vue'
 import { NoratoChoiceGroup } from '@norato/vue'

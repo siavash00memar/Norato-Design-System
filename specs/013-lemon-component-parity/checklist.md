@@ -17,6 +17,6 @@ Only check a line when the corresponding evidence was observed for that componen
 - [ ] Controlled single-select opens a Norato-token glass popover; selection commits immediately.
 - [x] جست‌وجوی اختیاری گزینه‌ها را فیلتر می‌کند، گروه‌ها را نگه می‌دارد و برای نتیجهٔ خالی پیام status نشان می‌دهد؛ در مرورگر بررسی شد.
 - [ ] Multi-select supports chips/summary, option check state, pending selection, Confirm and Cancel.
-- [ ] Escape تغییر ثبت‌نشدهٔ چندانتخابی را لغو کرد و ArrowDown از جست‌وجو به گزینه رسید؛ رد شدن از گزینهٔ غیرفعال با صفحه‌کلید هنوز جداگانه باید بررسی شود.
+- [x] Escape تغییر ثبت‌نشدهٔ چندانتخابی را لغو کرد؛ ArrowDown از جست‌وجو به گزینه رسید؛ در منوی بدون جست‌وجو End روی «رشت» (آخرین گزینهٔ فعال) ایستاد و ArrowDown با عبور از «به‌زودی» غیرفعال به «تهران» رفت.
 - [ ] Four size variants, inside/outside label, RTL, required, error, disabled, loading and read-only are implemented with 48px minimum interactive targets.
 - [ ] Desktop/mobile browser DoD and technical gates pass; per-family status may be checked only after all rows above pass.

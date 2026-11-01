@@ -380,6 +380,8 @@
 
 ## 2026-11-01 — Select Reka adapter browser review
 
+- Defect: the noninteractive multi-select display chip inherited the 48px interaction target and stretched the trigger to 66px. Reduced the chip to a 24px visual token; browser measurement now shows a 48px trigger. The trigger remains the 48px interactive target.
+
 - Defect: search ArrowDown/ArrowUp queried a caller-supplied content id that Reka replaced at render time, so option focus could fail. Changed the lookup to the search input's containing menu; mobile browser now moves focus to the first enabled option with ArrowDown.
 
 - New implementation: Reka-backed Select with grouped glass menu, search and staged multi-selection. Browser verified single selection after filtering with ArrowDown/Enter, plus multi-selection Cancel and Confirm; the committed value did not change before Confirm.
