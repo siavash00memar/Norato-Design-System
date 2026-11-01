@@ -18,10 +18,11 @@
 - **Chevron** — فلش باز و بسته شدن سمت چپ
 - **Select Menu** — پنل شیشه‌ای گزینه‌ها
 - **Select Option** — هر ردیف گزینه با تیک یا چک‌باکس
-- در انتخاب چندتایی، نشانگر هر گزینه یک چک‌باکس برداری ۲۴×۲۴px از جزء مشترک `NoratoCheckboxVisual` است؛ نقش و تعامل صفحه‌کلید روی خود گزینهٔ Reka باقی می‌ماند.
 - **Group Title** — عنوان دسته برای لیست‌های بلند
 
 ## Variants
+
+در انتخاب چندتایی، نشانگر هر گزینه یک چک‌باکس برداری ۲۴×۲۴px از جزء مشترک `NoratoCheckboxVisual` است؛ نقش و تعامل صفحه‌کلید روی خود گزینهٔ Reka باقی می‌ماند.
 
 - **Select (56 variant):** Type: Label Inside، Label Outside؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled، Read-only
 - **Multi Select (96 variant):** Type: Label Inside، Label Outside؛ Display: Chips، Summary؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled

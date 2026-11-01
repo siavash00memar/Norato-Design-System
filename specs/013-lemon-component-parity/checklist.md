@@ -14,9 +14,9 @@ Only check a line when the corresponding evidence was observed for that componen
 ## Select behavior acceptance checklist
 
 - [x] Reka UI 2.11.0 با Vue peer `>=3.4.0` و Vue پروژه `^3.5.0` سازگار است؛ primitiveهای SelectRoot/Content/Item در بستهٔ نصب‌شده بررسی شدند.
-- [ ] Controlled single-select opens a Norato-token glass popover; selection commits immediately.
+- [x] انتخاب تکی کنترل‌شده منوی شیشه‌ایِ توکن‌دار را باز می‌کند و با انتخاب «اصفهان» مقدار والد همان لحظه تغییر کرد و منو بسته شد؛ در مرورگر بررسی شد.
 - [x] جست‌وجوی اختیاری گزینه‌ها را فیلتر می‌کند، گروه‌ها را نگه می‌دارد و برای نتیجهٔ خالی پیام status نشان می‌دهد؛ در مرورگر بررسی شد.
-- [ ] Multi-select supports chips/summary, option check state, pending selection, Confirm and Cancel.
+- [x] چندانتخابی Chips/Summary، قاب چک‌باکس گزینه‌ها، مقدار موقت، انصراف و تأیید را پشتیبانی می‌کند؛ خلاصه از ۱ به ۲ مورد پیش از ثبت تغییر کرد ولی وضعیت والد تا تأیید ثابت ماند؛ پس از تأیید دو مقدار ثبت شد.
 - [x] Escape تغییر ثبت‌نشدهٔ چندانتخابی را لغو کرد؛ ArrowDown از جست‌وجو به گزینه رسید؛ در منوی بدون جست‌وجو End روی «رشت» (آخرین گزینهٔ فعال) ایستاد و ArrowDown با عبور از «به‌زودی» غیرفعال به «تهران» رفت.
-- [ ] Four size variants, inside/outside label, RTL, required, error, disabled, loading and read-only are implemented with 48px minimum interactive targets.
+- [x] چهار اندازه با ارتفاع حداقل ۴۸px، برچسب داخل/بیرون، RTL، required، error، disabled، loading و read-only در playground و مرورگر بررسی شدند؛ برچسب داخلیِ Summary/Chips در دسکتاپ و موبایل ۳۹۰px ارتفاع ۵۶px دارد.
 - [ ] Desktop/mobile browser DoD and technical gates pass; per-family status may be checked only after all rows above pass.

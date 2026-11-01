@@ -380,6 +380,8 @@
 
 ## 2026-11-01 — Select Reka adapter browser review
 
+- Defect: inside-label Select stretched to 65.2px from two text lines and 8px vertical padding. Reduced only that variant's padding and internal gap with existing tokens; browser now measures 56px for both summary and two chips at desktop and 390px mobile. Also moved the checkbox explanation out of Anatomy after it was incorrectly parsed as a seventh part.
+
 - Visual contract mismatch: multi-select options reused the single-select text checkmark, while the Lemon and Figma contracts require checkbox frames. Added a reusable 24px SVG checkbox visual with semantic Norato tokens, kept the Reka option as the sole interaction target, and verified staged Cancel/Confirm and mobile geometry in the browser.
 
 - Visual defect: the Select chevron was a font glyph and its shape varied with font rendering. Replaced it with a 24px SVG path matching the reference direction; verified left-side RTL placement and open-state rotation in the browser.
