@@ -30,16 +30,16 @@ const snippet = (mode: string, variant: string) => `<script setup lang="ts">\nim
 
 <template>
   <div v-if="section === 'Variants'" class="split-gallery" dir="rtl">
-    <p class="source-note">شش ترکیب پایهٔ Split و Dropdown با API اجرایی Vue؛ هر چهار اندازه نیز در بخش Sizes اجرا می‌شوند.</p>
+    <p class="source-note">شش ترکیب پایهٔ Split و Dropdown با adapter اجرایی Vue؛ هر چهار اندازه نیز در بخش Sizes اجرا می‌شوند.</p>
     <div class="split-gallery-grid">
       <article v-for="item in variants" :key="item.key" class="split-gallery-card">
         <div class="split-gallery-demo" inert><NoratoSplitButton :id="`gallery-${item.key}`" label="ذخیره" :items="options" :mode="item.mode" :variant="item.variant" /></div>
-        <div class="variant-caption"><span><b>{{ item.title }}</b><small>adapter آزمایشی Vue</small></span><button class="copy-action" type="button" :aria-label="`کپی نمونهٔ ${item.title}`" @click="emit('copy', `split-${item.key}`, snippet(item.mode, item.variant))">{{ copiedKey === `split-${item.key}` ? 'کپی شد' : 'کپی' }}</button></div>
+        <div class="variant-caption"><span><b>{{ item.title }}</b><small>adapter Vue</small></span><button class="copy-action" type="button" :aria-label="`کپی نمونهٔ ${item.title}`" @click="emit('copy', `split-${item.key}`, snippet(item.mode, item.variant))">{{ copiedKey === `split-${item.key}` ? 'کپی شد' : 'کپی' }}</button></div>
       </article>
     </div>
   </div>
   <div v-else-if="section === 'Sizes'" class="split-gallery" dir="rtl">
-    <p class="source-note">هر چهار اندازه در adapter آزمایشی اجرا می‌شوند؛ هدف کلیک Small و Medium با وجود ظاهر کوچک‌تر، ۴۸px باقی می‌ماند.</p>
+    <p class="source-note">هر چهار اندازه در adapter اجرا می‌شوند؛ هدف کلیک Small و Medium با وجود ظاهر کوچک‌تر، ۴۸px باقی می‌ماند.</p>
     <div class="split-size-grid">
       <div v-for="size in sizes" :key="size.key" class="split-size-card"><div inert><NoratoSplitButton :id="`size-${size.key}`" label="ذخیره" :items="options" :size="size.key" /></div><b>{{ size.label }}</b><small dir="ltr">{{ size.height }}</small></div>
     </div>

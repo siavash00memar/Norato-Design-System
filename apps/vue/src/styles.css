@@ -350,7 +350,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .split-gallery-demo .norato-split-button{max-inline-size:100%}
 .split-state--hover .norato-split-button__control{transform:translateY(calc(-1 * var(--norato-border-thin)))}
 .split-state--open .norato-split-button__chevron{transform:rotate(180deg)}
-.split-state--focus .norato-split-button__toggle{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1)}
+.split-state--focus .norato-split-button__toggle{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .split-size-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3)}
 .split-size-card{display:grid;justify-items:center;align-content:end;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card)}
 .split-size-card small{color:var(--norato-color-text-secondary)}

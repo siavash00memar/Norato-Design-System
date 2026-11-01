@@ -20,6 +20,7 @@ const items = [
   { value: 'copy', label: 'ذخیره به‌عنوان کپی' },
   { value: 'download', label: 'ذخیره و دانلود' },
 ]
+const onPrimaryAction = () => { activationCount.value++; selectedAction.value = '' }
 const variantOptions = computed(() => mode.value === 'split'
   ? [{ value: 'primary', label: 'Primary' }, { value: 'secondary', label: 'Secondary' }, { value: 'destructive', label: 'Destructive' }]
   : [{ value: 'primary', label: 'Primary' }, { value: 'secondary', label: 'Secondary' }, { value: 'tertiary', label: 'Tertiary' }])
@@ -33,7 +34,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { NoratoSplitBu
   <div class="button-playground" dir="rtl">
     <header><strong>آزمایش Split Button اجرایی</strong><span>اکشن اصلی و منوی گزینه‌ها را جداگانه امتحان کنید.</span></header>
     <div class="button-playground-preview">
-      <NoratoSplitButton id="split-playground" :label="displayLabel" :items="items" :mode="mode" :variant="variant" :size="size" :disabled="disabled" :loading="loading" @primary-action="activationCount++" @select="selectedAction = $event" />
+      <NoratoSplitButton id="split-playground" :label="displayLabel" :items="items" :mode="mode" :variant="variant" :size="size" :disabled="disabled" :loading="loading" @primary-action="onPrimaryAction" @select="selectedAction = $event" />
       <span role="status" aria-live="polite">{{ loading ? 'در حال بارگذاری' : disabled ? 'غیرفعال' : selectedAction ? `گزینهٔ انتخاب‌شده: ${selectedAction}` : activationCount ? `اجرای اکشن اصلی: ${activationCount}` : 'اکشن اصلی یا یکی از گزینه‌ها را فعال کنید.' }}</span>
     </div>
     <div class="button-playground-controls split-playground-controls">

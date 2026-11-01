@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import './component-specimen.css'
-import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating } from '@norato/vue'
+import './split-button-specimen.css'
+import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating, NoratoSplitButton } from '@norato/vue'
 defineProps<{ name: string; compact?: boolean }>()
+const splitSpecimenItems = [{ value: 'copy', label: 'ذخیره به‌عنوان کپی' }, { value: 'download', label: 'ذخیره و دانلود' }]
 </script>
 
 <template>
-  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker' }" aria-hidden="true" inert>
+  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker', 'sample-split-preview': name==='Split Button' }" aria-hidden="true" inert>
     <div v-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /><span class="sample-button-cancel">انصراف</span></div>
-    <div v-else-if="name==='Split Button'" class="sample-split"><NoratoButton label="ذخیره" /><NoratoButton label="⌄" icon-only accessible-label="گزینه‌های بیشتر" /></div>
+    <template v-else-if="name==='Split Button'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoSplitButton id="specimen-split-button" label="ذخیره" :items="splitSpecimenItems" /></template>
     <div v-else-if="name==='Input'" class="sample-form-controls sample-input-specimen"><NoratoField id="specimen-email" label="ایمیل" placeholder="name@example.com" helper-text="ایمیل کاری‌ات را وارد کن." dir="ltr" /></div>
     <div v-else-if="name==='Select'" class="sample-form-controls sample-input-specimen sample-select-specimen"><NoratoSelect id="specimen-city" label="شهر" model-value="tehran" :options="[{value:'tehran',label:'تهران'},{value:'shiraz',label:'شیراز'},{value:'disabled',label:'گزینهٔ غیرفعال',disabled:true}]" /></div>
     <div v-else-if="name==='Combobox'" class="sample-form-controls sample-combobox-specimen"><NoratoCombobox id="specimen-combobox" label="مهارت‌ها" placeholder="جست‌وجو کن یا بنویس…" :options="[{value:'design',label:'طراحی محصول'},{value:'research',label:'پژوهش کاربر'},{value:'writing',label:'طراحی رابط کاربری'}]" /></div>

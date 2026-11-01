@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import SplitButtonShowcase from './SplitButtonShowcase.vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
@@ -193,7 +194,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </template>
 
     <template v-else-if="section === 'Variants'">
-      <div class="variant-visual-grid">
+      <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <div v-else class="variant-visual-grid">
         <article v-for="entry in entries" :key="entry.id" class="contract-variant-card" :class="{ 'is-empty': isEmptyStatement(entry) }">
           <div class="variant-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span v-if="sampleKind(entry) === 'calendar'" class="preview-calendar" aria-hidden="true"><i v-for="day in 14" :key="day" :class="{ 'is-selected': day === 6 }" /></span>
@@ -215,7 +217,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </template>
 
     <template v-else-if="section === 'Sizes'">
-      <div class="size-visual">
+      <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
             <i :style="{ '--size-step': `${Math.min(64, Math.max(20, size))}px` }" />
@@ -233,7 +236,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </template>
 
     <template v-else-if="section === 'States'">
-      <div class="state-visual-grid">
+      <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <div v-else class="state-visual-grid">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
           <div class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>

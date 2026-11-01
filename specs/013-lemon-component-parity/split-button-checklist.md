@@ -6,5 +6,8 @@
 - [x] Toggle, ArrowDown/ArrowUp, Home/End, Escape, Tab exit and outside-click behavior verified in browser.
 - [x] Dedicated Variants, States and Sizes galleries and both Split/Dropdown-only parts are present. All four sizes use the Vue adapter; Small/Medium visual heights are 32/40px while their native targets remain 48px.
 - [x] Desktop and 390px mobile renders compared with Lemon; menu adjusted to remain in viewport, no overflow and all runtime targets at least 48px.
-- [ ] Contract, catalog, usage snippet, rules, error log and request checklist updated.
-- [x] Token, catalog, TypeScript and production build checks pass (2026-10-31, after the size API change).
+- [x] Contract, catalog, usage snippet, rules, error log and request checklist updated; API and maturity match the verified adapter.
+- [x] Token, catalog, TypeScript and production build checks pass (2026-11-01, after gallery, specimen, loading and status changes).
+- [x] Loading renders an accessible spinner and `aria-busy`; reduced-motion animation fallback is present.
+- [x] Browser AX tree exposes named split/dropdown controls, accurate expanded state and native menu items; independent screen-reader software was not run.
+- [x] Re-ran the 390×844 browser viewport after the final 288px preview-frame update: document width is 375px, the frame is 320×288px within the 343px content column, specimen control is centered at 48px tall, and no horizontal overflow is present. Lemon was compared in the same viewport; its frame is about 314×288px. Norato keeps its own palette and comparable scale.

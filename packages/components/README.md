@@ -27,3 +27,7 @@ const button = componentBySlug.get('button')
 Tags are searchable metadata, not instructions to group component pages. IDs, slugs and contract paths are explicit and must not be generated from labels. Keep each component's route independent.
 
 Run `pnpm check:catalog` after editing records, contracts, adapter exports or usage examples. The check verifies record uniqueness, all 49 Markdown files, readiness references and legacy duplicate maps.
+
+## AI coding agents
+
+Repository users can install or include the tracked skill at [`skills/norato-design-system/SKILL.md`](../../skills/norato-design-system/SKILL.md) in their coding agent's context. It describes how to resolve a component from this catalog, read its contract, verify whether a Vue adapter is real, follow the RTL/token rules, and avoid assuming that a visual specimen is an executable API. Refer to `AGENTS.md` as well for repository contribution workflow.

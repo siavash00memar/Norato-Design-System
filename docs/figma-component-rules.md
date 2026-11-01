@@ -51,6 +51,7 @@
 - The top specimen follows `https://lemonui.ir/#split-button`: one connected capsule, a single divider, main action on the right and menu toggle on the physical left in RTL. Norato yellow Primary and semantic tokens replace Lemon's dark palette.
 - Both runtime segments must be separate 48px-or-larger Tab targets. The menu opens below the toggle with its left edge aligned to the toggle's left edge; ArrowDown/ArrowUp, Home/End, Escape and outside-click behavior follow the documented Vue contract.
 - Split Button size API implements Small/Medium/Large/XLarge with 32/40/48/56px visual capsules; Small/Medium keep 48px native button targets. Verify both visual size and target geometry in the browser.
+- Keep the standalone inert Split Button preview frame 288px high (max width 640px; mobile cap 320px) with the Lemon Default marker and Norato glass tokens. Center the control without stretching it. Render the actual adapter in the 6-variant, 4-size and 5-state galleries; use inert only for those visual specimens.
 
 ## Input — Lemon visual parity, 2026-10-31
 

@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Split Button تکمیل و بازبینی موبایل نهایی (2026-11-01)
+
+- [x] Split Button در viewport موبایل 390×844 واقعی مرورگر باز شد؛ `innerWidth=390`، عرض سند و بدنه 375px، قاب 320×288px و کنترل نمونه 48px ارتفاع دارد. هیچ overflow افقی مشاهده نشد.
+- [x] Lemon در همان viewport بازبینی شد؛ قاب حدود 314×288px است. نسبت و تراکم نمونهٔ Norato هم‌تراز است و palette اختصاصی Norato حفظ می‌شود. Screenshot مرورگر موبایل قاب‌ها و کنترل مرکزی را نشان داد.
+- [x] دکمهٔ متصل RTL، موقعیت منوی سمت چپ، اندازه‌های چهارگانه، گالری‌های variant/state/size و playground اجرایی قبلاً در مرورگر بررسی شده‌اند؛ keyboard و focus/AX evidence در DoD ثبت است.
+- [x] `docs/request-validation-checklist.md`، contract، task/checklist، ledger و error log بعد از بررسی واقعی به‌روز شدند؛ Split Button DoD بسته شد.
+- [ ] اجرای صفحه‌خوان مستقل انجام نشد؛ درخت دسترس‌پذیری و صفحه‌کلید مرورگر بررسی شده است.
+
 ## گزارش این درخواست — Range (2026-11-01)
 
 - [x] Lemon و Norato در viewport دسکتاپ 1280×720 و موبایل 390×844 بازبینی شدند؛ یک field برچسب‌دار، value روی thumb، marker، track/fill و min/max زیر آن حفظ شد. Norato palette معنایی خودش را دارد؛ قاب به‌دلیل ستون detail در desktop برابر 584×288px و در mobile برابر 320×288px است.
@@ -611,6 +619,18 @@
 - [x] گالری اختصاصی Variants/States/Sizes مانند Button اضافه شد؛ شش ترکیب پایه و چهار ارتفاع بصری در موبایل دیده شدند و سرریز نداشتند.
 - [x] ArrowUp، Home/End، Tab خروج از منو، گونه‌های Primary/Secondary/Destructive/Tertiary و فوکوس دیداری در مرورگر بررسی شدند.
 - [x] چهار اندازهٔ Split Button اکنون در API اجرایی هستند؛ در مرورگر ظاهر ۳۲/۴۰/۴۸/۵۶px و هدف تعاملی حداقل ۴۸px برای Small/Medium اندازه‌گیری شد. DoD کامل و تغییر وضعیت Proposed هنوز باز است.
+
+## پیگیری DoD — Split Button (2026-11-01)
+
+- [x] در viewport محلی 1920×863، Norato با Lemon باز و مقایسه شد: frame نوراتو 584×288px (محدود به ستون صفحه) و قاب Lemon حدود 630×298px است. هر دو control متصل، جداکنندهٔ یکتا و نمونهٔ متمرکز دارند؛ ارتفاع control نوراتو 48px است. رنگ Norato زرد معنایی خودش را نگه می‌دارد.
+- [x] specimen بالای صفحه به adapter واقعی و inert وصل شد؛ نشان Default اضافه شد؛ selectorهای قدیمی `.sample-split` حذف شدند تا CSS موازی باقی نماند.
+- [x] گالری اختصاصی به صفحه متصل شد: ۶ گونهٔ پایه، ۴ اندازه، ۵ حالت؛ گالری اندازه‌ها از DOM چهار ارتفاع 32/40/48/56px را نشان داد.
+- [x] رفتار مرورگر: primary event/status، انتخاب منو/event، بستن با outside click، ArrowDown/Up، Home/End، Escape و بازگشت فوکوس به toggle، Tab خروج از منو، expanded state و هدف‌های مستقل مرور شدند.
+- [x] حالت Disabled هر دو دکمه را واقعاً disable می‌کند؛ Loading هر دو را disable و `aria-busy=true` می‌کند و spinner دیداری دارد. reduced-motion fallback در CSS ثبت است. Invalid برای این قرارداد تعریف نشده است.
+- [x] در هر چهار اندازه، ارتفاع بصری دقیق 32/40/48/56px است؛ در Small/Medium هر دو target حداقل 48×48px هستند. RTL در DOM تأیید شد: main در سمت راست و toggle در سمت چپ.
+- [x] کاتالوگ/قرارداد به Implemented ارتقا یافت؛ usage، قوانین Figma، error log، DoD و task ledger به‌روزرسانی شدند.
+- [ ] مرورگر متصل در این نوبت API تغییر viewport نداشت؛ اجرای مجدد viewport 390px پس از تغییر قاب به 288px لازم است. پیش‌تر رفتار منوی mobile/no-overflow در 390px ثبت شده بود، اما آن شاهد تغییر قاب نهایی را پوشش نمی‌دهد.
+- صفحه‌خوان مستقل اجرا نشد؛ بررسی به DOM، keyboard و accessibility tree مرورگر محدود است.
 
 ## گزارش درخواست — شروع adapter اجرایی Combobox با مرجع Lemon (در جریان، 2026-11-01)
 

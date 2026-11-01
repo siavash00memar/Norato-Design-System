@@ -1,13 +1,13 @@
 # Split Button — قرارداد کامپوننت نوراتو
 
 **حوزه:** Actions  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Implemented
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی یک کپسول پیوستهٔ دو‌بخشی با جداکننده است. رنگ Primary از زرد Norato می‌آید و ترکیب/نسبت اجزا از Lemon گرفته شده است. نمونهٔ Vue اجرایی در پایین آن آزمایشی است؛ تا پایان DoD وضعیت خانواده Proposed می‌ماند.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی یک کپسول پیوستهٔ دو‌بخشی با جداکننده است. رنگ Primary از زرد Norato می‌آید و ترکیب/نسبت اجزا از Lemon گرفته شده است. قاب ۲۸۸px ارتفاع دارد تا با preview مرجع هم‌تراز باشد؛ اندازهٔ خود کنترل به‌صورت مستقل ۳۲ تا ۵۶px است و کشیده نمی‌شود. نمونهٔ اجرایی Vue در playground پایین صفحه قرار دارد.
 
-گالری‌های Variants، Sizes و States مانند صفحهٔ Button مستقل‌اند: شش ترکیب پایهٔ Split/Dropdown با adapter آزمایشی، چهار اندازهٔ اجرایی و پنج حالت مستند. نمونهٔ تعاملی بالا منوی Open واقعی را اجرا می‌کند.
+گالری‌های Variants، Sizes و States مانند صفحهٔ Button مستقل‌اند: شش ترکیب پایهٔ Split/Dropdown با adapter Vue، چهار اندازهٔ اجرایی و پنج حالت مستند. نمونهٔ تعاملی در بخش Vue منوی Open واقعی را اجرا می‌کند.
 
 ## Overview
 
@@ -59,11 +59,11 @@
 
 ### Vue 3 API آزمایشی
 
-`NoratoSplitButton` با `id`، `label` و `items` (آرایهٔ `{ value, label, disabled? }`) کار می‌کند. `mode` برابر `split` یا `dropdown` است؛ `variant` برای Split شامل `primary`، `secondary` و `destructive` و برای Dropdown شامل `primary`، `secondary` و `tertiary` است. `size` چهار مقدار `small`، `medium`، `large` و `xlarge` دارد. `disabled` و `loading` هر دو اکشن را متوقف می‌کنند. اکشن اصلی رویداد `primary-action` و انتخاب منو رویداد `select` با `value` را منتشر می‌کند. پشتیبانی آیکن هنوز وجود ندارد.
+`NoratoSplitButton` از `@norato/vue` با `id`، `label` و `items` (آرایهٔ `{ value, label, disabled? }`) استفاده می‌شود. `mode` برابر `split` یا `dropdown` است؛ `variant` برای Split شامل `primary`، `secondary` و `destructive` و برای Dropdown شامل `primary`، `secondary` و `tertiary` است. `size` چهار مقدار `small`، `medium`، `large` و `xlarge` دارد. `disabled` و `loading` هر دو اکشن را متوقف می‌کنند؛ بارگذاری spinner، `aria-busy` و حالت غیرفعال واقعی دارد. اکشن اصلی رویداد `primary-action` و انتخاب منو رویداد `select` با `value` را منتشر می‌کند. پشتیبانی slot آیکن در این API وجود ندارد.
 
 ## Accessibility
 
-بخش اصلی و فلش دو هدف جدای Tab هستن و فلش باید برچسب «گزینه‌های بیشتر» داشته باشه.
+بخش اصلی و فلش دو دکمهٔ بومی و دو توقف جداگانهٔ Tab هستند؛ هر هدف حداقل ۴۸px است. فلش برچسب «گزینه‌های بیشتر»، `aria-haspopup="menu"`، `aria-expanded` و `aria-controls` دارد. ArrowDown منو را باز و اولین گزینه را متمرکز می‌کند؛ ArrowUp آخرین گزینه را می‌گیرد؛ Arrowها بین گزینه‌ها حرکت می‌کنند؛ Home/End ابتدا و انتها را می‌گیرند؛ Escape منو را می‌بندد و فوکوس را به فلش برمی‌گرداند. Tab از منو خارج می‌شود و کلیک بیرون آن را می‌بندد. اندازهٔ نمایشی Small و Medium هدف تعاملی را کوچک نمی‌کند.
 
 ### قاعدهٔ عمومی Focus در Norato
 
@@ -71,4 +71,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-brand-yellow`، `--norato-color-status-error`، `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary`، `--norato-color-text-disabled`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-control-target-min`، توکن‌های چهار ارتفاع Split Button، فاصله و شعاع pill. قاب پیش‌نمایش از `--norato-split-button-preview-*` استفاده می‌کند؛ اندازهٔ قاب به اندازهٔ control اعمال نمی‌شود.

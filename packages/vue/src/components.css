@@ -32,13 +32,14 @@
 .norato-split-button :is(.norato-split-button__main,.norato-split-button__toggle):disabled{cursor:not-allowed}
 .norato-split-button :is(.norato-split-button__main,.norato-split-button__toggle):focus-visible,.norato-split-button__item:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .norato-split-button__chevron{display:inline-block;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-split-button__progress{inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);border:var(--norato-border-focus) solid currentColor;border-inline-start-color:transparent;border-radius:50%;animation:norato-spin .8s linear infinite}
 .norato-split-button__chevron.is-open{transform:rotate(180deg)}
 .norato-split-button__menu{position:absolute;z-index:var(--norato-layer-popover);inset-block-start:calc(100% + var(--norato-space-2));inset-inline-end:0;display:grid;min-inline-size:max(100%,calc(var(--norato-control-target-min) * 4));max-inline-size:min(calc(100vw - var(--norato-space-4)),var(--norato-readable-measure));padding:var(--norato-space-1);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);box-shadow:var(--norato-elevation-box)}
 .norato-split-button__item{min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:0;border-radius:var(--norato-radius-tag);background:transparent;color:var(--norato-color-text-primary);font:inherit;text-align:start;white-space:nowrap;cursor:pointer}
 .norato-split-button__item:hover:not(:disabled){background:var(--norato-color-surface-subtle)}
 .norato-split-button__item:disabled{color:var(--norato-color-text-disabled);cursor:not-allowed}
 @media(max-width:700px){.norato-split-button__menu{inset-inline-end:auto;inset-inline-start:0}}
-@media(prefers-reduced-motion:reduce){.norato-split-button__chevron{transition:none}}
+@media(prefers-reduced-motion:reduce){.norato-split-button__chevron{transition:none}.norato-split-button__progress{animation-duration:.01ms;animation-iteration-count:1}}
 @keyframes norato-spin{to{transform:rotate(360deg)}}
 .norato-field-group,.norato-select-group,.norato-textarea-group,.norato-date-picker{display:grid;gap:var(--norato-field-group-gap);inline-size:100%;text-align:start}
 .norato-field__label,.norato-select__label,.norato-textarea__label,.norato-date-picker__label{color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-bold-weight)}

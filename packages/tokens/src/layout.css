@@ -15,6 +15,10 @@
   --norato-date-picker-preview-frame-inline-size: 640px;
   --norato-date-picker-preview-frame-mobile-inline-size: 320px;
   --norato-date-picker-preview-frame-min-block-size: 288px;
+  --norato-split-button-preview-frame-inline-size: 640px;
+  --norato-split-button-preview-frame-mobile-inline-size: 320px;
+  --norato-split-button-preview-frame-block-size: 288px;
+  --norato-split-button-preview-radius: 24px;
   --norato-date-picker-calendar-inline-size: 272px;
   --norato-date-picker-calendar-mobile-inline-size: 256px;
   --norato-date-picker-calendar-specimen-min-block-size: 252px;
