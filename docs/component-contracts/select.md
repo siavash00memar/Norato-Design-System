@@ -9,7 +9,7 @@
 
 ## Overview
 
-قرارداد بصری Norato بر پایهٔ Lemon امکان انتخاب تکی یا چندتایی از منوی شیشه‌ای با جستجو، گروه‌بندی و تأیید را تعریف می‌کند. adapter Vue با primitiveهای Reka UI مقدار کنترل‌شده، جست‌وجو، انتخاب چندتایی مرحله‌ای، placeholder، helper/error، required، disabled و loading را اجرا می‌کند. انتخاب تکی بلافاصله ثبت می‌شود؛ در حالت چندتایی فقط تأیید مقدار نهایی را ثبت می‌کند و انصراف آن را برمی‌گرداند. خانواده تا پایان بررسی همهٔ حالت‌ها کامل محسوب نمی‌شود.
+قرارداد بصری Norato بر پایهٔ Lemon امکان انتخاب تکی یا چندتایی از منوی شیشه‌ای با جستجو، گروه‌بندی و تأیید را تعریف می‌کند. adapter Vue با primitiveهای Reka UI مقدار کنترل‌شده، جست‌وجو، انتخاب چندتایی مرحله‌ای، placeholder، helper/error، required، disabled و loading را اجرا می‌کند. انتخاب تکی بلافاصله ثبت می‌شود؛ در حالت چندتایی فقط تأیید مقدار نهایی را ثبت می‌کند و انصراف آن را برمی‌گرداند. نشانگر گزینه‌های چندتایی چک‌باکس برداری ۲۴×۲۴px است؛ Chips یک برچسب و شمارندهٔ باقی‌مانده مانند «تهران +۴» نشان می‌دهد و Summary تعداد انتخاب‌ها را نمایش می‌دهد. خانواده تا پایان بررسی همهٔ حالت‌ها کامل محسوب نمی‌شود.
 
 ## Anatomy
 
@@ -21,9 +21,6 @@
 - **Group Title** — عنوان دسته برای لیست‌های بلند
 
 ## Variants
-
-در انتخاب چندتایی، نشانگر هر گزینه یک چک‌باکس برداری ۲۴×۲۴px از جزء مشترک `NoratoCheckboxVisual` است؛ نقش و تعامل صفحه‌کلید روی خود گزینهٔ Reka باقی می‌ماند.
-در نمای Chips، برای جلوگیری از رشد عمودی و هم‌خوانی با Lemon، یک برچسب و شمارندهٔ باقی‌مانده نمایش داده می‌شود؛ برای نمونه «تهران +۴». حالت Summary تعداد کل انتخاب‌ها را نمایش می‌دهد.
 
 - **Select (56 variant):** Type: Label Inside، Label Outside؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled، Read-only
 - **Multi Select (96 variant):** Type: Label Inside، Label Outside؛ Display: Chips، Summary؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled
