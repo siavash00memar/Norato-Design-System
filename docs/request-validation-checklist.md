@@ -1,5 +1,15 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Segmented Control و ارسال تغییرات موجود (2026-11-01)
+
+- [x] Lemon و Norato در viewport دسکتاپ 1280×900 مقایسه شدند؛ preview Norato قاب 632×288px و Lemon حدود 630px عرض دارد. در هر دو، track افقی، سه گزینه، Default marker و گزینهٔ انتخاب‌شده در سمت راست دیده می‌شوند.
+- [x] مقایسهٔ موبایل در 390×844: Norato frame=320×288px، target گزینه‌ها 48px، عرض سند375px و بدون overflow؛ قاب مرجع Lemon هم در همین viewport بازبینی شد.
+- [x] پس از fresh Vite startup مسیر کامپوننت Preview، اجرای adapter و هر ۹ بخش مستقل را نشان داد. سرور قبلی به علت cache قدیمی `import.meta.glob` بخش‌های سند را بارگذاری نمی‌کرد؛ restart-only dev server این مشکل نمایش را برطرف کرد.
+- [x] ماتریس ۲۴ گروه (۲ سبک × ۴ اندازه × ۳ تعداد گزینه) در مرورگر: RTL و اولین گزینه در سمت راست، بدون متن بریده، target اندازه‌های Small/Medium/Large=48px و XLarge=56px.
+- [x] رفتار مرورگر: pointer hover، حرکت فوکوس با ArrowLeft/Right در RTL، انتخاب با Space/Enter، Home/End، جلوگیری از خالی‌شدن انتخاب، `aria-pressed`، گروه نام‌دار، فوکوس ۲px، disabled تکی و گروهی بررسی شدند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript، build و `git diff --check` پس از تغییرها پاس شدند. هشدار chunk بالاتر از 500KB در build گزارش شد.
+- [ ] DoD کامل Segmented: صفحه‌خوان مستقل و کل حاصل‌ضرب ۶۴ حالت آیتم اجرا نشده؛ بلوغ Adapted باقی می‌ماند.
+
 ## گزارش این درخواست — Switch و وضعیت Radio (2026-11-01)
 
 - [x] مرجع Lemon Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در Lemon، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ پالت اجرایی Norato از semantic blue استفاده می‌کند.

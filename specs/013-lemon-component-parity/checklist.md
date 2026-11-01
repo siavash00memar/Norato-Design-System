@@ -18,6 +18,17 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] Browser keyboard check: Space toggled `aria-checked` false→true; Enter toggled true→false. AX tree exposed role `switch`, name “اعلان‌ها” and associated description.
 - [x] Three track sizes × off/on retained the 48×48 target in the earlier browser matrix; track geometry was 32×20, 40×24 and 48×28px.
 - [ ] Full 30 Switch + 6 Switch Field visual state combinations, pointer hover behavior and independent screenreader review remain open.
+
+## Segmented Control evidence (2026-11-01)
+
+- [x] Lemon and Norato renders compared in the same desktop (1280×900) and mobile (390×844) viewports. Preview is one three-option group, with rightmost first option selected, dotted glass, Default marker and Norato yellow/blue surface tones.
+- [x] Desktop frame measured 632×288px (Lemon approximately 630px wide); mobile frame 320×288px. The preview group is 260px wide; mobile document width is 375px, with no horizontal overflow.
+- [x] Reka ToggleGroup DOM reports a named group, native buttons with `aria-pressed`, RTL direction, visible keyboard focus, and 48px targets for Small/Medium/Large, 56px for XLarge.
+- [x] All 24 combinations of style, size and item count (2–4) retained RTL first-option placement, minimum hit target, and no label overflow.
+- [x] Pointer hover, keyboard arrows in RTL, Space, Enter, Home, End, keeping selection non-empty, single-item disabled and whole-group disabled were checked in the browser.
+- [x] Fresh Vite render shows the same detail structure as Button: preview, Vue adapter/playground and all nine contract sections. The older running dev process had a stale glob; a fresh process fixed the render without a source workaround.
+- [ ] Independent screenreader software and exhaustive 64 item state/style/size combinations were not run; DoD stays open.
+- [ ] Final token/catalog/TypeScript/build gates must pass before closing this family.
 - [x] Current Reka adapter revision: error exposes `aria-invalid=true` and associated error text; disabled is a real disabled switch; keyboard focus shows a 2px outline with 4px offset.
 - [x] `check:tokens`, `check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 - [ ] Full 30 Switch + 6 Switch Field visual state combinations, pointer hover behavior and independent screenreader review remain open.

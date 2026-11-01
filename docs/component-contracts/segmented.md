@@ -1,60 +1,65 @@
 # Segmented Control — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Adapted — بررسی کامل DoD ادامه دارد
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+یک Segmented Control سه‌گزینه‌ای با گزینهٔ اول در سمت راست، انتخاب پیش‌فرض برجسته و marker کوچک Default در قاب dotted-glass نمایش داده می‌شود. نمونه inert است؛ Playground پایین صفحه نمونهٔ واقعی را کنترل می‌کند.
 
 ## Overview
 
-قرارداد طراحی Norato: جابه‌جایی بین ۲ تا ۴ نما. دو استایل داره: Glass که گزینه‌ی انتخابی سفید و برجسته‌ست، و Contrast که مشکیه.
+برای جابه‌جایی بین ۲ تا ۴ نمای مرتبط از همان محتوا به کار می‌رود. سبک Glass انتخاب را روی سطح سفید و برجسته می‌کند؛ سبک Contrast از آبی معنایی Norato استفاده می‌کند. کنترل انتخاب تکی و controlled است و همیشه یک مقدار معتبر نگه می‌دارد.
 
 ## Anatomy
 
-- **Track** — ظرف شیشه‌ای کم‌رنگ
-- **Selected Segment** — گزینه‌ی فعال، برجسته
-- **Segment** — گزینه‌های غیرفعال
-- **Icon** — آیکن اختیاری هر گزینه
+- **Track** — سطح شیشه‌ای کم‌رنگ نگه‌دارندهٔ گزینه‌ها
+- **Selected Segment** — گزینهٔ انتخاب‌شده با سطح برجسته یا پس‌زمینهٔ آبی
+- **Segment** — دکمهٔ گزینه با label و آیکن اختیاری
+- **Icon** — کامپوننت آیکن اختیاری پیش از label
 
 ## Variants
 
-- **Segmented Control (24 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Items: 2، 3، 4
-- **Segment Item (64 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Selected: false، true؛ State: Default، Hover، Disabled، Focus
+- **Segmented Control (24 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Items: 2، 3، 4.
+- **Segment Item (64 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Selected: false، true؛ State: Default، Hover، Disabled، Focus.
 
 ## Sizes
 
-- Segmented Control: Small 32px، Medium 40px، Large 48px، XLarge 56px.
+مرجع Lemon اندازه‌های بصری ۳۲، ۴۰، ۴۸ و ۵۶px را ثبت می‌کند. Norato برای کنترل تعاملی حداقل هدف ۴۸px را حفظ می‌کند؛ Small، Medium و Large هدف ۴۸px و XLarge هدف ۵۶px دارد. متن و فاصلهٔ افقی بین اندازه‌ها تغییر می‌کند؛ متن به‌ترتیب ۱۲، ۱۳، ۱۴ و ۱۶px است.
 
 ## States
 
-- **Segment Item:** Default، Hover، Disabled، Focus
+- **Default:** گزینه‌ها در track شیشه‌ای؛ مقدار controlled مشخص است.
+- **Selected:** Glass سفید و برجسته؛ Contrast آبی برند با متن سفید.
+- **Hover:** متن گزینهٔ قابل‌تعامل با رنگ برند مشخص می‌شود.
+- **Disabled:** کنترل یا گزینهٔ خاص غیرقابل‌تعامل و با متن خنثی نمایش داده می‌شود.
+- **Focus:** حلقهٔ بیرونی ۲px برای گزینهٔ دارای focus-visible.
 
 ## Parts
 
-- **Segmented Control — 24 variant:** نگه‌دارنده‌ی ۲ تا ۴ گزینه. ابعاد/حالت‌ها: Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Items: 2، 3، 4
-- **Segment Item — 64 variant:** یه گزینه با آیکن یا برچسب. ابعاد/حالت‌ها: Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Selected: false، true؛ State: Default، Hover، Disabled، Focus
+- **Segmented Control — 24 variant:** گروه دکمه‌های انتخاب تکی با Style، Size و تعداد ۲ تا ۴.
+- **Segment Item — 64 variant:** دکمهٔ دارای مقدار، label، آیکن اختیاری، disabled اختیاری و وضعیت pressed.
 
 ## Usage
 
 ### راهنمای کاربرد Norato
 
-- برچسب‌ها رو کوتاه و تقریباً هم‌طول نگه دار.
-- برای عوض کردن نمای یه محتوای مشترک ازش استفاده کن.
+- labelها را کوتاه و تقریباً هم‌طول نگه دار.
+- از آن برای تغییر نمای همان محتوا استفاده کن؛ گزینهٔ اول در RTL سمت راست است.
 
 ### محدودیت‌های کاربرد
 
-- بیشتر از ۴ گزینه نذار؛ Tabs مناسب‌تره.
-- برای ناوبری بین صفحه‌های جدا ازش استفاده نکن.
+- بیشتر از چهار گزینه را به Tabs بسپار.
+- برای رفتن به صفحه‌های مستقل از آن استفاده نکن.
+- برای انتخاب چندگانه از checkbox یا الگوی چندانتخابی مناسب استفاده کن.
 
-### جهت RTL
+### API اجرایی
 
-گزینه‌ی اول سمت راسته.
+`NoratoSegmentedControl` از `id`، `label`، `items`، `modelValue`، `style`، `size` و `disabled` استفاده می‌کند. هر item دارای `value` و `label` و به‌صورت اختیاری `icon` و `disabled` است. نمونه در Vue با `v-model` کنترل می‌شود.
 
 ## Accessibility
 
-هر Segment یه دکمه با وضعیت pressed هست و با کیبورد قابل انتخابه.
+Reka `ToggleGroupRoot` و `ToggleGroupItem` را با `type="single"`، `dir="rtl"` و فوکوس چرخشی استفاده می‌کند. آیتم‌ها دکمه با `aria-pressed` هستند؛ Tab گروه را وارد می‌کند، کلیدهای جهت فوکوس را جابه‌جا می‌کنند، Home/End به ابتدا/انتها می‌روند و Space/Enter انتخاب می‌کنند. هر دکمه هدف حداقل ۴۸px دارد. حلقهٔ focus-visible دوپیکسلی است.
 
 ### قاعدهٔ عمومی Focus در Norato
 
@@ -62,4 +67,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از `--norato-color-glass-surface`، `--norato-color-surface-default`، `--norato-color-brand-blue`، `--norato-color-text-primary`، `--norato-color-text-on-brand`، `--norato-color-warning-container`، `--norato-color-info-container`، `--norato-color-border-default`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، توکن‌های spacing، `--norato-radius-pill`، `--norato-elevation-box` و `--norato-control-target-min` استفاده می‌شود. ابعاد قاب و XLarge از توکن‌های `--norato-segmented-preview-*` و `--norato-segmented-xlarge-visual-block-size` می‌آیند.

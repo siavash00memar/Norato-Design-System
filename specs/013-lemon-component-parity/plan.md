@@ -18,6 +18,12 @@
 - Current browser DOM: RTL, 48×48 target, 40×24 medium track and 320×288 specimen frame on the narrow inspected layout; no document horizontal overflow. Space and Enter toggle the controlled value.
 - Remaining analysis is interaction/render-state coverage (all states/sizes/values, pointer hover, independent screenreader), not base geometry or keyboard toggling.
 
+## Segmented Control current analysis
+
+- Lemon's page shows a 3-item single-select control, glass track, raised selected option and a second Contrast style. It documents 2/3/4 options × 2 styles × 4 sizes (24 group variants) and 64 item combinations.
+- Reka ToggleGroup is installed in `@norato/vue`; it provides controlled single selection, roving focus, RTL and pressed button state. Selected state cannot be cleared in the adapter.
+- Norato's 48px interaction floor changes Lemon's Small/Medium visual target; text density and padding vary while all real hit targets remain at least 48px.
+
 ## Risks
 
 - Several families are Proposed, so their visual specimen must stay labeled inert until supported Vue behavior exists.

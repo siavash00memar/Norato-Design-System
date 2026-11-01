@@ -33,3 +33,10 @@
 - Lemon Switch has a single-field top preview (label, description and Default marker), 30 switch combinations and 6 field combinations, with soft-glass off state and a black on state. Norato preserves this composition while using its own semantic blue palette.
 - Norato's controlled adapter uses Reka `SwitchRoot`/`SwitchThumb`, exposes label/description/error, retains a 48×48 target at all three track sizes, and moves the knob right-to-left when on.
 - Browser evidence confirms the current target/track geometry, RTL, AX switch role/name, and Space/Enter toggling. DoD remains open until hover, the complete Lemon state matrix and an independent screenreader pass are checked.
+
+## Segmented Control refinement
+
+- Lemon documents two visual styles, four sizes, a single selected view, 2–4 choices, RTL first-item placement, and 88 combinations across group/item axes.
+- Norato uses Reka ToggleGroup with controlled single selection and Norato semantic colors. Preserve 48px minimum hit areas despite Lemon's 32/40px Small/Medium visual sizes; XLarge remains 56px.
+- API supports optional item disabled state and icon component. The specimen remains inert, while live state, style, size, choice count and group disabled controls live in the Vue playground.
+- DoD requires desktop/mobile reference comparison, keyboard/pressed/focus behavior, RTL, disabled and per-size/state geometry, and project gates.

@@ -271,3 +271,11 @@
 - Use the Norato 78% glass token and default light border for the resting box; the checked state uses Norato blue rather than Lemon's black border/fill.
 - Keep the desktop frame at 640×288px and mobile maximum at 320×288px. Use the preview-specific 24px radius and 12px dot spacing; keep the top specimen to one field. Interactive state exploration stays in the live playground.
 - Keep Checkbox Field RTL with the control on the right, label/description to its left, whole row clickable, 48px minimum row height, and a 16px or 20px visual box.
+
+## Segmented Control — 2026-11-01
+
+- Match Lemon's single selected group, raised Glass segment or Contrast segment and horizontal track; the first option is on the right in RTL.
+- Preserve Norato's blue/yellow identity and semantic tokens; do not copy Lemon's black selected color.
+- Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
+- Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
+- Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.

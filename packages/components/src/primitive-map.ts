@@ -15,6 +15,7 @@ export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   checkbox: { candidate: 'shadcn/checkbox', decision: 'Use native keyboard and selected semantics.' },
   radio: { candidate: 'shadcn/radio-group', decision: 'Use for mutually exclusive choices.' },
   switch: { candidate: 'shadcn-vue switch / Reka UI SwitchRoot + SwitchThumb', decision: 'Use the installed Reka UI primitive for controlled switch semantics and keyboard behavior; customize its track, thumb, dimensions, focus and RTL position with Norato tokens.' },
+  segmented: { candidate: 'shadcn ToggleGroup / Reka UI ToggleGroupRoot + ToggleGroupItem', decision: 'Use the installed Reka single ToggleGroup for pressed-button semantics and roving keyboard focus; style Norato variants and preserve a non-empty controlled selection.' },
   'date-picker': { candidate: 'shadcn/calendar + popover', decision: 'Validate RTL and keyboard calendar behavior.' },
   'file-upload': { candidate: 'custom contract', decision: 'Requires drag alternative and file-state contract.' },
   'tree-view': { candidate: 'custom contract', decision: 'Requires multi-select and keyboard navigation review.' },
