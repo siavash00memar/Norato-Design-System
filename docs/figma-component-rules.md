@@ -316,3 +316,11 @@
 - Half stars use a physical right-side fill in RTL. Rating Input accepts whole-star values only; half values remain read-only.
 - Summary presents mean, review count, and five-to-one distribution bars. The sample stays inert; the live Reka RadioGroup and summary controls belong in the page playground.
 - Use Norato semantic yellow, text, border, glass and focus tokens inside a dotted-glass 640×288 desktop / 320×288 mobile frame.
+
+## Time Picker — 2026-11-01
+
+- Use Lemon's compact two-column hour/minute composition, dotted glass frame, Default marker, and bounded centered picker card. Keep the page sample inert and explore behavior in the Vue playground.
+- Keep the canonical model 24-hour `HH:mm` and render time digits LTR inside Persian RTL surroundings; 12-hour mode changes only the presentation.
+- Support Columns, Columns 12h, Wheel, Slots and Range. Use five-minute increments by default; slot availability is explicit; range endpoints remain chronological.
+- Preserve at least 48px hit targets and compact visual geometry. The default desktop/mobile preview frame is content-column bounded; the picker panel is capped and repositions above/below the anchor to stay in view.
+- Use Norato's semantic blue for the selected cell with glass/surface/focus tokens; do not copy Lemon's black selection.

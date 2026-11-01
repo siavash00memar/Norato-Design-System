@@ -611,3 +611,19 @@
 - **Browser evidence:** with `0/0.3/0.1`, real increment actions emitted `0.1`, `0.2`, `0.3` and disabled at max; ArrowUp/Down worked. With `0.05/0.35/0.1`, sequence and endpoint disabling were verified. Defaults and snippet returned to `0/99/1`; all four sizes passed each of six isolated common states. All 32 tab targets showed a focus ring.
 - **Prevention:** exercise configurable numerical props through the actual playground; validate decimal series and endpoint disabling rather than relying on integer-only checks.
 - **Remaining:** independent screen-reader review and combined cross-state sequences for the Input family remain open.
+
+## ERR-059 — Time Picker panel stretched to the documentation column (2026-11-01)
+
+- **Component:** Time Picker
+- **Finding:** the first live render inherited the full form-column width and showed every column value at once, making the picker panel wider and visually taller than the Lemon composition.
+- **Correction:** cap the panel using semantic Time Picker tokens and viewport bounds; show five neighboring values for Columns and keep the full scrollable values only in Wheel. The inert preview now has component-specific bounded geometry and no longer uses the legacy `.sample-time` selectors.
+- **Browser evidence:** desktop panel measured 360×397.2px in a 1280×720 viewport; narrow mobile panel also 360px wide, remained inside 499×932, and moved above/below the anchor. Default card measured 136×172px versus Lemon 138×179px; no overflow or stretch.
+- **Prevention:** measure the popup itself and its hit targets separately from the containing form column; keep visual specimen and executable panel sizing distinct.
+
+## ERR-060 — Time Picker outside action did not dismiss the open panel (2026-11-01)
+
+- **Component:** Time Picker
+- **Finding:** during browser verification, an outside button could receive focus while the picker remained open.
+- **Correction:** add focus-leave dismissal to the wrapper while keeping focus transitions within the picker intact; retain capture-phase pointer/click outside checks.
+- **Browser evidence:** a real browser click on the outside reset action closed the popup, preserved focus on that action and left the controlled value at `14:30`; Escape closed and restored focus to the trigger.
+- **Prevention:** test outside dismissal with an actual pointer and keyboard focus transition, not only Escape or programmatic open/close.

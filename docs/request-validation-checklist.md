@@ -940,3 +940,12 @@
 - [x] طول پنج خانه در مرورگر: paste همهٔ پنج رقم را در پنج خانه ثبت کرد و فوکوس را به خانهٔ آخر برد؛ ArrowLeft فوکوس را یک خانه جابه‌جا کرد و Backspace رقم خانهٔ فوکوس‌شده را پاک کرد. مرورگر خطا نداشت و playground با OTP شش‌رقمی خالی بازیابی شد.
 - [ ] وضعیت‌های اختصاصی error/disabled/success برای OTP، توالی ترکیبی stateها و صفحه‌خوان مستقل هنوز باز هستند؛ DoD خانواده Input بسته نیست.
 - [x] مستندات Input، دفتر ۴۸ خانواده و Request Validation به‌روز شدند. Number refinement پیش‌تر در commit `e9364e2` روی `origin/master` منتشر و هم‌ترازی remote تأیید شده است.
+
+## Time Picker — Lemon comparison and adapter DoD progress (2026-11-01)
+
+- [x] Lemon and Norato rendered at matching desktop 1280×720 and narrow mobile 499×932 viewports. Desktop frame/card: Lemon 636×300 / 138×179px, Norato 584×288 / 136×172px (column constrained); mobile: Lemon 436×300px, Norato 452×288px. Norato document width 484px; no horizontal overflow or vertical stretch.
+- [x] Default specimen is inert, uses a bounded dotted glass frame, Default marker, two compact columns and Norato blue selection. The live page has the Button-style preview, executable Vue playground/code and all nine contract sections.
+- [x] Single and range v-model; Columns, Columns 12h, Wheel, Slots and Range modes; 24-hour canonical values; 12h AM/PM mapping; 5 and 15 minute steps; explicit disabled slot; chronological range crossing all verified in the live browser.
+- [x] Popup tested above/below anchor and within viewport at both widths; outside click closes, Escape returns focus; ArrowDown/Enter select; 48px minimum targets and visible 2px focus ring/4px offset observed.
+- [x] Error/required/helper associations, `aria-invalid`, disabled, loading/`aria-busy`, LTR values within RTL page, all nine page sections and synchronized example inspected.
+- [ ] Independent screen-reader review and final technical gates remain. Exact viewport 390px was unavailable in this browser; mobile comparison used 499px (below the 600px responsive breakpoint). DoD remains open until technical gates pass.

@@ -23,6 +23,16 @@
   --norato-date-picker-preview-frame-inline-size: 640px;
   --norato-date-picker-preview-frame-mobile-inline-size: 320px;
   --norato-date-picker-preview-frame-min-block-size: 288px;
+  --norato-time-picker-preview-frame-inline-size: 640px;
+  --norato-time-picker-preview-frame-mobile-inline-size: 480px;
+  --norato-time-picker-preview-frame-block-size: 288px;
+  --norato-time-picker-preview-card-inline-size: 136px;
+  --norato-time-picker-preview-card-block-size: 172px;
+  --norato-time-picker-preview-cell-size: 22px;
+  --norato-time-picker-preview-grid-size: 14px;
+  --norato-time-picker-preview-dot-size: 1px;
+  --norato-time-picker-panel-inline-size: 360px;
+  --norato-time-picker-panel-min-inline-size: 280px;
   --norato-split-button-preview-frame-inline-size: 640px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;
   --norato-split-button-preview-frame-block-size: 288px;
