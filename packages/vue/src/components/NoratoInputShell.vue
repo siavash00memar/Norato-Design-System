@@ -22,6 +22,7 @@ const describedBy = computed(() => [
     :data-size="size"
     :data-label-placement="labelPlacement"
     :data-invalid="Boolean(errorText) || undefined"
+    :data-success="Boolean(successText && !errorText) || undefined"
     :data-disabled="Boolean(disabled || loading) || undefined"
     :data-readonly="Boolean(readOnly) || undefined"
     :aria-busy="loading || undefined"

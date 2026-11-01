@@ -53,11 +53,14 @@
 - Split Button size API implements Small/Medium/Large/XLarge with 32/40/48/56px visual capsules; Small/Medium keep 48px native button targets. Verify both visual size and target geometry in the browser.
 - Keep the standalone inert Split Button preview frame 288px high (max width 640px; mobile cap 320px) with the Lemon Default marker and Norato glass tokens. Center the control without stretching it. Render the actual adapter in the 6-variant, 4-size and 5-state galleries; use inert only for those visual specimens.
 
-## Input — Lemon visual parity, 2026-10-31
+## Input — Lemon visual parity and Norato runtime, 2026-11-01
 
-- Use `https://lemonui.ir/#input` for the visual arrangement of the top specimen: one compact, labeled field with helper text. Preserve Norato semantic colors, Estedad/Vazirmatn, RTL label/helper placement and the 48px control target.
-- The top Input specimen is inert and uses an LTR email placeholder inside an RTL field group. The separate Vue playground exercises the actual `NoratoField` adapter; do not imply that its generic text API implements the other Input families or four sizes.
-- Keep the field's rendered height independent of the preview frame. Use the Lemon-composition inert marker, Norato glass/wash/dots and a 324px maximum field width; the desktop frame is capped at 640px and mobile at 320px, with 288px Norato height. At equal 1920×863 viewport Lemon measures 636×300px and Norato 584×288px (limited by Norato's content column); each field is 324px wide and Norato remains 48px high. At equal 390×844 mobile viewport Lemon measures 327×300px with a 321px field group; Norato measures 320×288px with a 310×48px control, and its document remains 375px wide. The top sample remains inert; do not imply that the generic text API implements the other Input families or four sizes.
+- Use `https://lemonui.ir/#input` for the top specimen arrangement: one compact, labeled email field with helper text. Preserve Norato semantic colors, Estedad/Vazirmatn, RTL label/helper placement and the minimum 48px target.
+- The top specimen is inert; its email entry is LTR inside an RTL field group. Keep it separate from the live Vue playground, which covers all eight public adapters: Text, Password, Phone, OTP, Textarea, Number, Amount and Search. `NoratoField` remains backward-compatible and does not replace those specialized adapters.
+- Keep the field height independent of the preview frame. Use the Lemon-composition Default marker, Norato glass/wash/dots and a 324px maximum field width; the desktop frame caps at 640×288px and the mobile width at 320px. Prior equal-viewport captures: Lemon 636×300px vs Norato 584×288px desktop; mobile 327×300px vs Norato 320×288px. At 390px, the document remains 375px wide.
+- The user's approved DoD requires the Button-style page structure: Preview, live Vue playground, then nine independently copyable contract sections.
+- Lemon's 32/40/48/56px are reference sizes. Norato's interactive target floor is 48px: single-line controls measure 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measure 48/52/56/60px and wrap without horizontal overflow; three-row Textarea measures 103/108/120/128px. Hide native Number spinners beside Norato's own 48px step actions.
+- State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
 
 ## Select
 

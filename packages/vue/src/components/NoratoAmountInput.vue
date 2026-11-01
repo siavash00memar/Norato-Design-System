@@ -7,13 +7,13 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
 const displayValue = computed(() => props.modelValue ? new Intl.NumberFormat('fa-IR').format(Number(props.modelValue)) : '')
 const amountWords = computed(() => {
   const value = Number(props.modelValue)
-  if (!Number.isFinite(value) || value < 0 || value > 999_999_999_999) return ''
+  if (!Number.isSafeInteger(value) || value < 0) return ''
   if (!value) return props.modelValue ? `صفر ${props.currency}` : ''
   const ones = ['','یک','دو','سه','چهار','پنج','شش','هفت','هشت','نه']
   const teens = ['ده','یازده','دوازده','سیزده','چهارده','پانزده','شانزده','هفده','هجده','نوزده']
   const tens = ['','','بیست','سی','چهل','پنجاه','شصت','هفتاد','هشتاد','نود']
   const hundreds = ['','صد','دویست','سیصد','چهارصد','پانصد','ششصد','هفتصد','هشتصد','نهصد']
-  const scales = ['', 'هزار', 'میلیون', 'میلیارد']
+  const scales = ['', 'هزار', 'میلیون', 'میلیارد', 'هزار میلیارد', 'میلیون میلیارد']
   const words = (n: number) => { const p: string[] = []; if (n >= 100) { p.push(hundreds[Math.floor(n / 100)]!); n %= 100 } if (n >= 10 && n < 20) { p.push(teens[n - 10]!); n = 0 } else if (n >= 20) { p.push(tens[Math.floor(n / 10)]!); n %= 10 } if (n) p.push(ones[n]!); return p.join(' و ') }
   const groups: string[] = []; let rest = Math.floor(value); let i = 0
   while (rest) { const group = rest % 1000; if (group) groups.unshift(`${words(group)}${scales[i] ? ` ${scales[i]}` : ''}`); rest = Math.floor(rest / 1000); i++ }

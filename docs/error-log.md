@@ -579,3 +579,10 @@
 - **Browser evidence:** on `#component-radio`, all radio values were 0 with `undefined` and “بدون انتخاب” in status/code. Selecting quarterly changed the radio value, unchecked the empty simulation, and updated status and snippet to `quarterly`. Required + empty showed the required message and prop; selected + error exposed the actual error and a non-contradictory status. Initial monthly/20px/default state was restored.
 - **Prevention:** verify generated examples against the effective runtime model for simulated states; always test leaving empty/error modes through the component interaction, not only by toggling controls.
 - **Remaining:** this playground fix does not close Radio's independent screen-reader or full visual state matrix DoD.
+
+## ERR-055 — Native number controls duplicated Norato step actions (2026-11-01)
+
+- **Component:** Input / Number Input
+- **Finding:** mobile Chrome showed native number spinner arrows beside Norato's explicit increment/decrement buttons, presenting two competing step controls.
+- **Correction:** scoped WebKit/Firefox spin-button appearance rules to `.norato-input-field__input[type="number"]`; ArrowUp remains enabled and a browser interaction still increments 98 to the configured maximum 99. Search's browser-native cancel decoration is also hidden because Search supplies its own labeled clear action.
+- **Prevention:** whenever a custom action replaces a native affordance, inspect the actual mobile render for duplicate controls and verify the underlying keyboard operation still works.
