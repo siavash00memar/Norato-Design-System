@@ -14,7 +14,7 @@
 - [x] Lemon مرجع هفت/هشت زیرنوع، چهار اندازه و label placement داخل/بیرون دارد؛ تفاوت حداقل hit target نوراتو عمداً بر مبنای قرارداد 48px نگه داشته شده. بررسی کامل همهٔ ترکیب‌ها و screen-reader مستقل باز است.
 - [ ] مقایسهٔ نهایی Lemon/Norato برای تغییرات اخیر desktop با viewport یکسان و اجرای دوبارهٔ همهٔ ماتریس‌های states/focus هنوز لازم است؛ در نشست قبلی تغییر viewport برای tab دسکتاپ اعمال نشد.
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck/build و `git diff --check` پس از اصلاح اجرا و پاس شدند؛ Vite هشدار chunk بزرگ‌تر از 500KB می‌دهد (678.91KB).
-- [ ] اصلاح دقت Amount و مستنداتش هنوز در checkpoint بعدی باید push شوند؛ full state/focus matrix و بررسی مستقل صفحه‌خوان نیز باز هستند.
+- [x] اصلاح دقت Amount و شواهدش در `93f2507` به GitHub push شد؛ full state/focus matrix و بررسی مستقل صفحه‌خوان همچنان باز هستند.
 
 ## ادامهٔ DoD Segmented Control — دسکتاپ، موبایل و صفحه‌کلید (2026-11-01)
 

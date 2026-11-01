@@ -20,7 +20,7 @@
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
 - [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue TypeScript) and `git diff --check` pass. Current production JS chunk is 678.91KB; Vite warns that it exceeds 500KB.
 - [ ] Request checklist, contract, catalog maturity and family ledger truthfully record remaining work.
-- [ ] The `9e40131` refinement checkpoint is historical; the exact-integer Amount correction and its evidence are validated but await this checkpoint's commit/push. Previous implementation checkpoint `663af1f` is historical.
+- [x] Exact-integer Amount refinement `93f2507` is pushed; local `HEAD` and `origin/master` both resolve to `93f25072124a583750c425ffb2b7701679d8e7f2`. Earlier checkpoints `9e40131` and `663af1f` are historical.
 
 ## Remaining evidence
 
