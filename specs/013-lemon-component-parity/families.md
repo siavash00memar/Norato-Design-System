@@ -12,7 +12,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Radio Button | radio | Implemented | Dedicated API and sample; core desktop/mobile behavior checked, full reference state matrix remains open |
 | [ ] | Switch | switch | Adapted | Dedicated controlled Reka adapter, three track sizes, Lemon-composition preview, RTL and Space/Enter checked; complete state/hover/screenreader DoD remains open |
 | [ ] | Segmented Control | segmented | Adapted | Reka ToggleGroup adapter and playground implemented; browser keyboard/state/size DoD pending |
-| [ ] | Range | range | Proposed | Pending visual and behavior comparison |
+| [x] | Range | range | Implemented | Reka controlled single/range; Lemon desktop/mobile compared; all 16 type/size/disabled combinations at both viewports, pointer/keyboard/RTL/AX and technical gates pass. |
 | [ ] | Rating | rating | Proposed | Pending visual and behavior comparison |
 | [ ] | Date Picker | date-picker | Proposed | Pending visual and behavior comparison |
 | [ ] | Time Picker | time-picker | Proposed | Pending visual and behavior comparison |

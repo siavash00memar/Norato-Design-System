@@ -443,6 +443,14 @@
 - Remaining: full 30 Switch state/size/value matrix, pointer-hover behavior and independent screenreader run are open; do not close family DoD yet.
 - 2026-11-01 Switch: ابتدا DoD بر اساس رندر واقعی Lemon/Norato و API فعلی محدود شد. اندازه‌گیری مجدد در viewport متصل، preview-frame را 320×288، target را 48×48 و track متوسط را 40×24 نشان داد؛ screenshot matrix کامل نیست، بنابراین وضعیت Adapted/DoD باز باقی می‌ماند. استفاده از primitiveهای `SwitchRoot`/`SwitchThumb` در Reka جای پیاده‌سازی دستی interaction را گرفت؛ Space و Enter در مرورگر هر دو وضعیت را درست تغییر دادند.
 
+## 2026-11-01 — Range adapter and specimen
+
+- Finding: the prior Range specimen was a bare native input in generic `.sample-range` rules, with no value above its moving thumb, two-thumb mode or executable Playground. `.sample-range input` could also accidentally size Reka's hidden input.
+- Correction: added controlled Reka Slider composition for single/range, size/state props, Persian value labels inside each thumb, RTL fill, 48×48px target, Norato semantic track/fill/hover/focus tokens, error associations and disabled semantics. Removed legacy native-input selectors and placed Lemon-shaped specimen rules in the app specimen stylesheet.
+- Browser evidence: desktop (1280×720) and mobile (390×844) compared to Lemon. Norato frames measured 584×288px desktop (detail-column constraint) and 320×288px mobile; mobile document width 375px. The 16 Type × Size × Disabled combinations at both viewports all kept 48px slider height and 48×48px thumbs. ArrowLeft/Right, Home/End, pointer drag, focus ring (2px/4px offset), RTL fill, range ordering, disabled and error description passed browser checks. AX tree exposed named sliders and min/max/current values.
+- Visual correction: first browser render showed current value twice and outside its thumb; moved the visual value into each thumb and removed duplicate row value. Hover/drag halo uses the existing Norato info-container token.
+- Remaining: no independent screen-reader software run. Browser accessibility tree and semantic states were inspected.
+
 ## 2026-11-01 — Segmented Control implementation
 
 - Lemon's segmented page documents 2–4 related views, two selected styles, four sizes, 24 group variants and 64 item combinations. Norato's global 48px target conflicts with Lemon Small/Medium 32/40px silhouettes; keep those hit areas 48px and vary text and horizontal spacing.

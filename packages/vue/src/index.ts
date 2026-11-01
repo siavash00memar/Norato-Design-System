@@ -13,5 +13,6 @@ export { default as NoratoRadioGroup } from './components/NoratoRadioGroup.vue'
 export { default as NoratoSwitch } from './components/NoratoSwitch.vue'
 export { default as NoratoSegmentedControl } from './components/NoratoSegmentedControl.vue'
 export type { NoratoSegmentedItem } from './components/NoratoSegmentedControl.vue'
+export { default as NoratoRange } from './components/NoratoRange.vue'
 export { default as NoratoTextarea } from './components/NoratoTextarea.vue'
 

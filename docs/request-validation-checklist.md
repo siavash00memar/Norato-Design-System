@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Range (2026-11-01)
+
+- [x] Lemon و Norato در viewport دسکتاپ 1280×720 و موبایل 390×844 بازبینی شدند؛ یک field برچسب‌دار، value روی thumb، marker، track/fill و min/max زیر آن حفظ شد. Norato palette معنایی خودش را دارد؛ قاب به‌دلیل ستون detail در desktop برابر 584×288px و در mobile برابر 320×288px است.
+- [x] در هر دو viewport ماتریس ۱۶حالتهٔ Single/Range × Small/Medium × Default/Disabled اجرا شد؛ slider ارتفاع 48px و هر thumb اندازهٔ 48×48px داشت؛ document mobile برابر 375px و بدون overflow بود.
+- [x] RTL و جهت fill از راست به چپ سنجیده شد. ArrowLeft/Right، Home/End، pointer drag، ترتیب دو thumb، focus ring دوپیکسلی با offset چهارپیکسلی، disabled واقعی، `aria-invalid` و توضیح error متصل بررسی شدند.
+- [x] AX tree برای هر thumb role/name/min/max/current value و برای خطا description و alert نشان داد. صفحه Preview + playground اجرایی + هر ۹ بخش و دکمه‌های copy دارد.
+- [x] legacy `.sample-range input` حذف شد و مقدار تکراری از label row برداشته شد؛ اندازهٔ thumb از target جداست تا کنترل کش نیاید.
+- [x] پس از آخرین تغییرات `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript، `pnpm --dir apps/vue build` و `git diff --check` پاس شدند؛ build هشدار chunk بزرگ‌تر از 500KB با اندازهٔ 575.88KB دارد.
+
 ## گزارش این درخواست — Segmented Control و ارسال تغییرات موجود (2026-11-01)
 
 - [x] Lemon و Norato در viewport دسکتاپ 1280×900 مقایسه شدند؛ preview Norato قاب 632×288px و Lemon حدود 630px عرض دارد. در هر دو، track افقی، سه گزینه، Default marker و گزینهٔ انتخاب‌شده در سمت راست دیده می‌شوند.

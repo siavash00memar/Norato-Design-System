@@ -272,6 +272,13 @@
 - Keep the desktop frame at 640×288px and mobile maximum at 320×288px. Use the preview-specific 24px radius and 12px dot spacing; keep the top specimen to one field. Interactive state exploration stays in the live playground.
 - Keep Checkbox Field RTL with the control on the right, label/description to its left, whole row clickable, 48px minimum row height, and a 16px or 20px visual box.
 
+## Range — 2026-11-01
+
+- Use Lemon's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.
+- In RTL, minimum is on the physical right and fill grows right-to-left. Keep values anchored to their thumb positions.
+- Use Norato semantic colors. Keep visible thumb/rail compact while the actual pointer/keyboard target is at least 48px; Small/Medium affect rail and thumb appearance only.
+- Exact values should pair with a numeric input; the slider alone communicates approximate adjustment.
+
 ## Segmented Control — 2026-11-01
 
 - Match Lemon's single selected group, raised Glass segment or Contrast segment and horizontal track; the first option is on the right in RTL.

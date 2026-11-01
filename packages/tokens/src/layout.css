@@ -79,6 +79,15 @@
   --norato-segmented-preview-control-inline-size: 260px;
   --norato-segmented-preview-radius: 24px;
   --norato-segmented-xlarge-visual-block-size: 56px;
+  --norato-range-preview-frame-inline-size: 640px;
+  --norato-range-preview-frame-mobile-inline-size: 320px;
+  --norato-range-preview-frame-block-size: 288px;
+  --norato-range-preview-control-inline-size: 320px;
+  --norato-range-track-small-block-size: 4px;
+  --norato-range-track-medium-block-size: 6px;
+  --norato-range-thumb-visual-size: 20px;
+  --norato-range-thumb-target-size: var(--norato-control-target-min);
+  --norato-range-thumb-halo-size: var(--norato-space-2);
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
   --norato-border-medium: 2px;

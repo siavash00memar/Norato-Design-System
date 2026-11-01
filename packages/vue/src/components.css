@@ -235,3 +235,27 @@
 @media(prefers-reduced-motion:reduce){.norato-button,.norato-button__progress{transition:none;animation-duration:.01ms;animation-iteration-count:1}}
 
 .norato-button:active:not(:disabled):not(:focus-visible){transform:scale(.97)}
+/* Range Input — semantic Norato tokens, compact visuals with full-size hit targets. */
+.norato-range-field{display:grid;gap:var(--norato-space-1);inline-size:100%;color:var(--norato-color-text-primary);font-family:var(--norato-font-body);text-align:right}
+.norato-range-field__label-row{display:flex;align-items:center;justify-content:space-between;gap:var(--norato-space-2);font-size:var(--norato-type-body-small-size);font-weight:600}
+.norato-range-field__control{position:relative;padding-block-start:var(--norato-space-4);padding-block-end:var(--norato-space-2)}
+.norato-range{position:relative;display:flex;align-items:center;inline-size:100%;block-size:var(--norato-range-thumb-target-size);touch-action:none;user-select:none}
+.norato-range__track{position:relative;flex:1;block-size:var(--norato-range-track-medium-block-size);overflow:hidden;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted)}
+.norato-range__fill{position:absolute;block-size:100%;border-radius:inherit;background:var(--norato-color-brand-blue)}
+.norato-range__thumb{position:absolute;display:block;inline-size:var(--norato-range-thumb-target-size);block-size:var(--norato-range-thumb-target-size);border:0;border-radius:var(--norato-radius-pill);background:transparent;outline:none;cursor:grab}
+.norato-range__thumb::after{position:absolute;inset:50%;inline-size:var(--norato-range-thumb-visual-size);block-size:var(--norato-range-thumb-visual-size);border:var(--norato-border-medium) solid var(--norato-color-focus-contrast);border-radius:inherit;background:var(--norato-color-surface-default);box-shadow:var(--norato-elevation-box);content:"";transform:translate(-50%,-50%)}
+.norato-range__thumb:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.norato-range__thumb:active{cursor:grabbing}
+.norato-range-field:not(.norato-range-field--disabled) .norato-range__thumb:hover::after,.norato-range-field:not(.norato-range-field--disabled) .norato-range__thumb:active::after{box-shadow:0 0 0 var(--norato-range-thumb-halo-size) var(--norato-color-info-container),var(--norato-elevation-box)}
+.norato-range-field__thumb-value{position:absolute;inset-block-end:calc(100% - var(--norato-space-2));inset-inline-start:50%;min-inline-size:var(--norato-range-thumb-visual-size);transform:translateX(50%);text-align:center;font-size:var(--norato-type-body-caption-size);font-variant-numeric:tabular-nums;color:var(--norato-color-text-secondary);pointer-events:none}
+.norato-range-field__bounds{display:flex;justify-content:space-between;font-size:var(--norato-type-body-caption-size);color:var(--norato-color-text-secondary)}
+.norato-range-field--small .norato-range__track{block-size:var(--norato-range-track-small-block-size)}
+.norato-range-field--small .norato-range__thumb::after{inline-size:var(--norato-space-4);block-size:var(--norato-space-4)}
+.norato-range-field--disabled{color:var(--norato-color-text-disabled)}
+.norato-range-field--disabled .norato-range{cursor:not-allowed}
+.norato-range-field--disabled .norato-range__track{background:var(--norato-color-border-default)}
+.norato-range-field--disabled .norato-range__fill{background:var(--norato-color-text-disabled)}
+.norato-range-field--disabled .norato-range__thumb{cursor:not-allowed}
+.norato-range-field--disabled .norato-range__thumb::after{background:var(--norato-color-surface-muted);border-color:var(--norato-color-border-strong)}
+.norato-range-field--invalid .norato-range__fill{background:var(--norato-color-error-strong)}
+.norato-range-field__error{margin:0;color:var(--norato-color-error-strong);font-size:var(--norato-type-body-caption-size)}

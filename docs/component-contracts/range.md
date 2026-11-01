@@ -1,11 +1,11 @@
 # Range — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Implemented — adapter، رفتار و ماتریس DoD دسکتاپ/موبایل بررسی شدند
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ یک اسلایدر فشرده با مقدار بالای thumb، Default marker، قاب dotted-glass و پرشدن از راست. آزمایش زندهٔ single/range پایین صفحه کنترل می‌شود.
 
 ## Overview
 
@@ -57,7 +57,9 @@
 
 ## Accessibility
 
-با کلیدهای جهت مقدار قدم‌به‌قدم تغییر می‌کنه.
+`NoratoRange` با `id`، `label`، `modelValue`، `min`، `max`، `step`، `type`، `size`، `disabled`، `error`، `minLabel` و `maxLabel` مقدار تکی یا tuple دو عضوی را می‌پذیرد و `update:modelValue` با همان شکل منتشر می‌کند. Reka Slider برای pointer و keyboard استفاده می‌شود؛ حداقل در RTL سمت راست است و fill به سمت چپ رشد می‌کند. هر thumb هدف ۴۸px دارد.
+
+با کلیدهای جهت مقدار قدم‌به‌قدم تغییر می‌کنه. `Home` و `End` به min و max می‌روند؛ هر thumb نام، min/max/current value دارد و خطا با `aria-describedby` متصل است.
 
 ### قاعدهٔ عمومی Focus در Norato
 
@@ -65,4 +67,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-range-track-small-block-size`، `--norato-range-track-medium-block-size`، `--norato-range-thumb-visual-size`، `--norato-range-thumb-target-size`، `--norato-range-thumb-halo-size` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.

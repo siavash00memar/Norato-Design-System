@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import './component-specimen.css'
-import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch } from '@norato/vue'
+import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange } from '@norato/vue'
 defineProps<{ name: string; compact?: boolean }>()
 </script>
 
 <template>
-  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control' }" aria-hidden="true" inert>
+  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range' }" aria-hidden="true" inert>
     <div v-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /><span class="sample-button-cancel">انصراف</span></div>
     <div v-else-if="name==='Split Button'" class="sample-split"><NoratoButton label="ذخیره" /><NoratoButton label="⌄" icon-only accessible-label="گزینه‌های بیشتر" /></div>
     <div v-else-if="name==='Input'" class="sample-form-controls sample-input-specimen"><NoratoField id="specimen-email" label="ایمیل" placeholder="name@example.com" helper-text="ایمیل کاری‌ات را وارد کن." dir="ltr" /></div>
@@ -15,7 +15,7 @@ defineProps<{ name: string; compact?: boolean }>()
     <template v-else-if="name==='Radio Button'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-radio-specimen"><NoratoRadioGroup id="specimen-period" label="دورهٔ اشتراک" hide-label model-value="monthly" :options="[{value:'monthly',label:'ماهانه'},{value:'quarterly',label:'سه‌ماهه'},{value:'yearly',label:'سالانه'}]" :size="20" /></div></template>
     <template v-else-if="name==='Switch'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-switch-specimen"><NoratoSwitch id="specimen-notifications" label="اعلان‌ها" description="پیام‌های جدید رو خبر بده" :model-value="false" size="medium" /></div></template>
     <template v-else-if="name==='Segmented Control'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-segment"><button class="active">روزانه</button><button>هفتگی</button><button>ماهانه</button></div></template>
-    <div v-else-if="name==='Range'" class="sample-range"><b>بودجهٔ ماهانه <span>۶ میلیون</span></b><input type="range" min="0" max="10" value="6" aria-label="بودجه" /><small>۰ <span>۱۰ میلیون</span></small></div>
+    <template v-else-if="name==='Range'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-range"><NoratoRange id="specimen-volume" label="میزان صدا" :model-value="60" :min="0" :max="100" :step="1" min-label="۰" max-label="۱۰۰" /></div></template>
     <div v-else-if="name==='Rating'" class="sample-rating"><strong>۴٫۵</strong><span>★ ★ ★ ★ ◐</span><small>۱۲۸ نظر</small></div>
     <div v-else-if="name==='Date Picker'" class="sample-calendar"><header><button>‹</button><b>مهر ۱۴۰۵</b><button>›</button></header><div class="calendar-days"><span v-for="d in ['ش','ی','د','س','چ','پ','ج']" :key="d">{{ d }}</span><i v-for="d in 14" :key="d" :class="{ selected: d===9 }">{{ d+1 }}</i></div></div>
     <div v-else-if="name==='Time Picker'" class="sample-time"><span>ساعت</span><b>۱۴</b><b class="selected">۳۰</b><b>۴۵</b><strong>۱۴:۳۰</strong></div>
