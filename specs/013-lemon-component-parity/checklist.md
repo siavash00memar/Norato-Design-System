@@ -32,7 +32,7 @@ Only check a line when the corresponding evidence was observed for that componen
 - [ ] Final token/catalog/TypeScript/build gates must pass before closing this family.
 - [x] Current Reka adapter revision: error exposes `aria-invalid=true` and associated error text; disabled is a real disabled switch; keyboard focus shows a 2px outline with 4px offset.
 - [x] `check:tokens`, `check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
-- [ ] Full 30 Switch + 6 Switch Field visual state combinations, pointer hover behavior and independent screenreader review remain open.
+- [ ] Full 30 Switch + 6 Switch Field visual state combinations, keyboard focus-ring measurement, and independent screenreader review remain open.
 
 ## Select behavior acceptance checklist
 

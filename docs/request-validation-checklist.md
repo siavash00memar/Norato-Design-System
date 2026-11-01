@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## ادامهٔ DoD Segmented Control — اندازهٔ XLarge (2026-11-01)
+
+- [x] در صفحهٔ واقعی `#component-segmented`، با منوی واقعی تعداد گزینه از ۳ به ۴ و اندازه از Medium به XLarge تغییر کرد؛ چهار گزینه و props انتخابی در کد Vue همگام شدند. Contrast هم از منوی واقعی فعال و در رندر تأیید شد.
+- [x] اسکرین‌شات در viewport مرورگر 1180×755 چهار گزینه را افقی، بی‌wrap و بدون کشیدگی عمودی نشان داد؛ اندازهٔ XLarge رندر شد و سبک Contrast آبی Norato داشت.
+- [ ] اندازه‌گیری دقیق bounding box، اجرای مستقل ۶۴ ترکیب حالت آیتم و صفحه‌خوان مستقل باقی است؛ این بررسی جزئی DoD خانواده را نمی‌بندد.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، build و `git diff --check` در این نوبت موفق شدند؛ build هشدار chunk بالای 500KB دارد.
+- [x] تنظیم playground به Glass/Medium/3، آیتم روزانهٔ منتخب و گزینه‌های عادی برگشت.
+- محدودیت: viewport مرورگر در این تب 1180×755 بود و عرض 390×844 اعمال نشد؛ بنابراین این اسکرین‌شات مدرک موبایل محسوب نمی‌شود. گزارش قبلی batch matrix timeout شده و PASS محسوب نمی‌شود.
+
 ## گزارش درخواست — راهنمای قابل‌استفاده برای عامل‌های AI (2026-11-01)
 
 - [x] صفحهٔ واقعی `#team` در اپ محلی بازبینی شد؛ بخش معرفی Skill و مسیر `.agents/skills/norato-design-system/SKILL.md` در render موجود است.

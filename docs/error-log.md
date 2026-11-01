@@ -555,3 +555,10 @@
 - **Prevention:** inspect the actual state gallery and its responsive overrides separately from the top specimen; measure the visual control independently from its target and preview frame.
 - **Delivery:** token/catalog/TypeScript/build/diff gates passed; bundle 641.48KB produces the existing >500KB warning. Commits `6ef28fc` and `296c925` are pushed.
 - **Remaining:** complete 30-cell visual matrix, keyboard focus ring measurement and independent screen-reader run remain open.
+
+## ERR-053 — Segmented Control evidence mixed with Switch checklist (2026-11-01)
+
+- **Component:** Lemon parity DoD documentation
+- **Finding:** the Segmented Control evidence section ended with an unrelated Switch matrix item, obscuring the actual remaining Segmented checks. Also, the first attempt to change playground values with `setValue` did not mutate the Vue component state; only real menu selections are valid evidence.
+- **Correction:** replaced the cross-family checklist entry with the Switch-specific pending item and recorded only browser-observed Segmented settings from actual popup interactions.
+- **Prevention:** keep per-family acceptance rows within their matching headings; confirm live state changes in generated Vue usage and accessibility tree before recording them.
