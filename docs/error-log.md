@@ -545,3 +545,13 @@
 - **Prevention:** compare the actual States section (not only the top specimen) at desktop and mobile; inspect all responsive overrides, including narrower breakpoints, and verify component-specific gallery geometry and entry count.
 - **Delivery:** production gates passed; commit `6091212` is pushed and remote `master` matches local HEAD.
 - **Remaining:** Radio's full visual 20-cell matrix and independent screen-reader run remain open.
+
+## ERR-052 — Switch States gallery used unrelated generic pill artwork (2026-11-01)
+
+- **Component:** Switch documentation gallery
+- **Finding:** the shared generic pill graphic was unrelated to Lemon's title/description state cards and visually suggested a stretched control.
+- **Correction:** added a static text-card renderer shared by Radio Button and Switch. Switch retains five Switch and three Switch Field entries, family labels, Persian descriptions and semantic Norato accents; interactive controls remain in Preview/playground.
+- **Browser evidence:** same desktop viewport 1195×765: Norato uses three columns constrained by its documentation content width while Lemon uses four. Same mobile viewport 390×844: both use two columns; Norato cards 167.5×87.6px and Lemon 158.5×88.6px; Norato document width is 375px, RTL with no horizontal overflow. Switch runtime: six size/value cells keep 48×48 targets and track sizes 32×20, 40×24, 48×28px; hover border becomes semantic blue; Space/Enter toggle; error and disabled semantics verified.
+- **Prevention:** inspect the actual state gallery and its responsive overrides separately from the top specimen; measure the visual control independently from its target and preview frame.
+- **Delivery:** token/catalog/TypeScript/build/diff gates passed; bundle 641.48KB produces the existing >500KB warning. Commits `6ef28fc` and `296c925` are pushed.
+- **Remaining:** complete 30-cell visual matrix, keyboard focus ring measurement and independent screen-reader run remain open.

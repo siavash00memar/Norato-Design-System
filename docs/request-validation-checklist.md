@@ -810,3 +810,7 @@
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 route/contract)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle جاوااسکریپت 641.48KB است و هشدار حجم بالای 500KB می‌دهد.
 - [ ] بررسی رگرسیون کارت‌های Button و Select در مرورگر فعلی و مقایسهٔ desktop/mobile نهایی، pointer hover و صفحه‌خوان مستقل هنوز انجام نشده‌اند؛ DoD کامل Switch باز است.
 - [x] رگرسیون مرورگری پس از اشتراک state-card renderer: Radio صفحه و هشت کارت خانواده/شرح حاضرند؛ Select درخت AX و 18 شرح حالت/خانواده حفظ شده؛ Button صفحه و 11 گالری/قرارداد variants همچنان حاضرند. تعامل playground Radio با این درخواست تغییر نکرد.
+- [x] تکمیل بررسی رفتاری Switch در adapter زنده: هر شش ترکیب اندازهٔ کوچک/متوسط/بزرگ × خاموش/روشن در DOM دیده شدند؛ trackها به‌ترتیب 32×20، 40×24 و 48×28px و هدف در هر شش حالت 48×48px بود. RTL برقرار است.
+- [x] Hover با اشاره‌گر روی Switch track مرز آبی معنایی را نشان داد. Space مقدار false→true و Enter مقدار true→false را تغییر داد. Error مقدار `aria-invalid=true`، متن خطا و هر دو شناسهٔ description/error را در `aria-describedby` داشت. Disabled واقعی بود و با حالت checked track غیرفعال‌شده و مقدار روشن را حفظ کرد.
+- [x] کنترل playground پس از بررسی به وضعیت اولیه برگشت: خاموش، فعال، بدون خطا و اندازهٔ متوسط.
+- [ ] ماتریس کامل ۳۰ ترکیب دیداری و حلقهٔ فوکوس واقعی با صفحه‌کلید/اندازه‌گیری مرورگر همچنان باز است؛ تمرین جداگانهٔ صفحه‌خوان اجرا نشد. تلاش برای batch تمام حالت‌ها به پایان مهلت مرورگر خورد و نتیجه به‌عنوان PASS ثبت نشده است.

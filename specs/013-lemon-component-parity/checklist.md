@@ -17,7 +17,8 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] Current Norato geometry measured: frame 320×288px, target 48×48px, medium track 40×24px; RTL and no horizontal document overflow. Earlier 390×844 browser measurement also found a 375px document width.
 - [x] Browser keyboard check: Space toggled `aria-checked` false→true; Enter toggled true→false. AX tree exposed role `switch`, name “اعلان‌ها” and associated description.
 - [x] Three track sizes × off/on retained the 48×48 target in the earlier browser matrix; track geometry was 32×20, 40×24 and 48×28px.
-- [ ] Full 30 Switch + 6 Switch Field visual state combinations, pointer hover behavior and independent screenreader review remain open.
+- [x] Repeated in the current run: all six size/value cells retain the specified dimensions and target; pointer hover changes border to semantic blue; Space/Enter toggle; error association and true disabled behavior pass; initial state restored.
+- [ ] Full 30 Switch + 6 Switch Field visual state combinations, keyboard focus-ring measurement, and independent screenreader review remain open.
 
 ## Segmented Control evidence (2026-11-01)
 
