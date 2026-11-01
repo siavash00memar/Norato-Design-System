@@ -20,3 +20,4 @@
 - Modes: Columns displays five nearby values per column; 12h correctly maps PM 3 to 15:30 and AM 3 to 03:30; Wheel presents 24 hours and 12 five-minute entries and keyboard selection works; Slots disables 10:30 and selects 09:30; Range stores start, then swaps a crossed 10:00 end around an 11:00 start to maintain 10:00–11:00.
 - Step 15 displayed 00/15/30/45; required toggles native required and generated snippet; error is linked with `aria-describedby` and sets `aria-invalid`; disabled disables both entry and trigger; loading sets `aria-busy`, disables trigger and announces status. Escape returns focus to trigger; click outside closes and leaves focus on the outside action.
 - All nine Button-style contract sections render. Browser console error list was empty; default single/columns/medium/5-minute, 14:30 state restored.
+- Implementation checkpoint `8236b8a` is on `origin/master`; the remote hash matched local HEAD after push.

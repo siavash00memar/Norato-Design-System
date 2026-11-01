@@ -7,4 +7,4 @@
 - [x] T005 Create DoD checklist before implementation.
 - [x] T006 Audit/replace legacy specimen styles and implement adapter, playground and integrations.
 - [x] T007 Run desktop/mobile browser comparison and complete behavior/RTL/focus/AX matrix; exact independent screen-reader review remains outside the browser tree inspection.
-- [ ] T008 Canonical docs/logs and technical gates are complete; commit/push and verify remote parity remain.
+- [x] T008 Canonical docs/logs and technical gates are complete; implementation checkpoint `8236b8a` is pushed to `origin/master` and local/remote refs matched.
