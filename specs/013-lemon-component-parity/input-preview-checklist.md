@@ -9,6 +9,6 @@
 - [x] Live adapter remains separate and preview remains inert.
 - [x] Token/catalog/type/build/diff gates pass and actual results are recorded.
 - [x] Request report, family ledger, component contract, visual rules and error log updated with measured results.
-- [ ] Commit pushed to GitHub.
+- [x] Commit `ae4d59b` pushed to GitHub.
 
 The Input family DoD remains open after this subfeature until the runtime scope and all component behavior/state requirements are completed.

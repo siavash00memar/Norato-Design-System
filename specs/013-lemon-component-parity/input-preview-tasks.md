@@ -7,4 +7,4 @@
 5. [x] Verify same-viewport desktop/mobile composition, bounds, RTL, target size, inertness and page structure.
 6. [x] Run all project technical gates and record the browser validation.
 7. [x] Update the family/error/request records, component contract and visual rules.
-8. [ ] Commit and push.
+8. [x] Commit `ae4d59b` and push to `origin/master`.
