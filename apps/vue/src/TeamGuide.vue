@@ -47,7 +47,7 @@ const options = [{ value: 'design', label: 'طراحی محصول' }]
   &lt;NoratoChoiceGroup v-model:selected="selected" kind="checkbox" id="topics" label="موضوع‌ها" :options="options" /&gt;
   &lt;NoratoChoiceGroup v-model:selected="selected" kind="radio" id="plan" label="دوره" :options="options" /&gt;
 &lt;/template&gt;</code></pre><p>برای Radio مقدار <code>kind="radio"</code> است؛ هر دو حالت با <code>update:selected</code> به والد گزارش می‌شوند.</p></div>
-      <div class="usage-example"><h3>Date Picker</h3><p>وضعیت این خانواده Proposed است؛ trigger فعلی پنل تقویم باز نمی‌کند و برای محصول مصرف نشود.</p></div>
+      <div class="usage-example"><h3>Date Picker</h3><p>adapter Vue با هفت حالت جلالی و playground اجرایی در صفحهٔ مستقل کامپوننت در دسترس است؛ API کنترل‌شده را در بستهٔ <code>@norato/vue</code> استفاده کن.</p></div>
     </section>
     <section class="glass-card guide-section">
       <h2>قراردادهای تیم</h2>

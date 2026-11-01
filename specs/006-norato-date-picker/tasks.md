@@ -13,8 +13,9 @@
 - [x] T011 Replace legacy date-picker selectors/specimen with token-based bounded geometry; remove vertical stretch.
 - [x] T012 Add a Vue playground for mode, size, value, disabled/error, range endpoints, and time selection; match Button page structure.
 - [x] T013 Update API usage example, contract/catalog/primitive map, Figma rules, request validation checklist, and error log.
-- [ ] T014 Verify desktop and mobile Lemon/Norato composition, seven modes, selection behavior, RTL, keyboard, focus, disabled/error, AX tree, and overflow in the real browser.
+- [x] T014 Verify desktop and mobile Lemon/Norato composition, seven modes, selection behavior, RTL, keyboard, focus, disabled/loading/error, AX tree, and overflow in the real browser. Independent screen-reader software was not run.
 - [x] T015 Run `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check`; address failures and update DoD.
-- [x] T016 Commit the current adapted component work and push it to GitHub; verify the remote commit. Full component DoD remains open in T007/T010/T014.
+- [x] T016 Commit the initial adapted component and push it to GitHub; subsequent verified refinements and completion evidence are recorded in T017–T019.
 
 - [x] T017 Compare Lemon and Norato specimen at desktop 1920×863; reduce the Norato specimen calendar token to 272px and record measured geometry and remaining visual review in DoD/error log. Push this refinement to GitHub.
+- [x] T018 Add and browser-verify the loading state: spinner, `aria-busy`, polite status, and disabled controls; expose it in the playground; remove stale Proposed claims from team guidance and lab.

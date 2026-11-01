@@ -52,9 +52,9 @@ const plans = [
       <div class="button-stack"><NoratoButton label="عملیات اصلی" variant="primary" /><NoratoButton label="عملیات دوم" variant="secondary" /><NoratoButton label="غیرفعال" disabled /><NoratoButton label="در حال بارگذاری…" loading /></div>
     </article>
     <article class="glass-card demo-card">
-      <h2>Date Picker · Proposed</h2>
-      <p>adapter فعلی تقویم و انتخاب تاریخ ندارد؛ تا تکمیل تعامل، این خانواده از نمونهٔ اجرایی جدا نگه داشته شده است.</p>
-      <span class="status proposed">Proposed</span>
+      <h2>Date Picker · Implemented</h2>
+      <p>adapter Vue تقویم جلالی با هفت حالت و نمونهٔ اجرایی در صفحهٔ مستقل این کامپوننت در دسترس است.</p>
+      <span class="status implemented">Implemented</span>
     </article>
   </section>
 </template>

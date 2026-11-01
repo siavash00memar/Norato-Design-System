@@ -8,6 +8,7 @@ const type = ref<NoratoDatePickerType>('single')
 const size = ref<'small' | 'medium'>('medium')
 const value = ref<NoratoDatePickerValue>('1405-08-01')
 const disabled = ref(false)
+const loading = ref(false)
 const invalid = ref(false)
 const typeOptions: { value: NoratoDatePickerType; label: string; sample: NoratoDatePickerValue }[] = [
   { value: 'single', label: 'تک‌تاریخ', sample: '1405-08-01' },
@@ -21,7 +22,7 @@ const typeOptions: { value: NoratoDatePickerType; label: string; sample: NoratoD
 watch(type, (next) => { value.value = typeOptions.find((option) => option.value === next)!.sample })
 const snippet = computed(() => {
   const initial = typeof value.value === 'string' ? `'${value.value}'` : JSON.stringify(value.value)
-  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoDatePicker, type NoratoDatePickerValue } from '@norato/vue'\nconst value = ref<NoratoDatePickerValue>(${initial})\n<\\/script>\n<template><NoratoDatePicker id="delivery-date" v-model="value" label="تاریخ تحویل" type="${type.value}" size="${size.value}"${disabled.value ? ' disabled' : ''}${invalid.value ? ' error-text="تاریخ انتخاب‌شده در دسترس نیست"' : ''} /></template>`
+  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoDatePicker, type NoratoDatePickerValue } from '@norato/vue'\nconst value = ref<NoratoDatePickerValue>(${initial})\n<\\/script>\n<template><NoratoDatePicker id="delivery-date" v-model="value" label="تاریخ تحویل" type="${type.value}" size="${size.value}"${disabled.value ? ' disabled' : ''}${loading.value ? ' loading' : ''}${invalid.value ? ' error-text="تاریخ انتخاب‌شده در دسترس نیست"' : ''} /></template>`
 })
 </script>
 
@@ -29,12 +30,13 @@ const snippet = computed(() => {
   <div class="button-playground date-picker-playground" dir="rtl">
     <header><strong>آزمایش Date Picker اجرایی</strong><span>هفت حالت انتخاب تاریخ شمسی، با صفحه‌کلید و نشانگرهای قابل دسترس.</span></header>
     <div class="button-playground-preview date-picker-playground-preview">
-      <NoratoDatePicker id="date-picker-playground" v-model="value" label="تاریخ تحویل" :type="type" :size="size" :disabled="disabled" :error-text="invalid ? 'تاریخ انتخاب‌شده در دسترس نیست' : undefined" :holidays="['1405-08-03']" :disabled-dates="['1405-08-04']" />
+      <NoratoDatePicker id="date-picker-playground" v-model="value" label="تاریخ تحویل" :type="type" :size="size" :disabled="disabled" :loading="loading" :error-text="invalid ? 'تاریخ انتخاب‌شده در دسترس نیست' : undefined" :holidays="['1405-08-03']" :disabled-dates="['1405-08-04']" />
     </div>
     <div class="button-playground-toggles date-picker-playground-toggles">
       <label class="select-playground-setting"><span>حالت</span><select v-model="type"><option v-for="option in typeOptions" :key="option.value" :value="option.value">{{ option.label }}</option></select></label>
       <label class="select-playground-setting"><span>اندازه</span><select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option></select></label>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
+      <label class="button-playground-switch"><input v-model="loading" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بارگذاری</span></label>
       <label class="button-playground-switch"><input v-model="invalid" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>نامعتبر</span></label>
       <button class="copy-section-button" type="button" @click="value = typeOptions.find((option) => option.value === type)!.sample">بازنشانی مقدار</button>
     </div>

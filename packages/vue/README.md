@@ -12,4 +12,4 @@ The package entrypoint includes token-backed component styles. Import the semant
 @import '@norato/tokens/css';
 ```
 
-Controlled APIs: `NoratoField`, `NoratoTextarea`, `NoratoSelect`, and `NoratoDatePicker` use `v-model`; `NoratoChoiceGroup` uses `v-model:selected` with an array of selected option values. Date Picker currently includes seven Jalali modes and caller-supplied holidays; its Lemon/browser DoD is still in progress.
+Controlled APIs: `NoratoField`, `NoratoTextarea`, `NoratoSelect`, and `NoratoDatePicker` use `v-model`; `NoratoChoiceGroup` uses `v-model:selected` with an array of selected option values. Date Picker includes seven Jalali modes, accessible loading/disabled/error states, and caller-supplied holidays. Its desktop/mobile browser DoD is recorded in `docs/request-validation-checklist.md`.

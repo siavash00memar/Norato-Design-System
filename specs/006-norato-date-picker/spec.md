@@ -2,7 +2,7 @@
 
 **Feature Branch**: `006-norato-date-picker`
 **Created**: 2026-08-23
-**Status**: Clarified for Lemon parity implementation
+**Status**: Implemented; browser DoD complete
 
 ## Clarifications
 

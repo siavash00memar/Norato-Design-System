@@ -1,7 +1,7 @@
 # Date Picker — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Adapted — adapter Vue و playground هفت‌حالته اضافه شده؛ DoD مرجع‌سنجی و رفتار کامل هنوز باز است.
+**وضعیت نوراتو:** Implemented — adapter Vue، playground هفت‌حالته و DoD مرورگری تکمیل شده‌اند؛ صفحه‌خوان مستقل جداگانه اجرا نشده است.
 
 ## Preview
 
@@ -22,7 +22,7 @@
 ## Variants
 
 - **Date Picker (7 mode):** Type: Single، Range، Range + Presets، Date & Time، Month، Year، Wheel؛ Size: Small، Medium
-- **Date Input (80 variant):** Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled؛ Label: Outside، Inside
+- **Date Input (80 Lemon variants + Loading):** Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
 - **Calendar Month (8 variant):** Size: Small، Medium؛ Selection: None، Single، Range، Multiple
 - **Calendar Header (3 variant):** Size: Small، Medium؛ Type: Arrows، Dropdowns
 - **Calendar Day (20 variant):** Size: Small، Medium؛ State: Default، Hover، Today، Selected، Range Start، In Range، Range End، Holiday، Outside، Disabled
@@ -34,14 +34,14 @@
 
 ## States
 
-- **Date Input:** Default، Hover، Active، Error، Disabled
+- **Date Input:** Default، Hover، Active، Error، Disabled، Loading (spinner و اعلام وضعیت)
 - **Calendar Day:** Default، Hover، Today، Selected، Range Start، In Range، Range End، Holiday، Outside، Disabled
 - **Picker Cell:** Default، Hover، Selected، Current، Disabled
 
 ## Parts
 
 - **Date Picker — 7 mode:** پنل کامل تقویم در ۷ حالت. ابعاد/حالت‌ها: Type: Single، Range، Range + Presets، Date & Time، Month، Year، Wheel؛ Size: Small، Medium
-- **Date Input — 80 variant:** فیلدی که تقویم رو باز می‌کنه. ابعاد/حالت‌ها: Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled؛ Label: Outside، Inside
+- **Date Input — 80 Lemon variants + Loading:** فیلدی که تقویم رو باز می‌کنه. ابعاد/حالت‌ها: Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
 - **Calendar Month — 8 variant:** جدول یه ماه. ابعاد/حالت‌ها: Size: Small، Medium؛ Selection: None، Single، Range، Multiple
 - **Calendar Header — 3 variant:** ناوبری بین ماه‌ها. ابعاد/حالت‌ها: Size: Small، Medium؛ Type: Arrows، Dropdowns
 - **Calendar Day — 20 variant:** یه روز با همه‌ی حالت‌ها. ابعاد/حالت‌ها: Size: Small، Medium؛ State: Default، Hover، Today، Selected، Range Start، In Range، Range End، Holiday، Outside، Disabled
@@ -66,7 +66,7 @@
 
 ## Accessibility
 
-با کلیدهای جهت بین روزها جابه‌جا میشه و Page Up و Down ماه رو عوض می‌کنه.
+با کلیدهای جهت بین روزها جابه‌جا میشه و Page Up و Down ماه رو عوض می‌کنه. Loading کنترل را غیرفعال می‌کند، spinner نشان می‌دهد و از طریق `aria-busy` و status متنی به فناوری کمکی اعلام می‌شود.
 
 ### قاعدهٔ عمومی Focus در Norato
 

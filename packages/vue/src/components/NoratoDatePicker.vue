@@ -254,15 +254,16 @@ onBeforeUnmount(() => { if (typeof document !== 'undefined') document.removeEven
 </script>
 
 <template>
-  <div class="norato-date-picker" :class="{ 'is-invalid': errorText, 'is-open': open, 'is-disabled': disabled }" :dir="dir" :data-size="size" :data-type="type">
+  <div class="norato-date-picker" :class="{ 'is-invalid': errorText, 'is-open': open, 'is-disabled': disabled, 'is-loading': loading }" :dir="dir" :data-size="size" :data-type="type">
     <label class="norato-date-picker__label" :for="`${id}-value`">{{ label }}<span v-if="required" aria-hidden="true"> *</span></label>
-    <div class="norato-date-picker__control">
+    <div class="norato-date-picker__control" :aria-busy="loading ? 'true' : undefined">
       <input :id="`${id}-value`" class="norato-date-picker__input" type="text" :value="formattedValue" :placeholder="placeholder" readonly :disabled="disabled" :aria-required="required || undefined" :aria-invalid="errorText ? 'true' : undefined" :aria-describedby="descriptionIds" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" :aria-haspopup="'dialog'" @click="openPanel" @keydown.enter.prevent="openPanel" @keydown.space.prevent="openPanel" />
-      <button ref="trigger" class="norato-date-picker__trigger" type="button" :aria-label="open ? 'بستن تقویم' : 'باز کردن تقویم'" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" aria-haspopup="dialog" :disabled="disabled" @click="openPanel">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3v3m10-3v3M4.5 9h15M6 5h12a1.5 1.5 0 0 1 1.5 1.5v12A1.5 1.5 0 0 1 18 20H6a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 6 5Z" /></svg>
+      <button ref="trigger" class="norato-date-picker__trigger" type="button" :aria-label="loading ? 'در حال بارگذاری تقویم' : open ? 'بستن تقویم' : 'باز کردن تقویم'" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" aria-haspopup="dialog" :disabled="disabled" @click="openPanel">
+        <span v-if="loading" class="norato-date-picker__loading" aria-hidden="true" /><svg v-else aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3v3m10-3v3M4.5 9h15M6 5h12a1.5 1.5 0 0 1 1.5 1.5v12A1.5 1.5 0 0 1 18 20H6a1.5 1.5 0 0 1-1.5-1.5v-12A1.5 1.5 0 0 1 6 5Z" /></svg>
       </button>
       <input v-if="name" type="hidden" :name="name" :value="formValue" :disabled="disabled" />
     </div>
+    <span v-if="loading" class="sr-only" role="status">در حال بارگذاری تقویم</span>
     <p v-if="helperText" :id="`${id}-helper`" class="norato-date-picker__message">{{ helperText }}</p>
     <p v-if="errorText" :id="`${id}-error`" class="norato-date-picker__message norato-date-picker__error" role="alert">{{ errorText }}</p>
     <section v-if="open" :id="`${id}-panel`" ref="panel" class="norato-date-picker__panel" :style="panelPosition" role="dialog" :aria-label="`${label} — انتخاب تاریخ`" @keydown.esc.stop.prevent="closePanel()">
