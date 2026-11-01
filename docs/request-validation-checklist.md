@@ -10,6 +10,7 @@
 - [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند.
 - [x] `pnpm --dir apps/vue build` موفق شد؛ هشدار پیشین bundle بزرگ‌تر از 500KB همچنان هست. `git diff --check` موفق شد.
 - [x] Radio required بدون انتخاب بازآزمایی شد: پیام الزام انتخاب و aria-invalid روی گروه/ورودی‌ها ظاهر شدند و پیام با aria-describedby به ورودی required متصل شد.
+- [x] ماتریس کنترل اصلی مرورگر برای هر دو اندازهٔ ۱۶ و ۲۰px و مقدار checked/unchecked در حالت‌های Default/Error/Disabled مرور شد؛ اندازهٔ واقعی، checked، disabled و invalid در DOM برای هر ۱۲ ترکیب ثبت شد. ردیف‌ها همگی ۴۸px باقی ماندند.
 - [ ] DoD نهایی Radio باز است: مرور ماتریس کامل 26 variant/حالت hover/disabled/focus/error و صفحه‌خوان مستقل هنوز تکمیل نشده؛ Lemon پس از تغییر viewport ابعاد DOM قابش را آشکار نکرد.
 
 ## گزارش این درخواست — استانداردسازی صفحه‌های کامپوننت، batch 1 (2026-10-28)
