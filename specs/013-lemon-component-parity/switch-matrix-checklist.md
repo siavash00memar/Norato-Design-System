@@ -8,6 +8,9 @@
 - [x] Local desktop render visibly shows proportional tracks and state cards without apparent stretching at the available browser viewport.
 - [ ] Matrix-specific mobile proportions and no-overflow behavior have not been measured; browser viewport resizing was unavailable.
 - [ ] Same-viewport Lemon Variants comparison has not been captured. Lemon reference confirms content hierarchy and a different dark-on state; Norato Blue remains the approved palette.
+- [x] Fresh local desktop DOM audit: exactly 30 Switch and 6 Switch Field cells, no focusable controls, RTL, 1265px document within a 1280px viewport, and track sizes measured at 32×20/40×24/48×28px.
+- [x] Fresh Lemon reference review confirms the same Switch preview/Variants hierarchy and three track sizes; its on-state is black, while Norato retains semantic brand blue.
+- [x] Fresh adapter review confirms error state exposes `aria-invalid="true"` and connects both description and error text; clearing the state removes invalid semantics.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass; build reports a 646.51KB main JavaScript chunk warning (>500KB).
 - [x] Contract and this checklist record evidence and remaining DoD.
 - [x] Family ledger and request validation record evidence and remaining DoD.

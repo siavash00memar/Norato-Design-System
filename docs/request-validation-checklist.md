@@ -916,3 +916,11 @@
 - [x] Default preview restored after interactions; browser console had no errors. `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue typecheck) and `git diff --check` passed. Production JS main chunk is 673.58KB and Vite reports its >500KB advisory.
 - [ ] Full size/state matrices, OTP lengths 4/5, stacked Number layout and independent screen-reader review remain open in `specs/013-lemon-component-parity/input-checklist.md`.
 - [x] Input implementation checkpoint `663af1f` pushed to `origin/master`; local and remote refs matched immediately after push.
+
+## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
+
+- [x] صفحهٔ محلی Switch از نظر ساختار مرور شد: preview جدا، playground اجرایی و ۹ بخش قرارداد؛ Lemon در `https://lemonui.ir/#switch` همان چینش preview و سه اندازه را نشان می‌دهد. Lemon رنگ روشن مشکی دارد؛ Norato آبی معنایی خود را حفظ می‌کند.
+- [x] در عرض viewport دسکتاپ 1280px، DOM ماتریس دقیقاً 30 نمونه Switch و 6 نمونه Switch Field دارد؛ گالری هیچ عنصر تعاملی ندارد، جهت RTL است، trackها 32×20/40×24/48×28px هستند و سند 1265px از عرض viewport بیرون نمی‌زند.
+- [x] adapter واقعی در هر سه اندازه هدف 48×48px دارد. Space روشن و Enter خاموش کرد؛ فوکوس واقعی حلقهٔ 2px با offset چهارپیکسلی داشت. حالت خطا `aria-invalid=true` و اتصال description/error در `aria-describedby` را دارد؛ حالت disabled غیرفعال است. نمونه به وضعیت پیش‌فرض بازگردانده شد.
+- [ ] viewport موبایل برای خود ماتریس در ابزار مرورگر این اجرا قابل تنظیم نبود؛ مقایسهٔ بخش Variants در viewport کاملاً یکسان، آزمون pointer-hover و صفحه‌خوان مستقل نیز باز هستند. Switch کامل اعلام نمی‌شود.
+- [x] کاربر تعهد داده هر تغییر Git به مخزن برود؛ این تغییر مستنداتی پس از بررسی گیت‌ها commit/push و برابری remote تأیید می‌شود.
