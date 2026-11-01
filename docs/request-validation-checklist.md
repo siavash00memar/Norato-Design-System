@@ -1,5 +1,16 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Radio Button و ادامه با مدل جدید (2026-11-01)
+
+- [x] منبع Lemon در همان مرورگر برای ترکیب preview، ۳ گزینه، marker، ۴ Anatomy، ۲۰ variant، RTL و keyboard بررسی شد.
+- [x] نمونهٔ نوراتو یک گروه سه‌ردیفی وسط قاب با palette و tokenهای خود Norato است؛ در viewport موبایل 390×844 قاب 320×288px، عرض سند 375px، سه ردیف 48px و کنترل راست‌چین است.
+- [x] مقایسهٔ desktop در viewport 1920: قاب 584×288px (محدود به عرض محتوای صفحه)؛ سه ردیف 48px و بدون کشیدگی کنترل. این عرض با frame Lemon که در محتوای خودش حدود 630px است کاملاً برابر نیست.
+- [x] ArrowDown بین گزینه‌ها و selection را جابه‌جا کرد؛ AX tree گروه نام‌دار و سه radio با selected value درست گزارش کرد؛ focus ring دوپیکسلی بررسی شد.
+- [x] required روی یک ورودی، aria-invalid/error association، disabled واقعی، RTL و هدف کلیک 48px را در browser DOM سنجیدم. اندازه‌های 16/20 در کنترل playground موجود است.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند.
+- [x] `pnpm --dir apps/vue build` موفق شد؛ هشدار پیشین bundle بزرگ‌تر از 500KB همچنان هست. `git diff --check` موفق شد.
+- [ ] DoD نهایی Radio باز است: مرور تصویری desktop هم‌اندازه با Lemon (1280×900)، screenshot side-by-side و ماتریس کامل 26 variant/حالت hover/disabled/focus/error هنوز تکمیل نشده؛ صفحه‌خوان مستقل اجرا نشده است.
+
 ## گزارش این درخواست — استانداردسازی صفحه‌های کامپوننت، batch 1 (2026-10-28)
 
 - [x] چهار مسیر مستقل Input، Select، Checkbox و Radio Button با قراردادهای ۹‌بخشی خودشان بررسی شدند.

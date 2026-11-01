@@ -9,7 +9,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Select | select | Implemented | Lemon and Norato compared on desktop and 390px mobile; specimen field width/frame aligned and no stretch verified. Reka glass menu supports grouped search, staged multi-select, keyboard, errors, loading, disabled, read-only, sizes, inside/outside labels, compact Chips and Summary. Final menu/state visual DoD remains open. |
 | [ ] | Combobox | combobox | Adapted | Single/multi, sizes, labels, clear, recent/loading/empty/create implemented; final Lemon DoD and full interaction matrix remain open |
 | [x] | Checkbox | checkbox | Implemented | Standalone Vue adapter, Lemon-shaped inert specimen and live playground. Lemon desktop/mobile compared; 4 Anatomy parts, no stretch/overflow, 48px row, RTL, Space/focus, mixed AX value, required/error/disabled verified. All 30 size/value/state combinations exercised; all 6 Checkbox Field variants represented and checked. |
-| [ ] | Radio Button | radio | Implemented | Pending visual and behavior comparison |
+| [ ] | Radio Button | radio | Adapted | Dedicated single-value API and Lemon-composition sample; browser DoD in progress |
 | [ ] | Switch | switch | Proposed | Pending visual and behavior comparison |
 | [ ] | Segmented Control | segmented | Proposed | Pending visual and behavior comparison |
 | [ ] | Range | range | Proposed | Pending visual and behavior comparison |

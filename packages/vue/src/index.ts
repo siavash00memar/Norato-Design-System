@@ -9,5 +9,6 @@ export type { NoratoComboboxOption } from './components/NoratoCombobox.vue'
 export { default as NoratoDatePicker } from './components/NoratoDatePicker.vue'
 export { default as NoratoChoiceGroup } from './components/NoratoChoiceGroup.vue'
 export { default as NoratoCheckbox } from './components/NoratoCheckbox.vue'
+export { default as NoratoRadioGroup } from './components/NoratoRadioGroup.vue'
 export { default as NoratoTextarea } from './components/NoratoTextarea.vue'
 

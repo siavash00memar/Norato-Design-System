@@ -57,6 +57,11 @@
   --norato-checkbox-preview-frame-block-size: 288px;
   --norato-checkbox-preview-control-inline-size: 260px;
   --norato-checkbox-preview-radius: 24px;
+  --norato-radio-preview-frame-inline-size: 640px;
+  --norato-radio-preview-frame-mobile-inline-size: 320px;
+  --norato-radio-preview-frame-block-size: 288px;
+  --norato-radio-preview-control-inline-size: 260px;
+  --norato-radio-preview-radius: 24px;
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
   --norato-border-medium: 2px;
