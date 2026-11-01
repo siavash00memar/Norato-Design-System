@@ -54,6 +54,13 @@ const options = [{ value: 'design', label: 'طراحی محصول' }]
       <ul><li>برای استایل مشترک از tokenهای <code>--norato-*</code> مصرف کنید؛ مقدار خام جدید را به foundation تبدیل کنید.</li><li>فارسی و RTL پیش‌فرض‌اند. عدد، شناسه یا متن واقعاً LTR را با <code>dir="ltr"</code> یا <code>dir="auto"</code> مشخص کنید.</li><li>برای ورودی label واقعی، خطای متنی و focus قابل‌مشاهده لازم است.</li><li><b>Implemented</b> یعنی adapter موجود در همین سطح؛ <b>Adapted</b> یعنی قابل‌ترکیب با primitiveها؛ <b>Proposed</b> یعنی قرارداد/طرح پیشنهادی. Preview به‌تنهایی کامپوننت آماده نیست.</li></ul>
       <p>پیش از تحویل: <code>pnpm check:tokens</code>، <code>pnpm --dir apps/vue typecheck</code> و <code>pnpm --dir apps/vue build</code> را اجرا کنید؛ سپس RTL، keyboard و اندازهٔ موبایل را در مرورگر مرور و در اسناد Spec ثبت کنید.</p>
     </section>
+    <section class="glass-card guide-section">
+      <h2>استفاده از این سیستم با عامل هوش مصنوعی</h2>
+      <p>برای Codex، skill مخزن از checkout پروژه در این مسیر خوانده می‌شود:</p>
+      <pre><code>.agents/skills/norato-design-system/SKILL.md</code></pre>
+      <p>عامل‌های سازگار با Agent Skills می‌توانند نسخهٔ همگام‌شدهٔ <code>skills/norato-design-system/SKILL.md</code> را به context خود اضافه کنند. عامل باید به همین repository دسترسی داشته باشد تا قرارداد و API جاری را بخواند.</p>
+      <p class="guide-note">این skill دستورالعمل استفاده است، نه پکیج منتشرشده. <code>@norato/vue</code> و <code>@norato/tokens</code> خصوصی و workspace-only هستند؛ status کاتالوگ هم به‌تنهایی DoD بصری/رفتاری را تأیید نمی‌کند.</p>
+    </section>
     <section class="glass-card guide-section"><h2>داده‌ها را از کجا بخوانیم؟</h2><p>متادیتای ساختاریافتهٔ کامپوننت‌ها از <code>@norato/components</code> وارد می‌شود. متن هر قرارداد فقط در فایل مستقل خودش نگه‌داری می‌شود.</p><pre><code>import { componentCatalog, componentBySlug } from '@norato/components'
 
 const button = componentBySlug.get('button')</code></pre><ul><li><code>packages/components/src/catalog.ts</code> — شناسه، مسیر، برچسب جست‌وجو، بلوغ و adapter</li><li><code>packages/components/src/foundation-chapters.ts</code> — فصل‌های Foundation و کارت‌های مشتق‌شده</li><li><code>packages/components/README.md</code> — معنی فیلدها، API و قواعد نگهداشت داده</li><li><code>packages/vue/src/index.ts</code> — خروجی واقعی runtime برای Vue</li><li><code>apps/vue/src/usage-examples.ts</code> — نمونه‌های API قابل کپی</li><li><code>apps/vue/src/ComponentSpecimen.vue</code> — نمایش بصری که به‌تنهایی نشانهٔ آمادگی API نیست</li><li><code>docs/component-contracts/</code> — متن کامل قرارداد هر کامپوننت</li></ul><p>پس از تغییر کاتالوگ یا قراردادها، <code>pnpm check:catalog</code> را اجرا کنید. این داده‌ها خصوصی و workspace-local هستند.</p></section>

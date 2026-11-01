@@ -1,5 +1,15 @@
 # Norato Request Validation Checklist
 
+## گزارش درخواست — راهنمای قابل‌استفاده برای عامل‌های AI (2026-11-01)
+
+- [x] صفحهٔ واقعی `#team` در اپ محلی بازبینی شد؛ بخش معرفی Skill و مسیر `.agents/skills/norato-design-system/SKILL.md` در render موجود است.
+- [x] صفحه RTL است و در viewport مرورگر 1195px، عرض سند 1180px است؛ overflow افقی ندارد.
+- [x] Skillهای Codex و عمومی Agent Skills به‌صورت هش یکسان تأیید شدند؛ منابع کاتالوگ، قرارداد، export و نمونه‌ها در دستورالعمل مشخص‌اند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (49 قرارداد/مسیر)، Vue typecheck، production build و `git diff --check` موفق شدند.
+- [x] محدودیت اعتبارسنجی: این تغییر مستندات قابلیت کشف خودکار در Codex و render راهنمای اپ را بررسی می‌کند؛ سازگاری اجرایی در تمام پلتفرم‌های AI مستقل آزمایش نشده است.
+- [ ] انتشار تغییر مستندات به GitHub و تأیید commit راه دور باقی است.
+- هشدار build: bundle اصلی JavaScript برابر 637.21KB است و از آستانهٔ 500KB عبور می‌کند؛ build موفق ماند.
+
 ## گزارش این درخواست — Input preview مستقل (2026-11-01)
 
 - [x] قرارداد subfeature فقط قاب و نمونهٔ ثابت است؛ پرسش API هشت زیرنوع همچنان باز است و adapter اجرایی/گالری تغییر نکرد.
