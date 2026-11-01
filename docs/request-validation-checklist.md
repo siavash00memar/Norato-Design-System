@@ -17,6 +17,17 @@
 - [x] هیچ مورد geometry/ARIA/overflow ناموفق نبود؛ playground بعد از آزمون به single، medium، label بیرونی، بدون خطا و بدون حالت بارگذاری برگشت.
 - [ ] این اجرا مقایسهٔ تصویری screenshot به screenshot از تمام خانه‌ها یا صفحه‌خوان مستقل نیست؛ مرور pixel-level حالت‌های hover/focus/selected هنوز برای بستن DoD باز است.
 
+## Select — هم‌ترازی گالری States با Lemon (2026-11-01)
+
+- [x] DOM مرجع Lemon در `#select` نشان داد States شامل ۹ کارت عنوان+توضیح است؛ کنترل‌های نمونه در Preview/Variants هستند. گالری Norato از pill عمومی به کارت متنی Select-only تغییر کرد.
+- [x] هر ۱۸ حالت Select/Multi Select/Select Option باقی ماندند؛ عنوان، نام خانواده، توضیح فارسی و accent توکنی در render تأیید شدند. یادداشت اضافه در قرارداد با parser تداخل داشت و حذف شد؛ تعداد نهایی دقیقاً ۱۸ است.
+- [x] Desktop viewport 1920×863: Norato گالری 584px با چهار ستون auto-fit و کارت‌های 139.98×87.56px؛ Lemon گالری 636px با چهار ستون و کارت‌های 151.5×88.59px. عرض سند Norato 1905px در برابر viewport 1920px است.
+- [x] Mobile viewport 390×844: Norato دو ستون، کارت 167.5×68.38px، document 375px؛ Lemon دو ستون و document 375px. RTL صریح است و سرریز افقی وجود ندارد.
+- [x] رگرسیون Button: ۱۱ state card همان renderer عمومی را حفظ کردند؛ static state gallery همچنان inert و جدا از adapter است.
+- [ ] صفحه‌خوان مستقل و مقایسهٔ کامل screenshot همهٔ stateهای اجرایی Select همچنان در DoD خانواده باز است.
+- [x] گیت‌های نهایی: `pnpm check:tokens`، `pnpm check:catalog` (49 قرارداد/مسیر)، Vue typecheck، production build و `git diff --check` موفق شدند. Build هشدار bundle 638.78KB بالاتر از 500KB داد.
+- [ ] Commit/push این تغییر و تأیید ریموت در همین ادامه انجام می‌شود.
+
 ## گزارش این درخواست — Input preview مستقل (2026-11-01)
 
 - [x] قرارداد subfeature فقط قاب و نمونهٔ ثابت است؛ پرسش API هشت زیرنوع همچنان باز است و adapter اجرایی/گالری تغییر نکرد.

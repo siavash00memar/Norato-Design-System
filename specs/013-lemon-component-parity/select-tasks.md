@@ -10,3 +10,5 @@
 8. [x] Exercise the 96 combined state/variant geometry and semantics combinations in the live playground; pixel-level hover/focus/selected review is tracked separately in the checklist and remains open.
 9. [x] Run technical gates and record the per-request browser checklist for the current documented Select delivery.
 10. [x] Update contracts and parity records, commit, and push the Select in-progress delivery; re-run after new source changes.
+11. [x] Refine the static States gallery to Lemon's title/description card hierarchy without changing the Select adapter or generic Button renderer; compare desktop and mobile.
+12. [x] Re-run technical gates; the Select adapter's remaining full visual-state screenshot review is tracked separately and DoD remains open.

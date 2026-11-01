@@ -102,7 +102,26 @@ const stateKind = (entry: Entry) => {
   if (/focus|تمرکز|فوکوس/.test(state)) return 'focus'
   if (/hover|شناور/.test(state)) return 'hover'
   if (/pressed|active|فشرده/.test(state)) return 'pressed'
+  if (/open|باز/.test(state)) return 'open'
+  if (/filled|پرشده/.test(state)) return 'filled'
+  if (/read.?only|فقط.?خواندنی/.test(state)) return 'readonly'
   return 'default'
+}
+
+const selectStateDescription = (entry: Entry) => {
+  const state = entry.label.toLocaleLowerCase()
+  const family = entry.detail.toLocaleLowerCase()
+  if (/default|پیش‌فرض/.test(state)) return family.includes('multi') ? 'انتخاب چند مورد از فهرست.' : family.includes('option') ? 'گزینهٔ عادی در فهرست.' : 'آمادهٔ انتخاب از فهرست.'
+  if (/hover|شناور/.test(state)) return 'نشانگر روی عنصر است.'
+  if (/open|باز/.test(state)) return 'فهرست گزینه‌ها باز است.'
+  if (/filled|پرشده/.test(state)) return 'مقدار ثبت شده است.'
+  if (/error|invalid|خطا/.test(state)) return 'مرز قرمز، خطا را مشخص می‌کند.'
+  if (/disabled|غیرفعال/.test(state)) return 'غیرفعال و غیرقابل انتخاب.'
+  if (/read.?only|فقط.?خواندنی/.test(state)) return 'قابل مشاهده؛ بدون امکان ویرایش.'
+  if (/selected|checked|انتخاب‌شده/.test(state)) return 'گزینه انتخاب شده است.'
+  if (/focus|تمرکز|فوکوس/.test(state)) return 'فوکوس صفحه‌کلید؛ حلقهٔ ۲px.'
+  if (/loading|busy|بارگذاری/.test(state)) return 'گزینه‌ها در حال بارگذاری‌اند.'
+  return entry.detail
 }
 
 const groupKind = (value: string) => {
@@ -237,13 +256,20 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
-      <div v-else class="state-visual-grid">
+      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
-          <div class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
+          <div v-if="name !== 'Select'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
-          <strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small>
-          <span class="visual-kind">{{ isEmptyStatement(entry) ? 'در قرارداد ثبت نشده' : 'حالت مرجع' }}</span>
+          <template v-if="name === 'Select'">
+            <div class="select-state-heading"><strong>{{ entry.label }}</strong><small class="select-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
+            <small class="select-state-description">{{ selectStateDescription(entry) }}</small>
+          </template>
+          <template v-else>
+            <strong>{{ entry.label }}</strong>
+            <small dir="auto">{{ entry.detail }}</small>
+            <span class="visual-kind">{{ isEmptyStatement(entry) ? 'در قرارداد ثبت نشده' : 'حالت مرجع' }}</span>
+          </template>
         </article>
       </div>
     </template>

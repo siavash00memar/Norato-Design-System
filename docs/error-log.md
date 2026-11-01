@@ -528,3 +528,10 @@
 - **Browser evidence:** same-viewport desktop 1920×863: Norato frame 584×288px due to its content-column cap, field 324×48px; Lemon frame 636×300px, field group 324×94.4px. Same-viewport mobile 390×844: Norato 320×288px frame and 310×48px field; Lemon 327×300px frame and 320.8px field group. Norato document width is 375px; RTL and inert specimen attributes confirmed.
 - **Prevention:** bound specimen controls independently of their frame, verify the computed field width, and inspect `:has()` shared selectors before adding family preview rules.
 - **Remaining:** full Input family DoD is still open while API scope and component behavior/state matrix remain unresolved.
+
+## ERR-050 — Select gallery metadata was parsed as an extra state (2026-11-01)
+
+- **Component:** Select documentation gallery
+- **Finding:** a descriptive presentation note placed inside the contract's parsed `States` section was interpreted by `ContractVisualShowcase` as a nineteenth state entry. The contract actually defines 18 Select/Multi Select/Select Option states.
+- **Correction:** removed presentation metadata from the parser-owned state list and kept the visual rule in `docs/figma-component-rules.md`; browser render now contains exactly 18 state cards.
+- **Prevention:** keep documentation rendering rules outside parser-owned contract sections unless they describe a real component state; verify generated entry counts after contract edits.
