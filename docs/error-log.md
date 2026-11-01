@@ -409,3 +409,10 @@
 - Finding: on 390px viewport, Reka's unbounded root wrapper widened the playground field to 401px and the document to 417px. The inside XLarge label stacked above a 56px row and reached 84px.
 - Correction: constrain the Reka wrapper and field to their parent, and position the inside label within a 56px/64px field. After correction the document width is 375px at a 390px viewport; outside fields measure 50px for Small/Medium/Large and 58px for XLarge. Inside XLarge is 64px with a 56px control row.
 - Visual correction: the default preview now uses a 310px field in a 320px mobile frame, with Norato's semantic accent wash and a search icon, matching Lemon's preview composition while preserving Norato colors and the 48px interaction floor.
+
+## 2026-11-01 — Checkbox specimen and standalone semantics
+
+- Finding: Checkbox was cataloged as Implemented through `NoratoChoiceGroup`, but that adapter has no standalone indeterminate control. The top preview also lacked a true checkbox field API and its Lemon-like dot pattern had low contrast on Norato's light canvas.
+- Correction: added `NoratoCheckbox` with native controlled checkbox semantics, 16/20px visual sizes, mixed state, full-row label, required/error/disabled and descriptions; kept `NoratoChoiceGroup` for groups. Added a live playground and made the top specimen a single inert Lemon-composition sample. Increased dot contrast using a low-opacity Norato blue token mix and set a preview-specific 24px radius.
+- Browser evidence: at 390×844 the preview frame was 320×288px and document width 375px. Checkbox row measured 48.78px, direction RTL with control on the right. Space toggled state and showed a 2px focus ring; indeterminate exposed `aria-checked=mixed`; label click toggled it; required, invalid/error association, disabled and 16px size passed. No screen reader was run.
+- Remaining: inspect full Lemon 36-variant matrix, visual states and desktop geometry before closing Checkbox DoD.

@@ -582,3 +582,14 @@
 - [x] گیت‌ها پس از تغییرات جدید اجرا شدند: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` همگی موفق شدند.
 - [x] production build هشدار bundle بالای ۵۰۰KB داد (518.24KB minified)، ولی build موفق بود.
 - [ ] DoD همچنان باز است: صفحه‌خوان واقعی و review همهٔ variantها/حالت‌ها و تمام اکشن‌های focus دیده نشده‌اند؛ کوچک‌شدن frameها و کمبودهای بصری با شواهد تازه در نوبت بعد بازبینی شوند.
+
+## گزارش این درخواست — Checkbox با مرجع Lemon (در جریان، 2026-11-01)
+
+- [x] Lemon Checkbox در desktop و mobile دیده شد؛ ترکیب‌بندی preview تک‌کنترلی، frame شیشه‌ای نقطه‌دار، چهار بخش Anatomy و ۳۶ variant ثبت شد.
+- [x] Norato Checkbox در مرورگر محلی desktop و 390×844 باز شد؛ نمونهٔ پیش‌نمایش 320×288px و سند 375px در برابر viewport 390px اندازه‌گیری شد، overflow افقی ندارد.
+- [x] صفحه ساختار ۹‌بخشی مستقل دارد؛ adapter Vue و playground اجرایی از specimen inert جدا هستند. وضعیت کاتالوگ به Adapted اصلاح شد تا DoD باز را پنهان نکند.
+- [x] browser behavior: Space، ۲px focus، کلیک کامل label، mixed/`aria-checked="mixed"`، RTL/control-right، target 48.78px، size 16/20، required، disabled و error/description association بررسی شد.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند؛ `pnpm --dir apps/vue build` موفق شد.
+- [x] build هشدار bundle اصلی بالای 500KB داد؛ build را متوقف نکرد.
+- [ ] ۳۶ ترکیب Lemon و صفحه‌خوان واقعی بررسی نشده‌اند؛ ماتریس کامل حالت‌ها و جزئیات اندازه‌گیری desktop پیش از بستن DoD باقی است.
+- وضعیت: پیشرفت تأییدشده؛ DoD Checkbox باز می‌ماند.

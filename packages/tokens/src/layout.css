@@ -51,6 +51,12 @@
   --norato-radius-control: 25px;
   --norato-radius-pill: var(--norato-radius-observed-50);
   --norato-radius-tag: 6px;
+  --norato-radius-checkbox: 4px;
+  --norato-checkbox-preview-frame-inline-size: 640px;
+  --norato-checkbox-preview-frame-mobile-inline-size: 320px;
+  --norato-checkbox-preview-frame-block-size: 288px;
+  --norato-checkbox-preview-control-inline-size: 260px;
+  --norato-checkbox-preview-radius: 24px;
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
   --norato-border-medium: 2px;
