@@ -13,7 +13,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Switch | switch | Adapted | Dedicated controlled Reka adapter, three track sizes, Lemon-composition preview, RTL and Space/Enter checked; complete state/hover/screenreader DoD remains open |
 | [ ] | Segmented Control | segmented | Adapted | Reka ToggleGroup adapter and playground implemented; browser keyboard/state/size DoD pending |
 | [x] | Range | range | Implemented | Reka controlled single/range; Lemon desktop/mobile compared; all 16 type/size/disabled combinations at both viewports, pointer/keyboard/RTL/AX and technical gates pass. |
-| [ ] | Rating | rating | Proposed | Lemon page inspected; rating-* acceptance and implementation gates pending. |
+| [x] | Rating | rating | Implemented | Reka-controlled display/input/summary; Lemon desktop/mobile, 24 display combinations, RTL/half-star, keyboard, focus, disabled, AX and technical gates pass. |
 | [ ] | Date Picker | date-picker | Proposed | Pending visual and behavior comparison |
 | [ ] | Time Picker | time-picker | Proposed | Pending visual and behavior comparison |
 | [ ] | File Upload | file-upload | Proposed | Pending visual and behavior comparison |

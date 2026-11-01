@@ -4,7 +4,7 @@ Source: `https://lemonui.ir/#rating`, inspected 2026-11-01; Norato contract: `do
 
 ## Acceptance contract
 
-- Preserve Lemon's compact top preview: dotted-glass frame, Default marker, four full stars plus an empty half-star, Persian mean `۴٫۰`, and `۱۲۸ نظر`; Norato uses semantic yellow and blue tokens.
+- Preserve Lemon's compact top preview: dotted-glass frame, Default marker, four full stars plus one empty star, Persian mean `۴٫۰`, and `۱۲۸ نظر`; Norato uses semantic yellow and blue tokens.
 - Expose three modes: read-only rating, controlled selectable input, and full summary with mean, stars, count, and 5-to-1 distribution bars.
 - Read-only rating supports 0/1/2/3/3.5/4/4.5/5 and Small/Medium/Large. Input supports integer 1–5, Medium/Large, helper meaning, and Default/Hover/Selected/Disabled/Focus. A star is full/half/empty at tokenized 16/20/24/32 visual sizes.
 - Input uses Reka RadioGroup with visible star labels, proper accessible names/value, keyboard selection, disabled state and a 48px minimum target per choice. Add visually hidden text announcing `<value> از ۵`.

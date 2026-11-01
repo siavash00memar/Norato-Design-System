@@ -286,3 +286,11 @@
 - Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
 - Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
 - Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.
+
+## Rating — 2026-11-01
+
+- Preserve Lemon's top specimen order and scale: Default marker, four filled stars and one empty star for 4.0, Persian score, and review count in one centered RTL row.
+- Keep read-only star glyphs at the documented 16/20/24px sizes and input glyphs at 24/32px inside 48px targets; do not let the hit area stretch the visible stars.
+- Half stars use a physical right-side fill in RTL. Rating Input accepts whole-star values only; half values remain read-only.
+- Summary presents mean, review count, and five-to-one distribution bars. The sample stays inert; the live Reka RadioGroup and summary controls belong in the page playground.
+- Use Norato semantic yellow, text, border, glass and focus tokens inside a dotted-glass 640×288 desktop / 320×288 mobile frame.

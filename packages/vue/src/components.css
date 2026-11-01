@@ -259,3 +259,31 @@
 .norato-range-field--disabled .norato-range__thumb::after{background:var(--norato-color-surface-muted);border-color:var(--norato-color-border-strong)}
 .norato-range-field--invalid .norato-range__fill{background:var(--norato-color-error-strong)}
 .norato-range-field__error{margin:0;color:var(--norato-color-error-strong);font-size:var(--norato-type-body-caption-size)}
+
+/* Rating — read-only, selectable and review-summary variants. */
+.norato-rating{display:inline-grid;gap:var(--norato-space-2);color:var(--norato-color-text-primary);font-family:var(--norato-font-body);text-align:right}
+.norato-rating__readout{display:inline-flex;align-items:center;gap:var(--norato-space-2);direction:rtl}
+.norato-rating__stars{display:inline-flex;align-items:center;gap:var(--norato-space-1);direction:rtl;white-space:nowrap}
+.norato-rating__star{display:inline-grid;place-items:center;inline-size:var(--norato-rating-star-medium-size);block-size:var(--norato-rating-star-medium-size);color:var(--norato-color-border-strong);font-size:var(--norato-rating-star-medium-size);line-height:1}
+.norato-rating__star--full{color:var(--norato-color-brand-yellow)}
+.norato-rating__star--half{background:linear-gradient(to left,var(--norato-color-brand-yellow) 50%,var(--norato-color-border-strong) 50%);background-clip:text;color:transparent}
+.norato-rating__value{font-size:var(--norato-type-body-small-size);font-weight:700;font-variant-numeric:tabular-nums}
+.norato-rating__count{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size);white-space:nowrap}
+.norato-rating--small .norato-rating__star{inline-size:var(--norato-rating-star-small-size);block-size:var(--norato-rating-star-small-size);font-size:var(--norato-rating-star-small-size)}
+.norato-rating--large .norato-rating__star{inline-size:var(--norato-rating-star-large-size);block-size:var(--norato-rating-star-large-size);font-size:var(--norato-rating-star-large-size)}
+.norato-rating__input-label{font-size:var(--norato-type-body-small-size);font-weight:600}
+.norato-rating__input{display:flex;align-items:center;gap:var(--norato-space-1);direction:rtl}
+.norato-rating__choice{display:grid;place-items:center;inline-size:var(--norato-rating-star-hit-target);block-size:var(--norato-rating-star-hit-target);padding:0;border:0;border-radius:var(--norato-radius-pill);background:transparent;cursor:pointer}
+.norato-rating__choice[data-disabled]{cursor:not-allowed}
+.norato-rating__choice .norato-rating__star{inline-size:var(--norato-rating-star-input-medium-size);block-size:var(--norato-rating-star-input-medium-size);font-size:var(--norato-rating-star-input-medium-size)}
+.norato-rating--large .norato-rating__choice .norato-rating__star{inline-size:var(--norato-rating-star-input-large-size);block-size:var(--norato-rating-star-input-large-size);font-size:var(--norato-rating-star-input-large-size)}
+.norato-rating__choice:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
+.norato-rating__choice[data-disabled] .norato-rating__star{color:var(--norato-color-text-disabled)}
+.norato-rating__helper{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+.norato-rating__summary-top{display:flex;align-items:center;gap:var(--norato-space-2)}
+.norato-rating__distribution{display:grid;gap:var(--norato-space-1);margin:0;padding:0;list-style:none;font-size:var(--norato-type-body-caption-size)}
+.norato-rating__distribution li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--norato-space-2)}
+.norato-rating__bar{display:block;block-size:var(--norato-space-2);overflow:hidden;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted)}
+.norato-rating__bar i{display:block;block-size:100%;border-radius:inherit;background:var(--norato-color-brand-yellow)}
+.norato-rating--disabled .norato-rating__helper{color:var(--norato-color-text-disabled)}
+@media(prefers-reduced-motion:reduce){.norato-rating__choice{scroll-behavior:auto}}

@@ -1,11 +1,11 @@
 # Rating — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Implemented — DoD مرورگری و gateهای فنی پاس شدند. صفحه‌خوان مستقل در این بررسی اجرا نشد.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ فشردهٔ غیرفعال در قاب dotted-glass ابتدای صفحه قرار دارد: Default، چهار ستارهٔ پر، یک ستارهٔ خالی، امتیاز فارسی و تعداد نظر. نمونه از `NoratoRating` می‌آید و داخل قاب inert است؛ تغییر حالت‌ها در playground پایین صفحه انجام می‌شود.
 
 ## Overview
 
@@ -62,10 +62,12 @@
 
 امتیاز باید به‌صورت متنی هم اعلام بشه («۴٫۵ از ۵»).
 
+`NoratoRating` در Vue 3، `id`، `variant` (`display`، `input` یا `summary`)، `value`، `modelValue`، `count`، `distribution`، `size` و `disabled` را می‌پذیرد و در حالت input رویداد `update:modelValue` را با یکی از اعداد ۱ تا ۵ می‌فرستد. برای مقدارهای فقط‌خواندنی نیم‌ستاره پشتیبانی می‌شود. Input با Reka RadioGroup پیاده شده؛ هر گزینه نام عددی فارسی دارد، نام گروه و helper به‌ترتیب با `aria-labelledby` و `aria-describedby` وصل‌اند، با کلیدهای جهت حرکت می‌کند و هدف ۴۸px دارد. Summary نوارهای ۵ تا ۱ را از شمارش‌ها محاسبه می‌کند و نام و درصد هر نوار را برای فناوری کمکی اعلام می‌کند.
+
 ### قاعدهٔ عمومی Focus در Norato
 
 برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-border-strong`، `--norato-color-brand-yellow`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-rating-star-small-size`، `--norato-rating-star-medium-size`، `--norato-rating-star-large-size`، `--norato-rating-star-input-medium-size`، `--norato-rating-star-input-large-size`، `--norato-rating-star-hit-target` و توکن‌های قاب، فاصله و شعاع Rating.
