@@ -5,6 +5,7 @@ import SplitButtonShowcase from './SplitButtonShowcase.vue'
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
 type RadioMatrixState = { id: string; label: string; kind: string }
+type SwitchMatrixState = { id: string; label: string; kind: string }
 
 const props = defineProps<{ name: string; section: string; body: string; copiedKey?: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
@@ -89,6 +90,27 @@ const radioMatrixCells = [
   { checked: true, size: 16 },
   { checked: false, size: 20 },
   { checked: true, size: 20 },
+]
+const switchMatrixStates: SwitchMatrixState[] = [
+  { id: 'default', label: 'Default', kind: 'default' },
+  { id: 'hover', label: 'Hover', kind: 'hover' },
+  { id: 'disabled', label: 'Disabled', kind: 'disabled' },
+  { id: 'focus', label: 'Focus', kind: 'focus' },
+  { id: 'error', label: 'Error', kind: 'error' },
+]
+const switchFieldMatrixStates: SwitchMatrixState[] = [
+  { id: 'default', label: 'Default', kind: 'default' },
+  { id: 'error', label: 'Error', kind: 'error' },
+  { id: 'disabled', label: 'Disabled', kind: 'disabled' },
+]
+const switchMatrixSizes = [
+  { id: 'small', label: 'Small' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'large', label: 'Large' },
+]
+const switchMatrixValues = [
+  { on: false, label: 'Off' },
+  { on: true, label: 'On' },
 ]
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
@@ -249,6 +271,41 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           </div>
         </article>
         <span class="visual-kind">۲۰ ترکیب دیداری · نمایش ایستا؛ تعامل واقعی در playground</span>
+      </div>
+      <div v-else-if="name === 'Switch'" class="switch-matrix" aria-label="ماتریس دیداری Switch و Switch Field" aria-hidden="true" inert>
+        <section class="switch-matrix-family">
+          <h3>Switch · ۳۰ ترکیب</h3>
+          <div class="switch-matrix-groups">
+            <article v-for="state in switchMatrixStates" :key="state.id" class="switch-matrix-card" :data-state="state.kind">
+              <header class="switch-matrix-heading"><strong>{{ state.label }}</strong><span>Switch</span></header>
+              <div class="switch-matrix-grid">
+                <div v-for="size in switchMatrixSizes" :key="`${size.id}-false`" class="switch-matrix-cell" :data-size="size.id" data-on="false">
+                  <span class="switch-matrix-target"><i class="switch-matrix-track"><i class="switch-matrix-knob" /></i></span>
+                  <span class="switch-matrix-meta"><b>{{ size.label }}</b><small>Off</small></span>
+                </div>
+                <div v-for="size in switchMatrixSizes" :key="`${size.id}-true`" class="switch-matrix-cell" :data-size="size.id" data-on="true">
+                  <span class="switch-matrix-target"><i class="switch-matrix-track"><i class="switch-matrix-knob" /></i></span>
+                  <span class="switch-matrix-meta"><b>{{ size.label }}</b><small>On</small></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="switch-matrix-family">
+          <h3>Switch Field · ۶ ترکیب</h3>
+          <div class="switch-matrix-groups switch-matrix-groups--field">
+            <article v-for="state in switchFieldMatrixStates" :key="state.id" class="switch-field-matrix-card" :data-state="state.kind">
+              <header class="switch-matrix-heading"><strong>{{ state.label }}</strong><span>Switch Field</span></header>
+              <div class="switch-field-matrix-grid">
+                <div v-for="value in switchMatrixValues" :key="String(value.on)" class="switch-field-matrix-cell" :data-on="value.on">
+                  <span class="switch-matrix-target"><i class="switch-matrix-track" data-size="medium"><i class="switch-matrix-knob" /></i></span>
+                  <span class="switch-field-matrix-copy"><b>اعلان‌ها · {{ value.label }}</b><small>پیام‌های جدید را خبر بده</small></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <span class="visual-kind">۳۶ ترکیب دیداری · نمایش ایستا؛ تعامل واقعی در playground</span>
       </div>
       <div v-else class="variant-visual-grid">
         <article v-for="entry in entries" :key="entry.id" class="contract-variant-card" :class="{ 'is-empty': isEmptyStatement(entry) }">

@@ -851,3 +851,14 @@
 - [x] Hover با اشاره‌گر روی Switch track مرز آبی معنایی را نشان داد. Space مقدار false→true و Enter مقدار true→false را تغییر داد. Error مقدار `aria-invalid=true`، متن خطا و هر دو شناسهٔ description/error را در `aria-describedby` داشت. Disabled واقعی بود و با حالت checked track غیرفعال‌شده و مقدار روشن را حفظ کرد.
 - [x] کنترل playground پس از بررسی به وضعیت اولیه برگشت: خاموش، فعال، بدون خطا و اندازهٔ متوسط.
 - [ ] ماتریس کامل ۳۰ ترکیب دیداری و حلقهٔ فوکوس واقعی با صفحه‌کلید/اندازه‌گیری مرورگر همچنان باز است؛ تمرین جداگانهٔ صفحه‌خوان اجرا نشد. تلاش برای batch تمام حالت‌ها به پایان مهلت مرورگر خورد و نتیجه به‌عنوان PASS ثبت نشده است.
+
+## گزارش این درخواست — ماتریس Variants کامپوننت Switch (2026-11-01)
+
+- [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze پیش از implementation ثبت شد.
+- [x] Renderer اختصاصی Variants از ۳۰ سلول Switch و ۶ سلول Switch Field ساخته شده است؛ گالری `inert` و `aria-hidden` است و playground واقعی جدا باقی مانده.
+- [x] اندازه‌های track به توکن و CSS adapter وصل‌اند: ۳۲×۲۰، ۴۰×۲۴ و ۴۸×۲۸px؛ موقعیت knob با logical inline و جهت RTL تنظیم شده است. Hover، focus، disabled و error از توکن‌های معنایی Norato استفاده می‌کنند.
+- [x] رندر محلی صفحه Switch و ساختار کارت‌های مرجع Lemon در مرورگر دیده شد. رنگ on در Lemon تیره و در قرارداد Norato آبی برند است؛ پالت Norato حفظ شد.
+- [x] قرارداد Switch اصلاح شد تا newlineهای literal خراب حذف شوند و ماتریس جدید و محدودیت‌های شواهد را مستند کند.
+- [ ] مقایسهٔ ماتریس Variants در viewport دقیقاً برابر Lemon، viewport موبایل/overflow و اندازه‌گیری DOM هنوز انجام نشده است.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از اصلاح قرارداد موفق‌اند؛ chunk اصلی 646.51KB و بالاتر از هشدار 500KB است.
+- [ ] DoD کامل Switch بسته نیست؛ صفحه‌خوان مستقل و اندازه‌گیری واقعی focus ring و بررسی ماتریس در موبایل باز هستند.
