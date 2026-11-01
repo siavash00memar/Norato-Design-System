@@ -22,7 +22,7 @@ for (const [fieldIndex, label] of [[1, 'id'], [2, 'slug'], [3, 'name']]) {
 }
 
 const listedContracts = new Set()
-const allowedUsageKeys = new Set(['button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating'])
+const allowedUsageKeys = new Set(['button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker'])
 const requiredContractSections = ['Overview', 'Anatomy', 'Variants', 'Sizes', 'States', 'Parts', 'Usage', 'Accessibility', 'Tokens']
 const specimenSource = fs.readFileSync(path.join(root, 'apps/vue/src/ComponentSpecimen.vue'), 'utf8')
 const usageSource = fs.readFileSync(path.join(root, 'apps/vue/src/usage-examples.ts'), 'utf8')
@@ -46,7 +46,7 @@ for (const row of rows) {
   if (status === 'Implemented' || (status === 'Adapted' && (adapter || usageKey))) {
     if (!adapter) fail(`${name}: ${status} requires a Vue adapter and export.`)
     if (!usageKey || !allowedUsageKeys.has(usageKey[1])) fail(`${name}: ${status} requires a known usage example.`)
-    if (usageKey && !usageSource.includes(`  ${usageKey[1]}:`)) fail(`${name}: usage example ${usageKey[1]} is missing.`)
+    if (usageKey && !usageSource.includes(`  ${usageKey[1]}:`) && !usageSource.includes(`  '${usageKey[1]}':`)) fail(`${name}: usage example ${usageKey[1]} is missing.`)
     if (adapter) {
       const componentPath = path.join(root, 'packages/vue/src/components', adapter[1])
       if (!fs.existsSync(componentPath)) fail(`${name}: missing adapter file ${adapter[1]}.`)

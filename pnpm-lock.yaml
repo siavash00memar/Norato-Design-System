@@ -49,6 +49,9 @@ importers:
 
   packages/vue:
     dependencies:
+      '@internationalized/date':
+        specifier: 3.12.4
+        version: 3.12.4
       reka-ui:
         specifier: 2.11.0
         version: 2.11.0(vue@3.5.43(typescript@5.9.3))

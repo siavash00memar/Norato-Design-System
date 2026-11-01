@@ -14,6 +14,7 @@
     "vue": "^3.5.0"
   },
   "dependencies": {
+    "@internationalized/date": "3.12.4",
     "reka-ui": "2.11.0"
   }
 }

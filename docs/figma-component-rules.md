@@ -80,6 +80,11 @@
 - بخش آیکن: ۳۶×۳۶px
 - frame آیکن: ۲۴×۲۴px
 - فاصله‌ی label و control: ۶px
+- صفحهٔ Lemon `https://lemonui.ir/#date-picker` الگوی preview را تعیین می‌کند: قاب dotted-glass با نشان Default، تقویم سفید و کم‌ارتفاع وسط قاب، نام ماه و کنترل‌های قبل/بعد در سرستون، و هفت ستون از شنبه در سمت راست تا جمعه در سمت چپ. پالت اجرا از semantic tokenهای Norato می‌آید.
+- هر هفت حالت Single، Range، Range + Presets، Date & Time، Month، Year و Wheel در playground مستقل صفحهٔ Date Picker قابل اجرا هستند؛ wheel در موبایل سه انتخاب‌گر سال/ماه/روز دارد.
+- اندازهٔ دیداری روز در Small/Medium با target حداقل ۴۸px جدا نگه داشته می‌شود؛ grid هفت‌ستونه داخل پنل با inline-size محدود قرار می‌گیرد و ارتفاعش ثابت از target سلول‌ها ناشی نمی‌شود.
+- محاسبات و سریال‌سازی از PersianCalendar در `@internationalized/date` استفاده می‌کنند. جمعه‌ها حالت Holiday دارند؛ روزهای تعطیل رسمی را مصرف‌کننده با رشتهٔ جلالی می‌دهد. تاریخ و ساعت، زمان محلی را حفظ می‌کند.
+- نمونهٔ بالای صفحه inert و فقط بصری است؛ Date Picker اجرایی در بخش استفادهٔ Vue قرار دارد.
 
 ## Radio Button
 

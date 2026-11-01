@@ -656,3 +656,15 @@
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پس از اصلاحات نهایی موفق شدند.
 - صفحه‌خوان مستقل اجرا نشد؛ مرور DOM/Accessibility tree و تعامل صفحه‌کلید انجام شد.
 - وضعیت: PASS برای DoD مرورگر و gateهای فنی Checkbox.
+
+## گزارش این درخواست — Date Picker (2026-11-01، در جریان)
+
+- [x] صفحهٔ محلی Date Picker ساختار مستقل Button را دارد: Preview، playground اجرایی، نمونهٔ Vue و هر ۹ بخش قرارداد.
+- [x] adapter کنترل‌شدهٔ Jalali، مقدارهای date/range/date-time و هفت mode در API و playground متصل شدند؛ تغییر حالت‌های Single، Range، Presets، Date & Time، Month، Year و Wheel و انتخاب‌های تاریخ در مرورگر اجرا شده‌اند.
+- [x] مرورگر RTL را با ترتیب شنبه تا جمعه از راست نشان می‌دهد. در حالت بازه، ماه جاری سمت راست و ماه بعد سمت چپ است؛ بازهٔ انتخاب و دو preset «این هفته» و «ماه قبل» در مرورگر بررسی شدند.
+- [x] ایراد پنل بازه رفع شد: inline width کنترل، قانون 760px دوماهه را خنثی می‌کرد. اکنون پنل desktop در viewport 1920×863 اندازهٔ 760×491px دارد، از control تا x=540.5..1300.5 قرار می‌گیرد و در viewport جا می‌شود؛ دو ماه هرکدام 361px هستند.
+- [x] روزهای تقویم target 48×48px دارند؛ در حالت single درخت دسترس‌پذیری، نام تقویم/روزها، امروز، تعطیلی، انتخاب و ماه‌های مجاور را نشان می‌دهد. انتخاب range، Preset، Month، Year و Wheel مدل کنترل‌شده را به‌روزرسانی کردند.
+- [x] گیت‌ها پس از اصلاح چیدمان: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند.
+- [x] `git diff --check` بدون whitespace error است؛ هشدارهای پایان‌خط CRLF در checkout ویندوزی باقی‌اند.
+- [ ] DoD کامل نیست: مقایسهٔ موبایل Lemon/Norato، ماتریس کامل صفحه‌کلید و فوکوس، و اجرای صفحه‌خوان مستقل هنوز ثبت نشده‌اند؛ وضعیت کامپوننت Adapted می‌ماند.
+- [ ] Build موفق است ولی دربارهٔ bundle جاوااسکریپت 626.13KB هشدار بالای 500KB می‌دهد.
