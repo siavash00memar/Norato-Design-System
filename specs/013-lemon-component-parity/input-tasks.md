@@ -7,7 +7,7 @@
 5. [x] Implement seven missing adapters; extend Textarea while preserving compatibility.
 6. [x] Update CSS and neutralize conflicting textarea sizing; maintain proportions and minimum 48px targets.
 7. [x] Add real playground coverage, contract-specific input family galleries and reviewed examples/exports.
-8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; four sizes, OTP wrapping, success/loading, read-only, stacked number and mobile non-overflow are checked, but full state/focus coverage remains incomplete.
+8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; desktop four-size × label-placement matrices, OTP 4/5/6 cell counts and six-digit paste/navigation, Number step-1 bounds, common semantics and mobile non-overflow are now verified. Full state/focus coverage remains incomplete.
 9. [x] Re-run token/catalog/typecheck/build/diff gates after the States gallery revision; update docs/catalog/readiness and log remaining browser evidence.
 10. [x] Exact-integer Amount refinement `93f2507` is pushed to `origin/master`; local and remote refs were checked equal.
 11. [x] Translate the accepted minimum target and no-stretch rules into measured sizes; remove native Number spinners that duplicated Norato actions, preserving ArrowUp bounds.

@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## ادامهٔ بررسی زندهٔ Input — desktop (2026-11-01)
+
+- [x] در playground واقعی، هر چهار اندازه و هر دو جایگاه Label تغییر داده شد؛ پوستهٔ تک‌خطی 50/52/56/60px در Outside و 62/64/68/72px در Inside، سلول OTP برابر 48/52/56/60px و Textarea سه‌ردیفه 103/108/120/128px بود. viewport برابر 1280px و عرض سند 1265px ماند.
+- [x] OTP طول‌های 4/5/6 را با همان تعداد سلول نشان داد؛ paste شش‌رقمی، حرکت فوکوس با ArrowRight و حذف رقم با Backspace در ورودی واقعی مشاهده شد.
+- [x] Number در step=1 با ArrowUp و ArrowDown از min=0 و max=99 عبور نکرد؛ حالت stacked هر دو action را در 48×48px نگه داشت.
+- [x] وضعیت‌های Required/Error/Disabled/Loading/Success/Read-only روی کنترل‌های واقعی بررسی شدند؛ loading هشت `aria-busy`/spinner، 13 ورودی غیرفعال و سه action غیرفعال داشت. پیام خطا به `aria-describedby` وصل و `aria-invalid` فعال شد.
+- [x] کنسول مرورگر error نداشت و انتخاب‌های playground به حالت پیش‌فرض برگشتند. ماتریس کامل ترکیب‌های حالت/اندازه/focus و بررسی صفحه‌خوان مستقل هنوز باز است.
+
 ## گزارش مقایسهٔ گالری States در Input — Lemon و Norato، موبایل (2026-11-01)
 
 - [x] Lemon و Norato در viewport یکسان 390×844 باز شدند. Lemon برای Stateها کارت‌های توصیفی دو ستونه دارد؛ گالری Norato پیش از اصلاح، ۴۱ مورد را به‌صورت یک‌ستونه و بدون کنترل نمونه نمایش می‌داد.
