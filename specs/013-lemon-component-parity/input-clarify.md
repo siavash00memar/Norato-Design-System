@@ -11,7 +11,9 @@
 
 Should Input implement all eight Lemon subtypes as executable Vue controls, or should this family retain the generic text API and show the rest only as visual references?
 
-The user was offered two clear choices: (A) all eight executable Vue adapters (recommended for functional fidelity); (B) visual galleries while preserving the current text-only runtime API. **Answer pending.**
+**User decision (2026-11-01):** implement eight independent executable adapters for the reference subtypes. Keep `NoratoField` compatibility and the existing `NoratoTextarea` export unless separately clarified otherwise. The user means distinct public components, not visual-only mockups.
+
+**Still requiring clarification before the affected adapters are implemented:** whether Phone exposes a country selector or only a configurable `+98` prefix; whether Amount defaults to Toman or has no implicit currency; whether Password strength is controlled by the consumer or calculated by the adapter. These choices change UI and public API. A focused question is pending.
 
 ## Independent acceptance constraints
 
@@ -20,7 +22,7 @@ The user was offered two clear choices: (A) all eight executable Vue adapters (r
 - Any non-runtime family representation must be explicitly marked inert/visual-only. Do not add fake APIs or infer behavior from variant labels.
 - Do not plan or implement scope-dependent code until the user's choice is recorded.
 
-**Clarify gate: open; dependent Plan/Checklist/Tasks/Analyze/Implement gates must wait.**
+**Clarify gate: partially passed.** Runtime family scope is confirmed as eight adapters; the three control-specific behavior/API decisions above remain open. Do not implement Phone, Amount or Password until those answers are recorded. Other controls can be planned independently after their contracts and dependencies are audited.
 
 ## Independent preview-only subfeature
 

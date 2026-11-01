@@ -1,6 +1,7 @@
 # Radio Matrix — Checklist
 
 - [x] Five state groups each render four cells: 2 checked values × 2 sizes × 5 states (20 total), confirmed in the actual browser screenshot.
+- [x] Fresh desktop browser screenshot review confirms all five groups and twenty proportional radio cells remain visible; Lemon reference uses its own four sample states and property selector. Current screenshots are different viewport sizes, so this qualitative review does not satisfy same-viewport parity.
 - [x] Radio glyphs are circular, proportional (16px/20px), and not stretched; desktop screenshot confirms 16px and 20px circles plus the selected dot.
 - [x] Selected dot, hover, focus, disabled and error visuals use Norato semantic tokens. Token review found and corrected two non-existent disabled tokens before recording the result.
 - [x] Matrix is inert/static and RTL; live playground remains interactive. Browser ArrowDown/ArrowUp moved selection and synchronized status/snippet; monthly default was restored.

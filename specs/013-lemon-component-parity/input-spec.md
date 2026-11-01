@@ -3,7 +3,7 @@
 **Visual reference:** `https://lemonui.ir/#input` (inspected 2026-11-01)
 **Governing project:** `.specify/memory/constitution.md` v1.2.0
 **Norato contract:** `docs/component-contracts/input.md`
-**Current status:** specification in progress; runtime scope awaits user clarification.
+**Current status:** scope clarified by user as eight independent executable Vue adapters; Phone, Amount and Password API details remain in Clarify.
 
 ## User need
 
@@ -40,4 +40,4 @@ The Norato Input page should make its text-entry family understandable and usabl
 
 ## Open decision
 
-Should this family implement Vue adapters for all eight reference controls, or remain a visual family page with only the current generic text adapter? This materially changes API, behavior, accessibility and task scope and is awaiting user clarification. **Specify gate: drafted; runtime scope unresolved.**
+The user selected eight independent executable adapters. This materially changes API, behavior, accessibility and task scope. Phone country-code behavior, Amount currency, and Password strength source remain open Clarify items. **Specify gate: drafted; runtime scope selected, adapter details not yet fully specified.**
