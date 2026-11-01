@@ -6,7 +6,7 @@
 - [ ] Text Input's label-inside/outside and all four sizes were browser-measured (outside 50/52/56/60px; inside 62/64/68/72px); all eight documented state combinations are not yet exhaustively reviewed.
 - [x] Password visibility toggle works in the browser; strength presentation is driven only by the controlled `strength` prop and the sample secret is not rendered.
 - [x] Phone prefix defaults to `+98`, is configurable, appears at the physical left edge in RTL, and phone entry is LTR.
-- [ ] OTP renders 4/5/6 cells and all three lengths were counted in the browser; typing, paste, Backspace and arrows were exercised at length 6, while per-length entry/focus and all error/disabled/success combinations remain open.
+- [ ] OTP renders 4/5/6 cells and all three lengths were counted in the browser. Length 4 now passes sequential entry, full paste, ArrowLeft/Right, Backspace on a filled cell and backtracking from an empty cell; length 6 paste/navigation/Backspace and length 5 paste were previously confirmed. Length 5 per-cell keyboard and OTP-specific error/disabled/success combinations remain open.
 - [x] Textarea counter/max-length (179→180; next keystroke rejected), vertical resize, disabled/error and read-only behavior work; three-row heights are 103/108/120/128px across sizes.
 - [x] Number stepper/stacked layouts expose min/max/step in the playground and synchronized snippet. At `min=.05`, `max=.35`, `step=.1`, buttons and ArrowUp/ArrowDown followed decimal steps and stopped at bounds; `0→.1→.2→.3` emitted exact values, and max/min actions disable at their endpoints. Stepper/stacked layouts remain 48×48px; defaults restore to `0/99/1`.
 - [x] Persian amount entry `۱۲۳۴۵` rendered grouped `۱۲٬۳۴۵` and the matching Persian words; emitted model stays ungrouped by the input adapter.
@@ -21,12 +21,13 @@
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
 - [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass after Number refinement. Current production JS chunk is 683.73KB; Vite warns that it exceeds 500KB.
 - [x] Request checklist, Input contract, catalog maturity and family ledger record remaining work without closing the DoD prematurely.
-- [ ] Latest Number refinement checkpoint is verified locally and awaits commit/push; previous gallery checkpoint `ee5f809` is pushed to `origin/master`.
+- [x] Number refinement checkpoint `e9364e2` is pushed to `origin/master`; remote parity was verified on 2026-11-01. Gallery checkpoint `ee5f809` is also on the same branch.
 
 ## Remaining evidence
 
 - Browser follow-up (2026-11-01, desktop viewport 1280×720): all four sizes × both label placements were changed in the live playground. The six single-line shells measured 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measured 48/52/56/60px; Textarea measured 103/108/120/128px outside. Document width 1265px stayed within the viewport. OTP length selector rendered exactly 4/5/6 cells; full six-digit paste populated the group, ArrowRight moved focus one cell, and Backspace removed a digit. Number min/max/step controls and generated snippet were synchronized; at `0/.3/.1`, three buttons emitted exactly `.1`, `.2`, `.3` and disabled at max; ArrowUp/Down worked at `.1`, and min/max action disabling was verified at `.05/.35`. Shared states were isolated at all four sizes (24 size×state combinations); counts stayed consistent: 8 required, 13 invalid, 13 disabled values + 3 disabled actions, 8 busy/spinners, 8 success, 13 readonly values. Tab traversal visited 32 playground targets and every target showed a visible focus ring. Browser console error list was empty; defaults restored.
-- Remaining: state combinations beyond the isolated shared toggles, OTP 4/5 per-cell keyboard/paste edge cases, independent screen-reader review, matched visual states across every Lemon variant, and final remote parity remain open. Keep family DoD open.
+- OTP length-four follow-up (2026-11-01, desktop viewport 1280×720): the live selector rendered four cells; paste filled all four and focused the last cell; sequential key entry filled the cells in order; ArrowLeft and ArrowRight moved focus; Backspace cleared the focused digit; Backspace on an empty cell moved left and cleared the preceding digit. Length was restored to six, all digits cleared, and browser error logs were empty.
+- Remaining: state combinations beyond the isolated shared toggles, length-five per-cell keyboard, OTP-specific error/disabled/success combinations, independent screen-reader review and matched visual states across every Lemon variant remain open. Keep family DoD open.
 
 ## Number step-validation refinement
 

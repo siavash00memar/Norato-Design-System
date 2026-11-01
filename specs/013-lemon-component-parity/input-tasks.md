@@ -7,7 +7,7 @@
 5. [x] Implement seven missing adapters; extend Textarea while preserving compatibility.
 6. [x] Update CSS and neutralize conflicting textarea sizing; maintain proportions and minimum 48px targets.
 7. [x] Add real playground coverage, contract-specific input family galleries and reviewed examples/exports.
-8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; desktop four-size × label-placement matrices, OTP 4/5/6 cell counts and six-digit paste/navigation, Number decimal/integer bounds, 24 isolated size/state combinations, 32 keyboard focus targets and mobile non-overflow are now verified. Combined states, OTP 4/5 keyboard/paste cases, and independent screen-reader evidence remain incomplete.
+8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; desktop four-size × label-placement matrices, OTP 4/5/6 cell counts, six-digit interaction and four-digit paste/sequential entry/arrows/Backspace, Number decimal/integer bounds, 24 isolated size/state combinations, 32 keyboard focus targets and mobile non-overflow are verified. Length-five per-cell keyboard, combined states, OTP-specific error/disabled/success and independent screen-reader evidence remain incomplete.
 9. [x] Re-run token/catalog/typecheck/build/diff gates after the States gallery revision; update docs/catalog/readiness and log remaining browser evidence.
 10. [x] Exact-integer Amount refinement `93f2507` is pushed to `origin/master`; local and remote refs were checked equal.
 11. [x] Translate the accepted minimum target and no-stretch rules into measured sizes; remove native Number spinners that duplicated Norato actions, preserving ArrowUp bounds.
@@ -16,4 +16,4 @@
 14. [x] Same-viewport 390×844 Lemon/Norato, inertness, 41 cards, state treatments, no overflow, empty error console and technical gates were verified; checkpoint `ee5f809` pushed to `origin/master` and remote hash matched.
 15. [x] Expose Number min/max/step in the real playground and synchronized example; normalize decimal step arithmetic; verify buttons, keyboard and configured bounds in the browser.
 16. [x] Re-run token/catalog/typecheck/build/diff gates after Number refinement; review the live desktop rendering and record remaining evidence.
-17. [ ] Commit/push the Number refinement checkpoint and verify remote parity.
+17. [x] Commit `e9364e2` pushed; verified remote parity on `origin/master`.

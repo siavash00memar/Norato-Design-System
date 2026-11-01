@@ -7,7 +7,7 @@
 - [x] All four sizes were checked against each of six isolated shared states (24 combinations); control dimensions respected the 48px floor. Required/error/disabled/loading/success/read-only semantics remained consistent.
 - [x] Keyboard traversal reached 32 playground focus targets and each exposed a 2px solid ring; console had no errors.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 contracts), Vue typecheck/build and `git diff --check` pass; JavaScript chunk is 683.73KB and Vite reports its >500KB advisory.
-- [ ] Independent screen-reader review, OTP 4/5 per-length interaction edge cases and combined state sequences remain open.
+- [ ] Independent screen-reader review, OTP length-five per-cell keyboard and adapter-specific combined state sequences remain open. Length-four interaction and length-five paste evidence is recorded in the Input checklist.
 
 ## ادامهٔ بررسی زندهٔ Input — desktop (2026-11-01)
 
@@ -914,7 +914,7 @@
 - [x] Browser interactions: password show/hide; phone `+98`; OTP digit entry, full paste, arrows and Backspace focus; Persian amount entry/grouping/words (`۱۲۳۴۵` → `۱۲٬۳۴۵`); number increment and keyboard bounds (`98→99`, `99→99`); Search clear and Ctrl+K focus without stealing focus from another input; textarea max length/counter (`179→180`) and vertical resize.
 - [x] Shared playground states: all eight controls disable for disabled/loading; eight live loading messages and eight error alerts were present; all error controls expose `aria-invalid`; action buttons measure 48×48px; keyboard-focused password action has visible outline with 4px offset.
 - [x] Default preview restored after interactions; browser console had no errors. `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue typecheck) and `git diff --check` passed. Production JS main chunk is 673.58KB and Vite reports its >500KB advisory.
-- [ ] Full size/state matrices, OTP lengths 4/5, stacked Number layout and independent screen-reader review remain open in `specs/013-lemon-component-parity/input-checklist.md`.
+- [ ] Full size/state matrices, OTP length-five per-cell keyboard, stacked Number layout and independent screen-reader review remain open in `specs/013-lemon-component-parity/input-checklist.md`.
 - [x] Input implementation checkpoint `663af1f` pushed to `origin/master`; local and remote refs matched immediately after push.
 
 ## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
@@ -931,3 +931,11 @@
 - [x] رندر Lemon و Norato در viewport برابر 1280×720 در بخش Variants بررسی شد. Lemon چهار specimen کارت‌مانند و selector اندازه/checked/state را در گالری 636px دارد؛ Norato پنج گروه و 20 ترکیب قرارداد را در ستون 584px نشان می‌دهد.
 - [x] هندسهٔ DOM ماتریس Norato تأیید شد: 20 حلقه، اندازهٔ ذاتی 16×16 و 20×20px، target سلول 128×48px، RTL و صفر فرزند interactive. screenshot همهٔ پنج state group، حلقهٔ دایره‌ای و نقطهٔ انتخاب آبی را نشان می‌دهد.
 - [ ] ماتریس کامل Radio هنوز در viewport موبایل مرور نشده؛ 20 ترکیب کامل و مقایسهٔ مستقل صفحه‌خوان نیز باز هستند. DoD بسته نمی‌شود.
+
+## گزارش پیگیری — OTP چهاررقمی در Input (2026-11-01)
+
+- [x] مرورگر محلی روی viewport دسکتاپ 1280×720 بود. انتخابگر طول دقیقاً چهار خانه نشان داد؛ Paste چهار رقم هر چهار خانه را پر کرد و فوکوس را به آخرین خانه برد.
+- [x] ورود متوالی با کیبورد چهار رقم را به‌ترتیب ثبت کرد. ArrowLeft و ArrowRight فوکوس را یک خانه جابه‌جا کردند. Backspace رقم خانهٔ فوکوس‌شده را پاک کرد؛ Backspace روی خانهٔ خالی به خانهٔ قبلی برگشت و رقم قبلی را حذف کرد.
+- [x] پس از آزمون طول به ۶ بازگشت، مقدار هر شش خانه پاک شد و فهرست خطاهای مرورگر خالی بود.
+- [ ] آزمون per-cell در طول ۵، وضعیت‌های اختصاصی error/disabled/success برای OTP، توالی ترکیبی stateها و صفحه‌خوان مستقل هنوز باز هستند؛ DoD خانواده Input بسته نیست.
+- [x] مستندات Input، دفتر ۴۸ خانواده و Request Validation به‌روز شدند. Number refinement پیش‌تر در commit `e9364e2` روی `origin/master` منتشر و هم‌ترازی remote تأیید شده است.
