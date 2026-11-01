@@ -39,3 +39,11 @@ Earlier preview-only notes in `input-preview-*` recorded a temporary bounded inv
 
 - No new interaction, props, or runtime API is required. The 41 States entries are inert visual references; all behavior stays in the eight adapters/playground.
 - Use Lemon's compact state-card hierarchy and two-column mobile composition as the presentation reference. Keep Norato's palette, tokenized glass surfaces and descriptions of the actual family state.
+
+## Number step-validation refinement (2026-11-01)
+
+- The Number public adapter already supports configurable `min`, `max`, and `step`; this refinement exposes those settings in the live playground without changing the public API.
+- Preserve default playground values `min=0`, `max=99`, and `step=1`.
+- Decimal increments must not accumulate binary floating point artifacts (for example, three increments of `0.1` must produce `0.3`). Keep native ArrowUp/ArrowDown behavior and clamp button stepping to configured bounds.
+- The copyable Vue example must reflect the current playground range values.
+- No additional UX/API preference is unresolved; this refines testability and correctness of the already approved Number contract.

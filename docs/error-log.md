@@ -602,3 +602,12 @@
 - **Correction:** added 41 bounded family-specific mini-controls, two-column mobile and three-column wide layouts, tokenized active/error/success/disabled/loading/read-only/typing visuals, and concise state descriptions. `inputStateKind` now maps Success and Typing correctly. The specimens remain inert and the playground remains the behavior source.
 - **Browser evidence:** Lemon/Norato viewport 390×844; Norato grid 343px wide with two 167.5px columns, all 41 cards fit, document 375px. Error red, success green with check, disabled muted, loading spinner, active focus ring, hover/typing brand border. Gallery subtree is aria-hidden/inert.
 - **Prevention:** render reference states as bounded specimens and verify visual state mapping, not just the text label or class count.
+
+## ERR-058 — Number decimal steps accumulated binary precision errors (2026-11-01)
+
+- **Component:** Input / Number Input and its playground
+- **Finding:** Number's playground fixed `min/max/step` to `0/99/1`, leaving the public range API untestable on the page. The adapter added decimal steps using floating point arithmetic directly, which can produce values such as `0.30000000000000004`.
+- **Correction:** expose labeled min/max/step controls and synchronize those values into the generated Vue example. Convert stepping operands to a common decimal BigInt scale, clamp against configured bounds, and fall back safely when the controlled value is not finite.
+- **Browser evidence:** with `0/0.3/0.1`, real increment actions emitted `0.1`, `0.2`, `0.3` and disabled at max; ArrowUp/Down worked. With `0.05/0.35/0.1`, sequence and endpoint disabling were verified. Defaults and snippet returned to `0/99/1`; all four sizes passed each of six isolated common states. All 32 tab targets showed a focus ring.
+- **Prevention:** exercise configurable numerical props through the actual playground; validate decimal series and endpoint disabling rather than relying on integer-only checks.
+- **Remaining:** independent screen-reader review and combined cross-state sequences for the Input family remain open.

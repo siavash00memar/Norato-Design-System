@@ -101,3 +101,9 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 ## Tokens
 
 **توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
+
+## Number step playground decision (2026-11-01)
+
+- The live playground exposes `min`, `max`, and `step` so the existing Number API can be exercised directly; defaults remain `0`, `99`, and `1`.
+- Its generated Vue example always reflects the selected values.
+- Decimal button increments are normalized to the participating decimal precision before applying bounds, avoiding binary floating point display artifacts.

@@ -40,6 +40,7 @@ The Norato Input page should make its text-entry family understandable and usabl
 - **IN-05:** Keep all rendered widths bounded, preserve intrinsic control height, prevent mobile horizontal overflow, and retain RTL/LTR field-specific text direction.
 - **IN-06:** For every implemented control, verify associated labels, error descriptions, focus, keyboard, disabled/loading behavior, and minimum target sizes.
 - **IN-07:** Run project token/catalog/TypeScript/build gates and compare desktop/mobile browser renders with Lemon before closing DoD.
+- **IN-08:** Expose Number `min`, `max`, and `step` in the live playground and synchronize the usage snippet. Decimal button stepping must avoid floating point artifacts and honor configured bounds.
 
 ## Public adapter contract
 

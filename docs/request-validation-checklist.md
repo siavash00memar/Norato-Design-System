@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## Number Input precision refinement — browser evidence (2026-11-01)
+
+- [x] Playground controls expose min/max/step and the generated code updates with them; defaults restored to `0/99/1`.
+- [x] With `min=0`, `max=0.3`, `step=0.1`, three increment clicks emitted exactly `0.1 → 0.2 → 0.3`; max disabled the increment. ArrowUp/ArrowDown followed `0.1` steps. With `0.05/0.35/0.1`, min/max button disabling also passed.
+- [x] All four sizes were checked against each of six isolated shared states (24 combinations); control dimensions respected the 48px floor. Required/error/disabled/loading/success/read-only semantics remained consistent.
+- [x] Keyboard traversal reached 32 playground focus targets and each exposed a 2px solid ring; console had no errors.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 contracts), Vue typecheck/build and `git diff --check` pass; JavaScript chunk is 683.73KB and Vite reports its >500KB advisory.
+- [ ] Independent screen-reader review, OTP 4/5 per-length interaction edge cases and combined state sequences remain open.
+
 ## ادامهٔ بررسی زندهٔ Input — desktop (2026-11-01)
 
 - [x] در playground واقعی، هر چهار اندازه و هر دو جایگاه Label تغییر داده شد؛ پوستهٔ تک‌خطی 50/52/56/60px در Outside و 62/64/68/72px در Inside، سلول OTP برابر 48/52/56/60px و Textarea سه‌ردیفه 103/108/120/128px بود. viewport برابر 1280px و عرض سند 1265px ماند.
@@ -14,8 +23,8 @@
 - [x] Norato اکنون هر ۴۱ خانواده/حالت را با mini-control محدود و anatomy خانوادهٔ مربوط نشان می‌دهد؛ Error قرمز و دارای پیام، Success سبز با تیک، Disabled خاکستری، Loading دارای spinner، Active دارای حلقهٔ focus، Hover و Typing با مرز برند، Read-only با سطح ملایم و Filled با متن دارند.
 - [x] چیدمان Norato در عرض ۳۹۰px دو ستون 167.5px در ظرف 343px دارد؛ همهٔ ۴۱ کارت در قاب‌اند، document width برابر 375px است. Previewهای حالت `aria-hidden` و inert هستند؛ تفاوت رفتار باید در playground زنده سنجیده شود.
 - [x] Error در گالری به‌درستی `invalid` و Success به‌درستی `success` نگاشت می‌شوند؛ قبلاً Success به Default می‌افتاد. Search Typing نیز اکنون حالت مستقل دارد.
-- [x] console مرورگر پس از اصلاح خالی از error بود؛ `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript/production build و `git diff --check` پاس شدند. Vite برای chunk 681.86KB هشدار >500KB می‌دهد.
-- [x] checkpoint اصلاح گالری `ee5f809` به `origin/master` push و هش remote تأیید شد؛ ماتریس تعاملی/focus کامل و screen-reader مستقل همچنان باز هستند.
+- [x] console مرورگر پس از اصلاح خالی از error بود؛ `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript/production build و `git diff --check` پاس شدند. Vite برای chunk 683.73KB هشدار >500KB می‌دهد.
+- [x] checkpoint اصلاح گالری `ee5f809` به `origin/master` push و هش remote تأیید شد؛ ماتریس ترکیبی تعاملی و screen-reader مستقل همچنان باز هستند.
 
 ## گزارش بازبینی Input و اصلاح اندازه‌ها — موبایل و دسکتاپ (2026-11-01)
 

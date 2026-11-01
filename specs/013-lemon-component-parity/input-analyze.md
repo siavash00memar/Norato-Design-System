@@ -35,3 +35,9 @@
 ## Readiness
 
 The required sequence reached Analyze. Implementation may proceed against the confirmed contract. Do not mark family maturity as complete until the full DoD evidence exists.
+
+## Number step-validation finding (2026-11-01)
+
+- The public adapter accepts configurable `step`, but the playground hard-codes `step=1`, leaving part of the declared API difficult to verify through the actual page.
+- `stepBy` adds binary floating point values directly; repeated `0.1` steps can produce a long decimal representation.
+- Acceptance: adjustable playground range controls, generated example synchronized to those controls, decimal normalization, native ArrowUp/ArrowDown, and min/max clamping. No new adapter prop is needed.
