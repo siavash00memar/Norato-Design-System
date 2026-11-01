@@ -11,4 +11,4 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass; build reports a 646.51KB main JavaScript chunk warning (>500KB).
 - [x] Contract and this checklist record evidence and remaining DoD.
 - [x] Family ledger and request validation record evidence and remaining DoD.
-- [ ] Commit, push and remote parity remain.
+- [x] Commit `bbb95f0` pushed to `origin/master`; local HEAD and remote `master` match.

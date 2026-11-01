@@ -5,4 +5,4 @@
 3. [ ] Inspect matrix desktop/mobile proportions and compare same viewport with Lemon; desktop render reviewed, but mobile measurement and equal-viewport section comparison remain.
 4. [x] Prior browser evidence confirms live playground keyboard, checked/value, disabled/error and 48px targets; this request confirmed the static gallery and executable playground remain separate.
 5. [x] Run project technical gates and update contract/request/family evidence; checks pass with the recorded bundle-size warning.
-6. [ ] Commit/push and verify remote parity.
+6. [x] Commit `bbb95f0` pushed; local HEAD matches remote `master`.

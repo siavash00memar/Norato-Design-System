@@ -862,3 +862,4 @@
 - [ ] مقایسهٔ ماتریس Variants در viewport دقیقاً برابر Lemon، viewport موبایل/overflow و اندازه‌گیری DOM هنوز انجام نشده است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از اصلاح قرارداد موفق‌اند؛ chunk اصلی 646.51KB و بالاتر از هشدار 500KB است.
 - [ ] DoD کامل Switch بسته نیست؛ صفحه‌خوان مستقل و اندازه‌گیری واقعی focus ring و بررسی ماتریس در موبایل باز هستند.
+- [x] commit `bbb95f0` با ماتریس ۳۶ سلولی و شواهد فعلی به `origin/master` push شد؛ HEAD محلی و remote برابرند.
