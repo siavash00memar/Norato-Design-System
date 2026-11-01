@@ -593,5 +593,7 @@
 - [x] مرور ماتریس: ۱۸ ترکیب مقدار false/true/mixed × اندازه 16/20 × حالت default/error/disabled؛ شش ترکیب فوکوس و چهار ترکیب hover برای false/true در هر دو اندازه بررسی شدند. Accessibility tree مقدار mixed را به‌صورت Value 2 و خطا را به‌عنوان پیام مرتبط اعلام می‌کند.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند؛ `pnpm --dir apps/vue build` موفق شد.
 - [x] build هشدار bundle اصلی بالای 500KB داد؛ build را متوقف نکرد.
-- [ ] ترکیب mixed+hover جداگانه با اشاره‌گر واقعی ثبت نشده و صفحه‌خوان واقعی اجرا نشده است؛ پیش از بستن DoD این دو مورد و بازبینی نهایی لازم‌اند.
-- وضعیت: پیشرفت تأییدشده؛ DoD Checkbox باز می‌ماند.
+- [x] ترکیب mixed+hover در هر دو اندازه با اشاره‌گر واقعی بررسی شد؛ `:indeterminate:hover` فعال است، رنگ Norato Blue اعمال می‌شود و Accessibility tree همچنان mixed را گزارش می‌کند. ماتریس ۳۰ ترکیب Checkbox و ۶ گونهٔ Checkbox Field مرور شدند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پس از اصلاحات نهایی موفق شدند.
+- صفحه‌خوان مستقل اجرا نشد؛ مرور DOM/Accessibility tree و تعامل صفحه‌کلید انجام شد.
+- وضعیت: PASS برای DoD مرورگر و gateهای فنی Checkbox.
