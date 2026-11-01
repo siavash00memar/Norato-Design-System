@@ -140,7 +140,7 @@
 - [x] رندر واقعی desktop در `http://127.0.0.1:5175/#component-radio` مرور شد. Screenshot همهٔ پنج گروه و ۲۰ سلول را نشان داد؛ کنترل‌ها کشیدگی ندارند. مرجع زندهٔ Lemon `#radio` نیز بررسی شد: بخش Variants از کارت‌های نمونه + محورهای Size/Checked/State استفاده می‌کند؛ Norato اکنون همان محورها را کامل و یک‌جا نشان می‌دهد و رنگ خود را حفظ می‌کند.
 - [x] رگرسیون playground: کلیک سه‌ماهه و ArrowDown تا سالانه مقدار controlled/status/snippet را sync کردند؛ ArrowUp مقدار ماهانه را بازگرداند. Playground همچنان واقعی و جدا از ماتریس ایستا است.
 - [ ] viewport این مرورگرها برابر نبود (Norato: 1180×765، Lemon: 1900×900)، بنابراین مقایسهٔ هم‌اندازهٔ همین matrix و مرور واقعی mobile در این مرحله ثبت نمی‌شود. صفحه‌خوان مستقل هم اجرا نشده است؛ Radio DoD باز می‌ماند.
-- [x] گیت‌ها پس از اصلاح tokenها: `pnpm check:tokens`، `pnpm check:catalog` (۴۹ route/contract)، `pnpm --dir apps/vue typecheck` و `pnpm --dir apps/vue build` موفق شدند. Bundle جاوااسکریپت 643.33KB است و هشدار بالای 500KB پابرجاست.
+- [x] گیت‌ها پس از اصلاح tokenها: `pnpm check:tokens`، `pnpm check:catalog` (۴۹ route/contract)، `pnpm --dir apps/vue typecheck` و `pnpm --dir apps/vue build` موفق شدند. Bundle جاوااسکریپت 643.57KB است و هشدار بالای 500KB پابرجاست.
 
 ## ادامهٔ DoD Radio — آزمون تازهٔ صفحه‌کلید و hover (2026-11-01)
 
