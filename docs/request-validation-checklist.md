@@ -1,5 +1,17 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Switch و وضعیت Radio (2026-11-01)
+
+- [x] مرجع Lemon Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در Lemon، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ پالت اجرایی Norato از semantic blue استفاده می‌کند.
+- [x] مقایسهٔ بصری desktop در مرورگر با Lemon: هر دو یک Switch Field با marker و متن فارسی در قاب dotted-glass نمایش می‌دهند؛ قاب desktop Norato به عرض ستون محتوا محدود است. در اندازه‌گیری DOM فعلی Norato، frame=320×288px، control=48×48px و track متوسط=40×24px است؛ قاب نمونه و خود track کشیدگی عمودی ندارند.
+- [x] مقایسهٔ mobile در viewport 390×844 (اندازه‌گیری ثبت‌شده در همین اجرای مرورگر): frame=320×288px، document width=375px و بدون overflow؛ کنترل/متن RTL و target=48px باقی ماندند.
+- [x] سه اندازه × خاموش/روشن در DOM سنجیده شد: trackها 32×20، 40×24 و 48×28px؛ target هر شش حالت 48×48px. در RTL روشن‌شدن knob را به چپ منتقل کرد.
+- [x] Space و Enter در اجرای مستقیم مرورگر مقدار `aria-checked` را به‌ترتیب false→true و true→false تغییر دادند؛ AX tree نقش switch و نام اعلان‌ها را نشان داد. `:focus-visible` با outline آبی ۲px و offset چهارپیکسلی مشاهده شد. `aria-invalid=true`، پیام error و اتصال description/error با `aria-describedby` بررسی شد؛ disabled واقعی نیز `disabled=true` و `:enabled=false` بود.
+- [x] صفحهٔ Switch مطابق ساختار component detail، ۹ بخش سند، API snippet/copy، specimen غیرفعال و playground اجرایی دارد.
+- [x] پس از آخرین تغییرات `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند؛ build هشدار اندازهٔ chunk بالاتر از 500KB دارد.
+- [ ] DoD نهایی Switch باز است: همهٔ ۳۰ state/size/value، hover pointer، صفحه‌خوان مستقل و screenshot matrix مرور نشده‌اند.
+- [ ] Radio هم بسته نیست: ماتریس hover pointer و صفحه‌خوان مستقل همچنان باز است.
+
 ## گزارش این درخواست — Radio Button و ادامه با مدل جدید (2026-11-01)
 
 - [x] منبع Lemon در همان مرورگر برای ترکیب preview، ۳ گزینه، marker، ۴ Anatomy، ۲۰ variant، RTL و keyboard بررسی شد.

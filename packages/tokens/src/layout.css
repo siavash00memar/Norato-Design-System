@@ -62,6 +62,17 @@
   --norato-radio-preview-frame-block-size: 288px;
   --norato-radio-preview-control-inline-size: 260px;
   --norato-radio-preview-radius: 24px;
+  --norato-switch-preview-frame-inline-size: 640px;
+  --norato-switch-preview-frame-mobile-inline-size: 320px;
+  --norato-switch-preview-frame-block-size: 288px;
+  --norato-switch-preview-control-inline-size: 320px;
+  --norato-switch-preview-radius: 24px;
+  --norato-switch-track-small-inline-size: 32px;
+  --norato-switch-track-small-block-size: 20px;
+  --norato-switch-track-medium-inline-size: 40px;
+  --norato-switch-track-medium-block-size: 24px;
+  --norato-switch-track-large-inline-size: 48px;
+  --norato-switch-track-large-block-size: 28px;
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
   --norato-border-medium: 2px;

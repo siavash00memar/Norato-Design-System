@@ -12,6 +12,12 @@
 - Input Norato browser render inspected at 127.0.0.1:5173: the live input box is 48px high and the top specimen contains two 48px fields in a 260px frame. This is not proof that other families do not stretch.
 - The current generic `.component-sample` CSS uses a shared minimum-height frame. Its descendants need per-family geometry checks; a global height override would risk harming larger examples.
 
+## Switch current analysis
+
+- Lemon's Switch page provides one compact field specimen and documents 30 Switch variants plus 6 Switch Field variants. Norato uses the same specimen hierarchy with its semantic-blue on state.
+- Current browser DOM: RTL, 48×48 target, 40×24 medium track and 320×288 specimen frame on the narrow inspected layout; no document horizontal overflow. Space and Enter toggle the controlled value.
+- Remaining analysis is interaction/render-state coverage (all states/sizes/values, pointer hover, independent screenreader), not base geometry or keyboard toggling.
+
 ## Risks
 
 - Several families are Proposed, so their visual specimen must stay labeled inert until supported Vue behavior exists.

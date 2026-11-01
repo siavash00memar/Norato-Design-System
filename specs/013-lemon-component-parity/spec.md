@@ -27,3 +27,9 @@
 - Single selection updates immediately. Multi-selection is staged while the menu is open; Confirm emits the selected array, while Cancel/Escape restore the committed value.
 - Search filters options in-place and preserves the selected value when the query is cleared. Disabled items are skipped by keyboard navigation.
 - Reka UI is the evaluated Vue primitive candidate for focus management, RTL and keyboard behavior. No new behavior is accepted until the primitive version, public API and browser interactions are verified.
+
+## Switch refinement
+
+- Lemon Switch has a single-field top preview (label, description and Default marker), 30 switch combinations and 6 field combinations, with soft-glass off state and a black on state. Norato preserves this composition while using its own semantic blue palette.
+- Norato's controlled adapter uses Reka `SwitchRoot`/`SwitchThumb`, exposes label/description/error, retains a 48×48 target at all three track sizes, and moves the knob right-to-left when on.
+- Browser evidence confirms the current target/track geometry, RTL, AX switch role/name, and Space/Enter toggling. DoD remains open until hover, the complete Lemon state matrix and an independent screenreader pass are checked.

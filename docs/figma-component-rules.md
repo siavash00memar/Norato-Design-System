@@ -91,6 +91,13 @@
 - Each option row stays 48px tall; the control is on the right in RTL. Runtime sizes are 16px and 20px. Do not stack multiple state groups in the specimen or stretch the control to fill the frame.
 - `NoratoRadioGroup` is controlled by one optional string value; native radio inputs preserve arrow-key group behavior. The separate playground covers required, disabled, invalid, and size settings.
 
+## Switch — Lemon composition, Norato palette
+
+- Reference: `https://lemonui.ir/#switch`; one Switch Field with concise label and optional description, the control beside the copy, and a Default/green-dot marker inside the same dotted glass preview frame as Lemon.
+- Track states are glass when off and Norato brand blue when on; the white knob moves toward physical left when enabled in RTL. Do not use Lemon's raw black color as Norato brand color.
+- Small/Medium/Large track sizes are 32×20, 40×24 and 48×28px; the actual button remains a 48×48px target. Keep the preview to one field; do not stretch the switch to the frame.
+- `NoratoSwitch` wraps the installed Reka `SwitchRoot`/`SwitchThumb` primitive for `role="switch"`, `aria-checked`, keyboard behavior, controlled boolean state and connected label/description; Norato retains visual token ownership. Use only for settings applied immediately.
+
 ## Checkbox
 
 - مرجع: Figma `8818:10028`

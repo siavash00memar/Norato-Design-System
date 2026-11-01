@@ -1,19 +1,19 @@
 # Switch — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Adapted — بررسی DoD در جریان
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بصری ابتدای صفحه یک Switch Field خاموش با label و description در قاب شیشه‌ای نقطه‌دار ۶۴۰×۲۸۸ است؛ عرض قاب موبایل ۳۲۰px می‌شود. track در هر سه اندازه جمع می‌ماند و هدف کلیک/فوکوس ۴۸px است. playground پایین صفحه adapter واقعی را کنترل می‌کند.
 
 ## Overview
 
-قرارداد طراحی Norato: کلید روشن و خاموش برای تنظیماتی که فوراً اعمال میشن. خاموش شیشه‌ای، روشن مشکی.
+قرارداد طراحی Norato: کلید controlled روشن/خاموش برای تنظیماتی که فوراً اعمال می‌شوند. track خاموش شیشه‌ای و روشن آبی برند Norato است. در RTL با روشن‌شدن، knob از راست به چپ حرکت می‌کند.
 
 ## Anatomy
 
-- **Track** — ترک؛ شیشه‌ای در خاموش، مشکی در روشن
+- **Track** — ترک؛ شیشه‌ای در خاموش، آبی برند Norato در روشن
 - **Knob** — دستگیره‌ی سفید با سایه‌ی switch/knob
 - **Label** — برچسب تنظیم
 - **Description** — توضیح اختیاری
@@ -25,7 +25,7 @@
 
 ## Sizes
 
-- **Switch:** Small، Medium، Large
+- **Switch:** Small (۳۲×۲۰px)، Medium (۴۰×۲۴px)، Large (۴۸×۲۸px)؛ hit target ثابت ۴۸×۴۸px
 
 ## States
 
@@ -55,7 +55,7 @@
 
 ## Accessibility
 
-نقش switch داره و با Space تغییر می‌کنه؛ حالت روشن باید اعلام بشه.
+از primitive `SwitchRoot`/`SwitchThumb` در Reka UI استفاده می‌کند؛ `role="switch"`، `aria-checked` و نام متصل به label دارد. Space و Enter وضعیت را عوض می‌کنند و حالت روشن/خاموش در accessibility tree اعلام می‌شود. توضیح و خطا با `aria-describedby` وصل‌اند. track، رنگ روشن، اندازه و حرکت knob با contract و tokenهای Norato سفارشی می‌شوند.
 
 ### قاعدهٔ عمومی Focus در Norato
 

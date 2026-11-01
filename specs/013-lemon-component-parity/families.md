@@ -10,7 +10,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Combobox | combobox | Adapted | Single/multi, sizes, labels, clear, recent/loading/empty/create implemented; final Lemon DoD and full interaction matrix remain open |
 | [x] | Checkbox | checkbox | Implemented | Standalone Vue adapter, Lemon-shaped inert specimen and live playground. Lemon desktop/mobile compared; 4 Anatomy parts, no stretch/overflow, 48px row, RTL, Space/focus, mixed AX value, required/error/disabled verified. All 30 size/value/state combinations exercised; all 6 Checkbox Field variants represented and checked. |
 | [ ] | Radio Button | radio | Implemented | Dedicated API and sample; core desktop/mobile behavior checked, full reference state matrix remains open |
-| [ ] | Switch | switch | Proposed | Pending visual and behavior comparison |
+| [ ] | Switch | switch | Adapted | Dedicated controlled Reka adapter, three track sizes, Lemon-composition preview, RTL and Space/Enter checked; complete state/hover/screenreader DoD remains open |
 | [ ] | Segmented Control | segmented | Proposed | Pending visual and behavior comparison |
 | [ ] | Range | range | Proposed | Pending visual and behavior comparison |
 | [ ] | Rating | rating | Proposed | Pending visual and behavior comparison |

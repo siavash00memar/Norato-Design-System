@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import './component-specimen.css'
-import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup } from '@norato/vue'
+import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch } from '@norato/vue'
 defineProps<{ name: string; compact?: boolean }>()
 </script>
 
 <template>
-  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button' }" aria-hidden="true" inert>
+  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch' }" aria-hidden="true" inert>
     <div v-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /><span class="sample-button-cancel">انصراف</span></div>
     <div v-else-if="name==='Split Button'" class="sample-split"><NoratoButton label="ذخیره" /><NoratoButton label="⌄" icon-only accessible-label="گزینه‌های بیشتر" /></div>
     <div v-else-if="name==='Input'" class="sample-form-controls sample-input-specimen"><NoratoField id="specimen-email" label="ایمیل" placeholder="name@example.com" helper-text="ایمیل کاری‌ات را وارد کن." dir="ltr" /></div>
@@ -13,7 +13,7 @@ defineProps<{ name: string; compact?: boolean }>()
     <div v-else-if="name==='Combobox'" class="sample-form-controls sample-combobox-specimen"><NoratoCombobox id="specimen-combobox" label="مهارت‌ها" placeholder="جست‌وجو کن یا بنویس…" :options="[{value:'design',label:'طراحی محصول'},{value:'research',label:'پژوهش کاربر'},{value:'writing',label:'طراحی رابط کاربری'}]" /></div>
     <template v-else-if="name==='Checkbox'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-checkbox-specimen"><NoratoCheckbox id="specimen-newsletter" label="خبرنامه رو برام بفرست" description="هفته‌ای یه ایمیل، بدون تبلیغ" :size="20" /></div></template>
     <template v-else-if="name==='Radio Button'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-radio-specimen"><NoratoRadioGroup id="specimen-period" label="دورهٔ اشتراک" hide-label model-value="monthly" :options="[{value:'monthly',label:'ماهانه'},{value:'quarterly',label:'سه‌ماهه'},{value:'yearly',label:'سالانه'}]" :size="20" /></div></template>
-    <div v-else-if="name==='Switch'" class="sample-switch-row"><span><b>اعلان‌ها</b><small>پیام‌های جدید را خبر بده</small></span><button class="sample-switch" role="switch" aria-checked="true" aria-label="اعلان‌ها"><i /></button></div>
+    <template v-else-if="name==='Switch'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-switch-specimen"><NoratoSwitch id="specimen-notifications" label="اعلان‌ها" description="پیام‌های جدید رو خبر بده" :model-value="false" size="medium" /></div></template>
     <div v-else-if="name==='Segmented Control'" class="sample-segment"><button>روزانه</button><button class="active">هفتگی</button><button>ماهانه</button></div>
     <div v-else-if="name==='Range'" class="sample-range"><b>بودجهٔ ماهانه <span>۶ میلیون</span></b><input type="range" min="0" max="10" value="6" aria-label="بودجه" /><small>۰ <span>۱۰ میلیون</span></small></div>
     <div v-else-if="name==='Rating'" class="sample-rating"><strong>۴٫۵</strong><span>★ ★ ★ ★ ◐</span><small>۱۲۸ نظر</small></div>
