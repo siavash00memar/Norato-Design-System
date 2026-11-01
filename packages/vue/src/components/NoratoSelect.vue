@@ -191,7 +191,7 @@ watch(() => props.multiple, (multiple) => {
           </span>
           <span v-else class="norato-select__value" :data-placeholder="!valueLabel || undefined">{{ valueLabel || placeholder }}</span>
         </template>
-        <span class="norato-select__chevron" aria-hidden="true">⌄</span>
+        <svg class="norato-select__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10 12 15 17 10" /></svg>
       </SelectTrigger>
       <SelectPortal>
         <SelectContent

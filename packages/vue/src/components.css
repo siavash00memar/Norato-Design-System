@@ -56,7 +56,7 @@
 .norato-select-group.is-invalid .norato-select__trigger{border-color:var(--norato-color-status-error)}
 .norato-select__value{min-inline-size:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .norato-select__value[data-placeholder]{color:var(--norato-color-text-placeholder)}
-.norato-select__chevron{display:inline-block;flex:none;font-size:var(--norato-type-doc-section-size);line-height:1;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-select__chevron{display:block;flex:none;inline-size:var(--norato-icon-md);block-size:var(--norato-icon-md);fill:none;stroke:currentColor;stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
 .norato-select__trigger[data-state="open"] .norato-select__chevron{transform:rotate(180deg)}
 .norato-select__inside-value{display:grid;min-inline-size:0;gap:var(--norato-space-1)}
 .norato-select__inside-label{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size);line-height:var(--norato-type-body-regular-line-height)}
