@@ -380,6 +380,8 @@
 
 ## 2026-11-01 — Select Reka adapter browser review
 
+- Visual contract mismatch: multi-select options reused the single-select text checkmark, while the Lemon and Figma contracts require checkbox frames. Added a reusable 24px SVG checkbox visual with semantic Norato tokens, kept the Reka option as the sole interaction target, and verified staged Cancel/Confirm and mobile geometry in the browser.
+
 - Visual defect: the Select chevron was a font glyph and its shape varied with font rendering. Replaced it with a 24px SVG path matching the reference direction; verified left-side RTL placement and open-state rotation in the browser.
 
 - Visual defect: the generic form specimen selector gave the Select preview a 512px wide field inside a 123px tall frame, while the Lemon preview field was about 302px wide inside an approximately 296px frame. Added Select-specific semantic preview tokens and selector; desktop and 390px browser render now show a centered 300px field in a 296px frame without horizontal overflow. The 48px Norato interaction target remains.

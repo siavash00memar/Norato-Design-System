@@ -124,6 +124,7 @@
 - Field Group container padding rule: the documentation card/container uses 12px on all four sides; the inner dropdown box also uses 12px padding on all four sides.
 - Search Dropdown active reference `8775:24026` (supersedes `8775:23957`): open RTL dropdown card 324px wide and 558px high; inner field/list width 300px; input height 36px; open list white with 258px height; option rows 36px; uses Norato SVG Checkboxes for multi-select states and Figma arrow/search assets.
 - Search Dropdown option rule: options are multi-select and must use the canonical Norato Checkbox SVG component; text-only checkmarks are forbidden.
+- در adapter Vue، نشانگر برداری مشترک `NoratoCheckboxVisual` برای گزینه‌های Multi Select استفاده می‌شود؛ قاب ۲۴×۲۴px است، ردیف ۴۸px هدف تعاملی دارد و چک‌باکس نمایشی نقش تعاملی جدا نمی‌گیرد.
 - Tree View references `8775:24029` (closed parent) and `8822:10062` (open parent): RTL parent/child hierarchy, 36px rows, 24px expand icons, nested child branches, and independently expandable children. The active implementation is recursive and stateful.
 - Tree View interaction rule: every node has the canonical Norato Checkbox; expand/collapse uses the provided Figma 24×24 SVG arrow asset, never a text glyph or CSS character.
 - Tree View asset rule: the expand arrow MUST use the exact Figma Tree View asset saved as

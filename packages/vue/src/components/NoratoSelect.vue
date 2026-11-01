@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref, watch } from 'vue'
+import NoratoCheckboxVisual from './NoratoCheckboxVisual.vue'
 import {
   SelectContent,
   SelectGroup,
@@ -229,7 +230,8 @@ watch(() => props.multiple, (multiple) => {
                 data-norato-select-option
               >
                 <SelectItemText>{{ option.label }}</SelectItemText>
-                <SelectItemIndicator class="norato-select__indicator" aria-hidden="true">✓</SelectItemIndicator>
+                <NoratoCheckboxVisual v-if="multiple" :checked="draftValues.includes(option.value)" />
+                <SelectItemIndicator v-else class="norato-select__indicator" aria-hidden="true">✓</SelectItemIndicator>
               </SelectItem>
               <SelectSeparator v-if="groupIndex < visibleGroups.length - 1" class="norato-select__separator" />
             </SelectGroup>

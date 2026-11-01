@@ -50,6 +50,7 @@
   --norato-border-thin: 1px;
   --norato-border-focus: 2px;
   --norato-border-medium: 2px;
+  --norato-choice-frame-border: 3px;
 
   --norato-control-target-min: 48px;
   --norato-split-button-visual-small: var(--norato-space-8);

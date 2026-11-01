@@ -73,6 +73,10 @@
 .norato-select__option[data-state="checked"]{color:var(--norato-color-brand-blue);font-weight:var(--norato-type-body-bold-weight)}
 .norato-select__option[data-disabled]{color:var(--norato-color-text-disabled);cursor:not-allowed}
 .norato-select__indicator{margin-inline-start:auto;color:var(--norato-color-brand-blue);font-weight:var(--norato-type-body-bold-weight)}
+.norato-checkbox-visual{display:grid;place-items:center;flex:none;inline-size:var(--norato-icon-md);block-size:var(--norato-icon-md);border:var(--norato-choice-frame-border) solid var(--norato-color-border-default);border-radius:var(--norato-radius-tag);background:var(--norato-color-surface-default);color:var(--norato-color-text-on-brand)}
+.norato-select__option .norato-checkbox-visual{margin-inline-start:auto}
+.norato-checkbox-visual[data-checked]{border-color:var(--norato-color-brand-blue);background:var(--norato-color-brand-blue)}
+.norato-checkbox-visual svg{inline-size:100%;block-size:100%;fill:none;stroke:currentColor;stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round}
 .norato-select__separator{block-size:var(--norato-border-thin);margin-block:var(--norato-space-1);background:var(--norato-color-glass-line)}
 .norato-select__empty{margin:0;padding:var(--norato-space-3);color:var(--norato-color-text-secondary);text-align:center}
 .norato-select__footer{display:flex;gap:var(--norato-space-2);padding:var(--norato-space-2);border-block-start:var(--norato-border-thin) solid var(--norato-color-glass-line)}
