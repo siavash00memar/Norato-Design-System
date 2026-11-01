@@ -132,7 +132,15 @@
 - [x] ماتریس کنترل اصلی مرورگر برای هر دو اندازهٔ ۱۶ و ۲۰px و مقدار checked/unchecked در حالت‌های Default/Error/Disabled مرور شد؛ اندازهٔ واقعی، checked، disabled و invalid در DOM برای هر ۱۲ ترکیب ثبت شد. ردیف‌ها همگی ۴۸px باقی ماندند.
 - [x] در screenshot هم‌اندازهٔ ۱۲۸۰×۹۰۰، قاب Norato ۵۸۴×۲۸۸px و Lemon Radio نمونهٔ سه‌گزینه‌ای روی قاب شیشه‌ای بود؛ class تعریف‌نشدهٔ `sr-only` باعث نمایش ناخواستهٔ legend می‌شد. selector دسترس‌پذیرِ legend اصلاح شد؛ پس از اصلاح legend به ۱×۱px clip شد و از دید بصری پنهان ماند، ولی در AX باقی است.
 - [x] پس از ArrowDown، عنصر فعال همان radio انتخاب‌شده بود؛ `:focus-visible` true، outline دوپیکسلی با offset چهارپیکسلی و حلقهٔ دوپیکسلی semantic ثبت شد.
-- [ ] DoD نهایی Radio باز است: یک نمونهٔ hover اشاره‌گری و تعامل صفحه‌کلید دوباره بررسی شد، اما ماتریس کامل ۲۰ سلول focus/hover و صفحه‌خوان مستقل اجرا نشده‌اند؛ مرورگر Lemon بعد از resize ابعاد DOM قاب را آشکار نکرد. ترکیب‌بندی و اندازهٔ mobile با Lemon مرور شده است.
+- [ ] DoD نهایی Radio باز است: ۲۰ سلول ماتریس دیداری در desktop اکنون حاضر و مرور شده‌اند؛ مرور matrix موبایل، مقایسهٔ هم‌اندازهٔ همان قاب با Lemon و صفحه‌خوان مستقل باقی است.
+
+## ادامهٔ DoD Radio — ماتریس دیداری ۲۰حالته (2026-11-01)
+
+- [x] بخش Variants از placeholder عمومی به پنج کارت state اختصاصی Radio تغییر کرد؛ هر کارت چهار ترکیب checked/unchecked و اندازهٔ ۱۶/۲۰px دارد (۲۰ سلول در مجموع). حلقه، نقطهٔ انتخاب و state accentها با شکل دایره‌ای و توکن‌های semantic Norato نمایش داده می‌شوند؛ بخش inert است.
+- [x] رندر واقعی desktop در `http://127.0.0.1:5175/#component-radio` مرور شد. Screenshot همهٔ پنج گروه و ۲۰ سلول را نشان داد؛ کنترل‌ها کشیدگی ندارند. مرجع زندهٔ Lemon `#radio` نیز بررسی شد: بخش Variants از کارت‌های نمونه + محورهای Size/Checked/State استفاده می‌کند؛ Norato اکنون همان محورها را کامل و یک‌جا نشان می‌دهد و رنگ خود را حفظ می‌کند.
+- [x] رگرسیون playground: کلیک سه‌ماهه و ArrowDown تا سالانه مقدار controlled/status/snippet را sync کردند؛ ArrowUp مقدار ماهانه را بازگرداند. Playground همچنان واقعی و جدا از ماتریس ایستا است.
+- [ ] viewport این مرورگرها برابر نبود (Norato: 1180×765، Lemon: 1900×900)، بنابراین مقایسهٔ هم‌اندازهٔ همین matrix و مرور واقعی mobile در این مرحله ثبت نمی‌شود. صفحه‌خوان مستقل هم اجرا نشده است؛ Radio DoD باز می‌ماند.
+- [x] گیت‌ها پس از اصلاح tokenها: `pnpm check:tokens`، `pnpm check:catalog` (۴۹ route/contract)، `pnpm --dir apps/vue typecheck` و `pnpm --dir apps/vue build` موفق شدند. Bundle جاوااسکریپت 643.33KB است و هشدار بالای 500KB پابرجاست.
 
 ## ادامهٔ DoD Radio — آزمون تازهٔ صفحه‌کلید و hover (2026-11-01)
 

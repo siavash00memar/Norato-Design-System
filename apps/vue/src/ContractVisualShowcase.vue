@@ -4,6 +4,7 @@ import SplitButtonShowcase from './SplitButtonShowcase.vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
+type RadioMatrixState = { id: string; label: string; kind: string }
 
 const props = defineProps<{ name: string; section: string; body: string; copiedKey?: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
@@ -76,6 +77,19 @@ const stateEntries = computed(() => entries.value.flatMap(entry => {
   if (values.length < 2 || values.some(value => value.length > 42)) return [entry]
   return values.map((value, index) => ({ ...entry, id: entry.id * 100 + index, label: value, detail: entry.label, source: value }))
 }))
+const radioMatrixStates: RadioMatrixState[] = [
+  { id: 'default', label: 'Default', kind: 'default' },
+  { id: 'hover', label: 'Hover', kind: 'hover' },
+  { id: 'disabled', label: 'Disabled', kind: 'disabled' },
+  { id: 'focus', label: 'Focus', kind: 'focus' },
+  { id: 'error', label: 'Error', kind: 'error' },
+]
+const radioMatrixCells = [
+  { checked: false, size: 16 },
+  { checked: true, size: 16 },
+  { checked: false, size: 20 },
+  { checked: true, size: 20 },
+]
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
   const item = `${entry.label} ${entry.source}`.toLocaleLowerCase()
@@ -224,6 +238,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Variants'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <div v-else-if="name === 'Radio Button'" class="radio-matrix" aria-label="ماتریس دیداری Radio Button" aria-hidden="true" inert>
+        <article v-for="state in radioMatrixStates" :key="state.id" class="radio-matrix-card" :data-state="state.kind">
+          <header class="radio-matrix-heading"><strong>{{ state.label }}</strong><span>Radio Button</span></header>
+          <div class="radio-matrix-grid">
+            <div v-for="cell in radioMatrixCells" :key="`${cell.size}-${cell.checked}`" class="radio-matrix-cell" :data-checked="cell.checked" :data-size="cell.size">
+              <span class="radio-matrix-target"><i class="radio-matrix-control"><i class="radio-matrix-dot" /></i></span>
+              <span class="radio-matrix-meta"><b>{{ cell.checked ? 'Checked' : 'Unchecked' }}</b><small>{{ cell.size }}px</small></span>
+            </div>
+          </div>
+        </article>
+        <span class="visual-kind">۲۰ ترکیب دیداری · نمایش ایستا؛ تعامل واقعی در playground</span>
+      </div>
       <div v-else class="variant-visual-grid">
         <article v-for="entry in entries" :key="entry.id" class="contract-variant-card" :class="{ 'is-empty': isEmptyStatement(entry) }">
           <div class="variant-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
