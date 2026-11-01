@@ -697,6 +697,8 @@
 - [ ] DoD نهایی باز است: مقایسه و screenshot موبایل پس از اصلاح marker/dot، مرور کامل ماتریس بصری ۹۶ حالت، تمرین فوکوس تمام کنترل‌ها در هر حالت و screen-reader مستقل هنوز انجام نشده‌اند. این دور viewport واقعی موبایل نبود.
 - [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze قبل از اصلاح ثبت شد؛ اصلاح فقط بر نقص رندر مشاهده‌شده محدود ماند.
 - [x] ادامهٔ موبایل پس از اصلاح در viewport واقعی 390×844 بررسی شد: قاب 320×288px، فیلد 212×48px، marker `Default` قابل‌دیدن و عرض سند 375px بدون سرریز است؛ screenshot پس از اصلاح ثبت شد.
+- [x] مقایسهٔ موبایل Lemon/Norato در یک viewport 390×844 با screenshot مرورگر تکمیل شد: Lemon frame 327×300px و Norato 320×288px؛ عرض سند هر دو 375px و field shell نوراتو 310×50px است. نشانگر و نقطه‌های نوراتو دیده می‌شوند و قاب کشیدگی ندارد.
+- [x] با Tab، action پاک‌کردن فوکوس visible می‌گیرد (۲px آبی، offset چهار پیکسل، halo زرد ۲px). trigger طبق Reka با `tabindex=-1` از ترتیب Tab حذف شده؛ ورودی composite با ArrowDown فهرست را باز و گزینه را با `aria-activedescendant` فعال می‌کند.
 - [x] مرورگر پس از reload و ArrowDown یک outline اضافی 3px روی input نشان داد؛ override عمومی حذف و selector scoped به `outline:0` تغییر کرد. اندازهٔ computed بعد از اصلاح: outline داخل input صفر، حلقهٔ field برابر 2px آبی با offset 4px و halo زرد 2px؛ active descendant به گزینهٔ فوکوس‌شده اشاره می‌کند.
 - [x] گیت‌های بعد از تغییر: `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پاس شدند؛ build هشدار 635.58KB داد.
 - [ ] DoD همچنان باز است: مرور ۹۶ حالت ظاهری، ماتریس فوکوس همهٔ اکشن‌ها و screen-reader مستقل انجام نشده‌اند.

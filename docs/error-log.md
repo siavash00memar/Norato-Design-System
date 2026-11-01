@@ -510,7 +510,7 @@
 - **Correction:** added the marker in the specimen markup and made the scoped dot pattern use a 14% mix of the semantic Norato blue token. Kept the 288px bounded frame, existing glass/wash and live playground unchanged.
 - **Browser evidence:** at 1195×765, the preview now shows centered field, visible dotted glass, Norato blue/yellow wash and `Default` marker; frame stays 540×288px and the field 310×50px.
 - **Prevention:** every Lemon-composition specimen must include its marker as inert markup and verify dot contrast against the actual Norato surface, not infer visibility from the CSS declaration.
-- **Remaining:** full state/variant visual matrix, mobile screenshot after correction and independent screen-reader verification remain open.
+- **Remaining:** full state/variant visual matrix and independent screen-reader verification remain open. The post-correction mobile screenshot and matched geometry were captured at 390×844 (Lemon 327×300px, Norato 320×288px; both documents 375px).
 
 ## ERR-048 — Combobox input stacked the global outline over its field focus ring (2026-11-01)
 
