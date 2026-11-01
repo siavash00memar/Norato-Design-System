@@ -7,4 +7,4 @@
 - [x] T005 Create DoD checklist before implementation.
 - [x] T006 Audit and replace legacy preview; implement four adapters, playground, exports and docs.
 - [ ] T007 Compare Lemon desktop/mobile and verify chooser/drop/validation/status/focus/RTL/accessibility.
-- [ ] T008 Run all gates, record evidence and error log, commit/push, verify GitHub parity.
+- [x] T008 Run all technical gates, record browser limits in DoD/error log, commit/push and verify GitHub parity (`2c399b0f5995dbc3a33dee0cf59c1ce8eaac25e6`).

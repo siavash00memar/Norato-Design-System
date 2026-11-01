@@ -11,4 +11,4 @@
 - [x] Button-style component page has inert preview, runnable playground, synchronized copyable Vue example and all nine contract sections.
 - [x] Contract, catalog, package exports, usage example, primitive map, Figma rules, task log, request checklist and error log are synchronized.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Vite reports the 726.55KB JavaScript chunk advisory; independent screen-reader review remains open.
-- [ ] Full browser DoD and final GitHub parity remain open until real file picker/drop/validation behavior is verified.
+- [ ] Browser DoD remains open until real file picker/drop/validation behavior is verified; GitHub parity is confirmed at `2c399b0f5995dbc3a33dee0cf59c1ce8eaac25e6`.
