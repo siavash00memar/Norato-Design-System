@@ -7,7 +7,7 @@
 - [x] Skillهای Codex و عمومی Agent Skills به‌صورت هش یکسان تأیید شدند؛ منابع کاتالوگ، قرارداد، export و نمونه‌ها در دستورالعمل مشخص‌اند.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 قرارداد/مسیر)، Vue typecheck، production build و `git diff --check` موفق شدند.
 - [x] محدودیت اعتبارسنجی: این تغییر مستندات قابلیت کشف خودکار در Codex و render راهنمای اپ را بررسی می‌کند؛ سازگاری اجرایی در تمام پلتفرم‌های AI مستقل آزمایش نشده است.
-- [ ] انتشار تغییر مستندات به GitHub و تأیید commit راه دور باقی است.
+- [x] تغییر commit و به GitHub push شد؛ هنگام ثبت اولیهٔ گزارش، `origin/master` برابر `1b6c7a5b677213ee6ededf9eb51844bab54cc169` تأیید شد.
 - هشدار build: bundle اصلی JavaScript برابر 637.21KB است و از آستانهٔ 500KB عبور می‌کند؛ build موفق ماند.
 
 ## گزارش این درخواست — Input preview مستقل (2026-11-01)

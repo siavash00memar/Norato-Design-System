@@ -10,4 +10,4 @@
 - [x] Markdown links and both skill copies verified; token/catalog/type/build/diff gates pass (production build retains the existing >500KB chunk warning).
 - [x] Actual `#team` browser render shows the AI skill guidance; RTL is set and document width (1180px) fits the 1195px viewport.
 - [x] Per-request browser validation recorded in `docs/request-validation-checklist.md`.
-- [ ] Changes committed and pushed to the configured Git remote.
+- [x] Change committed and pushed; remote `master` matches local commit `1b6c7a5`.

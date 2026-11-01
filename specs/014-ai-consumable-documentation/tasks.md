@@ -7,4 +7,4 @@
 5. [x] Record the evidence analysis and narrow Git ignore exception for the Codex skill.
 6. [x] Validate markdown paths and run token/catalog/type/build/diff gates.
 7. [x] Inspect the actual documentation route in browser and record the request validation result/limitations.
-8. [ ] Commit and push the documentation change; verify the remote revision.
+8. [x] Commit and push the documentation change; verified `origin/master` equals local `1b6c7a5b677213ee6ededf9eb51844bab54cc169`.
