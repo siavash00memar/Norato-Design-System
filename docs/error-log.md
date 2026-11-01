@@ -535,3 +535,12 @@
 - **Finding:** a descriptive presentation note placed inside the contract's parsed `States` section was interpreted by `ContractVisualShowcase` as a nineteenth state entry. The contract actually defines 18 Select/Multi Select/Select Option states.
 - **Correction:** removed presentation metadata from the parser-owned state list and kept the visual rule in `docs/figma-component-rules.md`; browser render now contains exactly 18 state cards.
 - **Prevention:** keep documentation rendering rules outside parser-owned contract sections unless they describe a real component state; verify generated entry counts after contract edits.
+
+## ERR-051 — Radio States gallery used unrelated pill artwork (2026-11-01)
+
+- **Component:** Radio Button documentation gallery
+- **Finding:** Lemon's States section uses concise title/description cards, but Norato showed generic horizontal pills with decorative marks, visually resembling a stretched unrelated control. At mobile width the shared narrow-screen rule also collapsed the gallery to one column.
+- **Correction:** added a Radio-only static text-card renderer with all eight Radio Button/Radio Field states, family captions, Persian descriptions, semantic Norato status accents, and an explicit two-column mobile rule. Kept Radio adapter and playground unchanged.
+- **Browser evidence:** same desktop viewport 1195×765; Norato three columns at 174.7px card width and 71.6–90.8px height vs Lemon's four columns at 151.5×88.6px. Same mobile viewport 390×844; Norato two columns at 167.5px width, 68.4–87.6px height, RTL and 375px document width vs Lemon's two columns at 158.5×88.6px. Eight cards, no pill artwork, no horizontal overflow. Button's 11 generic state cards and Select's 18 specialized cards remain intact; playground selection changed and was restored.
+- **Prevention:** compare the actual States section (not only the top specimen) at desktop and mobile; inspect all responsive overrides, including narrower breakpoints, and verify component-specific gallery geometry and entry count.
+- **Remaining:** production gates and remote push must pass; Radio's full visual 20-cell matrix and independent screen-reader run remain open.

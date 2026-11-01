@@ -789,3 +789,14 @@
 - [x] Loading در مرورگر: spinner دیده شد، فیلد و trigger disabled شدند، wrapper کنترل `aria-busy=true` داشت و پیام status در tree ظاهر شد؛ پنل باز نشد و snippet اجرایی `loading` را درج کرد.
 - [x] DoD مرورگر و گیت‌های فنی کامل است؛ وضعیت کاتالوگ `Implemented` است. صفحه‌خوان مستقل اجرا نشد؛ Accessibility tree و صفحه‌کلید مرور شدند.
 - [x] Build موفق است؛ bundle جاوااسکریپت 626.87KB هشدار بالای 500KB می‌دهد.
+
+## گزارش این درخواست — اصلاح گالری States کامپوننت Radio (2026-11-01)
+
+- [x] مرجع زنده Lemon `#radio` در viewport دسکتاپ 1195×765 و موبایل 390×844 بررسی شد. بخش States مرجع پنج کارت عنوان/شرح دارد و نسخهٔ Norato اکنون همان سلسله‌مراتب را با palette و accentهای معنایی Norato نشان می‌دهد.
+- [x] هشت کارت Norato حفظ شده‌اند: پنج Radio Button و سه Radio Field. خانواده و شرح فارسی خوانا هستند؛ نمایش کپسول عمومی از بخش States حذف شده و نمونهٔ واقعی فقط در Preview/playground باقی مانده است.
+- [x] Desktop: Lemon کارت‌های 151.5×88.6px در چهار ستون دارد؛ Norato به‌علت ستون مستندات سه ستون با عرض 174.7px و ارتفاع 71.6–90.8px دارد. ارتفاع نزدیک مرجع است؛ artwork کنترلی کشیده وجود ندارد.
+- [x] Mobile: viewport برابر 390×844؛ Lemon در دو ستون کارت‌های 158.5×88.6px دارد؛ Norato دو ستون با عرض 167.5px و ارتفاع 68.4–87.6px دارد. عرض سند 375px، جهت RTL، هشت کارت و نبود overflow افقی بررسی شد.
+- [x] رگرسیون: Button با 11 نمونهٔ generic و Select با 18 کارت اختصاصی حفظ شدند؛ انتخاب Radio در playground کار کرد و مقدار اولیهٔ ماهانه بازگردانده شد. ردیف‌های قابل کلیک 48px هستند.
+- [x] گیت‌های `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle برابر 640.11KB دارد و هشدار بیش از 500KB می‌دهد.
+- [ ] commit و push این تغییر و تأیید SHA روی remote باقی است.
+- [ ] DoD کامل Radio هنوز باز است: ماتریس بصری 20 ترکیب و screen-reader مستقل بررسی نشده‌اند.
