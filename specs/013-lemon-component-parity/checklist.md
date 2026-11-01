@@ -45,3 +45,12 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] Escape تغییر ثبت‌نشدهٔ چندانتخابی را لغو کرد؛ ArrowDown از جست‌وجو به گزینه رسید؛ در منوی بدون جست‌وجو End روی «رشت» (آخرین گزینهٔ فعال) ایستاد و ArrowDown با عبور از «به‌زودی» غیرفعال به «تهران» رفت.
 - [x] چهار اندازه با ارتفاع حداقل ۴۸px، برچسب داخل/بیرون، RTL، required، error، disabled، loading و read-only در playground و مرورگر بررسی شدند؛ برچسب داخلیِ Summary/Chips در دسکتاپ و موبایل ۳۹۰px ارتفاع ۵۶px دارد.
 - [ ] Desktop/mobile browser DoD and technical gates pass; per-family status may be checked only after all rows above pass.
+
+## Radio Button evidence (2026-11-01)
+
+- [x] Lemon Radio and Norato Radio were compared at desktop and mobile; the Lemon specimen uses a glass ring/dot, three Persian choices, and Default marker. Norato keeps its own semantic blue tokens.
+- [x] Norato’s mobile specimen is 320×288px with a 375px document at 390×844; its three rows remain 48px, RTL, and free of horizontal overflow. Desktop frame is bounded by the documentation content column.
+- [x] The playground exposes a named radio group, accurate selected value, required/error/disabled controls, and synchronized Vue snippet. `ArrowDown` changed monthly to quarterly and `ArrowUp` restored monthly; one non-selected quarterly row visibly entered hover without changing selection.
+- [x] The 12 checked/value/size combinations for Default/Error/Disabled were measured; targets stayed 48px and focus ring was 2px. The page contains Preview, executable Vue playground, and all nine contract sections.
+- [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
+- [ ] Full 20-cell focus/hover visual matrix and independent screen-reader review remain open; do not close Radio DoD yet.
