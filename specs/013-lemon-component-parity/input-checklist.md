@@ -21,7 +21,7 @@
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
 - [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue TypeScript) and `git diff --check` pass. Current production JS chunk is 681.86KB; Vite warns that it exceeds 500KB.
 - [x] Request checklist, Input contract, catalog maturity and family ledger record remaining work without closing the DoD prematurely.
-- [ ] Latest gallery checkpoint passes gates but is not yet pushed; current latest pushed commit is docs checkpoint `7563b40`. Earlier implementation checkpoints `93f2507`, `9e40131` and `663af1f` are historical.
+- [x] Latest gallery checkpoint `ee5f809` passes gates and is pushed to `origin/master`; local HEAD and remote master matched.
 
 ## Remaining evidence
 

@@ -13,4 +13,4 @@
 11. [x] Translate the accepted minimum target and no-stretch rules into measured sizes; remove native Number spinners that duplicated Norato actions, preserving ArrowUp bounds.
 12. [x] Preserve exact Amount digit grouping above JavaScript's safe integer range with `BigInt`; suppress misleading spelled-out text when the value is unsafe.
 13. [x] Rebuild the 41 inert Input States cards with family-specific bounded mini-controls, distinct state styling/copy and Lemon-aligned responsive two-column mobile rhythm; correct Success/Typing state mapping.
-14. [ ] Same-viewport 390×844 Lemon/Norato, inertness, 41 cards, state treatments, no overflow, empty error console and technical gates were verified; commit/push this checkpoint.
+14. [x] Same-viewport 390×844 Lemon/Norato, inertness, 41 cards, state treatments, no overflow, empty error console and technical gates were verified; checkpoint `ee5f809` pushed to `origin/master` and remote hash matched.

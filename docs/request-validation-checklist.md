@@ -7,7 +7,7 @@
 - [x] چیدمان Norato در عرض ۳۹۰px دو ستون 167.5px در ظرف 343px دارد؛ همهٔ ۴۱ کارت در قاب‌اند، document width برابر 375px است. Previewهای حالت `aria-hidden` و inert هستند؛ تفاوت رفتار باید در playground زنده سنجیده شود.
 - [x] Error در گالری به‌درستی `invalid` و Success به‌درستی `success` نگاشت می‌شوند؛ قبلاً Success به Default می‌افتاد. Search Typing نیز اکنون حالت مستقل دارد.
 - [x] console مرورگر پس از اصلاح خالی از error بود؛ `pnpm check:tokens`، `pnpm check:catalog`، Vue TypeScript/production build و `git diff --check` پاس شدند. Vite برای chunk 681.86KB هشدار >500KB می‌دهد.
-- [ ] checkpoint اصلاح گالری باید commit/push شود؛ ماتریس تعاملی/focus کامل و screen-reader مستقل نیز باز هستند.
+- [x] checkpoint اصلاح گالری `ee5f809` به `origin/master` push و هش remote تأیید شد؛ ماتریس تعاملی/focus کامل و screen-reader مستقل همچنان باز هستند.
 
 ## گزارش بازبینی Input و اصلاح اندازه‌ها — موبایل و دسکتاپ (2026-11-01)
 
