@@ -278,6 +278,13 @@
 - Keep the desktop frame at 640×288px and mobile maximum at 320×288px. Use the preview-specific 24px radius and 12px dot spacing; keep the top specimen to one field. Interactive state exploration stays in the live playground.
 - Keep Checkbox Field RTL with the control on the right, label/description to its left, whole row clickable, 48px minimum row height, and a 16px or 20px visual box.
 
+## Select specimen — 2026-11-01
+
+- Use Lemon's one-field, centered preview with a small upper-right `Default` marker; keep the specimen inert and the state controls in the live Vue playground.
+- Use the Norato dotted glass frame, soft yellow/blue wash, semantic border/radius/elevation; retain the Norato palette and the 48px minimum field target.
+- Constrain the frame to the available documentation column, with 640px desktop and 320px mobile maxima; keep the selected field at 300px max so it cannot stretch vertically or horizontally.
+- Keep the Select control and option content RTL; the chevron/check align at the logical left.
+
 ## Range — 2026-11-01
 
 - Use Lemon's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.

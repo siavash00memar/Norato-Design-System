@@ -7,7 +7,10 @@
   --norato-content-gutter-compact: 24px;
   --norato-content-width-mobile: 312px;
   --norato-select-preview-inline-size: 300px;
-  --norato-select-preview-frame-min-block-size: 296px;
+  --norato-select-preview-frame-inline-size: 640px;
+  --norato-select-preview-frame-mobile-inline-size: 320px;
+  --norato-select-preview-frame-block-size: 288px;
+  --norato-select-preview-frame-radius: 24px;
   --norato-combobox-preview-inline-size: 310px;
   --norato-combobox-preview-frame-inline-size: 640px;
   --norato-combobox-preview-frame-mobile-inline-size: 320px;

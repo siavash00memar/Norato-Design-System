@@ -1,5 +1,18 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Select، اصلاح قاب و بررسی میان‌مرحله‌ای (2026-11-01)
+
+- [x] معیار پذیرش: نمونهٔ ثابت Select مانند Lemon یک فیلد مرکزی در قاب نقطه‌دار شیشه‌ای و نشانگر Default داشته باشد؛ قاب با پالت و توکن Norato، صفحه هم‌ساختار Button و hit target حداقل ۴۸px باقی بماند.
+- [x] توالی Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze ثبت شد؛ دامنهٔ این اصلاح فقط نمونهٔ ثابت و تأیید رفتار موجود بود.
+- [x] قبل از تغییر، selector قدیمی `.component-sample.sample-select-preview:not(.compact)` و markup نمونه audit شد؛ همان قانون اصلاح شد و marker scoped `sample-select-state` اضافه شد.
+- [x] رندر واقعی روی سرور تازهٔ Vite در viewport همسان desktop برابر 1920×863: قاب Lemon برابر 636×300px و Norato برابر 584×288px (محدود به ستون محتوا) است؛ فیلدها به‌ترتیب 302.4×68.2 و 300×48px هستند.
+- [x] در viewport همسان mobile برابر 390×844، قاب Lemon برابر 327×300px و Norato برابر 320×288px است؛ فیلد Norato برابر 300×48px، وسط‌چین و RTL است. عرض سند 375px و بدون overflow است.
+- [x] screenshotهای هم‌viewport قاب نقطه‌ای، هالهٔ زرد/آبی و marker مشابه را نشان می‌دهند؛ Norato رنگ‌مایهٔ خود را حفظ می‌کند.
+- [x] در مرورگر تازه: منوی جستجو و گروه‌ها باز شدند، ArrowDown گزینهٔ فعال را جابه‌جا کرد، انتخاب تکی وضعیت را تغییر داد؛ در چندانتخابی مقدار تا زمان تأیید ثابت ماند، انصراف مقدار قبلی را حفظ کرد و تأیید گزینه را ثبت کرد. حالت loading کنترل را disabled کرد و status بارگذاری را نمایش داد.
+- [x] RTL و ارتفاع trigger برابر ۴۸px، ۴ اندازه (۴۸/۴۸/۴۸/۵۶px)، حالت‌های error/disabled/read-only/loading با semantics وابسته، ساختار Preview + Vue + ۹ بخش قرارداد، و گزینهٔ disabled در درخت دسترس‌پذیری بررسی شدند. ماتریس کامل ترکیب حالت‌های بصری هنوز باز است.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (۴۹ مسیر/قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پاس شدند. build هشدار chunk برابر 634.56KB بالاتر از 500KB داد.
+- [ ] DoD خانواده Select باز است تا ماتریس کامل visual state/variantها (از جمله ترکیب size × label placement × single/multi) مرور شود؛ مقایسهٔ responsive قاب و رفتارهای محوری تا اینجا پاس است.
+
 ## گزارش این درخواست — Input، ممیزی پیش از اصلاح (2026-11-01)
 
 - [x] صفحهٔ Lemon و صفحهٔ Norato در مرورگر واقعی بررسی شدند؛ Lemon یک فیلد ایمیل منفرد در frame با ابعاد desktop حدود 636×300px و بدنهٔ کنترل 324×41px دارد.

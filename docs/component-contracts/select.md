@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصریِ ثابت در ابتدای صفحهٔ محلی با adapter اجرایی در بخش Vue همراه است. منوی شیشه‌ای، جست‌وجو، گروه‌بندی و چندانتخابی با Chips/Summary و تأیید/انصراف در adapter Vue موجودند؛ تکمیل DoD همهٔ حالت‌ها هنوز در جریان است.
+نمونهٔ بصری ثابت در ابتدای صفحه با قاب شیشه‌ای نقطه‌دار ۲۸۸px، نشانگر Default و یک فیلد ۳۰۰×۴۸px نمایش داده می‌شود. قاب در ستون مستندات به عرض موجود محدود است و کنترل کشیده نمی‌شود. adapter اجرایی در بخش Vue منوی شیشه‌ای، جستجو، گروه‌بندی و چندانتخابی با Chips/Summary و تأیید/انصراف را فراهم می‌کند؛ DoD کامل responsive و ماتریس حالت‌ها هنوز باز است.
 
 ## Overview
 
@@ -79,3 +79,5 @@
 ## Tokens
 
 **توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+
+قاب نمونه از `--norato-select-preview-frame-inline-size`، `--norato-select-preview-frame-mobile-inline-size`، `--norato-select-preview-frame-block-size` و `--norato-select-preview-frame-radius` استفاده می‌کند؛ رنگ شیشه/نقطه/هاله و ارتفاع کنترل از توکن‌های عمومی Norato می‌آیند. روی viewport عریض، اندازهٔ قاب ممکن است به ستون محتوای صفحه محدود شود.
