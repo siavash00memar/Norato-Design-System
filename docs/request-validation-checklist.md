@@ -800,3 +800,13 @@
 - [x] گیت‌های `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle برابر 640.11KB دارد و هشدار بیش از 500KB می‌دهد.
 - [x] commit `6091212` به GitHub push شد و `origin/master` با HEAD محلی برابر است.
 - [ ] DoD کامل Radio هنوز باز است: ماتریس بصری 20 ترکیب و screen-reader مستقل بررسی نشده‌اند.
+
+## گزارش این درخواست — اصلاح گالری States کامپوننت Switch (2026-11-01)
+
+- [x] رندر States به کارت‌های ایستای عنوان/توضیح مطابق Lemon تغییر کرد؛ پنج Switch و سه Switch Field، نام خانواده، متن فارسی و accent معنایی Norato حفظ شدند. کپسول تزئینی عمومی در این گالری وجود ندارد.
+- [x] مقایسهٔ مرورگر desktop در 1195×765: Lemon چهار ستون و Norato سه ستون به‌علت عرض محدودتر ستون مستندات؛ mobile در 390×844 هر دو دو ستون‌اند. کارت Norato موبایل 167.5×87.6px، Lemon 158.5×88.6px؛ سند 375px، RTL و بدون overflow افقی. خود Switch در نمونهٔ بالای صفحه قبلاً سنجیده و بدون کشیدگی (track متوسط 40×24px، target 48×48px) ثبت شده است.
+- [x] playground زنده بعد از تغییر renderer با نام accessible «اعلان‌ها» از Value 0 به 1 رفت و متن وضعیت و نمونهٔ کد updated شد؛ مقدار در UI موقتاً روشن ماند تا مورد آزمون دیده شود.
+- [x] Radio پس از renderer مشترک در صفحهٔ واقعی باز شد؛ هشت entry، family captions و توصیف‌های معنایی بدون خطای render حاضرند؛ playground با مقدار ماهانه در AX tree دیده شد.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (49 route/contract)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle جاوااسکریپت 641.48KB است و هشدار حجم بالای 500KB می‌دهد.
+- [ ] بررسی رگرسیون کارت‌های Button و Select در مرورگر فعلی و مقایسهٔ desktop/mobile نهایی، pointer hover و صفحه‌خوان مستقل هنوز انجام نشده‌اند؛ DoD کامل Switch باز است.
+- [x] رگرسیون مرورگری پس از اشتراک state-card renderer: Radio صفحه و هشت کارت خانواده/شرح حاضرند؛ Select درخت AX و 18 شرح حالت/خانواده حفظ شده؛ Button صفحه و 11 گالری/قرارداد variants همچنان حاضرند. تعامل playground Radio با این درخواست تغییر نکرد.

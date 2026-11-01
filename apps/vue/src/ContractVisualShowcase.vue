@@ -124,11 +124,11 @@ const selectStateDescription = (entry: Entry) => {
   return entry.detail
 }
 
-const radioStateDescription = (entry: Entry) => {
+const fieldStateDescription = (entry: Entry, component: string) => {
   const state = entry.label.toLocaleLowerCase()
-  if (/default|پیش‌فرض/.test(state)) return 'حالت عادی؛ آمادهٔ انتخاب.'
-  if (/hover|شناور/.test(state)) return 'نشانگر روی گزینه است.'
-  if (/disabled|غیرفعال/.test(state)) return 'گزینه غیرفعال و غیرقابل انتخاب.'
+  if (/default|پیش‌فرض/.test(state)) return component === 'Switch' ? 'کلید خاموش و آمادهٔ تغییر است.' : 'حالت عادی؛ آمادهٔ انتخاب.'
+  if (/hover|شناور/.test(state)) return 'نشانگر روی کنترل است.'
+  if (/disabled|غیرفعال/.test(state)) return 'کنترل غیرفعال و غیرقابل تغییر است.'
   if (/focus|تمرکز|فوکوس/.test(state)) return 'فوکوس صفحه‌کلید؛ حلقهٔ ۲px.'
   if (/error|invalid|خطا/.test(state)) return 'خطا با مرز قرمز مشخص شده.'
   return entry.detail
@@ -266,18 +266,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
-      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--radio': name === 'Radio Button' }">
+      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
-          <div v-if="name !== 'Select' && name !== 'Radio Button'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
+          <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
           <template v-if="name === 'Select'">
             <div class="select-state-heading"><strong>{{ entry.label }}</strong><small class="select-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
             <small class="select-state-description">{{ selectStateDescription(entry) }}</small>
           </template>
-          <template v-else-if="name === 'Radio Button'">
-            <div class="radio-state-heading"><strong>{{ entry.label }}</strong><small class="radio-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
-            <small class="radio-state-description">{{ radioStateDescription(entry) }}</small>
+          <template v-else-if="name === 'Radio Button' || name === 'Switch'">
+            <div class="field-state-heading"><strong>{{ entry.label }}</strong><small class="field-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
+            <small class="field-state-description">{{ fieldStateDescription(entry, name) }}</small>
           </template>
           <template v-else>
             <strong>{{ entry.label }}</strong>

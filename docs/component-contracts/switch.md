@@ -32,6 +32,7 @@
 - **Switch:** Default، Hover، Disabled، Focus، Error
 - **Switch Field:** Default، Error، Disabled
 
+### گالری States و شواهد DoD`r`n`r`nگالری ایستا از کارت‌های عنوان و توضیح مطابق Lemon استفاده می‌کند: پنج حالت Switch و سه حالت Switch Field، همراه نام خانواده و accent معنایی Norato. artwork کپسولی عمومی در این گالری نمایش داده نمی‌شود؛ نمونهٔ تعاملی در Preview و playground قرار دارد. مقایسهٔ مرورگری هم‌اندازه در 1195×765 و 390×844 انجام شد: دسکتاپ سه ستون در عرض محتوای محدود Norato و موبایل دو ستون، بدون سرریز افقی یا artwork کشیده. اندازهٔ کارت موبایل Norato برابر 167.5×87.6px بود و کارت Lemon برابر 158.5×88.6px است.`r`n`r`nرفتار پایه در مرورگر با AX tree بررسی شد: Switch با نام «اعلان‌ها» از خاموش به روشن رفت و مقدار در مدل نمونه و accessibility tree به‌روز شد. ماتریس کامل ۳۰ ترکیب، pointer hover و صفحه‌خوان مستقل هنوز اجرا نشده‌اند؛ DoD کلی بسته نیست.`r`n
 ## Parts
 
 - **Switch — 30 variant:** خود سوییچ در سه اندازه. ابعاد/حالت‌ها: Size: Small، Medium، Large؛ On: false، true؛ State: Default، Hover، Disabled، Focus، Error
