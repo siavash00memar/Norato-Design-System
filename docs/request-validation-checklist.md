@@ -9,7 +9,8 @@
 - [x] required روی یک ورودی، aria-invalid/error association، disabled واقعی، RTL و هدف کلیک 48px را در browser DOM سنجیدم. اندازه‌های 16/20 در کنترل playground موجود است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند.
 - [x] `pnpm --dir apps/vue build` موفق شد؛ هشدار پیشین bundle بزرگ‌تر از 500KB همچنان هست. `git diff --check` موفق شد.
-- [ ] DoD نهایی Radio باز است: مرور تصویری desktop هم‌اندازه با Lemon (1280×900)، screenshot side-by-side و ماتریس کامل 26 variant/حالت hover/disabled/focus/error هنوز تکمیل نشده؛ صفحه‌خوان مستقل اجرا نشده است.
+- [x] Radio required بدون انتخاب بازآزمایی شد: پیام الزام انتخاب و aria-invalid روی گروه/ورودی‌ها ظاهر شدند و پیام با aria-describedby به ورودی required متصل شد.
+- [ ] DoD نهایی Radio باز است: مرور ماتریس کامل 26 variant/حالت hover/disabled/focus/error و صفحه‌خوان مستقل هنوز تکمیل نشده؛ Lemon پس از تغییر viewport ابعاد DOM قابش را آشکار نکرد.
 
 ## گزارش این درخواست — استانداردسازی صفحه‌های کامپوننت، batch 1 (2026-10-28)
 
