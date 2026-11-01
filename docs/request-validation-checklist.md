@@ -1,13 +1,14 @@
 # Norato Request Validation Checklist
 
-## ادامهٔ DoD Segmented Control — اندازهٔ XLarge (2026-11-01)
+## ادامهٔ DoD Segmented Control — دسکتاپ، موبایل و صفحه‌کلید (2026-11-01)
 
 - [x] در صفحهٔ واقعی `#component-segmented`، با منوی واقعی تعداد گزینه از ۳ به ۴ و اندازه از Medium به XLarge تغییر کرد؛ چهار گزینه و props انتخابی در کد Vue همگام شدند. Contrast هم از منوی واقعی فعال و در رندر تأیید شد.
 - [x] اسکرین‌شات در viewport مرورگر 1180×755 چهار گزینه را افقی، بی‌wrap و بدون کشیدگی عمودی نشان داد؛ اندازهٔ XLarge رندر شد و سبک Contrast آبی Norato داشت.
+- [x] در viewport موبایل 390×844 نیز playground با چهار گزینهٔ XLarge/Contrast بررسی شد؛ هر چهار گزینه در یک ردیف افقی ماندند، متن عمودی نشد و کد Vue با `size="xlarge"`، `style="contrast"` و چهار item همگام بود.
+- [x] آزمون صفحه‌کلید در RTL: `ArrowLeft` فوکوس را از روزانه به هفتگی برد بی‌آنکه مقدار انتخابی عوض شود؛ `Space` هفتگی را انتخاب کرد؛ `Right` و `Space` مقدار را به روزانه برگرداندند. مقدار controlled و متن انتخاب playground به‌روز شدند.
+- [x] playground به Glass/Medium/3 و روزانهٔ منتخب برگردانده شد؛ viewport موقت reset شد.
 - [ ] اندازه‌گیری دقیق bounding box، اجرای مستقل ۶۴ ترکیب حالت آیتم و صفحه‌خوان مستقل باقی است؛ این بررسی جزئی DoD خانواده را نمی‌بندد.
-- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، build و `git diff --check` در این نوبت موفق شدند؛ build هشدار chunk بالای 500KB دارد.
-- [x] تنظیم playground به Glass/Medium/3، آیتم روزانهٔ منتخب و گزینه‌های عادی برگشت.
-- محدودیت: viewport مرورگر در این تب 1180×755 بود و عرض 390×844 اعمال نشد؛ بنابراین این اسکرین‌شات مدرک موبایل محسوب نمی‌شود. گزارش قبلی batch matrix timeout شده و PASS محسوب نمی‌شود.
+- [x] پس از ثبت این شواهد `pnpm check:tokens`، `pnpm check:catalog` (۴۹ مسیر/قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` اجرا و موفق شدند؛ build هشدار chunk بزرگ‌تر از 500KB دارد. batch matrix قدیمی timeout شده و PASS محسوب نمی‌شود.
 
 ## گزارش درخواست — راهنمای قابل‌استفاده برای عامل‌های AI (2026-11-01)
 

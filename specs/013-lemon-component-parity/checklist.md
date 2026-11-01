@@ -18,6 +18,8 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] Browser keyboard check: Space toggled `aria-checked` false→true; Enter toggled true→false. AX tree exposed role `switch`, name “اعلان‌ها” and associated description.
 - [x] Three track sizes × off/on retained the 48×48 target in the earlier browser matrix; track geometry was 32×20, 40×24 and 48×28px.
 - [x] Repeated in the current run: all six size/value cells retain the specified dimensions and target; pointer hover changes border to semantic blue; Space/Enter toggle; error association and true disabled behavior pass; initial state restored.
+- [x] Current Reka adapter revision: error exposes `aria-invalid=true` and associated error text; disabled is a real disabled switch; keyboard focus shows a 2px outline with 4px offset.
+- [x] Token/catalog, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 - [ ] Full 30 Switch + 6 Switch Field visual state combinations, keyboard focus-ring measurement, and independent screenreader review remain open.
 
 ## Segmented Control evidence (2026-11-01)
@@ -26,13 +28,13 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] Desktop frame measured 632×288px (Lemon approximately 630px wide); mobile frame 320×288px. The preview group is 260px wide; mobile document width is 375px, with no horizontal overflow.
 - [x] Reka ToggleGroup DOM reports a named group, native buttons with `aria-pressed`, RTL direction, visible keyboard focus, and 48px targets for Small/Medium/Large, 56px for XLarge.
 - [x] All 24 combinations of style, size and item count (2–4) retained RTL first-option placement, minimum hit target, and no label overflow.
+- [x] At mobile viewport 390×844, XLarge + Contrast + four items rendered as one horizontal row with no vertical label stretch; the generated Vue snippet matched all three settings.
 - [x] Pointer hover, keyboard arrows in RTL, Space, Enter, Home, End, keeping selection non-empty, single-item disabled and whole-group disabled were checked in the browser.
+- [x] In a fresh mobile keyboard check, ArrowLeft moved focus from روزانه to هفتگی without changing selection; Space selected هفتگی. Right + Space restored روزانه, and the controlled value/snippet reflected the change.
+- [x] Playground restored to Glass/Medium/3 with روزانه selected; temporary viewport override reset.
 - [x] Fresh Vite render shows the same detail structure as Button: preview, Vue adapter/playground and all nine contract sections. The older running dev process had a stale glob; a fresh process fixed the render without a source workaround.
-- [ ] Independent screenreader software and exhaustive 64 item state/style/size combinations were not run; DoD stays open.
-- [ ] Final token/catalog/TypeScript/build gates must pass before closing this family.
-- [x] Current Reka adapter revision: error exposes `aria-invalid=true` and associated error text; disabled is a real disabled switch; keyboard focus shows a 2px outline with 4px offset.
-- [x] `check:tokens`, `check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
-- [ ] Full 30 Switch + 6 Switch Field visual state combinations, keyboard focus-ring measurement, and independent screenreader review remain open.
+- [ ] Independent screenreader software, exact DOM bounding-box/focus-ring measurements and exhaustive 64 item state/style/size combinations were not run; DoD stays open.
+- [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 
 ## Select behavior acceptance checklist
 
