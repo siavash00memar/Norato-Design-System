@@ -14,7 +14,7 @@ The Norato Input page should make its text-entry family understandable and usabl
 - Lemon describes eight related controls: Text, Password, Phone, OTP, Text Area, Number, Amount and Search.
 - Lemon uses a single email-field preview with label, glass field, email icon, placeholder and helper text, inside a 636×300px stage at desktop 1920×919; the field's visible shell is about 324×41px.
 - Lemon documents 264 variants across the family, including four display sizes, text label placement, control-specific states, and 4/5/6-digit OTP.
-- Norato's current page has the Button-style nine-section shell and a live generic `NoratoField` playground. The visual specimen currently renders as a 490×48px field in a 540×147px wrapper at the current 1195px browser viewport. Other documented variants are generic generated reference cards, not executable APIs.
+- Norato's page has the Button-style nine-section shell and a live generic `NoratoField` playground. The isolated preview refinement now measures 584×288px (column-constrained) with a 324×48px field at desktop 1920×863; at mobile 390×844 it measures 320×288px with a 310×48px field and 375px document width. Other documented variants are generic reference cards, not executable APIs.
 - Norato's semantic contract requires 48px minimum interaction targets, so Lemon's 32/40px sizes may describe visual density only; real controls remain 48px or larger.
 
 ## Family contents in the reference

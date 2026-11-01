@@ -57,7 +57,7 @@
 
 - Use `https://lemonui.ir/#input` for the visual arrangement of the top specimen: one compact, labeled field with helper text. Preserve Norato semantic colors, Estedad/Vazirmatn, RTL label/helper placement and the 48px control target.
 - The top Input specimen is inert and uses an LTR email placeholder inside an RTL field group. The separate Vue playground exercises the actual `NoratoField` adapter; do not imply that its generic text API implements the other Input families or four sizes.
-- Keep the field's rendered height independent of the preview frame. Current desktop measurement: field 48px, group about 97px, frame about 147px.
+- Keep the field's rendered height independent of the preview frame. Use the Lemon-composition inert marker, Norato glass/wash/dots and a 324px maximum field width; the desktop frame is capped at 640px and mobile at 320px, with 288px Norato height. At equal 1920×863 viewport Lemon measures 636×300px and Norato 584×288px (limited by Norato's content column); each field is 324px wide and Norato remains 48px high. At equal 390×844 mobile viewport Lemon measures 327×300px with a 321px field group; Norato measures 320×288px with a 310×48px control, and its document remains 375px wide. The top sample remains inert; do not imply that the generic text API implements the other Input families or four sizes.
 
 ## Select
 

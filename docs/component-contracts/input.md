@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی، یک فیلد ایمیل با برچسب و متن راهنما است؛ ترکیب آن از صفحهٔ Input در Lemon گرفته شده و رنگ/تایپوگرافی از Norato می‌آید. نمونهٔ اجرایی جداگانه با `NoratoField` مقدار، خطا، الزامی، غیرفعال و بارگذاری را نمایش می‌دهد. نمونهٔ ایمیل صرفاً مرجع بصری است؛ adapter فعلی فقط ورودی متن عمومی دارد و API اختصاصی ایمیل، رمز، موبایل یا اندازه‌های چهارگانه ندارد.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی، یک فیلد ایمیل با برچسب و متن راهنما در قاب نقطه‌دار شیشه‌ای و marker حالت Default است؛ ترکیب از Lemon و رنگ/تایپوگرافی از Norato می‌آید. عرض فیلد حداکثر ۳۲۴px است، اما ارتفاع target آن حداقل ۴۸px می‌ماند. نمونهٔ اجرایی جداگانه با `NoratoField` مقدار، خطا، الزامی، غیرفعال و بارگذاری را نمایش می‌دهد. نمونهٔ ایمیل صرفاً مرجع بصری است؛ دامنهٔ adapterهای اختصاصی هشت‌گانه هنوز در مرحلهٔ Clarify است.
 
 ## Overview
 
@@ -82,4 +82,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.

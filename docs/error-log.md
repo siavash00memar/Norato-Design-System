@@ -519,3 +519,12 @@
 - **Correction:** set the input's scoped `:focus-visible` outline to zero; retained the focus-visible field wrapper rule.
 - **Browser evidence:** after reload and ArrowDown, input outline computed to 0px; the field wrapper reports a 2px semantic blue outline, 4px offset and 2px semantic yellow halo, with `aria-activedescendant` pointing to the highlighted result.
 - **Prevention:** inspect computed focus styles in the rendered browser, since package component CSS and app-global focus CSS both apply to exported components.
+
+## ERR-049 — Input top specimen stretched to the form column (2026-11-01)
+
+- **Component:** Input
+- **Finding:** `.sample-form-controls` allowed the inert top specimen to grow with the content column while the generic `:has(.sample-form-controls)` rule removed its bounded preview height. At the prior 1195px viewport this produced a 490px field in a 540×147px frame, unlike Lemon's single compact field in a 636×300px stage.
+- **Correction:** added the Input preview class, semantic frame/field tokens, a scoped 640px/320px glass frame with 288px Norato height, 324px field cap, and the existing inert `Default` marker pattern. Kept the actual field at 48px and left the runtime playground unchanged.
+- **Browser evidence:** same-viewport desktop 1920×863: Norato frame 584×288px due to its content-column cap, field 324×48px; Lemon frame 636×300px, field group 324×94.4px. Same-viewport mobile 390×844: Norato 320×288px frame and 310×48px field; Lemon 327×300px frame and 320.8px field group. Norato document width is 375px; RTL and inert specimen attributes confirmed.
+- **Prevention:** bound specimen controls independently of their frame, verify the computed field width, and inspect `:has()` shared selectors before adding family preview rules.
+- **Remaining:** full Input family DoD is still open while API scope and component behavior/state matrix remain unresolved.

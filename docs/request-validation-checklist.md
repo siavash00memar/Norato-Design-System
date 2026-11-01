@@ -1,5 +1,15 @@
 # Norato Request Validation Checklist
 
+## گزارش این درخواست — Input preview مستقل (2026-11-01)
+
+- [x] قرارداد subfeature فقط قاب و نمونهٔ ثابت است؛ پرسش API هشت زیرنوع همچنان باز است و adapter اجرایی/گالری تغییر نکرد.
+- [x] selectorهای فعلی `.sample-input-specimen` و `.component-sample:has(.sample-form-controls)` audit شدند؛ قاب و field با قانون scoped موجود و توکن semantic اصلاح شدند.
+- [x] Lemon و Norato در viewport یکسان desktop 1920×863 مقایسه شدند: قاب 636×300 در برابر 584×288px (محدود به ستون محتوا)، field group Lemon 324×94.4px و Norato 324×97.2px؛ control نوراتو 324×48px.
+- [x] Lemon و Norato در viewport یکسان mobile 390×844 مقایسه شدند: قاب 327×300 در برابر 320×288px؛ گروه Lemon 320.8×94.4px؛ کنترل Norato 310×48px. Norato سند 375px عرض دارد، بدون overflow؛ RTL حفظ شده است.
+- [x] رندر واقعی: نشانگر Default، نقطه‌ها و wash قابل مشاهده‌اند؛ preview دارای `aria-hidden="true"` و `inert` است؛ صفحه Preview، Vue playground و ۹ بخش مستقل Button را نشان می‌دهد.
+- [x] گیت‌ها: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. build هشدار bundle بزرگ‌تر از 500KB دارد.
+- [ ] DoD کل Input باز است: دامنهٔ API، گالری‌های خانواده و ماتریس کامل رفتار/دسترس‌پذیری هنوز تعیین یا اجرا نشده‌اند.
+
 ## پیگیری Select — منوی باز در موبایل (2026-11-01)
 
 - [x] viewport مرورگر روی 390×844 اعمال و از `innerWidth/innerHeight` تأیید شد.

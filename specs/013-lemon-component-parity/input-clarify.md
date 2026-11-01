@@ -21,3 +21,7 @@ The user was offered two clear choices: (A) all eight executable Vue adapters (r
 - Do not plan or implement scope-dependent code until the user's choice is recorded.
 
 **Clarify gate: open; dependent Plan/Checklist/Tasks/Analyze/Implement gates must wait.**
+
+## Independent preview-only subfeature
+
+The family-level API decision remains unresolved. It does not change the inert single-field top composition, so `input-preview-clarify.md` records a narrower clarification for frame geometry and marker only. Its Constitution/Specify source is the already-passed family review/specification; its own Clarify → Plan → Checklist → Tasks → Analyze → Implement sequence is recorded in the `input-preview-*` files. No API-dependent surface was implemented under that bounded scope.

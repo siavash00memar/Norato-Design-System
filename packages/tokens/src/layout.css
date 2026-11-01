@@ -6,6 +6,11 @@
   --norato-frame-mobile-width: 360px;
   --norato-content-gutter-compact: 24px;
   --norato-content-width-mobile: 312px;
+  --norato-input-preview-inline-size: 324px;
+  --norato-input-preview-frame-inline-size: 640px;
+  --norato-input-preview-frame-mobile-inline-size: 320px;
+  --norato-input-preview-frame-block-size: 288px;
+  --norato-input-preview-frame-radius: 24px;
   --norato-select-preview-inline-size: 300px;
   --norato-select-preview-frame-inline-size: 640px;
   --norato-select-preview-frame-mobile-inline-size: 320px;
