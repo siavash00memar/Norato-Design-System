@@ -418,8 +418,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
 .sample-form-controls{display:grid;gap:var(--norato-space-4);width:min(100%,32rem);text-align:start}
 .sample-form-controls .norato-field-group,.sample-form-controls .norato-select-group{gap:var(--norato-space-1)}
 .sample-input-specimen{justify-self:center}
+.sample-select-specimen{width:min(100%,var(--norato-select-preview-inline-size))}
 .sample-input-specimen .norato-field-group{direction:rtl}
 .component-sample:has(.sample-form-controls){min-height:auto;place-items:stretch;text-align:start}
+.component-sample.sample-select-preview:not(.compact){min-height:var(--norato-select-preview-frame-min-block-size);place-items:center}
 @media(max-width:599px){.component-doc>.doc-section{padding-block:var(--norato-space-2)}}
 
 /* Contract data visualizations: source text is rendered as labeled, copyable visual structure. */

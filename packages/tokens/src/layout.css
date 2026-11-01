@@ -6,6 +6,8 @@
   --norato-frame-mobile-width: 360px;
   --norato-content-gutter-compact: 24px;
   --norato-content-width-mobile: 312px;
+  --norato-select-preview-inline-size: 300px;
+  --norato-select-preview-frame-min-block-size: 296px;
   --norato-action-row-height: 36px;
   --norato-field-label-gap: 6px;
   --norato-field-group-gap: 8px;
