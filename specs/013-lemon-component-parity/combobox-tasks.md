@@ -2,8 +2,10 @@
 
 1. [x] Record Constitution, Specify, Clarify, Plan, Checklist and dependency-ordered tasks.
 2. [x] Analyze the existing implementation and evidence; record missing/uncertain checks.
-3. [x] Capture same-viewport Lemon/Norato preview and open-menu geometry at desktop 1195×765; mobile recapture remains open.
+3. [x] Capture same-viewport Lemon/Norato preview and open-menu geometry at desktop 1195×765; recapture local after visual fix at mobile 390×844 (320×288 frame, 212×48 field, 375px document).
 4. [x] Exercise the current adapter states and 16 size × label × single/multi geometry combinations; exhaustive visual combinations remain open.
 5. [x] Fix evidence-backed preview mismatch: add the inert Default marker and token-derived blue dots, matching Lemon's composition while preserving Norato colors.
 6. [x] Update contract, request checklist, error log and family ledger.
-7. [ ] Run technical gates, inspect diff, commit and push this verified batch.
+7. [x] Run technical gates, inspect diff, commit and push this verified visual correction batch (commit `555599b`; gates pass, bundle size warning retained).
+8. [ ] Complete full combined visual matrix, all actionable focus paths and independent screen-reader verification; do not close DoD before evidence is recorded.
+9. [x] Remove the browser-confirmed duplicate global focus outline from the input; verify the wrapper's 2px semantic focus ring/4px offset and active descendant after reload.

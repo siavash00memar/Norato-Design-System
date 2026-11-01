@@ -511,3 +511,11 @@
 - **Browser evidence:** at 1195×765, the preview now shows centered field, visible dotted glass, Norato blue/yellow wash and `Default` marker; frame stays 540×288px and the field 310×50px.
 - **Prevention:** every Lemon-composition specimen must include its marker as inert markup and verify dot contrast against the actual Norato surface, not infer visibility from the CSS declaration.
 - **Remaining:** full state/variant visual matrix, mobile screenshot after correction and independent screen-reader verification remain open.
+
+## ERR-048 — Combobox input stacked the global outline over its field focus ring (2026-11-01)
+
+- **Component:** Combobox
+- **Finding:** keyboard focus showed a 3px global input outline in addition to the intended wrapper ring, contradicting the recorded 2px focus contract.
+- **Correction:** set the input's scoped `:focus-visible` outline to zero; retained the focus-visible field wrapper rule.
+- **Browser evidence:** after reload and ArrowDown, input outline computed to 0px; the field wrapper reports a 2px semantic blue outline, 4px offset and 2px semantic yellow halo, with `aria-activedescendant` pointing to the highlighted result.
+- **Prevention:** inspect computed focus styles in the rendered browser, since package component CSS and app-global focus CSS both apply to exported components.

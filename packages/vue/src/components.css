@@ -93,7 +93,7 @@
 .norato-combobox-group[data-invalid] .norato-combobox__field{border-color:var(--norato-color-status-error)}
 .norato-combobox__input{flex:1;min-inline-size:0;min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:0;outline:0;background:transparent;color:inherit;font:inherit}
 .norato-combobox__input::placeholder{color:var(--norato-color-text-placeholder);opacity:1}
-.norato-combobox__input:focus-visible{outline:none;box-shadow:none}
+.norato-combobox__input:focus-visible{outline:0;box-shadow:none}
 .norato-combobox__field:has(.norato-combobox__input:focus-visible){outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .norato-combobox-group:not([data-disabled]) .norato-combobox__field:hover{border-color:var(--norato-color-brand-blue)}
 .norato-combobox__trigger{display:grid;place-items:center;flex:none;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);border:0;background:transparent;color:inherit;cursor:pointer}

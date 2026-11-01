@@ -58,6 +58,8 @@ adapter حالت‌های Default، Hover، Typing، Filled، Error، Disabled،
 
 ## Accessibility
 
+فوکوس صفحه‌کلیدی روی field با outline آبی ۲px، offset چهار پیکسل و halo زرد semantic Norato نمایش داده می‌شود؛ خود input حلقهٔ تکراری نمی‌گیرد.
+
 گزینهٔ فعال صفحه‌کلید با `aria-activedescendant` اعلام می‌شود. متن کمک/خطا با `aria-describedby` به ورودی وصل است؛ required، invalid، disabled و loading نیز با صفت‌های بومی/ARIA اعلام می‌شوند. مقدارهای انتخاب‌شدهٔ Multi برای صفحه‌خوان در متن پنهان توصیف می‌شوند.
 
 ### قاعدهٔ عمومی Focus در Norato

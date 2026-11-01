@@ -696,6 +696,10 @@
 - [x] required/error/`aria-required`/`aria-invalid`/`aria-describedby`/alert و disabled واقعی ورودی و trigger بررسی شد. Escape منو را بست و بعد از پاک‌کردن، مقدار و status خالی ماند.
 - [ ] DoD نهایی باز است: مقایسه و screenshot موبایل پس از اصلاح marker/dot، مرور کامل ماتریس بصری ۹۶ حالت، تمرین فوکوس تمام کنترل‌ها در هر حالت و screen-reader مستقل هنوز انجام نشده‌اند. این دور viewport واقعی موبایل نبود.
 - [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze قبل از اصلاح ثبت شد؛ اصلاح فقط بر نقص رندر مشاهده‌شده محدود ماند.
+- [x] ادامهٔ موبایل پس از اصلاح در viewport واقعی 390×844 بررسی شد: قاب 320×288px، فیلد 212×48px، marker `Default` قابل‌دیدن و عرض سند 375px بدون سرریز است؛ screenshot پس از اصلاح ثبت شد.
+- [x] مرورگر پس از reload و ArrowDown یک outline اضافی 3px روی input نشان داد؛ override عمومی حذف و selector scoped به `outline:0` تغییر کرد. اندازهٔ computed بعد از اصلاح: outline داخل input صفر، حلقهٔ field برابر 2px آبی با offset 4px و halo زرد 2px؛ active descendant به گزینهٔ فوکوس‌شده اشاره می‌کند.
+- [x] گیت‌های بعد از تغییر: `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پاس شدند؛ build هشدار 635.58KB داد.
+- [ ] DoD همچنان باز است: مرور ۹۶ حالت ظاهری، ماتریس فوکوس همهٔ اکشن‌ها و screen-reader مستقل انجام نشده‌اند.
 
 ## گزارش انتشار — Preview در Vercel (2026-11-01)
 
