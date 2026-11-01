@@ -378,6 +378,12 @@
 - Correction: added Norato-token-backed 288px desktop/mobile preview geometry, a 320px mobile width cap, and the Default marker; replaced the stale two-Button sample with the inert `NoratoSplitButton` specimen and removed its legacy CSS. Connected the six-variant, four-size and five-state runtime galleries. Added a reduced-motion-aware spinner; the playground clears selected-action feedback when the primary action runs.
 - Browser evidence: at 1920×863 the Norato frame is 584×288px (limited by the documentation column), while Lemon's visible sample is about 630px wide and 298px high. Both show a centered connected capsule with one divider; Norato retains its semantic yellow. The control itself remains 48px high. Live checks confirmed both events, ArrowUp/Down, Home/End, Escape focus return, Tab exit, outside click, menu selection, disabled/loading, and no primary button in Dropdown mode. All four visuals measured 32/40/48/56px; both Small/Medium native targets remain at least 48×48px. AX tree exposes a named toggle, expanded state, menu and menu items.
 - Limitation at initial pass: the connected Chrome surface did not provide a viewport override, so mobile remained unverified then. A later pass enabled the real 390×844 viewport and measured document=375px, frame=320×288px, control=48px and no overflow. Lemon at the same viewport measured about 314×288px. No external screen-reader application was run.
+
+## 2026-11-01 — Input specimen audit before implementation
+
+- Browser evidence: Lemon's top Input specimen is one email field inside a 636×300px desktop stage; the shell is 324×41px. Norato's current specimen is 317×48px within a 343×123px frame at 390×844; document/body width is 375px with no horizontal overflow.
+- Visual gap: the current top sample has no Lemon-like dotted/glass preview treatment, default marker or email leading icon, and the current 123px mobile frame is 177px shorter than Lemon's measured 300px desktop frame; Lemon mobile dimensions are not yet verified. Keep the Norato target ≥48px.
+- Scope gate: Lemon documents eight Input-family controls while Norato exports a generic text adapter and a separate textarea adapter. User clarification on whether all eight must be executable is pending; no scope-dependent implementation has started.
 ## 2026-10-31 — Select live playground and Lemon parity gap
 
 - Finding: the catalog labeled the adapter as implemented without describing its scope, and the detail page had only disabled examples.
