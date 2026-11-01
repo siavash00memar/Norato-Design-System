@@ -7,4 +7,4 @@
 - [x] Equal viewport desktop/mobile browser comparisons are recorded: 1195×765 desktop and 390×844 mobile.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass; build warning reports the 640.11KB minified JS bundle.
 - [x] Request checklist, Radio contract and delivery ledger reflect browser evidence and the remaining full matrix/screen-reader work.
-- [ ] Change is pushed to GitHub and remote SHA is verified.
+- [x] Change is pushed to GitHub; `origin/master` matches `6091212df5d1d800d76b4a51524eb1883f192198`.

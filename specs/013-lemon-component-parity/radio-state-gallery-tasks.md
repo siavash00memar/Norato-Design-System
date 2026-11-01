@@ -5,4 +5,4 @@
 3. [x] Implement Radio-only text cards with eight preserved entries and tokenized status accents.
 4. [x] Compare desktop/mobile rendering and verify count, RTL, responsive bounds, and no distortion; check regressions.
 5. [x] Run token/catalog/type/build/diff gates and update DoD/request evidence; all pass, bundle-size warning recorded.
-6. [ ] Commit, push, and verify the remote revision.
+6. [x] Commit `6091212` and push; `origin/master` SHA was verified equal to local HEAD.

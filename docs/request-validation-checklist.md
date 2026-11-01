@@ -798,5 +798,5 @@
 - [x] Mobile: viewport برابر 390×844؛ Lemon در دو ستون کارت‌های 158.5×88.6px دارد؛ Norato دو ستون با عرض 167.5px و ارتفاع 68.4–87.6px دارد. عرض سند 375px، جهت RTL، هشت کارت و نبود overflow افقی بررسی شد.
 - [x] رگرسیون: Button با 11 نمونهٔ generic و Select با 18 کارت اختصاصی حفظ شدند؛ انتخاب Radio در playground کار کرد و مقدار اولیهٔ ماهانه بازگردانده شد. ردیف‌های قابل کلیک 48px هستند.
 - [x] گیت‌های `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle برابر 640.11KB دارد و هشدار بیش از 500KB می‌دهد.
-- [ ] commit و push این تغییر و تأیید SHA روی remote باقی است.
+- [x] commit `6091212` به GitHub push شد و `origin/master` با HEAD محلی برابر است.
 - [ ] DoD کامل Radio هنوز باز است: ماتریس بصری 20 ترکیب و screen-reader مستقل بررسی نشده‌اند.

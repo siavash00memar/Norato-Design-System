@@ -543,4 +543,5 @@
 - **Correction:** added a Radio-only static text-card renderer with all eight Radio Button/Radio Field states, family captions, Persian descriptions, semantic Norato status accents, and an explicit two-column mobile rule. Kept Radio adapter and playground unchanged.
 - **Browser evidence:** same desktop viewport 1195×765; Norato three columns at 174.7px card width and 71.6–90.8px height vs Lemon's four columns at 151.5×88.6px. Same mobile viewport 390×844; Norato two columns at 167.5px width, 68.4–87.6px height, RTL and 375px document width vs Lemon's two columns at 158.5×88.6px. Eight cards, no pill artwork, no horizontal overflow. Button's 11 generic state cards and Select's 18 specialized cards remain intact; playground selection changed and was restored.
 - **Prevention:** compare the actual States section (not only the top specimen) at desktop and mobile; inspect all responsive overrides, including narrower breakpoints, and verify component-specific gallery geometry and entry count.
-- **Remaining:** production gates and remote push must pass; Radio's full visual 20-cell matrix and independent screen-reader run remain open.
+- **Delivery:** production gates passed; commit `6091212` is pushed and remote `master` matches local HEAD.
+- **Remaining:** Radio's full visual 20-cell matrix and independent screen-reader run remain open.
