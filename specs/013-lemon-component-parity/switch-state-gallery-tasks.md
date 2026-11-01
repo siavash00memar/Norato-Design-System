@@ -8,3 +8,4 @@
 6. [ ] Commit, push, and verify the remote revision.
 7. [x] Run token/catalog/TypeScript/build and whitespace gates; document build warning and remaining family-level DoD.
 8. [x] Review shared-renderer regressions on Radio, Select and Button routes in the browser.
+9. [x] Commit and push the gallery update; remote revision verified as `6ef28fcdabb9af28a0524e3bacda6f12001ca33b`.

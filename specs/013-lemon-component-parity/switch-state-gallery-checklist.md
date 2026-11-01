@@ -3,9 +3,9 @@
 - [x] Lemon title/description hierarchy is present; generic pill artwork is absent.
 - [x] Exactly eight entries remain: five Switch and three Switch Field, with accurate Persian descriptions.
 - [x] Norato semantic accents, RTL, static content, responsive layout, no overflow, and no stretched artwork are verified.
-- [ ] Equal viewport desktop/mobile comparison and Button/Select/Radio/Switch regressions are recorded.
-- [ ] Token/catalog/TypeScript/build/diff gates pass; warning is reported.
-- [ ] Request checklist, Switch contract and delivery ledger reflect actual evidence and remaining limitations.
-- [ ] Commit is pushed and the remote SHA is verified.
+- [x] Equal viewport desktop/mobile comparison and Button/Select/Radio/Switch regressions are recorded; full family matrix, pointer-hover, and independent screen-reader remain open.
+- [x] Token/catalog/TypeScript/build/diff gates pass; build reports a 641.48KB bundle warning above 500KB.
+- [x] Request checklist, Switch contract and delivery ledger reflect actual evidence and remaining limitations.
+- [x] Commit `6ef28fc` is pushed and remote `master` matches local HEAD.
 - [x] Token/catalog/TypeScript/build/diff gates pass; build reports the existing >500KB bundle warning.
 - [x] Button, Select, Radio, and Switch rendered pages retained their expected catalog/gallery content in browser review.
