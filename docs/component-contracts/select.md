@@ -33,7 +33,7 @@
 
 ## Sizes
 
-- ابعاد ثبت‌شدهٔ مرجع بصری: Small 32px، Medium 40px، Large 48px، XLarge 56px. در adapter اجرایی Norato حداقل هدف تعاملی ۴۸px رعایت می‌شود؛ ارتفاع مشاهده‌شدهٔ کنترل به‌ترتیب ۴۸، ۴۸، ۴۸ و ۵۶px است.
+- ابعاد ثبت‌شدهٔ مرجع بصری: Small 32px، Medium 40px، Large 48px، XLarge 56px. در adapter اجرایی Norato حداقل هدف تعاملی ۴۸px رعایت می‌شود؛ ارتفاع مشاهده‌شدهٔ کنترل Label Outside به‌ترتیب ۴۸، ۴۸، ۴۸ و ۵۶px است. Label Inside به دلیل چیدمان عمودی label/value در هر چهار اندازه ۵۶px است. Multi Select در نمایش Chips و Summary همین هندسه را حفظ می‌کند.
 
 ## States
 
@@ -70,7 +70,7 @@
 
 ## Accessibility
 
-با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده.
+با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده. گزینهٔ فعال با حلقهٔ focus-visible دوپیکسلی، offset چهارپیکسلی و هالهٔ semantic رنگ Norato مشخص می‌شود.
 
 ### قاعدهٔ عمومی Focus در Norato
 

@@ -70,6 +70,7 @@
 .norato-select__group{display:grid;gap:var(--norato-space-1)}
 .norato-select__group-label{padding:var(--norato-space-2) var(--norato-space-3);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size);font-weight:var(--norato-type-body-bold-weight)}
 .norato-select__option{position:relative;display:flex;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border-radius:var(--norato-radius-tag);outline:none;cursor:pointer}
+.norato-select__option:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .norato-select__option[data-highlighted]{background:var(--norato-color-surface-subtle)}
 .norato-select__option[data-state="checked"]{color:var(--norato-color-brand-blue);font-weight:var(--norato-type-body-bold-weight)}
 .norato-select__option[data-disabled]{color:var(--norato-color-text-disabled);cursor:not-allowed}

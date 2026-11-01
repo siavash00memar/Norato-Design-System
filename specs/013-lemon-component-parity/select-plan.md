@@ -5,7 +5,8 @@
 3. Add the same composition as mature sibling frames, scoped to Select, and reuse the existing `sample-checkbox-state` status marker.
 4. Preserve `NoratoSelect` and playground behavior; do not edit adapter code unless browser evidence reveals a defect that can be addressed within the contract.
 5. Capture equal-viewport Lemon/Norato evidence, measure frame/control/option geometry, and inspect RTL, keyboard, multi-select staging, state and accessibility semantics.
-6. Run request checklist, token/catalog checks, Vue typecheck/build and diff check; update contract, parity tracker, error log and checklist evidence.
+6. Ensure keyboard-focused options use the semantic 2px focus ring; the first interaction audit found `outline:none` on the option with no replacement. The CSS and keyboard selection correction is complete; forced mobile open-menu capture and visual matrix remain open.
+7. Run request checklist, token/catalog checks, Vue typecheck/build and diff check; update contract, parity tracker, error log and checklist evidence.
 
 ## Vercel configuration audit
 
