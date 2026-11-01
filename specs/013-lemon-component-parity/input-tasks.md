@@ -9,4 +9,4 @@
 7. [x] Add real playground coverage, contract-specific input family galleries and reviewed examples/exports.
 8. [ ] Browser-review desktop/mobile Lemon parity, all state behavior, keyboard, RTL/LTR and accessibility; desktop/mobile geometry and primary amount/OTP behavior were checked, but coverage is incomplete.
 9. [x] Run token/catalog/typecheck/build/diff gates; update docs/catalog/readiness and log remaining browser evidence.
-10. [ ] Commit, push and verify GitHub parity.
+10. [x] Commit `663af1f` pushed; local `HEAD` and `origin/master` match.

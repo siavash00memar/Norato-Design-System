@@ -18,7 +18,7 @@
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass; build emits a 673.58KB main chunk warning above 500KB.
 - [ ] Request checklist, contract, catalog maturity and family ledger truthfully record remaining work.
-- [ ] Every change is committed and pushed; local HEAD equals `origin/master`.
+- [x] Implementation checkpoint commit `663af1f` was pushed to GitHub; local `HEAD` and `origin/master` both resolve to `663af1f`.
 
 ## Remaining evidence
 
