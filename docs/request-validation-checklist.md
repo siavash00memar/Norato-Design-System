@@ -960,3 +960,9 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 records/contracts), Vue typecheck and production build pass. Build emits Vite advisory for its 726.55KB JS chunk. `git diff --check` ran without whitespace errors (Git emitted line-ending normalization notices).
 - [x] GitHub push and `git ls-remote` parity both resolve to `2c399b0f5995dbc3a33dee0cf59c1ce8eaac25e6`.
 - [ ] File Upload DoD stays open until real chooser/drag/validation behavior is browser-verified.
+## File Upload validator extraction — 2026-11-01
+
+- [x] Current repository state inspected; existing Lemon comparison, Button-style page, browser behavior record, and unresolved native-file browser checks were reviewed before changes.
+- [x] Extracted file type/size/count decisions into a pure typed validator used by the Vue adapter; malformed numeric limits now fail closed and an empty accept value follows the native unrestricted convention.
+- [x] Added Node built-in tests for accepted extension/MIME/wildcard files, exact size boundary, mixed valid/rejected batches, each rejection reason, count capacity, single mode, empty accept, and invalid limits.
+- [ ] Browser checklist still fails for native chooser selection, drag payload and actual rendered validation feedback because the available CUA browser context cannot inject files or create browser File/DataTransfer objects. Existing browser layout checks remain valid; this request's full browser checklist is not claimed as passed.

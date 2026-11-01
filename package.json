@@ -5,7 +5,8 @@
   "packageManager": "pnpm@10.0.0",
   "scripts": {
     "check:tokens": "node scripts/check-tokens.mjs",
-    "check:catalog": "node scripts/check-component-catalog.mjs"
+    "check:catalog": "node scripts/check-component-catalog.mjs",
+    "test:file-upload": "node --experimental-strip-types --test tests/contract/file-upload-validation.test.mjs"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17",

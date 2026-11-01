@@ -634,3 +634,10 @@
 - **Finding:** a local file selection could be misread as a successful upload.
 - **Correction:** distinguish `selected` from consumer-controlled `uploading`, `complete`, and `error`; show progress only when supplied by the host. The playground exposes explicit state transitions without sending a fake request.
 - **Prevention:** test selection/transport boundaries independently and verify status copy against the controlled model.
+## ERR-062 — File Upload validation had no executable boundary coverage (2026-11-01)
+
+- **Component:** File Upload validator
+- **Finding:** type/size/count rules were private to the Vue SFC, and native file injection is unavailable in the current browser automation context. The actual validation decisions could not be verified independently.
+- **Correction:** extract a pure typed validator and add Node built-in tests for extension/MIME/wildcard/empty accept, exact size boundary, partial acceptance, all rejection reasons, remaining count, single mode, and invalid numeric limits. Invalid maximum counts now fail closed.
+- **Evidence:** `pnpm test:file-upload` passes five tests; Vue typecheck/build and repository gates are run with this change. This does not certify native chooser, real drag/drop or screen-reader behavior.
+- **Prevention:** keep validation decision functions independent of UI events and test boundary conditions even when browser file injection is unavailable.

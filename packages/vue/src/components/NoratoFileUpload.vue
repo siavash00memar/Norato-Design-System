@@ -4,6 +4,7 @@ export default { components: { NoratoFileItem } }
 </script>
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { validateNoratoFiles } from './fileUploadValidation'
 
 export type NoratoUploadStatus = 'selected' | 'uploading' | 'complete' | 'error'
 export type NoratoUploadItem = { id: string; file?: File; name: string; size: number; type: string; status: NoratoUploadStatus; progress?: number; errorText?: string }
@@ -20,18 +21,15 @@ const rejections = ref<NoratoRejectedFile[]>([])
 const effectiveError = computed(() => props.errorText || (rejections.value.length ? rejections.value.map(item => item.reason === 'type' ? 'نوع فایل پشتیبانی نمی‌شود.' : item.reason === 'size' ? 'حجم فایل از حد مجاز بیشتر است.' : 'تعداد فایل‌ها از حد مجاز بیشتر است.').join(' ') : ''))
 const helpId = computed(() => `${props.id}-help`)
 const errorId = computed(() => `${props.id}-error`)
-const acceptedTypes = computed(() => props.accept.split(',').map(value => value.trim().toLowerCase()).filter(Boolean))
-const matches = (file: File) => acceptedTypes.value.some(type => type.startsWith('.') ? file.name.toLowerCase().endsWith(type) : type.endsWith('/*') ? file.type.toLowerCase().startsWith(type.slice(0, -1)) : file.type.toLowerCase() === type)
 function process(files: File[]) {
   if (props.disabled || !files.length) return
-  const accepted: File[] = []
-  const rejected: NoratoRejectedFile[] = []
-  const limit = props.multiple ? Math.max(0, props.maxFiles - props.modelValue.length) : 1
-  for (const file of files) {
-    const reason = !matches(file) ? 'type' : file.size > props.maxSize ? 'size' : accepted.length >= limit ? 'count' : undefined
-    if (reason) rejected.push({ file, reason })
-    else accepted.push(file)
-  }
+  const { accepted, rejected } = validateNoratoFiles(files, {
+    accept: props.accept,
+    maxSize: props.maxSize,
+    maxFiles: props.maxFiles,
+    multiple: props.multiple,
+    currentCount: props.modelValue.length,
+  })
   if (!props.multiple && accepted.length) {
     for (const item of props.modelValue) emit('remove', item)
   }

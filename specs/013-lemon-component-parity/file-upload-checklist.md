@@ -12,3 +12,4 @@
 - [x] Contract, catalog, package exports, usage example, primitive map, Figma rules, task log, request checklist and error log are synchronized.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Vite reports the 726.55KB JavaScript chunk advisory; independent screen-reader review remains open.
 - [ ] Browser DoD remains open until real file picker/drop/validation behavior is verified; GitHub parity is confirmed at `2c399b0f5995dbc3a33dee0cf59c1ce8eaac25e6`.
+- [x] Pure validator unit tests cover extension/MIME/wildcard/empty accept, exact size boundary, partial batches, type/size/count reasons, remaining capacity, single mode, and invalid numeric limits. This proves decision logic only; native picker and drag/drop browser evidence remain open.
