@@ -5,7 +5,9 @@
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی، یک فیلد ایمیل با برچسب و متن راهنما در قاب نقطه‌دار شیشه‌ای و marker حالت Default است؛ ترکیب از Lemon و رنگ/تایپوگرافی از Norato می‌آید. عرض فیلد حداکثر ۳۲۴px است، اما ارتفاع target آن حداقل ۴۸px می‌ماند. نمونهٔ اجرایی جداگانه با `NoratoField` مقدار، خطا، الزامی، غیرفعال و بارگذاری را نمایش می‌دهد. نمونهٔ ایمیل صرفاً مرجع بصری است؛ دامنهٔ adapterهای اختصاصی هشت‌گانه هنوز در مرحلهٔ Clarify است.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحه، یک فیلد ایمیل با برچسب و متن راهنما در قاب نقطه‌دار شیشه‌ای و marker حالت Default است؛ ترکیب از Lemon و رنگ/تایپوگرافی از Norato می‌آید. عرض فیلد حداکثر ۳۲۴px است، اما ارتفاع target آن حداقل ۴۸px می‌ماند. Playground اجرایی زیر همان preview هشت adapter را نشان می‌دهد. `NoratoField` همچنان برای سازگاری نسخه‌های پیشین در دسترس است.
+
+
 
 ## Overview
 
@@ -57,6 +59,19 @@
 - **Search Input — 20 variant:** جستجوی مستقل با میانبر ⌘K و دکمه‌ی پاک کردن. ابعاد/حالت‌ها: Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Typing، Loading، Disabled
 
 ## Usage
+
+### Vue adapters
+
+- `NoratoTextInput`: text field, label placement, native text attributes and common field states.
+- `NoratoPasswordInput`: controlled visibility and caller-provided strength (`empty|weak|fair|good|strong`).
+- `NoratoPhoneInput`: LTR phone entry and configurable calling code (default `+98`).
+- `NoratoOtpInput`: 4/5/6 cells, sequential entry, paste, Backspace and directional arrows.
+- `NoratoTextarea`: legacy export with row/character limit, read-only and success support.
+- `NoratoNumberInput`: bounded native numeric entry plus 48px increment/decrement actions.
+- `NoratoAmountInput`: canonical numeric model, Persian digit grouping, Persian amount words and configurable currency (default `تومان`).
+- `NoratoSearchInput`: search input, clear action and optional Ctrl/Cmd+K shortcut (`shortcut` defaults to true).
+
+Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `helperText`, `errorText`, `successText`, `required`, `disabled`, `loading`, `readOnly`, `dir`, `size` and `labelPlacement` where applicable. `NoratoField` remains exported as a backward-compatible generic adapter.
 
 ### راهنمای کاربرد Norato
 

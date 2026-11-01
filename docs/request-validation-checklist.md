@@ -863,3 +863,13 @@
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از اصلاح قرارداد موفق‌اند؛ chunk اصلی 646.51KB و بالاتر از هشدار 500KB است.
 - [ ] DoD کامل Switch بسته نیست؛ صفحه‌خوان مستقل و اندازه‌گیری واقعی focus ring و بررسی ماتریس در موبایل باز هستند.
 - [x] commit `bbb95f0` با ماتریس ۳۶ سلولی و شواهد فعلی به `origin/master` push شد؛ HEAD محلی و remote برابرند.
+
+## Input — Lemon visual comparison and eight-adapter DoD progress (2026-11-01)
+
+- [x] Reviewed actual `#component-input` render in the local Vue app and live Lemon reference at matching desktop 1280×900 and mobile 390×844 viewport sizes. Top specimen retains the single email input, helper, Default marker, dotted/glass frame, Norato color palette and now includes the trailing email icon.
+- [x] Desktop Norato frame/field: 584×288px and 324×49.6px; mobile: 320×288px and 310.4×49.6px. Lemon mobile frame/field: 327.2×300px and 321.4×41px. Norato's larger control target remains at least 48px; its dimensions are column-constrained rather than vertically stretched.
+- [x] Mobile Input family gallery renders eight recognizable subtype specimens with no internal/document horizontal overflow; document width is 375px at a 390px viewport. RTL document language/direction are `fa`/`rtl`.
+- [x] Browser interactions: password show/hide; phone `+98`; OTP digit entry, full paste, arrows and Backspace focus; Persian amount entry/grouping/words (`۱۲۳۴۵` → `۱۲٬۳۴۵`); number increment and keyboard bounds (`98→99`, `99→99`); Search clear and Ctrl+K focus without stealing focus from another input; textarea max length/counter (`179→180`) and vertical resize.
+- [x] Shared playground states: all eight controls disable for disabled/loading; eight live loading messages and eight error alerts were present; all error controls expose `aria-invalid`; action buttons measure 48×48px; keyboard-focused password action has visible outline with 4px offset.
+- [x] Default preview restored after interactions; browser console had no errors. `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue typecheck) and `git diff --check` passed. Production JS main chunk is 673.58KB and Vite reports its >500KB advisory.
+- [ ] Full size/state matrices, OTP lengths 4/5, stacked Number layout and independent screen-reader review remain open in `specs/013-lemon-component-parity/input-checklist.md`. GitHub push is pending the current change checkpoint.

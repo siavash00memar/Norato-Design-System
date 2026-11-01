@@ -260,6 +260,26 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Variants'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <div v-else-if="name === 'Input'" class="input-family-matrix" aria-label="نمونه‌های دیداری هشت زیرنوع Input" aria-hidden="true" inert>
+        <article v-for="entry in entries" :key="entry.id" class="input-family-card" :data-family="entry.label.toLowerCase()">
+          <header><strong>{{ entry.label }}</strong><small>{{ entry.detail.match(/\d+ variant/i)?.[0] || 'Input family' }}</small></header>
+          <div class="input-family-control" :data-invalid="/error/i.test(entry.detail) || undefined">
+            <span class="input-family-label">{{ entry.label.includes('Phone') ? 'شمارهٔ تلفن' : entry.label.includes('OTP') ? 'کد تأیید' : entry.label.includes('Amount') ? 'مبلغ' : entry.label.includes('Search') ? 'جست‌وجو' : entry.label.includes('Text Area') ? 'توضیحات' : 'نام' }}</span>
+            <div class="input-family-field">
+              <span v-if="entry.label.includes('Phone')" dir="ltr">+۹۸</span>
+              <span v-if="entry.label.includes('OTP')" class="input-family-otp"><i>۴</i><i>۸</i><i /><i /><i /><i /></span>
+              <span v-else-if="entry.label.includes('Number')" class="input-family-stepper">−　+</span>
+              <span v-else-if="entry.label.includes('Text Area')" class="input-family-lines">متن نمونه</span>
+              <span v-else class="input-family-placeholder" dir="auto">{{ entry.label.includes('Password') ? '••••••••' : entry.label.includes('Amount') ? '۱٬۲۵۰٬۰۰۰ تومان' : entry.label.includes('Search') ? 'عبارت را جست‌وجو کن' : entry.label.includes('Phone') ? '۹۱۲ ۳۴۵ ۶۷۸۹' : 'مقدار را وارد کن' }}</span>
+              <span v-if="entry.label.includes('Password')" class="input-family-action">◉</span>
+              <span v-if="entry.label.includes('Search')" class="input-family-action">⌕</span>
+            </div>
+            <small v-if="entry.label.includes('Amount')" class="input-family-help">یک میلیون و دویست و پنجاه هزار تومان</small>
+          </div>
+          <div v-if="entry.axes.length" class="variant-axes"><div v-for="axis in entry.axes" :key="axis.name" class="variant-axis"><b dir="ltr">{{ axis.name }}</b><span v-for="value in axis.values" :key="value" dir="auto">{{ value }}</span></div></div>
+          <span class="visual-kind">نمونهٔ ایستا؛ API اجرایی در Vue adapters</span>
+        </article>
+      </div>
       <div v-else-if="name === 'Radio Button'" class="radio-matrix" aria-label="ماتریس دیداری Radio Button" aria-hidden="true" inert>
         <article v-for="state in radioMatrixStates" :key="state.id" class="radio-matrix-card" :data-state="state.kind">
           <header class="radio-matrix-heading"><strong>{{ state.label }}</strong><span>Radio Button</span></header>
@@ -349,9 +369,10 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
-      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
+      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
-          <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
+          <div v-if="name === 'Input'" class="input-state-sample" :data-state="stateKind(entry)" aria-hidden="true" inert><small>{{ entry.detail }}</small><i><b>{{ /otp/i.test(entry.detail) ? '• • • •' : /password/i.test(entry.detail) ? '••••••' : /amount/i.test(entry.detail) ? '۱٬۲۵۰٬۰۰۰' : /search/i.test(entry.detail) ? 'جست‌وجو' : 'نمونهٔ مقدار' }}</b><span v-if="/loading/i.test(entry.label)">◌</span><span v-else-if="/error|invalid/i.test(entry.label)">!</span></i></div>
+          <div v-else-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
           <template v-if="name === 'Select'">

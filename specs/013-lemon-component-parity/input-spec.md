@@ -3,7 +3,7 @@
 **Visual reference:** `https://lemonui.ir/#input` (inspected 2026-11-01)
 **Governing project:** `.specify/memory/constitution.md` v1.2.0
 **Norato contract:** `docs/component-contracts/input.md`
-**Current status:** scope clarified by user as eight independent executable Vue adapters; Phone, Amount and Password API details remain in Clarify.
+**Current status:** eight independent executable Vue adapters specified and clarified; existing `NoratoField` remains backward-compatible and `NoratoTextarea` remains exported.
 
 ## User need
 
@@ -14,7 +14,7 @@ The Norato Input page should make its text-entry family understandable and usabl
 - Lemon describes eight related controls: Text, Password, Phone, OTP, Text Area, Number, Amount and Search.
 - Lemon uses a single email-field preview with label, glass field, email icon, placeholder and helper text, inside a 636×300px stage at desktop 1920×919; the field's visible shell is about 324×41px.
 - Lemon documents 264 variants across the family, including four display sizes, text label placement, control-specific states, and 4/5/6-digit OTP.
-- Norato's page has the Button-style nine-section shell and a live generic `NoratoField` playground. The isolated preview refinement now measures 584×288px (column-constrained) with a 324×48px field at desktop 1920×863; at mobile 390×844 it measures 320×288px with a 310×48px field and 375px document width. Other documented variants are generic reference cards, not executable APIs.
+- Norato's page uses the Button-style nine-section shell, an inert single-field preview and a live playground for all eight adapters. In matching 1280×900 desktop viewports the frame is 584×288px (column-constrained) with a 324×49.6px field; at matching 390×844 mobile viewports it measures 320×288px with a 310.4×49.6px field and 375px document width. The family gallery now has recognizable per-subtype field specimens; state cards remain inert visual references.
 - Norato's semantic contract requires 48px minimum interaction targets, so Lemon's 32/40px sizes may describe visual density only; real controls remain 48px or larger.
 
 ## Family contents in the reference
@@ -38,6 +38,19 @@ The Norato Input page should make its text-entry family understandable and usabl
 - **IN-06:** For every implemented control, verify associated labels, error descriptions, focus, keyboard, disabled/loading behavior, and minimum target sizes.
 - **IN-07:** Run project token/catalog/TypeScript/build gates and compare desktop/mobile browser renders with Lemon before closing DoD.
 
-## Open decision
+## Public adapter contract
 
-The user selected eight independent executable adapters. This materially changes API, behavior, accessibility and task scope. Phone country-code behavior, Amount currency, and Password strength source remain open Clarify items. **Specify gate: drafted; runtime scope selected, adapter details not yet fully specified.**
+- `NoratoTextInput`: controlled text field, label placement (`inside|outside`), four sizes, helper/error/required/disabled/loading/success/read-only states, optional leading/trailing affordances, and `dir`.
+- `NoratoPasswordInput`: controlled password field, visibility toggle, four sizes, common field states, strength bar driven by the caller's `strength` prop (`empty|weak|fair|good|strong`); never derive strength internally.
+- `NoratoPhoneInput`: controlled telephone string, fixed configurable calling-code prefix (default `+98`, no country picker), four sizes, common field states, LTR number entry while preserving RTL label/helper.
+- `NoratoOtpInput`: controlled code, length 4/5/6, four sizes, common states; sequential typing, full-code paste, Backspace and arrow navigation; no automatic submission.
+- `NoratoTextarea`: retain existing export; add controlled character limit/counter, four sizes, common states, and a vertical resize affordance.
+- `NoratoNumberInput`: controlled numeric value, `stepper|stacked` presentation, min/max/step, four sizes and common field states; native keyboard behavior and increment/decrement actions use numeric constraints.
+- `NoratoAmountInput`: controlled numeric amount, localized grouping and Persian words, configurable currency with default `تومان`, four sizes and common field states; serialization is a canonical numeric string without display separators.
+- `NoratoSearchInput`: controlled query, clear action, loading/disabled states, four sizes and a platform-aware Ctrl/Cmd+K focus shortcut; preserve ordinary text editing and do not intercept while another editable control owns input.
+
+Common behavior: every true interactive button (visibility/step/clear) is at least 48×48px; the 32/40px reference sizes are visual densities only. Labels connect to native controls, helper/error IDs connect through `aria-describedby`, error sets `aria-invalid`, disabled/read-only/loading have native semantics, and Focus remains visible. Number, amount, OTP and phone entry use LTR within the RTL page; Persian labels and helper content remain RTL. Every separate adapter is publicly exported and has a reviewed Vue example.
+
+## Decision status
+
+The user selected eight independent executable adapters and delegated the control-specific defaults to Lemon/Norato conventions. Decisions and adapter behavior/API are recorded in `input-clarify.md` and the public adapter contract above. **Specify gate: passed. Implementation scope is eight adapters plus Input family galleries and playground.**
