@@ -134,7 +134,8 @@ const handleSearchKeydown = (event: KeyboardEvent) => {
   }
   if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
     event.preventDefault()
-    const enabledItems = [...document.querySelectorAll<HTMLElement>(`#${CSS.escape(props.id)}-content [data-norato-select-option]:not([data-disabled])`)]
+    const content = searchInput.value?.closest('.norato-select__content')
+    const enabledItems = [...(content?.querySelectorAll<HTMLElement>('[data-norato-select-option]:not([data-disabled])') ?? [])]
     const target = event.key === 'ArrowDown' ? enabledItems[0] : enabledItems.at(-1)
     target?.focus()
   }

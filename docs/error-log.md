@@ -380,6 +380,8 @@
 
 ## 2026-11-01 — Select Reka adapter browser review
 
+- Defect: search ArrowDown/ArrowUp queried a caller-supplied content id that Reka replaced at render time, so option focus could fail. Changed the lookup to the search input's containing menu; mobile browser now moves focus to the first enabled option with ArrowDown.
+
 - New implementation: Reka-backed Select with grouped glass menu, search and staged multi-selection. Browser verified single selection after filtering with ArrowDown/Enter, plus multi-selection Cancel and Confirm; the committed value did not change before Confirm.
 - Focus defect: the first implementation focused an option before the search input. Scheduling focus after the popup render made the search input the focused element on open.
 - Remaining: full mobile and state-by-state DoD review; do not treat passing build or these focused interactions as complete parity.
