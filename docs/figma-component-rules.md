@@ -257,6 +257,7 @@
 
 - Keep multi-selection compact on one line: show the first selected label and a localized `+N` count, not a wrapping stack of chips. Chips remain visual tokens below 48px; the field and its clear/chevron actions retain at least 48px targets.
 - Keep the suggestion menu anchored 8px below the field, matching text bold, and every semantic brand/focus color on Norato tokens. Small/Medium Lemon sizes remain 48px interactive controls to satisfy Norato's global target rule; XLarge is 56px.
+- The inert top specimen uses one centered field, the Lemon-like dotted glass frame, and an upper-right `Default` marker. Reuse the semantic Norato blue/yellow wash and preview tokens; never depend on white glass-line color for dots on Norato's light glass background. Keep the specimen separate from the live playground.
 
 ## Button playground presentation (2026-10-28)
 

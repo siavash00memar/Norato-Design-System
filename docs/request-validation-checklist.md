@@ -686,6 +686,24 @@
 - [x] production build هشدار bundle بالای ۵۰۰KB داد (518.24KB minified)، ولی build موفق بود.
 - [ ] DoD همچنان باز است: صفحه‌خوان واقعی و review همهٔ variantها/حالت‌ها و تمام اکشن‌های focus دیده نشده‌اند؛ کوچک‌شدن frameها و کمبودهای بصری با شواهد تازه در نوبت بعد بازبینی شوند.
 
+## ادامهٔ DoD Combobox — اصلاح نمونه و مرور میان‌مرحله‌ای (2026-11-01)
+
+- [x] صفحه‌های Lemon و Norato در همان پنجره و viewport 1195×765 مقایسه شدند: Lemon قاب 636×300px، field shell برابر 324×68.2px و body برابر 324×41px؛ Norato قاب 540×288px، field برابر 310×50px و برچسب بیرونی 310×20.8px. ستون محتوا در Norato باریک‌تر است؛ قاب محدود می‌ماند و کشیدگی ندارد.
+- [x] کمبود marker و نقطه‌ها در screenshot واقعی تأیید شد. `Default` به نمونهٔ inert اضافه شد؛ نقطه‌ها از mix 14٪ توکن آبی semantic Norato ساخته شدند. مرورگر پس از اصلاح قاب نقطه‌دار، wash زرد/آبی Norato، marker، field مرکزی 310×50px و قاب 540×288px را نشان داد.
+- [x] نمونه از playground جداست و DOM صفحه Preview، Vue، و همهٔ ۹ بخش قراردادی را دارد.
+- [x] ۱۶ حالت اندازه‌گیری‌شده (single/multi × label outside/inside × چهار اندازه)، در viewport فعلی: بیرون 50/50/50/58px؛ داخل 56/56/56/64px؛ هدف تعاملی 48px و XLarge 56px. RTL درست و عرض سند 1180px در viewport 1195px بود.
+- [x] منوی اخیر دو گزینه دارد؛ جست‌وجوی فارسی متن تطبیق را Bold کرد؛ منوی نتایج هم‌عرض 540px، 7.9px زیر فیلد و گزینه‌ها 48px بود. ArrowDown/Enter انتخاب تکی، انتخاب Multi و نمایش تک‌چیپ + شمارنده، Clear، create/ثبت گزینهٔ جدید، empty و loading/سه skeleton/`aria-busy`/status بررسی شدند.
+- [x] required/error/`aria-required`/`aria-invalid`/`aria-describedby`/alert و disabled واقعی ورودی و trigger بررسی شد. Escape منو را بست و بعد از پاک‌کردن، مقدار و status خالی ماند.
+- [ ] DoD نهایی باز است: مقایسه و screenshot موبایل پس از اصلاح marker/dot، مرور کامل ماتریس بصری ۹۶ حالت، تمرین فوکوس تمام کنترل‌ها در هر حالت و screen-reader مستقل هنوز انجام نشده‌اند. این دور viewport واقعی موبایل نبود.
+- [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze قبل از اصلاح ثبت شد؛ اصلاح فقط بر نقص رندر مشاهده‌شده محدود ماند.
+
+## گزارش انتشار — Preview در Vercel (2026-11-01)
+
+- [x] تصویر Deployment بررسی شد: Production موفق است و یک Preview ناموفق.
+- [x] جزئیات Vercel برای دیپلوی ناموفق بررسی شد: `NEXT_NO_VERSION`؛ Vercel پروژهٔ Vite را با چارچوب Next.js پیکربندی کرده و نسخهٔ Next پیدا نکرده است.
+- [x] فهرست دیپلوی‌ها تطبیق داده شد: همان commit با شناسهٔ کوتاه `531c98e` یک دیپلوی `READY` جداگانه دارد؛ شکست Preview به معنی شکست Production نیست.
+- [ ] برای حذف تکرار خطا، تنظیم Framework Preset پروژه در Vercel باید روی Vite اصلاح شود؛ این تغییر تنظیمات هنوز انجام نشده است.
+
 ## گزارش این درخواست — Checkbox با مرجع Lemon (در جریان، 2026-11-01)
 
 - [x] Lemon Checkbox در desktop و mobile دیده شد؛ ترکیب‌بندی preview تک‌کنترلی، frame شیشه‌ای نقطه‌دار، چهار بخش Anatomy و ۳۶ variant ثبت شد.

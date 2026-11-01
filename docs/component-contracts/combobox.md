@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصری در ابتدای صفحه و playground اجرایی در بخش Vue نمایش داده می‌شود. adapter تکی/چندتایی، اندازه، جای برچسب، موارد اخیر، بارگذاری، ساخت گزینه و حالت خالی دارد؛ مقایسهٔ دقیق Lemon و DoD نهایی هنوز باز است.
+نمونهٔ بصری در ابتدای صفحه از قاب شیشه‌ای نقطه‌دار با یک Combobox مرکزی و marker ثابت `Default` استفاده می‌کند؛ قاب، نقطه‌ها و رنگ‌مایه‌ها از توکن‌های Norato می‌آیند. playground اجرایی جدا از این نمونه است. adapter تکی/چندتایی، اندازه، جای برچسب، موارد اخیر، بارگذاری، ساخت گزینه و حالت خالی دارد؛ ماتریس کامل بصری و DoD نهایی هنوز باز است.
 
 ## Overview
 
@@ -66,4 +66,4 @@ adapter حالت‌های Default، Hover، Typing، Filled، Error، Disabled،
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت. قاب از `--norato-combobox-preview-frame-inline-size`، `--norato-combobox-preview-frame-mobile-inline-size` و `--norato-combobox-preview-frame-min-block-size` استفاده می‌کند؛ نقاط و wash آبی/زرد از رنگ‌های semantic Norato ساخته می‌شوند.

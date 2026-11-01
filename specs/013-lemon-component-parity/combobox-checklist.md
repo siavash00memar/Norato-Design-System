@@ -1,0 +1,12 @@
+# Combobox — Checklist
+
+- [x] Constitution, Specify, Clarify and Plan gates recorded in sequence.
+- [x] Existing contract, implementation, playground, CSS and prior evidence inspected.
+- [x] Lemon/Norato desktop screenshot and frame/field/menu measurements recorded at a matching 1195×765 viewport. Mobile capture remains open.
+- [x] Single/multiple selection, all four sizes, inside/outside labels, clear, recent/loading/empty/create and error/disabled/required states were exercised in browser; the exhaustive combined visual gallery remains open.
+- [x] RTL, keyboard traversal, Enter/Escape, field/option focus behavior and ARIA state/description were checked in browser; independent screen-reader verification remains open.
+- [x] Existing frame token bounds preview to 288px high and 320px mobile width; current local desktop render is 540×288px with a 310×50px field (viewport 1195×765).
+- [x] Button-like Preview + Vue playground + nine contract sections and semantic token usage re-confirmed in the rendered page.
+- [x] Request checklist, contract, error log and family ledger updated with only observed results.
+- [ ] Token/catalog checks, Vue typecheck, production build and `git diff --check` pass.
+- [ ] Final DoD evidence is complete; remaining visual matrix, mobile recapture and independent screen-reader limitations are explicit.
