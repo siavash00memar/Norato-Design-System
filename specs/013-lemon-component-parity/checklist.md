@@ -13,10 +13,10 @@ Only check a line when the corresponding evidence was observed for that componen
 
 ## Select behavior acceptance checklist
 
-- [ ] Reka UI version and Vue peer compatibility verified; existing Vue package primitive search recorded.
+- [x] Reka UI 2.11.0 با Vue peer `>=3.4.0` و Vue پروژه `^3.5.0` سازگار است؛ primitiveهای SelectRoot/Content/Item در بستهٔ نصب‌شده بررسی شدند.
 - [ ] Controlled single-select opens a Norato-token glass popover; selection commits immediately.
-- [ ] Optional search filters choices, preserves groups, and reports an empty result.
+- [x] جست‌وجوی اختیاری گزینه‌ها را فیلتر می‌کند، گروه‌ها را نگه می‌دارد و برای نتیجهٔ خالی پیام status نشان می‌دهد؛ در مرورگر بررسی شد.
 - [ ] Multi-select supports chips/summary, option check state, pending selection, Confirm and Cancel.
-- [ ] Escape cancels an uncommitted multi-selection; keyboard navigation reaches enabled choices and skips disabled choices.
+- [ ] Escape تغییر ثبت‌نشدهٔ چندانتخابی را لغو کرد و ArrowDown از جست‌وجو به گزینه رسید؛ رد شدن از گزینهٔ غیرفعال با صفحه‌کلید هنوز جداگانه باید بررسی شود.
 - [ ] Four size variants, inside/outside label, RTL, required, error, disabled, loading and read-only are implemented with 48px minimum interactive targets.
 - [ ] Desktop/mobile browser DoD and technical gates pass; per-family status may be checked only after all rows above pass.

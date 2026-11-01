@@ -33,7 +33,7 @@
 
 ## Sizes
 
-- فیلدهای Select: Small 32px، Medium 40px، Large 48px، XLarge 56px.
+- ابعاد ثبت‌شدهٔ مرجع بصری: Small 32px، Medium 40px، Large 48px، XLarge 56px. در adapter اجرایی Norato حداقل هدف تعاملی ۴۸px رعایت می‌شود؛ ارتفاع مشاهده‌شدهٔ کنترل به‌ترتیب ۴۸، ۴۸، ۴۸ و ۵۶px است.
 
 ## States
 
