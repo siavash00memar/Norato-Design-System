@@ -627,3 +627,10 @@
 - **Correction:** add focus-leave dismissal to the wrapper while keeping focus transitions within the picker intact; retain capture-phase pointer/click outside checks.
 - **Browser evidence:** a real browser click on the outside reset action closed the popup, preserved focus on that action and left the controlled value at `14:30`; Escape closed and restored focus to the trigger.
 - **Prevention:** test outside dismissal with an actual pointer and keyboard focus transition, not only Escape or programmatic open/close.
+
+## ERR-061 — File Upload selected state could be confused with transfer completion (2026-11-02)
+
+- **Component:** File Upload adapters and playground
+- **Finding:** a local file selection could be misread as a successful upload.
+- **Correction:** distinguish `selected` from consumer-controlled `uploading`, `complete`, and `error`; show progress only when supplied by the host. The playground exposes explicit state transitions without sending a fake request.
+- **Prevention:** test selection/transport boundaries independently and verify status copy against the controlled model.

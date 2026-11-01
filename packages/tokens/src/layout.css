@@ -26,6 +26,15 @@
   --norato-time-picker-preview-frame-inline-size: 640px;
   --norato-time-picker-preview-frame-mobile-inline-size: 480px;
   --norato-time-picker-preview-frame-block-size: 288px;
+  --norato-file-upload-preview-frame-inline-size: 640px;
+  --norato-file-upload-preview-frame-mobile-inline-size: 320px;
+  --norato-file-upload-preview-frame-block-size: 288px;
+  --norato-file-upload-preview-inner-inline-size: 380px;
+  --norato-file-upload-preview-inner-block-size: 160px;
+  --norato-file-upload-preview-grid-size: 14px;
+  --norato-file-upload-preview-dot-size: 1px;
+  --norato-file-upload-tile-size: 112px;
+  --norato-file-upload-avatar-size: 96px;
   --norato-time-picker-preview-card-inline-size: 136px;
   --norato-time-picker-preview-card-block-size: 172px;
   --norato-time-picker-preview-cell-size: 22px;

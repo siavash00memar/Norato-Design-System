@@ -1,0 +1,9 @@
+# File Upload — source and implementation analysis
+
+- Lemon's live page contains the nine-section component page, a centered inner dropzone inside a bounded dotted-glass Default specimen, four component parts, LTR file names, and explicit click/keyboard alternatives to dragging.
+- Norato currently renders only a proposed inert text mock. No Vue adapter, upload queue, usage snippet or interactive playground exists.
+- Native file input is the only authoritative source for local files. The design-system adapter cannot safely infer remote transfer success or progress; consumers must control those states. Never fake transfer with a local timer.
+- Critical failure cases: silent type/size/count rejection, uploading states without a network operation, duplicated input selection, name direction reversal, drag-only affordance, nested interactive targets, disappearing error feedback, and image/tile aspect-ratio stretch.
+- Browser verification can validate chooser selection through temporary local files, accepted and rejected metadata, queue transitions, keyboard-triggered chooser, and controlled presentation. Actual upload transport is consumer-owned and outside this component's test scope.
+- The current CUA Playwright wrapper exposes click/press but no `setInputFiles` or FileChooser API, while its `evaluate` sandbox omits browser constructors (`File`, `DataTransfer`, `Event`). Therefore real chooser result, drag payload and rejection-limit cases cannot be certified in this run. The in-page controlled queue fixture covers presentation and action transitions, not actual file validation.
+- Primitive choice: native buttons and file inputs; no suitable installed upload primitive or need for a new dependency.

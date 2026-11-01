@@ -324,3 +324,11 @@
 - Support Columns, Columns 12h, Wheel, Slots and Range. Use five-minute increments by default; slot availability is explicit; range endpoints remain chronological.
 - Preserve at least 48px hit targets and compact visual geometry. The default desktop/mobile preview frame is content-column bounded; the picker panel is capped and repositions above/below the anchor to stay in view.
 - Use Norato's semantic blue for the selected cell with glass/surface/focus tokens; do not copy Lemon's black selection.
+
+## File Upload — 2026-11-02
+
+- Use Lemon's four-part hierarchy: Dropzone, File Item, Upload Tile, Avatar Upload. Keep the default specimen inert, with a bounded dotted-glass frame, upper-right Default marker and centered inner dropzone.
+- Retain Norato semantic colors and Persian RTL surroundings; keep file names and file metadata LTR.
+- Dropzone supports click, Enter/Space and drag/drop. Advertise formats and per-file maximum size before selection; keep invalid file reasons visible.
+- A locally selected file is not an uploaded file. Network transfer and truthful progress are controlled by the host application; preserve retryable error details.
+- Use fixed square/circular tile geometry and 48px minimum action targets; do not stretch preview parts to fill the available column.
