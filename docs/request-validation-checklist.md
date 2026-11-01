@@ -586,10 +586,12 @@
 ## گزارش این درخواست — Checkbox با مرجع Lemon (در جریان، 2026-11-01)
 
 - [x] Lemon Checkbox در desktop و mobile دیده شد؛ ترکیب‌بندی preview تک‌کنترلی، frame شیشه‌ای نقطه‌دار، چهار بخش Anatomy و ۳۶ variant ثبت شد.
-- [x] Norato Checkbox در مرورگر محلی desktop و 390×844 باز شد؛ نمونهٔ پیش‌نمایش 320×288px و سند 375px در برابر viewport 390px اندازه‌گیری شد، overflow افقی ندارد.
+- [x] مقایسه در viewport موبایل 390×844: Norato frame برابر 320×288px و عرض سند 375px است؛ سرریز افقی ندارد. Desktop در viewport یکسان 1280×900 نیز مقایسه شد؛ frame نوراتو 584×288px در ستون 584px و frame Lemon حدود 630×298px است؛ اختلاف عرض از محدودیت محتوای صفحهٔ Norato می‌آید.
+- [x] قاب، نشانگر Default/نقطهٔ سبز، glass token و border با DOM Lemon مقایسه شدند؛ چهار جزء Anatomy بعد از انتقال یادداشت اندازه به Sizes در مرورگر تأیید شد.
 - [x] صفحه ساختار ۹‌بخشی مستقل دارد؛ adapter Vue و playground اجرایی از specimen inert جدا هستند. وضعیت کاتالوگ به Adapted اصلاح شد تا DoD باز را پنهان نکند.
 - [x] browser behavior: Space، ۲px focus، کلیک کامل label، mixed/`aria-checked="mixed"`، RTL/control-right، target 48.78px، size 16/20، required، disabled و error/description association بررسی شد.
+- [x] مرور ماتریس: ۱۸ ترکیب مقدار false/true/mixed × اندازه 16/20 × حالت default/error/disabled؛ شش ترکیب فوکوس و چهار ترکیب hover برای false/true در هر دو اندازه بررسی شدند. Accessibility tree مقدار mixed را به‌صورت Value 2 و خطا را به‌عنوان پیام مرتبط اعلام می‌کند.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند؛ `pnpm --dir apps/vue build` موفق شد.
 - [x] build هشدار bundle اصلی بالای 500KB داد؛ build را متوقف نکرد.
-- [ ] ۳۶ ترکیب Lemon و صفحه‌خوان واقعی بررسی نشده‌اند؛ ماتریس کامل حالت‌ها و جزئیات اندازه‌گیری desktop پیش از بستن DoD باقی است.
+- [ ] ترکیب mixed+hover جداگانه با اشاره‌گر واقعی ثبت نشده و صفحه‌خوان واقعی اجرا نشده است؛ پیش از بستن DoD این دو مورد و بازبینی نهایی لازم‌اند.
 - وضعیت: پیشرفت تأییدشده؛ DoD Checkbox باز می‌ماند.

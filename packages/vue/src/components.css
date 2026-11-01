@@ -150,7 +150,7 @@
 .norato-choice-group[aria-invalid="true"] legend{color:var(--norato-color-status-error)}
 .norato-checkbox{display:grid;gap:var(--norato-space-1);min-inline-size:0;text-align:start}
 .norato-checkbox__row{display:flex;align-items:center;gap:var(--norato-space-2);inline-size:100%;min-inline-size:0;min-block-size:var(--norato-control-target-min);cursor:pointer}
-.norato-checkbox__input{appearance:none;display:grid;place-items:center;flex:none;inline-size:20px;block-size:20px;margin:0;border:var(--norato-border-thin) solid var(--norato-color-border-strong);border-radius:var(--norato-radius-checkbox);background:var(--norato-color-glass-surface-strong);cursor:pointer;transition:background-color var(--norato-motion-duration-press) var(--norato-motion-ease-out),border-color var(--norato-motion-duration-press) var(--norato-motion-ease-out),box-shadow var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-checkbox__input{appearance:none;display:grid;place-items:center;flex:none;inline-size:20px;block-size:20px;margin:0;border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-checkbox);background:var(--norato-color-glass-surface);cursor:pointer;transition:background-color var(--norato-motion-duration-press) var(--norato-motion-ease-out),border-color var(--norato-motion-duration-press) var(--norato-motion-ease-out),box-shadow var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
 .norato-checkbox[data-size="16"] .norato-checkbox__input{inline-size:16px;block-size:16px}
 .norato-checkbox__input:checked,.norato-checkbox__input:indeterminate{border-color:var(--norato-color-brand-blue);background:var(--norato-color-brand-blue)}
 .norato-checkbox__input:checked::after{content:"";inline-size:5px;block-size:9px;border-block-end:2px solid var(--norato-color-text-on-brand);border-inline-end:2px solid var(--norato-color-text-on-brand);transform:rotate(45deg) translate(-1px,-1px)}
@@ -158,7 +158,7 @@
 .norato-checkbox__input:hover:not(:disabled){border-color:var(--norato-color-brand-blue)}
 .norato-checkbox__input:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .norato-checkbox__copy{display:grid;gap:var(--norato-space-1);min-inline-size:0}
-.norato-checkbox__label{color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-regular-weight)}
+.norato-checkbox__label{color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-medium-weight)}
 .norato-checkbox__description{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
 .norato-checkbox__error{margin:0;color:var(--norato-color-status-error);font-size:var(--norato-type-body-small-size)}
 .norato-checkbox[data-invalid] .norato-checkbox__input{border-color:var(--norato-color-status-error)}

@@ -18,8 +18,6 @@
 - **Label** — برچسب کنار کنترل
 - **Description** — توضیح اختیاری؛ در حالت Error قرمز میشه
 
-مربع بصری ۱۶/۲۰px است؛ ردیف Checkbox Field حداقل ۴۸px ارتفاع لمسی/کلیک دارد. حالت mixed با رنگ و خط داخلی متمایز می‌شود.
-
 ## Variants
 
 - **Checkbox (30 variant):** Size: 16، 20؛ Checked: false، true، Indeterminate؛ State: Default، Hover، Disabled، Focus، Error
@@ -27,7 +25,7 @@
 
 ## Sizes
 
-- Checkbox: 16px یا 20px.
+- Checkbox: 16px یا 20px. خود مربع ۱۶/۲۰px می‌ماند و ردیف Checkbox Field حداقل ۴۸px ارتفاع لمسی/کلیک دارد؛ حالت mixed با رنگ و خط داخلی متمایز می‌شود.
 
 ## States
 

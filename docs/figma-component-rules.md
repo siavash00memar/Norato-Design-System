@@ -257,5 +257,7 @@
 ## Checkbox preview and field — 2026-11-01
 
 - The inert top preview uses Lemon's compact, centered single-field composition and dotted glass frame; Norato yellow/blue, border, radius, text and focus colors remain semantic Norato tokens.
+- Show the small `Default` label and green state dot in the upper-right corner of the sample frame. This marker belongs to the specimen, not the live checkbox API.
+- Use the Norato 78% glass token and default light border for the resting box; the checked state uses Norato blue rather than Lemon's black border/fill.
 - Keep the desktop frame at 640×288px and mobile maximum at 320×288px. Use the preview-specific 24px radius and 12px dot spacing; keep the top specimen to one field. Interactive state exploration stays in the live playground.
 - Keep Checkbox Field RTL with the control on the right, label/description to its left, whole row clickable, 48px minimum row height, and a 16px or 20px visual box.
