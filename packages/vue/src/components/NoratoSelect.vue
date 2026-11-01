@@ -66,6 +66,8 @@ const describedBy = computed(() => [
 const selectedLabels = computed(() => displayedValues.value
   .map((value) => props.options.find((option) => option.value === value)?.label)
   .filter((label): label is string => Boolean(label)))
+const visibleChipLabels = computed(() => selectedLabels.value.slice(0, 1))
+const hiddenChipCount = computed(() => Math.max(0, selectedLabels.value.length - visibleChipLabels.value.length))
 const valueLabel = computed(() => {
   if (!selectedLabels.value.length) return ''
   if (props.multiple && props.display === 'summary') return `${selectedLabels.value.length.toLocaleString('fa-IR')} مورد انتخاب شد`
@@ -182,13 +184,15 @@ watch(() => props.multiple, (multiple) => {
         <span v-if="labelPlacement === 'inside'" class="norato-select__inside-value">
           <span class="norato-select__inside-label">{{ label }}<span v-if="required" aria-hidden="true"> *</span></span>
           <span v-if="multiple && display === 'chips' && selectedLabels.length" class="norato-select__chips">
-            <span v-for="selectedLabel in selectedLabels" :key="selectedLabel" class="norato-select__chip">{{ selectedLabel }}</span>
+            <span v-for="selectedLabel in visibleChipLabels" :key="selectedLabel" class="norato-select__chip">{{ selectedLabel }}</span>
+            <span v-if="hiddenChipCount" class="norato-select__chip norato-select__chip-count">+{{ hiddenChipCount.toLocaleString('fa-IR') }}</span>
           </span>
           <span v-else class="norato-select__value" :data-placeholder="!valueLabel || undefined">{{ valueLabel || placeholder }}</span>
         </span>
         <template v-else>
           <span v-if="multiple && display === 'chips' && selectedLabels.length" class="norato-select__chips">
-            <span v-for="selectedLabel in selectedLabels" :key="selectedLabel" class="norato-select__chip">{{ selectedLabel }}</span>
+            <span v-for="selectedLabel in visibleChipLabels" :key="selectedLabel" class="norato-select__chip">{{ selectedLabel }}</span>
+            <span v-if="hiddenChipCount" class="norato-select__chip norato-select__chip-count">+{{ hiddenChipCount.toLocaleString('fa-IR') }}</span>
           </span>
           <span v-else class="norato-select__value" :data-placeholder="!valueLabel || undefined">{{ valueLabel || placeholder }}</span>
         </template>

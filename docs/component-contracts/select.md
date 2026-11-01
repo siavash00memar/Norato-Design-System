@@ -23,6 +23,7 @@
 ## Variants
 
 در انتخاب چندتایی، نشانگر هر گزینه یک چک‌باکس برداری ۲۴×۲۴px از جزء مشترک `NoratoCheckboxVisual` است؛ نقش و تعامل صفحه‌کلید روی خود گزینهٔ Reka باقی می‌ماند.
+در نمای Chips، برای جلوگیری از رشد عمودی و هم‌خوانی با Lemon، یک برچسب و شمارندهٔ باقی‌مانده نمایش داده می‌شود؛ برای نمونه «تهران +۴». حالت Summary تعداد کل انتخاب‌ها را نمایش می‌دهد.
 
 - **Select (56 variant):** Type: Label Inside، Label Outside؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled، Read-only
 - **Multi Select (96 variant):** Type: Label Inside، Label Outside؛ Display: Chips، Summary؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled

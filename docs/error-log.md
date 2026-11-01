@@ -380,6 +380,8 @@
 
 ## 2026-11-01 — Select Reka adapter browser review
 
+- Multi-select with five choices risked growing the field vertically on narrow screens. Changed the chip display to one selected label plus a localized remaining-count chip, matching Lemon's compact variant. Browser shows `تهران` and `+۴` at 48px field height.
+
 - Defect: inside-label Select stretched to 65.2px from two text lines and 8px vertical padding. Reduced only that variant's padding and internal gap with existing tokens; browser now measures 56px for both summary and two chips at desktop and 390px mobile. Also moved the checkbox explanation out of Anatomy after it was incorrectly parsed as a seventh part.
 
 - Visual contract mismatch: multi-select options reused the single-select text checkmark, while the Lemon and Figma contracts require checkbox frames. Added a reusable 24px SVG checkbox visual with semantic Norato tokens, kept the Reka option as the sole interaction target, and verified staged Cancel/Confirm and mobile geometry in the browser.
