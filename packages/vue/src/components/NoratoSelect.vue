@@ -55,13 +55,14 @@ const searchInput = ref<HTMLInputElement>()
 const effectiveDir = computed(() => props.dir === 'ltr' ? 'ltr' : 'rtl')
 const isUnavailable = computed(() => props.disabled || props.loading)
 const selectedValues = computed(() => Array.isArray(props.modelValue) ? props.modelValue : props.modelValue ? [props.modelValue] : [])
+const displayedValues = computed(() => props.multiple && isOpen.value ? draftValues.value : selectedValues.value)
 const activeValue = computed<SelectValue>(() => props.multiple ? draftValues.value : (Array.isArray(props.modelValue) ? props.modelValue[0] : props.modelValue))
 const describedBy = computed(() => [
   props.helperText && `${props.id}-helper`,
   props.errorText && `${props.id}-error`,
   props.loading && `${props.id}-loading`,
 ].filter(Boolean).join(' ') || undefined)
-const selectedLabels = computed(() => selectedValues.value
+const selectedLabels = computed(() => displayedValues.value
   .map((value) => props.options.find((option) => option.value === value)?.label)
   .filter((label): label is string => Boolean(label)))
 const valueLabel = computed(() => {
@@ -94,6 +95,7 @@ const hasVisibleOptions = computed(() => visibleGroups.value.some((group) => gro
 const focusSearch = async () => {
   if (!props.searchable) return
   await nextTick()
+  await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   searchInput.value?.focus()
 }
 const updateOpen = (next: boolean) => {
@@ -188,7 +190,7 @@ watch(() => props.multiple, (multiple) => {
           </span>
           <span v-else class="norato-select__value" :data-placeholder="!valueLabel || undefined">{{ valueLabel || placeholder }}</span>
         </template>
-        <span class="norato-select__chevron" aria-hidden="true" />
+        <span class="norato-select__chevron" aria-hidden="true">⌄</span>
       </SelectTrigger>
       <SelectPortal>
         <SelectContent

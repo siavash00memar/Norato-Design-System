@@ -56,9 +56,8 @@
 .norato-select-group.is-invalid .norato-select__trigger{border-color:var(--norato-color-status-error)}
 .norato-select__value{min-inline-size:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .norato-select__value[data-placeholder]{color:var(--norato-color-text-placeholder)}
-.norato-select__chevron{position:relative;flex:none;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm)}
-.norato-select__chevron::before{position:absolute;inset-block-start:30%;inset-inline-start:30%;inline-size:35%;block-size:35%;border-inline-end:var(--norato-border-medium) solid currentColor;border-block-end:var(--norato-border-medium) solid currentColor;content:"";transform:rotate(45deg)}
-.norato-select__trigger[data-state="open"] .norato-select__chevron::before{inset-block-start:45%;transform:rotate(225deg)}
+.norato-select__chevron{display:inline-block;flex:none;font-size:var(--norato-type-doc-section-size);line-height:1;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-select__trigger[data-state="open"] .norato-select__chevron{transform:rotate(180deg)}
 .norato-select__inside-value{display:grid;min-inline-size:0;gap:var(--norato-space-1)}
 .norato-select__inside-label{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size);line-height:var(--norato-type-body-regular-line-height)}
 .norato-select__chips{display:flex;flex-wrap:wrap;align-items:center;gap:var(--norato-space-1);min-inline-size:0}

@@ -377,3 +377,9 @@
 - Correction: added a live controlled native-select playground and loading semantics (`aria-busy`, associated polite status); removed a duplicate live announcement.
 - Browser evidence: desktop and 390px Lemon/Norato comparison verified RTL, a 48px field, 375px mobile document width, keyboard value changes, required/error/disabled/loading and visible focus. The former two-field preview frame measured about 343px tall on mobile; replacing it with one default field reduced the specimen frame to 98px mobile and 122px desktop, without changing the 48px control.
 - Remaining: Lemon’s glass menu, search, groups and multi-select remain unsupported by the adapter; Select DoD stays open.
+
+## 2026-11-01 — Select Reka adapter browser review
+
+- New implementation: Reka-backed Select with grouped glass menu, search and staged multi-selection. Browser verified single selection after filtering with ArrowDown/Enter, plus multi-selection Cancel and Confirm; the committed value did not change before Confirm.
+- Focus defect: the first implementation focused an option before the search input. Scheduling focus after the popup render made the search input the focused element on open.
+- Remaining: full mobile and state-by-state DoD review; do not treat passing build or these focused interactions as complete parity.
