@@ -13,4 +13,5 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass (build chunk warning retained).
 - [x] `docs/request-validation-checklist.md` reports the actual render, interaction evidence, limitations and DoD status.
 - [x] Open-menu mobile geometry re-captured at an enforced 390×844 viewport: menu bounds x=16..359, y=10..394.5px, 343×384.5px; document width 390px; six option rows remain 48px high. Escape closed the menu and returned focus to the trigger.
-- [ ] Full visual state/variant matrix, including combined error/disabled/read-only/loading states, remains open; this mobile re-capture closes only the open-menu geometry item.
+- [x] Combined state/size/label/display matrix was exercised in the live playground: 96 cases (single/chips/summary × label inside/outside × four sizes × required+error/error+disabled/error+read-only/error+loading). No issues in RTL, minimum 48px target, document overflow, error association, state ARIA, disabled behavior or loading status/busy semantics.
+- [ ] Full pixel-level review of every hover/focus/selected visual state and independent screen-reader software remain open; the 96-case matrix validates rendered geometry and semantics, not screenshot diffs for every cell.

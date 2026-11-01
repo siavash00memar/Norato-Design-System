@@ -10,6 +10,13 @@
 - [x] تغییر commit و به GitHub push شد؛ هنگام ثبت اولیهٔ گزارش، `origin/master` برابر `1b6c7a5b677213ee6ededf9eb51844bab54cc169` تأیید شد.
 - هشدار build: bundle اصلی JavaScript برابر 637.21KB است و از آستانهٔ 500KB عبور می‌کند؛ build موفق ماند.
 
+## ادامهٔ DoD Select — ماتریس ترکیبی (2026-11-01)
+
+- [x] در مرورگر محلی، ۹۶ ترکیب playground اجرا شدند: single/chips/summary × برچسب داخل/بیرون × چهار اندازه × required+error، error+disabled، error+read-only و error+loading.
+- [x] در هر مورد ارتفاع trigger حداقل ۴۸px، جهت `rtl`، عرض سند ۱۱۸۰px در viewport ۱۱۹۵px و semantics مورد انتظار بررسی شد؛ خطا alert و `aria-invalid` دارد، required با `aria-required` همراه است، disabled واقعی disable می‌شود، read-only `aria-readonly` دارد و loading علاوه بر disable، `aria-busy` و status زنده دارد.
+- [x] هیچ مورد geometry/ARIA/overflow ناموفق نبود؛ playground بعد از آزمون به single، medium، label بیرونی، بدون خطا و بدون حالت بارگذاری برگشت.
+- [ ] این اجرا مقایسهٔ تصویری screenshot به screenshot از تمام خانه‌ها یا صفحه‌خوان مستقل نیست؛ مرور pixel-level حالت‌های hover/focus/selected هنوز برای بستن DoD باز است.
+
 ## گزارش این درخواست — Input preview مستقل (2026-11-01)
 
 - [x] قرارداد subfeature فقط قاب و نمونهٔ ثابت است؛ پرسش API هشت زیرنوع همچنان باز است و adapter اجرایی/گالری تغییر نکرد.
