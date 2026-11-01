@@ -26,7 +26,7 @@
 - [x] رگرسیون Button: ۱۱ state card همان renderer عمومی را حفظ کردند؛ static state gallery همچنان inert و جدا از adapter است.
 - [ ] صفحه‌خوان مستقل و مقایسهٔ کامل screenshot همهٔ stateهای اجرایی Select همچنان در DoD خانواده باز است.
 - [x] گیت‌های نهایی: `pnpm check:tokens`، `pnpm check:catalog` (49 قرارداد/مسیر)، Vue typecheck، production build و `git diff --check` موفق شدند. Build هشدار bundle 638.78KB بالاتر از 500KB داد.
-- [ ] Commit/push این تغییر و تأیید ریموت در همین ادامه انجام می‌شود.
+- [x] Commit `bb99f4d948664ed1c2b9ec9f3700d400bd4c9af3` به GitHub push شد و `origin/master` با آن برابر است.
 
 ## گزارش این درخواست — Input preview مستقل (2026-11-01)
 
