@@ -4,7 +4,10 @@ import NoratoInputShell from './NoratoInputShell.vue'
 import type { NoratoInputFieldProps } from './inputTypes'
 const props = withDefaults(defineProps<NoratoInputFieldProps & { currency?: string }>(), { dir: 'ltr', size: 'medium', labelPlacement: 'outside', currency: 'تومان' })
 const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
-const displayValue = computed(() => props.modelValue ? new Intl.NumberFormat('fa-IR').format(Number(props.modelValue)) : '')
+const displayValue = computed(() => {
+  const raw = props.modelValue ?? ''
+  return /^\d+$/.test(raw) ? new Intl.NumberFormat('fa-IR').format(BigInt(raw)) : ''
+})
 const amountWords = computed(() => {
   const value = Number(props.modelValue)
   if (!Number.isSafeInteger(value) || value < 0) return ''

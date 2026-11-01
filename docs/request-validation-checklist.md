@@ -7,13 +7,14 @@
 - [x] playground موبایل: Text/Password/Phone/OTP/Textarea/Number/Amount/Search همگی در viewport قابل مشاهده‌اند؛ متن تلفن LTR، شماره‌گیر OTP افقی در Medium و کنترل‌ها در اندازهٔ عرض والد جا می‌گیرند.
 - [x] چهار اندازهٔ OTP در مرورگر 390px: 48/52/56/60px؛ شش سلول در Small/Medium یک ردیف و در Large/XLarge دو ردیف می‌شوند، سند در تمام حالت‌ها 375px می‌ماند.
 - [x] چهار اندازهٔ Text Input با Label Inside در مرورگر دسکتاپ واقعی: 62/64/68/72px؛ Label Outside: 50/52/56/60px. اندازه‌های Textarea سه‌ردیفه 103/108/120/128px هستند و با افزایش اندازه، قد می‌گیرند نه اینکه به ارتفاع گالری کش بیایند.
-- [x] حالت Success برای هر هشت adapter border/status موفق داشت؛ Loading هشت `aria-busy`، هشت spinner و وضعیت زندهٔ مستقل playground داشت. Required/Error/Disabled/Read-only برای هر هشت playground فعال و به props واقعی متصل‌اند.
+- [x] هر حالت مشترک در playground موبایل جداگانه روشن شد: Required هشت ورودی required؛ Error هشت alert و `aria-invalid` روی ۱۳ کنترل (شش سلول OTP و هفت ورودی تک‌عنصری)؛ Disabled/Loading شانزده کنترل/اکشن غیرفعال؛ Loading هشت `aria-busy` و هشت spinner؛ Success روی هر هشت adapter؛ Read-only روی ۱۳ مقدار و غیرفعال‌شدن actionهای Number. وضعیت مستقل playground هم‌زمان موجود بود.
 - [x] Number در حالت Stacked دو action عمودی 48×48px دارد؛ در موبایل فلش‌های بومی تکراری پنهان شدند و ArrowUp از 98 به max=99 رسید. Search دکمهٔ پاک‌کردن اختصاصی و میانبر پیش‌فرض را حفظ می‌کند.
+- [x] Amount مقدار `9007199254740993` را بدون خطای دقت به `۹٬۰۰۷٬۱۹۹٬۲۵۴٬۷۴۰٬۹۹۳` قالب‌بندی کرد؛ برای مقدار خارج از بازهٔ safe integer متن مبلغ به حروف نشان داده نمی‌شود.
 - [x] حالت پایهٔ playground بازیابی شد: Medium، Label Outside، OTP6، Number Stepper، calling code +98 و تمام toggleهای مشترک خاموش. اندازهٔ صفحهٔ نمونه پس از بررسی: viewport 390×844.
 - [x] Lemon مرجع هفت/هشت زیرنوع، چهار اندازه و label placement داخل/بیرون دارد؛ تفاوت حداقل hit target نوراتو عمداً بر مبنای قرارداد 48px نگه داشته شده. بررسی کامل همهٔ ترکیب‌ها و screen-reader مستقل باز است.
 - [ ] مقایسهٔ نهایی Lemon/Norato برای تغییرات اخیر desktop با viewport یکسان و اجرای دوبارهٔ همهٔ ماتریس‌های states/focus هنوز لازم است؛ در نشست قبلی تغییر viewport برای tab دسکتاپ اعمال نشد.
-- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck/build و `git diff --check` پس از اصلاح اجرا و پاس شدند؛ Vite هشدار chunk بزرگ‌تر از 500KB می‌دهد (678.79KB).
-- [x] Refinement checkpoint `9e40131` به `origin/master` push شد؛ full state/focus matrix و بررسی مستقل صفحه‌خوان همچنان باز هستند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck/build و `git diff --check` پس از اصلاح اجرا و پاس شدند؛ Vite هشدار chunk بزرگ‌تر از 500KB می‌دهد (678.91KB).
+- [ ] اصلاح دقت Amount و مستنداتش هنوز در checkpoint بعدی باید push شوند؛ full state/focus matrix و بررسی مستقل صفحه‌خوان نیز باز هستند.
 
 ## ادامهٔ DoD Segmented Control — دسکتاپ، موبایل و صفحه‌کلید (2026-11-01)
 

@@ -586,3 +586,11 @@
 - **Finding:** mobile Chrome showed native number spinner arrows beside Norato's explicit increment/decrement buttons, presenting two competing step controls.
 - **Correction:** scoped WebKit/Firefox spin-button appearance rules to `.norato-input-field__input[type="number"]`; ArrowUp remains enabled and a browser interaction still increments 98 to the configured maximum 99. Search's browser-native cancel decoration is also hidden because Search supplies its own labeled clear action.
 - **Prevention:** whenever a custom action replaces a native affordance, inspect the actual mobile render for duplicate controls and verify the underlying keyboard operation still works.
+
+## ERR-056 — Amount display rounded values beyond the safe integer range (2026-11-01)
+
+- **Component:** Input / Amount Input
+- **Finding:** formatting a canonical amount through JavaScript `Number` could round digits above `Number.MAX_SAFE_INTEGER`, while the editable model accepts digit strings.
+- **Correction:** use `BigInt` for exact digit grouping. Continue showing spelled-out words only for safe nonnegative integers so the text cannot claim a rounded value.
+- **Browser evidence:** entered `9007199254740993`; the field displayed `۹٬۰۰۷٬۱۹۹٬۲۵۴٬۷۴۰٬۹۹۳`, with no amount words, then the playground amount was restored to its default.
+- **Prevention:** preserve large integer values as strings/BigInt in financial display paths; do not pass through floating point formatting.

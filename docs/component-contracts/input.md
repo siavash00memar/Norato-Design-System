@@ -71,7 +71,7 @@
 - `NoratoOtpInput`: 4/5/6 cells, sequential entry, paste, Backspace and directional arrows.
 - `NoratoTextarea`: legacy export with row/character limit, read-only and success support.
 - `NoratoNumberInput`: bounded native numeric entry plus 48px increment/decrement actions.
-- `NoratoAmountInput`: canonical numeric model, Persian digit grouping, Persian amount words and configurable currency (default `تومان`).
+- `NoratoAmountInput`: canonical unsigned integer string model, exact Persian digit grouping (including values above JavaScript's safe integer range), Persian amount words for safe integers and configurable currency (default `تومان`).
 - `NoratoSearchInput`: search input, clear action and optional Ctrl/Cmd+K shortcut (`shortcut` defaults to true).
 
 Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `helperText`, `errorText`, `successText`, `required`, `disabled`, `loading`, `readOnly`, `dir`, `size` and `labelPlacement` where applicable. `NoratoField` remains exported as a backward-compatible generic adapter.
