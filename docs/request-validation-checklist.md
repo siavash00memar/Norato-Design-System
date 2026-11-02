@@ -1026,3 +1026,9 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass. Build reports an 806.90KB JS chunk advisory.
 - [x] Live browser confirms 429px page width without document overflow; zero native selects in the DOM; custom dropdown ArrowDown/Enter selection; Date Picker custom listbox updates wheel year and date-time hour without closing its parent; Escape closes the menu and returns focus; yellow selected date/current page use dark text; browser console has no errors.
 - [ ] Same-viewport Lemon/Norato desktop and narrow mobile comparison, exhaustive interaction/state matrix and independent screen-reader review remain open. Keep DoD open.
+
+## Playground dropdown RTL alignment — implementation checkpoint (2026-11-02)
+
+- [x] Removed the explicit LTR direction override from shared playground dropdown option rows; Persian labels now flow RTL and align right.
+- [x] At 341px mobile width, opened the Input password-strength dropdown and visually confirmed selected and unselected options align right. Keyboard behavior and RTL page layout remain intact.
+- [x] Token/catalog checks, Vue typecheck/build and diff check pass; build retains the large-JS-chunk advisory.
