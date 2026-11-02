@@ -22,7 +22,7 @@ const isCurrent = (item: NoratoBreadcrumbItem, index: number) => index === curre
           <span v-if="isCurrent(items[0], 0)" class="norato-breadcrumbs__current" aria-current="page">{{ items[0].label }}</span>
           <a v-else-if="items[0].href" class="norato-breadcrumbs__link" :href="items[0].href"><svg v-if="items[0].home" class="norato-breadcrumbs__home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>{{ items[0].label }}</a>
           <span v-else class="norato-breadcrumbs__current" aria-current="page">{{ items[0].label }}</span>
-          <span class="norato-breadcrumbs__separator" aria-hidden="true">{{ separator === 'slash' ? '/' : '‹' }}</span>
+          <span class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
         <li class="norato-breadcrumbs__item norato-breadcrumbs__collapse">
           <button class="norato-breadcrumbs__disclosure" type="button" :aria-expanded="expanded" :aria-controls="`${id}-hidden`" @click="expanded = !expanded">
@@ -31,13 +31,13 @@ const isCurrent = (item: NoratoBreadcrumbItem, index: number) => index === curre
           <ol v-show="expanded" :id="`${id}-hidden`" class="norato-breadcrumbs__hidden-list">
             <li v-for="hidden in hiddenItems" :key="hidden.label"><a :href="hidden.href">{{ hidden.label }}</a></li>
           </ol>
-          <span class="norato-breadcrumbs__separator" aria-hidden="true">{{ separator === 'slash' ? '/' : '‹' }}</span>
+          <span class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
         <li v-for="(item, index) in items.slice(-2)" :key="item.label" class="norato-breadcrumbs__item">
           <span v-if="isCurrent(item, items.length - 2 + index)" class="norato-breadcrumbs__current" aria-current="page">{{ item.label }}</span>
           <a v-else-if="item.href" class="norato-breadcrumbs__link" :href="item.href"><svg v-if="item.home" class="norato-breadcrumbs__home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>{{ item.label }}</a>
           <span v-else class="norato-breadcrumbs__current" aria-current="page">{{ item.label }}</span>
-          <span v-if="index < 1" class="norato-breadcrumbs__separator" aria-hidden="true">{{ separator === 'slash' ? '/' : '‹' }}</span>
+          <span v-if="index < 1" class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
       </template>
       <template v-else>
@@ -45,7 +45,7 @@ const isCurrent = (item: NoratoBreadcrumbItem, index: number) => index === curre
           <span v-if="isCurrent(item, index)" class="norato-breadcrumbs__current" aria-current="page">{{ item.label }}</span>
           <a v-else-if="item.href" class="norato-breadcrumbs__link" :href="item.href"><svg v-if="item.home" class="norato-breadcrumbs__home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>{{ item.label }}</a>
           <span v-else class="norato-breadcrumbs__current" aria-current="page">{{ item.label }}</span>
-          <span v-if="index < visibleItems.length - 1" class="norato-breadcrumbs__separator" aria-hidden="true">{{ separator === 'slash' ? '/' : '‹' }}</span>
+          <span v-if="index < visibleItems.length - 1" class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
       </template>
     </ol>

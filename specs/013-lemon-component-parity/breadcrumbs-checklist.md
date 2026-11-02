@@ -15,3 +15,10 @@
 ## Repository gates
 
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, production build and `git diff --check` passed. Vite reports a JS chunk above 500KB.
+
+## Screenshot correction — 2026-11-02
+
+- [x] Runtime Chevron uses a direction-stable left-pointing SVG in RTL; Slash stays `/`.
+- [x] Inert top specimen uses the same left-pointing separator and a consistent house SVG.
+- [x] Local 1280×720 browser render shows left-pointing separators in the collapsed runtime trail and in the inert specimen; separators are intrinsic 16×16px SVGs and RTL layout is preserved.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass; production build retains its >500KB JavaScript chunk advisory.

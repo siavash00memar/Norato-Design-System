@@ -1064,3 +1064,9 @@
 - [x] All three frames use a 2px stroke, with yellow Secondary and neutral Cancel borders.
 - [x] Browser at `http://127.0.0.1:5174/#component-button`, 1280×720: all three preview frames measure 128×60px, RTL is preserved, and computed borders measure 2px. Screenshot confirms the first Primary button is visibly pill-shaped; Cancel remains neutral and Secondary yellow.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, production build and `git diff --check` pass. Build retains the advisory that the app JS chunk exceeds 500KB.
+
+## Breadcrumbs — arrow direction correction (2026-11-02)
+
+- [x] Bidi-sensitive chevron glyphs in the runtime component and inert top specimen were replaced with fixed left-pointing SVG chevrons; the specimen home marker is now the same SVG icon used by the adapter.
+- [x] Local browser render of collapsed RTL Breadcrumbs shows all visible separators pointing left, with intrinsic 16×16px icon geometry and no text-based mirroring. Slash remains an independent option.
+- [ ] Independent screen-reader review, full visual variant matrix and 320px/390px Lemon comparison remain outside this screenshot correction's DoD.

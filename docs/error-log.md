@@ -697,3 +697,10 @@
 - **Correction:** use explicit top/left physical centering with right/bottom auto; retain the 48px target and draw dark outline/yellow halo on the visible knob.
 - **Evidence:** local browser screenshot after correction shows centered knob and focus ring; computed target is 48×48px, :focus-visible=true, pseudo focus outline 2px with 4px offset and yellow 2px halo. ArrowLeft/ArrowRight changed the value 60→61→60; RTL remains intact.
 - **Prevention:** in RTL CSS, avoid setting both physical insets on absolutely positioned visual pseudos; validate visible geometry separately from the interactive target.
+
+## Breadcrumb chevron direction correction — 2026-11-02
+
+- The user screenshot reports the displayed RTL breadcrumb arrows face the wrong direction and asks to reverse them.
+- Cause: U+2039 `‹` is bidi-mirrored by the browser inside RTL navigation, so it displayed right-facing despite a left-chevron code point.
+- Replace the runtime and inert specimen chevron with explicit SVG path geometry pointing left; replace the specimen's Unicode house with the package's consistent SVG house. Do not apply a global transform.
+- [x] Browser rerender shows left-pointing SVG chevrons in both runtime and top specimen; technical gates passed.

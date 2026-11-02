@@ -366,7 +366,7 @@
 
 - Follow Lemon's four-part structure and 42 documented combinations on the Button-shaped page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
 - Keep the semantic path in an ordered list inside a named navigation landmark. Current page remains non-link text with `aria-current="page"`.
-- Use Norato's own semantic palette, RTL direction and Persian fonts. Chevron points left in RTL; slash is neutral.
+- Use Norato's own semantic palette, RTL direction and Persian fonts. Use a direction-stable SVG chevron pointing left in RTL, per the user's explicit 2026-11-02 correction; slash is neutral.
 - For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
 - Keep labels intrinsic and prevent wrapping; at narrow widths allow the trail itself to scroll rather than stretching links or creating page overflow.
 
