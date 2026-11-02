@@ -1,15 +1,16 @@
-# Input email specimen — Specification
+# Input page visual rule — Specification
 
 ## Goal
-Match the user-provided email Input specimen: place an envelope icon beside the Email title, use a bold Estedad title, show a Persian placeholder in the field in light Vazirmatn 12px `#A1A1A1`, remove `name@example.com`, and render the inert preview control at 36px high.
+Make every rendered Norato Input field follow the user's latest visual rule wherever it appears across component documentation pages, not only the top email example.
 
 ## Acceptance criteria
-- Email label remains an actual `<label>` associated with the field and contains the decorative envelope icon.
-- Label text uses Estedad, weight 700.
-- Placeholder reads `ایمیل خود را وارد کنید`, is inside the field and uses Vazirmatn 12px, weight 300, and semantic token `#A1A1A1`.
-- Email control in the inert top specimen measures 36px high; controls in the interactive Input playground retain 48px minimum target and current behavior.
-- Keep RTL, 324px field cap, Default specimen marker, and helper text. Remove the email icon from the control.
-- No `name@example.com` remains in this specimen.
+- Placeholder text is RTL-aligned throughout the Input family; explicit LTR value direction for phone/amount remains intact.
+- Titles/field labels use Estedad Bold.
+- All visible single-line Input shells measure 36px wherever they appear: Input family variant/state cards, top email preview and live adapter playgrounds across component documentation pages. Interactive hit areas remain at least 48px.
+- OTP cells retain 48px interactive boxes while their visible capsule is 36px in the playground and static gallery.
+- Textarea remains multiline with the existing row-based height.
+- Remove «ایمیل کاری‌ات را وارد کن.» and the helper line from the top email preview; keep its Persian placeholder and Email label/icon.
+- Keep RTL, capsule radii, existing colors/states, and page order. LTR values (phone and amount) stay LTR while their placeholders remain RTL.
 
 ## Out of scope
-No public interaction behavior, input adapter states, or other component previews change.
+No public behavior, API or contract readiness state changes. Checkbox, radio, range and other non-text controls are excluded.

@@ -766,3 +766,10 @@
 - **Observed:** The email envelope sat inside the control; the sample used the English `name@example.com` placeholder; shell displayed at 48px or more; placeholder typography/color did not match the approved Input rule.
 - **Correction:** Added a conditional label slot passthrough and moved the decorative icon into the associated Email label. Placeholder is Persian and now uses Vazirmatn 12px/300 with semantic subtle placeholder token `#a1a1a1`. The inert specimen alone uses a 36px visual shell; the live playground/runtime preserve their 48px minimum target. Removed the obsolete global sample-icon selector.
 - **Verified:** Browser computes specimen shell to 36px, label to Estedad 12px/700, placeholder to Vazirmatn 12px/300 `rgb(161,161,161)`, with label `for` matching input id. Live playground input remains 48px; RTL and document width are intact.
+
+## ERR-075 — Input field heights and placeholder direction varied across component pages (2026-11-02)
+
+- **Observed:** Input page gallery fields differed from the top 36px sample; live fields retained larger surfaces, LTR phone inputs caused their placeholders to stay LTR, and generic `NoratoField` in the all-components lab remained a 48px, 12px-radius box.
+- **Cause:** The 36px rule was local to one component-page presentation, while live adapters inherited size-specific minimums and generic `NoratoField` used a separate native input class.
+- **Correction:** Shared component-page styles render a centered 36px capsule inside minimum 48px targets for Input adapters and generic `NoratoField`. Titles use Estedad Bold; placeholders use RTL while entered phone/amount values remain LTR. Top Email helper line stays removed; Textarea retains multiline height.
+- **Verified:** Actual local browser: static variant/state shells 36px; live capsule is 36px inside a 52px Medium wrapper, input hit target 48px; OTP target 48px with 36px face; Textarea remains 108px; generic `NoratoField` target 48px with centered 36px capsule; top Email shell 36px with no helper. No document horizontal overflow.

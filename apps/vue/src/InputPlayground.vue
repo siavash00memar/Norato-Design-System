@@ -33,7 +33,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
 </script>
 
 <template>
-  <div class="button-playground" dir="rtl">
+  <div class="button-playground input-playground" dir="rtl">
     <header><strong>آزمایش ورودی اجرایی</strong><span>هشت زیرنوع با v-model و حالت‌های مشترک؛ قدرت رمز را برنامهٔ میزبان تعیین می‌کند.</span></header>
     <div class="button-playground-preview">
       <NoratoTextInput id="input-playground-name" v-model="name" label="نام و نام خانوادگی" placeholder="نام خود را بنویسید" :size="size" :label-placement="labelPlacement" :required="required" :disabled="disabled" :loading="loading" :read-only="readOnly" :success-text="success ? 'مقدار تأیید شد' : undefined" :error-text="invalid ? 'نام معتبر وارد کنید' : undefined" :helper-text="invalid ? undefined : 'نام کامل خود را وارد کنید'" />

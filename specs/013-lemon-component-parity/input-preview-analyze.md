@@ -1,7 +1,7 @@
-# Input email specimen — Analyze
+# Input page visual rule — Analyze
 
-- Existing preview puts an envelope in the control's trailing slot, while the reference places it beside the title. `NoratoInputShell` owns the native title label; a label slot passthrough allows the icon to move without replacing the accessible association.
-- The sample currently uses `name@example.com`; this conflicts with the user instruction. Replace it with a Persian placeholder inside the same field.
-- Shared field control CSS enforces 48px minimum height. Do not change that global selector because the runtime interaction target must remain at least 48px. Scope 36px to `.sample-input-specimen` preview control only; inert specimen is not interactive.
-- Existing placeholder color token is `#6b6b6b`, conflicting with the explicit `#A1A1A1` requirement. Add a semantic subtle-placeholder token rather than embedding raw color in component CSS.
-- Existing label defaults to body styling. Scope the requested Estedad Bold typography to the Input preview label.
+- Input has four visible surfaces on its component page: the top inert specimen (`ComponentSpecimen.vue`), the Variant family matrix, the States cards (`ContractVisualShowcase.vue`) and the interactive InputPlayground. The generic `NoratoField` also appears in the all-components interactive lab and uses its own native input class.
+- Prior `36px` styling only addressed the top sample; Variants/States stayed at 48px and the live playground's shells followed 50–72px size tokens. This was the root cause of incomplete page-wide parity.
+- Shared component-page styling covers all Norato Input adapters plus generic `NoratoField`; placeholder-only phone fields resolve RTL while entered phone/amount values retain LTR direction. The top sample's own dir is RTL.
+- For interactive playground fields, keep their 48px physical hit boxes and render the capsule background/border inset vertically to 36px. OTP input elements also keep 48px targets; static OTP cells can be 36px.
+- Textarea is a multiline exception. Its row-based height remains intact; its label still changes to Estedad Bold and placeholder direction to RTL.

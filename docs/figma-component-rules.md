@@ -57,9 +57,9 @@
 
 ## Input — Lemon visual parity and Norato runtime, 2026-11-01
 
-- Use `https://lemonui.ir/#input` for the top specimen arrangement: one compact, labeled email field with helper text. Preserve Norato semantic colors, Estedad/Vazirmatn, RTL label/helper placement and the minimum 48px target.
+- Use `https://lemonui.ir/#input` for the top specimen arrangement: one compact, labeled email field. Preserve Norato semantic colors, Estedad/Vazirmatn and RTL. The latest user rule removes helper text from the top specimen.
 - The top specimen is inert; its email entry is LTR inside an RTL field group. Keep it separate from the live Vue playground, which covers all eight public adapters: Text, Password, Phone, OTP, Textarea, Number, Amount and Search. `NoratoField` remains backward-compatible and does not replace those specialized adapters.
-- Keep the field height independent of the preview frame. Use the Lemon-composition Default marker, Norato glass/wash/dots and a 324px maximum field width; the desktop frame caps at 640×288px and the mobile width at 320px. Prior equal-viewport captures: Lemon 636×300px vs Norato 584×288px desktop; mobile 327×300px vs Norato 320×288px. At 390px, the document remains 375px wide.
+- Use a 36px visible capsule for single-line Input fields wherever they appear across component pages; this includes the Input top preview, variant/state cards, live adapters and generic `NoratoField` in the all-components lab. Live input/OTP hit targets remain at least 48px; use an inset visual shell where needed. Textarea keeps its multiline height. The top email field remains capped at 324px, the frame at 640×288px desktop/320px mobile, with the Default marker and Norato glass/wash/dots.
 - The user's approved DoD requires the Button-style page structure: Preview, live Vue playground, then nine independently copyable contract sections.
 - Lemon's 32/40/48/56px are reference sizes. Norato's interactive target floor is 48px: single-line controls measure 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measure 48/52/56/60px and wrap without horizontal overflow; three-row Textarea measures 103/108/120/128px. Hide native Number spinners beside Norato's own 48px step actions.
 - State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
@@ -67,6 +67,8 @@
 - Input field shells and OTP cells are capsule-shaped at all sizes and states; use Norato's semantic `--norato-radius-pill` token. Keep this radius scoped to the Input family.
 - Neutral Input and OTP strokes use a 1px `--norato-color-border-default` (`#e8e8e8`) border, including hover. Keyboard focus uses only a 1px `--norato-color-brand-yellow` border; remove contrast outlines and glow shadows. Error and success keep their semantic status colors.
 - Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
+- Latest component-page rule (2026-11-02): every Input title/label wherever it appears across component pages uses Estedad Bold; placeholders are RTL, Vazirmatn Light 12px `#a1a1a1`. Remove the old helper line under the top email sample. All single-line Input visual capsules are 36px while interactive hit boxes stay 48px minimum; OTP visual capsules are 36px with 48px targets. Keep Textarea multiline and preserve LTR values for phone/amount.
+- The generic backward-compatible `NoratoField` shares this appearance in the all-components playground; its input itself remains 48px and carries a centered 36px capsule.
 - Latest specimen correction (2026-11-02): place the decorative envelope icon beside the «ایمیل» title inside the semantic label; title uses Estedad Bold. Use the Persian placeholder «ایمیل خود را وارد کنید» with Vazirmatn Light 12px and `--norato-color-text-placeholder-subtle` (`#a1a1a1`); remove `name@example.com`. The inert top sample's visual control height is 36px. Keep live interactive controls at their documented minimum 48px target.
 
 ## Select

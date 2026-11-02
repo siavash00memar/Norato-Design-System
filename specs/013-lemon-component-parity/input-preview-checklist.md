@@ -1,10 +1,11 @@
-# Input email specimen — DoD Checklist
+# Input page visual rule — DoD Checklist
 
-- [x] Label and envelope icon render together; native `<label for="specimen-email">` remains associated with the input.
-- [x] Label text computes to Estedad, 12px, weight 700.
-- [x] Persian placeholder appears inside field; Vazirmatn 12px, weight 300 and `#A1A1A1` verified; `name@example.com` absent from this specimen.
-- [x] Inert preview control measures 36px high; live playground input measures 48px and retains its interactive target.
-- [x] RTL, helper text, Default marker, inertness and no document overflow verified in actual 1280px browser render.
-- [x] Token/catalog/typecheck/build/diff gates pass; existing large-JS chunk advisory remains.
-- [x] Request validation and error log updated; changes committed and pushed.
-- [ ] 390px mobile viewport not independently verified in this browser session.
+- [x] Top email placeholder is RTL; named helper text is gone; its title remains Estedad Bold and shell is 36px.
+- [x] Variant family cards have Estedad Bold labels, RTL placeholder text and 36px single-line shells.
+- [x] State cards have Estedad Bold titles, RTL placeholders and 36px single-line shells.
+- [x] Live playground single-line controls show a 36px capsule while input hit boxes stay at least 48px.
+- [x] Generic `NoratoField` in the all-components lab uses an Estedad Bold label, RTL placeholder, 36px capsule and 48px target.
+- [x] OTP cells remain 48px targets with 36px visible capsules; Textarea remains multiline.
+- [x] RTL and explicit LTR phone/amount values both remain correct; no horizontal overflow.
+- [x] Token/catalog/typecheck/build/diff gates pass.
+- [x] Request validation/error log updated; validated changes committed and pushed to `origin/master`.

@@ -1,0 +1,210 @@
+/* Shared component field presentation: 36px visuals, 48px interactive targets. */
+.sample-input-label,
+.input-family-label,
+.input-family-card > header > strong,
+.input-state-heading > strong,
+.norato-input-field__label,
+.norato-input-field__floating-label,
+.norato-textarea__label,
+.norato-field__label {
+  font-family: var(--norato-font-heading);
+  font-size: var(--norato-type-heading-label-size);
+  font-weight: var(--norato-type-heading-title-weight);
+  line-height: var(--norato-type-heading-label-line-height);
+}
+
+.sample-input-specimen:has(.norato-input-field) .norato-input-field__control {
+  block-size: var(--norato-control-visual-height);
+  min-block-size: var(--norato-control-visual-height);
+}
+
+.sample-input-specimen:has(.norato-input-field) .norato-input-field__input {
+  block-size: 100%;
+  min-block-size: 0;
+  padding-block: 0;
+  text-align: end;
+  direction: rtl;
+}
+
+.input-family-field,
+.input-state-field {
+  block-size: var(--norato-control-visual-height);
+  min-block-size: var(--norato-control-visual-height);
+  font-family: var(--norato-font-body);
+}
+
+.input-family-placeholder,
+.input-state-value.is-placeholder,
+.input-state-textarea[data-state="default"] {
+  direction: rtl;
+  text-align: end;
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  font-weight: var(--norato-type-body-light-weight);
+  color: var(--norato-color-text-placeholder-subtle);
+}
+
+.input-family-otp i,
+.input-state-otp i {
+  inline-size: var(--norato-control-visual-height);
+  block-size: var(--norato-control-visual-height);
+}
+
+.input-state-otp i {
+  box-sizing: border-box;
+}
+
+.norato-input-field__control {
+  position: relative;
+  isolation: isolate;
+  box-sizing: border-box;
+  block-size: var(--norato-control-target-min);
+  min-block-size: var(--norato-control-target-min);
+  padding-block: var(--norato-space-1);
+  border-color: transparent;
+  background: transparent;
+}
+
+.norato-input-field__control::before {
+  position: absolute;
+  z-index: 0;
+  inset-block: calc((100% - var(--norato-control-visual-height)) / 2);
+  inset-inline: 0;
+  border: var(--norato-border-thin) solid var(--norato-color-border-default);
+  border-radius: var(--norato-radius-pill);
+  background: var(--norato-color-glass-surface-strong);
+  content: "";
+  pointer-events: none;
+}
+
+.norato-input-field__control:has(.norato-input-field__input:focus-visible)::before {
+  border-color: var(--norato-color-brand-yellow);
+  background: var(--norato-color-surface-default);
+}
+
+.norato-input-field[data-invalid] .norato-input-field__control::before {
+  border-color: var(--norato-color-status-error);
+}
+
+.norato-input-field[data-success]:not([data-invalid]) .norato-input-field__control::before {
+  border-color: var(--norato-color-status-success);
+}
+
+.norato-input-field[data-disabled] .norato-input-field__control::before {
+  border-color: var(--norato-color-border-default);
+  background: var(--norato-color-surface-muted);
+}
+
+.norato-input-field[data-readonly] .norato-input-field__control::before {
+  background: var(--norato-color-surface-subtle);
+}
+
+.norato-input-field__control > :is(input, button, span, kbd, .norato-input-field__loading) {
+  position: relative;
+  z-index: 1;
+}
+
+.norato-input-field__input {
+  box-sizing: border-box;
+  block-size: var(--norato-control-target-min);
+  min-block-size: var(--norato-control-target-min);
+  margin-block: calc(-1 * var(--norato-space-1));
+  padding-block: 0;
+  font-family: var(--norato-font-body);
+}
+
+#app .norato-input-field__input::placeholder,
+#app .norato-textarea::placeholder {
+  text-align: end;
+}
+
+#app .norato-input-field__input:placeholder-shown {
+  direction: rtl !important;
+  text-align: end;
+}
+
+#app .norato-textarea:placeholder-shown {
+  direction: rtl !important;
+  text-align: end;
+}
+
+#app .norato-field {
+  block-size: var(--norato-control-target-min);
+  min-block-size: var(--norato-control-target-min);
+  padding-block: 0;
+  border-color: transparent;
+  border-radius: var(--norato-radius-pill);
+  background: linear-gradient(var(--norato-color-glass-surface-strong), var(--norato-color-glass-surface-strong)) center / 100% var(--norato-control-visual-height) no-repeat;
+  box-shadow: none;
+  outline: var(--norato-border-thin) solid var(--norato-color-border-default);
+  outline-offset: calc((var(--norato-control-visual-height) - var(--norato-control-target-min)) / 2);
+  font-family: var(--norato-font-body);
+}
+
+#app .norato-field:placeholder-shown {
+  direction: rtl !important;
+  text-align: end;
+}
+
+#app .norato-field::placeholder {
+  color: var(--norato-color-text-placeholder-subtle);
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  font-weight: var(--norato-type-body-light-weight);
+  opacity: 1;
+}
+
+#app .norato-field:focus {
+  border-color: transparent;
+  outline-color: var(--norato-color-brand-yellow);
+  box-shadow: none;
+}
+
+#app .norato-field-group.is-invalid .norato-field:not(:focus) {
+  outline-color: var(--norato-color-status-error);
+}
+
+#app .norato-field:disabled {
+  background-image: linear-gradient(var(--norato-color-surface-muted), var(--norato-color-surface-muted));
+  outline-color: var(--norato-color-border-default);
+}
+
+.norato-input-field[data-label-placement="inside"] .norato-input-field__control {
+  padding-block-start: var(--norato-space-1);
+}
+
+.norato-input-field[data-size] .norato-otp__cell {
+  inline-size: var(--norato-control-target-min);
+  block-size: var(--norato-control-target-min);
+  border-color: transparent;
+  border-radius: var(--norato-radius-pill);
+  background: linear-gradient(var(--norato-color-glass-surface-strong), var(--norato-color-glass-surface-strong)) center / 100% var(--norato-control-visual-height) no-repeat;
+  outline: var(--norato-border-thin) solid var(--norato-color-border-default);
+  outline-offset: calc((var(--norato-control-visual-height) - var(--norato-control-target-min)) / 2);
+}
+
+.norato-input-field[data-invalid] .norato-otp__cell {
+  outline-color: var(--norato-color-status-error);
+}
+
+.norato-input-field[data-success]:not([data-invalid])[data-size] .norato-otp__cell {
+  outline-color: var(--norato-color-status-success);
+}
+
+.norato-input-field[data-disabled][data-size] .norato-otp__cell {
+  background: linear-gradient(var(--norato-color-surface-muted), var(--norato-color-surface-muted)) center / 100% var(--norato-control-visual-height) no-repeat;
+}
+
+.norato-input-field[data-size] .norato-otp__cell:focus-visible {
+  outline-color: var(--norato-color-brand-yellow);
+}
+
+.norato-textarea-group .norato-textarea__label {
+  color: var(--norato-color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .norato-input-field__control {
+    transition: none;
+  }
+}

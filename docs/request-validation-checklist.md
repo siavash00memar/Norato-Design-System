@@ -1140,3 +1140,13 @@
 - [x] Inert specimen control is exactly 36px high. Interactive playground input remains 48px; shared runtime target behavior is not reduced.
 - [x] Default marker, helper, RTL and no horizontal document overflow remain.
 - [ ] Mobile 390px and independent screen-reader check were not run in this correction.
+
+## Input page-wide field rule — 2026-11-02
+
+- [x] Top email field: visible shell 36px, RTL Persian placeholder, Estedad 700 label, and no helper text.
+- [x] Static Input variant shells: six sampled controls measure 36px; sampled labels are Estedad 700 and placeholders RTL/Vazirmatn Light.
+- [x] Live playground: single-line target inputs remain 48px or larger; the centered visible capsule is 36px; phone placeholder is RTL while phone entry stays LTR.
+- [x] Generic `NoratoField` in the all-components lab measures a 48px target with 36px capsule, Estedad 700 label and RTL/Vazirmatn Light 12px placeholder; keyboard focus uses a 1px yellow outline with no shadow.
+- [x] OTP target measures 48×48px with a 36px visual face; Textarea remains multiline (108px for current three-row Medium). No horizontal overflow.
+- [ ] Mobile viewport plus all variant/state combinations and independent screen-reader review were not rerun for this styling request.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the >500KB JavaScript chunk advisory (817.04KB).

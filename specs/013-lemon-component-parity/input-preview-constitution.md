@@ -1,10 +1,11 @@
-# Input email specimen correction — Constitution
+# Input page visual rule — Constitution
 
 ## User authority
-The user's latest explicit screenshot and Persian instructions supersede previous Input preview proportions and copy where they conflict.
+The user's latest instruction applies the same visual rule to every Input field wherever it appears across the component documentation pages: RTL placeholders, Estedad Bold titles, and 36px visible single-line field shells. It supersedes preview-only scope and any previous 48px visual-shell interpretation.
 
 ## Invariants
-- Norato remains RTL-first, uses semantic tokens, Estedad for headings and Vazirmatn for input text.
-- Only the inert email specimen at the top of the Input page receives the 36px visual shell; the live adapter and playground retain their minimum 48px interactive target.
-- Preserve label semantics, focus/state styling, the preview frame, helper copy, and the rest of the Input page.
-- The email icon belongs beside the title/label, not inside the input control.
+- Norato remains RTL-first and uses semantic tokens.
+- Live interactive targets stay at least 48px; the field border/surface is visually inset to 36px where needed.
+- Textarea remains multiline at its documented row-based height; do not collapse it into a single line.
+- Preserve adapter behavior, validation messages, states, OTP entry, phone/amount LTR values, and unrelated controls on other component pages.
+- Remove helper text only from the top email specimen as explicitly requested.

@@ -1,10 +1,10 @@
-# Input email specimen — Tasks
+# Input page visual rule — Tasks
 
-- [x] Record Constitution, Specify, Clarify, Plan and initial DoD acceptance.
-- [x] Audit and update label/placeholder tokens and selector ownership.
-- [x] Add conditional label slot passthrough while preserving default label rendering.
-- [x] Update the inert email specimen and scope 36px height to its preview only.
-- [x] Update Input and Figma rules and defect/request records.
-- [x] Inspect actual browser render, semantic label linkage, dimensions and live target; run project gates.
-- [x] Commit and push.
-- [ ] Verify mobile viewport after browser viewport resizing is available.
+- [x] Record latest page-wide acceptance and resolved 48px target / multiline Textarea constraints.
+- [x] Audit preview, Variant family matrix, States cards, Input playground, and the shared generic `NoratoField` lab.
+- [x] Remove the named helper text and set top placeholder direction to RTL.
+- [x] Add shared component-page visual rules for titles, shells, placeholder direction and OTP appearance.
+- [x] Verify all available Input specimens and live adapter measurements in the browser.
+- [x] Update contract/rules/request/error/DoD records.
+- [x] Run project gates and diff check.
+- [x] Commit and push the validated page-wide Input field update.
