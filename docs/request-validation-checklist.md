@@ -1085,3 +1085,10 @@
 - [x] Runtime adapter and inert gallery use the same white, stroke-free knob; labels and keyboard focus ring remain intact. The focus ring is separate from the knob.
 - [ ] Narrow viewport layout was not verified in this browser session.
 - [x] Required project gates pass. Change pushed to GitHub as `89cf424`.
+
+## Input field radius — 2026-11-02
+
+- [x] Lemon input radius is verified at 12px; Input-family fields and OTP use the Norato 12px card radius instead of the capsule radius.
+- [x] Browser confirms runtime OTP, eight subtype specimens, 41 state cards and playground fields compute to 12px; other component radii are untouched and RTL is intact.
+- [x] Token/catalog/typecheck/build and `git diff --check` pass. GitHub push is pending.
+- [ ] Mobile viewport and interactive state combinations were not re-exercised in this radius-only request.
