@@ -120,11 +120,11 @@ function onSearchInput(event: Event) {
             <NavigationMenuItem v-for="(item, index) in links" :key="`${item.label}-${index}`" class="norato-navbar__link-item">
               <template v-if="item.children?.length">
                 <span v-if="disabled || item.disabled" class="norato-navbar__link is-disabled" aria-disabled="true" :aria-current="isCurrent(item) ? 'page' : undefined">
-                  <span v-if="item.icon" aria-hidden="true">{{ item.icon }}</span>{{ item.label }}
+                  <span v-if="item.icon" class="norato-navbar__item-icon" aria-hidden="true"><svg v-if="item.icon === 'home'" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z" /></svg><svg v-else-if="item.icon === 'grid'" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg><span v-else>{{ item.icon }}</span></span>{{ item.label }}
                 </span>
                 <template v-else>
                   <NavigationMenuTrigger class="norato-navbar__link norato-navbar__link-trigger" :class="{ 'is-current': isCurrent(item) }">
-                    <span v-if="item.icon" aria-hidden="true">{{ item.icon }}</span>{{ item.label }}<span class="norato-navbar__chevron" aria-hidden="true">⌄</span>
+                    <span v-if="item.icon" class="norato-navbar__item-icon" aria-hidden="true"><svg v-if="item.icon === 'home'" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z" /></svg><svg v-else-if="item.icon === 'grid'" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg><span v-else>{{ item.icon }}</span></span>{{ item.label }}<svg class="norato-navbar__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 10 5 5 5-5" /></svg>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent class="norato-navbar__mega-panel">
                     <ul class="norato-navbar__mega-list">
@@ -140,10 +140,10 @@ function onSearchInput(event: Event) {
                 </template>
               </template>
               <span v-else-if="disabled || item.disabled || !item.href" class="norato-navbar__link is-disabled" aria-disabled="true" :aria-current="isCurrent(item) ? 'page' : undefined">
-                <span v-if="item.icon" aria-hidden="true">{{ item.icon }}</span>{{ item.label }}<span v-if="item.count !== undefined" class="norato-navbar__count">{{ item.count }}</span>
+                <span v-if="item.icon" class="norato-navbar__item-icon" aria-hidden="true"><svg v-if="item.icon === 'home'" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z" /></svg><svg v-else-if="item.icon === 'grid'" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg><span v-else>{{ item.icon }}</span></span>{{ item.label }}<span v-if="item.count !== undefined" class="norato-navbar__count">{{ item.count }}</span>
               </span>
               <NavigationMenuLink v-else class="norato-navbar__link" :class="{ 'is-current': isCurrent(item) }" :href="item.href" :active="Boolean(isCurrent(item))" @click="navigate(item)">
-                <span v-if="item.icon" aria-hidden="true">{{ item.icon }}</span>{{ item.label }}<span v-if="item.count !== undefined" class="norato-navbar__count">{{ item.count }}</span>
+                <span v-if="item.icon" class="norato-navbar__item-icon" aria-hidden="true"><svg v-if="item.icon === 'home'" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10h-6v-6H9v6H3z" /></svg><svg v-else-if="item.icon === 'grid'" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg><span v-else>{{ item.icon }}</span></span>{{ item.label }}<span v-if="item.count !== undefined" class="norato-navbar__count">{{ item.count }}</span>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
@@ -195,7 +195,7 @@ function onSearchInput(event: Event) {
               <li v-for="(item, index) in links" :key="`${item.label}-${index}`">
                 <details v-if="item.children?.length && !disabled && !item.disabled" class="norato-navbar__drawer-group">
                   <summary class="norato-navbar__drawer-link">
-                    <span>{{ item.label }}</span><span class="norato-navbar__chevron" aria-hidden="true">⌄</span>
+                    <span>{{ item.label }}</span><svg class="norato-navbar__chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m7 10 5 5 5-5" /></svg>
                   </summary>
                   <ul class="norato-navbar__drawer-sublist">
                     <li v-for="(child, childIndex) in item.children" :key="`${child.label}-${childIndex}`">
@@ -234,18 +234,22 @@ function onSearchInput(event: Event) {
 .norato-navbar.is-centered .norato-navbar__desktop-nav{grid-column:2;grid-row:1}
 .norato-navbar.is-centered .norato-navbar__actions{grid-column:3;grid-row:1}
 .norato-navbar__desktop-nav{min-inline-size:0}
-.norato-navbar__link-list{display:flex;align-items:center;justify-content:center;gap:var(--norato-space-1);margin:0;padding:0;list-style:none}
+.norato-navbar__link-list{display:flex;align-items:center;justify-content:center;gap:var(--norato-space-2);margin:0;padding:0;list-style:none}
 .norato-navbar__link-item{position:relative;min-inline-size:0}
-.norato-navbar__link,.norato-navbar__link-trigger{display:inline-flex;align-items:center;justify-content:center;gap:var(--norato-space-1);min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:0;border-radius:var(--norato-radius-pill);background:transparent;color:var(--norato-color-text-secondary);font:inherit;font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-regular-line-height);text-decoration:none;white-space:nowrap;cursor:pointer}
+.norato-navbar__link,.norato-navbar__link-trigger{display:inline-flex;align-items:center;justify-content:center;gap:var(--norato-space-2);min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:0;border-radius:var(--norato-radius-pill);background:transparent;color:var(--norato-color-text-secondary);font:inherit;font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-regular-line-height);text-decoration:none;white-space:nowrap;cursor:pointer}
 .norato-navbar.links-small .norato-navbar__link{font-size:var(--norato-type-body-caption-size)}
 .norato-navbar.links-underline .norato-navbar__link{border-radius:0}
-.norato-navbar.links-underline .norato-navbar__link.is-current{box-shadow:inset 0 calc(-1 * var(--norato-border-medium)) var(--norato-color-brand-blue)}
-.norato-navbar__link:hover,.norato-navbar__link.is-current,.norato-navbar__link-trigger[data-state="open"]{background:var(--norato-color-info-container);color:var(--norato-color-brand-blue)}
+.norato-navbar.links-underline .norato-navbar__link.is-current{box-shadow:inset 0 calc(-1 * var(--norato-border-medium)) var(--norato-color-brand-yellow)}
+.norato-navbar__link:hover{background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
+.norato-navbar__link.is-current,.norato-navbar__link-trigger.is-current,.norato-navbar__link-trigger[data-state="open"]{background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 .norato-navbar.links-underline .norato-navbar__link:hover,.norato-navbar.links-underline .norato-navbar__link-trigger:hover{background:transparent;color:var(--norato-color-brand-blue)}
 .norato-navbar__link:focus-visible,.norato-navbar__brand-link:focus-visible,.norato-navbar__menu-trigger:focus-visible,.norato-navbar__back:focus-visible,.norato-navbar__drawer-close:focus-visible,.norato-navbar__mobile-heading:focus-visible,.norato-navbar__search-field input:focus-visible,.norato-navbar__drawer-link:focus-visible,.norato-navbar__mega-link:focus-visible{outline:var(--norato-border-medium) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1)}
 .norato-navbar__link.is-disabled,.norato-navbar__drawer-link.is-disabled{color:var(--norato-color-text-disabled);cursor:not-allowed}
 .norato-navbar.is-disabled .norato-navbar__link{pointer-events:none}
-.norato-navbar__chevron{font-size:var(--norato-type-body-small-size);line-height:1}
+.norato-navbar__item-icon{display:inline-grid;place-items:center;flex:none;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm)}
+.norato-navbar__item-icon svg{display:block;inline-size:100%;block-size:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.norato-navbar__chevron{display:block;flex:none;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-navbar__link-trigger[data-state="open"] .norato-navbar__chevron,.norato-navbar__drawer-group[open]>.norato-navbar__drawer-link .norato-navbar__chevron{transform:rotate(180deg)}
 .norato-navbar__count{display:inline-grid;place-items:center;min-inline-size:var(--norato-space-6);min-block-size:var(--norato-space-6);padding-inline:var(--norato-space-1);border-radius:var(--norato-radius-pill);background:var(--norato-color-info-container);color:var(--norato-color-brand-blue);font-size:var(--norato-type-body-min-size);direction:ltr}
 .norato-navbar__mega-panel{position:absolute;z-index:var(--norato-layer-popover);inset-block-start:calc(100% + var(--norato-space-1));inset-inline-start:0;inline-size:min(var(--norato-navbar-mega-menu-max-inline-size),calc(100vw - var(--norato-space-6)));max-block-size:min(70vh,480px);overflow:auto;padding:var(--norato-space-2);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);box-shadow:0 var(--norato-space-2) var(--norato-space-6) var(--norato-color-glass-shadow)}
 .norato-navbar__mega-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:var(--norato-space-1);margin:0;padding:0;list-style:none}

@@ -18,8 +18,8 @@ const showMegaMenu = ref(true)
 const activationCount = ref(0)
 
 const demoLinks = computed<NoratoNavbarLink[]>(() => [
-  { label: 'خانه', href: '#component-navbar', current: true, icon: '⌂' },
-  { label: 'محصولات', href: '#component-navbar', icon: '▦', ...(showMegaMenu.value ? { children: [{ label: 'طراحی رابط', href: '#component-navbar' }, { label: 'سامانهٔ طراحی', href: '#component-navbar' }, { label: 'راهنما', href: '#component-navbar' }, { label: 'در دسترس نیست', disabled: true }] } : {}) },
+  { label: 'خانه', href: '#component-navbar', current: true, icon: 'home' },
+  { label: 'محصولات', href: '#component-navbar', icon: 'grid', ...(showMegaMenu.value ? { children: [{ label: 'طراحی رابط', href: '#component-navbar' }, { label: 'سامانهٔ طراحی', href: '#component-navbar' }, { label: 'راهنما', href: '#component-navbar' }, { label: 'در دسترس نیست', disabled: true }] } : {}) },
   { label: 'قیمت‌ها', href: '#component-navbar' },
   { label: 'راهنما', href: '#component-navbar', count: 3 },
 ])

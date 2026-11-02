@@ -9,3 +9,5 @@
 - [x] T007 Implement the public Navbar adapter, inert specimen, interactive playground, copy example and synchronized package/docs/catalog records; current state is truthfully `Adapted` while DoD gates remain open.
 - [ ] T008 Desktop 1280×720 comparison and nine-layout/style geometry checks are complete; mobile render and full interactive matrix remain open.
 - [x] T009 Technical gates and evidence were recorded; adapter checkpoint `67a4885` was pushed and local/remote refs matched.
+
+- [x] Replace text-glyph navigation icons and chevrons with aligned SVG icons; use Norato yellow for current/open navigation state.

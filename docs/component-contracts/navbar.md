@@ -48,7 +48,7 @@
 
 Props: `id` (اجباری)، `links`، `type` (`app|website|centered`)، `style` (`bar|floating|transparent`)، `mobileType` (`default|back|search|large-title`)، `mobileStyle` (`bar|transparent`)، `linkStyle` (`pill|underline`)، `linkSize` (`small|medium`)، `brand`، `brandHref`، `activeHref`، `mobileTitle`، `search`، `searchPlaceholder`، `navigationLabel`، `mobileNavigationLabel`، `disabled` و `dir`.
 
-`NoratoNavbarLink`: `label`، `href?`، `icon?`، `count?`، `current?`، `disabled?` و `children?: NoratoNavbarLink[]`.
+`NoratoNavbarLink`: `label`، `href?`، `icon?` (مقادیر `home` و `grid` آیکن SVG استاندارد دارند)، `count?`، `current?`، `disabled?` و `children?: NoratoNavbarLink[]`.
 
 `v-model:search` مقدار جست‌وجوی موبایل را کنترل می‌کند. رویدادها: `update:search(value)`، `back` و `navigate(item)`. Slotها: `brand`، `search`، `actions`، `avatar`، `mobile-actions`، `mobile-title-actions` و `mobile-search`.
 

@@ -1032,3 +1032,9 @@
 - [x] Removed the explicit LTR direction override from shared playground dropdown option rows; Persian labels now flow RTL and align right.
 - [x] At 341px mobile width, opened the Input password-strength dropdown and visually confirmed selected and unselected options align right. Keyboard behavior and RTL page layout remain intact.
 - [x] Token/catalog checks, Vue typecheck/build and diff check pass; build retains the large-JS-chunk advisory.
+
+## Navbar icons, active state and chevron — implementation checkpoint (2026-11-02)
+
+- [x] Replaced the demo's home/grid Unicode glyphs and menu chevron with consistently sized SVG icons; chevron rotates when its menu opens.
+- [x] Current/open links use Norato yellow with dark text; hover is neutral and focus remains accessible.
+- [x] Browser render confirms SVG icons, open menu/rotated arrow, current state colors and no horizontal page overflow. Vue typecheck/build pass; only the existing large-JS-chunk advisory remains.
