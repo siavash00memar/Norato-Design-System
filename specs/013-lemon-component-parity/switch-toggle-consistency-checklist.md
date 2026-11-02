@@ -6,4 +6,4 @@
 - [x] Browser verified checked/unchecked styling, keyboard focus, Space toggling, RTL direction, and visible spacing. Focus ring remains on the control track for accessibility and does not belong to the knob.
 - [ ] Narrow viewport overflow was not verified in this browser session.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass; production JS chunk advisory is recorded.
-- [x] Contract, Figma rules, request validation, error log, family ledger and tasks match verified behavior; GitHub push remains pending.
+- [x] Contract, Figma rules, request validation, error log, family ledger and tasks match verified behavior; change pushed to GitHub as `89cf424`.

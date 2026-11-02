@@ -717,4 +717,6 @@
 - The user reports playground toggles whose checked knob touches the track edge; they request the specimen's inset, white knob, and no knob stroke.
 - Cause: shared playground used a 36×20 track and 12px knob but translated 20px in checked RTL state, although available travel after 4px padding was 16px. Runtime/gallery knobs also retained a dark fill and elevation shadow from the older approved contract.
 - Correction: use the shared 40×24 medium Switch track and 16px knob, place both states with the same 4px logical inset as the live adapter, remove the dark checked fill and knob shadow/stroke across runtime/gallery/playground.
-- [ ] Verify actual browser states, geometry, keyboard/focus, responsive layout and technical gates before closing.
+- [x] Local browser confirms shared checked and unchecked toggles plus the static Switch matrix use white 16px knobs with no border or shadow; medium track is 40×24px and the nearest physical edge gap is 5px in RTL. Space toggles the shared control; the focus ring remains on the track.
+- [x] Token check, 49-route catalog check, Vue typecheck/build and `git diff --check` pass; production JS chunk advisory is 812.79KB.
+- [ ] Narrow viewport overflow remains unverified in this browser session.

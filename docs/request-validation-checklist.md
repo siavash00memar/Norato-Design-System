@@ -1084,4 +1084,4 @@
 - [x] Playground dimensions match the medium specimen (40×24 track, 16px knob); knob is white with no border, outline or shadow. Track is yellow when checked and neutral when unchecked.
 - [x] Runtime adapter and inert gallery use the same white, stroke-free knob; labels and keyboard focus ring remain intact. The focus ring is separate from the knob.
 - [ ] Narrow viewport layout was not verified in this browser session.
-- [x] Required project gates pass. GitHub push is pending.
+- [x] Required project gates pass. Change pushed to GitHub as `89cf424`.
