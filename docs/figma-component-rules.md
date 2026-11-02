@@ -377,3 +377,9 @@
 - Numbers mode uses a bounded page window with first/last pages and a current-page sibling; Simple shows page X of Y with Previous/Next and suits narrow/mobile layouts.
 - Keep all interactive targets at least 48px even for Small. Number buttons expose `aria-current="page"`; boundary controls are truly disabled.
 - Keep ellipses noninteractive and intrinsic. On narrow screens the numbered rail can scroll internally; do not squash the page cells.
+
+## Button preview geometry — 2026-11-02
+
+- The top Button specimen keeps Primary, Secondary and Cancel at one shared width and height; the Cancel reference is no longer wider than the executable buttons.
+- All three specimen borders use the 2px medium stroke token; Cancel retains its neutral border color.
+- This is documentation-preview geometry only and does not change runtime Button sizing.

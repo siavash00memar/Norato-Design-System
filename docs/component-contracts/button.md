@@ -89,3 +89,6 @@ The playground select chevrons are centered and inset within their controls. Its
 
 The playground variant and HTML type controls open an in-page listbox below the trigger. The selected option uses a Norato token, arrow keys navigate, Enter or Space select, Escape closes and returns focus, and clicking outside dismisses the menu. This presentation belongs to the documentation playground; it does not change the package's NoratoSelect component.
 
+
+### نمونهٔ بالای صفحه — اندازه و دورخط
+سه نمونهٔ Preview (`Primary`، `Secondary` و «انصراف») هم‌عرض و هم‌ارتفاع‌اند؛ عرض از ترکیب توکن‌های کنترل، فاصله و ارتفاع هدف محاسبه می‌شود و ارتفاع برابر `control-target-min + space-3` است. دورخط هر سه ۲px است؛ رنگ نمونهٔ انصراف خنثی می‌ماند. این قاعده فقط به نمونهٔ مستندات مربوط است و اندازهٔ adapter اجرایی را تغییر نمی‌دهد.

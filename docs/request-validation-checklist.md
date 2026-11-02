@@ -1057,3 +1057,10 @@
 - [x] Screenshot matches the Range playground focus state. RTL inset: 50% overconstrained both physical sides, shifting the visual thumb away from its 48px focus target; outline on the 48px hit area also made the ring oversized.
 - [x] Centered the visual thumb using a physical center anchor, kept the 48px hit target, and moved the dark outline/yellow halo to the visual thumb.
 - [x] Browser rerender confirms target bounds are 48×48px, the 16px visible knob is centered within the target, focus-visible draws a dark 2px outline and yellow halo on the visible knob, and keyboard arrows change 60→61→60. The browser screenshot shows the knob and ring concentric in RTL.
+
+## Button specimen equal sizing — 2026-11-02
+
+- [x] Primary, Secondary and Cancel use the same token-derived 128px × 60px specimen frame; the first control no longer reads as a circle.
+- [x] All three frames use a 2px stroke, with yellow Secondary and neutral Cancel borders.
+- [x] Browser at `http://127.0.0.1:5174/#component-button`, 1280×720: all three preview frames measure 128×60px, RTL is preserved, and computed borders measure 2px. Screenshot confirms the first Primary button is visibly pill-shaped; Cancel remains neutral and Secondary yellow.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, production build and `git diff --check` pass. Build retains the advisory that the app JS chunk exceeds 500KB.
