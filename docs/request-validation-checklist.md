@@ -1090,5 +1090,5 @@
 
 - [x] Lemon input radius is verified at 12px; Input-family fields and OTP use the Norato 12px card radius instead of the capsule radius.
 - [x] Browser confirms runtime OTP, eight subtype specimens, 41 state cards and playground fields compute to 12px; other component radii are untouched and RTL is intact.
-- [x] Token/catalog/typecheck/build and `git diff --check` pass. GitHub push is pending.
+- [x] Token/catalog/typecheck/build and `git diff --check` pass. Change is pushed to GitHub as `28c12ce`.
 - [ ] Mobile viewport and interactive state combinations were not re-exercised in this radius-only request.

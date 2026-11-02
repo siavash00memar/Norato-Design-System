@@ -5,4 +5,4 @@
 - [x] Other component radii and Input API are untouched; RTL is confirmed. Focus, invalid, disabled, loading and mobile were not re-exercised in this request.
 - [x] Browser-computed styles and screenshot confirm the Input page against the Lemon 12px field reference; no horizontal overflow at the 1280px browser viewport.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Production JS chunk advisory: 813.05KB.
-- [x] Input contract, Figma rule, request checklist, error log and family evidence are updated. GitHub push is pending.
+- [x] Input contract, Figma rule, request checklist, error log and family evidence are updated. Change is pushed to GitHub as `28c12ce`.

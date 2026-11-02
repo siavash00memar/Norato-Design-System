@@ -710,7 +710,7 @@
 - User reports all Input fields appear capsule-shaped.
 - Browser comparison: Lemon's actual `#input` field is 324×41px with a 12px radius. Local Norato's eight subtype specimens and state samples used `--norato-radius-control` (25px); the shared live field shell already used `--norato-radius-card` (12px), but OTP cells still used 25px.
 - Correct only the Input gallery/playground field selectors and OTP cells to `--norato-radius-card`; preserve other component radii and input behavior.
-- [x] Local browser confirms all eight family specimens, 41 state field shells, six gallery OTP cells, 20 state OTP cells, six live OTP cells, and four playground controls compute to 12px. RTL remains set and the 1280px page has no horizontal overflow. Token/catalog checks, Vue TypeScript/build and diff check pass; build emits an 813.05KB JavaScript chunk advisory.
+- [x] Local browser confirms all eight family specimens, 41 state field shells, six gallery OTP cells, 20 state OTP cells, six live OTP cells, and four playground controls compute to 12px. RTL remains set and the 1280px page has no horizontal overflow. Token/catalog checks, Vue TypeScript/build and diff check pass; build emits an 813.05KB JavaScript chunk advisory. Commit `28c12ce` is pushed to `origin/master`.
 - [ ] Mobile viewport and interactive focus/invalid/disabled/loading combinations were not re-exercised in this radius-only request.
 
 ## Range fill boundary and thumb state — 2026-11-02
