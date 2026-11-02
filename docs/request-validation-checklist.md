@@ -1117,3 +1117,10 @@
 - [x] Clicking toggles data state and `aria-checked`; no public API or behavior change.
 - [ ] Mobile viewport, complete state matrix and screen-reader behavior were not rechecked in this request.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing >500KB JavaScript chunk advisory (813.93KB).
+
+## Button specimen dotted glass background — 2026-11-02
+
+- [x] Actual Button page at `http://127.0.0.1:5177/#component-button`: computed background contains a 14px dotted grid, warning yellow wash at top-left, info blue wash at bottom-right, dotted border and Norato elevation.
+- [x] At the active 499px browser viewport, frame width is 452px and document width is 484px; no horizontal overflow. RTL is preserved; the inert specimen retains the existing two button elements and visual cancel action.
+- [ ] The attached reference uses a taller frame; this request changed only the background, so Button specimen sizing/content was kept as-is. A 390px viewport and desktop-wide capture were not separately run.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 814.29KB JavaScript chunk advisory.

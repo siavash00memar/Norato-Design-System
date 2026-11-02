@@ -13,6 +13,8 @@
   --norato-sidebar-preview-grid-size: 14px;
   --norato-sidebar-indicator-size: 3px;
   --norato-layout-content-max: 1200px;
+  --norato-preview-grid-size: 14px;
+  --norato-preview-dot-size: 1px;
   --norato-component-padding-block: 12px;
   --norato-component-padding-inline: 18px;
   --norato-frame-mobile-width: 360px;

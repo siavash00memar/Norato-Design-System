@@ -747,3 +747,9 @@
 - **Observed:** Checked Switch track retained a gray `border-strong` stroke; unchecked track used near-white glass fill, so it appeared white.
 - **Correction:** Checked track now uses yellow for both fill and border. Unchecked track uses the semantic muted surface (`#f2f2f2`) with its subtle default border. Runtime and shared playground toggles follow the same contract.
 - **Scope:** Switch track only; knob geometry, 48px target and keyboard focus indicator are unchanged.
+
+## ERR-072 — Button specimen inherited a plain glass surface (2026-11-02)
+
+- **Observed:** The inert Button preview used the generic plain glass background, unlike the requested dotted glass specimen with warm/cool corner washes.
+- **Correction:** Added a Button-only dotted background using shared dot-grid and semantic warning/info surface tokens. Existing three-button content and playground are unchanged.
+- **Scope:** Top Button specimen only.

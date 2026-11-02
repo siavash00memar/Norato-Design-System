@@ -27,6 +27,8 @@
 
 ## Button
 
+- The top Button specimen keeps its three-button content on a dotted glass surface with a soft warm upper-left and cool lower-right wash. Use semantic Norato tokens; scope the background to the inert specimen only.
+
 - مرجع: Figma `8775:23830`، instanceهای `8775:23831` تا `8775:23833`
 - عرض: ۱۲۱px
 - ارتفاع بصری: ۳۶px
