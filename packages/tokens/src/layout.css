@@ -1,5 +1,7 @@
 :root {
   --norato-sidebar-width: 256px;
+  --norato-tabs-preview-inline-size: 430px;
+  --norato-tabs-preview-frame-block-size: 288px;
   --norato-sidebar-preview-frame-inline-size: 640px;
   --norato-sidebar-preview-frame-mobile-inline-size: 320px;
   --norato-sidebar-preview-frame-block-size: 288px;

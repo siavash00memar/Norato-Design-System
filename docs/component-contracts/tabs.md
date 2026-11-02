@@ -1,66 +1,68 @@
 # Tabs — قرارداد کامپوننت نوراتو
 
 **حوزه:** Navigation  
-**وضعیت نوراتو:** Adapted  
+**وضعیت نوراتو:** Adapted
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بالا مستقل و inert است؛ تغییر انتخاب را در playground اجرایی انجام بده.
 
 ## Overview
 
-قرارداد طراحی Norato: جابه‌جایی بین بخش‌های یه صفحه. Line با خط زیرین، Soft با پس‌زمینه‌ی شیشه‌ای روشن‌تر.
+Tabs جابه‌جایی میان بخش‌های هم‌سطح یک صفحه را فراهم می‌کند. Lemon چهار جزء و ۳۹ گونه را ثبت کرده است: Tabs با ۹ ترکیب و Tab Item با ۳۰ حالت. Norato دو سبک Line و Soft، سه اندازه و دو جهت را پشتیبانی می‌کند.
 
 ## Anatomy
 
-- **Tab Bar** — ظرف تب‌ها
-- **Selected Tab** — تب فعال با خط یا شیشه
-- **Icon** — آیکن اختیاری سمت راست
-- **Count** — شمارنده سمت چپ
+- **Tab List:** ظرف معنایی tablist با فوکوس چرخشی.
+- **Tab Trigger:** گزینهٔ انتخاب‌شدنی با value یکتا، برچسب و محتوای اختیاری.
+- **Indicator:** خط زیرین آبی در Line یا سطح آبی روشن در Soft.
+- **Count / Icon:** تزئین اختیاری؛ آیکن در سمت راست و شمارنده کنار متن.
+- **Tab Panel:** محتوای متناظر که با trigger از طریق value پیوند دارد.
 
 ## Variants
 
-- **Tabs (9 variant):** Style: Line، Soft؛ Size: Small، Medium، Large؛ Orientation: Horizontal، Vertical
-- **Tab Item (30 variant):** Style: Line، Soft؛ Size: Small، Medium، Large؛ State: Default، Hover، Selected، Disabled، Focus
+- Style: Line, Soft.
+- Size: Small, Medium, Large.
+- Orientation: Horizontal, Vertical.
+- Tab state: Default, Hover, Selected, Disabled, Focus.
 
 ## Sizes
 
-- **Tabs:** Small، Medium، Large
-- **Tab Item:** Small، Medium، Large
+هر سه اندازه، target حداقل 48px را حفظ می‌کنند؛ اندازهٔ متن و فاصله تغییر می‌کند، نه target تعاملی.
 
 ## States
 
-- **Tab Item:** Default، Hover، Selected، Disabled، Focus
+تب منتخب با `aria-selected` و نشان بصری مشخص می‌شود. تب غیرفعال از pointer و صفحه‌کلید کنار گذاشته می‌شود. focus-visible حلقهٔ دوپیکسلی Norato و halo توکنی دارد. پنل فعال با trigger منتخب نمایش داده می‌شود.
 
 ## Parts
 
-- **Tabs — 9 variant:** نوار ۳ تا ۵ تب، افقی یا عمودی. ابعاد/حالت‌ها: Style: Line، Soft؛ Size: Small، Medium، Large؛ Orientation: Horizontal، Vertical
-- **Tab Item — 30 variant:** یه تب تکی. ابعاد/حالت‌ها: Style: Line، Soft؛ Size: Small، Medium، Large؛ State: Default، Hover، Selected، Disabled، Focus
+ترتیب RTL: آیکن، عنوان، شمارنده. حالت افقی در بالا و حالت عمودی در inline-end قرار می‌گیرد. لیست در عرض باریک پیمایش افقی دارد و خود تب‌ها فشرده یا کشیده نمی‌شوند.
 
 ## Usage
 
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoTabs, type NoratoTab } from '@norato/vue'
+const selected = ref('all')
+const tabs: NoratoTab[] = [
+  { value: 'all', label: 'همه', count: 12, content: 'همهٔ پروژه‌ها' },
+  { value: 'active', label: 'فعال', content: 'پروژه‌های فعال' },
+]
+</script>
+<template><NoratoTabs id="projects-tabs" v-model="selected" label="پروژه‌ها" :tabs="tabs" /></template>
+```
+
 ### راهنمای کاربرد Norato
 
-- برچسب تب‌ها رو یکی‌دو کلمه نگه دار.
-- محتوای تب‌ها باید هم‌سطح و مرتبط باشن.
-
-### محدودیت‌های کاربرد
-
-- برای مراحل پشت‌سرهم Tabs نذار؛ Stepper درسته.
-- تب‌ها رو دو خطی نکن.
-
-### جهت RTL
-
-ترتیب: آیکن سمت راست، برچسب، شمارنده سمت چپ.
+- برچسب‌ها کوتاه و محتوای پنل‌ها هم‌سطح و مرتبط باشند.
+- برای مراحل پشت‌سرهم از Stepper استفاده کن.
+- برای انتخاب یک مقدار بدون محتوای وابسته، Segmented Control مناسب‌تر است.
 
 ## Accessibility
 
-نقش tablist داره و با کلیدهای جهت بین تب‌ها جابه‌جا میشه.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+بر پایهٔ Reka Tabs: نقش‌های tablist/tab/tabpanel، اتصال شناسهٔ پنل و trigger، roving tabindex و فعال‌سازی خودکار/دستی. پیش‌فرض جهت افقی و فعال‌سازی خودکار است. کلیدهای جهت با `dir="rtl"` جهت دیداری راست‌به‌چپ را دنبال می‌کنند؛ جهت عمودی از بالا/پایین استفاده می‌کند. حلقه در انتهای فهرست برقرار است. محتوای غیرفعال mount می‌ماند تا مقدار کنترل‌شدهٔ آن از دست نرود.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از توکن‌های semantic `--norato-color-brand-blue`, `--norato-color-info-container`, `--norato-color-border-default`, `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-text-disabled`, `--norato-color-focus-contrast`, `--norato-color-focus-ring`, `--norato-control-target-min`, spacing, radius, typography and motion استفاده می‌شود.

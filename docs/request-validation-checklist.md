@@ -989,3 +989,17 @@
 
 - [x] Existing Lemon desktop comparison and local desktop/mobile interactions recorded in Sidebar checkpoint above; geometry was corrected after observed vertical stretch.
 - [ ] The browser bridge became unavailable during the final rerender attempt (rowser.user is unavailable), so the exact post-adjustment screenshot and remaining keyboard/modal/320px cases are unverified. DoD remains open; no completion claim.
+
+## Tabs — implementation checkpoint (2026-11-02)
+
+- [x] Added exported controlled `NoratoTabs` on the installed Reka Tabs primitive, an inert Lemon-mapped preview, a Button-style page/playground, snippet, nine-section contract and semantic API docs.
+- [x] Fresh Lemon/local renders inspected at 390×844; exact size/orientation interaction, RTL ArrowLeft/End, disabled-tab skipping, focus style, 390/320 responsive dimensions and technical gates recorded below.
+
+
+## Tabs — DoD browser and technical record (2026-11-02)
+
+- [x] Lemon live page reviewed at 1280×720 and 390×844: 4 parts, 39 variants, Line underline, Soft surface, 3 sizes, 2 orientations, RTL order and 2px focus ring. Norato live page rendered at matched 390×844 and 1280×720; the 390px document width stays within the viewport and its specimen frame is 343×136 with a 317×49 tablist. At 320px the 262×49 preview tablist retains four 48px targets with internal horizontal scrolling and no document overflow. The page structures differ, so compare the component treatment rather than overall section height.
+- [x] Live DOM confirms 4 triggers/4 panels, one selected trigger, matching active panel, disabled tab semantics and 48px targets for Small, Medium, Large. RTL ArrowLeft moves to the visually left next tab; End focuses/selects last enabled tab; focus ring computes to 2px blue outline + 2px yellow halo. Vertical/Soft at 429px has no horizontal document overflow.
+- [x] Copyable example displays a valid `</script>` closing tag. Preview has `inert` and `aria-hidden`; no interactive descendants.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass. Build reports advisory that the JS chunk exceeds 500KB.
+- [ ] Independent screen-reader review and exhaustive cross-product of all variant/state combinations remain open; keep maturity `Adapted`.

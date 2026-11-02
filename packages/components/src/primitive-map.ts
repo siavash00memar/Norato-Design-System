@@ -24,4 +24,5 @@ export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   navbar: { candidate: 'shadcn-vue NavigationMenu + Dialog / installed Reka UI NavigationMenuRoot + DialogRoot', decision: 'Use Reka NavigationMenu for website link/disclosure focus and keyboard behavior, plus Reka Dialog for the modal mobile drawer; keep website link semantics and style with Norato tokens.' },
   sidebar: { candidate: 'Reka DialogRoot + native Vue anchors/buttons', decision: 'Use installed Reka Dialog for the responsive modal drawer; native links and buttons keep site-navigation semantics, while controlled section rendering stays in Vue.' },
   'tree-view': { candidate: 'custom contract', decision: 'Requires multi-select and keyboard navigation review.' },
+  tabs: { candidate: 'Reka UI TabsRoot + TabsList + TabsTrigger + TabsContent', decision: 'Use the installed Reka Tabs primitive for controlled selection, roving focus, RTL arrow navigation, orientation and tab-panel semantics; style Line/Soft and Norato hit targets with semantic tokens.' },
 }

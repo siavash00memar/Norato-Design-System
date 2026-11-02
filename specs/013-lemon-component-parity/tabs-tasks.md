@@ -1,0 +1,1 @@
+No blocking decision remains: user delegated decisions. Use installed Reka TabsRoot/List/Trigger/Content; horizontal arrow direction follows RTL and vertical uses Up/Down. Selection is controlled via v-model; tab values uniquely identify panels; orientation defaults horizontal; activation defaults automatic as native Reka Tabs behavior.

@@ -347,3 +347,12 @@
 - Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than Lemon's visual rows.
 - Preserve Lemon's brand/workspace header, section title, icon/count items, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
 - Use Norato semantic blue/yellow tokens and Persian typography. Collapsed labels remain accessible; mobile uses a modal drawer.
+
+
+## Tabs — 2026-11-02
+
+- Map Lemon's four parts and 39 variants to the Button-structured page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
+- Keep Norato's blue/yellow palette. Line uses a 2px blue underline; Soft uses the semantic info surface.
+- Support horizontal/vertical orientation and Small/Medium/Large while preserving 48px interaction targets; in vertical RTL, the list stays at inline-end.
+- Keep icons intrinsic, order icon → label → count in RTL, and allow horizontal tab scrolling at narrow widths rather than squeezing or stretching labels.
+- Use Reka Tabs for tab/tabpanel relationships, controlled selection and keyboard focus.

@@ -655,3 +655,12 @@
 - **Finding:** catalog called Sidebar Adapted while only a hard-coded .sample-sidebar screenshot-like specimen existed; legacy grouped CSS hid its actual geometry contract.
 - **Correction:** added a public controlled adapter, separate inert bounded specimen and executable playground; old .sample-sidebar class is no longer rendered.
 - **Prevention:** require runtime API evidence before describing a component as reusable.
+
+
+## ERR-065 — Tabs specimen inherited Segmented styling (2026-11-02)
+
+- **Component:** Tabs inert specimen
+- **Finding:** legacy `.sample-tabs` was grouped with `.sample-segment`, giving Tabs a filled pill surface and selected pill inconsistent with its Line/Soft contract.
+- **Correction:** remove Tabs from the shared legacy selector group; define a dedicated bounded Line specimen and separate NoratoTabs adapter styles.
+- **Evidence:** local rendered preview shows the inert underline specimen; interactive playground uses independent component selectors.
+- **Prevention:** audit shared selectors before changing any component visual and keep family-specific specimen CSS isolated.
