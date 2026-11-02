@@ -202,6 +202,7 @@ watch(() => props.multiple, (multiple) => {
         <SelectContent
           :id="`${id}-content`"
           class="norato-select__content"
+          :data-norato-select-id="id"
           position="popper"
           align="start"
           :side-offset="4"

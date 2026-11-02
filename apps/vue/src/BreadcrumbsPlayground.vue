@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 import { NoratoBreadcrumbs, type NoratoBreadcrumbItem } from '@norato/vue'
 import { usageExamples } from './usage-examples'
 const props = defineProps<{ copiedKey: string }>()
@@ -22,9 +23,9 @@ const example = computed(() => usageExamples.breadcrumbs.replace('<NoratoBreadcr
       <NoratoBreadcrumbs id="playground-breadcrumbs" label="مسیر فروشگاه" :items="items" :style="style" :size="size" :separator="separator" :collapsed="collapsed" />
     </div>
     <div class="breadcrumbs-playground__controls">
-      <label>سبک<select v-model="style"><option value="plain">ساده</option><option value="glass">شیشه‌ای</option></select></label>
-      <label>اندازه<select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option></select></label>
-      <label>جداکننده<select v-model="separator"><option value="chevron">فلش</option><option value="slash">خط مورب</option></select></label>
+      <PlaygroundSelect id="breadcrumbsplayground-style-1" v-model="style" label="سبک" :options="[{value:'plain',label:'ساده'},{value:'glass',label:'شیشه‌ای'}]" />
+      <PlaygroundSelect id="breadcrumbsplayground-size-2" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'}]" />
+      <PlaygroundSelect id="breadcrumbsplayground-separator-3" v-model="separator" label="جداکننده" :options="[{value:'chevron',label:'فلش'},{value:'slash',label:'خط مورب'}]" />
       <label class="breadcrumbs-playground__toggle"><input v-model="collapsed" type="checkbox"> جمع‌کردن مسیر بلند</label>
     </div>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'breadcrumbs-code', example)">{{ props.copiedKey === 'breadcrumbs-code' ? 'کپی شد' : 'کپی کد' }}</button></div>

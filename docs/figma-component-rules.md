@@ -192,6 +192,11 @@
   spacing. This applies only to Child siblings; Leaf rows inside an expanded Child retain their
   own Figma-derived compact spacing.
 - Norato design system updates (2026-10-27): preserve Norato yellow and blue as the only brand accents; use glass surfaces as a neutral treatment; component inventory status must distinguish Implemented, Adapted, Proposed and Deferred; new runtime behavior targets Vue 3 and remains RTL-first.
+
+## Primary accent and dropdown consistency — 2026-11-02
+
+- Norato yellow is the primary accent for selected, checked, active, progress and primary-control states. Use dark foregrounds on yellow. Keep blue for links and informational/status semantics, not as a substitute primary selection color.
+- Product and playground dropdowns use Norato's custom accessible dropdown patterns. Do not expose browser-native option menus for component interactions or playground settings.
 # اصلاح داشبورد مستندات و نمونه‌های Vue — 2026-10-27
 
 - renderer قدیمی جزئیات کامپوننت با متن عمومی حذف شد؛ هر route فقط قرارداد مستقل همان خانواده را نشان می‌دهد.
@@ -364,3 +369,11 @@
 - Use Norato's own semantic palette, RTL direction and Persian fonts. Chevron points left in RTL; slash is neutral.
 - For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
 - Keep labels intrinsic and prevent wrapping; at narrow widths allow the trail itself to scroll rather than stretching links or creating page overflow.
+
+## Pagination — 2026-11-02
+
+- Preserve Lemon's five-part anatomy and 18 documented combinations on the Button-shaped page.
+- Keep Norato's semantic blue palette, RTL ordering and Persian labels; Previous/Page items sit at inline-end, Next at inline-start.
+- Numbers mode uses a bounded page window with first/last pages and a current-page sibling; Simple shows page X of Y with Previous/Next and suits narrow/mobile layouts.
+- Keep all interactive targets at least 48px even for Small. Number buttons expose `aria-current="page"`; boundary controls are truly disabled.
+- Keep ellipses noninteractive and intrinsic. On narrow screens the numbered rail can scroll internally; do not squash the page cells.

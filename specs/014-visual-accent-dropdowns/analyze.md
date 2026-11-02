@@ -1,0 +1,3 @@
+# Visual Accent and Dropdown Consistency — Analyze
+
+Blue remains a legitimate secondary brand and information color, so a blanket replacement would damage links and information states. Change only primary interactive states (selection, checked state, selected navigation/tab/page, active range/progress and focused-open dropdown border) to yellow; use dark text/marks on yellow for contrast. `NoratoSelect` already uses Reka UI and is the runtime source of truth. `PlaygroundSelect` provides custom options for the docs tooling but currently supports only string values, so widen its value contract before migrating numeric settings. Date Picker can reuse `NoratoSelect` without a circular import because Select does not depend on Date Picker.

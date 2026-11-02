@@ -672,3 +672,20 @@
 - **Correction:** add an inert bounded specimen, a semantic native Vue adapter with expandable middle links and a controlled playground.
 - **Evidence:** Lemon and Norato inspected at 1280×720/390×844; browser confirmed 48px links, 2px keyboard ring, current-page ARIA, expanded/collapsed disclosure, 320px no-page-overflow behavior, and an empty console error list.
 - **Prevention:** require catalog maturity to match a public adapter and verify long-path behavior at narrow widths.
+
+## ERR-067 — Pagination specimen was only a static page-number strip (2026-11-02)
+
+- **Component:** Pagination
+- **Finding:** the old specimen implied an adapter but had no controlled value, total-page bound, current-page semantics, disabled boundaries or responsive behavior.
+- **Correction:** add a controlled adapter with Numbers/Simple modes, bounded page ranges, an inert specimen and an interactive playground.
+- **Evidence:** browser review before the final CSS cleanup confirmed page selection and `aria-current`, both boundary-disabled controls, 48px live targets, 2px focus, mobile Simple without document overflow, and Numbers internal scrolling; console errors empty. Lemon desktop/mobile visuals were inspected, but the post-fix compact specimen and RTL chevrons have not been rechecked in browser. Token/catalog/typecheck/build/diff gates pass; independent screen-reader review remains open.
+- **Prevention:** verify that pagination reflects actual page-boundary state and does not expose unbounded page lists.
+
+## ERR-068 — Primary component states used blue and some option menus were browser-native (2026-11-02)
+
+- **Component:** cross-component visual states, Date Picker and documentation playground controls
+- **Finding:** checked/selected/active component states frequently used blue despite Norato yellow being the primary accent. Date Picker wheel/date-time and numerous playground settings used native `<select>` elements, exposing platform-default option menus.
+- **Correction:** changed primary interactive states to Norato yellow with dark foregrounds while preserving blue link/information/status semantics; replaced Date Picker and playground option menus with Norato custom dropdowns.
+- **Evidence:** source audit now finds no `<select>` or `<option>` markup under `packages/vue/src` or `apps/vue/src`. Runtime build and visual/keyboard browser checks are pending.
+- **Prevention:** include semantic color-role and native-option scans in component review; test portal option selection does not dismiss its owning Date Picker.
+- **Verification update:** Lemon's Date Picker reference and the live Norato page were reviewed separately; a same-viewport comparison remains open. At the available 429px Norato browser width the document measured 414px with no page overflow. Live Pagination selection computed to `rgb(253, 193, 1)` with dark text. Date Picker selected day computed to the same yellow with dark text. Custom playground dropdown opened with ArrowDown, navigated and selected with Enter. Wheel year changed to 1406 and remained open; date-time hour changed to 15 (15:30) and remained open; Escape closed only the option menu and returned focus to its trigger. No browser-native select exists in the DOM; browser console error list was empty. Independent screen-reader review and full state matrix remain open.

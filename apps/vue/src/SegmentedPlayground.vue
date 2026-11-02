@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 import { NoratoSegmentedControl, type NoratoSegmentedItem } from '@norato/vue'
 
 defineProps<{ copiedKey: string }>()
@@ -31,9 +32,9 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <span role="status" aria-live="polite">نمای انتخاب‌شده: {{ items.find(item => item.value === selected)?.label || 'بدون انتخاب' }}</span>
     </div>
     <div class="button-playground-toggles">
-      <label class="select-playground-setting"><span>سبک</span><select v-model="style"><option value="glass">شیشه‌ای</option><option value="contrast">پرکنتراست</option></select></label>
-      <label class="select-playground-setting"><span>اندازه</span><select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option><option value="xlarge">خیلی بزرگ</option></select></label>
-      <label class="select-playground-setting"><span>تعداد گزینه</span><select v-model.number="count"><option :value="2">۲</option><option :value="3">۳</option><option :value="4">۴</option></select></label>
+      <div class="select-playground-setting"><PlaygroundSelect id="segmentedplayground-style-1" v-model="style" label="سبک" :options="[{value:'glass',label:'شیشه‌ای'},{value:'contrast',label:'پرکنتراست'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="segmentedplayground-size-2" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="segmentedplayground-count-3" v-model="count" label="تعداد گزینه" :options="[{value:2,label:'۲'},{value:3,label:'۳'},{value:4,label:'۴'}]" /></div>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
       <label class="button-playground-switch"><input v-model="disabledItem" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>ماهانه غیرفعال</span></label>
     </div>

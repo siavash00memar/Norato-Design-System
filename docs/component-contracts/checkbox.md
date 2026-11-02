@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ اول صفحه، inert و فشرده و با ترکیب‌بندی Lemon است؛ پنل Vue پایین‌تر adapter اجرایی و حالت‌های قابل‌آزمایش را نشان می‌دهد. رنگ‌های accent، کادر و فوکوس از توکن‌های Norato می‌آیند.
+نمونهٔ اول صفحه، inert و فشرده و با ترکیب‌بندی Lemon است؛ پنل Vue پایین‌تر adapter اجرایی و حالت‌های قابل‌آزمایش را نشان می‌دهد. حالت انتخاب‌شده از accent زرد Norato و نشان تیره برای کنتراست استفاده می‌کند؛ کادر و فوکوس نیز از توکن‌های Norato می‌آیند.
 
 ## Overview
 
@@ -72,4 +72,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای حالت انتخاب‌شده، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.

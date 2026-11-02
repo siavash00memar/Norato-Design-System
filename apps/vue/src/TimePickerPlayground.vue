@@ -35,8 +35,8 @@ const snippet = computed(() => {
     <div class="button-playground-toggles time-picker-playground-toggles">
       <PlaygroundSelect id="time-picker-type" v-model="type" label="نوع مقدار" :options="[{value:'single',label:'یک ساعت'},{value:'range',label:'بازهٔ ساعت'}]" />
       <PlaygroundSelect id="time-picker-variant" v-model="variant" label="حالت پنل" :options="variants" />
-      <label class="select-playground-setting"><span>اندازه</span><select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option><option value="xlarge">خیلی بزرگ</option></select></label>
-      <label class="select-playground-setting"><span>گام دقیقه</span><select v-model="minuteStep"><option value="5">۵ دقیقه</option><option value="10">۱۰ دقیقه</option><option value="15">۱۵ دقیقه</option><option value="30">۳۰ دقیقه</option></select></label>
+      <div class="select-playground-setting"><PlaygroundSelect id="timepickerplayground-size-1" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="timepickerplayground-minutestep-2" v-model="minuteStep" label="گام دقیقه" :options="[{value:'5',label:'۵ دقیقه'},{value:'10',label:'۱۰ دقیقه'},{value:'15',label:'۱۵ دقیقه'},{value:'30',label:'۳۰ دقیقه'}]" /></div>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
       <label class="button-playground-switch"><input v-model="loading" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بارگذاری</span></label>
       <label class="button-playground-switch"><input v-model="invalid" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>نامعتبر</span></label>

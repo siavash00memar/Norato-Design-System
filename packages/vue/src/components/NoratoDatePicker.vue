@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, ref, shallowRef, watch } from 'vue'
 import { CalendarDate, getDayOfWeek } from '@internationalized/date'
 import { calendarMonthCells, formatJalaliDate, jalaliCalendar, parseJalaliDate, serializeJalaliDate, todayJalaliDate } from '../date-picker-calendar'
+import NoratoSelect from './NoratoSelect.vue'
 
 export type NoratoDatePickerType = 'single' | 'range' | 'range-presets' | 'date-time' | 'month' | 'year' | 'wheel'
 export type NoratoDateRange = { start?: string; end?: string }
@@ -62,6 +63,11 @@ const yearOptions = computed(() => Array.from({ length: 121 }, (_, i) => today.y
 const dayOptions = computed(() => Array.from({ length: jalaliCalendar.getDaysInMonth(new CalendarDate(jalaliCalendar, wheelYear.value, wheelMonth.value, 1)) }, (_, i) => i + 1))
 const dateFormatter = new Intl.DateTimeFormat('fa-IR-u-ca-persian', { dateStyle: 'full', timeZone: 'UTC' })
 const persianNumber = (value: number) => new Intl.NumberFormat('fa-IR', { useGrouping: false }).format(value)
+const wheelYearOptions = computed(() => yearOptions.value.map((year) => ({ value: String(year), label: persianNumber(year) })))
+const wheelMonthOptions = computed(() => monthNames.map((month, index) => ({ value: String(index + 1), label: month })))
+const wheelDayOptions = computed(() => dayOptions.value.map((day) => ({ value: String(day), label: persianNumber(day) })))
+const timeHourOptions = Array.from({ length: 24 }, (_, hour) => ({ value: String(hour), label: persianNumber(hour) }))
+const timeMinuteOptions = Array.from({ length: 60 }, (_, minute) => ({ value: String(minute), label: persianNumber(minute) }))
 const dateFromModel = (value?: NoratoDatePickerValue) => {
   if (!value) return undefined
   if (typeof value === 'string') return value
@@ -230,7 +236,14 @@ const onDayKeydown = (event: KeyboardEvent, date: CalendarDate) => {
     moveFocus(event.key === 'Home' ? date.subtract({ days: offset }) : date.add({ days: 6 - offset }))
   } else if (event.key === 'Escape') { event.preventDefault(); closePanel() }
 }
-const onDocumentPointer = (event: PointerEvent) => { if (open.value && !panel.value?.parentElement?.contains(event.target as Node) && !trigger.value?.contains(event.target as Node)) closePanel(false) }
+const onDocumentPointer = (event: PointerEvent) => {
+  if (!open.value) return
+  const target = event.target as Element | null
+  const ownSelectContent = target?.closest<HTMLElement>('.norato-select__content')
+  const selectId = ownSelectContent?.getAttribute('data-norato-select-id') ?? ''
+  const isOwnSelect = selectId.startsWith(`${props.id}-wheel-`) || selectId.startsWith(`${props.id}-time-`)
+  if (!panel.value?.parentElement?.contains(event.target as Node) && !trigger.value?.contains(event.target as Node) && !isOwnSelect) closePanel(false)
+}
 const onViewportChange = () => { if (open.value) placePanel() }
 watch(() => props.modelValue, (value) => {
   let date = parseJalaliDate(dateFromModel(value))
@@ -270,9 +283,9 @@ onBeforeUnmount(() => { if (typeof document !== 'undefined') document.removeEven
       <template v-if="type === 'wheel'">
         <p class="norato-date-picker__panel-title">انتخاب تاریخ شمسی</p>
         <div class="norato-date-picker__wheel" role="group" :aria-label="label">
-          <label><span class="sr-only">سال</span><select v-model.number="wheelYear" aria-label="سال" size="5" @change="setYear(wheelYear)"><option v-for="year in yearOptions" :key="year" :value="year">{{ persianNumber(year) }}</option></select></label>
-          <label><span class="sr-only">ماه</span><select v-model.number="wheelMonth" aria-label="ماه" size="5" @change="setMonth(wheelMonth)"><option v-for="(month, index) in monthNames" :key="month" :value="index + 1">{{ month }}</option></select></label>
-          <label><span class="sr-only">روز</span><select v-model.number="wheelDay" aria-label="روز" size="5" @change="setWheelDay(wheelDay)"><option v-for="day in dayOptions" :key="day" :value="day">{{ persianNumber(day) }}</option></select></label>
+          <NoratoSelect :id="`${id}-wheel-year`" label="سال" :model-value="String(wheelYear)" :options="wheelYearOptions" :dir="dir" size="small" label-placement="inside" @update:model-value="setYear(Number($event))" />
+          <NoratoSelect :id="`${id}-wheel-month`" label="ماه" :model-value="String(wheelMonth)" :options="wheelMonthOptions" :dir="dir" size="small" label-placement="inside" @update:model-value="setMonth(Number($event))" />
+          <NoratoSelect :id="`${id}-wheel-day`" label="روز" :model-value="String(wheelDay)" :options="wheelDayOptions" :dir="dir" size="small" label-placement="inside" @update:model-value="setWheelDay(Number($event))" />
         </div>
       </template>
       <template v-else-if="type === 'month' || type === 'year'">
@@ -298,7 +311,7 @@ onBeforeUnmount(() => { if (typeof document !== 'undefined') document.removeEven
         </div>
         </section></div>
         <div v-if="type === 'range' || type === 'range-presets'" class="norato-date-picker__range-hint" aria-live="polite">{{ rangeStart ? 'روز پایان بازه را انتخاب کن' : 'روز شروع بازه را انتخاب کن' }}</div>
-        <div v-if="type === 'date-time'" class="norato-date-picker__time"><label>ساعت <select v-model.number="hour" aria-label="ساعت"><option v-for="value in 24" :key="value" :value="value - 1">{{ persianNumber(value - 1) }}</option></select></label><label>دقیقه <select v-model.number="minute" aria-label="دقیقه"><option v-for="value in 60" :key="value" :value="value - 1">{{ persianNumber(value - 1) }}</option></select></label><button class="norato-date-picker__confirm" type="button" :disabled="!dateFromModel(modelValue)" @click="closePanel()">ثبت تاریخ و ساعت</button></div>
+        <div v-if="type === 'date-time'" class="norato-date-picker__time"><NoratoSelect :id="`${id}-time-hour`" label="ساعت" :model-value="String(hour)" :options="timeHourOptions" :dir="dir" size="small" label-placement="inside" @update:model-value="hour = Number($event)" /><NoratoSelect :id="`${id}-time-minute`" label="دقیقه" :model-value="String(minute)" :options="timeMinuteOptions" :dir="dir" size="small" label-placement="inside" @update:model-value="minute = Number($event)" /><button class="norato-date-picker__confirm" type="button" :disabled="!dateFromModel(modelValue)" @click="closePanel()">ثبت تاریخ و ساعت</button></div>
       </template>
     </section>
   </div>

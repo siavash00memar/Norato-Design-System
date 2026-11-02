@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 
-const props = defineProps<{ id: string; label: string; modelValue: string; options: { value: string; label: string }[] }>()
-const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
+const props = defineProps<{ id: string; label: string; modelValue: string | number; options: { value: string | number; label: string }[] }>()
+const emit = defineEmits<{ 'update:modelValue': [value: string | number] }>()
 const root = ref<HTMLElement | null>(null)
 const trigger = ref<HTMLButtonElement | null>(null)
 const open = ref(false)
@@ -19,7 +19,7 @@ function dismiss(returnFocus = false) {
   open.value = false
   if (returnFocus) nextTick(() => trigger.value?.focus())
 }
-function choose(value: string) {
+function choose(value: string | number) {
   emit('update:modelValue', value)
   dismiss(true)
 }
@@ -62,7 +62,7 @@ onUnmounted(() => document.removeEventListener('pointerdown', onOutsidePointer))
   <div ref="root" class="button-playground-field button-playground-dropdown" @focusout="onFocusOut">
     <span :id="`${id}-label`" class="button-playground-field-label">{{ label }}</span>
     <button ref="trigger" class="button-playground-trigger" type="button" :aria-labelledby="`${id}-label ${id}-value`" aria-haspopup="listbox" :aria-expanded="open" :aria-controls="`${id}-options`" @click="open ? dismiss() : show()" @keydown="onTriggerKeydown">
-      <span :id="`${id}-value`" dir="ltr">{{ selectedLabel() }}</span>
+      <span :id="`${id}-value`" dir="auto">{{ selectedLabel() }}</span>
       <svg aria-hidden="true" viewBox="0 0 16 16" fill="none"><path d="m4 6 4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
     </button>
     <Transition name="button-playground-menu">

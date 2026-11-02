@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 import { NoratoCombobox, type NoratoComboboxOption } from '@norato/vue'
 
 defineProps<{ copiedKey: string }>()
@@ -54,8 +55,8 @@ watch(multiple, (enabled) => {
       <label class="button-playground-switch"><input v-model="loading" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بارگذاری</span></label>
       <label class="button-playground-switch"><input v-model="creatable" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>ساخت گزینه</span></label>
       <label class="button-playground-switch"><input v-model="noResults" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بدون نتیجه</span></label>
-      <label class="select-playground-setting"><span>اندازه</span><select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option><option value="xlarge">خیلی بزرگ</option></select></label>
-      <label class="select-playground-setting"><span>جای برچسب</span><select v-model="labelPlacement"><option value="outside">بیرون</option><option value="inside">داخل</option></select></label>
+      <div class="select-playground-setting"><PlaygroundSelect id="comboboxplayground-size-1" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="comboboxplayground-labelplacement-2" v-model="labelPlacement" label="جای برچسب" :options="[{value:'outside',label:'بیرون'},{value:'inside',label:'داخل'}]" /></div>
     </div>
     <div class="button-playground-code"><div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy', 'combobox-playground', snippet)">{{ copiedKey === 'combobox-playground' ? 'کپی شد' : copiedKey === 'combobox-playground-error' ? 'ناموفق' : 'کپی کد' }}</button></div><pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre></div>
   </div>

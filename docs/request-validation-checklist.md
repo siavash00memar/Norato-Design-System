@@ -1010,3 +1010,19 @@
 - [x] Lemon/Norato same-viewport desktop and mobile render compared. Desktop Norato specimen is 584×136px with a 212×48px path; 390px specimen 343×136px/document 375px; 320px document remains 320px with internal path scroll. 48px links/disclosure, 2px keyboard focus, RTL separators, current-page ARIA, pointer/Enter disclosure and 3 hidden middle links verified; console error list empty.
 - [x] Token/catalog/typecheck/build/diff gates passed; the JS chunk is 800.06KB and Vite warns above 500KB.
 - [ ] Independent screen-reader review and exhaustive visual combination matrix remain open; maturity stays Adapted.
+
+## Pagination — implementation checkpoint (2026-11-02)
+
+- [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.
+- [x] Browser evidence before final specimen CSS/RTL chevron adjustment: page 5 selection updates controlled state and `aria-current`; first/last boundaries disable navigation; focus ring is 2px; live targets are 48px; mobile Numbers scroll internally while Simple fits without document overflow; no console errors.
+- [x] Removed the legacy static pagination sizing rules that forced the specimen to live-control dimensions. Updated the inert specimen to compact 32px Lemon-like page cells; corrected chevron direction from `dir`.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 records/contracts), Vue typecheck, production build and `git diff --check` pass after final source edits. Production build has a 806.97KB JS chunk advisory.
+- [ ] Browser re-render and matched Lemon/local geometry after the compact specimen and RTL-chevron changes, exhaustive page-window/size/mode combinations, and independent screen-reader review remain open. Keep readiness `Adapted`; DoD is not closed.
+
+## Primary accent and dropdown consistency — implementation checkpoint (2026-11-02)
+
+- [x] Primary selected/checked/current/progress styles in the Vue package and visible inert samples now use Norato yellow with dark foregrounds; blue remains for informational icons and link/status semantics.
+- [x] Replaced browser-native option controls in Date Picker wheel/date-time and all docs playground filters/settings with Norato custom dropdowns. Source scan finds no native `<select>`/`<option>` tags in the Vue runtime or app.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass. Build reports an 806.90KB JS chunk advisory.
+- [x] Live browser confirms 429px page width without document overflow; zero native selects in the DOM; custom dropdown ArrowDown/Enter selection; Date Picker custom listbox updates wheel year and date-time hour without closing its parent; Escape closes the menu and returns focus; yellow selected date/current page use dark text; browser console has no errors.
+- [ ] Same-viewport Lemon/Norato desktop and narrow mobile comparison, exhaustive interaction/state matrix and independent screen-reader review remain open. Keep DoD open.

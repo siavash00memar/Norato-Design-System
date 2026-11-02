@@ -8,7 +8,7 @@ The local Vue workspace at `apps/vue` presents the Norato foundation, team usage
 
 ## Current Figma reference
 
-The 14 chapter frames are mapped into the Overview and Foundation documentation. The source extraction is explicitly marked as preliminary, so observed values and unresolved/inconsistent evidence are kept separate in [the source ledger](figma-source-ledger.md). Brand Yellow `#FDC101` and Blue `#134F89` are canonical semantic accents. Project typography policy takes precedence over legacy Lalezar styles in the source: Estedad for headings and Vazirmatn for body/input text. The Figma source does not define global error, success, or focus colors; Norato retains its existing state tokens without attributing them to that source.
+The 14 chapter frames are mapped into the Overview and Foundation documentation. The source extraction is explicitly marked as preliminary, so observed values and unresolved/inconsistent evidence are kept separate in [the source ledger](figma-source-ledger.md). Brand Yellow `#FDC101` and Blue `#134F89` are canonical semantic accents. Yellow is the primary accent for selected, checked, active, progress and primary-control states; blue remains for links and informational/status semantics. Project typography policy takes precedence over legacy Lalezar styles in the source: Estedad for headings and Vazirmatn for body/input text. The Figma source does not define global error, success, or focus colors; Norato retains its existing state tokens without attributing them to that source.
 
 ## Component contracts
 

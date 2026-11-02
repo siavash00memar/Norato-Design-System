@@ -65,4 +65,4 @@ const tabs: NoratoTab[] = [
 
 ## Tokens
 
-از توکن‌های semantic `--norato-color-brand-blue`, `--norato-color-info-container`, `--norato-color-border-default`, `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-text-disabled`, `--norato-color-focus-contrast`, `--norato-color-focus-ring`, `--norato-control-target-min`, spacing, radius, typography and motion استفاده می‌شود.
+از accent زرد Norato برای active indicator و متن تیرهٔ تب فعال استفاده می‌شود؛ آبی برای لینک و معناهای اطلاعاتی می‌ماند. توکن‌های semantic شامل `--norato-color-brand-yellow`, `--norato-color-brand-blue`, `--norato-color-warning-container`, `--norato-color-border-default`, `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-text-disabled`, `--norato-color-focus-contrast`, `--norato-color-focus-ring`, `--norato-control-target-min`, spacing, radius, typography and motion هستند.

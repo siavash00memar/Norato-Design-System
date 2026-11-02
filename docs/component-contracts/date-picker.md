@@ -74,4 +74,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای روز انتخاب‌شده/حالت اصلی، `--norato-color-brand-blue` برای اطلاعات، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت. انتخاب سال، ماه، روز، ساعت و دقیقه از dropdown سفارشی Norato استفاده می‌کند.

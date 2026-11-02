@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 import { NoratoRating } from '@norato/vue'
 
 defineProps<{ copiedKey: string }>()
@@ -23,9 +24,9 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <NoratoRating id="rating-summary-playground" variant="summary" :value="score" :count="count" :distribution="distribution" />
     </div>
     <div class="button-playground-toggles">
-      <label class="select-playground-setting"><span>اندازه</span><select v-model="size"><option value="medium">متوسط</option><option value="large">بزرگ</option></select></label>
-      <label class="select-playground-setting"><span>اندازهٔ نمایش</span><select v-model="displaySize"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option></select></label>
-      <label class="select-playground-setting"><span>امتیاز نمایشی</span><select v-model.number="score"><option :value="0">۰ از ۵</option><option :value="1">۱ از ۵</option><option :value="2">۲ از ۵</option><option :value="3">۳ از ۵</option><option :value="3.5">۳٫۵ از ۵</option><option :value="4">۴ از ۵</option><option :value="4.5">۴٫۵ از ۵</option><option :value="5">۵ از ۵</option></select></label>
+      <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-size-1" v-model="size" label="اندازه" :options="[{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-displaysize-2" v-model="displaySize" label="اندازهٔ نمایش" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'}]" /></div>
+      <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-score-3" v-model="score" label="امتیاز نمایشی" :options="[{value:0,label:'۰ از ۵'},{value:1,label:'۱ از ۵'},{value:2,label:'۲ از ۵'},{value:3,label:'۳ از ۵'},{value:3.5,label:'۳٫۵ از ۵'},{value:4,label:'۴ از ۵'},{value:4.5,label:'۴٫۵ از ۵'},{value:5,label:'۵ از ۵'}]" /></div>
       <label class="select-playground-setting"><span>تعداد نظرها</span><input v-model.number="count" type="number" min="0" aria-label="تعداد نظرها" /></label>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
       <button class="copy-section-button" type="button" @click="value = undefined">پاک‌کردن انتخاب</button>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 import { NoratoAmountInput, NoratoNumberInput, NoratoOtpInput, NoratoPasswordInput, NoratoPhoneInput, NoratoSearchInput, NoratoTextInput, NoratoTextarea } from '@norato/vue'
 
 defineProps<{ copiedKey: string }>()
@@ -43,7 +44,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <NoratoNumberInput id="input-playground-number" v-model="number" label="تعداد" :size="size" :label-placement="labelPlacement" :presentation="numberPresentation" :min="numberMin" :max="numberMax" :step="numberStep" :required="required" :disabled="disabled" :loading="loading" :read-only="readOnly" :success-text="success ? 'تعداد تأیید شد' : undefined" :error-text="invalid ? 'تعداد را بررسی کنید' : undefined" />
       <NoratoAmountInput id="input-playground-amount" v-model="amount" label="مبلغ" :size="size" :label-placement="labelPlacement" :required="required" :disabled="disabled" :loading="loading" :read-only="readOnly" :success-text="success ? 'مبلغ تأیید شد' : undefined" :error-text="invalid ? 'مبلغ را بررسی کنید' : undefined" />
       <NoratoSearchInput id="input-playground-search" v-model="query" label="جست‌وجو" placeholder="عبارت را بنویسید" :size="size" :label-placement="labelPlacement" :shortcut="shortcut" :required="required" :disabled="disabled" :loading="loading" :read-only="readOnly" :success-text="success ? 'جست‌وجو تأیید شد' : undefined" :error-text="invalid ? 'عبارت جست‌وجو را بررسی کنید' : undefined" />
-      <label class="input-playground-strength">قدرت نمایشی گذرواژه<select v-model="strength"><option value="empty">خالی</option><option value="weak">ضعیف</option><option value="fair">متوسط</option><option value="good">خوب</option><option value="strong">قوی</option></select></label>
+      <div class="input-playground-strength"><PlaygroundSelect id="inputplayground-strength-1" v-model="strength" label="قدرت نمایشی گذرواژه" :options="[{value:'empty',label:'خالی'},{value:'weak',label:'ضعیف'},{value:'fair',label:'متوسط'},{value:'good',label:'خوب'},{value:'strong',label:'قوی'}]" /></div>
       <span v-if="!loading" role="status" aria-live="polite">{{ disabled ? 'ورودی‌ها غیرفعال‌اند' : name ? `نام: ${name}` : 'هنوز مقداری وارد نشده است' }}</span>
     </div>
     <div class="button-playground-toggles">
@@ -55,10 +56,10 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <label class="button-playground-switch"><input v-model="readOnly" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>فقط‌خواندنی</span></label>
     </div>
     <div class="input-playground-selects">
-      <label>اندازه<select v-model="size"><option value="small">کوچک</option><option value="medium">متوسط</option><option value="large">بزرگ</option><option value="xlarge">خیلی بزرگ</option></select></label>
-      <label>جای برچسب<select v-model="labelPlacement"><option value="outside">بیرون</option><option value="inside">داخل</option></select></label>
-      <label>طول کد<select v-model.number="otpLength"><option :value="4">۴ رقم</option><option :value="5">۵ رقم</option><option :value="6">۶ رقم</option></select></label>
-      <label>چیدمان عدد<select v-model="numberPresentation"><option value="stepper">کنارهم</option><option value="stacked">روی‌هم</option></select></label>
+      <PlaygroundSelect id="inputplayground-size-2" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" />
+      <PlaygroundSelect id="inputplayground-labelplacement-3" v-model="labelPlacement" label="جای برچسب" :options="[{value:'outside',label:'بیرون'},{value:'inside',label:'داخل'}]" />
+      <PlaygroundSelect id="inputplayground-otplength-4" v-model="otpLength" label="طول کد" :options="[{value:4,label:'۴ رقم'},{value:5,label:'۵ رقم'},{value:6,label:'۶ رقم'}]" />
+      <PlaygroundSelect id="inputplayground-numberpresentation-5" v-model="numberPresentation" label="چیدمان عدد" :options="[{value:'stepper',label:'کنارهم'},{value:'stacked',label:'روی‌هم'}]" />
       <label>کمینهٔ عدد<input v-model.number="numberMin" type="number" step="any" /></label>
       <label>بیشینهٔ عدد<input v-model.number="numberMax" type="number" step="any" /></label>
       <label>گام عدد<input v-model.number="numberStep" type="number" min="0.00000000000000000001" step="any" /></label>

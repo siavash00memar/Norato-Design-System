@@ -43,3 +43,5 @@ export type { NoratoTab } from './components/NoratoTabs.vue'
 
 export { default as NoratoBreadcrumbs } from './components/NoratoBreadcrumbs.vue'
 export type { NoratoBreadcrumbItem } from './components/NoratoBreadcrumbs.vue'
+
+export { default as NoratoPagination } from './components/NoratoPagination.vue'
