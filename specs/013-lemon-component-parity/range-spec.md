@@ -7,7 +7,7 @@ Source: `https://lemonui.ir/#range`, inspected in browser 2026-11-01; Norato API
 - Present a compact RTL range field with Persian label, current numeric value above the thumb, track/fill/thumb, and Persian min/max labels below.
 - Minimum is on the physical right; the selected track fills from right to left.
 - Support controlled single number and two-thumb range values, `small` and `medium`, disabled, and a related error message.
-- Every thumb has a 48×48px minimum interactive target. The visible rail/thumb proportions remain compact; do not stretch a thumb or field vertically.
+- Every thumb has a 48×48px minimum interactive target. The visible rail/thumb proportions remain compact; center the visible knob within its target, and keep the focus ring on the visible knob rather than the full target. Do not stretch a thumb or field vertically.
 - Preserve native slider keyboard semantics and accessible names/current values. Use Norato semantic tokens and focus ring.
 - Keep the page shell identical to Button: visual preview, accurate executable Vue example/playground, and nine meaningful contract sections with copy controls.
 - Use an optional numeric input in exact-value scenarios; document that sliders alone are not appropriate for exact payment values.

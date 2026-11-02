@@ -689,3 +689,11 @@
 - **Evidence:** source audit now finds no `<select>` or `<option>` markup under `packages/vue/src` or `apps/vue/src`. Runtime build and visual/keyboard browser checks are pending.
 - **Prevention:** include semantic color-role and native-option scans in component review; test portal option selection does not dismiss its owning Date Picker.
 - **Verification update:** Lemon's Date Picker reference and the live Norato page were reviewed separately; a same-viewport comparison remains open. At the available 429px Norato browser width the document measured 414px with no page overflow. Live Pagination selection computed to `rgb(253, 193, 1)` with dark text. Date Picker selected day computed to the same yellow with dark text. Custom playground dropdown opened with ArrowDown, navigated and selected with Enter. Wheel year changed to 1406 and remained open; date-time hour changed to 15 (15:30) and remained open; Escape closed only the option menu and returned focus to its trigger. No browser-native select exists in the DOM; browser console error list was empty. Independent screen-reader review and full state matrix remain open.
+
+## ERR-069 — Range thumb shifted from focus ring in RTL (2026-11-02)
+
+- **Component:** Range / Slider Thumb
+- **Finding:** the visual pseudo-element used inset: 50%, setting both physical sides; in RTL this over-constrained placement and shifted the knob away from its center. The 2px focus outline was drawn around the full 48px target, making a detached oversized circle.
+- **Correction:** use explicit top/left physical centering with right/bottom auto; retain the 48px target and draw dark outline/yellow halo on the visible knob.
+- **Evidence:** local browser screenshot after correction shows centered knob and focus ring; computed target is 48×48px, :focus-visible=true, pseudo focus outline 2px with 4px offset and yellow 2px halo. ArrowLeft/ArrowRight changed the value 60→61→60; RTL remains intact.
+- **Prevention:** in RTL CSS, avoid setting both physical insets on absolutely positioned visual pseudos; validate visible geometry separately from the interactive target.

@@ -10,3 +10,5 @@
 - [x] Button-parity page includes preview, runnable API playground, all nine contract sections, and per-section/API copy controls.
 - [x] Contract, Figma rules, catalog, primitive map, usage snippet, tasks, request checklist and error log reflect verified behavior.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue build, and `git diff --check` pass; production build has an existing >500KB chunk warning (575.88KB JS).
+
+- [x] 2026-11-02 follow-up: browser rerender shows the visible thumb centered inside its 48×48px target and keyboard focus decorates the 16px visual thumb with a 2px dark outline and yellow halo. ArrowLeft changes 60→61 and ArrowRight restores 60; RTL remains intact.

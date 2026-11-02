@@ -6,3 +6,5 @@
 - [x] R004 Integrate export, catalog, usage, primitive map, contract and user-approved Figma visual rules.
 - [x] R005 Compare desktop/mobile renders and verify pointer/keyboard/RTL/focus/disabled/error/AX behavior.
 - [x] R006 Complete validation evidence, technical gates, update error/request logs and maturity only if every required check passes.
+
+- [x] R007 Fix RTL thumb pseudo-element overconstraint; center visible knob inside the 48px target and move keyboard focus decoration from the hit area onto the visual knob.

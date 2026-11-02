@@ -1051,3 +1051,9 @@
 - [x] Screenshot shows a selected checkbox with a blue outer focus outline. The input's own :focus-visible rule used --norato-color-focus-contrast, which resolves to Norato blue.
 - [x] Replaced the Checkbox outline with --norato-color-text-primary; retained the 2px yellow focus halo and yellow selected fill with dark checkmark.
 - [x] Browser keyboard check after rerender: selected Checkbox computes to yellow fill `rgb(253, 193, 1)`, dark checkmark `rgb(26, 26, 26)`, dark 2px outline and yellow 2px halo; `:focus-visible=true` and RTL is intact. The control was restored to unchecked afterward.
+
+## Range thumb alignment and focus — 2026-11-02
+
+- [x] Screenshot matches the Range playground focus state. RTL inset: 50% overconstrained both physical sides, shifting the visual thumb away from its 48px focus target; outline on the 48px hit area also made the ring oversized.
+- [x] Centered the visual thumb using a physical center anchor, kept the 48px hit target, and moved the dark outline/yellow halo to the visual thumb.
+- [x] Browser rerender confirms target bounds are 48×48px, the 16px visible knob is centered within the target, focus-visible draws a dark 2px outline and yellow halo on the visible knob, and keyboard arrows change 60→61→60. The browser screenshot shows the knob and ring concentric in RTL.
