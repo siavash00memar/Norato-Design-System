@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحه، یک فیلد ایمیل با برچسب و متن راهنما در قاب نقطه‌دار شیشه‌ای و marker حالت Default است؛ ترکیب از Lemon و رنگ/تایپوگرافی از Norato می‌آید. عرض فیلد حداکثر ۳۲۴px است، اما ارتفاع target آن حداقل ۴۸px می‌ماند. Playground اجرایی زیر همان preview هشت adapter را نشان می‌دهد. `NoratoField` همچنان برای سازگاری نسخه‌های پیشین در دسترس است.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحه، یک فیلد ایمیل با آیکن پاکت کنار عنوان «ایمیل»، placeholder فارسی و متن راهنما در قاب نقطه‌دار شیشه‌ای و marker حالت Default است. عنوان با Estedad Bold و placeholder با Vazirmatn Light، اندازهٔ ۱۲px و توکن `--norato-color-text-placeholder-subtle` (`#a1a1a1`) نمایش داده می‌شود. ارتفاع دیداری کنترل در این نمونهٔ غیرفعال ۳۶px است؛ کنترل‌های اجرایی Playground حداقل هدف تعاملی ۴۸px را حفظ می‌کنند. `name@example.com` در نمونه استفاده نمی‌شود. Playground اجرایی زیر همان preview هشت adapter را نشان می‌دهد. `NoratoField` همچنان برای سازگاری نسخه‌های پیشین در دسترس است.
 
 
 
@@ -73,7 +73,7 @@
 
 ### Vue adapters
 
-- `NoratoTextInput`: text field, label placement, native text attributes and common field states.
+- `NoratoTextInput`: text field, label placement, native text attributes and common field states. An optional `label` slot customizes outside-label content while keeping the slot inside the associated native `<label>`; required status remains appended automatically.
 - `NoratoPasswordInput`: controlled visibility and caller-provided strength (`empty|weak|fair|good|strong`).
 - `NoratoPhoneInput`: LTR phone entry and configurable calling code (default `+98`).
 - `NoratoOtpInput`: 4/5/6 cells, sequential entry, paste, Backspace and directional arrows.

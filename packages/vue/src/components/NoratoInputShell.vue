@@ -29,7 +29,7 @@ const describedBy = computed(() => [
     :dir="dir === 'ltr' ? 'rtl' : dir"
   >
     <label v-if="labelPlacement === 'outside'" class="norato-input-field__label" :for="id">
-      {{ label }}<span v-if="required" aria-hidden="true"> *</span>
+      <slot name="label">{{ label }}</slot><span v-if="required" aria-hidden="true"> *</span>
     </label>
     <div class="norato-input-field__control">
       <label v-if="labelPlacement === 'inside'" class="norato-input-field__floating-label" :for="id">

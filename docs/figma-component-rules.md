@@ -67,6 +67,7 @@
 - Input field shells and OTP cells are capsule-shaped at all sizes and states; use Norato's semantic `--norato-radius-pill` token. Keep this radius scoped to the Input family.
 - Neutral Input and OTP strokes use a 1px `--norato-color-border-default` (`#e8e8e8`) border, including hover. Keyboard focus uses only a 1px `--norato-color-brand-yellow` border; remove contrast outlines and glow shadows. Error and success keep their semantic status colors.
 - Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
+- Latest specimen correction (2026-11-02): place the decorative envelope icon beside the «ایمیل» title inside the semantic label; title uses Estedad Bold. Use the Persian placeholder «ایمیل خود را وارد کنید» with Vazirmatn Light 12px and `--norato-color-text-placeholder-subtle` (`#a1a1a1`); remove `name@example.com`. The inert top sample's visual control height is 36px. Keep live interactive controls at their documented minimum 48px target.
 
 ## Select
 

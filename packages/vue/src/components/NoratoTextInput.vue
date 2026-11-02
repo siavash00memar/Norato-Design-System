@@ -14,6 +14,7 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
     :required="required" :disabled="disabled" :loading="loading" :read-only="readOnly" :dir="dir"
     :size="size" :label-placement="labelPlacement"
   >
+    <template v-if="$slots.label" #label><slot name="label" /></template>
     <template #leading><slot name="leading" /></template>
     <template #trailing><slot name="trailing" /></template>
     <template #control="{ describedby, invalid }">

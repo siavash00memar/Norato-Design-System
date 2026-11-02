@@ -1,21 +1,7 @@
-# Input Preview — Analyze
+# Input email specimen — Analyze
 
-## Pre-implementation evidence
-
-- Lemon `#input` shows one email field with label/helper in a dotted/glass color-wash frame. At 1920×919 the frame is 636×300px and its field group is 324px wide.
-- Norato currently has a single email sample and a separate live playground, but the sample is 490px wide in a 540×147px wrapper at 1195px viewport. It has no Default marker or component-specific frame, so it is wider and much shorter than the reference composition.
-- The actual field shell is 48px high in Norato, consistent with the global minimum target; Lemon's ~41px shell is not adopted as an interactive Norato size.
-- Existing frame CSS is scoped to Select/Combobox/Checkbox/Radio/Switch. Input is routed through `.sample-form-controls` and `.component-sample:has(...)`, causing the stretch/short-frame behavior. The Input selector can be corrected specifically without changing generic layout or other families.
-- Layout tokens already use 640px desktop and 320px mobile preview caps, 288px Norato frame height, and 300–310px bounded input widths for neighboring form previews. These are the established Norato frame conventions.
-
-## Decisions
-
-- Use a 640px max frame and 320px mobile cap; actual width remains constrained by the page's content column.
-- Use 288px frame height, 24px radius, tokenized glass surface/line, brand wash and visible blue dots.
-- Bound the field at 324px to match Lemon's measured width, while retaining 48px minimum height.
-- Place the same inert `Default` marker used by related reference specimens.
-- Keep runtime API scope, state galleries and behavior outside this preview-only change.
-
-## Risk and verification
-
-The main regression risk is the broad `:has(.sample-form-controls)` rule overriding preview geometry. The Input-specific rule must win at the existing selector location; verify computed box sizes and other form previews remain unaffected. The different viewport widths mean frame width can be column-limited; compare field width and height independently and state that constraint.
+- Existing preview puts an envelope in the control's trailing slot, while the reference places it beside the title. `NoratoInputShell` owns the native title label; a label slot passthrough allows the icon to move without replacing the accessible association.
+- The sample currently uses `name@example.com`; this conflicts with the user instruction. Replace it with a Persian placeholder inside the same field.
+- Shared field control CSS enforces 48px minimum height. Do not change that global selector because the runtime interaction target must remain at least 48px. Scope 36px to `.sample-input-specimen` preview control only; inert specimen is not interactive.
+- Existing placeholder color token is `#6b6b6b`, conflicting with the explicit `#A1A1A1` requirement. Add a semantic subtle-placeholder token rather than embedding raw color in component CSS.
+- Existing label defaults to body styling. Scope the requested Estedad Bold typography to the Input preview label.

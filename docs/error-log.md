@@ -760,3 +760,9 @@
 - **Correction:** Reuse the Split Button preview frame tokens (288px height, 24px radius, shared responsive width), remove fixed control dimensions and Cancel specimen. Keep only Primary and Secondary at the intrinsic Large height of 48px.
 - **Verified:** Live same-browser render at 1280px measured Button and Split Button frames identically (583.98×288px); both Button controls are 48px high. RTL holds with no document overflow.
 - **Limitation:** 390px mobile viewport comparison could not be run because this session's browser automation does not expose viewport resizing.
+
+## ERR-074 — Input email specimen icon, copy and sizing differed from latest reference (2026-11-02)
+
+- **Observed:** The email envelope sat inside the control; the sample used the English `name@example.com` placeholder; shell displayed at 48px or more; placeholder typography/color did not match the approved Input rule.
+- **Correction:** Added a conditional label slot passthrough and moved the decorative icon into the associated Email label. Placeholder is Persian and now uses Vazirmatn 12px/300 with semantic subtle placeholder token `#a1a1a1`. The inert specimen alone uses a 36px visual shell; the live playground/runtime preserve their 48px minimum target. Removed the obsolete global sample-icon selector.
+- **Verified:** Browser computes specimen shell to 36px, label to Estedad 12px/700, placeholder to Vazirmatn 12px/300 `rgb(161,161,161)`, with label `for` matching input id. Live playground input remains 48px; RTL and document width are intact.

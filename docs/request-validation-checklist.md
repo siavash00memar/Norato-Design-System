@@ -1132,3 +1132,11 @@
 - [x] RTL is preserved; document width is 1265px at a 1280px viewport, with no horizontal overflow.
 - [ ] Mobile 390px viewport and separate Lemon screenshot comparison were not run; viewport resizing is unavailable in this browser session.
 - [ ] Keyboard and shared Button state matrix were not re-exercised; this change only alters inert specimen layout/content and leaves the interactive playground/API untouched.
+
+## Input email specimen — label icon, placeholder and visual height (2026-11-02)
+
+- [x] Actual Input page at 1280px: envelope is beside the Email title within a native label associated with `#specimen-email`; icon no longer appears in the field.
+- [x] Title computes to Estedad 12px/700. Persian placeholder is inside the field and computes to Vazirmatn 12px/300 `#A1A1A1`; English `name@example.com` is removed.
+- [x] Inert specimen control is exactly 36px high. Interactive playground input remains 48px; shared runtime target behavior is not reduced.
+- [x] Default marker, helper, RTL and no horizontal document overflow remain.
+- [ ] Mobile 390px and independent screen-reader check were not run in this correction.
