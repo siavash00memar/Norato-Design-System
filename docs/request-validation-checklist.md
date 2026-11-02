@@ -976,3 +976,16 @@
 - [x] Review found Back mobile type would hide every menu trigger along with its desktop bar. A separate 48px drawer trigger was added to the Back title row and the CSS hide rule was scoped to the hidden top bar.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, production build and `git diff --check` pass after catalog validator was extended to recognize the new usage example. Vite still warns that the app JS chunk exceeds 500KB (768.04KB).
 - [ ] Same-size 390px/320px mobile comparison, mobile drawer focus/Escape/outside behavior, controlled search/Back event, full link-state matrix, mobile header matrix, outside action and independent screen-reader review remain open because this browser interface cannot set a custom narrow viewport. Navbar is not marked `Implemented` until these required checks are complete.
+
+## Sidebar — implementation checkpoint (2026-11-02)
+
+- [x] Added public NoratoSidebar Vue adapter, Button-style Playground, copy example, inert specimen with dedicated bounded CSS, 42-part Lemon contract, token/primitive/catalog/export records, and API/accessibility docs. Legacy .sample-sidebar is no longer rendered; dedicated selectors have intrinsic icon sizes and fixed panel bounds.
+- [x] Lemon reference inspected at 1280×720: six component parts, 42 variants, 3px right active marker, tooltip labels when collapsed, 2px focus ring, max two submenu levels. Local 1280×720: document 1265px, specimen frame 494×288 (column constrained), specimen panel 220×216; Lemon frame about 628×296 and panel about 214×220. The local panel retains its proportions rather than stretching across the frame. Interactive links have 48px block size and exactly one current page in the default playground.
+- [x] At local 499×932, mobile trigger opened a labeled Reka Dialog containing nav links; close button closed it. At desktop, collapsing retained 48px links with accessible labels and titles; control restored to expanded.
+- [ ] Exact 390px/320px compare could not be set in available browser. Escape, outside click/focus restoration, expanded/collapsed × Glass/Bar combinations, all Lemon state matrix, screen reader and host route behavior require more verification; maturity stays Adapted.
+- [ ] Required technical gate commands being rerun after final geometry adjustment.
+
+## Sidebar — DoD browser record (2026-11-02)
+
+- [x] Existing Lemon desktop comparison and local desktop/mobile interactions recorded in Sidebar checkpoint above; geometry was corrected after observed vertical stretch.
+- [ ] The browser bridge became unavailable during the final rerender attempt (rowser.user is unavailable), so the exact post-adjustment screenshot and remaining keyboard/modal/320px cases are unverified. DoD remains open; no completion claim.

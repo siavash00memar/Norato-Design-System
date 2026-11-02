@@ -649,3 +649,9 @@
 - **Correction:** add a dedicated 48px menu trigger to the Back title row and scope the hide rule to the now-hidden top bar.
 - **Evidence:** source selector and DOM path reviewed; the actual narrow viewport interaction remains unverified because the available browser interface did not expose viewport control.
 - **Prevention:** check reachability of the mobile menu in each mobile header variant, not only Default.
+
+## ERR-064 — Sidebar legacy specimen was a non-adapter (2026-11-02)
+
+- **Finding:** catalog called Sidebar Adapted while only a hard-coded .sample-sidebar screenshot-like specimen existed; legacy grouped CSS hid its actual geometry contract.
+- **Correction:** added a public controlled adapter, separate inert bounded specimen and executable playground; old .sample-sidebar class is no longer rendered.
+- **Prevention:** require runtime API evidence before describing a component as reusable.

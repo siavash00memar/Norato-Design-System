@@ -26,6 +26,8 @@ export { default as NoratoAvatarUpload } from './components/NoratoAvatarUpload.v
 export type { NoratoRejectedFile, NoratoUploadItem, NoratoUploadStatus } from './components/NoratoFileUpload.vue'
 export { default as NoratoNavbar } from './components/NoratoNavbar.vue'
 export type { NoratoNavbarLayout, NoratoNavbarStyle, NoratoNavbarMobileType, NoratoNavbarLinkStyle, NoratoNavbarLinkSize, NoratoNavbarLink } from './components/NoratoNavbar.vue'
+export { default as NoratoSidebar } from './components/NoratoSidebar.vue'
+export type { NoratoSidebarItem, NoratoSidebarSection } from './components/NoratoSidebar.vue'
 export { default as NoratoChoiceGroup } from './components/NoratoChoiceGroup.vue'
 export { default as NoratoCheckbox } from './components/NoratoCheckbox.vue'
 export { default as NoratoRadioGroup } from './components/NoratoRadioGroup.vue'
@@ -36,4 +38,3 @@ export { default as NoratoRange } from './components/NoratoRange.vue'
 export { default as NoratoRating } from './components/NoratoRating.vue'
 export type { NoratoRatingDistribution } from './components/NoratoRating.vue'
 export { default as NoratoTextarea } from './components/NoratoTextarea.vue'
-

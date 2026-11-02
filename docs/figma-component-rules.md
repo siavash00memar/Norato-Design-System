@@ -341,3 +341,9 @@
 - Keep every link/action target at least 48px while nav text and logo stay intrinsic; bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
 - Use Reka NavigationMenu for website link/disclosure semantics and Reka Dialog for the modal mobile drawer. Do not use a desktop `menubar` role for site navigation.
 - Transparent headers require a host background with readable contrast; do not assume or invent an image layer.
+
+## Sidebar — 2026-11-02
+
+- Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than Lemon's visual rows.
+- Preserve Lemon's brand/workspace header, section title, icon/count items, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
+- Use Norato semantic blue/yellow tokens and Persian typography. Collapsed labels remain accessible; mobile uses a modal drawer.

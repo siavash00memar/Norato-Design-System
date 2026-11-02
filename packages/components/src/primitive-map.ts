@@ -22,5 +22,6 @@ export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   'time-picker': { candidate: 'Reka Popover + native time controls', decision: 'No installed dedicated time picker. Use a bounded tokenized Vue panel with native labeled button/select semantics and explicit RTL/LTR behavior; no extra dependency.' },
   'file-upload': { candidate: 'native input + custom dropzone', decision: 'Use native file inputs and keyboard-operable dropzone; keep transport/progress controlled by the consuming app and avoid a new transfer dependency.' },
   navbar: { candidate: 'shadcn-vue NavigationMenu + Dialog / installed Reka UI NavigationMenuRoot + DialogRoot', decision: 'Use Reka NavigationMenu for website link/disclosure focus and keyboard behavior, plus Reka Dialog for the modal mobile drawer; keep website link semantics and style with Norato tokens.' },
+  sidebar: { candidate: 'Reka DialogRoot + native Vue anchors/buttons', decision: 'Use installed Reka Dialog for the responsive modal drawer; native links and buttons keep site-navigation semantics, while controlled section rendering stays in Vue.' },
   'tree-view': { candidate: 'custom contract', decision: 'Requires multi-select and keyboard navigation review.' },
 }

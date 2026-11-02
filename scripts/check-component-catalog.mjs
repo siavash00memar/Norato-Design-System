@@ -22,7 +22,7 @@ for (const [fieldIndex, label] of [[1, 'id'], [2, 'slug'], [3, 'name']]) {
 }
 
 const listedContracts = new Set()
-const allowedUsageKeys = new Set(['button', 'split-button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker', 'time-picker', 'file-upload', 'navbar'])
+const allowedUsageKeys = new Set(['button', 'split-button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker', 'time-picker', 'file-upload', 'navbar', 'sidebar'])
 const requiredContractSections = ['Overview', 'Anatomy', 'Variants', 'Sizes', 'States', 'Parts', 'Usage', 'Accessibility', 'Tokens']
 const specimenSource = fs.readFileSync(path.join(root, 'apps/vue/src/ComponentSpecimen.vue'), 'utf8')
 const usageSource = fs.readFileSync(path.join(root, 'apps/vue/src/usage-examples.ts'), 'utf8')
@@ -79,7 +79,3 @@ if (errors.length) {
 } else {
   console.log(`Component catalog integrity passed: ${rows.length} unique routes, 49 contracts, explicit readiness and Vue exports.`)
 }
-
-
-
-
