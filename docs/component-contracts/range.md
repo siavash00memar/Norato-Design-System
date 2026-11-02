@@ -68,3 +68,7 @@
 ## Tokens
 
 **توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary` (حلقهٔ پیش‌فرض thumb)، `--norato-color-focus-contrast` و `--norato-color-focus-ring` (فقط حالت فوکوس)، `--norato-range-track-small-block-size`، `--norato-range-track-medium-block-size`، `--norato-range-thumb-visual-size`، `--norato-range-thumb-target-size`، `--norato-range-thumb-halo-size` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+
+### Track endpoint alignment
+
+The visual rail is inset 24px at each inline edge (`--norato-space-6`, half of the 48px thumb target) inside the full-width interactive track. The Reka fill renders inside that inset rail, keeping its endpoints centered under the visual thumb without changing pointer mapping; RTL minimum remains physically right.

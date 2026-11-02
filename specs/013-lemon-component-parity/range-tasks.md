@@ -8,3 +8,9 @@
 - [x] R006 Complete validation evidence, technical gates, update error/request logs and maturity only if every required check passes.
 
 - [x] R007 Fix RTL thumb pseudo-element overconstraint; center visible knob inside the 48px target and move keyboard focus decoration from the hit area onto the visual knob.
+
+## Screenshot correction — 2026-11-02
+
+- [x] T008 Audit and consolidate Range CSS, removing thumb pseudo-track and duplicated/unconditional disabled declarations.
+- [x] T009 Recheck fill/thumb geometry at RTL values 0/52/100 and default/disabled/focus states at mobile and desktop widths; verify pointer clicks on both visible rail endpoints and two-thumb fill.
+- [x] T010 Run required gates, record browser geometry/DoD evidence and push to GitHub.

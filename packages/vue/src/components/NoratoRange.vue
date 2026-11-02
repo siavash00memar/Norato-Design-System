@@ -51,7 +51,7 @@ function update(payload: number[] | undefined) {
         :min-steps-between-thumbs="type === 'range' ? 1 : 0"
         @update:model-value="update"
       >
-        <SliderTrack class="norato-range__track"><SliderRange class="norato-range__fill" /></SliderTrack>
+        <SliderTrack class="norato-range__track"><span class="norato-range__visual-rail"><SliderRange class="norato-range__fill" /></span></SliderTrack>
         <SliderThumb v-for="(value, index) in values" :id="`${id}-thumb-${index}`" :key="index" class="norato-range__thumb" :aria-label="type === 'range' ? `${label}، ${index === 0 ? 'حداقل انتخاب' : 'حداکثر انتخاب'}` : label" :aria-disabled="disabled ? 'true' : undefined" :aria-invalid="error ? 'true' : undefined" :aria-describedby="describedBy"><span class="norato-range-field__thumb-value" aria-hidden="true">{{ format(value) }}</span></SliderThumb>
       </SliderRoot>
     </div>

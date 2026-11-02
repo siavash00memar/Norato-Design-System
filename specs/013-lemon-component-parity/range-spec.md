@@ -21,3 +21,9 @@ Source: `https://lemonui.ir/#range`, inspected in browser 2026-11-01; Norato API
 ## Unknowns
 
 - None requiring user input. Use number for single-value model and an ordered two-number tuple for range model; min/max/step are explicit props.
+
+## Screenshot correction — 2026-11-02
+
+Acceptance: Remove stale `::before` thumb pseudo-track and repeated selector overrides. At every value, the selected fill boundary meets the visual thumb center without an extra yellow segment. Default thumb uses the normal white/dark treatment; disabled gray treatment applies only when the field is disabled. Keep explicit RTL, 48px hit targets and 2px focus ring.
+
+At 0 and max, visible rail endpoints align with the visual knob center: inset the rail by half the 48px target on both inline edges, using the Norato 24px spacing token. Keep the interactive SliderTrack full width; render SliderRange within the inset visual rail so pointer mapping and fill geometry both remain correct.

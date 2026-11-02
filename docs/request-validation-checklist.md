@@ -1070,3 +1070,10 @@
 - [x] Bidi-sensitive chevron glyphs in the runtime component and inert top specimen were replaced with fixed left-pointing SVG chevrons; the specimen home marker is now the same SVG icon used by the adapter.
 - [x] Local browser render of collapsed RTL Breadcrumbs shows all visible separators pointing left, with intrinsic 16×16px icon geometry and no text-based mirroring. Slash remains an independent option.
 - [ ] Independent screen-reader review, full visual variant matrix and 320px/390px Lemon comparison remain outside this screenshot correction's DoD.
+
+## Range track/thumb endpoint alignment — 2026-11-02
+
+- [x] Removed the duplicated legacy thumb pseudo-track and unconditional disabled thumb override. The enabled thumb is surface white with a 2px dark border; muted styling applies only when disabled.
+- [x] Kept the full-width Reka SliderTrack for correct pointer mapping and inset its visual rail by 24px on both inline ends; SliderRange now sizes relative to that inset rail.
+- [x] At 380px and 1920px, RTL values 0/52/100 place the visible fill boundary within 0.02 CSS px of the thumb center; targets remain 48×48px. Pointer clicks on both visible rail endpoints selected 0 and 100, and the 25–75 range fill aligned with both thumbs.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build and `git diff --check` passed. The production build emits an advisory for its 812.63KB JavaScript chunk.

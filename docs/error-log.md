@@ -704,3 +704,10 @@
 - Cause: U+2039 `‹` is bidi-mirrored by the browser inside RTL navigation, so it displayed right-facing despite a left-chevron code point.
 - Replace the runtime and inert specimen chevron with explicit SVG path geometry pointing left; replace the specimen's Unicode house with the package's consistent SVG house. Do not apply a global transform.
 - [x] Browser rerender shows left-pointing SVG chevrons in both runtime and top specimen; technical gates passed.
+
+## Range fill boundary and thumb state — 2026-11-02
+
+- The user screenshot reports an apparent offset between the Range fill and thumb.
+- Cause: legacy thumb `::before` painted a second yellow track segment across half of the 48px target; duplicate unconditional `::after` styles also made enabled thumbs gray.
+- Remove the stale pseudo-track and consolidate the Range CSS into one rule per part/state. Use Reka's fill only and constrain disabled colors to disabled state.
+- [x] Browser at 380px and 1920px: values 0/52/100 keep fill edge aligned with the visible thumb center; targets are 48×48px; RTL focus, disabled colors, two-thumb fill and clicks at both visible rail endpoints map to 0/100. Token/catalog checks, TypeScript, production build, and diff check pass; build reports an 812.63KB JavaScript chunk advisory.

@@ -302,7 +302,7 @@
 ## Range — 2026-11-01
 
 - Use Lemon's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.
-- In RTL, minimum is on the physical right and fill grows right-to-left. Keep values anchored to their thumb positions.
+- In RTL, minimum is on the physical right and fill grows right-to-left. Keep values anchored to their thumb positions. Keep the interactive SliderTrack full width; inset the visual rail by 24px (half the 48px thumb target) and render SliderRange inside that rail so fill endpoints meet thumb centers without changing pointer mapping.
 - Use Norato semantic colors. Keep visible thumb/rail compact while the actual pointer/keyboard target is at least 48px; Small/Medium affect rail and thumb appearance only.
 - Exact values should pair with a numeric input; the slider alone communicates approximate adjustment.
 

@@ -10,3 +10,11 @@
 
 - Follow-up screenshot showed the visible knob left of the keyboard focus ring. inset:50% resolved all four physical sides; in dir=rtl, absolute positioning over-constrained horizontal placement, shifting the knob. Applying the focus outline to the whole 48px target also made the ring visually oversized.
 - Corrected the pseudo-element to use explicit physical top/left centering with right/bottom auto, and applied a 2px dark outline plus yellow halo to the 16px visible knob. Browser confirms target remains 48×48px, focus-visible is true, the knob aligns under its value and inside its focus decoration, ArrowLeft/ArrowRight changes then restores 60, and RTL remains set.
+
+## Screenshot correction analysis — 2026-11-02
+
+The range's `SliderRange` already renders the selected portion up to the thumb. A stale `.norato-range__thumb::before` draws an additional yellow segment from the target's inline-start to its center, which visually moves the track boundary by 24px. Repeated overrides also set thumb `::after` to muted surface/neutral border unconditionally, making normal and disabled states indistinguishable. Remove the extra pseudo-track and duplicate selectors rather than compensating with offsets; use the Reka fill as the single source of track geometry and scope muted styles to disabled only.
+
+## Screenshot correction — rendered rail and pointer geometry
+
+Keep Reka SliderTrack at full root width because it owns pointer coordinate mapping. Put an inset visual-rail span inside it and nest SliderRange inside that span; Reka's percentages then map directly onto the center-to-center span without changing root pointer geometry. Browser measurement confirms endpoint fill centers and endpoint clicks across 380px and 1920px.

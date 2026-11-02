@@ -12,3 +12,11 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue build, and `git diff --check` pass; production build has an existing >500KB chunk warning (575.88KB JS).
 
 - [x] 2026-11-02 follow-up: browser rerender shows the visible thumb centered inside its 48×48px target and keyboard focus decorates the 16px visual thumb with a 2px dark outline and yellow halo. ArrowLeft changes 60→61 and ArrowRight restores 60; RTL remains intact.
+
+## Screenshot correction — 2026-11-02
+
+- [x] Range CSS contains one canonical declaration per part/state; no thumb pseudo-track remains and disabled colors are scoped to disabled state.
+- [x] At RTL values 0, 52 and 100, the SliderRange edge and thumb center align within 0.02 CSS px at 380px and 1920px; the inset visual rail spans exactly between the endpoint centers.
+- [x] Default thumb is white with dark 2px stroke; disabled thumb and track are gray, with no yellow pseudo-track residue.
+- [x] Keyboard focus remains visible on the 20px visual knob; target stays 48×48px. RTL keyboard Home/End and Arrow keys, pointer clicks at both visible rail endpoints (0/100), focus ring, disabled colors, and the two-thumb range fill were checked.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build and `git diff --check` pass; production build reports an 812.63KB JavaScript chunk warning.

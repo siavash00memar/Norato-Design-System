@@ -5,3 +5,9 @@
 - Reka UI 2.11.0 is installed; its built runtime confirms controlled `modelValue` arrays, min/max/step, multiple thumb nodes, RTL `dir`, disabled and native slider keyboard handling. No new dependency is needed.
 - Lemon is visual composition authority; its 32/40px source sizes do not override Norato's 48px target. Exact numeric selection pairs with a number field.
 - Gate result: current constitutional rules are sufficient; no amendment or unresolved policy decision is required.
+
+## Range slider track/thumb correction — 2026-11-02
+
+- Keep the visual fill boundary aligned with the thumb center; do not add any decorative track segment inside the 48px thumb target.
+- Default thumb uses the surface-default fill and dark 2px stroke. Disabled thumb and fill receive muted styles only while disabled.
+- RTL remains explicit with minimum on the right; tokenized target, focus and track sizes stay intact.
