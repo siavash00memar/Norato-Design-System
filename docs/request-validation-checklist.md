@@ -1100,3 +1100,4 @@
 - [ ] Mobile viewport and keyboard/focus state combinations were not repeated for this visual-only radius correction.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, production build, and `git diff --check` pass. Existing JS chunk-size advisory remains.
 - [x] User's capsule instruction and live browser render agree. Mobile viewport and combined interactive state sequences remain unverified for this visual-only correction.
+- [x] Changes committed and pushed to `origin/master` as `684fe48`; working tree was clean after push.
