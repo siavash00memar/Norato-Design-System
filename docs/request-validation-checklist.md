@@ -1003,3 +1003,10 @@
 - [x] Copyable example displays a valid `</script>` closing tag. Preview has `inert` and `aria-hidden`; no interactive descendants.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass. Build reports advisory that the JS chunk exceeds 500KB.
 - [ ] Independent screen-reader review and exhaustive cross-product of all variant/state combinations remain open; keep maturity `Adapted`.
+
+## Breadcrumbs — implementation checkpoint (2026-11-02)
+
+- [x] Added public `NoratoBreadcrumbs`, Button-style playground, copyable usage and nine-section contract; catalog readiness is Adapted.
+- [x] Lemon/Norato same-viewport desktop and mobile render compared. Desktop Norato specimen is 584×136px with a 212×48px path; 390px specimen 343×136px/document 375px; 320px document remains 320px with internal path scroll. 48px links/disclosure, 2px keyboard focus, RTL separators, current-page ARIA, pointer/Enter disclosure and 3 hidden middle links verified; console error list empty.
+- [x] Token/catalog/typecheck/build/diff gates passed; the JS chunk is 800.06KB and Vite warns above 500KB.
+- [ ] Independent screen-reader review and exhaustive visual combination matrix remain open; maturity stays Adapted.

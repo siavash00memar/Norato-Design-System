@@ -1,73 +1,64 @@
 # Breadcrumbs — قرارداد کامپوننت نوراتو
 
 **حوزه:** Navigation  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Adapted
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بالای صفحه فقط ظاهر را نشان می‌دهد و inert است. تعامل واقعی فقط در playground و adapter اتفاق می‌افتد.
 
 ## Overview
 
-قرارداد طراحی Norato: نشون میده کاربر کجای سایته؛ از خانه تا صفحه‌ی فعلی. مسیرهای بلند جمع میشن.
+Breadcrumbs مسیر صفحه از ریشه تا صفحهٔ فعلی را نشان می‌دهد. برای مسیرهای بلند، آیتم‌های میانی در یک disclosure قابل دسترس جمع می‌شوند. رابط پیش‌فرض فارسی و RTL است.
 
 ## Anatomy
 
-- **Home** — اولین مرحله، با آیکن خانه
-- **Link** — مراحل قابل کلیک
-- **Separator** — فلش رو به چپ یا خط مورب
-- **Current** — صفحه‌ی فعلی، غیرقابل کلیک
+- **Home / Link:** مقصدهای قبلی به شکل پیوند واقعی؛ با `home: true` نشان خانهٔ توکنی و مقیاس‌پذیر نمایش داده می‌شود. TypeScript برای مقصدهای قابل‌کلیک `href` را الزامی می‌کند و برای صفحهٔ جاری آن را نمی‌پذیرد.
+- **Separator:** جهت‌دار به چپ در RTL یا خط مورب.
+- **Current:** عنوان صفحهٔ جاری بدون پیوند و با `aria-current="page"`.
+- **Ellipsis / Disclosure:** دکمهٔ بازکردن لینک‌های میانی پنهان‌شده.
 
 ## Variants
 
-- **Breadcrumbs (12 variant):** Style: Plain، Glass؛ Collapsed: false، true؛ Size: Small، Medium، Large
-- **Breadcrumb Item (18 variant):** Size: Small، Medium، Large؛ Type: Link، Current؛ State: Default، Hover، Focus
-- **Breadcrumb Separator (6 variant):** Size: Small، Medium، Large؛ Type: Chevron، Slash
-- **Breadcrumb Ellipsis (6 variant):** Size: Small، Medium، Large؛ State: Default، Hover
+- **Breadcrumbs (12 variant):** Style: Plain، Glass؛ Collapsed: false، true؛ Size: Small، Medium، Large.
+- **Breadcrumb Item (18 variant):** Size: Small، Medium، Large؛ Type: Link، Current؛ State: Default، Hover، Focus.
+- **Breadcrumb Separator (6 variant):** Size: Small، Medium، Large؛ Type: Chevron، Slash.
+- **Breadcrumb Ellipsis (6 variant):** Size: Small، Medium، Large؛ State: Default، Hover.
+
+ماتریس بالا قرارداد بصری Lemon است؛ adapter Norato style، size، separator و collapsed را دارد. حالت hover/focus از CSS و رفتار مرورگر/دکمه می‌آید.
 
 ## Sizes
 
-- **Breadcrumbs:** Small، Medium، Large
-- **Breadcrumb Item:** Small، Medium، Large
-- **Breadcrumb Separator:** Small، Medium، Large
-- **Breadcrumb Ellipsis:** Small، Medium، Large
+Small، Medium و Large اندازهٔ متن و فاصله را تغییر می‌دهند؛ ارتفاع لینک و disclosure همیشه دست‌کم ۴۸px باقی می‌ماند.
 
 ## States
 
-- **Breadcrumb Item:** Default، Hover، Focus
-- **Breadcrumb Ellipsis:** Default، Hover
+لینک‌ها Default، Hover و Focus دارند. Current صفحهٔ جاری را نمایش می‌دهد و تعاملی نیست. Disclosure بسته/باز می‌شود؛ دکمه در حالت باز `aria-expanded="true"` دارد. غیرفعال‌سازی عمومی در API وجود ندارد.
 
 ## Parts
 
-- **Breadcrumbs — 12 variant:** مسیر کامل. ابعاد/حالت‌ها: Style: Plain، Glass؛ Collapsed: false، true؛ Size: Small، Medium، Large
-- **Breadcrumb Item — 18 variant:** یه مرحله‌ی مسیر. ابعاد/حالت‌ها: Size: Small، Medium، Large؛ Type: Link، Current؛ State: Default، Hover، Focus
-- **Breadcrumb Separator — 6 variant:** جداکننده‌ی مراحل. ابعاد/حالت‌ها: Size: Small، Medium، Large؛ Type: Chevron، Slash
-- **Breadcrumb Ellipsis — 6 variant:** مراحل پنهان‌شده. ابعاد/حالت‌ها: Size: Small، Medium، Large؛ State: Default، Hover
+- **Breadcrumbs:** ظرف `nav` با نام دسترس‌پذیر و فهرست ترتیبی.
+- **Breadcrumb Item:** لینک مقصد یا متن صفحهٔ جاری.
+- **Breadcrumb Separator:** نشانهٔ تزئینی با `aria-hidden`.
+- **Breadcrumb Ellipsis:** دکمه‌ای که با کلیک، Tab و Enter/Space لینک‌های میانی را آشکار می‌کند.
+
+در مسیرهای بیشتر از چهار آیتم و با `collapsed=true`، اگر صفحهٔ جاری آخر مسیر باشد، آیتم اول و دو آیتم آخر دیده می‌شوند و بخش میانی با disclosure باز می‌شود. فهرست لینک‌های پنهان‌شده در حالت بسته از درخت دسترس‌پذیری و نمایش بیرون می‌ماند و شناسهٔ کنترل همیشه معتبر است. در عرض باریک، خود مسیر پیمایش افقی دارد تا عنوان‌ها نشکنند و هدف‌ها فشرده نشوند.
 
 ## Usage
 
-### راهنمای کاربرد Norato
-
-- برای سایت‌هایی با بیشتر از دو سطح ازش استفاده کن.
-- عنوان مراحل رو با عنوان صفحه‌ها یکی نگه دار.
-
-### محدودیت‌های کاربرد
-
-- Breadcrumbs رو جای ناوبری اصلی نذار.
-- مرحله‌ی فعلی رو لینک نکن.
-
-### جهت RTL
-
-مسیر از راست به چپ میره و فلش‌ها به چپ اشاره می‌کنن.
+- برای نشان‌دادن جایگاه صفحه در سلسله‌مراتب استفاده کن، نه جایگزین ناوبری اصلی.
+- عنوان مسیر را با عنوان صفحه‌ها هماهنگ نگه دار.
+- برای صفحهٔ جاری `current: true` بده و آن را لینک نکن.
+- برای مسیرهای خیلی بلند از جمع‌کردن میانی استفاده کن.
 
 ## Accessibility
 
-مرحله‌ی فعلی aria-current="page" داره.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+از `nav` نام‌دار و `ol` برای ساختار استفاده می‌شود. صفحهٔ جاری `aria-current="page"` دارد. دکمهٔ disclosure `aria-expanded` و `aria-controls` می‌گیرد. همهٔ لینک‌ها و دکمهٔ disclosure هدف ۴۸px، فوکوس قابل مشاهده و رفتار صفحه‌کلیدی بومی دارند. جداکننده و متن توضیحی ellipsis برای صفحه‌خوان پنهان‌اند.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از توکن‌های semantic Norato برای رنگ متن، برند آبی، سطح، مرز، focus ring، فاصله، تایپوگرافی و حداقل اندازهٔ هدف استفاده می‌شود. هیچ رنگ صفحه‌ای خامی به API اضافه نشده است.
+
+### Interactive documentation preview
+
+The Button-shaped Breadcrumbs page contains an inert specimen, a live Vue playground for style/size/separator/collapse, and a copyable `@norato/vue` example. Its control targets follow the 48px minimum.

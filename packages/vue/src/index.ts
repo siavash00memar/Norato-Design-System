@@ -40,3 +40,6 @@ export type { NoratoRatingDistribution } from './components/NoratoRating.vue'
 export { default as NoratoTextarea } from './components/NoratoTextarea.vue'
 export { default as NoratoTabs } from './components/NoratoTabs.vue'
 export type { NoratoTab } from './components/NoratoTabs.vue'
+
+export { default as NoratoBreadcrumbs } from './components/NoratoBreadcrumbs.vue'
+export type { NoratoBreadcrumbItem } from './components/NoratoBreadcrumbs.vue'

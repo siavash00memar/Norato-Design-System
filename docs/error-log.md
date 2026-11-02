@@ -664,3 +664,11 @@
 - **Correction:** remove Tabs from the shared legacy selector group; define a dedicated bounded Line specimen and separate NoratoTabs adapter styles.
 - **Evidence:** local rendered preview shows the inert underline specimen; interactive playground uses independent component selectors.
 - **Prevention:** audit shared selectors before changing any component visual and keep family-specific specimen CSS isolated.
+
+## ERR-066 — Breadcrumbs legacy specimen did not support long paths (2026-11-02)
+
+- **Component:** Breadcrumbs
+- **Finding:** the hard-coded specimen only showed three labels and had no runtime API, collapse, current-page semantics or responsive constraints.
+- **Correction:** add an inert bounded specimen, a semantic native Vue adapter with expandable middle links and a controlled playground.
+- **Evidence:** Lemon and Norato inspected at 1280×720/390×844; browser confirmed 48px links, 2px keyboard ring, current-page ARIA, expanded/collapsed disclosure, 320px no-page-overflow behavior, and an empty console error list.
+- **Prevention:** require catalog maturity to match a public adapter and verify long-path behavior at narrow widths.

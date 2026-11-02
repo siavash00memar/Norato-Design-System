@@ -356,3 +356,11 @@
 - Support horizontal/vertical orientation and Small/Medium/Large while preserving 48px interaction targets; in vertical RTL, the list stays at inline-end.
 - Keep icons intrinsic, order icon → label → count in RTL, and allow horizontal tab scrolling at narrow widths rather than squeezing or stretching labels.
 - Use Reka Tabs for tab/tabpanel relationships, controlled selection and keyboard focus.
+
+## Breadcrumbs — 2026-11-02
+
+- Follow Lemon's four-part structure and 42 documented combinations on the Button-shaped page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
+- Keep the semantic path in an ordered list inside a named navigation landmark. Current page remains non-link text with `aria-current="page"`.
+- Use Norato's own semantic palette, RTL direction and Persian fonts. Chevron points left in RTL; slash is neutral.
+- For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
+- Keep labels intrinsic and prevent wrapping; at narrow widths allow the trail itself to scroll rather than stretching links or creating page overflow.
