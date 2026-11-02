@@ -1106,7 +1106,7 @@
 
 - [x] Live page `http://127.0.0.1:5177/#component-input`: idle Text Input shell computes to `1px solid rgb(232, 232, 232)`; keyboard-focused Password Input computes to `1px solid rgb(253, 193, 1)`, with `box-shadow: none` and no outline style.
 - [x] Browser render confirms the existing Norato tokens resolve to the requested neutral `#e8e8e8` and brand yellow; RTL and 1px field geometry remain.
-- [x] Runtime Input/OTP and static family/state specimens use neutral default/hover strokes and yellow focus indications. Focus selector follows status and hover selectors so keyboard focus remains yellow even when hovered or invalid/success.
+- [x] Runtime Input/OTP and static family/state specimens use neutral resting strokes and yellow focus indications. (Superseded in the 2026-11-02 hover follow-up: pointer hover is now yellow as requested.)
 - [x] `pnpm check:tokens`, Vue TypeScript validation, and `git diff --check` pass.
 - [ ] Mobile viewport, full Input state matrix, and independent screen-reader checks were not run in this request.
 
@@ -1150,3 +1150,11 @@
 - [x] OTP target measures 48×48px with a 36px visual face; Textarea remains multiline (108px for current three-row Medium). No horizontal overflow.
 - [ ] Mobile viewport plus all variant/state combinations and independent screen-reader review were not rerun for this styling request.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the >500KB JavaScript chunk advisory (817.04KB).
+
+## Input hover stroke correction — 2026-11-02
+
+- [x] Removed the redundant native shell border; a single 1px visible capsule stroke remains.
+- [x] Browser computed style confirms the shared wrapper border is 0px and the single capsule pseudo-stroke is 1px; default color is `#e8e8e8`.
+- [x] Compiled stylesheet assigns Norato yellow to pointer hover on enabled shared Input/OTP shells, generic `NoratoField`, and `NoratoTextarea`; focus remains yellow.
+- [ ] This browser tool could not keep a pointer hover active for a hover-only screenshot/computed-color capture; mobile and independent screen-reader review were not run.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, Vue build, and `git diff --check` pass. Build reports the >500KB JavaScript chunk advisory (817.03KB).

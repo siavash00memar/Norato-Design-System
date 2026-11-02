@@ -1,3 +1,3 @@
 # Input Stroke — Clarify
 
-No unresolved material decision: the user's explicit visual contract specifies yellow focus, no black, 1px stroke, and #e8e8e8 for non-focused neutral strokes. Existing Norato semantic tokens provide both colors.
+No unresolved material decision: user clarified that the visible Input stroke must become yellow on pointer hover as well as focus, stay 1px, and show no duplicate line. Resting neutral remains #e8e8e8. Existing Norato semantic tokens provide both colors.

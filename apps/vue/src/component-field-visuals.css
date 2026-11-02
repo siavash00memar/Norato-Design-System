@@ -61,7 +61,7 @@
   block-size: var(--norato-control-target-min);
   min-block-size: var(--norato-control-target-min);
   padding-block: var(--norato-space-1);
-  border-color: transparent;
+  border: 0;
   background: transparent;
 }
 
@@ -80,6 +80,10 @@
 .norato-input-field__control:has(.norato-input-field__input:focus-visible)::before {
   border-color: var(--norato-color-brand-yellow);
   background: var(--norato-color-surface-default);
+}
+
+.norato-input-field__control:hover::before {
+  border-color: var(--norato-color-brand-yellow);
 }
 
 .norato-input-field[data-invalid] .norato-input-field__control::before {
@@ -160,6 +164,15 @@
   box-shadow: none;
 }
 
+#app .norato-field:hover:not(:disabled):not(:focus),
+#app .norato-textarea:hover:not(:disabled):not(:focus) {
+  outline-color: var(--norato-color-brand-yellow);
+}
+
+#app .norato-textarea:hover:not(:disabled):not(:focus) {
+  border-color: var(--norato-color-brand-yellow);
+}
+
 #app .norato-field-group.is-invalid .norato-field:not(:focus) {
   outline-color: var(--norato-color-status-error);
 }
@@ -196,6 +209,10 @@
 }
 
 .norato-input-field[data-size] .norato-otp__cell:focus-visible {
+  outline-color: var(--norato-color-brand-yellow);
+}
+
+.norato-input-field[data-size] .norato-otp__cell:hover:not(:disabled) {
   outline-color: var(--norato-color-brand-yellow);
 }
 

@@ -735,7 +735,7 @@
 
 - **Observed:** Input controls used `border-strong` for their idle stroke and a blue contrast outline plus yellow glow for keyboard focus. OTP cells and static Input specimens duplicated that treatment.
 - **Cause:** Legacy Input selectors referenced stronger neutral and contrast-focus tokens despite the accepted yellow Norato accent.
-- **Correction:** Runtime fields/OTP and static family/state examples now use a 1px default `#e8e8e8` stroke; focus uses only the 1px brand-yellow border. Neutral hover retains `#e8e8e8`; semantic error/success colors remain.
+- **Correction (2026-11-02 follow-up):** The page-wide visual shell had two stroke layers: the original shell border plus the 36px pseudo-element stroke. Removed the shell border so the capsule has one visible stroke; hover and keyboard focus use the 1px brand-yellow stroke. Default remains `#e8e8e8`; semantic error/success colors remain at rest.
 - **Scope:** Input family only; no shared control or unrelated component selectors changed.
 
 - **علت:** تصویر جدید کاربر، فیلدهای متنی کشیده با انتهای کپسولی را نشان می‌دهد و صراحتاً برداشت قبلیِ شعاع ۱۲px را اصلاح می‌کند.
