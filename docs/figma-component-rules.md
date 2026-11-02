@@ -63,6 +63,8 @@
 - State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
 - The 41 Input family/state cards follow Lemon's two-column mobile card rhythm and use a compact, bounded mini-control for the specific family state. Keep Error/Success/Disabled/Loading and active/typing treatments visibly distinct. These specimens remain inert; never substitute them for adapter behavior checks.
 - Input field shells and OTP cells are capsule-shaped at all sizes and states; use Norato's semantic `--norato-radius-pill` token. Keep this radius scoped to the Input family.
+- Neutral Input and OTP strokes use a 1px `--norato-color-border-default` (`#e8e8e8`) border, including hover. Keyboard focus uses only a 1px `--norato-color-brand-yellow` border; remove contrast outlines and glow shadows. Error and success keep their semantic status colors.
+- Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
 
 ## Select
 

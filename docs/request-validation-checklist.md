@@ -1101,3 +1101,11 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, production build, and `git diff --check` pass. Existing JS chunk-size advisory remains.
 - [x] User's capsule instruction and live browser render agree. Mobile viewport and combined interactive state sequences remain unverified for this visual-only correction.
 - [x] Changes committed and pushed to `origin/master` as `684fe48`; working tree was clean after push.
+
+## Input neutral and focused stroke — 2026-11-02
+
+- [x] Live page `http://127.0.0.1:5177/#component-input`: idle Text Input shell computes to `1px solid rgb(232, 232, 232)`; keyboard-focused Password Input computes to `1px solid rgb(253, 193, 1)`, with `box-shadow: none` and no outline style.
+- [x] Browser render confirms the existing Norato tokens resolve to the requested neutral `#e8e8e8` and brand yellow; RTL and 1px field geometry remain.
+- [x] Runtime Input/OTP and static family/state specimens use neutral default/hover strokes and yellow focus indications. Focus selector follows status and hover selectors so keyboard focus remains yellow even when hovered or invalid/success.
+- [x] `pnpm check:tokens`, Vue TypeScript validation, and `git diff --check` pass.
+- [ ] Mobile viewport, full Input state matrix, and independent screen-reader checks were not run in this request.
