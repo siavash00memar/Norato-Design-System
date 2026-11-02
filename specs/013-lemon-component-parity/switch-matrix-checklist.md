@@ -18,4 +18,5 @@
 - [x] Commit `bbb95f0` pushed to `origin/master`; local HEAD and remote `master` match.
 
 - [x] 2026-11-02 correction: live adapter, inert 30-cell matrix, Switch Field matrix, and all shared playground switches now use yellow for checked/hover, dark checked knobs, and dark focus outlines with a yellow halo; the generic playground thumb is dark when checked.
-- [x] Post-change browser computed styles confirm checked adapter track `rgb(253, 193, 1)`, dark knob `rgb(26, 26, 26)`, dark focus outline (2px) and yellow focus halo; first checked static matrix cell also computes to yellow track and dark knob. The adapter was restored to unchecked after the keyboard state check.\r\n- [ ] Full matrix screenshot at mobile width and independent screen-reader validation remain open in the overall Switch DoD.
+- [x] Post-change browser computed styles confirm checked adapter track `rgb(253, 193, 1)`, dark knob `rgb(26, 26, 26)`, dark focus outline (2px) and yellow focus halo; first checked static matrix cell also computes to yellow track and dark knob. The adapter was restored to unchecked after the keyboard state check.
+- [ ] Full matrix screenshot at mobile width and independent screen-reader validation remain open in the overall Switch DoD.

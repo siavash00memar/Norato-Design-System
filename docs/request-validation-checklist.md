@@ -1043,4 +1043,11 @@
 
 - [x] Screenshot issue traced to Switch focus contrast and found stale blue on-state/hover styles in the static matrix; Norato Switch accent is yellow.
 - [x] Updated live adapter focus to dark outline with yellow halo, interactive preview checked knob to dark, and static Switch/Switch Field matrix checked/hover/focus styles to yellow/dark.
-- [x] After the live rerender, browser-computed styles confirm the active adapter is yellow with a dark knob and keyboard focus shows a 2px dark outline with a 2px yellow halo. The checked static matrix cell also computes to yellow with a dark knob; the live adapter was restored to off. RTL remains in effect.\r\n- [ ] Switch family DoD remains open for the separately tracked mobile matrix comparison and independent screen-reader review.
+- [x] After the live rerender, browser-computed styles confirm the active adapter is yellow with a dark knob and keyboard focus shows a 2px dark outline with a 2px yellow halo. The checked static matrix cell also computes to yellow with a dark knob; the live adapter was restored to off. RTL remains in effect.
+- [ ] Switch family DoD remains open for the separately tracked mobile matrix comparison and independent screen-reader review.
+
+## Checkbox focus color correction — 2026-11-02
+
+- [x] Screenshot shows a selected checkbox with a blue outer focus outline. The input's own :focus-visible rule used --norato-color-focus-contrast, which resolves to Norato blue.
+- [x] Replaced the Checkbox outline with --norato-color-text-primary; retained the 2px yellow focus halo and yellow selected fill with dark checkmark.
+- [x] Browser keyboard check after rerender: selected Checkbox computes to yellow fill `rgb(253, 193, 1)`, dark checkmark `rgb(26, 26, 26)`, dark 2px outline and yellow 2px halo; `:focus-visible=true` and RTL is intact. The control was restored to unchecked afterward.

@@ -68,8 +68,8 @@
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+برای Checkbox، حالت Focus با خط دور تیرهٔ ۲ پیکسلی و هالهٔ زرد ۲ پیکسلی بیرون کنترل تعریف شده است.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای حالت انتخاب‌شده، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای حالت انتخاب‌شده، `--norato-color-text-primary` برای خط دور فوکوس، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
