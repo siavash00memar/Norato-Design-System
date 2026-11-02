@@ -1077,3 +1077,11 @@
 - [x] Kept the full-width Reka SliderTrack for correct pointer mapping and inset its visual rail by 24px on both inline ends; SliderRange now sizes relative to that inset rail.
 - [x] At 380px and 1920px, RTL values 0/52/100 place the visible fill boundary within 0.02 CSS px of the thumb center; targets remain 48×48px. Pointer clicks on both visible rail endpoints selected 0 and 100, and the 25–75 range fill aligned with both thumbs.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build and `git diff --check` passed. The production build emits an advisory for its 812.63KB JavaScript chunk.
+
+## Switch playground toggle inset and knob — 2026-11-02
+
+- [x] The checked playground knob no longer reaches the physical track corner; both checked and unchecked states keep a 5px visible inset from the nearest physical edge in RTL (4px CSS inset plus 1px border).
+- [x] Playground dimensions match the medium specimen (40×24 track, 16px knob); knob is white with no border, outline or shadow. Track is yellow when checked and neutral when unchecked.
+- [x] Runtime adapter and inert gallery use the same white, stroke-free knob; labels and keyboard focus ring remain intact. The focus ring is separate from the knob.
+- [ ] Narrow viewport layout was not verified in this browser session.
+- [x] Required project gates pass. GitHub push is pending.

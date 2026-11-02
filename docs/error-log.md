@@ -711,3 +711,10 @@
 - Cause: legacy thumb `::before` painted a second yellow track segment across half of the 48px target; duplicate unconditional `::after` styles also made enabled thumbs gray.
 - Remove the stale pseudo-track and consolidate the Range CSS into one rule per part/state. Use Reka's fill only and constrain disabled colors to disabled state.
 - [x] Browser at 380px and 1920px: values 0/52/100 keep fill edge aligned with the visible thumb center; targets are 48×48px; RTL focus, disabled colors, two-thumb fill and clicks at both visible rail endpoints map to 0/100. Token/catalog checks, TypeScript, production build, and diff check pass; build reports an 812.63KB JavaScript chunk advisory.
+
+## Switch playground knob flush to track — 2026-11-02
+
+- The user reports playground toggles whose checked knob touches the track edge; they request the specimen's inset, white knob, and no knob stroke.
+- Cause: shared playground used a 36×20 track and 12px knob but translated 20px in checked RTL state, although available travel after 4px padding was 16px. Runtime/gallery knobs also retained a dark fill and elevation shadow from the older approved contract.
+- Correction: use the shared 40×24 medium Switch track and 16px knob, place both states with the same 4px logical inset as the live adapter, remove the dark checked fill and knob shadow/stroke across runtime/gallery/playground.
+- [ ] Verify actual browser states, geometry, keyboard/focus, responsive layout and technical gates before closing.

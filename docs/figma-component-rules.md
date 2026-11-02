@@ -106,7 +106,7 @@
 ## Switch — Lemon composition, Norato palette
 
 - Reference: `https://lemonui.ir/#switch`; one Switch Field with concise label and optional description, the control beside the copy, and a Default/green-dot marker inside the same dotted glass preview frame as Lemon.
-- Track states are glass when off and Norato brand blue when on; the white knob moves toward physical left when enabled in RTL. Do not use Lemon's raw black color as Norato brand color.
+- Track states are glass when off and Norato brand yellow when on; the white, stroke-free knob moves toward physical left when enabled in RTL and remains inset from both ends. Do not use Lemon's raw black color as Norato brand color.
 - Small/Medium/Large track sizes are 32×20, 40×24 and 48×28px; the actual button remains a 48×48px target. Keep the preview to one field; do not stretch the switch to the frame.
 - `NoratoSwitch` wraps the installed Reka `SwitchRoot`/`SwitchThumb` primitive for `role="switch"`, `aria-checked`, keyboard behavior, controlled boolean state and connected label/description; Norato retains visual token ownership. Use only for settings applied immediately.
 - The static States gallery follows Lemon's title-plus-description card hierarchy and contains five Switch plus three Switch Field entries; keep family names, Persian descriptions, and Norato semantic status accents. Do not use the generic pill artwork there. Interactive Switch specimens belong in Preview and the Vue playground.
