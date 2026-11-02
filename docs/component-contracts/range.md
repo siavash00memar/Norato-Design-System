@@ -67,4 +67,4 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-range-track-small-block-size`، `--norato-range-track-medium-block-size`، `--norato-range-thumb-visual-size`، `--norato-range-thumb-target-size`، `--norato-range-thumb-halo-size` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-surface-muted`، `--norato-color-text-primary` (حلقهٔ پیش‌فرض thumb)، `--norato-color-focus-contrast` و `--norato-color-focus-ring` (فقط حالت فوکوس)، `--norato-range-track-small-block-size`، `--norato-range-track-medium-block-size`، `--norato-range-thumb-visual-size`، `--norato-range-thumb-target-size`، `--norato-range-thumb-halo-size` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
