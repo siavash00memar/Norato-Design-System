@@ -1,7 +1,7 @@
 # Input Radius — Tasks
 
-- [x] T001 Inspect Lemon's live Input field and inspect current Norato tokens/styles; identify the 25px source.
-- [x] T002 Change only Input field, state-gallery, playground and OTP radius declarations to the 12px semantic token.
-- [x] T003 Update Input visual contract and log the recurring radius mismatch.
-- [ ] T004 Verify browser geometry, states, RTL and responsive render. Desktop radius/RTL is verified; a mobile viewport could not be set in this browser session.
-- [x] T005 Record DoD and push the changes to GitHub (`28c12ce`).
+- [x] T001 Re-read the latest screenshot and supersede the old 12px instruction.
+- [x] T002 Change Input runtime shells, OTP, state gallery and family specimens to the pill token without affecting other components.
+- [x] T003 Update the Input contract, Figma rule, specification stages and recurring defect log.
+- [x] T004 Verify browser geometry, RTL and document width on the actual Input page.
+- [x] T005 Run required project checks and finish the request checklist; push the correction after final diff review.

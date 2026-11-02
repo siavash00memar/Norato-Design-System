@@ -1092,3 +1092,11 @@
 - [x] Browser confirms runtime OTP, eight subtype specimens, 41 state cards and playground fields compute to 12px; other component radii are untouched and RTL is intact.
 - [x] Token/catalog/typecheck/build and `git diff --check` pass. Change is pushed to GitHub as `28c12ce`.
 - [ ] Mobile viewport and interactive state combinations were not re-exercised in this radius-only request.
+
+## Input capsule radius correction — browser verification (2026-11-02)
+
+- [x] The latest user screenshot supersedes the previous 12px radius correction. Shared runtime field shells, OTP cells, eight subtype specimens and state cards now resolve to Norato's 50px pill token.
+- [x] Actual Input page at `http://127.0.0.1:5177/#component-input`, 1280px: RTL preserved, document width 1265px, no horizontal overflow. Live adapter shells measured 52px high and report 50px radius; OTP cells measure 52×52px and report the same pill token.
+- [ ] Mobile viewport and keyboard/focus state combinations were not repeated for this visual-only radius correction.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, production build, and `git diff --check` pass. Existing JS chunk-size advisory remains.
+- [x] User's capsule instruction and live browser render agree. Mobile viewport and combined interactive state sequences remain unverified for this visual-only correction.

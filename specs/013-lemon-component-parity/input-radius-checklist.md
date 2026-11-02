@@ -1,8 +1,8 @@
 # Input Radius — Definition of Done
 
-- [x] The eight subtype specimens and all 41 Input state field shells are compact rounded rectangles at 12px, not capsules.
-- [x] OTP cells in the visual gallery and live adapter use the same 12px field radius.
-- [x] Other component radii and Input API are untouched; RTL is confirmed. Focus, invalid, disabled, loading and mobile were not re-exercised in this request.
-- [x] Browser-computed styles and screenshot confirm the Input page against the Lemon 12px field reference; no horizontal overflow at the 1280px browser viewport.
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Production JS chunk advisory: 813.05KB.
-- [x] Input contract, Figma rule, request checklist, error log and family evidence are updated. Change is pushed to GitHub as `28c12ce`.
+- [x] Runtime Input shells and OTP cells use the semantic `--norato-radius-pill` token.
+- [x] Eight subtype specimens and all 41 state fields use the same capsule treatment.
+- [x] Other component radii and the Input API are untouched; RTL is intact.
+- [x] Browser-computed styles show 50px pill token on live adapter fields, OTP cells, specimens and state fields. Document width is 1265px in a 1280px viewport, with no horizontal overflow.
+- [ ] Mobile viewport, keyboard/focus and combined state sequences were not re-exercised for this shape-only correction.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 813.07KB JS chunk advisory.\n- [x] Input contract, Figma rule, request checklist and error log are updated. GitHub push is pending.

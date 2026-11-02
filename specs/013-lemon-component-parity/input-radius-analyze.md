@@ -2,11 +2,11 @@
 
 ## Evidence before implementation
 
-- Lemon's live `#input` preview field computes to a 12px corner radius.
-- Norato's `--norato-radius-card` token is 12px; `--norato-radius-control` is 25px.
-- Local browser inspection shows `.input-family-field` and `.input-state-field` at 25px. `.norato-input-field__control` is already 12px, while `.norato-otp__cell` is 25px.
-- The narrow correction is to change the Input gallery/playground declarations and live OTP cell selector to `--norato-radius-card`; unrelated controls remain unchanged.
+- The user's latest screenshot shows elongated form controls with fully rounded capsule ends.
+- The previous 12px rule came from an earlier Lemon comparison and conflicts with the user's current explicit shape instruction.
+- Norato's `--norato-radius-pill` token resolves to 50px; CSS caps the rendered corner radius against the actual control dimensions.
+- Apply the pill token to shared runtime field shells, OTP cells and their inert family/state gallery counterparts; leave unrelated components unchanged.
 
 ## Gate
 
-Source audit is complete. The verified target is 12px; no unresolved visual/API decision blocks implementation.
+The latest screenshot is the visual authority for this correction; no API decision blocks implementation.

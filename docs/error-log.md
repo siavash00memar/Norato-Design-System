@@ -728,3 +728,9 @@
 - [x] Local browser confirms shared checked and unchecked toggles plus the static Switch matrix use white 16px knobs with no border or shadow; medium track is 40×24px and the nearest physical edge gap is 5px in RTL. Space toggles the shared control; the focus ring remains on the track.
 - [x] Token check, 49-route catalog check, Vue typecheck/build and `git diff --check` pass; production JS chunk advisory is 812.79KB.
 - [ ] Narrow viewport overflow remains unverified in this browser session.
+
+## Input capsule radius correction — 2026-11-02
+
+- **علت:** تصویر جدید کاربر، فیلدهای متنی کشیده با انتهای کپسولی را نشان می‌دهد و صراحتاً برداشت قبلیِ شعاع ۱۲px را اصلاح می‌کند.
+- **اصلاح:** شعاع `--norato-radius-pill` برای پوستهٔ اجرایی، OTP، گالری هشت زیرنوع و ۴۱ حالت اعمال شد؛ selector جدید یا override موقت اضافه نشد.
+- **پیشگیری:** آخرین تصویر و دستور صریح کاربر بر مقایسهٔ قبلی Lemon اولویت دارد؛ قرارداد Input و Figma باید همان قاعده را منعکس کنند.

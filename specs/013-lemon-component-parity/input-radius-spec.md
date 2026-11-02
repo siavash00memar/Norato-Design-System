@@ -2,11 +2,10 @@
 
 ## Acceptance contract
 
-- Input fields must use a compact rounded rectangle, not a capsule.
-- Match Lemon's live Input field radius of 12px using Norato's semantic `--norato-radius-card` token.
-- Apply consistently to the eight subtype specimens, state cards and OTP cells, and to actual OTP cells in the Vue adapter. Existing shared field shells already use this 12px token.
+- Input fields and OTP cells must use a capsule shape as shown in the user's latest reference image.
+- Use Norato's semantic `--norato-radius-pill` token for field shells, OTP cells, eight subtype specimens, state cards, and playground controls.
 - Keep labels, values, focus/error/disabled treatments, dimensions, spacing, and behavior unchanged. Do not alter Select, Combobox, or unrelated controls.
 
 ## Evidence
 
-The live Lemon Input preview field computes to `border-radius: 12px`; the Norato `--norato-radius-card` token is 12px. The current Norato subtype and state specimens compute to 25px from the generic control-radius token, causing the capsule appearance.
+The user's latest attached screenshot shows long identity form fields with fully rounded ends. That visual instruction supersedes the prior 12px correction: the complete Input family should read as capsules, using the Norato pill token.
