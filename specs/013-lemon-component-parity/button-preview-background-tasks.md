@@ -1,9 +1,9 @@
-# Button Preview Background — Tasks
+# Button Preview — Tasks
 
-- [x] Audit Button preview and existing Lemon-like background patterns.
-- [x] Add shared semantic dot-grid tokens and apply the background only to Button specimen.
-- [x] Update Button/Figma contract.
-- [x] Update error log and validation checklist after browser verification.
-- [x] Verify actual render at the active browser viewport, inert behavior and project gates.
-- [ ] Separate 390px mobile and 1280px desktop captures remain unverified.
-- [ ] Commit and push to GitHub.
+- [x] Audit Button/Split Button preview geometry and current button-size overrides.
+- [x] Add shared semantic dot-grid tokens and apply the background to Button specimen.
+- [x] Match Split Button frame dimensions and remove fixed-height/cancel specimen.
+- [x] Update Button/Figma contract, request-validation log, error log and DoD evidence.
+- [x] Verify actual desktop render, same-browser frame parity, RTL, button dimensions and project gates.
+- [ ] Verify mobile viewport render after browser viewport resizing is available.
+- [x] Commit and push to GitHub.

@@ -753,3 +753,10 @@
 - **Observed:** The inert Button preview used the generic plain glass background, unlike the requested dotted glass specimen with warm/cool corner washes.
 - **Correction:** Added a Button-only dotted background using shared dot-grid and semantic warning/info surface tokens. Existing three-button content and playground are unchanged.
 - **Scope:** Top Button specimen only.
+
+## ERR-073 — Button specimen frame and sample controls were oversized/mismatched (2026-11-02)
+
+- **Observed:** Button specimen had a short frame and legacy fixed 60px controls, plus an extra Cancel sample, unlike the requested Split Button reference geometry.
+- **Correction:** Reuse the Split Button preview frame tokens (288px height, 24px radius, shared responsive width), remove fixed control dimensions and Cancel specimen. Keep only Primary and Secondary at the intrinsic Large height of 48px.
+- **Verified:** Live same-browser render at 1280px measured Button and Split Button frames identically (583.98×288px); both Button controls are 48px high. RTL holds with no document overflow.
+- **Limitation:** 390px mobile viewport comparison could not be run because this session's browser automation does not expose viewport resizing.

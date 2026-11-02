@@ -1124,3 +1124,11 @@
 - [x] At the active 499px browser viewport, frame width is 452px and document width is 484px; no horizontal overflow. RTL is preserved; the inert specimen retains the existing two button elements and visual cancel action.
 - [ ] The attached reference uses a taller frame; this request changed only the background, so Button specimen sizing/content was kept as-is. A 390px viewport and desktop-wide capture were not separately run.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 814.29KB JavaScript chunk advisory.
+
+## Button specimen sizing — Split Button parity (2026-11-02)
+
+- [x] Live browser screenshot: Button specimen contains only Primary and Secondary, with the dotted warm/cool glass background; no Cancel sample remains.
+- [x] Same browser and viewport comparison against Split Button: both frames measure 583.98×288px with 24px radius. Button controls measure 63.73×48px and 81.78×48px; Split Button main/toggle measure 64×48px and 48×48px.
+- [x] RTL is preserved; document width is 1265px at a 1280px viewport, with no horizontal overflow.
+- [ ] Mobile 390px viewport and separate Lemon screenshot comparison were not run; viewport resizing is unavailable in this browser session.
+- [ ] Keyboard and shared Button state matrix were not re-exercised; this change only alters inert specimen layout/content and leaves the interactive playground/API untouched.

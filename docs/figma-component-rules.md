@@ -27,7 +27,7 @@
 
 ## Button
 
-- The top Button specimen keeps its three-button content on a dotted glass surface with a soft warm upper-left and cool lower-right wash. Use semantic Norato tokens; scope the background to the inert specimen only.
+- The top Button specimen uses the Split Button preview frame tokens (640px max width, 320px mobile cap, 288px height, 24px radius) and the same dotted glass warm/cool wash. Show only Primary and Secondary, each 48px high like Split Button Large; preserve intrinsic widths and use semantic Norato tokens.
 
 - مرجع: Figma `8775:23830`، instanceهای `8775:23831` تا `8775:23833`
 - عرض: ۱۲۱px
@@ -258,8 +258,7 @@
 
 ## Button top specimen — 2026-10-28
 
-- The top Button specimen shows the yellow Primary and yellow-outline Secondary, plus a neutral gray-outline pill labeled «انصراف».
-- Inverse/Destructive stay available in the API gallery but do not appear in the top specimen. The cancellation sample is visual-only and does not add an API variant.
+- Superseded by the 2026-11-02 Button preview alignment rule below: only Primary and Secondary remain in the top specimen; the neutral Cancel sample has been removed.
 
 ## Component documentation rollout — 2026-10-28
 
@@ -385,6 +384,6 @@
 
 ## Button preview geometry — 2026-11-02
 
-- The top Button specimen keeps Primary, Secondary and Cancel at one shared width and height; the Cancel reference is no longer wider than the executable buttons.
-- All three specimen borders use the 2px medium stroke token; Cancel retains its neutral border color.
+- The top Button preview frame matches Split Button's 640px max width, 320px mobile cap, 288px block size and 24px radius tokens.
+- Only Primary and Secondary are shown; both use the 48px Split Button Large height and content-based widths. The static Cancel specimen has been removed.
 - This is documentation-preview geometry only and does not change runtime Button sizing.
