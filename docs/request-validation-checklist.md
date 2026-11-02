@@ -151,7 +151,7 @@
 
 ## گزارش این درخواست — Switch و وضعیت Radio (2026-11-01)
 
-- [x] مرجع Lemon Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در Lemon، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ پالت اجرایی Norato از semantic blue استفاده می‌کند.
+- [x] مرجع Lemon Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در Lemon، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ در نسخهٔ قبلی Norato برای حالت روشن از semantic blue استفاده می‌شد؛ اصلاح 2026-11-02 accent فعال را به زرد تغییر داد.
 - [x] مقایسهٔ بصری desktop در مرورگر با Lemon: هر دو یک Switch Field با marker و متن فارسی در قاب dotted-glass نمایش می‌دهند؛ قاب desktop Norato به عرض ستون محتوا محدود است. در اندازه‌گیری DOM فعلی Norato، frame=320×288px، control=48×48px و track متوسط=40×24px است؛ قاب نمونه و خود track کشیدگی عمودی ندارند.
 - [x] مقایسهٔ mobile در viewport 390×844 (اندازه‌گیری ثبت‌شده در همین اجرای مرورگر): frame=320×288px، document width=375px و بدون overflow؛ کنترل/متن RTL و target=48px باقی ماندند.
 - [x] سه اندازه × خاموش/روشن در DOM سنجیده شد: trackها 32×20، 40×24 و 48×28px؛ target هر شش حالت 48×48px. در RTL روشن‌شدن knob را به چپ منتقل کرد.
@@ -919,10 +919,10 @@
 
 ## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
 
-- [x] صفحهٔ محلی Switch از نظر ساختار مرور شد: preview جدا، playground اجرایی و ۹ بخش قرارداد؛ Lemon در `https://lemonui.ir/#switch` همان چینش preview و سه اندازه را نشان می‌دهد. Lemon رنگ روشن مشکی دارد؛ Norato آبی معنایی خود را حفظ می‌کند.
+- [x] صفحهٔ محلی Switch از نظر ساختار مرور شد: preview جدا، playground اجرایی و ۹ بخش قرارداد؛ Lemon در `https://lemonui.ir/#switch` همان چینش preview و سه اندازه را نشان می‌دهد. Lemon رنگ روشن مشکی دارد؛ Norato در اصلاح 2026-11-02 زرد برند خود را برای حالت روشن به کار می‌برد.
 - [x] در عرض viewport دسکتاپ 1280px، DOM ماتریس دقیقاً 30 نمونه Switch و 6 نمونه Switch Field دارد؛ گالری هیچ عنصر تعاملی ندارد، جهت RTL است، trackها 32×20/40×24/48×28px هستند و سند 1265px از عرض viewport بیرون نمی‌زند.
 - [x] adapter واقعی در هر سه اندازه هدف 48×48px دارد. Space روشن و Enter خاموش کرد؛ فوکوس واقعی حلقهٔ 2px با offset چهارپیکسلی داشت. حالت خطا `aria-invalid=true` و اتصال description/error در `aria-describedby` را دارد؛ حالت disabled غیرفعال است. نمونه به وضعیت پیش‌فرض بازگردانده شد.
-- [x] Hover واقعی با اشاره‌گر روی adapter اجرا شد: `:hover=true`، مرز track آبی معنایی `rgb(19, 79, 137)`، target 48×48px؛ مقدار به false بازگشت و پس از خروج اشاره‌گر `:hover=false` شد.
+- [x] آزمون hover قبلی مرز آبی معنایی `rgb(19, 79, 137)` را گزارش کرد؛ در اصلاح 2026-11-02 مرز hover به توکن زرد Norato تغییر کرد. آزمون تعاملی hover پس از تغییر هنوز انجام نشده است.
 - [ ] viewport موبایل برای خود ماتریس در ابزار مرورگر این اجرا قابل تنظیم نبود؛ مقایسهٔ بخش Variants در viewport کاملاً یکسان، آزمون ترکیبی همهٔ stateها و صفحه‌خوان مستقل نیز باز هستند. Switch کامل اعلام نمی‌شود.
 - [x] کاربر تعهد داده هر تغییر Git به مخزن برود؛ این تغییر مستنداتی پس از بررسی گیت‌ها commit/push و برابری remote تأیید می‌شود.
 
@@ -1038,3 +1038,9 @@
 - [x] Replaced the demo's home/grid Unicode glyphs and menu chevron with consistently sized SVG icons; chevron rotates when its menu opens.
 - [x] Current/open links use Norato yellow with dark text; hover is neutral and focus remains accessible.
 - [x] Browser render confirms SVG icons, open menu/rotated arrow, current state colors and no horizontal page overflow. Vue typecheck/build pass; only the existing large-JS-chunk advisory remains.
+
+## Switch colors and focus — 2026-11-02
+
+- [x] Screenshot issue traced to Switch focus contrast and found stale blue on-state/hover styles in the static matrix; Norato Switch accent is yellow.
+- [x] Updated live adapter focus to dark outline with yellow halo, interactive preview checked knob to dark, and static Switch/Switch Field matrix checked/hover/focus styles to yellow/dark.
+- [x] After the live rerender, browser-computed styles confirm the active adapter is yellow with a dark knob and keyboard focus shows a 2px dark outline with a 2px yellow halo. The checked static matrix cell also computes to yellow with a dark knob; the live adapter was restored to off. RTL remains in effect.\r\n- [ ] Switch family DoD remains open for the separately tracked mobile matrix comparison and independent screen-reader review.

@@ -6,3 +6,6 @@
 4. [x] Prior browser evidence confirms live playground keyboard, checked/value, disabled/error and 48px targets; this request confirmed the static gallery and executable playground remain separate.
 5. [x] Run project technical gates and update contract/request/family evidence; checks pass with the recorded bundle-size warning.
 6. [x] Commit `bbb95f0` pushed; local HEAD matches remote `master`.
+
+7. [x] Correct stale blue checked/hover/focus styles and align checked knobs across adapter, state galleries, and playground switches with Norato yellow/dark styling.
+8. [ ] Re-render and visually verify every state and size after this correction; keep full DoD open until outstanding matrix and accessibility checks pass.
