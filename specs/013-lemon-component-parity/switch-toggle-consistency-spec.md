@@ -10,6 +10,7 @@ The small playground toggles currently look different from the Switch specimen: 
 - In RTL, the unchecked knob sits 4px from the physical right edge; checked sits 4px from the physical left edge. No state may place the knob flush against the track.
 - Knob background is white in checked and unchecked states; knob border, outline and shadow are absent.
 - Preserve the yellow checked track, neutral unchecked track, labels, accessible checkbox semantics, keyboard focus indicator on the whole track, and existing control target.
+- Checked track uses the existing yellow token without a gray border. Unchecked track uses a visible light-gray semantic surface instead of white/glass; retain only the existing subtle neutral boundary if needed for definition.
 - Make the runtime adapter and static galleries follow the same white-knob, no-stroke visual contract.
 - Confirm checked/unchecked rendering, geometry, RTL, keyboard operation, responsive layout, token/catalog checks, TypeScript, build, and diff cleanliness in the actual browser.
 

@@ -1109,3 +1109,11 @@
 - [x] Runtime Input/OTP and static family/state specimens use neutral default/hover strokes and yellow focus indications. Focus selector follows status and hover selectors so keyboard focus remains yellow even when hovered or invalid/success.
 - [x] `pnpm check:tokens`, Vue TypeScript validation, and `git diff --check` pass.
 - [ ] Mobile viewport, full Input state matrix, and independent screen-reader checks were not run in this request.
+
+## Switch track off/on visual correction — 2026-11-02
+
+- [x] Local Switch page at `http://127.0.0.1:5177/#component-switch`: unchecked runtime track computes to fill `rgb(242, 242, 242)` with `rgb(232, 232, 232)` subtle border; knob remains white.
+- [x] Checked runtime track computes to Norato yellow `rgb(253, 193, 1)` for fill and border, so no gray stroke remains; knob remains white. Track geometry is 40×24px and direction is RTL.
+- [x] Clicking toggles data state and `aria-checked`; no public API or behavior change.
+- [ ] Mobile viewport, complete state matrix and screen-reader behavior were not rechecked in this request.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing >500KB JavaScript chunk advisory (813.93KB).
