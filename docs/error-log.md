@@ -831,3 +831,9 @@
 - **Correction:** Keep the app wrapper border at zero/transparent; scope the single 1px capsule hover stroke to enabled, valid controls and use Norato yellow. Focus remains yellow; disabled is neutral; invalid keeps its error stroke at rest. OTP follows the same disabled/focus/hover priority.
 - **Verified:** Live Password hover with input focus moved to the adjacent visibility action: `:hover=true`, input `:focus-visible=false`, capsule `1px solid rgb(253, 193, 1)`, wrapper `0px`. Error+Disabled Text and OTP retained neutral stroke and visible error message.
 - **Remaining:** Full Text Input state/variant matrix and independent screen-reader review remain open; this fix does not close Input DoD.
+
+## ERR-093 — Select top specimen showed a preselected value in Default (2026-11-08)
+
+- **Observed:** At the same 1280×720 viewport, Lemon's inert top Select showed an empty placeholder state, while Norato's specimen displayed Tehran as already selected.
+- **Correction:** Remove the specimen-only `model-value` and align its Persian placeholder to Lemon (`به شهر انتخاب کن`). Keep the executable playground's controlled Tehran value unchanged.
+- **Verification:** At 1280×720, re-render confirmed the top specimen has no selected-value label, shows the placeholder, retains the 300×48px control/288px frame and Default marker, and the live playground still reads Tehran. RTL document and no horizontal overflow were confirmed. A fresh 390×844 capture was unavailable in the active browser tool; mobile is not claimed as reverified for this correction.

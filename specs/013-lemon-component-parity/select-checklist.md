@@ -4,6 +4,7 @@
 - [x] Lemon source and current Select contract/playground inspected.
 - [x] Legacy selector audit found the unframed Select-specific rule; neutralize/rewrite it rather than append a competing override.
 - [x] Top specimen matches Lemon composition and has the Default marker using Norato tokens.
+- [x] Top specimen content matches Lemon's Default state at 1280×720: no preselected value, Persian placeholder visible; live playground default remains Tehran. Mobile viewport was not re-enforced in this correction and is not claimed as newly rechecked.
 - [x] No vertical or horizontal stretch; desktop and 390px mobile geometry measured with equal Lemon viewport.
 - [x] RTL and 48px target retained.
 - [x] Keyboard focus on the active option has a visible tokenized 2px ring with 4px offset; Enter selected Isfahan and updated the committed value in the browser.

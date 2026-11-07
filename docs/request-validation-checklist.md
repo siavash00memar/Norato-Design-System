@@ -1,5 +1,10 @@
 # Norato Request Validation Checklist
 
+## Select default specimen alignment — 2026-11-08
+
+- [x] At 1280×720, the inert specimen shows no selected value and uses Lemon's Persian placeholder `به شهر انتخاب کن`; the executable playground remains selected to Tehran.
+- [x] At 1280×720, the 300×48px field and 288px dotted frame remain proportional, with Default marker, RTL document direction, no horizontal overflow, and Tehran preserved in the executable playground. The active browser tool did not permit enforcing the 390×844 viewport; mobile is not claimed as rechecked for this correction.
+
 ## Input stroke hover follow-up — browser evidence (2026-11-08)
 
 - [x] On the live Password Input, pointer hover remained active while keyboard focus moved to the adjacent visibility action; the input was not focused, its only capsule stroke computed to Norato yellow (`rgb(253, 193, 1)`), and the outer layout wrapper computed to `0px` border.

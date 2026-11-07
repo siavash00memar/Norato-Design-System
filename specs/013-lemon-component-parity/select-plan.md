@@ -7,6 +7,7 @@
 5. Capture equal-viewport Lemon/Norato evidence, measure frame/control/option geometry, and inspect RTL, keyboard, multi-select staging, state and accessibility semantics.
 6. Ensure keyboard-focused options use the semantic 2px focus ring; the first interaction audit found `outline:none` on the option with no replacement. The CSS and keyboard selection correction is complete; forced mobile open-menu capture and visual matrix remain open.
 7. Run request checklist, token/catalog checks, Vue typecheck/build and diff check; update contract, parity tracker, error log and checklist evidence.
+8. Keep the inert top Select specimen unselected with Lemon's Persian placeholder; verify the live Vue playground's selected Tehran default remains unchanged.
 
 ## Vercel configuration audit
 
