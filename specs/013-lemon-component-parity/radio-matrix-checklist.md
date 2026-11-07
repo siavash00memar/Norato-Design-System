@@ -12,3 +12,4 @@
 - [x] Palette follow-up gates (2026-11-08): token/catalog checks, Vue typecheck/build and `git diff --check` pass; build bundle is 818.95KB with the existing >500KB Vite advisory.
 - [x] Request checklist, contract and family ledger record the result and remaining DoD.
 - [x] Commit `45d40bc` pushed; local HEAD and remote `master` both equal `45d40bcf68421d4d90355a6edbc10aa1f5906acb`.
+- [x] Yellow accent follow-up `3746d69` pushed to `origin/master`; local HEAD and remote parity were confirmed.

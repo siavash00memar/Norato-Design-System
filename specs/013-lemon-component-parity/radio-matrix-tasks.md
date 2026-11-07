@@ -7,4 +7,4 @@
 5. [x] Run token/catalog/type/build gates and update contract/request/ledger evidence; bundle-size warning recorded.
 6. [x] Commit `45d40bc` pushed; verified local HEAD equals remote `master`.
 7. [x] Replaced the stale blue selected/hover specimen tokens and contract wording with Norato yellow; static and runtime selected dots match at mobile, and the hover border resolves to yellow.
-8. [ ] Run the technical gates, record the final browser evidence/ledger checkpoint, commit and push the palette correction.
+8. [x] Token/catalog/typecheck/build/diff gates and browser evidence are recorded; commit `3746d69` pushed to `origin/master` and remote parity confirmed.
