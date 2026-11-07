@@ -6,6 +6,12 @@
 - [x] Error+Disabled Text and OTP kept neutral strokes while retaining the error message. Disabled and invalid state styling does not get recolored by hover.
 - [x] The line in question is the capsule's own field Stroke; the wrapper must not draw a second border. The page had no extra gray shell line in this verified hover state.
 
+## Input Text-state and OTP five-cell follow-up — browser evidence (2026-11-08)
+
+- [x] Text Input's required/error/disabled/loading/success/read-only behavior was inspected in the live playground, including native state flags, status/description associations, and stroke colors. Four size choices and both label placements were exercised.
+- [x] OTP length 5: sequential typing advanced through five cells; ArrowLeft/ArrowRight moved focus; Backspace cleared the focused digit and moved back when the cell was empty; paste populated all five cells and focused the final cell. The playground was restored to six empty cells with every shared toggle off.
+- [ ] Full screenshot comparison across every Lemon Text variant and independent screen-reader review remain open.
+
 ## Number Input precision refinement — browser evidence (2026-11-01)
 
 - [x] Playground controls expose min/max/step and the generated code updates with them; defaults restored to `0/99/1`.
