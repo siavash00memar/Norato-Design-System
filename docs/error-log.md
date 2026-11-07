@@ -774,11 +774,11 @@
 - **Correction:** Shared component-page styles render a centered 36px capsule inside minimum 48px targets for Input adapters and generic `NoratoField`. Titles use Estedad Bold; placeholders use RTL while entered phone/amount values remain LTR. Top Email helper line stays removed; Textarea retains multiline height.
 - **Verified:** Actual local browser: static variant/state shells 36px; live capsule is 36px inside a 52px Medium wrapper, input hit target 48px; OTP target 48px with 36px face; Textarea remains 108px; generic `NoratoField` target 48px with centered 36px capsule; top Email shell 36px with no helper. No document horizontal overflow.
 
-## ERR-084 — Input hover displayed a second gray wrapper stroke (2026-11-07)
+## ERR-084 — Input hover displayed a second gray wrapper stroke (2026-11-07, updated 2026-11-08)
 
 - **Observed:** Hovering an Input showed a gray line around the intended capsule stroke, despite the capsule pseudo-element using the yellow hover token.
 - **Cause:** The package stylesheet's more-specific native wrapper hover selector restored its own border after the page-level base rule set `border: 0`.
-- **Correction:** Scoped the wrapper border reset and capsule hover rule to the app root, then explicitly kept the native wrapper border transparent on enabled, valid hover. The visible pseudo-element remains the single 1px yellow stroke.
+- **Correction:** Scoped the documentation app wrapper reset and capsule hover rule to the app root, then explicitly kept that wrapper border transparent on enabled, valid hover. Also changed the published Vue component stylesheet hover token from neutral gray to Norato yellow so standalone consumers receive the same single-stroke behavior. The visible capsule remains 1px.
 - **Scope:** Input shell hover only; status colors, focus behavior, OTP and other component styles are unchanged.
 - **Verified (2026-11-07 follow-up):** Hovered the live Password Input without focus in the local browser. The wrapper border is 0px and the sole capsule stroke computes to `1px solid rgb(253, 193, 1)`; screenshot shows no second gray outline. The short neutral bars directly below the field are the password-strength meter.
 
@@ -802,3 +802,10 @@
 - **Evidence:** Lemon/Norato matched viewports show bounded composition at desktop 1280×720 and mobile 390×844; mobile document width is 375px, no overflow. Lemon outer frame 636×300px and inner 367×154px; Norato outer 584×288px and inner 380×160px on desktop. Mobile frames are 327×300px / 320×288px and inner dropzones 321×154px / 302×160px. Real browser chooser evidence covers click, Enter/Space, valid PNG, invalid type, over-limit size, count rejection, single replacement, `multiple` mode and native input reset. Native OS drag/drop, independent screen-reader and reduced-motion remain open.
 - **Technical gates:** On 2026-11-07 the File Upload validator (5/5), token check, catalog check (49), Vue typecheck/build and diff check pass. Production JS chunk is 817.78KB; Vite's >500KB advisory remains.
 - **Prevention:** Keep mutually exclusive component specimen branches unique; compare live rendered geometry and all primary action accents to the current Norato contract before closing the visual DoD.
+
+## ERR-089 — Navbar specimen and responsive details diverged from Lemon (2026-11-08)
+
+- **Observed:** The static CTA/brand used blue, the preview wash read cool, and the static row was 72px tall and wrapped its action on narrow mobile. The documentation shell's 320px minimum width also created a horizontal scrollbar when the available viewport width was 305px.
+- **Correction:** Applied the approved yellow primary accent and warm/neutral specimen wash; compacted the static row to 50px and widened it, retained three 48px mobile items on one row, removed the app-wide 320px minimum, and exposed Back activation in playground status.
+- **Verified:** Matched Lemon/Norato geometry at 1280×720 and 390×844, and no overflow at 320px. Checked all four mobile header types and nine desktop layout/style combinations, keyboard submenu open/Escape focus return, mobile dialog Escape/outside close/focus return, Back activation status and controlled search input.
+- **Remaining:** Independent screen-reader testing and broader full focus/current/disabled link matrix remain open; maturity remains Adapted.

@@ -1190,3 +1190,17 @@
 - [x] At desktop 1280×720, Norato static and interactive selected cells compute to yellow `rgb(253, 193, 1)` with dark `rgb(26, 26, 26)` text; frame is 584×288px.
 - [x] At mobile 499×932, Norato's 452×288px frame remains bounded, document width is 484px, and no horizontal overflow occurs. Lemon comparison frame is 436×300px and its black selected fill remains unchanged.
 - [x] RTL and selected-cell color were captured in the actual local browser. Independent screen-reader review remains open and is not claimed as passed.
+
+## Input hover stroke consistency — 2026-11-08
+
+- [x] Root cause identified in the published Vue stylesheet: enabled, valid Input wrapper hover explicitly restored the neutral border token, while the docs page painted the capsule pseudo-element yellow and masked the wrapper layer locally.
+- [x] Published Input hover selector now uses --norato-color-brand-yellow; the docs page keeps the duplicate wrapper border transparent and paints a single 1px capsule stroke.
+- [x] Local Password Input focus render shows one yellow 1px capsule; the eye action's separate keyboard focus outline is distinct from the field stroke. Earlier no-focus pointer hover evidence remains recorded under ERR-084.
+- [x] The local app consumes the published package stylesheet. Pointer remained over the Password capsule while focus moved to its visibility action; the unfocused field retained the single yellow hover stroke. Independent screen-reader and broader Input state/focus matrix remain outside this visual fix.
+
+## Navbar visual and responsive follow-up — 2026-11-08
+
+- [x] Lemon/Norato measured at desktop 1280×720 and mobile 390×844; static row is 50px and nearly fills frame width while keeping 48px controls.
+- [x] At 320px, document scroll width equals client width (305px) with no horizontal scrollbar; all four mobile header types remain within bounds.
+- [x] Nine desktop layout/style combinations, seven runtime target heights, submenu Enter/Escape focus return, drawer Escape/outside close, controlled Search and Back activation were checked.
+- [ ] Independent screen-reader review and wider full state/focus/current/disabled matrix remain open.

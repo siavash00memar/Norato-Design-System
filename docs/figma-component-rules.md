@@ -349,9 +349,9 @@
 ## Navbar — 2026-11-01
 
 - Use Lemon's six-part composition and 41 documented variant combinations; preserve the Button-like page structure of inert Preview, executable playground/copy example and nine contract sections.
-- Retain Norato's semantic blue/yellow palette, RTL navigation order, Vazirmatn body and Estedad headings. Brand sits at inline-end, primary links follow it and actions sit at inline-start.
+- Use Norato yellow with dark text for the primary CTA, brand mark, current/open/hover navigation states, and a warm/neutral dotted specimen wash. Blue stays for link and informational semantics. Preserve RTL navigation order, Vazirmatn body and Estedad headings. Brand sits at inline-end, primary links follow it and actions sit at inline-start.
 - Support App/Website/Centered × Bar/Floating/Transparent on desktop and Default/Back/Search/Large Title × Bar/Transparent on mobile. Mobile drawer and grouped links remain keyboard operable.
-- Keep every link/action target at least 48px while nav text and logo stay intrinsic; bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
+- Keep every link/action target at least 48px while nav text and logo stay intrinsic; the inert sample row may compress to its 48px control height plus stroke. Bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
 - Use Reka NavigationMenu for website link/disclosure semantics and Reka Dialog for the modal mobile drawer. Do not use a desktop `menubar` role for site navigation.
 - Transparent headers require a host background with readable contrast; do not assume or invent an image layer.
 

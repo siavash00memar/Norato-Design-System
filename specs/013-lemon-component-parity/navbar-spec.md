@@ -2,7 +2,7 @@
 
 ## Acceptance contract
 
-Implement the six component parts described by Lemon: responsive Navbar, mobile header, Nav Link, Brand, Mega Menu and Mobile Menu. Preserve the reference's three desktop layouts × three styles (9), four mobile types × two styles (8), two link styles × two sizes × five states (20), and two brand sizes. Norato retains its own blue/yellow semantic palette and tokens.
+Implement the six component parts described by Lemon: responsive Navbar, mobile header, Nav Link, Brand, Mega Menu and Mobile Menu. Preserve the reference's three desktop layouts × three styles (9), four mobile types × two styles (8), two link styles × two sizes × five states (20), and two brand sizes. Norato keeps its semantic tokens and uses yellow as the primary action/selection accent; blue remains for links and informational semantics.
 
 - Desktop layout types: App, Website and Centered. Styles: Bar, Floating and Transparent.
 - Mobile types: Default, Back, Search and Large Title. Styles: Bar and Transparent. Switch to mobile at the shared navigation breakpoint; desktop links are replaced with a drawer trigger.
@@ -10,6 +10,7 @@ Implement the six component parts described by Lemon: responsive Navbar, mobile 
 - Active link renders `aria-current="page"`; disabled links are not focusable or navigable. The menu uses links with native Tab behavior and the Reka NavigationMenu keyboard model on desktop.
 - The mobile drawer is modal, keyboard-dismissible, focus-managed, labeled and directionally RTL using installed Reka Dialog.
 - Brand uses an intrinsic mark/wordmark composition and supports a consumer slot. Header actions and avatar/search content can be supplied by consumer slots; Norato does not invent application navigation destinations.
+- The top specimen and runtime share Norato yellow/dark for the primary CTA and brand mark; the warm/neutral dotted frame does not let blue dominate. Active, open, and hover navigation affordances use yellow; information/count semantics may retain blue.
 - Search mobile mode has controlled `v-model:search`; Back mode emits `back`; large-title mode accepts a separate title. Default state is Website + Bar + Default mobile header + Bar mobile style.
 - Preview stays inert and independent from runtime interaction. Detail page follows Button: preview, playground/code and nine contract sections.
 

@@ -14,3 +14,15 @@
 - [x] Adapter checkpoint committed and pushed as `67a4885`; local `master` and `origin/master` matched. The unrun mobile DoD items remain open.
 
 - [x] At live desktop Navbar, verified the grid/home SVG icons, open-menu upward chevron, current link's yellow container/dark text, and no document overflow.
+
+## Accent correction — 2026-11-07
+
+- [x] Static and live primary CTA plus brand mark use Norato yellow with dark text; no blue primary action remains.
+- [x] Navbar specimen uses a warm/neutral dotted wash, bounded by its tokenized frame; blue remains only in link/informational semantics.
+- [x] Current, open, and hover navigation states remain yellow across pill/underline styles; keyboard focus keeps a clear 2px indicator.
+- [x] Compare Lemon and Norato at matched desktop 1280×720 and mobile 390×844; mobile 320px and all four header types are checked without overflow where supported.
+- [ ] Recheck the complete current/disabled/focus link matrix; Enter/Escape submenu focus restoration, mobile click-outside, RTL and target dimensions passed. Independent screen-reader review remains open.
+- [ ] Run request-validation checklist and technical gates; push and verify remote parity. Keep Navbar maturity Adapted while accessibility DoD remains open.
+- [x] Static Navbar inner row is ~50px at desktop/mobile, nearly fills the available frame width, Brand/current link/CTA stay on one mobile row, and runtime action/link hit targets stay >=48px.
+- [x] At a 320px viewport, the documentation root fits its visible client width without a horizontal scrollbar; Navbar menu and action targets remain at least 48px.
+- [x] Search input updates the controlled Vue model, Back emits its documented event, and the playground reports that interaction.

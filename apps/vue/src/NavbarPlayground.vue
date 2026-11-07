@@ -38,16 +38,16 @@ const stateVariants = computed(() => {
     ),
   )
 })
-function recordActivation() { activationCount.value += 1 }
+function recordInteraction() { activationCount.value += 1 }
 </script>
 
 <template>
   <div class="button-playground navbar-playground" dir="rtl">
     <header><strong>آزمایش Navbar اجرایی</strong><span>همین adapter در بستهٔ Vue؛ پیش‌نمایش بالای صفحه فقط نمای بصری است.</span></header>
     <div class="button-playground-preview navbar-playground-preview">
-      <NoratoNavbar id="navbar-playground" :links="demoLinks" :type="layout" :style="style" :mobile-type="mobileType" :mobile-style="mobileStyle" :link-style="linkStyle" :link-size="linkSize" :disabled="disabled" v-model:search="search" mobile-title="محصولات نوراتو" @navigate="recordActivation">
+      <NoratoNavbar id="navbar-playground" :links="demoLinks" :type="layout" :style="style" :mobile-type="mobileType" :mobile-style="mobileStyle" :link-style="linkStyle" :link-size="linkSize" :disabled="disabled" v-model:search="search" mobile-title="محصولات نوراتو" @navigate="recordInteraction" @back="recordInteraction">
         <template #actions>
-          <NoratoButton label="شروع کن" variant="primary" :disabled="disabled" @click="recordActivation" />
+          <NoratoButton label="شروع کن" variant="primary" :disabled="disabled" @click="recordInteraction" />
         </template>
         <template #avatar>
           <button class="navbar-playground-avatar" type="button" aria-label="حساب کاربری" :disabled="disabled">ن</button>
@@ -83,7 +83,7 @@ function recordActivation() { activationCount.value += 1 }
 <style>
 .navbar-playground-preview{display:grid;min-inline-size:0;overflow:visible;padding:0}
 .navbar-playground-preview>.norato-navbar{margin:0}
-.navbar-playground-avatar{display:grid;place-items:center;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-info-container);color:var(--norato-color-brand-blue);font:inherit;font-weight:700}
+.navbar-playground-avatar{display:grid;place-items:center;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary);font:inherit;font-weight:700}
 .navbar-playground-avatar:focus-visible{outline:var(--norato-border-medium) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1)}
 .navbar-playground-feedback{margin:0;padding:var(--norato-space-2) var(--norato-space-3);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
 .navbar-link-matrix{display:grid;gap:var(--norato-space-3);margin-block-start:var(--norato-space-4);padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
@@ -92,10 +92,10 @@ function recordActivation() { activationCount.value += 1 }
 .navbar-link-matrix-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--norato-navbar-matrix-card-inline-size)),1fr));gap:var(--norato-space-2)}
 .navbar-link-matrix-card{display:grid;align-content:start;justify-items:start;gap:var(--norato-space-2);min-inline-size:0;min-block-size:calc(var(--norato-control-target-min) + var(--norato-space-6));padding:var(--norato-space-2);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card)}
 .navbar-link-matrix-card>a{display:inline-flex;align-items:center;justify-content:center;min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border-radius:var(--norato-radius-pill);color:var(--norato-color-text-secondary);text-decoration:none}
-.navbar-link-matrix-card>a.is-pill.is-active{background:var(--norato-color-info-container);color:var(--norato-color-brand-blue)}
+.navbar-link-matrix-card>a.is-pill.is-active{background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 .navbar-link-matrix-card>a.is-underline{border-radius:0}
-.navbar-link-matrix-card>a.is-underline.is-active{box-shadow:inset 0 calc(-1 * var(--norato-border-medium)) var(--norato-color-brand-blue);color:var(--norato-color-brand-blue)}
-.navbar-link-matrix-card>a.is-hover{background:var(--norato-color-info-container);color:var(--norato-color-brand-blue)}
+.navbar-link-matrix-card>a.is-underline.is-active{box-shadow:inset 0 calc(-1 * var(--norato-border-medium)) var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
+.navbar-link-matrix-card>a.is-hover{background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
 .navbar-link-matrix-card>a.is-focus{outline:var(--norato-border-medium) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1)}
 .navbar-link-matrix-card>a.is-disabled{color:var(--norato-color-text-disabled)}
 .navbar-link-matrix-card>a.size-small{font-size:var(--norato-type-body-caption-size)}
