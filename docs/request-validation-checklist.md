@@ -869,6 +869,15 @@
 - [x] DoD مرورگر و گیت‌های فنی کامل است؛ وضعیت کاتالوگ `Implemented` است. صفحه‌خوان مستقل اجرا نشد؛ Accessibility tree و صفحه‌کلید مرور شدند.
 - [x] Build موفق است؛ bundle جاوااسکریپت 626.87KB هشدار بالای 500KB می‌دهد.
 
+## Date Picker — تازه‌سازی DoD و رفع مغایرت ledger (2026-11-07)
+
+- [x] مرجع زندهٔ Lemon و صفحهٔ Norato در viewport یکسان 1280×720 و 390×844 بررسی شدند. Desktop: قاب Lemon برابر 628×300px و Norato برابر 584×302px (محدود به ستون صفحه). Mobile: Lemon برابر 327×300px، Norato برابر 320×288px؛ عرض سند Norato برابر 375px و بدون overflow است.
+- [x] نمونهٔ تقویم Norato در موبایل bounded است: card برابر 256px عرض دارد؛ روزهای تقویم هدف 48×48px و سلول‌های ماه/سال ارتفاع 48px دارند. Wheel سه کنترل RTL با ارتفاع 56px و پنل 358×117px دارد؛ پنل موبایل در viewport جا می‌شود.
+- [x] هر هفت mode باز و بررسی شدند: Single، Range، Range + Presets، Date & Time، Month، Year و Wheel. مقدار کنترل‌شده با انتخاب روز، بازهٔ وارونه (که به ترتیب زمانی نرمال شد)، preset «این هفته»، تغییر ساعت به 15:30، انتخاب ماه/سال و تغییر سال/ماه در Wheel به‌روز شد. Native `select` وجود ندارد.
+- [x] RTL و ترتیب شنبه تا جمعه از راست، صفحه‌کلید ArrowLeft و PageDown، Escape و بازگشت فوکوس، نام dialog/grid/day در AX tree، تاریخ disabled، `aria-invalid` و اتصال پیام خطا، و `aria-busy`/status/disabled شدن کنترل در Loading بررسی شدند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر/قرارداد)، Vue typecheck، production build و `git diff --check` پس از تازه‌سازی دوباره اجرا و موفق شدند.
+- [ ] صفحه‌خوان مستقل در این بررسی اجرا نشد؛ نام‌گذاری، نقش‌ها، وضعیت‌ها و صفحه‌کلید در Accessibility tree مرور شدند.
+
 ## گزارش این درخواست — اصلاح گالری States کامپوننت Radio (2026-11-01)
 
 - [x] مرجع زنده Lemon `#radio` در viewport دسکتاپ 1195×765 و موبایل 390×844 بررسی شد. بخش States مرجع پنج کارت عنوان/شرح دارد و نسخهٔ Norato اکنون همان سلسله‌مراتب را با palette و accentهای معنایی Norato نشان می‌دهد.

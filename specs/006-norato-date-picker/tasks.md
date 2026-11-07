@@ -19,3 +19,4 @@
 
 - [x] T017 Compare Lemon and Norato specimen at desktop 1920×863; reduce the Norato specimen calendar token to 272px and record measured geometry and remaining visual review in DoD/error log. Push this refinement to GitHub.
 - [x] T018 Add and browser-verify the loading state: spinner, `aria-busy`, polite status, and disabled controls; expose it in the playground; remove stale Proposed claims from team guidance and lab.
+- [x] T019 Re-audit the stale family ledger against the live Lemon page and current Vue adapter. At 1280×720 and 390×844, compare preview frames; exercise all seven modes, range ordering/preset, Date & Time, Month, Year, Wheel, keyboard, status and responsive targets; reconcile DoD evidence and rerun technical gates.

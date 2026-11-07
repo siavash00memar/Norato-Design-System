@@ -11,5 +11,5 @@
 - [x] Mobile Wheel and responsive calendar behavior are in scope.
 - [x] Adapter API is controlled and Vue 3-only for product behavior.
 - [x] Verification requirements are measurable and include real browser render plus technical gates.
-- [ ] Seven-mode behavior and visual DoD pass in implementation.
-- [ ] Token, catalog, TypeScript, production build, and whitespace checks pass after implementation.
+- [x] Seven-mode behavior and visual DoD pass in implementation. Fresh same-viewport Lemon/Norato browser comparison, RTL, interaction, keyboard, status, and responsive evidence is recorded in `docs/request-validation-checklist.md`.
+- [x] Token, catalog, TypeScript, production build, and whitespace checks pass after implementation; current gate output is recorded in `docs/request-validation-checklist.md`.

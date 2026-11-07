@@ -780,3 +780,9 @@
 - **Cause:** The package stylesheet's more-specific native wrapper hover selector restored its own border after the page-level base rule set `border: 0`.
 - **Correction:** Scoped the wrapper border reset and capsule hover rule to the app root, then explicitly kept the native wrapper border transparent on enabled, valid hover. The visible pseudo-element remains the single 1px yellow stroke.
 - **Scope:** Input shell hover only; status colors, focus behavior, OTP and other component styles are unchanged.
+
+## ERR-085 — Date Picker family ledger contradicted implemented runtime evidence (2026-11-07)
+
+- **Observed:** The feature specification, Vue export, catalog and existing browser log described a seven-mode Implemented Date Picker, while the family ledger still labeled it Proposed with visual and behavior comparison pending.
+- **Correction:** Rechecked the live Lemon reference and Norato at 1280×720 and 390×844; exercised all seven modes, range ordering/preset, time/month/year/wheel updates, keyboard and state semantics. Reconciled the family ledger and feature checklist with the current browser and technical evidence.
+- **Verified:** Current adapter remains exported and controlled; frames are 628×300 vs 584×302px desktop and 327×300 vs 320×288px mobile; mobile document stays 375px wide. Independent screen-reader software was not run.
