@@ -1212,3 +1212,11 @@
 - [x] Checked dot and hover border resolve to yellow `rgb(253, 193, 1)`, matching live adapter selection; disabled stays gray, error red, focus ring/halo remains dedicated.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` passed after the color update; the 818.95KB JS chunk still triggers Vite's >500KB advisory.
 - [ ] Independent screen-reader and full cross-product live-state review remain open.
+
+## OTP state semantics follow-up — 2026-11-08
+
+- [x] At 390×844, six OTP cells in Error expose `aria-invalid=true`, all reference the same error alert, and the neutral-size capsule outline resolves to the error token (`rgb(199, 32, 56)`).
+- [x] Success exposes the success message as a status, associates all six cells with it and uses the success outline (`rgb(23, 131, 75)`).
+- [x] Disabled state sets all six native OTP cells disabled and presents the muted surface/neutral outline; AX reports each cell disabled. RTL remains on the field wrapper.
+- [x] Error, Success and Disabled toggles were reset; playground returns to six empty cells with all shared state switches off.
+- [ ] Combined state sequences and independent screen-reader review remain open; Input family DoD remains open.
