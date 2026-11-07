@@ -1,6 +1,8 @@
 # Input — Family Specification
 
 **Visual reference:** `https://lemonui.ir/#input` (inspected 2026-11-01)
+
+**Runtime status precedence (2026-11-08):** Error suppresses Success; Loading suppresses Success until processing completes. Existing Error remains visible while Loading, with `aria-busy` and a loading status. Any rendered status referenced by `aria-describedby` must exist. This applies to all eight adapters, including OTP and Textarea.
 **Governing project:** `.specify/memory/constitution.md` v1.2.0
 **Norato contract:** `docs/component-contracts/input.md`
 **Current status:** eight independent executable Vue adapters specified and clarified; existing `NoratoField` remains backward-compatible and `NoratoTextarea` remains exported.

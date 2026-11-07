@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<NoratoInputFieldProps>(), {
 const describedBy = computed(() => [
   props.helperText && `${props.id}-helper`,
   props.errorText && `${props.id}-error`,
-  props.successText && `${props.id}-success`,
+  props.successText && !props.errorText && !props.loading && `${props.id}-success`,
   props.loading && `${props.id}-loading`,
 ].filter(Boolean).join(' ') || undefined)
 </script>
@@ -22,7 +22,7 @@ const describedBy = computed(() => [
     :data-size="size"
     :data-label-placement="labelPlacement"
     :data-invalid="Boolean(errorText) || undefined"
-    :data-success="Boolean(successText && !errorText) || undefined"
+    :data-success="Boolean(successText && !errorText && !loading) || undefined"
     :data-disabled="Boolean(disabled || loading) || undefined"
     :data-readonly="Boolean(readOnly) || undefined"
     :aria-busy="loading || undefined"
@@ -44,6 +44,6 @@ const describedBy = computed(() => [
     <p v-if="loading" class="norato-input-field__message" :id="`${id}-loading`" role="status" aria-live="polite">در حال بارگذاری</p>
     <p v-if="helperText" class="norato-input-field__message" :id="`${id}-helper`">{{ helperText }}</p>
     <p v-if="errorText" class="norato-input-field__message norato-input-field__error" :id="`${id}-error`" role="alert">{{ errorText }}</p>
-    <p v-if="successText && !errorText" class="norato-input-field__message norato-input-field__success" :id="`${id}-success`" role="status">{{ successText }}</p>
+    <p v-if="successText && !errorText && !loading" class="norato-input-field__message norato-input-field__success" :id="`${id}-success`" role="status">{{ successText }}</p>
   </div>
 </template>

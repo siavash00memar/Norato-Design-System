@@ -1,5 +1,13 @@
 # Input — Clarification Gate
 
+## Runtime state precedence decision (2026-11-08)
+
+- **Error + Success:** Error wins. Success copy, success semantics, and the success ID are omitted.
+- **Success + Loading:** Loading wins until processing ends. Keep the adapter busy/disabled as designed and omit success copy, semantics, and its description ID.
+- **Error + Loading:** Preserve both the existing error message and the loading status; loading disables editable controls and the adapter remains busy.
+- Apply the same policy to shared-shell inputs, OTP, and Textarea; all `aria-describedby` tokens must resolve to rendered elements.
+- Rationale: simultaneous “verified” and “processing” statuses conflict; a stale success description is also an accessibility reference defect. Error remains useful during an async retry.
+
 ## Confirmed from authority
 
 - The Lemon Input route explicitly presents eight controls in one family: Text, Password, Phone, OTP, Text Area, Number, Amount and Search. Its contract enumerates their variants and states.

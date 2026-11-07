@@ -30,6 +30,15 @@
 - OTP length-five follow-up (2026-11-01, desktop viewport 1280×720): the live selector rendered five cells; paste filled all five and focused the last cell; ArrowLeft moved focus from cell 5 to cell 4; Backspace cleared the focused digit. Length was restored to six, all digits cleared, and browser error logs were empty.
 - Remaining: combined state sequences beyond isolated shared toggles, independent screen-reader review and matched visual states across every Lemon variant remain open. Keep family DoD open.
 
+## Combined status precedence follow-up — 2026-11-08
+
+- [x] Error + Success: error remains the only terminal status across all eight adapters; success node/semantics are suppressed.
+- [x] Error + Disabled: all 13 value controls are disabled, all 13 expose invalid semantics, all eight error alerts remain present, and success is suppressed.
+- [x] Error + Loading + Success: error and loading are exposed, all 13 value controls are disabled, all eight adapters are busy, success is suppressed, and every `aria-describedby` token resolves to a rendered element.
+- [x] Success + Loading: success is suppressed while all eight adapters expose loading; turning Loading off restores all eight success messages and semantics with no broken description references.
+- [x] Restored all shared toggles to their default-off state after browser checks.
+- [ ] Remaining: all Text Input-specific states/variants are not exhaustively reviewed, independent screen-reader review is open, and visual matching for every Lemon variant remains incomplete. Input DoD stays open.
+
 ## Number step-validation refinement
 
 - [x] Playground exposes min/max/step, keeps defaults `0/99/1`, and generates matching Vue props.

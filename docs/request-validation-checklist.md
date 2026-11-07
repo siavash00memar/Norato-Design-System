@@ -1220,3 +1220,11 @@
 - [x] Disabled state sets all six native OTP cells disabled and presents the muted surface/neutral outline; AX reports each cell disabled. RTL remains on the field wrapper.
 - [x] Error, Success and Disabled toggles were reset; playground returns to six empty cells with all shared state switches off.
 - [ ] Combined state sequences and independent screen-reader review remain open; Input family DoD remains open.
+
+## Input combined state precedence — 2026-11-08
+
+- [x] Browser revealed Success was announced alongside Loading, and OTP could reference an unrendered Success message when Error was present.
+- [x] Error suppresses Success; Loading suppresses Success until Loading ends. Existing Error remains visible during Loading.
+- [x] Applied the precedence consistently to shared-shell inputs, OTP and Textarea; success data attributes/classes and `aria-describedby` IDs follow what is rendered.
+- [x] Live playground verified Error+Success, Error+Disabled, Error+Loading+Success and Success+Loading → Success. All status IDs resolve, 13 controls are disabled as expected, and toggles were restored.
+- [ ] Independent screen-reader review and exhaustive Input visual/state matrix remain open.

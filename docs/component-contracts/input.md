@@ -23,6 +23,10 @@
 
 حاشیهٔ خنثی همهٔ فیلدها و سلول‌های OTP یک پیکسل با `--norato-color-border-default` (`#e8e8e8`) است. در hover و فوکوس، Stroke دیداری به زرد `--norato-color-brand-yellow` تغییر می‌کند؛ فوکوس outline، هاله یا stroke مشکی/آبی ندارد. پوستهٔ layout فیلد نباید Stroke جداگانه نشان دهد؛ در hover هم فقط Stroke روی capsule دیده می‌شود. رنگ وضعیت خطا/موفقیت در حالت عادی حفظ می‌شود و فوکوس زرد بر آن اولویت دارد؛ پیام وضعیت همچنان نمایش داده می‌شود.
 
+### اولویت وضعیت‌های هم‌زمان
+
+خطا بر موفقیت اولویت دارد و پیام موفقیت در حضور خطا نمایش داده یا به `aria-describedby` وصل نمی‌شود. هنگام بارگذاری، پیام «در حال بارگذاری» نمایش داده می‌شود و پیام موفقیت تا پایان پردازش پنهان می‌ماند؛ فیلد همچنان `aria-busy` است و کنترل‌های قابل ویرایش غیرفعال‌اند. حالت خطا می‌تواند هم‌زمان با بارگذاری باقی بماند تا خطای موجود و پردازش جاری هر دو قابل فهم باشند. همین اولویت برای Textarea و OTP نیز اعمال می‌شود.
+
 ## Anatomy
 
 - **Label** — برچسب فیلد؛ داخل یا بیرون
@@ -106,11 +110,11 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+Stroke خود فیلد در Focus زرد است و حلقه یا هالهٔ بیرونی ندارد. اکشن‌های مستقل داخل فیلد، مثل دکمهٔ نمایش رمز، همچنان نشانگر فوکوس صفحه‌کلیدی ۲ پیکسلی خودشان را دارند.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
 
 ## Number step playground decision (2026-11-01)
 

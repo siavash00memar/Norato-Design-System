@@ -817,3 +817,10 @@
 - **Verified:** At 390×844, static checked dot and hover border compute to `rgb(253, 193, 1)`, matching the live adapter dot. Five 343×162.2px cards, 20 cells, 48px targets, 16/20px proportional circles, RTL, inertness and 375px document without overflow. Lemon gallery plus property selector measures 924px versus Norato's 886.9px matrix.
 - **Technical gates:** On 2026-11-08 token check, catalog check (49), Vue typecheck/build and `git diff --check` pass. Vite reports an 818.95KB JavaScript chunk above its 500KB advisory threshold.
 - **Remaining:** Independent screen-reader review and exhaustive live state/focus cross-product remain open.
+
+## ERR-091 — Input simultaneous states exposed conflicting status semantics (2026-11-08)
+
+- **Observed:** Success and Loading simultaneously exposed both “verified” and “processing” messages. Error plus Success could leave OTP `aria-describedby` pointing to a Success message that was not rendered; shared field controls had the same stale-description possibility.
+- **Correction:** Apply Error > Success and Loading > Success across the shared input shell, OTP and Textarea. Preserve Error alongside Loading; align success data/class semantics and description IDs with rendered status messages.
+- **Verified:** Live Input playground: Error+Success, Error+Disabled, Error+Loading+Success and Success+Loading → Success. Across all eight adapters status precedence is correct; all 13 value controls disable under Error+Disabled/Loading, busy states are exposed, every description reference resolves, and toggles were restored.
+- **Remaining:** Full Text Input state/variant review, independent screen-reader review and visual matching for every Lemon variant remain open; the Input family DoD is not closed.
