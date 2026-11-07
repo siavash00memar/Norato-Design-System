@@ -8,3 +8,10 @@
 - File acceptance: MIME and extension rules from the `accept` list, size `<= maxSize`, maximum queue count, and single-file mode are checked before emitting. Rejections carry a reason and visible feedback; accepted files still proceed.
 - Maximum five files is a practical default while consumers can set another limit. Default accept is `.png,.jpg,.jpeg,.pdf,image/png,image/jpeg,application/pdf`; a playground simulation sets statuses explicitly rather than pretending to transfer data.
 - Persian RTL for layout and messages; LTR for file metadata. No unresolved API or behavior choices remain.
+
+## Visual and browser-verification clarification — 2026-11-07
+
+- No new design decision is needed: reuse the approved Lemon hierarchy and existing Norato tokens. Render the marker and inner Dropzone inside the inert specimen; keep the specimen non-interactive.
+- The current browser supports a real local file chooser event and file injection through that chooser. Verify pointer and keyboard activation plus accepted/rejected metadata with repository-local fixtures. This supersedes the earlier tooling limitation; do not claim real drag/drop unless an actual file drag payload is exercised.
+- `multiple` is already a public prop but is not currently selectable in the playground. Expose its existing `true|false` behavior as a localized control and synchronize the generated snippet; do not alter adapter semantics.
+- The upload glyph is a primary action cue, so reuse the user-approved Norato yellow accent with dark text and a line SVG. Keep the secondary frame wash neutral; do not use blue as the action accent.

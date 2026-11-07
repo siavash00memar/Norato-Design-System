@@ -976,6 +976,16 @@
 - [x] Added Node built-in tests for accepted extension/MIME/wildcard files, exact size boundary, mixed valid/rejected batches, each rejection reason, count capacity, single mode, empty accept, and invalid limits.
 - [ ] Browser checklist still fails for native chooser selection, drag payload and actual rendered validation feedback because the available CUA browser context cannot inject files or create browser File/DataTransfer objects. Existing browser layout checks remain valid; this request's full browser checklist is not claimed as passed.
 
+## File Upload preview and chooser recheck — 2026-11-07
+
+- [x] Removed duplicate/shadowed specimen branch; desktop 1280×720 and mobile 390×844 show Default marker, dotted frame, centered dropzone and yellow SVG affordance. Norato mobile document width is 375px with no overflow.
+- [x] Matched comparison: Lemon/Norato desktop frame 636×300 / 584×288px and inner dropzone 367×154 / 380×160px. Mobile frame 327×300 / 320×288px and inner dropzone 321×154 / 302×160px; column-limited frame size is not mistaken for a stretch defect.
+- [x] Real browser chooser verified pointer and keyboard activation (Enter/Space), PNG acceptance, unsupported type, 10,000,001-byte rejection, count rejection, single-file replacement, multiple count ceiling and native input reset.
+- [x] File Upload playground exposes `multiple`; changing the selection mode updates the generated Vue snippet. Both runtime and inert icons use SVG and Norato yellow/dark; the lower specimen wash is neutral.
+- [ ] Native OS drag/drop payload, independent screen-reader review, reduced-motion, and full combined keyboard/state matrix remain open. File Upload maturity stays Adapted.
+- [x] `pnpm test:file-upload` passes 5/5; `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck/build and `git diff --check` pass. Vite warns that the production JS chunk is 817.78KB (>500KB).
+- [ ] Commit/push and remote parity evidence are pending.
+
 ## Navbar — implementation checkpoint (2026-11-02)
 
 - [x] Added and publicly exported `NoratoNavbar`, a standalone Button-style interactive playground, copyable Vue usage, an inert bounded specimen, 20 link state variants, 9 contract sections, responsive token rules, primitive decision, catalog mapping and Figma rules.

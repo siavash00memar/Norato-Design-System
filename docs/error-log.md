@@ -794,3 +794,11 @@
 - **Cause:** The inert specimen's original selector and the token list were not updated when the active Norato accent rule changed to yellow.
 - **Correction:** Updated that existing specimen selector to `--norato-color-brand-yellow` and `--norato-color-text-primary`; aligned the contract, Figma rule, DoD and task ledger. No runtime interaction styles or API were changed.
 - **Verified:** Desktop 1280×720 static/runtime selected cells compute to `rgb(253, 193, 1)` with dark `rgb(26, 26, 26)` text. At 499×932 the Norato frame is 452×288px vs Lemon 436×300px; document width remains 484px without overflow. Independent screen-reader review remains open.
+
+## ERR-087 — File Upload preview branch was shadowed and action icon used blue glyph (2026-11-07)
+
+- **Observed:** The top preview rendered flat text because an earlier `v-else-if` branch shadowed the intended marker and inner dropzone. The live and static upload affordances also used a Unicode arrow on blue surfaces.
+- **Correction:** Kept one preview branch with the Default marker and bounded inner dropzone; replaced both upload glyphs with a line SVG, yellow action surface and dark text. The secondary frame wash now uses a neutral semantic surface token.
+- **Evidence:** Lemon/Norato matched viewports show bounded composition at desktop 1280×720 and mobile 390×844; mobile document width is 375px, no overflow. Lemon outer frame 636×300px and inner 367×154px; Norato outer 584×288px and inner 380×160px on desktop. Mobile frames are 327×300px / 320×288px and inner dropzones 321×154px / 302×160px. Real browser chooser evidence covers click, Enter/Space, valid PNG, invalid type, over-limit size, count rejection, single replacement, `multiple` mode and native input reset. Native OS drag/drop, independent screen-reader and reduced-motion remain open.
+- **Technical gates:** On 2026-11-07 the File Upload validator (5/5), token check, catalog check (49), Vue typecheck/build and diff check pass. Production JS chunk is 817.78KB; Vite's >500KB advisory remains.
+- **Prevention:** Keep mutually exclusive component specimen branches unique; compare live rendered geometry and all primary action accents to the current Norato contract before closing the visual DoD.

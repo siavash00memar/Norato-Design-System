@@ -344,6 +344,7 @@
 - Dropzone supports click, Enter/Space and drag/drop. Advertise formats and per-file maximum size before selection; keep invalid file reasons visible.
 - A locally selected file is not an uploaded file. Network transfer and truthful progress are controlled by the host application; preserve retryable error details.
 - Use fixed square/circular tile geometry and 48px minimum action targets; do not stretch preview parts to fill the available column.
+- Use a purpose-drawn upload SVG in the inert and live Dropzone; treat it as the primary action with Norato yellow and dark text. Keep the dotted frame wash warm/neutral rather than using blue as an action accent.
 
 ## Navbar — 2026-11-01
 

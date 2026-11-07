@@ -12,6 +12,9 @@ Source: live `https://lemonui.ir/#file-upload` inspected 2026-11-02; Norato cont
 - Upload Tile supports add/uploading/complete/error and controlled file/preview state; Avatar Upload supports empty/filled with an image-only native file picker. Both remain keyboard operable with at least 48px targets.
 - All labels/messages and surrounding layout are Persian RTL; file name, extension, MIME and size stay LTR. Use Norato semantic tokens and visible focus; do not vertically stretch icons, squares or preview frames.
 - Match Lemon's bounded dotted-glass specimen, Default marker, centered inner dropzone and hierarchy. Keep preview inert, then provide an interactive Vue playground, copyable usage and nine contract sections like Button.
+- Regression acceptance (2026-11-07): the actual top specimen must render the Default marker and a visibly bounded inner dropzone; no earlier `v-else-if` may shadow this branch. Desktop/mobile browser measurements must confirm both layers and the inner panel remains proportionate.
+- The Vue playground exposes the existing single/multiple prop, and its copyable snippet reflects the selected mode so both public API paths can be exercised without a separate harness.
+- Use a line SVG upload affordance; its action surface is Norato yellow with dark text. Keep the frame palette warm/neutral so blue remains reserved for information/link semantics.
 
 ## Lemon observations
 

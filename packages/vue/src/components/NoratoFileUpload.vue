@@ -54,7 +54,7 @@ function itemAction(item: NoratoUploadItem, action: 'remove' | 'cancel' | 'retry
     <span class="norato-file-upload__label" :id="`${id}-label`">{{ label }}<b v-if="required" aria-hidden="true">*</b></span>
     <input :id="id" ref="input" class="norato-file-upload__input" type="file" :accept="accept" :multiple="multiple" :disabled="disabled" :required="required" :name="name" :aria-labelledby="`${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @change="onChange" />
     <button class="norato-file-upload__dropzone" type="button" :disabled="disabled" :aria-labelledby="`${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @click="input?.click()" @dragenter.prevent="onDragEnter" @dragover.prevent="dragging = !disabled" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop" @keydown.enter.prevent="input?.click()" @keydown.space.prevent="input?.click()">
-      <span class="norato-file-upload__icon" aria-hidden="true">↑</span>
+      <span class="norato-file-upload__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4L8 8M4 16v4h16v-4" /></svg></span>
       <strong>برای انتخاب فایل کلیک کنید یا فایل را اینجا رها کنید</strong>
       <small>{{ accept.split(',').filter(item => item.startsWith('.')).join('، ').toUpperCase() || 'فایل' }} · حداکثر {{ (maxSize / 1_000_000).toLocaleString('fa-IR') }} مگابایت</small>
     </button>
