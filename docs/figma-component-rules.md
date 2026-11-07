@@ -335,7 +335,7 @@
 - Keep the canonical model 24-hour `HH:mm` and render time digits LTR inside Persian RTL surroundings; 12-hour mode changes only the presentation.
 - Support Columns, Columns 12h, Wheel, Slots and Range. Use five-minute increments by default; slot availability is explicit; range endpoints remain chronological.
 - Preserve at least 48px hit targets and compact visual geometry. The default desktop/mobile preview frame is content-column bounded; the picker panel is capped and repositions above/below the anchor to stay in view.
-- Use Norato's semantic blue for the selected cell with glass/surface/focus tokens; do not copy Lemon's black selection.
+- Use Norato's brand-yellow token with dark text for the selected cell, consistent with the active Norato accent rule; blue remains for links and informational/status semantics.
 
 ## File Upload — 2026-11-02
 

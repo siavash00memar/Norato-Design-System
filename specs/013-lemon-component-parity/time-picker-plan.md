@@ -7,4 +7,8 @@
 5. Compare live Lemon and Norato at matched desktop/mobile viewports; measure frame/input/panel/target geometry and check overflow/stretching. Exercise each mode, pointer, keyboard, focus restoration, range ordering, slots, invalid/disabled/loading and accessibility tree.
 6. Record exact browser evidence and remaining gaps in checklist, tasks, request-validation checklist and error log. Run token/catalog/typecheck/build/diff gates; keep maturity truthful until evidence is complete.
 
+## 2026-11-07 accent correction
+
+Audit the existing specimen selector and replace its blue selected-cell fill directly with the semantic brand-yellow token and dark foreground. The live adapter already uses this token; do not add a second override or change information/status colors. Verify the inert sample and live selected cells at the browser render, then rerun the repository gates.
+
 Primitive evaluation: Reka is installed, but no time-picker primitive exists. A custom bounded Vue panel over native buttons/selectors is the smallest fit and avoids bringing in an unrelated dependency; Popover primitives may be used only if current runtime behavior supports the required positioning/focus contract.

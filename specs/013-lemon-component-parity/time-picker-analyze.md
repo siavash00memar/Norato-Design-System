@@ -6,3 +6,4 @@
 - Risk cases: malformed time serialization, 12h/24h model drift, end-before-start ranges, disabled slots, offscreen popover, an input or panel growing to gallery height, RTL digits reversing, and keyboard focus escaping the open panel.
 - Primitive audit: no installed dedicated time picker. Native labeled input, buttons and selects can provide robust base semantics without a custom keyboard engine; implement the panel with tokenized bounded geometry and test actual focus and AX behavior.
 - Proceed to implementation after this analysis stage; no decision has been silently left unresolved.
+- 2026-11-07 re-audit: the inert specimen's selected cells still used brand blue, while the live adapter already computed brand yellow with dark text. The global Norato rule and user's explicit accent instruction require yellow for primary selection; blue selection in the earlier screenshot/contract is stale. Fix the existing specimen rule in place, then verify both presentations.

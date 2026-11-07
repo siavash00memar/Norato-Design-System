@@ -2,6 +2,7 @@
 
 - [x] Lemon and Norato exact component pages reviewed at matching desktop 1280×720 and narrow mobile 499×932 viewports.
 - [x] Default specimen has bounded dotted/glass frame, Default marker, compact columns and no vertical stretch; palette remains Norato.
+- [x] Selected cells in the inert specimen use Norato brand yellow with dark text, matching the already-yellow live adapter and the user's active accent rule.
 - [x] One/range controlled v-model contract and all five variants work; generated example stays synchronized.
 - [x] 24-hour model, LTR digits, 12-hour AM/PM conversion, minute steps, slot availability and chronological range constraints are correct.
 - [x] Popup placement below/above, viewport collision, outside close, Escape and focus restoration work.
@@ -9,7 +10,7 @@
 - [x] Disabled/loading/error/required/helper states and accessible name/value/description are verified in the browser accessibility tree.
 - [x] Button-style page has inert preview, runnable playground, copyable code and nine contract sections.
 - [x] Contract, catalog, export, usage, primitive map, Figma rules, task ledger, request checklist and error log are current.
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Vite reports the production JS chunk at 705.92KB, above its 500KB advisory threshold.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. The latest Vite build reports the production JS chunk at 817.24KB, above its 500KB advisory threshold.
 - [ ] Independent screen-reader review remains open; keep the component maturity at Adapted until it is reviewed.
 
 ## Browser evidence (2026-11-01)
@@ -21,3 +22,10 @@
 - Step 15 displayed 00/15/30/45; required toggles native required and generated snippet; error is linked with `aria-describedby` and sets `aria-invalid`; disabled disables both entry and trigger; loading sets `aria-busy`, disables trigger and announces status. Escape returns focus to trigger; click outside closes and leaves focus on the outside action.
 - All nine Button-style contract sections render. Browser console error list was empty; default single/columns/medium/5-minute, 14:30 state restored.
 - Implementation checkpoint `8236b8a` is on `origin/master`; the remote hash matched local HEAD after push.
+
+## Accent correction follow-up (2026-11-07)
+
+- The earlier screenshot's blue selected cells and the old contract rule are superseded by the user's explicit Norato-yellow accent instruction. The inert sample's existing CSS selector now uses the yellow and text-primary tokens; the live adapter already used the same selection colors.
+- At desktop 1280×720, the static selected cells and the interactive `aria-pressed=true` cells both compute to `rgb(253, 193, 1)` with `rgb(26, 26, 26)` text. The static frame remains 584×288px.
+- At mobile 499×932, the static frame remains 452×288px vs Lemon's 436×300px. Both documents are 484px wide (no horizontal overflow); Norato's selected cells remain yellow/dark while Lemon's are black per its own reference theme. Static card stays centered and bounded.
+- Independent screen-reader review remains open, so component maturity stays Adapted.

@@ -780,9 +780,17 @@
 - **Cause:** The package stylesheet's more-specific native wrapper hover selector restored its own border after the page-level base rule set `border: 0`.
 - **Correction:** Scoped the wrapper border reset and capsule hover rule to the app root, then explicitly kept the native wrapper border transparent on enabled, valid hover. The visible pseudo-element remains the single 1px yellow stroke.
 - **Scope:** Input shell hover only; status colors, focus behavior, OTP and other component styles are unchanged.
+- **Verified (2026-11-07 follow-up):** Hovered the live Password Input without focus in the local browser. The wrapper border is 0px and the sole capsule stroke computes to `1px solid rgb(253, 193, 1)`; screenshot shows no second gray outline. The short neutral bars directly below the field are the password-strength meter.
 
 ## ERR-085 — Date Picker family ledger contradicted implemented runtime evidence (2026-11-07)
 
 - **Observed:** The feature specification, Vue export, catalog and existing browser log described a seven-mode Implemented Date Picker, while the family ledger still labeled it Proposed with visual and behavior comparison pending.
 - **Correction:** Rechecked the live Lemon reference and Norato at 1280×720 and 390×844; exercised all seven modes, range ordering/preset, time/month/year/wheel updates, keyboard and state semantics. Reconciled the family ledger and feature checklist with the current browser and technical evidence.
 - **Verified:** Current adapter remains exported and controlled; frames are 628×300 vs 584×302px desktop and 327×300 vs 320×288px mobile; mobile document stays 375px wide. Independent screen-reader software was not run.
+
+## ERR-086 — Time Picker inert selected cells retained the superseded blue accent (2026-11-07)
+
+- **Observed:** The live Time Picker adapter already used Norato yellow with dark text for selected options, while the static top specimen still used blue and its contract documented the stale token.
+- **Cause:** The inert specimen's original selector and the token list were not updated when the active Norato accent rule changed to yellow.
+- **Correction:** Updated that existing specimen selector to `--norato-color-brand-yellow` and `--norato-color-text-primary`; aligned the contract, Figma rule, DoD and task ledger. No runtime interaction styles or API were changed.
+- **Verified:** Desktop 1280×720 static/runtime selected cells compute to `rgb(253, 193, 1)` with dark `rgb(26, 26, 26)` text. At 499×932 the Norato frame is 452×288px vs Lemon 436×300px; document width remains 484px without overflow. Independent screen-reader review remains open.

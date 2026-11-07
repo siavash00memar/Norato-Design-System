@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ غیرفعال ابتدای صفحه، پنل دوستونهٔ ساعت/دقیقه را در قاب محدود شیشه‌ای نقطه‌دار و نشانگر Default نشان می‌دهد. رنگ انتخاب از آبی معنایی Norato استفاده می‌کند. نمونه API یا رفتار اجرایی نیست.
+نمونهٔ غیرفعال ابتدای صفحه، پنل دوستونهٔ ساعت/دقیقه را در قاب محدود شیشه‌ای نقطه‌دار و نشانگر Default نشان می‌دهد. سلول انتخاب‌شده با زرد اصلی Norato و متن تیره نمایش داده می‌شود؛ نمونه API یا رفتار اجرایی نیست.
 
 ## Overview
 
@@ -17,7 +17,7 @@
 - **Picker Panel:** پنل محدود و متصل به ورودی؛ با Escape و کلیک بیرون بسته می‌شود.
 - **Hour Column:** گزینه‌های ساعت با حرکت صفحه‌کلیدی.
 - **Minute Column:** دقیقه‌ها طبق گام تنظیم‌شده؛ پیش‌فرض ۵ دقیقه.
-- **Selected Cell:** گزینهٔ انتخاب‌شده با سطح آبی Norato.
+- **Selected Cell:** گزینهٔ انتخاب‌شده با سطح زرد اصلی Norato و متن تیره.
 - **Slot / Range:** زمان‌های قابل رزرو یا شروع/پایان مرتب‌شده.
 
 ## Variants
@@ -71,4 +71,4 @@
 
 ## Tokens
 
-از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-control-target-min` و توکن‌های فاصله، مرز، شعاع و لایه استفاده می‌شود. قاب preview از توکن‌های اختصاصی `--norato-time-picker-preview-*` استفاده می‌کند.
+از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-control-target-min` و توکن‌های فاصله، مرز، شعاع و لایه استفاده می‌شود. قاب preview از توکن‌های اختصاصی `--norato-time-picker-preview-*` استفاده می‌کند.

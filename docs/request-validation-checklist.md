@@ -1172,4 +1172,11 @@
 
 - [x] Source cascade audit found the package wrapper hover selector was more specific than the page-level border reset and could restore a gray second line.
 - [x] Added app-scoped specificity to the wrapper reset and explicitly kept its hover border transparent; the capsule's pseudo-element remains the sole visible stroke and uses the Norato yellow token on hover.
-- [ ] Browser pointer-hover color capture and screenshot still need confirmation in the local app.
+- [x] Local Input page, Password adapter: moved the pointer over the field without focusing it. `:hover=true`, `:focus=false`, `:focus-visible=false`; wrapper border `0px`, capsule pseudo-stroke computes to `1px solid rgb(253, 193, 1)`. Screenshot confirms a single yellow capsule stroke; the muted bars below are the password-strength meter, not a second field border.
+- [x] The visible line is the field's capsule Stroke. Neutral state remains `#e8e8e8`; pointer hover and keyboard focus use Norato yellow.
+
+## Time Picker selected accent correction — 2026-11-07
+
+- [x] At desktop 1280×720, Norato static and interactive selected cells compute to yellow `rgb(253, 193, 1)` with dark `rgb(26, 26, 26)` text; frame is 584×288px.
+- [x] At mobile 499×932, Norato's 452×288px frame remains bounded, document width is 484px, and no horizontal overflow occurs. Lemon comparison frame is 436×300px and its black selected fill remains unchanged.
+- [x] RTL and selected-cell color were captured in the actual local browser. Independent screen-reader review remains open and is not claimed as passed.

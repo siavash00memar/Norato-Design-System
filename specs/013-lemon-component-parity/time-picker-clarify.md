@@ -6,3 +6,4 @@
 - Persian labels and page flow use RTL; numeric time values use LTR. 12-hour mode uses localized AM/PM labels. Default sample is `14:30`; slots sample `09:00`, `09:30`, `10:00`, `10:30`.
 - Focus/open/close behavior follows the acceptance spec. The picker panel is custom and bounded because no installed primitive covers time selection; preserve native button/select keyboard behavior and semantic associations.
 - No material decision remains unresolved; implementation can proceed.
+- 2026-11-07 visual correction: the user clarified Norato's primary accent is yellow. This supersedes the earlier blue selected-cell interpretation in the Time Picker contract; selected preview and runtime cells use brand yellow with dark text. The runtime already follows this rule; only the inert specimen was found blue.
