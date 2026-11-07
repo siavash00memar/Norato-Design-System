@@ -9,4 +9,4 @@
 - [x] Add Button-aligned contract showcase, route branch, tokens, docs and error/validation evidence.
 - [ ] Compare actual Lemon/Norato render at matched viewports; inspect 390/320 bounds and verify requested interactions/states. Desktop Norato render and runtime interactions verified; responsive and exact matched-viewport comparison remain.
 - [x] Run project gates, fix actual failures and rerun affected gates.
-- [ ] Commit and push checkpoint; verify remote hash and clean worktree.
+- [x] Commit and push checkpoint; verified `origin/master` matches `c15eff741cce17ddd3190da84069825a66df2c92` and the worktree is clean.

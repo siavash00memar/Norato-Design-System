@@ -29,7 +29,7 @@
 - [x] Ctrl+K opens while the trigger is focused. Disabled Settings exposes `aria-disabled=true` and ArrowDown skips it to Projects.
 - [ ] 390/320 viewport, Home/End/ArrowUp, outside-click/Tab, configurable shortcut exclusions, IME/repeat, 8-item cap stress, Lemon matched-viewport comparison and independent screen-reader review remain pending.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed. Build reports a 898.75KB JS chunk above the 500KB advisory threshold.
-- [ ] GitHub checkpoint is pending.
+- [x] GitHub checkpoint `c15eff741cce17ddd3190da84069825a66df2c92` is pushed to `origin/master`; local and remote hashes matched and the worktree is clean.
 
 ## Input Text-state and OTP five-cell follow-up — browser evidence (2026-11-08)
 
