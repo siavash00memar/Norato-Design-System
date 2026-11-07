@@ -1259,3 +1259,12 @@
 - [x] Applied the precedence consistently to shared-shell inputs, OTP and Textarea; success data attributes/classes and `aria-describedby` IDs follow what is rendered.
 - [x] Live playground verified Error+Success, Error+Disabled, Error+Loading+Success and Success+Loading → Success. All status IDs resolve, 13 controls are disabled as expected, and toggles were restored.
 - [ ] Independent screen-reader review and exhaustive Input visual/state matrix remain open.
+
+## Stepper component DoD (2026-11-08)
+- [x] Same-viewport Lemon/Norato desktop 1280×720 comparison; Norato preview frame measured 584×288px versus Lemon 636×300px in their different-width documentation columns. Horizontal step row is 416×55px and Lemon 454×55px; the narrower Norato content column explains the width difference. RTL first step is right; palette uses Norato yellow and neutral surfaces.
+- [x] Desktop browser rendered Horizontal, Vertical, Compact and Dots; no false interactive elements in the adapter. Vertical indicators align with each step's text; indicator sizes remain tokenized and circular.
+- [x] Playground controlled transition advanced from Address to Payment and updated polite announcement; LTR put Cart first on the left. Dots with Address flagged as Error showed red marker, label and supplied message; semantic list identified the error and live status included the explanation.
+- [x] Compact Error shows a red marker, affected step name and explanation. Dots Small/Medium/Large scale to 4/8px, 8/12px and 12/16px outer diameters, including the current ring; browser was restored to the default horizontal, medium, RTL, Address state.
+- [ ] Mobile 390×844 and 320px overflow/scroll comparison and independent screen-reader review remain open because the current browser control has no viewport override and no separate screen-reader run was available.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts/exports), `pnpm --dir apps/vue typecheck` and `pnpm --dir apps/vue build` passed. Build reports one existing-size advisory: JS bundle 833.79KB > 500KB.
+- [ ] `git diff --check`, final CSS/docs review and GitHub checkpoint are pending.

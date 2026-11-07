@@ -3,13 +3,20 @@ import './component-specimen.css'
 import './split-button-specimen.css'
 import './navbar-specimen.css'
 import './sidebar-specimen.css'
-import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoTextInput, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating, NoratoSplitButton } from '@norato/vue'
-defineProps<{ name: string; compact?: boolean }>()
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { NoratoButton, NoratoChoiceGroup, NoratoField, NoratoTextInput, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating, NoratoSplitButton, NoratoStepper } from '@norato/vue'
+const { name, compact } = defineProps<{ name: string; compact?: boolean }>()
 const splitSpecimenItems = [{ value: 'copy', label: 'ذخیره به‌عنوان کپی' }, { value: 'download', label: 'ذخیره و دانلود' }]
+const stepperSpecimenSteps = [{ id: 'cart', label: 'سبد خرید' }, { id: 'address', label: 'آدرس' }, { id: 'payment', label: 'پرداخت' }, { id: 'confirm', label: 'تأیید' }]
+const stepperVariant = ref<'horizontal' | 'compact'>(window.matchMedia('(max-width: 480px)').matches ? 'compact' : 'horizontal')
+const stepperViewport = window.matchMedia('(max-width: 480px)')
+const updateStepperVariant = () => { stepperVariant.value = stepperViewport.matches ? 'compact' : 'horizontal' }
+onMounted(() => { if (name === 'Stepper') stepperViewport.addEventListener('change', updateStepperVariant) })
+onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListener('change', updateStepperVariant) })
 </script>
 
 <template>
-  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-input-preview': name==='Input', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker', 'sample-time-picker-preview': name==='Time Picker', 'sample-file-upload-preview': name==='File Upload', 'sample-navbar-shell': name==='Navbar', 'sample-sidebar-shell': name==='Sidebar', 'sample-split-preview': name==='Split Button' }" aria-hidden="true" inert>
+  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button', 'sample-input-preview': name==='Input', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker', 'sample-time-picker-preview': name==='Time Picker', 'sample-file-upload-preview': name==='File Upload', 'sample-navbar-shell': name==='Navbar', 'sample-sidebar-shell': name==='Sidebar', 'sample-split-preview': name==='Split Button', 'sample-stepper-preview': name==='Stepper' }" aria-hidden="true" inert>
     <div v-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /></div>
     <template v-else-if="name==='Split Button'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoSplitButton id="specimen-split-button" label="ذخیره" :items="splitSpecimenItems" /></template>
     <template v-else-if="name==='Input'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-form-controls sample-input-specimen"><NoratoTextInput id="specimen-email" label="ایمیل" placeholder="ایمیل خود را وارد کنید" dir="rtl"><template #label><span class="sample-input-label"><svg class="sample-input-email-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg><span>ایمیل</span></span></template></NoratoTextInput></div></template>
@@ -29,7 +36,7 @@ const splitSpecimenItems = [{ value: 'copy', label: 'ذخیره به‌عنوا�
     <div v-else-if="name==='Tabs'" class="sample-tabs"><span class="active">همه</span><span>فعال</span><span>بایگانی</span></div>
     <div v-else-if="name==='Breadcrumbs'" class="sample-crumbs"><span><svg class="sample-home-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z" /></svg>خانه</span><svg class="sample-crumb-separator" viewBox="0 0 16 16" aria-hidden="true"><path d="m10 3-5 5 5 5" /></svg><span>محصولات</span><svg class="sample-crumb-separator" viewBox="0 0 16 16" aria-hidden="true"><path d="m10 3-5 5 5 5" /></svg><b>کفش ورزشی</b></div>
     <div v-else-if="name==='Pagination'" class="sample-pagination"><button aria-label="صفحهٔ قبل"><span aria-hidden="true">‹</span></button><span>۱</span><b>۲</b><span>۳</span><i>…</i><span>۱۲</span><button aria-label="صفحهٔ بعد"><span aria-hidden="true">›</span></button></div>
-    <div v-else-if="name==='Stepper'" class="sample-stepper"><div class="done"><i>✓</i><span>سبد خرید</span></div><div class="current"><i>۲</i><span>آدرس</span></div><div><i>۳</i><span>پرداخت</span></div><div><i>۴</i><span>تأیید</span></div></div>
+    <template v-else-if="name==='Stepper'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoStepper id="specimen-checkout-stepper" :steps="stepperSpecimenSteps" model-value="address" :variant="stepperVariant" /></template>
     <div v-else-if="name==='Menu'" class="sample-menu"><span>✎　ویرایش</span><span>▢　کپی</span><span>↗　اشتراک‌گذاری</span><hr /><b>⌫　حذف</b></div>
     <div v-else-if="name==='Command Palette'" class="sample-command"><div>⌕　جست‌وجوی دستور… <kbd>Esc</kbd></div><span>صفحات</span><b>▦　کامپوننت‌ها <kbd>↵</kbd></b><span>اقدام‌ها</span><i>＋　ساخت پروژه</i></div>
     <div v-else-if="name==='Tree View'" class="sample-tree"><b>⌄　📁 پروژه‌ها</b><span>　⌄　📁 لمون</span><i>　　▧　README.md</i><span>　›　📁 نوراتو</span></div>

@@ -393,3 +393,7 @@
 - The top Button preview frame matches Split Button's 640px max width, 320px mobile cap, 288px block size and 24px radius tokens.
 - Only Primary and Secondary are shown; both use the 48px Split Button Large height and content-based widths. The static Cancel specimen has been removed.
 - This is documentation-preview geometry only and does not change runtime Button sizing.
+
+## Stepper — 2026-11-08
+- Preserve Lemon's four progress compositions (Horizontal, Vertical, Compact, Dots) and status hierarchy, with Norato yellow current/completed accent, neutral upcoming connector and Norato error red. The first step follows logical inline-start (right in RTL); never turn status items into navigation controls. Current step has a 2px yellow ring; indicators stay circular/intrinsic and responsive overflow is internal. Use the dedicated --norato-stepper-preview-* tokens for the Button-shaped dotted 288px preview.
+- Dots inherit the Stepper size: Small uses 4px upcoming/8px current, Medium 8px/12px and Large 12px/16px outer diameters. Current dots keep a 2px yellow ring inside that size; all dots use border-box geometry and semantic spacing tokens.

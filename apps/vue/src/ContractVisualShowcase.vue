@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import SplitButtonShowcase from './SplitButtonShowcase.vue'
+import StepperContractShowcase from './StepperContractShowcase.vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
@@ -240,7 +241,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </template>
 
     <template v-else-if="section === 'Anatomy' || section === 'Parts'">
-      <div v-if="name === 'Button' && section === 'Anatomy'" class="button-anatomy-exploded" dir="rtl">
+      <StepperContractShowcase v-if="name === 'Stepper' && section === 'Anatomy'" section="Anatomy" />
+      <div v-else-if="name === 'Button' && section === 'Anatomy'" class="button-anatomy-exploded" dir="rtl">
         <div class="button-anatomy-assembled">
           <span class="button-anatomy-caption">ساختار یکپارچه</span>
           <button class="button primary" type="button" tabindex="-1" inert aria-hidden="true">ذخیره</button>
@@ -295,6 +297,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Variants'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <StepperContractShowcase v-else-if="name === 'Stepper'" section="Variants" />
       <div v-else-if="name === 'Input'" class="input-family-matrix" aria-label="نمونه‌های دیداری هشت زیرنوع Input" aria-hidden="true" inert>
         <article v-for="entry in entries" :key="entry.id" class="input-family-card" :data-family="entry.label.toLowerCase()">
           <header><strong>{{ entry.label }}</strong><small>{{ entry.detail.match(/\d+ variant/i)?.[0] || 'Input family' }}</small></header>
@@ -385,6 +388,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Sizes'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <StepperContractShowcase v-else-if="name === 'Stepper'" section="Sizes" />
       <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
@@ -404,6 +408,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <StepperContractShowcase v-else-if="name === 'Stepper'" section="States" />
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
           <div v-if="name === 'Input'" class="input-state-sample" aria-hidden="true" inert>

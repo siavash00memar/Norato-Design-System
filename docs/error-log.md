@@ -843,3 +843,22 @@
 - **Observed:** The published Combobox field uses a border around its full 48px interaction row; keyboard focus adds a 2px blue outer outline and yellow halo. Its label/placeholder also do not inherit the newly approved cross-component Input typography contract.
 - **Correction planned:** Center a 36px capsule Stroke within the existing 48px hit target; use semantic neutral `#e8e8e8` at rest and one yellow 1px Stroke on hover/focus. Remove only the field's outer outline/halo, keep independent action focus indicators, and align label/placeholder typography and RTL.
 - **Verification:** Desktop browser confirms the 48px interaction row contains a 36px visual capsule with a single 1px `#e8e8e8` resting Stroke, Estedad Bold label, RTL Vazirmatn Light 12px placeholder in `#a1a1a1`, and no outer outline/shadow. Keyboard focus opens the menu as before, Escape closes it, and the field Stroke becomes Norato yellow without an extra halo. Token/catalog checks, Vue typecheck/build and `git diff --check` pass (build retains the existing >500kB chunk advisory). Mobile viewport and matched Lemon comparison remain pending.
+
+## ERR-095 — Stepper was only a static specimen (2026-11-08)
+
+- **Observed:** Catalog marked Stepper Proposed; page had only an inert hand-built row, no Vue API or live playground. Its sample CSS had generic geometry and no dotted Button-sized frame.
+- **Correction:** Build controlled noninteractive Vue Stepper with four Lemon compositions, three sizes, derived states, accessible ordered list/live status, responsive internal scrolling, adapter export, playground and Button-style preview.
+- **Verified:** Matched desktop Lemon/Norato at 1280×720; tested four compositions, controlled progression/live status, LTR ordering and error display in Horizontal/Compact/Dots. Token/catalog/typecheck/build/diff gates pass. Mobile 390/320 comparison, complete keyboard/state matrix and independent screen-reader review remain open.
+
+## ERR-096 — Compact and Dots Stepper hid error explanations (2026-11-08)
+
+- **Observed:** Horizontal and Vertical place the error explanation under its step, but Compact and Dots only colored their progress indicator red; the supplied error text was not visible.
+- **Correction:** Add a visible red error summary with the affected step label for Compact and Dots. Keep the detailed step state in the semantic ordered list and the current-step announcement polite.
+- **Verified:** Local Dots playground with Address as current/error displays the red marker, step label and error text; the named ordered list marks Address as the error step and the live status announces “مرحلهٔ ۲ از ۴” with its explanation.
+- **Remaining:** Mobile overflow/comparison and independent screen-reader review remain open.
+
+## ERR-097 — Stepper Dots ignored the selected indicator size (2026-11-08)
+
+- **Observed:** The Dots composition used fixed 8px/12px circles for every Stepper size, while the contract offers Small, Medium and Large.
+- **Correction:** Drive upcoming/current outer dot diameters from semantic Norato spacing tokens per size (Small 4/8px, Medium 8/12px, Large 12/16px); `border-box` keeps the current 2px ring inside the selected diameter.
+- **Verified:** Live Stepper playground after the CSS update: Dots sizes visibly scale Small/Medium/Large and preserve the current-state yellow ring. Source sizes are border-box outer diameters: 4/8px, 8/12px, 12/16px. Playground was restored to horizontal, medium, RTL, Address, no error.

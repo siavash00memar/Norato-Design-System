@@ -9,6 +9,7 @@ export type PrimitiveDecision = {
  */
 export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   pagination: { candidate: 'Native Vue nav/list/button', decision: 'Pagination changes a controlled list page rather than navigating to a known URL; use native buttons with current-page and disabled-boundary semantics.' },
+  stepper: { candidate: 'Native Vue ordered list', decision: 'Stepper communicates progress through sequential work, not free navigation. Derive status from the host-controlled current step and expose ordered-list/current-step semantics without fake buttons or links.' },
   breadcrumbs: { candidate: 'Native Vue nav/ol/a/button', decision: 'Breadcrumbs are a semantic list of destinations, not a menu primitive. Use a disclosure button only to reveal collapsed middle links.' },
   button: { candidate: 'shadcn/button', decision: 'Customize with Norato tokens before custom build.' },
   'split-button': { candidate: 'shadcn/button + dropdown-menu', decision: 'Use the existing Norato Button silhouette and native Vue button/menu semantics; a dropdown primitive is not installed in this package. Verify keyboard and RTL behavior before maturity upgrade.' },

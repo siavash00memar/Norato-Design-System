@@ -66,6 +66,11 @@
   --norato-time-picker-preview-dot-size: 1px;
   --norato-time-picker-panel-inline-size: 360px;
   --norato-time-picker-panel-min-inline-size: 280px;
+  --norato-stepper-preview-frame-inline-size: 640px;
+  --norato-stepper-preview-frame-mobile-inline-size: 320px;
+  --norato-stepper-preview-frame-block-size: 288px;
+  --norato-stepper-preview-radius: 24px;
+  --norato-stepper-preview-content-inline-size: 416px;
   --norato-split-button-preview-frame-inline-size: 640px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;
   --norato-split-button-preview-frame-block-size: 288px;
