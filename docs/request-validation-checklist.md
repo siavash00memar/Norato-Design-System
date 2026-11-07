@@ -17,6 +17,13 @@
 - [x] OTP length 5: sequential typing advanced through five cells; ArrowLeft/ArrowRight moved focus; Backspace cleared the focused digit and moved back when the cell was empty; paste populated all five cells and focused the final cell. The playground was restored to six empty cells with every shared toggle off.
 - [ ] Full screenshot comparison across every Lemon Text variant and independent screen-reader review remain open.
 
+## Input page-wide styling — mobile recheck (2026-11-08)
+
+- [x] At 390×844, the Input page is RTL and document width is 375px, so no horizontal overflow occurs.
+- [x] All eight Input adapters were inspected in the live playground: labels compute to Estedad 700; each single-line capsule uses a 48px target with a centered 36px visual face. OTP keeps its 48px cell target and 36px visual face; Textarea remains multiline.
+- [x] Persian placeholders present on Text, Phone and Search compute to RTL, Vazirmatn Light 12px and `#a1a1a1`. Empty Password/OTP/numeric adapters do not render placeholder text. The inert top Email specimen has no helper/message beneath it.
+- [ ] Lemon screenshot comparison for every variant/state and an independent screen-reader review remain open; this style recheck does not close Input DoD.
+
 ## Number Input precision refinement — browser evidence (2026-11-01)
 
 - [x] Playground controls expose min/max/step and the generated code updates with them; defaults restored to `0/99/1`.
