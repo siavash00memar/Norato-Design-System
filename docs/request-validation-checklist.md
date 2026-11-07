@@ -24,6 +24,13 @@
 - [x] Persian placeholders present on Text, Phone and Search compute to RTL, Vazirmatn Light 12px and `#a1a1a1`. Empty Password/OTP/numeric adapters do not render placeholder text. The inert top Email specimen has no helper/message beneath it.
 - [ ] Lemon screenshot comparison for every variant/state and an independent screen-reader review remain open; this style recheck does not close Input DoD.
 
+## Combobox alignment with cross-component Input styling (2026-11-08)
+
+- [ ] At desktop and 390×844, confirm 36px capsule inside a 48px target, Estedad Bold label, RTL/Vazirmatn Light 12px `#a1a1a1` placeholder, and no document overflow/stretch.
+- [ ] Confirm neutral 1px `#e8e8e8` rest stroke and one yellow 1px hover/focus stroke with no blue/black outer ring/halo; independent Clear/Chevron focus remains visible and keyboard/menu behavior is unchanged.
+- [ ] Recompare Lemon Combobox at matched viewports and run required technical gates after implementation.
+- [x] Desktop follow-up: neutral 1px rest stroke, 36px capsule in 48px target, yellow 1px keyboard-focus Stroke, no field outline/shadow, and Escape-to-close verified. Independent action focus, mobile viewport and matched Lemon comparison remain open.
+
 ## Number Input precision refinement — browser evidence (2026-11-01)
 
 - [x] Playground controls expose min/max/step and the generated code updates with them; defaults restored to `0/99/1`.
