@@ -3,7 +3,8 @@
 - [x] Eight distinct public Vue adapters exist with typed props and controlled v-model events.
 - [x] Existing `NoratoField` export and `NoratoTextarea` export/API are retained; typecheck/build passed.
 - [x] Each adapter is represented in the Persian RTL Input playground and in the public usage example.
-- [ ] Text Input's label-inside/outside and all four sizes were browser-measured (outside 50/52/56/60px; inside 62/64/68/72px); all eight documented state combinations are not yet exhaustively reviewed.
+- [x] Text Input's label-inside/outside and all four sizes were browser-measured (outside 50/52/56/60px; inside 62/64/68/72px).
+- [ ] All eight documented Text Input states and every Lemon visual variant are not yet exhaustively reviewed.
 - [x] Password visibility toggle works in the browser; strength presentation is driven only by the controlled `strength` prop and the sample secret is not rendered.
 - [x] Phone prefix defaults to `+98`, is configurable, appears at the physical left edge in RTL, and phone entry is LTR.
 - [x] OTP renders 4/5/6 cells and all three lengths were counted in the browser. Lengths 4 and 5 pass full paste, ArrowLeft/Right, and Backspace on a filled cell; length 4 also passes sequential entry and backtracking from an empty cell. Length 6 paste/navigation/Backspace was previously confirmed. At 390×844, Error exposes `aria-invalid=true` on all six cells, links every cell to the alert and uses the red status stroke; Success links every cell to the success status and uses the green stroke; Disabled sets all six cells disabled and retains the neutral disabled stroke. All toggles were restored afterward.
@@ -17,7 +18,7 @@
 - [x] At all four mobile sizes, document width remained 375px; six OTP cells wrap at Large/XLarge without horizontal overflow, with cell sizes 48/52/56/60px. Textarea height increases monotonically (103/108/120/128px) and does not stretch to the gallery height.
 - [x] Native number spinners are hidden where the dedicated stepper exists; mobile screenshot shows one pair of increment/decrement actions and ArrowUp still respects max (`98→99`).
 - [x] All 41 documented Input family/state references now render bounded mini controls in Lemon-like state cards. At 390×844 the 343px gallery uses two 167.5px columns; every card fits and the document remains 375px. Default/Hover/Active/Error/Disabled/Loading/Success/Read-only/Filled/Typing show their correct state color or treatment; Error and Success have descriptions, OTP/Number/Amount/Phone/Search use their own anatomy. Gallery is inert and hidden from assistive technology; interactive behaviors remain in the playground.
-- [x] Four sizes were crossed with each of six isolated shared states (24 live combinations); all 32 keyboard focus targets in the Input playground showed a visible focus ring. Combined state sequences and adapter-specific state interactions remain open and are not inferred from the inert gallery.
+- [x] Four sizes were crossed with each of six isolated shared states (24 live combinations); all 32 keyboard focus targets in the Input playground showed a visible focus ring. Combined state sequences are recorded below; remaining adapter-specific state/visual interactions are not inferred from the inert gallery.
 - [x] Independent screen-reader review was unavailable and remains explicitly open; AX tree checks were used for labels, roles, disabled controls and status text.
 - [x] Latest `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass after Number refinement. Current production JS chunk is 683.73KB; Vite warns that it exceeds 500KB.
 - [x] Request checklist, Input contract, catalog maturity and family ledger record remaining work without closing the DoD prematurely.
@@ -25,15 +26,18 @@
 
 ## Remaining evidence
 
+- Browser follow-up (2026-11-08): Password capsule hover remained active while keyboard focus moved to its adjacent visibility action. Hover was true, input `:focus-visible` false, capsule computed to `1px solid rgb(253, 193, 1)`, wrapper border `0px`; screenshot showed only the yellow capsule stroke. Error+Disabled Text and OTP kept neutral strokes while error messages remained. This does not complete the full Text visual matrix.
+
 - Browser follow-up (2026-11-01, desktop viewport 1280×720): all four sizes × both label placements were changed in the live playground. The six single-line shells measured 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measured 48/52/56/60px; Textarea measured 103/108/120/128px outside. Document width 1265px stayed within the viewport. OTP length selector rendered exactly 4/5/6 cells; full six-digit paste populated the group, ArrowRight moved focus one cell, and Backspace removed a digit. Number min/max/step controls and generated snippet were synchronized; at `0/.3/.1`, three buttons emitted exactly `.1`, `.2`, `.3` and disabled at max; ArrowUp/Down worked at `.1`, and min/max action disabling was verified at `.05/.35`. Shared states were isolated at all four sizes (24 size×state combinations); counts stayed consistent: 8 required, 13 invalid, 13 disabled values + 3 disabled actions, 8 busy/spinners, 8 success, 13 readonly values. Tab traversal visited 32 playground targets and every target showed a visible focus ring. Browser console error list was empty; defaults restored.
 - OTP length-four follow-up (2026-11-01, desktop viewport 1280×720): the live selector rendered four cells; paste filled all four and focused the last cell; sequential key entry filled the cells in order; ArrowLeft and ArrowRight moved focus; Backspace cleared the focused digit; Backspace on an empty cell moved left and cleared the preceding digit. Length was restored to six, all digits cleared, and browser error logs were empty.
 - OTP length-five follow-up (2026-11-01, desktop viewport 1280×720): the live selector rendered five cells; paste filled all five and focused the last cell; ArrowLeft moved focus from cell 5 to cell 4; Backspace cleared the focused digit. Length was restored to six, all digits cleared, and browser error logs were empty.
-- Remaining: combined state sequences beyond isolated shared toggles, independent screen-reader review and matched visual states across every Lemon variant remain open. Keep family DoD open.
+- Remaining: independent screen-reader review and matched visual states across every Lemon variant remain open. Keep family DoD open.
 
 ## Combined status precedence follow-up — 2026-11-08
 
 - [x] Error + Success: error remains the only terminal status across all eight adapters; success node/semantics are suppressed.
 - [x] Error + Disabled: all 13 value controls are disabled, all 13 expose invalid semantics, all eight error alerts remain present, and success is suppressed.
+- [x] Disabled takes neutral stroke priority over Error/Success while retaining the status message; enabled valid hover uses the single yellow capsule stroke.
 - [x] Error + Loading + Success: error and loading are exposed, all 13 value controls are disabled, all eight adapters are busy, success is suppressed, and every `aria-describedby` token resolves to a rendered element.
 - [x] Success + Loading: success is suppressed while all eight adapters expose loading; turning Loading off restores all eight success messages and semantics with no broken description references.
 - [x] Restored all shared toggles to their default-off state after browser checks.

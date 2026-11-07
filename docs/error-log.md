@@ -824,3 +824,10 @@
 - **Correction:** Apply Error > Success and Loading > Success across the shared input shell, OTP and Textarea. Preserve Error alongside Loading; align success data/class semantics and description IDs with rendered status messages.
 - **Verified:** Live Input playground: Error+Success, Error+Disabled, Error+Loading+Success and Success+Loading → Success. Across all eight adapters status precedence is correct; all 13 value controls disable under Error+Disabled/Loading, busy states are exposed, every description reference resolves, and toggles were restored.
 - **Remaining:** Full Text Input state/variant review, independent screen-reader review and visual matching for every Lemon variant remain open; the Input family DoD is not closed.
+
+## ERR-092 — Input hover/status specificity could reveal a duplicate stroke (2026-11-08)
+
+- **Observed:** The visible line is the capsule's own Input Stroke. A package-level native wrapper border could appear as a second line in the documentation app; broad hover styling could also recolor invalid/disabled fields.
+- **Correction:** Keep the app wrapper border at zero/transparent; scope the single 1px capsule hover stroke to enabled, valid controls and use Norato yellow. Focus remains yellow; disabled is neutral; invalid keeps its error stroke at rest. OTP follows the same disabled/focus/hover priority.
+- **Verified:** Live Password hover with input focus moved to the adjacent visibility action: `:hover=true`, input `:focus-visible=false`, capsule `1px solid rgb(253, 193, 1)`, wrapper `0px`. Error+Disabled Text and OTP retained neutral stroke and visible error message.
+- **Remaining:** Full Text Input state/variant matrix and independent screen-reader review remain open; this fix does not close Input DoD.

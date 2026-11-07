@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Input stroke hover follow-up — browser evidence (2026-11-08)
+
+- [x] On the live Password Input, pointer hover remained active while keyboard focus moved to the adjacent visibility action; the input was not focused, its only capsule stroke computed to Norato yellow (`rgb(253, 193, 1)`), and the outer layout wrapper computed to `0px` border.
+- [x] Error+Disabled Text and OTP kept neutral strokes while retaining the error message. Disabled and invalid state styling does not get recolored by hover.
+- [x] The line in question is the capsule's own field Stroke; the wrapper must not draw a second border. The page had no extra gray shell line in this verified hover state.
+
 ## Number Input precision refinement — browser evidence (2026-11-01)
 
 - [x] Playground controls expose min/max/step and the generated code updates with them; defaults restored to `0/99/1`.

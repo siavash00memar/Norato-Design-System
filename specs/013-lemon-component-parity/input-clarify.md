@@ -5,6 +5,7 @@
 - **Error + Success:** Error wins. Success copy, success semantics, and the success ID are omitted.
 - **Success + Loading:** Loading wins until processing ends. Keep the adapter busy/disabled as designed and omit success copy, semantics, and its description ID.
 - **Error + Loading:** Preserve both the existing error message and the loading status; loading disables editable controls and the adapter remains busy.
+- **Disabled visual priority:** Disabled controls keep the neutral stroke over Error or Success while retaining applicable status copy. Hover recolors only enabled, valid capsule strokes to Norato yellow; the outer wrapper remains transparent.
 - Apply the same policy to shared-shell inputs, OTP, and Textarea; all `aria-describedby` tokens must resolve to rendered elements.
 - Rationale: simultaneous “verified” and “processing” statuses conflict; a stale success description is also an accessibility reference defect. Error remains useful during an async retry.
 

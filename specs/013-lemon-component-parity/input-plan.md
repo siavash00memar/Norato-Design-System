@@ -18,7 +18,7 @@
 8. Run token, catalog, Vue typecheck, production build and diff gates; resolve regressions; update request checklist and push all changes to GitHub.
 9. After visual audit, style Input's 41 inert family-state cards as compact controls and state descriptions. Match Lemon's two-column card rhythm at 390px, use Norato tokens, show success/error clearly and keep state specimens inert. Re-run browser render review and all technical gates.
 10. Number validation refinement: expose adjustable `min`/`max`/`step` in the playground and generated snippet; normalize decimal step arithmetic; browser-check range, decimal stepping, keyboard behavior and disabled bounds before updating the Input DoD.
-11. Combined-state follow-up: enforce Error > Success and Loading > Success consistently in the shared shell, OTP and Textarea; preserve Error alongside Loading; ensure ARIA description IDs refer only to visible/rendered messages. Browser-check Error+Success, Error+Disabled and Success+Loading, then confirm Success appears again after Loading ends.
+11. Combined-state follow-up: enforce Error > Success and Loading > Success consistently in the shared shell, OTP and Textarea; preserve Error alongside Loading; ensure ARIA description IDs refer only to visible/rendered messages. Browser-check Error+Success, Error+Disabled and Success+Loading, then confirm Success appears again after Loading ends. Keep disabled strokes neutral, status copy available, and verify hover/focus stroke is a single yellow capsule without wrapper border duplication.
 
 ## Constraints
 
