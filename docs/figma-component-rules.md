@@ -397,3 +397,10 @@
 ## Stepper — 2026-11-08
 - Preserve Lemon's four progress compositions (Horizontal, Vertical, Compact, Dots) and status hierarchy, with Norato yellow current/completed accent, neutral upcoming connector and Norato error red. The first step follows logical inline-start (right in RTL); never turn status items into navigation controls. Current step has a 2px yellow ring; indicators stay circular/intrinsic and responsive overflow is internal. Use the dedicated --norato-stepper-preview-* tokens for the Button-shaped dotted 288px preview.
 - Dots inherit the Stepper size: Small uses 4px upcoming/8px current, Medium 8px/12px and Large 12px/16px outer diameters. Current dots keep a 2px yellow ring inside that size; all dots use border-box geometry and semantic spacing tokens.
+
+## Menu — 2026-11-08
+- Match Lemon's compact action-menu hierarchy: panel near 235×160px with four concise leaf actions, action icons on the right in RTL, shortcuts on the left, a separator before the final destructive action, and an inert dotted preview frame using Norato's own palette.
+- Runtime menu rows retain at least 48px interaction height. Static specimen rows use the compact 36px token to match the reference preview. Small/Medium/Large remain proportional; icons keep intrinsic sizes.
+- Use Norato yellow for hover and keyboard focus, neutral default surface/stroke and semantic error red for destructive actions. RTL submenu arrows point left and mirror in LTR. Reka DropdownMenu owns menu keyboard and dismissal behavior.
+- **Verified:** matched desktop capture showed Lemon frame/panel 636×300px / 235×160px and Norato column-constrained frame/panel about 576×288px / 234×157px. Root and child menus fit at 390px; RTL/LTR, leaf selection and keyboard close/focus return were checked. Pointer hover remains yellow when focus is on a different row; the disabled hovered item remains visually neutral.
+- **Remaining:** 320px viewport and independent screen-reader review are not verified; Menu DoD remains open.

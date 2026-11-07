@@ -862,3 +862,21 @@
 - **Observed:** The Dots composition used fixed 8px/12px circles for every Stepper size, while the contract offers Small, Medium and Large.
 - **Correction:** Drive upcoming/current outer dot diameters from semantic Norato spacing tokens per size (Small 4/8px, Medium 8/12px, Large 12/16px); `border-box` keeps the current 2px ring inside the selected diameter.
 - **Verified:** Live Stepper playground after the CSS update: Dots sizes visibly scale Small/Medium/Large and preserve the current-state yellow ring. Source sizes are border-box outer diameters: 4/8px, 8/12px, 12/16px. Playground was restored to horizontal, medium, RTL, Address, no error.
+
+## ERR-098 — Menu stylesheet source attribute resolved outside the package (2026-11-08)
+
+- **Observed:** The running Vite page raised an import error after the Menu SFC loaded its shared stylesheet through a template `style src` attribute; the resolver treated it as a root-level `D:\menu.css` path.
+- **Correction:** Import `../menu.css` from the SFC script so the stylesheet resolves relative to the component module.
+- **Verified:** Reopened the actual local Menu route; adapter, specimen and playground rendered without the Vite error overlay.
+
+## ERR-099 — Portaled Menu escaped the inert specimen frame (2026-11-08)
+
+- **Observed:** The first top-of-page specimen used the live Reka portal and rendered at the viewport edge instead of inside its dotted preview card.
+- **Correction:** Replace the top specimen with inert markup that shares the adapter's menu/item styles; keep the separately documented playground interactive and portaled.
+- **Verified:** The desktop Menu preview shows a centered compact four-action panel in its dotted frame, while the runtime playground remains operable. Remaining responsive/DoD work is tracked in the Menu checklist.
+
+## ERR-100 — Menu pointer hover was hidden when keyboard focus moved elsewhere (2026-11-08)
+
+- **Observed:** While Delete held keyboard focus, the pointer hovered the enabled `انتقال به` submenu row; `:hover` was true but the row background stayed transparent. The keyboard-highlight rule alone did not cover this simultaneous pointer/focus state.
+- **Correction:** Add a separate Norato-yellow hover background for enabled menu items and the semantic error-container hover for enabled destructive items; exclude disabled rows and retain the 2px keyboard focus ring only on the focused/highlighted item.
+- **Verified:** In the live browser, `انتقال به` remained under the pointer and not focused; computed background became `rgb(255, 248, 224)` with no outline. Hovering disabled Rename kept a transparent background and `aria-disabled=true`; focused Delete retained its 2px yellow outline and pale error background.

@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import SplitButtonShowcase from './SplitButtonShowcase.vue'
 import StepperContractShowcase from './StepperContractShowcase.vue'
+import MenuContractShowcase from './MenuContractShowcase.vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
@@ -227,7 +228,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
 <template>
   <div class="contract-visual" :class="`contract-visual--${title}`" :data-component="name" :data-section="section" dir="rtl">
-    <template v-if="section === 'Overview'">
+    <MenuContractShowcase v-if="name === 'Menu' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
+    <template v-else-if="section === 'Overview'">
       <div v-if="name === 'Button'" class="button-overview-list">
         <article v-for="(entry, index) in entries" :key="entry.id"><b>{{ String(index + 1).padStart(2, '0') }}</b><span><strong>{{ buttonOverviewLabels[index] || 'نکتهٔ قرارداد' }}</strong><p>{{ entry.detail }}</p></span></article>
       </div>

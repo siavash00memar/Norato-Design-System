@@ -26,4 +26,16 @@ const selected = ref('all')
 const tabs: NoratoTab[] = [{ value: 'all', label: 'همه', count: 12, content: 'همهٔ پروژه‌ها' }, { value: 'active', label: 'فعال', content: 'پروژه‌های فعال' }]
 <\/script>
 <template><NoratoTabs id="projects-tabs" v-model="selected" label="پروژه‌ها" :tabs="tabs" /></template>`,
+  menu: `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoMenu, type NoratoMenuItem } from '@norato/vue'
+const open = ref(false)
+const items: NoratoMenuItem[] = [
+  { value: 'edit', label: 'ویرایش', shortcut: 'Ctrl E' },
+  { value: 'copy', label: 'کپی', shortcut: 'Ctrl C' },
+  { value: 'delete', label: 'حذف', danger: true, separatorBefore: true },
+]
+function selectAction(value: string) { console.log(value) }
+<\/script>
+<template><NoratoMenu id="file-actions" label="اقدام‌های فایل" v-model:open="open" :items="items" @select="selectAction" /></template>`,
 }

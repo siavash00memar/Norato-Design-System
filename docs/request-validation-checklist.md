@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Menu local browser review — 2026-11-08
+
+- [x] Actual desktop page renders an inert action-menu specimen and a separate interactive adapter playground.
+- [x] Opened the live menu and verified its accessible name and menu/item tree. Home moves focus to the first item. Pointer hover on the submenu parent remained yellow while keyboard focus was on Delete (`:hover=true`, focused row different, `rgb(255, 248, 224)` background); a hovered disabled Rename stayed transparent and `aria-disabled=true`.
+- [x] The documented 390px root/submenu, RTL/LTR, selection, close and focus-return checks are recorded in the Menu DoD.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the hover correction; build reports the 877.63KB JS chunk advisory.
+- [ ] Inspect at 320px and conduct an independent screen-reader review. Do not close Menu DoD until these pass.
+
 ## Select default specimen alignment — 2026-11-08
 
 - [x] At 1280×720, the inert specimen shows no selected value and uses Lemon's Persian placeholder `به شهر انتخاب کن`; the executable playground remains selected to Tehran.

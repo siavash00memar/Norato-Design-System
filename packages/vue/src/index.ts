@@ -48,3 +48,5 @@ export { default as NoratoPagination } from './components/NoratoPagination.vue'
 
 export { default as NoratoStepper } from './components/NoratoStepper.vue'
 export type { NoratoStep } from './components/NoratoStepper.vue'
+export { default as NoratoMenu } from './components/NoratoMenu.vue'
+export type { NoratoMenuItem } from './components/NoratoMenu.vue'
