@@ -54,7 +54,7 @@
   box-sizing: border-box;
 }
 
-.norato-input-field__control {
+#app .norato-input-field__control {
   position: relative;
   isolation: isolate;
   box-sizing: border-box;
@@ -82,8 +82,14 @@
   background: var(--norato-color-surface-default);
 }
 
-.norato-input-field__control:hover::before {
+#app .norato-input-field__control:hover::before {
   border-color: var(--norato-color-brand-yellow);
+}
+
+/* The package stylesheet gives the native wrapper its own hover border.
+   Keep that duplicate layer transparent so only the capsule stroke is visible. */
+#app .norato-input-field:not([data-disabled]):not([data-invalid]) .norato-input-field__control:hover {
+  border-color: transparent;
 }
 
 .norato-input-field[data-invalid] .norato-input-field__control::before {

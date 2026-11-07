@@ -773,3 +773,10 @@
 - **Cause:** The 36px rule was local to one component-page presentation, while live adapters inherited size-specific minimums and generic `NoratoField` used a separate native input class.
 - **Correction:** Shared component-page styles render a centered 36px capsule inside minimum 48px targets for Input adapters and generic `NoratoField`. Titles use Estedad Bold; placeholders use RTL while entered phone/amount values remain LTR. Top Email helper line stays removed; Textarea retains multiline height.
 - **Verified:** Actual local browser: static variant/state shells 36px; live capsule is 36px inside a 52px Medium wrapper, input hit target 48px; OTP target 48px with 36px face; Textarea remains 108px; generic `NoratoField` target 48px with centered 36px capsule; top Email shell 36px with no helper. No document horizontal overflow.
+
+## ERR-084 — Input hover displayed a second gray wrapper stroke (2026-11-07)
+
+- **Observed:** Hovering an Input showed a gray line around the intended capsule stroke, despite the capsule pseudo-element using the yellow hover token.
+- **Cause:** The package stylesheet's more-specific native wrapper hover selector restored its own border after the page-level base rule set `border: 0`.
+- **Correction:** Scoped the wrapper border reset and capsule hover rule to the app root, then explicitly kept the native wrapper border transparent on enabled, valid hover. The visible pseudo-element remains the single 1px yellow stroke.
+- **Scope:** Input shell hover only; status colors, focus behavior, OTP and other component styles are unchanged.

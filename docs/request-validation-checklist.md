@@ -1158,3 +1158,9 @@
 - [x] Compiled stylesheet assigns Norato yellow to pointer hover on enabled shared Input/OTP shells, generic `NoratoField`, and `NoratoTextarea`; focus remains yellow.
 - [ ] This browser tool could not keep a pointer hover active for a hover-only screenshot/computed-color capture; mobile and independent screen-reader review were not run.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, Vue build, and `git diff --check` pass. Build reports the >500KB JavaScript chunk advisory (817.03KB).
+
+## Input hover stroke — duplicate border follow-up (2026-11-07)
+
+- [x] Source cascade audit found the package wrapper hover selector was more specific than the page-level border reset and could restore a gray second line.
+- [x] Added app-scoped specificity to the wrapper reset and explicitly kept its hover border transparent; the capsule's pseudo-element remains the sole visible stroke and uses the Norato yellow token on hover.
+- [ ] Browser pointer-hover color capture and screenshot still need confirmation in the local app.
