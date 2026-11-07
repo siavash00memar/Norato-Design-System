@@ -7,8 +7,8 @@ Radio's Variants section should expose the documented checked/unchecked × 16/20
 ## Requirements
 
 - Render five state groups, each containing four cells: unchecked/checked at 16px and 20px (20 cells total).
-- Show a proportional circular radio ring and, when checked, a centered Norato blue dot.
-- Use semantic Norato colors for hover, focus, disabled and error; use Lemon's clear state-card hierarchy.
+- Show a proportional circular radio ring and, when checked, a centered Norato yellow dot, matching the active primary-selection palette rule and the existing runtime adapter.
+- Use Norato yellow for hover, preserve the accessible focus treatment, and use semantic disabled/error colors; use Lemon's clear state-card hierarchy.
 - Keep the matrix static and inert; the live playground remains the place for interaction and the adapter remains the source of runtime behavior.
 - At desktop and mobile widths, retain RTL, bounded cards and no horizontal overflow.
 - Preserve the real control's 48px row target in the playground; the gallery itself is a non-interactive visual reference.

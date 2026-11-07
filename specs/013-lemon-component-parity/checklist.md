@@ -48,7 +48,7 @@ Only check a line when the corresponding evidence was observed for that componen
 
 ## Radio Button evidence (2026-11-01)
 
-- [x] Lemon Radio and Norato Radio were compared at desktop and mobile; the Lemon specimen uses a glass ring/dot, three Persian choices, and Default marker. Norato keeps its own semantic blue tokens.
+- [x] Lemon Radio and Norato Radio were compared at desktop and mobile; the Lemon specimen uses a glass ring/dot, three Persian choices, and Default marker. Norato keeps its own semantic tokens and yellow primary-selection accent.
 - [x] Norato’s mobile specimen is 320×288px with a 375px document at 390×844; its three rows remain 48px, RTL, and free of horizontal overflow. Desktop frame is bounded by the documentation content column.
 - [x] The playground exposes a named radio group, accurate selected value, required/error/disabled controls, and synchronized Vue snippet. `ArrowDown` changed monthly to quarterly and `ArrowUp` restored monthly; one non-selected quarterly row visibly entered hover without changing selection.
 - [x] The 12 checked/value/size combinations for Default/Error/Disabled were measured; targets stayed 48px and focus ring was 2px. The page contains Preview, executable Vue playground, and all nine contract sections.

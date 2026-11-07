@@ -1204,3 +1204,11 @@
 - [x] At 320px, document scroll width equals client width (305px) with no horizontal scrollbar; all four mobile header types remain within bounds.
 - [x] Nine desktop layout/style combinations, seven runtime target heights, submenu Enter/Escape focus return, drawer Escape/outside close, controlled Search and Back activation were checked.
 - [ ] Independent screen-reader review and wider full state/focus/current/disabled matrix remain open.
+
+## Radio matrix mobile geometry and accent alignment — 2026-11-08
+
+- [x] Matched 390×844 browser render: Lemon Variants gallery is 327px wide and 651.5px high; its property selector adds 272.5px. Norato matrix is 343px wide, 886.9px high, five 162.2px cards, four 48px cells per group and 20 cells total.
+- [x] Norato document width is 375px with no horizontal overflow. Gallery is inert and RTL; no interactive descendants. Ring sizes are intrinsic 16px/20px and are not stretched.
+- [x] Checked dot and hover border resolve to yellow `rgb(253, 193, 1)`, matching live adapter selection; disabled stays gray, error red, focus ring/halo remains dedicated.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` passed after the color update; the 818.95KB JS chunk still triggers Vite's >500KB advisory.
+- [ ] Independent screen-reader and full cross-product live-state review remain open.

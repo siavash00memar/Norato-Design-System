@@ -106,7 +106,7 @@
 - frame: ۲۴×۲۴px
 - حالت خاموش و روشن از asset/state واقعی Figma استخراج می‌شوند.
 - فاصله‌ی متن: ۶px
-- Lemon preview composition: one centered three-option group in a 640×288 desktop glass frame, 320×288 on mobile, with a Default/green-dot marker. Norato uses its own blue selected dot and semantic glass/border tokens.
+- Lemon preview composition: one centered three-option group in a 640×288 desktop glass frame, 320×288 on mobile, with a Default/green-dot marker. Norato uses its own yellow selected dot and semantic glass/border tokens; hover border also uses the Norato yellow accent.
 - Each option row stays 48px tall; the control is on the right in RTL. Runtime sizes are 16px and 20px. Do not stack multiple state groups in the specimen or stretch the control to fill the frame.
 - `NoratoRadioGroup` is controlled by one optional string value; native radio inputs preserve arrow-key group behavior. The separate playground covers required, disabled, invalid, and size settings.
 - The static States gallery follows Lemon's title-plus-description cards. Keep all five Radio Button states and three Radio Field states, with family labels and semantic Norato status accents; do not render the generic elongated pill there. Actual radio specimens stay in Preview and Variants.

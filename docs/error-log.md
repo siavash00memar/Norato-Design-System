@@ -809,3 +809,11 @@
 - **Correction:** Applied the approved yellow primary accent and warm/neutral specimen wash; compacted the static row to 50px and widened it, retained three 48px mobile items on one row, removed the app-wide 320px minimum, and exposed Back activation in playground status.
 - **Verified:** Matched Lemon/Norato geometry at 1280×720 and 390×844, and no overflow at 320px. Checked all four mobile header types and nine desktop layout/style combinations, keyboard submenu open/Escape focus return, mobile dialog Escape/outside close/focus return, Back activation status and controlled search input.
 - **Remaining:** Independent screen-reader testing and broader full focus/current/disabled link matrix remain open; maturity remains Adapted.
+
+## ERR-090 — Radio matrix retained the superseded blue accent (2026-11-08)
+
+- **Observed:** The actual Radio adapter already used Norato yellow for its checked dot and hover border, but the inert 20-cell Variants matrix still showed blue, contradicting the active primary-accent rule and making the same component page inconsistent.
+- **Correction:** Updated the existing matrix dot and hover selectors plus Radio contract/Figma rules to use the yellow semantic token. Disabled gray, error red and high-contrast focus treatment remain distinct. No adapter API or runtime behavior changed.
+- **Verified:** At 390×844, static checked dot and hover border compute to `rgb(253, 193, 1)`, matching the live adapter dot. Five 343×162.2px cards, 20 cells, 48px targets, 16/20px proportional circles, RTL, inertness and 375px document without overflow. Lemon gallery plus property selector measures 924px versus Norato's 886.9px matrix.
+- **Technical gates:** On 2026-11-08 token check, catalog check (49), Vue typecheck/build and `git diff --check` pass. Vite reports an 818.95KB JavaScript chunk above its 500KB advisory threshold.
+- **Remaining:** Independent screen-reader review and exhaustive live state/focus cross-product remain open.
