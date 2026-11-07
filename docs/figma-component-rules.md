@@ -404,3 +404,10 @@
 - Use Norato yellow for hover and keyboard focus, neutral default surface/stroke and semantic error red for destructive actions. RTL submenu arrows point left and mirror in LTR. Reka DropdownMenu owns menu keyboard and dismissal behavior.
 - **Verified:** matched desktop capture showed Lemon frame/panel 636×300px / 235×160px and Norato column-constrained frame/panel about 576×288px / 234×157px. Root and child menus fit at 390px; RTL/LTR, leaf selection and keyboard close/focus return were checked. Pointer hover remains yellow when focus is on a different row; the disabled hovered item remains visually neutral.
 - **Remaining:** 320px viewport and independent screen-reader review are not verified; Menu DoD remains open.
+
+## Command Palette — 2026-11-08
+- Follow Lemon's single-dialog composition: search row, grouped commands, recent items, shortcut badges and keyboard-hint footer over a blurred backdrop. Keep the documentation specimen inert and bounded inside the same dotted preview frame used by Button.
+- Use Norato glass surfaces, semantic tokens and yellow active/focus strokes. Search and Persian command text flow RTL; shortcut badges and key hints are explicitly LTR. Keep runtime targets at least 48px and let results scroll inside the panel.
+- Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
+- **Browser evidence:** at 1280×720, the specimen frame is 584×288px and its panel 448×240px; the live dialog is centered at x=340, y=108 and measures 600×375px. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
+- **Remaining:** 390/320 browser dimensions, equal-viewport Lemon geometry comparison, screen-reader review and full shortcut exclusion matrix remain open; Command Palette DoD remains open.

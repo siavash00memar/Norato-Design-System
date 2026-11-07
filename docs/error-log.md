@@ -880,3 +880,28 @@
 - **Observed:** While Delete held keyboard focus, the pointer hovered the enabled `انتقال به` submenu row; `:hover` was true but the row background stayed transparent. The keyboard-highlight rule alone did not cover this simultaneous pointer/focus state.
 - **Correction:** Add a separate Norato-yellow hover background for enabled menu items and the semantic error-container hover for enabled destructive items; exclude disabled rows and retain the 2px keyboard focus ring only on the focused/highlighted item.
 - **Verified:** In the live browser, `انتقال به` remained under the pointer and not focused; computed background became `rgb(255, 248, 224)` with no outline. Hovering disabled Rename kept a transparent background and `aria-disabled=true`; focused Delete retained its 2px yellow outline and pale error background.
+
+## ERR-101 — Command Palette preview shrank to intrinsic content width (2026-11-08)
+
+- **Observed:** The dotted preview frame measured 584×288px, but its visible palette panel shrank to 172.5×240px despite a 448px target width.
+- **Cause:** The inner specimen wrapper was a shrink-to-fit block; the frame's one-column grid did not make that child fill the available width.
+- **Correction:** Make the specimen wrapper a full-width bounded grid item and center the 448px panel inside it.
+- **Verified:** Live 1280×720 render: frame 583.98×288px, inner wrapper 557.98×240px, panel exactly 448×240px.
+
+## ERR-102 — RTL Command Palette dialog was horizontally displaced (2026-11-08)
+
+- **Observed:** In RTL, `inset-inline-start:50%` combined with `translateX(-50%)` moved the dialog outside the viewport.
+- **Correction:** Center the bounded fixed dialog with symmetric logical inline insets and automatic inline margins, independent of direction.
+- **Verified:** At 1280×720, live dialog measures 600×375px at x=340/y=108 and remains centered.
+
+## ERR-103 — Command Palette search inherited a blue focus outline (2026-11-08)
+
+- **Observed:** The generic documentation rule for `input:focus-visible` overrode the palette search reset, producing a blue outline and duplicate focus halo.
+- **Correction:** Raise component-local specificity, remove the generic input outline/halo, and show a single 1px Norato-yellow inset Stroke on the search row.
+- **Verified:** Computed search outline is none, search shadow none, parent Stroke is `1px solid rgb(253, 193, 1)` while the input receives initial keyboard focus.
+
+## ERR-104 — Command Palette combobox referenced an absent listbox in loading/empty states (2026-11-08)
+
+- **Observed:** `aria-controls` always referenced a listbox id even when loading or empty states replaced the listbox.
+- **Correction:** Set `aria-controls` and `aria-activedescendant` only while results are rendered.
+- **Verified:** Loading/empty combobox has no dangling references; the live status state remains exposed.

@@ -1,0 +1,32 @@
+.command-palette-contract-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:var(--norato-space-3);min-inline-size:0}
+.command-palette-contract-showcase--anatomy{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:center}
+.command-palette-contract-showcase--variants,.command-palette-contract-showcase--states{grid-template-columns:repeat(2,minmax(0,1fr))}
+.command-contract-panel{display:grid;grid-template-rows:auto auto auto auto auto;min-inline-size:0;overflow:hidden;border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong);box-shadow:var(--norato-elevation-box)}
+.command-contract-search{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default);font-size:var(--norato-type-body-small-size)}
+.command-contract-search svg,.command-contract-row svg,.command-contract-part svg{flex:none;inline-size:var(--norato-command-palette-icon-size);block-size:var(--norato-command-palette-icon-size);fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.8}
+.command-contract-search span,.command-contract-row>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.command-contract-search span{color:var(--norato-color-text-placeholder-subtle)}
+.command-contract-search kbd,.command-contract-row kbd,.command-contract-panel footer kbd,.command-contract-kbd-size kbd,.command-contract-part kbd{color:var(--norato-color-text-secondary);font-family:var(--norato-font-body);font-size:var(--norato-type-body-caption-size)}
+.command-contract-panel h3{margin:0;padding:var(--norato-space-2) var(--norato-space-3) var(--norato-space-1);color:var(--norato-color-text-secondary);font-family:var(--norato-font-heading);font-size:var(--norato-type-body-caption-size)}
+.command-contract-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-command-palette-preview-row-block-size);padding-inline:var(--norato-space-3);font-size:var(--norato-type-body-small-size)}
+.command-contract-row.is-active{background:var(--norato-color-warning-container)}
+.command-contract-panel footer{display:flex;align-items:center;gap:var(--norato-space-1);min-block-size:var(--norato-space-8);padding-inline:var(--norato-space-2);border-block-start:var(--norato-border-thin) solid var(--norato-color-border-default);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+.command-contract-panel footer span{margin-inline-start:auto}
+.command-contract-anatomy-list{display:grid;gap:var(--norato-space-1);margin:0;padding:0;list-style:none}
+.command-contract-anatomy-list li{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:var(--norato-space-2);min-inline-size:0;padding-block:var(--norato-space-1);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
+.command-contract-anatomy-list li>b{display:grid;place-items:center;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);font-family:var(--norato-font-heading)}
+.command-contract-anatomy-list li>span{display:grid;gap:var(--norato-space-1)}
+.command-contract-anatomy-list strong,.command-contract-card header{font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size)}
+.command-contract-anatomy-list small,.command-contract-card header small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+.command-contract-card{display:grid;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-2);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.command-contract-card>header{display:flex;justify-content:space-between;align-items:center;gap:var(--norato-space-2)}
+.command-contract-card[data-state="results"] .command-contract-row.is-active{outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.command-contract-message{display:grid;place-items:center;min-block-size:var(--norato-command-palette-empty-block-size);padding:var(--norato-space-2);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);text-align:center}
+.command-contract-message i{inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);border:var(--norato-border-focus) solid var(--norato-color-border-default);border-inline-start-color:var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill)}
+.command-contract-kbd-size{display:flex;align-items:center;justify-content:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min)}
+.command-contract-kbd-size kbd,.command-contract-part kbd{padding-inline:var(--norato-space-2);padding-block:var(--norato-space-1);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-tag);background:var(--norato-color-surface-default)}
+.command-contract-kbd-size.is-small kbd{font-size:var(--norato-type-body-caption-size)}
+.command-contract-part{display:flex;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);font-size:var(--norato-type-body-small-size)}
+.command-contract-part span{margin-inline-start:auto}
+.command-palette-contract-showcase .visual-kind{grid-column:1/-1;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+@media(max-width:640px){.command-palette-contract-showcase,.command-palette-contract-showcase--anatomy,.command-palette-contract-showcase--variants,.command-palette-contract-showcase--states{grid-template-columns:minmax(0,1fr)}}

@@ -26,6 +26,20 @@ const selected = ref('all')
 const tabs: NoratoTab[] = [{ value: 'all', label: 'همه', count: 12, content: 'همهٔ پروژه‌ها' }, { value: 'active', label: 'فعال', content: 'پروژه‌های فعال' }]
 <\/script>
 <template><NoratoTabs id="projects-tabs" v-model="selected" label="پروژه‌ها" :tabs="tabs" /></template>`,
+  'command-palette': `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoCommandPalette, type NoratoCommandGroup, type NoratoCommandItem } from '@norato/vue'
+const open = ref(false)
+const groups: NoratoCommandGroup[] = [{ id: 'suggested', label: 'پیشنهادی', items: [
+  { id: 'new-project', label: 'پروژهٔ جدید', keywords: ['ساخت', 'ایجاد'], shortcut: '⌘ N' },
+  { id: 'settings', label: 'تنظیمات', shortcut: '⌘ ,' },
+] }]
+function runCommand(item: NoratoCommandItem) { console.log(item.id) }
+<\/script>
+<template>
+  <button type="button" aria-haspopup="dialog" @click="open = true">جست‌وجو یا فرمان</button>
+  <NoratoCommandPalette id="commands" v-model:open="open" :groups="groups" shortcut="k" @select="runCommand" />
+</template>`,
   menu: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoMenu, type NoratoMenuItem } from '@norato/vue'

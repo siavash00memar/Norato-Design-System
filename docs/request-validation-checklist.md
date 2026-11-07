@@ -18,6 +18,18 @@
 - [x] On the live Password Input, pointer hover remained active while keyboard focus moved to the adjacent visibility action; the input was not focused, its only capsule stroke computed to Norato yellow (`rgb(253, 193, 1)`), and the outer layout wrapper computed to `0px` border.
 - [x] Error+Disabled Text and OTP kept neutral strokes while retaining the error message. Disabled and invalid state styling does not get recolored by hover.
 - [x] The line in question is the capsule's own field Stroke; the wrapper must not draw a second border. The page had no extra gray shell line in this verified hover state.
+- [x] Follow-up on the reported Password field: moving/clicking the actual eye action left the pointer over the field while input focus was absent; the capsule remained `1px solid rgb(253, 193, 1)` and the wrapper remained `0px` border. The intended hover state is present in the current local render.
+
+## Command Palette — local browser review (2026-11-08)
+
+- [x] Fixed inert preview width: at 1280×720 the dotted frame is 584×288px and panel is 448×240px, no longer content-shrunk.
+- [x] Fixed RTL live dialog centering: at 1280×720 dialog is 600×375px at x=340/y=108; search receives focus and its focus stroke is yellow without the generic blue outline/halo.
+- [x] Persian query `تنظیمات` yields the matching grouped option; Enter selects it, closes the dialog and restores focus to the trigger.
+- [x] Loading and empty states render live status content. Their combobox no longer references a missing listbox/active descendant; Escape closes.
+- [x] Ctrl+K opens while the trigger is focused. Disabled Settings exposes `aria-disabled=true` and ArrowDown skips it to Projects.
+- [ ] 390/320 viewport, Home/End/ArrowUp, outside-click/Tab, configurable shortcut exclusions, IME/repeat, 8-item cap stress, Lemon matched-viewport comparison and independent screen-reader review remain pending.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed. Build reports a 898.75KB JS chunk above the 500KB advisory threshold.
+- [ ] GitHub checkpoint is pending.
 
 ## Input Text-state and OTP five-cell follow-up — browser evidence (2026-11-08)
 
