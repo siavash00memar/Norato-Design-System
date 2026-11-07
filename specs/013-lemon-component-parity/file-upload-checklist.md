@@ -12,7 +12,7 @@
 - [x] Button-style component page has inert preview, runnable playground, synchronized copyable Vue example and all nine contract sections.
 - [x] Contract, catalog, package exports, usage example, primitive map, Figma rules, task log, request checklist and error log are synchronized.
 - [x] Fresh gates on 2026-11-07: `pnpm test:file-upload` (5/5), `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` pass. Build bundle is 817.78KB and Vite emits its >500KB advisory; independent screen-reader review remains open.
-- [ ] Browser DoD remains open for actual OS file drag/drop, independent screen-reader review, reduced-motion verification and complete state-specific keyboard/focus coverage; chooser, validation and both selection modes are verified. Previous pushed checkpoint is `2c399b0f5995dbc3a33dee0cf59c1ce8eaac25e6`.
+- [ ] Browser DoD remains open for actual OS file drag/drop, independent screen-reader review, reduced-motion verification and complete state-specific keyboard/focus coverage; chooser, validation and both selection modes are verified. Latest GitHub push `7ac56ca` is confirmed on `origin/master`.
 - [x] Pure validator unit tests cover extension/MIME/wildcard/empty accept, exact size boundary, partial batches, type/size/count reasons, remaining capacity, single mode, and invalid numeric limits. This proves decision logic only; native picker and drag/drop browser evidence remain open.
 
 ## Browser recheck — 2026-11-07

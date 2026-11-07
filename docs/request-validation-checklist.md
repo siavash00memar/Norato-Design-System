@@ -984,7 +984,7 @@
 - [x] File Upload playground exposes `multiple`; changing the selection mode updates the generated Vue snippet. Both runtime and inert icons use SVG and Norato yellow/dark; the lower specimen wash is neutral.
 - [ ] Native OS drag/drop payload, independent screen-reader review, reduced-motion, and full combined keyboard/state matrix remain open. File Upload maturity stays Adapted.
 - [x] `pnpm test:file-upload` passes 5/5; `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck/build and `git diff --check` pass. Vite warns that the production JS chunk is 817.78KB (>500KB).
-- [ ] Commit/push and remote parity evidence are pending.
+- [x] Commit `7ac56caf0eedb707ce6567f648e247fea88a7d0d` is pushed to `origin/master`; `git ls-remote` returned the same hash and the worktree was clean.
 
 ## Navbar — implementation checkpoint (2026-11-02)
 
