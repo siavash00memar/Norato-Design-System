@@ -1650,3 +1650,11 @@
 - [x] Browser verified Popover/Panel open, Escape close and trigger focus return; All/Mentions filtering; empty state; mark-all-read and individual read state; action event feedback; selection closes and updates read status; controlled/uncontrolled models; disabled bell. Browser accessibility tree exposes names, groups, disabled state and live unread status.
 - [ ] 390/320 responsive comparison and no-overflow evidence remain open; exact LTR placement and target-size measurements remain open; keyboard-only open and outside-click dismiss were not tested. Independent screen-reader review remains open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build, and `git diff --check` pass. Build reports the existing large JavaScript chunk advisory (1,238.52KB). Repository scan found no forbidden reference-brand name after removing the one temporary checklist mention.
+
+## Modal — implementation review (2026-11-09)
+
+- [x] Reconciled the component ledger with the existing public `NoratoModal` and `NoratoDialog` adapters; recorded the remaining DoD gates in `specs/013-design-system-parity/modal-checklist.md`.
+- [x] Local browser shows the static preview, playground, copyable Vue sample and contract sections in the Button page structure. Compared the desktop frame with the reference in the same browser window; the local frame follows the narrower documentation column and is shorter. Form mode opened, accepted Persian text, submitted and returned focus to its trigger. Dialog mode closes with Escape and restores focus. Busy mode disabled its actions and resisted Escape during the busy interval.
+- [x] Default interactive Dialog tone now matches the destructive delete specimen. `NoratoModal` exposes `busy` as `aria-busy`; the public contract now documents it.
+- [ ] Matched responsive 390/320 viewport measurements, outside click and `dismissible=false`, all sizes/tones, explicit live role/announcement, LTR and independent screen-reader review remain open. Modal DoD stays open.
+- [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.

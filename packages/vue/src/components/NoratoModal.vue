@@ -14,6 +14,7 @@ const props = withDefaults(defineProps<{
   closeLabel?: string
   role?: 'dialog' | 'alertdialog'
   variant?: 'modal' | 'dialog'
+  busy?: boolean
   dir?: 'rtl' | 'ltr'
 }>(), {
   size: 'medium',
@@ -22,6 +23,7 @@ const props = withDefaults(defineProps<{
   closeLabel: 'بستن پنجره',
   role: 'dialog',
   variant: 'modal',
+  busy: false,
   dir: 'rtl',
 })
 
@@ -47,6 +49,7 @@ function preventOutside(event: Event) {
         :data-variant="variant"
         :dir="dir"
         :role="role"
+        :aria-busy="busy || undefined"
         @escape-key-down="preventEscape"
         @pointer-down-outside="preventOutside"
       >

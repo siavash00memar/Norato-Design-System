@@ -43,13 +43,13 @@ Dialog با اندازهٔ Small از `--norato-modal-dialog-width-small`، بر
 
 - **Closed / Open:** Portal و focus lifecycle فقط با بازبودن پنجره فعال است.
 - **Default / Hover / Focus:** کنترل‌های Norato از توکن‌های رنگ و focus زرد استفاده می‌کنند.
-- **Disabled / Busy:** `confirmDisabled` و `busy` روی action تأیید اثر می‌گذارند؛ هنگام busy، تأیید قفل و بستن بیرونی/Escape غیرفعال می‌شود.
+- **Disabled / Busy:** `confirmDisabled` و `busy` روی action تأیید اثر می‌گذارند؛ `busy` در Modal عمومی به `aria-busy` می‌رسد و در Dialog، تأیید قفل و بستن بیرونی/Escape غیرفعال می‌شود.
 - **Dismissible:** با `dismissible=false` Escape و کلیک بیرون پنجره آن را نمی‌بندند؛ close button عمومی همچنان عمل مستقل و آشکار است.
 - **Tone:** Dialog از رنگ معنایی موفقیت، هشدار یا خطا برای نشانهٔ وضعیت استفاده می‌کند؛ accent تعاملی زرد می‌ماند.
 
 ## Parts
 
-- **NoratoModal:** `id`, `title`, `description?`, `size`, `dismissible`, `showClose`, `closeLabel`, `role`, `dir`; `v-model:open`; slotهای `default`, `title`, `description`, `footer`.
+- **NoratoModal:** `id`, `title`, `description?`, `size`, `dismissible`, `showClose`, `closeLabel`, `role`, `variant`, `busy`, `dir`; `v-model:open`; slotهای `default`, `title`, `description`, `footer`.
 - **NoratoDialog:** `id`, `title`, `description`, `tone`, `size`, `confirmLabel`, `cancelLabel`, `confirmDisabled`, `busy`, `dismissible`, `dir`; `v-model:open`; eventهای `confirm` و `cancel`.
 - `NoratoDialog` با تأیید، event `confirm` را منتشر می‌کند و پنجره را باز نگه می‌دارد تا میزبان بعد از پایان عملیات، `open` را ببندد؛ این امکان نمایش وضعیت busy را می‌دهد. انصراف `cancel` را منتشر و پنجره را می‌بندد.
 - نقش accessibility برای Modal برابر `dialog` و برای تأیید برابر `alertdialog` است.

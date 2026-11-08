@@ -538,3 +538,9 @@
 - Use a compact floating Popover for the bell presentation and a viewport-bounded side panel for the panel presentation. Group items under day labels without stretching avatar/icon geometry.
 - Unread title, marker and soft surface use Norato yellow tokens. User/system marks stay neutral; do not import another system's accent colors.
 - In RTL the bell badge sits at the upper inline-start corner; headings, groups and actions follow RTL reading order. Preserve 48px controls and use natural text truncation inside bounded rows.
+
+## Modal — dialog and form patterns
+
+- Keep the inert preview in the shared Button-sized dotted glass frame; show the destructive confirmation as the default visual specimen with danger action on the left and cancel on the right in RTL.
+- Dialog surfaces use Norato semantic status colors for tone while interactive focus remains yellow. Keep the overlay behind the dialog and bound long content to the viewport instead of stretching the surface.
+- The page follows Button's structure: static preview, live playground, copyable Vue usage, then the component contract sections.

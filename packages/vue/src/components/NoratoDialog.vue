@@ -43,7 +43,7 @@ function confirm() {
 </script>
 
 <template>
-  <NoratoModal :id="id" v-model:open="open" :title="title" :description="description" :size="size" role="alertdialog" variant="dialog" :dismissible="dismissible && !busy" :show-close="false" :dir="dir">
+  <NoratoModal :id="id" v-model:open="open" :title="title" :description="description" :size="size" role="alertdialog" variant="dialog" :dismissible="dismissible && !busy" :show-close="false" :busy="busy" :dir="dir">
     <div class="norato-dialog__summary">
       <span class="norato-dialog__icon" :data-tone="tone" aria-hidden="true">
         <svg v-if="tone === 'danger'" viewBox="0 0 24 24" focusable="false"><path d="M4.5 7h15M9 7V5.5c0-.6.5-1 1-1h4c.5 0 1 .4 1 1V7m-9 0 1 12h8l1-12M10 11v5m4-5v5" /></svg>
