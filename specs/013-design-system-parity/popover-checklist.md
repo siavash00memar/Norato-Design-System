@@ -18,7 +18,8 @@
 - [x] Form receives initial focus in the email field; sample submission reports local feedback and closes; cancel closes.
 - [x] Actions variant exposes copy and close actions. Copy action was not activated to preserve the user's clipboard.
 - [x] Browser accessibility tree exposes trigger expanded state, dialog name/description, form field and actions.
-- [ ] Check Tab behavior in both modal and non-modal modes, and non-dismissible behavior for outside click and Escape.
+- [x] Default outside click and Escape dismissal close the panel; modal mode also closes with Escape.
+- [ ] Check Tab exit/containment behavior in modal and non-modal modes. This adapter has no `dismissible` option, so the component contract does not require a locked-open state.
 - [ ] Check long-content scrolling, LTR placement, and screen-reader announcements with an independent screen reader.
 
 ## Technical gates

@@ -1576,9 +1576,10 @@
 - [x] Verified all four physical placements (bottom, top, right, left) and their arrow attachment; start/center/end alignment, all three content types, disabled trigger, modal setting, default outside dismissal, Escape dismissal and focus return were exercised in the browser.
 - [x] Verified Actions content and form content. Form focuses the email field and exposes submit/cancel actions; sample submit announces local feedback. Copy action was not activated, so the user's clipboard was not changed.
 - [x] Fixed the playground stylesheet omission by importing `popover-playground.css`; post-fix screenshot confirms the stage, three aligned controls, checkboxes, form field and action buttons use the intended Norato styling.
-- [ ] Exact 390/320 viewport comparison, long content overflow, outside-dismiss/non-dismissible matrix, LTR placement and independent screen-reader review remain open. See `specs/013-design-system-parity/popover-checklist.md`.
+- [x] Rechecked default outside click and Escape dismissal in the browser; both close the panel. Modal Escape behavior was checked in the earlier pass.
+- [ ] Exact 390/320 viewport comparison, long content overflow, modal/non-modal Tab behavior, LTR placement and independent screen-reader review remain open. There is no `dismissible` option in this component contract. See `specs/013-design-system-parity/popover-checklist.md`.
 - [x] Tokens and catalog checks pass; Vue typecheck/build succeeds; forbidden-name scan is clean; `git diff --check` passes with line-ending normalization warnings. Production build retains the known 1,238.40 kB minified JS chunk advisory.
-- [ ] Keep Popover DoD open for the remaining responsive, overflow, dismissibility, LTR and independent screen-reader checks.
+- [ ] Keep Popover DoD open for the remaining responsive, overflow, keyboard, LTR and independent screen-reader checks.
 
 ## Accordion — selected row separation follow-up (2026-11-08)
 
