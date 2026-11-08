@@ -10,7 +10,8 @@
 - [x] Matched 1270×720 desktop screenshots: Button-sized dotted frames are both about 576×288px; the design reference reference Toast is about 366×72px and the Norato static sample is about 368×70px. RTL status icon and close are on the intended sides; static sample follows design reference's default rich success content without action/timer.
 - [x] Matched desktop screenshot review (same design reference/Norato browser tab at 1265×720): both use the shared dotted frame and centered rich success Toast; frame proportions and RTL status/close placement align, with Norato green semantic success and glass surface.
 - [x] Exercised all five tones × two surfaces × two layouts through the real playground; each combination opened and closed, and the generated Vue usage updated to the selected props. One representative rich combination was inspected visually; full per-combination screenshot measurement remains open.
-- [x] RTL order and Dark/Glass contrast use semantic Norato tokens; yellow remains the brand/focus accent. The screenshot confirms status icon at right and close at left. Exact focus-ring measurement remains open.
+- [x] RTL order and Dark/Glass contrast use semantic Norato tokens; yellow remains the brand/focus accent. The screenshot confirms status icon at right and close at left; the playground text field computes to a single yellow border with no outline or shadow.
+- [ ] Exact keyboard focus-ring geometry on the Toast action and close controls remains open.
 - [ ] Desktop and 390/320 CSS-pixel viewports wrap correctly without document overflow. A narrow 484px screenshot is usable and shows no horizontal page overflow; exact 390/320 viewport validation is still pending.
 
 ## Behavior and accessibility
@@ -21,9 +22,10 @@
 - [x] The persistent duration option generated `:duration="0"`; a timed persistence wait was not part of this pass (the earlier 7-second Loading wait remains the verified persistence evidence). The playground was restored to its default 6-second duration and `actionCloses=true` after the callback review.
 - [x] In uncontrolled mode, the playground opens Toast from `defaultOpen`, close emits state back to the playground so it can reopen, and the generated snippet removes `v-model`/the unused `ref` import. The non-closing action emits its callback and leaves Toast open; manual close then closes it.
 - [x] Pointer hover paused the persistent Toast timer (`متوقف`); moving/clicking outside resumed it (`ادامه دارد`). The playground was restored to 6 seconds and the Toast closed.
-- [ ] Single polite/assertive announcement path, tone name, content order, six-second default / persistent policy and reduced motion are verified; independent screen-reader review recorded.
+- [x] Browser DOM contains one populated Reka `role="alert"` live node; Success maps to `aria-live="polite"`, Danger to `"assertive"`, and localized tone, title, description, and action text appear in logical order. The adapter adds no parallel live region. Six-second auto-dismiss and persistent behavior are verified; reduced-motion CSS disables entry/timer motion and reduces the spinner to one near-instant cycle.
+- [ ] Audible announcement quality and reading order with an independent screen reader, plus reduced-motion emulation in the browser, remain unverified.
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass.
-- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, independent screen-reader review and final announcement/reduced-motion audit are outstanding.
+- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, action/close focus-ring measurement, independent screen-reader review and browser reduced-motion emulation are outstanding.
 
