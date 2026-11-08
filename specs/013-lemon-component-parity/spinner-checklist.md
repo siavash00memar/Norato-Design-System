@@ -12,7 +12,8 @@
 - [x] All 45 Spinner combinations render at intrinsic geometry with semantic Norato tones; all four Loader modes and active/inactive behavior are verified.
 - [x] RTL/LTR direction and live status semantics are verified. The system's reduced-motion preference was active in the browser; ring and dots stop animating while remaining visible.
 - [x] Same-viewport desktop screenshot against Lemon was reviewed; the visible arc is about 41px against Lemon's roughly 40px ring and retains Norato yellow.
-- [ ] 390px/320px layout and independent screen-reader review remain unverified.
+- [x] Responsive layout checked at 390px and 320px browser viewport widths: rendered document width stayed within the viewport and the Button-style specimen remained visible and intrinsically sized (343×288 CSS px at 390; 273×288 at 320).
+- [ ] Independent screen-reader review remains unverified.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
 - [x] `docs/request-validation-checklist.md` contains actual browser evidence and remaining gaps.
-- [ ] GitHub checkpoint pushed and local/remote state verified.
+- [x] GitHub checkpoint `6a7cfc3` pushed to `origin/master`; local worktree was clean after push.

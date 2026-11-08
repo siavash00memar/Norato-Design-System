@@ -1356,3 +1356,9 @@
 - [x] Source geometry uses fixed intrinsic sizes for circle/track; legacy `.sample-progress` rules removed.
 - [ ] Full 120-combination matrix (including repeated value states), matched desktop screenshots, RTL/LTR, 390/320 viewports and independent screen-reader review remain open; the attempted full browser loop exceeded its 120-second limit and was stopped at a partial state, which was then reset. Progress DoD stays open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass for the first implementation pass.
+
+## Spinner responsive verification — 2026-11-08
+
+- [x] Local browser at `/#component-spinner`: viewport widths 390px and 320px show the Button-style specimen fully within the page; `documentElement.scrollWidth` and `body.scrollWidth` did not exceed `innerWidth`.
+- [x] Measured specimen geometry remains fixed-height at 288px and shrinks only in width with the containing column (343px at the 390px test setting; 273px at 320px); spinner remains centered and square. The browser’s content width was 375px and 305px respectively because its vertical scrollbar occupies 15px.
+- [ ] Independent screen-reader review remains outstanding for Spinner; browser accessibility tree inspection is not being treated as a substitute.
