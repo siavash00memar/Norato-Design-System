@@ -1,0 +1,40 @@
+.sample-modal-preview { padding: var(--norato-space-3); }
+
+.sample-modal-scene {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: min(100%, var(--norato-modal-specimen-scene-inline-size));
+  min-block-size: var(--norato-modal-specimen-scene-block-size);
+  overflow: hidden;
+  border: var(--norato-border-thin) solid var(--norato-color-glass-line);
+  border-radius: var(--norato-radius-card);
+  background: var(--norato-color-glass-surface-strong);
+  box-shadow: var(--norato-elevation-box);
+}
+
+.sample-modal-scrim { position: absolute; inset: 0; background: var(--norato-color-scrim); backdrop-filter: blur(var(--norato-space-1)); }
+
+.sample-modal-card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  inline-size: min(100%, var(--norato-modal-specimen-card-inline-size));
+  padding: var(--norato-space-4);
+  border: var(--norato-border-thin) solid var(--norato-color-glass-line);
+  border-radius: var(--norato-radius-modal);
+  background: var(--norato-color-glass-surface-strong);
+  box-shadow: var(--norato-elevation-modal);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sample-modal-icon { display: grid; place-items: center; inline-size: calc(var(--norato-icon-md) + var(--norato-space-2)); block-size: calc(var(--norato-icon-md) + var(--norato-space-2)); margin-block-end: var(--norato-space-2); border-radius: 50%; background: var(--norato-color-error-container); color: var(--norato-color-status-error); }
+.sample-modal-icon svg { inline-size: var(--norato-icon-sm); block-size: var(--norato-icon-sm); fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
+.sample-modal-card h3 { margin: 0; color: var(--norato-color-text-primary); font-family: var(--norato-font-heading); font-size: var(--norato-type-body-bold-size); font-weight: var(--norato-type-body-bold-weight); }
+.sample-modal-card p { margin: var(--norato-space-2) 0 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); }
+.sample-modal-card footer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); inline-size: 100%; gap: var(--norato-space-2); margin-block-start: var(--norato-space-4); }
+.sample-modal-card footer > * { min-inline-size: 0; }
+.sample-modal-card footer .norato-button { inline-size: 100%; }
+
+@media (max-width: 480px) { .sample-modal-scene { min-block-size: var(--norato-modal-specimen-scene-mobile-block-size); } .sample-modal-card footer { grid-template-columns: minmax(0, 1fr); } }

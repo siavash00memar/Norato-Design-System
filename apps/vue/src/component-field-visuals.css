@@ -119,9 +119,9 @@
 
 .norato-input-field__input {
   box-sizing: border-box;
-  block-size: var(--norato-control-target-min);
-  min-block-size: var(--norato-control-target-min);
-  margin-block: calc(-1 * var(--norato-space-1));
+  block-size: var(--norato-control-visual-height);
+  min-block-size: var(--norato-control-visual-height);
+  margin-block: 0;
   padding-block: 0;
   font-family: var(--norato-font-body);
 }

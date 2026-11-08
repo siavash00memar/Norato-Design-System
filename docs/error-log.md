@@ -1098,3 +1098,11 @@
 - **Observed:** The inert top preview showed an unnecessary center label and used a 400px rule, while the reference default is a plain subtle line with 320px CSS width.
 - **Correction:** Changed the specimen to the public line variant without a label and reduced its tokenized rule width to 320px; runtime behavior is unchanged.
 - **Verified:** Matched 1280×720, 390×844 and 320×844 viewport measurements and screenshots were compared. The local rule remains 1px thick and responsive with no document overflow at 390/320. The local documentation frame is narrower/shorter than the reference due to its page column; relative line composition is close. Independent screenreader review remains open.
+
+## ERR-136 — ارتفاع واقعی فیلد از ۳۶px عبور می‌کرد
+
+- **مشاهده:** ورودی‌های adapter بعد از تنظیم min-height، به‌خاطر selector قدیمی app روی ۴۸px می‌ماندند و wrapper به ۴۲px می‌رسید؛ بنابراین فرم داخل Modal هم از اندازهٔ توافق‌شده پیروی نمی‌کرد.
+- **علت:** `component-field-visuals.css` ارتفاع و حداقل ارتفاع ورودی را به token هدف تعاملی ۴۸px وصل کرده بود، در حالی که قاب نمایشی ورودی ۳۶px است.
+- **اصلاح:** ارتفاع capsule و خود input به `--norato-control-visual-height` متصل شد؛ selector تداخلی حذفِ رفتاری و منبع اصلی sizeها همسان شد. عنوان فیلد از font token تیتر استفاده می‌کند.
+- **اعتبارسنجی:** در فرم واقعی Modal، ارتفاع input و wrapper هر دو ۳۶px اندازه‌گیری شد؛ label با Estedad وزن ۷۰۰ رندر شد. آزمون همهٔ زیرنوع‌های ورودی پس از این تغییر هنوز باید انجام شود.
+- **قاعدهٔ پیشگیری:** اندازهٔ دیداری کنترل را از token هدف تعاملی جدا نگه دار؛ هر selector app-level روی ورودی مشترک باید کنار selector package بررسی شود.

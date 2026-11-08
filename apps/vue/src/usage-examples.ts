@@ -73,6 +73,7 @@ const expanded = ref(['projects', 'norato'])
 const items: NoratoTreeNode[] = [{ id: 'projects', label: 'پروژه‌ها', children: [{ id: 'norato', label: 'نوراتـو', children: [{ id: 'readme', label: 'README.md' }] }] }]
 </script>
 <template><NoratoTreeView id="projects" v-model="selected" v-model:expanded-ids="expanded" label="پروژه‌ها" :items="items" /></template>`,
+  modal: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoButton, NoratoDialog } from '@norato/vue'\nconst open = ref(false)\nfunction removeProject() { /* حذف پروژه */ open.value = false }\n<\\/script>\n<template>\n  <NoratoButton label="حذف پروژه" variant="destructive" @click="open = true" />\n  <NoratoDialog id="delete-project" v-model:open="open" title="این پروژه حذف شود؟" description="همهٔ فایل‌ها برای همیشه پاک می‌شوند." tone="danger" confirm-label="حذف کن" @confirm="removeProject" />\n</template>`,
   menu: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoMenu, type NoratoMenuItem } from '@norato/vue'

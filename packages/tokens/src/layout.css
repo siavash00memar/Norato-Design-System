@@ -156,6 +156,15 @@
   --norato-stepper-preview-content-inline-size: 416px;
   --norato-divider-preview-rule-inline-size: 320px;
   --norato-accordion-preview-inline-size: 320px;
+  --norato-modal-width-small: 384px;
+  --norato-modal-width-medium: 480px;
+  --norato-modal-width-large: 640px;
+  --norato-modal-max-block-size: 640px;
+  --norato-modal-dialog-width-small: 320px;
+  --norato-modal-specimen-scene-inline-size: 420px;
+  --norato-modal-specimen-scene-block-size: 232px;
+  --norato-modal-specimen-scene-mobile-block-size: 280px;
+  --norato-modal-specimen-card-inline-size: 320px;
   --norato-split-button-preview-frame-inline-size: 640px;
   --norato-toast-inline-size: 368px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;
@@ -250,6 +259,7 @@
   --norato-motion-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 
   --norato-radius-card: 12px;
+  --norato-radius-modal: 20px;
   --norato-radius-control: 25px;
   --norato-radius-pill: var(--norato-radius-observed-50);
   --norato-radius-tag: 6px;
