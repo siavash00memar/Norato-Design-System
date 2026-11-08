@@ -436,3 +436,9 @@
 - Keep Rich's supplemental label noninteractive; actual actions remain in host UI. Use Popover for links/forms/actions.
 - Use Norato inverse/glass and semantic text/elevation/radius tokens; RTL is explicit, and Lemon blue is not imported.
 - **Remaining:** matched screenshots, all 16 variants, keyboard/pointer sequences, 390/320 collision, screen-reader review and repository gates are not yet complete.
+
+## Progress — 2026-11-08
+- Match Lemon's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.
+- Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
+- Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
+- **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.

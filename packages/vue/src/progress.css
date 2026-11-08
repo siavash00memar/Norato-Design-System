@@ -1,0 +1,24 @@
+/* Progress: determinate feedback; the track and ring never become controls. */
+.norato-progress{--progress-tone:var(--norato-color-brand-yellow);display:grid;align-items:center;min-inline-size:0;font-family:var(--norato-font-body);color:var(--norato-color-text-primary)}
+.norato-progress[data-tone=success]{--progress-tone:var(--norato-color-status-success)}
+.norato-progress[data-tone=warning]{--progress-tone:var(--norato-color-status-warning)}
+.norato-progress[data-tone=danger]{--progress-tone:var(--norato-color-status-error)}
+.norato-progress--linear{grid-template-columns:auto minmax(0,1fr) auto;gap:var(--norato-space-3);inline-size:100%}
+.norato-progress__label,.norato-progress__value{font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height);white-space:nowrap}
+.norato-progress__track{grid-column:2;position:relative;display:block;inline-size:100%;block-size:var(--progress-track-size);overflow:hidden;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted)}
+.norato-progress__fill{position:absolute;inset-block:0;inset-inline-start:0;display:block;max-inline-size:100%;border-radius:inherit;background:var(--progress-tone);transition:inline-size var(--norato-motion-duration-enter) var(--norato-motion-ease-out)}
+.norato-progress[data-size=small]{--progress-track-size:var(--norato-progress-linear-small)}
+.norato-progress[data-size=medium]{--progress-track-size:var(--norato-progress-linear-medium)}
+.norato-progress[data-size=large]{--progress-track-size:var(--norato-progress-linear-large)}
+.norato-progress--circular{position:relative;display:grid;place-items:center;inline-size:var(--progress-circle-size);block-size:var(--progress-circle-size);flex:none}
+.norato-progress--circular[data-size=small]{--progress-circle-size:var(--norato-progress-circle-small);--progress-circle-stroke:var(--norato-progress-circle-stroke-small)}
+.norato-progress--circular[data-size=medium]{--progress-circle-size:var(--norato-progress-circle-medium);--progress-circle-stroke:var(--norato-progress-circle-stroke-medium)}
+.norato-progress--circular[data-size=large]{--progress-circle-size:var(--norato-progress-circle-large);--progress-circle-stroke:var(--norato-progress-circle-stroke-large)}
+.norato-progress__ring{display:block;inline-size:100%;block-size:100%;overflow:visible;transform:rotate(-90deg)}
+.norato-progress__ring circle{fill:none;stroke-width:var(--progress-circle-stroke);stroke-linecap:round;vector-effect:non-scaling-stroke}
+.norato-progress__ring-track{stroke:var(--norato-color-surface-muted)}
+.norato-progress__ring-fill{stroke:var(--progress-tone);transition:stroke-dashoffset var(--norato-motion-duration-enter) var(--norato-motion-ease-out)}
+.norato-progress__center-value{position:absolute;font-size:var(--norato-type-body-caption-size);font-weight:var(--norato-type-body-bold-weight);line-height:1}
+.norato-progress__sr-only{position:absolute;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.norato-progress-specimen{inline-size:min(100%,var(--norato-progress-preview-inline-size))}
+@media(prefers-reduced-motion:reduce){.norato-progress__fill,.norato-progress__ring-fill{transition:none}}

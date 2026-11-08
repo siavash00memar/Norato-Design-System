@@ -965,3 +965,9 @@
 - **Observed:** Initial keyboard focus showed the local yellow outline plus the global shadow halo.
 - **Correction:** Reset shadow on the Tooltip trigger's `:focus-visible`, preserving one yellow 2px outline.
 - **Verified:** After the reset, the actual keyboard-focused trigger displayed one clear yellow ring in the local browser.
+
+## ERR-115 — Progress specimen used a legacy single-bar preview (2026-11-08)
+
+- **Observed:** The catalog advertised Progress but the Button-style page rendered a legacy fixed-height bar, so the visual sample and executable component contract did not agree.
+- **Correction:** Removed `.sample-progress` styling and mounted the new determinate `NoratoProgress` specimen; added the Vue playground and semantic size/status tokens.
+- **Verified:** At the local Input/Progress routes, Progress renders as an RTL horizontal bar with a 62% value and yellow fill. Lemon's Progress page confirms right-to-left fill, 4/8/12px linear sizes, and 24/32/40px circular sizes. Desktop-matched screenshots, complete 120-state matrix, 390/320 viewports and independent screen-reader review remain open.

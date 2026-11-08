@@ -1337,3 +1337,12 @@
 - [x] Norato page uses Button-sized dotted preview + inert sample + separate executable playground; at 1270×720 frame geometry is visually comparable. Rich info remains noninteractive; host owns actions.
 - [x] Keyboard focus reveals the tooltip, Escape closes it, and the trigger retains a single 2px yellow focus ring. Trigger description and content are present in the accessibility tree.
 - [ ] Pointer delay, 16-combination render matrix, Popper collision at 390/320, independent screen-reader review and final technical gates remain open.
+
+## Progress implementation pass — 2026-11-08
+
+- [x] Lemon Progress route inspected: linear/circular forms, 4/8/12px bar thicknesses, 24/32/40px rings, right-to-left fill, 12 o'clock start and small-ring label omission recorded.
+- [x] Norato local detail page uses the shared Button-style dotted preview frame and a distinct executable playground; screenshot confirms the 62% linear value and yellow fill from the right.
+- [x] Accessibility tree exposes one `progressbar` named “بارگذاری فایل” with value 62; the adapter clamps numeric input to 0–100, displays Persian percent text, and leaves it non-focusable.
+- [x] Source geometry uses fixed intrinsic sizes for circle/track; legacy `.sample-progress` rules removed.
+- [ ] Matched desktop screenshots, all 120 combinations, values 0/25/50/75/100 in actual browser, RTL/LTR, 390/320 viewports and independent screen-reader review remain open; Progress DoD stays open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass for the first implementation pass.

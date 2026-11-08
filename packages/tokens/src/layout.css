@@ -136,6 +136,16 @@
   --norato-field-group-gap: 8px;
   --norato-message-card-padding: 12px;
   --norato-progress-height: 48px;
+  --norato-progress-linear-small: 4px;
+  --norato-progress-linear-medium: 8px;
+  --norato-progress-linear-large: 12px;
+  --norato-progress-circle-small: 24px;
+  --norato-progress-circle-medium: 32px;
+  --norato-progress-circle-large: 40px;
+  --norato-progress-circle-stroke-small: 3px;
+  --norato-progress-circle-stroke-medium: 4px;
+  --norato-progress-circle-stroke-large: 5px;
+  --norato-progress-preview-inline-size: 320px;
   --norato-space-1: 4px;
   --norato-space-2: 8px;
   --norato-space-3: 12px;
