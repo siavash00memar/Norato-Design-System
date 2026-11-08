@@ -1137,6 +1137,13 @@
 - [x] Token/catalog/typecheck/build/diff gates passed; the JS chunk is 800.06KB and Vite warns above 500KB.
 - [ ] Independent screen-reader review and exhaustive visual combination matrix remain open; maturity stays Adapted.
 
+## Breadcrumbs — glass current item surface (2026-11-09)
+
+- [x] Browser exercised Small sizing, Glass style and Slash separator together. The current-page pill incorrectly used the blue information surface; changed it to a raised neutral glass surface with Norato elevation, preserving the yellow disclosure.
+- [x] Fresh local screenshot confirms the neutral current-page surface and RTL trail.
+- [x] Token, catalog, Vue typecheck, production build and diff checks pass; build still reports the existing large JS chunk advisory.
+- [ ] Full 42-case visual matrix and independent screen-reader review remain open.
+
 ## Pagination — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.

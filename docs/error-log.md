@@ -1200,3 +1200,9 @@
 - **Cause:** The recursive item's focusable root retained its default outline while the child row rendered the component's own focus indicator.
 - **Correction:** Clear outline and shadow on the focused TreeItem root; keep the 2px yellow outline with a 2px tokenized offset on its row.
 - **Verified:** After hot reload, same desktop browser screenshot shows one yellow outline around the focused row and no dark duplicate. Keyboard Home/End/Up/Down/Left/Right, Enter, Space, typeahead, disabled-row skip, folder row selection+toggle and chevron-only expansion were also exercised. Narrow viewport, reduced-motion emulation and independent screen-reader checks remain open.
+
+## ERR-150 — Glass Breadcrumbs current page used the blue information surface (2026-11-09)
+
+- **Observed:** The local Glass + Small + Slash state rendered the current-page pill in the blue information-container color. The selected reference uses a raised neutral surface, and Norato's accent is yellow.
+- **Correction:** Changed the Glass current item to the semantic strong-glass surface and restored Norato elevation; the ellipsis keeps its yellow status surface.
+- **Verified:** Fresh local browser screenshot shows a neutral raised current item, yellow disclosure, and RTL separators. Full 42-case visual matrix and independent screen-reader review remain open.

@@ -22,3 +22,9 @@
 - [x] Inert top specimen uses the same left-pointing separator and a consistent house SVG.
 - [x] Local 1280×720 browser render shows left-pointing separators in the collapsed runtime trail and in the inert specimen; separators are intrinsic 16×16px SVGs and RTL layout is preserved.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass; production build retains its >500KB JavaScript chunk advisory.
+
+## Glass current item surface — 2026-11-09
+
+- [x] Browser review of Glass + Small + Slash found the current-page pill using the blue information container; replaced it with the raised neutral glass surface and Norato elevation.
+- [x] Fresh browser capture confirms the current item is a neutral raised surface while the disclosure remains yellow. The complete style/size/separator/state matrix and independent screen-reader review remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass after the surface correction; Vite retains the existing >500KB JS chunk advisory.
