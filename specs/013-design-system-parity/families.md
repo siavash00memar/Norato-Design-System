@@ -50,7 +50,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Drawer | drawer | Proposed | Pending visual and behavior comparison |
 | [ ] | Popover | popover | Implemented | Dedicated Vue adapter/export, 3 content types × 4 placements, playground, inert specimen, and nine contract sections added. First browser capture found the RTL specimen panel clipped outside its frame; physical centering was corrected and re-captured. Remaining matched desktop/mobile comparison, 12 combinations, focus/dismiss/RTL geometry, independent screen-reader and technical gates are recorded in the request-validation checklist. |
 | [ ] | Image | image | Implemented | Four Vue adapters (Image/Thumbnail/Gallery/Lightbox), Button-style detail page and playground are implemented. Ratios use intrinsic `aspect-ratio` plus `object-fit`; matched browser comparison, all 29 variant checks, lightbox keyboard/focus, 390/320 responsive review and independent screen-reader review remain open in `image-checklist.md`. |
-| [ ] | Carousel | carousel | Proposed | Pending visual and behavior comparison |
+| [ ] | Carousel | carousel | Implemented | Four Vue exports, controlled RTL scrolling, scroll-snap, keyboard arrows, indicator, playground, and Button-style nine-section contract are in place. At the matched 385px local mobile view, partial next-slide visibility, first slide/dot on the right, yellow Norato active dot, intrinsic image ratio, and arrow/ArrowLeft navigation were reviewed against the reference capture. Matched desktop, 320px overflow, full 22-variant matrix, independent screen-reader pass remain open in `carousel-checklist.md`. |
 | [ ] | Chat | chat | Proposed | Pending visual and behavior comparison |
 
 Count excluding Button: 48.

@@ -1,5 +1,12 @@
 /** Copyable, reviewed API examples keyed by the canonical catalog's `usageKey`. */
 export const usageExamples: Readonly<Record<string, string>> = {
+  carousel: `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoCarousel, type NoratoCarouselItem } from '@norato/vue'
+const active = ref(0)
+const items: NoratoCarouselItem[] = [{ id: 'one', title: 'پیشنهاد امروز' }, { id: 'two', title: 'انتخاب دوم' }, { id: 'three', title: 'انتخاب سوم' }]
+<\/script>
+<template><NoratoCarousel id="suggestions" v-model="active" label="پیشنهادها" title="پیشنهادهای امروز" :items="items" size="medium" dir="rtl" /></template>`,
   avatar: `<script setup lang="ts">
 import { NoratoAvatar, NoratoAvatarGroup, NoratoAvatarLabel, NoratoAvatarStatus } from '@norato/vue'
 const team = [

@@ -511,3 +511,12 @@
 
 - Open trigger uses Norato's warning-container fill, distinct from the white expanded content region.
 - Keep every sibling title visible when selection changes; the prior row's panel may close in single mode, but its trigger/title remains.
+
+## Carousel — RTL order and intrinsic media
+
+- First slide and first pagination dot belong on the right in RTL. The next action advances left; ArrowLeft advances and ArrowRight goes back.
+- Show a portion of the adjacent slide. Keep slide media at an intrinsic aspect ratio; never force a shared fixed height that stretches images.
+- Norato's active pagination uses the yellow brand accent. The control remains keyboard reachable with at least a 48px hit target.
+- **Observation:** at 385px, arrow navigation initially scrolled the page vertically and immediate scroll events could reset the active dot.
+- **Correction:** scroll the carousel track to the target slide center and debounce active-index synchronization until scrolling settles.
+- **Validation:** local mobile screenshot showed first slide right-aligned, neighboring slide peeking on the left, and arrow plus ArrowLeft navigation advancing the card and active indicator together.

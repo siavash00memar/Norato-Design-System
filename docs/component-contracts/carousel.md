@@ -1,72 +1,49 @@
 # Carousel — قرارداد کامپوننت نوراتو
 
 **حوزه:** Media & Chat  
-**وضعیت نوراتو:** Proposed  
+**وضعیت Norato:** Implemented؛ تکمیل DOD بصری/رفتاری در جریان است.
 
 ## Preview
-
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بصری و غیرفعال در ابتدای صفحه نمایش داده می‌شود. نمونهٔ Vue تعاملی در بخش آزمایش در دسترس است.
 
 ## Overview
-
-قرارداد طراحی Norato: اسلایدر افقی محتوا با هدر، فلش‌ها و نشانگر نقطه‌ای. هر اسلاید می‌تونه هر کامپوننتی باشه.
+کاروسل افقی با عنوان، کنترل‌های قبلی/بعدی، اسلایدهای قابل سفارشی‌سازی و نشانگر موقعیت. API اجرایی کنترل‌شده است و حرکت خودکار ندارد.
 
 ## Anatomy
-
-- **Header** — عنوان و فلش‌ها
-- **Track** — ردیف اسلایدها
-- **Slide** — هر اسلاید
-- **Indicator** — نقطه‌های صفحه
+- **Header:** عنوان اختیاری، پیوند اختیاری و کنترل‌های پیمایش.
+- **Track:** نوار افقی native با scroll-snap و پشتیبانی RTL.
+- **Slide:** محتوای اسلاید با عنوان/شرح/تصویر یا slot.
+- **Indicator:** نقاط قابل‌دسترسی برای رفتن مستقیم به اسلاید.
 
 ## Variants
-
-- **Carousel (3 variant):** Size: Small، Medium، Large
-- **Carousel Slot (3 variant):** Size: Small، Medium، Large
-- **Carousel Indicator (8 variant):** Tone: Dark، Light؛ Size: Small، Medium؛ Count: 3، 5
-- **Carousel Dot (8 variant):** Tone: Dark، Light؛ Size: Small، Medium؛ Active: false، true
+- **Carousel:** Small، Medium، Large.
+- **Carousel Slot:** Small، Medium، Large.
+- **Carousel Indicator:** Tone Dark/Light × Size Small/Medium × Count 3/5.
+- **Carousel Dot:** Tone Dark/Light × Size Small/Medium × Active false/true.
 
 ## Sizes
-
-- **Carousel:** Small، Medium، Large
-- **Carousel Slot:** Small، Medium، Large
-- **Carousel Indicator:** Small، Medium
-- **Carousel Dot:** Small، Medium
+اندازهٔ اسلایدها به نسبت محتوای دیداری تنظیم می‌شود؛ ارتفاع را تصویر با نسبت ذاتی تعیین می‌کند تا محتوا کش نیاید. نقاط مستقل دو اندازه دارند.
 
 ## States
-
-- در قرارداد فعلی Norato حالت‌های مجزا برای این خانواده مشخص نشده است.
+ابتدایی، فعال، ابتدا/انتها (دکمهٔ بی‌اثر غیرفعال)، پیمایش لمسی/ماوس، focus-visible و کاهش حرکت سیستم.
 
 ## Parts
-
-- **Carousel — 3 variant:** کاروسل کامل. ابعاد/حالت‌ها: Size: Small، Medium، Large
-- **Carousel Slot — 3 variant:** جای یه اسلاید. ابعاد/حالت‌ها: Size: Small، Medium، Large
-- **Carousel Indicator — 8 variant:** نشانگر صفحه. ابعاد/حالت‌ها: Tone: Dark، Light؛ Size: Small، Medium؛ Count: 3، 5
-- **Carousel Dot — 8 variant:** یه نقطه. ابعاد/حالت‌ها: Tone: Dark، Light؛ Size: Small، Medium؛ Active: false، true
+چهار export: `NoratoCarousel`, `NoratoCarouselSlot`, `NoratoCarouselIndicator`, `NoratoCarouselDot`. کامپوننت کامل فهرست دادهٔ اسلاید می‌گیرد و `v-model` شاخص فعال دارد. Slot محتوای دلخواه می‌پذیرد.
 
 ## Usage
-
 ### راهنمای کاربرد Norato
-
-- بخشی از اسلاید بعدی رو نشون بده تا معلوم باشه قابل اسکروله.
-- تعداد اسلایدها رو محدود نگه دار.
-
+- بخشی از اسلاید بعدی را نشان بده تا امکان پیمایش آشکار باشد.
+- تعداد گزینه‌ها را محدود نگه دار و برای رفتن مستقیم نقاط را نمایش بده.
+- محتوا را در ارتفاع طبیعی نگه دار؛ تصویر باید نسبت ذاتی یا `object-fit` داشته باشد.
 ### محدودیت‌های کاربرد
-
-- محتوای مهم رو فقط توی اسلایدهای آخر نذار.
-- اسلاید خودکار سریع نساز.
+- اطلاعات ضروری را فقط در اسلایدهای پایانی نگذار.
+- حرکت خودکار فعال نیست؛ از حرکت غیرضروری و سریع اجتناب می‌شود.
 
 ### جهت RTL
-
-اسلاید اول و نقطه‌ی اول سمت راست.
+اسلاید نخست در سمت راست قرار دارد. ArrowLeft به اسلاید بعدی و ArrowRight به قبلی می‌رود؛ دکمه‌ها نام فارسی قبلی/بعدی می‌گیرند.
 
 ## Accessibility
-
-فلش‌ها برچسب «قبلی» و «بعدی» دارن و حرکت خودکار قابل توقفه.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+ناحیه دارای نام و نقش کاروسل است؛ هر اسلاید شماره/تعداد دارد. دکمه‌ها هدف دسترسی حداقل ۴۸ پیکسل، نام قابل‌فهم، حالت focus-visible و مرز disabled دارند. scroll-snap با ترجیح کاهش حرکت سازگار است.
 
 ## Tokens
-
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+رنگ تأکید از `--norato-color-brand-yellow` می‌آید؛ سطح، مرز، متن، فاصله و حرکت از توکن‌های semantic Norato استفاده می‌کنند.

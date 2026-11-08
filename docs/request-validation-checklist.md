@@ -1555,3 +1555,12 @@
 - [ ] Fresh browser render, matched desktop/mobile comparison, all 29 contract combinations, 390/320 viewport geometry, all gallery/lightbox keyboard and focus transitions, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
 - [x] Fresh Vite browser render confirmed Button-style preview/playground/snippet plus all nine rendered contract sections. Same mobile viewport was used while viewing the design reference and Norato (385×630). Grid/Masonry/Featured render; at 385px Grid is two columns without visible overflow. Default, Loading and Error frames retain their ratio and accessible name. Lightbox opens focused on close, ArrowRight wraps 1→4 in RTL, Escape closes and returns focus. Full matched geometry/cross-product checks remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build pass. Build emits the existing warning that its JavaScript chunk exceeds 500KB; `git diff --check` passes with line-ending normalization warnings only.
+
+## Carousel — implementation checkpoint (2026-11-08)
+
+- [x] Button-style detail route exposes inert visual preview, executable Vue playground, copyable snippet, and all nine contract sections.
+- [x] Four adapter exports, controlled index, RTL previous/next semantics, indicator, and native scroll-snap are present.
+- [x] Browser review at 385px confirmed adjacent-slide peek, first slide/dot at right, Norato yellow active indicator, intrinsic art ratio, next-arrow navigation, and ArrowLeft progression.
+- [x] Fixed page vertical shift and active-indicator race; removed external playground image dependencies.
+- [ ] Matched desktop comparison, 320px overflow, 390px layout, all 22 variants, touch/mouse, LTR, controlled-model and screen-reader review remain open in `specs/013-design-system-parity/carousel-checklist.md`.
+- [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build warns about the >500KB JavaScript chunk.
