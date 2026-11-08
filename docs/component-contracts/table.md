@@ -1,86 +1,98 @@
 # Table — قرارداد کامپوننت نوراتو
 
 **حوزه:** Data Display  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Implemented؛ DoD مرورگری باز است.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+پیش‌نمایش ایستا و غیرفعال، قاب نقطه‌ای مشترک صفحهٔ کامپوننت، نشانگر Default و جدول سه‌ردیفی راست‌چین دارد. ردیف اول انتخاب‌شده است؛ ستون‌های نام، وضعیت و شمارندهٔ پروژه با ارقام فارسی دیده می‌شوند. ابزارهای بالای جدول صرفاً ظاهر دارند و هیچ داده‌ای را تغییر نمی‌دهند.
 
 ## Overview
 
-قرارداد طراحی Norato: جدول کامل با نوار ابزار، ستون‌های آماده، مرتب‌سازی، انتخاب گروهی، ردیف گسترده و صفحه‌بندی. ۱۹ نوع سلول داره.
+`NoratoTable` جدول دادهٔ Vue با ستون‌های قابل مرتب‌سازی، جستجوی اختیاری، انتخاب گروهی، سه تراکم، ردیف جزئیات، وضعیت بارگذاری/خالی/بدون نتیجه و صفحه‌بندی داخلی است. داده، ستون، کلید ردیف و انتخاب کنترل‌شده را برنامهٔ میزبان فراهم می‌کند. جستجو و مرتب‌سازی روی دادهٔ حاضر در همین کامپوننت انجام می‌شوند؛ بارگذاری شبکه، فیلتر سرور و منطق مجوز در اختیار میزبان‌اند.
 
 ## Anatomy
 
-- **Toolbar** — عنوان، تعداد، جستجو و اکشن اصلی
-- **Header Cell** — عنوان ستون با مرتب‌سازی
-- **Select All** — چک‌باکس Indeterminate
-- **Row** — ردیف داده؛ انتخاب‌شده تیره‌تر
-- **Cell** — سلول با نوع محتوا
-- **Footer** — صفحه‌بندی
+- **Toolbar** — عنوان، تعداد نتایج، جستجو، محتوای اقدام و ابزار انتخاب گروهی
+- **Header Cell** — عنوان ستون؛ سرستون مرتب‌پذیر دکمهٔ صفحه‌کلیدی و `aria-sort` دارد
+- **Select All** — انتخاب/لغو ردیف‌های همین صفحه
+- **Row** — دادهٔ اصلی با حالت hover و انتخاب زرد ملایم
+- **Cell** — محتوای typed یا slot قابل‌جایگزینی
+- **Row Detail** — slot اختیاری جزئیات ردیف بازشده
+- **Footer** — محدودهٔ نتایج و ناوبری صفحه
+- **Empty / Loading** — پیام محلی، جستجوی بی‌نتیجه و وضعیت مشغول
 
 ## Variants
 
-- **Table (3 variant):** Size: Compact، Default، Comfortable
-- **Table Column (54 variant):** Type: Checkbox، User، Text، Number، Status، Tags، Progress، Avatar Group، Image، Link، Switch، Button، Input، Select، Expand، Drag، Skeleton، Actions؛ Size: Compact، Default، Comfortable
-- **Table Cell (207 variant):** Type: Text، Number، User، Image، Status، Tags، Avatar Group، Progress، Link، Checkbox، Switch، Button، Actions، Input، Select، Expand، Drag، Skeleton، Empty؛ Size: Compact، Default، Comfortable؛ Align: Start، Center، End؛ State: Default، Hover، Selected
-- **Table Header Cell (54 variant):** Size: Compact، Default، Comfortable؛ Align: Start، Center، End؛ Sort: None، Ascending، Descending؛ State: Default، Hover
-- **Table Toolbar (2 variant):** Type: Default، Bulk Actions
-- **Table Footer (3 variant):** Type: Pagination، Simple، Load More
-- **Table Group Row (6 variant):** Size: Compact، Default، Comfortable؛ Expanded: true، false
-- **Table Row Detail (2 variant):** Style: Default، Inset
-- **Table Empty State (3 variant):** Type: No Data، No Results، Error
+- **Table:** Compact، Default، Comfortable
+- **Table Column:** Checkbox، User، Text، Number، Status، Tags، Progress، Avatar Group، Image، Link، Switch، Button، Input، Select، Expand، Drag، Skeleton، Actions
+- **Table Cell:** Text، Number، User، Image، Status، Tags، Avatar Group، Progress، Link، Checkbox، Switch، Button، Actions، Input، Select، Expand، Drag، Skeleton، Empty
+- **Table Header Cell:** تراز Start/Center/End و وضعیت مرتب‌سازی None/Ascending/Descending
+- **Table Toolbar:** حالت عادی یا انتخاب گروهی؛ slotهای `actions` و `bulk-actions`
+- **Table Footer:** صفحه‌بندی داخلی؛ هنگام یک صفحه پنهان است
+- **Table Row Detail:** جزئیات پیش‌فرض یا slot میزبان
+- **Table Empty State:** No Data یا No Results؛ پیام با slot `empty` قابل تکمیل است
+
+مقادیر `NoratoTableColumn.type` برای `text`, `number`, `user`, `status`, `tags`, `progress`, `link`, `image`, `empty` renderer آماده دارند. انواع تعاملی/ترکیبی (`checkbox`, `avatar-group`, `switch`, `button`, `actions`, `input`, `select`, `expand`, `drag`, `skeleton`) در type عمومی حضور دارند و با slot `cell` یا `cell-{key}` پیاده می‌شوند؛ adapter رفتار دادهٔ محصول را حدس نمی‌زند. مقدار تصویر رشتهٔ URL یا شیء `{ src, alt }` است.
 
 ## Sizes
 
-- **Table:** Compact، Default، Comfortable
-- **Table Column:** Compact، Default، Comfortable
-- **Table Cell:** Compact، Default، Comfortable
-- **Table Header Cell:** Compact، Default، Comfortable
-- **Table Group Row:** Compact، Default، Comfortable
+- **Compact:** ردیف ۴۸px
+- **Default:** ردیف ۵۶px
+- **Comfortable:** ردیف ۶۴px
+- هدف تعاملی انتخاب، sort، باز/بستن جزئیات و صفحه‌بندی حداقل ۴۸px است.
 
 ## States
 
-- **Table Cell:** Default، Hover، Selected
-- **Table Header Cell:** Default، Hover
+- **Default / Hover / Selected** — سطح عادی، hover خنثی و انتخاب‌شده با زرد ملایم
+- **Loading** — `aria-busy` روی viewport جدول و پیام وضعیت؛ تعامل انتخاب/مرتب‌سازی در انتظار دادهٔ جاری بی‌اثر است
+- **Empty** — وقتی داده‌ای وجود ندارد؛ slot `empty` اختیاری
+- **No Results** — پیام مستقل پس از جستجوی بی‌نتیجه
+- **Disabled** — این API وضعیت سراسری disabled ندارد؛ میزبان باید کنترل‌های سلول را با قرارداد همان کنترل غیرفعال کند
 
 ## Parts
 
-- **Table — 3 variant:** جدول کامل. ابعاد/حالت‌ها: Size: Compact، Default، Comfortable
-- **Table Column — 54 variant:** ستون آماده با هدر و ردیف‌ها. ابعاد/حالت‌ها: Type: Checkbox، User، Text، Number، Status، Tags، Progress، Avatar Group، Image، Link، Switch، Button، Input، Select، Expand، Drag، Skeleton، Actions؛ Size: Compact، Default، Comfortable
-- **Table Cell — 207 variant:** سلول با ۱۹ نوع محتوا. ابعاد/حالت‌ها: Type: Text، Number، User، Image، Status، Tags، Avatar Group، Progress، Link، Checkbox، Switch، Button، Actions، Input، Select، Expand، Drag، Skeleton، Empty؛ Size: Compact، Default، Comfortable؛ Align: Start، Center، End؛ State: Default، Hover، Selected
-- **Table Header Cell — 54 variant:** هدر ستون با مرتب‌سازی. ابعاد/حالت‌ها: Size: Compact، Default، Comfortable؛ Align: Start، Center، End؛ Sort: None، Ascending، Descending؛ State: Default، Hover
-- **Table Toolbar — 2 variant:** نوار بالای جدول؛ جستجو، فیلتر و اکشن گروهی. ابعاد/حالت‌ها: Type: Default، Bulk Actions
-- **Table Footer — 3 variant:** فوتر با صفحه‌بندی یا «بیشتر». ابعاد/حالت‌ها: Type: Pagination، Simple، Load More
-- **Table Group Row — 6 variant:** ردیف عنوان گروه. ابعاد/حالت‌ها: Size: Compact، Default، Comfortable؛ Expanded: true، false
-- **Table Row Detail — 2 variant:** جزئیات ردیف بازشده. ابعاد/حالت‌ها: Style: Default، Inset
-- **Table Empty State — 3 variant:** حالت خالی جدول. ابعاد/حالت‌ها: Type: No Data، No Results، Error
+- **Selection:** `selectable`, `v-model` و `update:modelValue`; انتخاب سرستون محدود به ردیف‌های قابل‌مشاهدهٔ صفحه است.
+- **Sorting:** `sortable` روی ستون؛ چرخهٔ None → Ascending → Descending → None و رویداد `sort`.
+- **Search:** `searchable`, `searchPlaceholder`; جستجو در رشته‌های قابل‌نمایش داده و بازگشت به صفحهٔ اول.
+- **Pagination:** `pageSize` و `page`; رویداد `update:page`; مقدار page در صورت عدم اتصال کنترل‌نشده است.
+- **Expand:** `expandable` و slot `row-detail`.
+- **Cell extension:** slotهای `cell`، `cell-{columnKey}`؛ slot خاص ستون بر slot عمومی تقدم دارد.
+- **Toolbar extension:** slotهای `actions` و `bulk-actions`؛ slot دوم `selected-keys` و تابع `clear` دریافت می‌کند.
+- **RTL:** ستون اول در سمت راست و ترتیب منطقی header/cell در `dir="rtl"` است. مقدار نوع Number از نظر نوشتاری LTR و در سمت چپ ستون تراز می‌شود.
+- **Responsive:** در عرض باریک، هر ردیف به کارت‌های عمودی با برچسب هر سلول تبدیل می‌شود؛ اسکرول افقی صفحه ایجاد نمی‌شود.
 
 ## Usage
 
-### راهنمای کاربرد Norato
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoTable, type NoratoTableColumn, type NoratoTableRow } from '@norato/vue'
 
-- اعداد رو سمت چپ ستون و با ارقام هم‌عرض تراز کن.
-- ستون اول رو مهم‌ترین شناسه بذار (اسم، عنوان).
+const selected = ref<Array<string | number>>([])
+const columns: NoratoTableColumn[] = [
+  { key: 'name', label: 'نام', type: 'user', sortable: true },
+  { key: 'status', label: 'وضعیت', type: 'status', sortable: true },
+  { key: 'projects', label: 'پروژه', type: 'number', sortable: true },
+]
+const rows: NoratoTableRow[] = [{ id: 'sara', name: { name: 'سارا محمدی', description: 'طراح محصول' }, status: 'فعال', projects: 12 }]
+</script>
 
-### محدودیت‌های کاربرد
+<template>
+  <NoratoTable id="team" label="اعضای تیم" :columns="columns" :rows="rows" row-key="id" v-model="selected" selectable searchable :page-size="10" />
+</template>
+```
 
-- ستون‌های زیاد رو در موبایل نشون نده؛ به لیست تبدیلش کن.
-- بدون حالت خالی و بارگذاری طراحی نکن.
-
-### جهت RTL
-
-ستون اول سمت راسته؛ اعداد سمت چپ ستون تراز میشن.
+`NoratoTableColumn` شامل `key`, `label`, `type`, `align`, `sortable`, `width` است. برای دادهٔ تصویری، اقدام‌ها و ورودی‌های خاص از slot استفاده کن تا تعامل و داده در اختیار برنامهٔ میزبان بماند.
 
 ## Accessibility
 
-هدر ستون‌ها نقش columnheader و وضعیت مرتب‌سازی (aria-sort) دارن.
+ساختار بومی `table`, `thead`, `tbody`, `th scope="col"` استفاده می‌شود. مرتب‌سازی از دکمهٔ واقعی و `aria-sort`، انتخاب از checkbox بومی، جستجو از label پنهان، صفحه‌بندی از نام فارسی و دادهٔ جاری از `aria-busy`/`role="status"` پشتیبانی می‌شود. همهٔ کنترل‌های مستقیم هدف حداقل ۴۸px و focus ring زرد ۲px دارند. وضعیت selection فقط با رنگ منتقل نمی‌شود و checkbox آن را هم اعلام می‌کند.
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+کنترل‌های صفحه‌کلیدی حلقهٔ قابل‌دیدن توکن‌شده دارند؛ focus فیلد جستجو یک stroke زرد دارد و outline دوم رسم نمی‌کند.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های معنایی Norato:** `--norato-color-surface-default`, `--norato-color-surface-subtle`, `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-brand-yellow`, `--norato-color-border-default`, `--norato-color-focus-ring` و توکن‌های فاصله، اندازه و شعاع مشترک. آبی به‌عنوان accent تعاملی در Table استفاده نمی‌شود.
