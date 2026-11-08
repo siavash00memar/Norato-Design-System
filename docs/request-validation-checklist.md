@@ -1568,7 +1568,9 @@
 - [x] Browser accessibility tree reports expanded/collapsed state, named content regions and disabled triggers. No vertical stretching appeared in the reviewed desktop sample.
 - [x] Follow-up keyboard pass: Tab moved focus to the next trigger with a visible yellow 2px ring; ArrowUp, Space and End worked. Closed custom-content panels removed their nested action from the accessibility tree.
 - [x] Playground size control applied Small, Large and XLarge and synchronized the usage snippet; the XLarge live row grew naturally without filling/stretching the preview.
-- [ ] 320/390px geometry, complete size/style matrix, `collapsible=false`, LTR direction, reduced-motion rendering and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
+- [x] At 390px, document width stays 390px; sample frame is 358.4×288px and live accordion 320×190.4px. At 320px, document width stays 320px; frame is 288×288px, accordion 254.4px wide, trigger 52px high and expanded panel ~252.8×50.4px. RTL text wraps naturally with no vertical stretch or page overflow.
+- [x] Matched 390px reference capture measured 342.4×300px frame and 337.8px inner accordion. At 320px, reference frame measured 272×300px and reference document overflowed to 326px; Norato stayed at 320px. Frame difference follows Norato's shared Button specimen and available docs column.
+- [ ] Complete size/style matrix, `collapsible=false`, LTR direction, reduced-motion rendering and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
 
 ## Image — implementation checkpoint (2026-11-08)
 

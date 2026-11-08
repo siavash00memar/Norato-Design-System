@@ -22,10 +22,12 @@
 - [x] Separated + card row options update the live preview; selection is exposed through the custom listbox, not a native browser dropdown.
 - [x] Size selector applied Small, Large and XLarge; selected size was reflected in the generated Vue snippet. The XLarge live row grew naturally and did not stretch to fill the preview. Medium was the initial value.
 - [x] Desktop screenshot shows intrinsic row/content height and no vertical stretching in grouped/separated samples.
-- [ ] Verify 320px and 390px viewport geometry, horizontal overflow and narrow-screen wrapping.
+- [x] At 390px content width, document width remains 390px with no horizontal overflow; the shared sample frame measures 358.4×288px and the accordion 320px wide. The open live playground measures 320×190.4px with naturally sized rows.
+- [x] At 320px content width, document width remains 320px with no horizontal overflow; sample frame measures 288×288px, live playground frame 288×243.2px, accordion 254.4px wide. Expanded content measures about 252.8×50.4px and triggers 52px high; Persian content wraps without stretching.
+- [x] Matched reference comparison at 390px: reference frame 342.4×300px with accordion 337.8×179.3px. At 320px reference frame is 272×300px but its document has 6px overflow from navigation/tools; Norato remains within viewport. Norato's shared Button frame and narrower documentation column account for the frame difference; row content stays compact.
 - [ ] Compare Small, Medium, Large and XLarge trigger geometry and complete layout × row-style × size × expansion × state combinations.
 - [x] Keyboard focus on a live trigger visibly shows the yellow 2px ring; Space activation, ArrowUp and End pass.
-- [ ] Verify `collapsible=false`, LTR direction and reduced-motion rendering.
+- [ ] Verify `collapsible=false`, LTR direction and reduced-motion rendering in the browser.
 - [ ] Verify focus remains within expected tab order for closed panels and inspect actual panel `aria-labelledby`/`aria-controls` relations beyond the accessibility tree labels.
 - [ ] Independent screen-reader review.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.
