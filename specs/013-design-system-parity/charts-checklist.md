@@ -22,4 +22,4 @@
 ## Delivery
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after the latest mobile-axis correction.
 - [x] Browser evidence, error log and remaining limitations recorded.
-- [ ] Verified commit pushed and remote sync confirmed.
+- [x] Checkpoint commit `c9b2344` pushed to `origin/master`; `git ls-remote` matched `HEAD` at verification time.

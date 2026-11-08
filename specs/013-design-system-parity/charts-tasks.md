@@ -18,4 +18,4 @@
 - [x] Add playground for 14 variants, direction, keyboard/focus and responsive review.
 - [x] Wire index, example, catalog, contract and Figma rules without marking DoD complete prematurely.
 - [x] Run required engineering gates; browser-check design reference parity, all variants, RTL/LTR and responsive widths.
-- [ ] Record final results/defects, commit, push, and verify remote revision.
+- [x] Record final results/defects, commit `c9b2344`, push, and verify remote revision against `origin/master`.

@@ -1521,4 +1521,4 @@
 - [x] At 390×844, document width is 375px and plot geometry is 309×145px with no internal overflow. At 320×844, document width is 305px; the 280×131px plot preserves its ratio and scrolls internally. The LTR viewport keeps the numeric axis visible; document width remains bounded.
 - [x] Corrected the mobile plot wrapper's inherited RTL direction after the first 320px render clipped the left numeric axis; explicit `dir="ltr"` is now on the SVG viewport.
 - [ ] Browser accessibility tree is reviewed; independent screen-reader review remains open.
-- [x] Final `pnpm check:tokens`, `pnpm check:catalog`, `pnpm test:charts` (7/7), Vue typecheck/build, and `git diff --check` passed after the latest markup change. Build output is 1,096.07KB and retains the >500KB advisory; record commit and remote sync after delivery.
+- [x] Final `pnpm check:tokens`, `pnpm check:catalog`, `pnpm test:charts` (7/7), Vue typecheck/build, and `git diff --check` passed after the latest markup change. Build output is 1,096.07KB and retains the >500KB advisory. Checkpoint `c9b2344` was pushed and matched `origin/master` on verification.
