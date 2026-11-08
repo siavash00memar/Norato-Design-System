@@ -4,7 +4,7 @@
 
 ## Summary
 
-Implement all seven Jalali selection modes documented by Lemon as one Vue 3 Date Picker adapter, while retaining Norato's tokens and component-page structure. The closed field follows the Figma/Norato contract; the open calendar follows Lemon's composition and Material keyboard/accessibility conventions.
+Implement all seven Jalali selection modes documented by design reference as one Vue 3 Date Picker adapter, while retaining Norato's tokens and component-page structure. The closed field follows the Figma/Norato contract; the open calendar follows design reference's composition and Material keyboard/accessibility conventions.
 
 ## Technical Context
 
@@ -12,7 +12,7 @@ TypeScript, Vue 3, and `@internationalized/date` PersianCalendar for calendar ca
 
 ## Constitution Check
 
-PASS — current active goal supersedes the historical single-date constraint and requires Lemon parity; absent holiday authority is handled through caller-supplied data, and local wall-clock date-time semantics are recorded in Specify.
+PASS — current active goal supersedes the historical single-date constraint and requires design reference parity; absent holiday authority is handled through caller-supplied data, and local wall-clock date-time semantics are recorded in Specify.
 
 ## Structure
 

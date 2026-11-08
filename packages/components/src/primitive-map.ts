@@ -8,6 +8,7 @@ export type PrimitiveDecision = {
  * This is a decision ledger, not a second component inventory or runtime status source.
  */
 export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
+  charts: { candidate: 'Native SVG + semantic HTML data table', decision: 'Use native SVG for six static chart shapes because the documented family is small and the package has no chart engine. Preserve category/series order, hide decorative marks from the accessibility tree, expose the exact values through an expandable HTML table, and use tokens for Norato series and geometry.' },
   divider: { candidate: 'Reka UI Separator', decision: 'Use the installed Separator primitive for role, orientation and decorative semantics. Keep visual rule segments, label placement, spacing and Norato-neutral tones in the adapter.' },
   spinner: { candidate: 'Native Vue status wrapper + custom SVG/CSS animation', decision: 'No Reka loading-indicator primitive is installed; the visual ring, dots and 45% Norato arc are noninteractive. Keep `NoratoSpinner` decorative and let `NoratoLoader` provide the single polite status announcement and inline/refresh/overlay/page placement.' },
   progress: { candidate: 'Installed Reka ProgressRoot + ProgressIndicator', decision: 'Use Reka for progressbar semantics and accurate current/max values; keep Norato responsible for linear/circular geometry, right-to-left linear fill, twelve o’clock SVG start, tone and size tokens.' },

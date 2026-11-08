@@ -1,0 +1,12 @@
+# Toast — Clarify
+
+All material API and interaction decisions are resolved from the current design reference reference, Norato RTL/token rules, the user instruction to choose sensible defaults, and the installed Reka UI API.
+
+- **Primitive:** use Reka UI's Vue `ToastProvider`, `ToastRoot`, `ToastTitle`, `ToastDescription`, `ToastAction`, `ToastClose` and `ToastViewport`. The installed package already exports these and supplies announcer, timer, keyboard viewport navigation and swipe handling. This is preferable to hand-written live-region/timer infrastructure; shadcn-vue has no separately installed Toast implementation in this workspace.
+- **Default duration:** 6000ms, exceeding Reka's 5000ms default so a short Persian message has additional reading time. `duration=0` is persistent. Reka pauses its countdown during pointer/focus interaction. Loading status uses duration 0 regardless of the supplied duration and remains until closed by the host/user.
+- **Accessibility type:** danger is `foreground` to announce assertively; all other tones, including loading, are `background`/polite. Use Reka's announcement path once; don't add a duplicate live region.
+- **Default visual props:** `style=dark`, `layout=simple`, `tone=neutral`. `style=glass` uses Norato glass surface, line and elevation; Dark uses Norato inverse surface/text tokens. Five semantic tones stay distinguishable via icon and localized tone name; Norato yellow remains the brand/focus accent.
+- **Controlled mode:** optional `modelValue`; absent means internal state. Close, timeout and action-close emit `update:modelValue(false)` plus `close`; action emits `action` and closes by default, with `actionCloses=false` to keep it open when the host needs that behavior. This maintains an explicit reversible, documented contract.
+- **Content:** title is required. Rich layout renders description only when supplied. Action is opt-in and emits without route/navigation. Dismiss is opt-in and defaults true, matching design reference's close control; `dismissible=false` removes it.
+- **Timer bar:** fill reflects remaining time and pauses with the Reka timer; persistent/loading toast has no draining animation. Respect `prefers-reduced-motion` by stopping decorative transitions while preserving state feedback.
+- **Layout/placement:** standalone adapter renders one toast, not a queue manager. It includes a localized viewport label and F8 shortcut through the provider viewport. App-level queues/placement remain host responsibilities, so the sample does not stack multiple Toasts.

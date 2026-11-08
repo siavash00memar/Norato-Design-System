@@ -1,9 +1,9 @@
 # Divider — Clarify
 
 ## Evidence
-- Lemon page `https://lemonui.ir/#divider` was opened and inspected at desktop size. It documents 12 variants, 1px line, horizontal/vertical orientation, three types, three spacing values and two tones. Its Default preview is one subtle horizontal line inside the shared dotted specimen frame.
+- design reference page `design reference was opened and inspected at desktop size. It documents 12 variants, 1px line, horizontal/vertical orientation, three types, three spacing values and two tones. Its Default preview is one subtle horizontal line inside the shared dotted specimen frame.
 - The variant count is 2 orientations × 3 types × 2 tones = 12; spacing (0/4/8) is a separate prop. This resolves the contract's apparent arithmetic ambiguity.
-- Lemon accessibility text says the Divider is decorative unless it begins a section. Norato exposes this as an explicit `decorative` prop, defaulting to true.
+- design reference accessibility text says the Divider is decorative unless it begins a section. Norato exposes this as an explicit `decorative` prop, defaulting to true.
 - Repository policy requires Norato yellow/blue palette ownership and Vue 3; the divider itself uses only neutral semantic border tokens.
 - `reka-ui@2.11.0` is installed and includes a Separator primitive; use it for separator semantics rather than a generic hand-rolled role.
 

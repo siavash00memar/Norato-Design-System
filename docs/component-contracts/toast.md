@@ -42,16 +42,16 @@
 
 ## Tokens
 
-از توکن‌های معنایی Norato برای سطح dark/glass، متن، وضعیت، فاصله، شعاع، elevation، زمان و focus استفاده شود؛ آبی Lemon وارد پالت نشود و زرد، accent تعاملی بماند.
+از توکن‌های معنایی Norato برای سطح dark/glass، متن، وضعیت، فاصله، شعاع، elevation، زمان و focus استفاده شود؛ آبی مرجع طراحی وارد پالت نشود و زرد، accent تعاملی بماند.
 
 ## DoD
 
-در مرورگر هم‌اندازهٔ ۱۲۶۵×۷۲۰، قاب و ترکیب Rich Success با Lemon مقایسه شد. هر ۲۰ انتخاب tone/surface/layout از playground باز و بسته شدند. Toast شش‌ثانیه‌ای خودکار بسته شد؛ Loading پس از ۷ ثانیه پایدار ماند و با close دستی بسته شد. Action و close با Space فعال شدند. عرض باریک ۴۸۴px نیز بدون سرریز افقی دیده شد.
+در مرورگر هم‌اندازهٔ ۱۲۶۵×۷۲۰، قاب و ترکیب Rich Success با مرجع طراحی مقایسه شد. هر ۲۰ انتخاب tone/surface/layout از playground باز و بسته شدند. Toast شش‌ثانیه‌ای خودکار بسته شد؛ Loading پس از ۷ ثانیه پایدار ماند و با close دستی بسته شد. Action و close با Space فعال شدند. عرض باریک ۴۸۴px نیز بدون سرریز افقی دیده شد.
 
 موارد باز: بررسی CSS viewport دقیق ۳۹۰/۳۲۰، screenshot و هندسهٔ جداگانهٔ همهٔ ۲۰ حالت، pause/resume، دسترسی طبیعی Tab و اندازه‌گیری focus ring، mode کنترل‌نشده و callback اکشن در consumer واقعی، بررسی مستقل screen reader، و گیت‌های فنی نهایی این checkpoint. تا تکمیل این موارد، DoD بسته نیست.
 ## Sizes
 
-سایز مستقل در ماتریس Lemon برای Toast تعریف نشده؛ عرض از `--norato-toast-inline-size` محدود است و در viewport باریک به عرض قابل‌استفاده shrink می‌شود. target اقدام‌ها حداقل ۴۸px است.
+سایز مستقل در ماتریس مرجع طراحی برای Toast تعریف نشده؛ عرض از `--norato-toast-inline-size` محدود است و در viewport باریک به عرض قابل‌استفاده shrink می‌شود. target اقدام‌ها حداقل ۴۸px است.
 
 ## Parts
 

@@ -82,4 +82,4 @@ NavigationMenu نقش navigation، مدیریت focus و پیمایش صفحه�
 
 ## Tokens
 
-Surface، border، متن، برند، focus، شعاع، سایه و فاصله از توکن‌های semantic/layout Norato مصرف می‌شوند. نسبت قاب، عرض drawer/مگامنو و گرید preview توکن component-specific دارند. Lemon فقط منبع composition است؛ رنگ انتخاب و برند همان Norato می‌ماند.
+Surface، border، متن، برند، focus، شعاع، سایه و فاصله از توکن‌های semantic/layout Norato مصرف می‌شوند. نسبت قاب، عرض drawer/مگامنو و گرید preview توکن component-specific دارند. مرجع طراحی فقط منبع composition است؛ رنگ انتخاب و برند همان Norato می‌ماند.

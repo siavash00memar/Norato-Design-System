@@ -40,7 +40,7 @@ If the repository is unavailable, do not present a stale copy of the catalog or 
 - Preserve keyboard operation, visible focus, disabled/loading/error semantics, reduced motion, and responsive behavior as relevant to the selected component.
 - Prefer an existing documented adapter or evaluated Reka/shadcn primitive over a new custom control. Keep the API aligned to Vue 3.
 - Preserve the component's documented DOM proportions. Do not stretch fixed-ratio icons, controls, or artwork to fill a layout; use intrinsic sizing, `object-fit`, and appropriate min/max constraints.
-- Use Lemon only as the requested visual composition/pattern reference; retain Norato's own semantic palette, tokens, typography, and documented behavior.
+- Use design reference only as the requested visual composition/pattern reference; retain Norato's own semantic palette, tokens, typography, and documented behavior.
 
 ## Vue usage
 

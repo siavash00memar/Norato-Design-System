@@ -1,3 +1,0 @@
-# Sidebar Analyze
-
-Lemon live page shows six parts and 42 variants: Sidebar 4; Item 20; Sub Item 8; Section Title 2; Header 4; Footer 4. Active marker is 3px at the right edge; collapsed items expose labels by tooltip; max two submenu levels; focus ring 2px outside; Glass/Bar and expanded/collapsed. Existing Norato contract covers these axes but catalog says no adapter and ComponentSpecimen uses hard-coded `.sample-sidebar`. Reka Dialog is already installed through Navbar. A dedicated controlled adapter improves real reuse; custom collapse/groups stay small and use native buttons/anchors. Exact narrow viewport browser control and independent screen-reader access may remain open limitations.

@@ -1,6 +1,6 @@
 # Tasks
 
-- [x] Constitution: preserve RTL, Norato tokens, Lemon proportions, label/placeholder typography, 36px visual shell and 48px target.
+- [x] Constitution: preserve RTL, Norato tokens, design reference proportions, label/placeholder typography, 36px visual shell and 48px target.
 - [x] Specify: record generic helper removal while preserving optional API and state messages.
 - [x] Clarify: settle that 36px is the visible capsule, not the pointer/keyboard target.
 - [x] Plan: define source audit, demo cleanup, live browser review and technical checks.

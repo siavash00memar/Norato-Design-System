@@ -25,7 +25,7 @@ Breadcrumbs مسیر صفحه از ریشه تا صفحهٔ فعلی را نشا
 - **Breadcrumb Separator (6 variant):** Size: Small، Medium، Large؛ Type: Chevron، Slash.
 - **Breadcrumb Ellipsis (6 variant):** Size: Small، Medium، Large؛ State: Default، Hover.
 
-ماتریس بالا قرارداد بصری Lemon است؛ adapter Norato style، size، separator و collapsed را دارد. حالت hover/focus از CSS و رفتار مرورگر/دکمه می‌آید.
+ماتریس بالا قرارداد بصری مرجع طراحی است؛ adapter Norato style، size، separator و collapsed را دارد. حالت hover/focus از CSS و رفتار مرورگر/دکمه می‌آید.
 
 ## Sizes
 

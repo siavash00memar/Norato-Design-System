@@ -7,7 +7,7 @@
 نمونهٔ بصری inert و محدود به قاب مستقل در ابتدای صفحه؛ playground اجرایی و مثال Vue جدا هستند.
 
 ## Overview
-ناوبری کناری راست‌چین با هدر، بخش‌ها، پیوندهای آیکن‌دار، شمارنده، زیرپیوند و فوتر. Glass/Bar و expanded/collapsed. Lemon مرجع ترکیب است؛ رنگ و توکن‌ها از Norato می‌آیند.
+ناوبری کناری راست‌چین با هدر، بخش‌ها، پیوندهای آیکن‌دار، شمارنده، زیرپیوند و فوتر. Glass/Bar و expanded/collapsed. مرجع طراحی مرجع ترکیب است؛ رنگ و توکن‌ها از Norato می‌آیند.
 
 ## Anatomy
 - Header: برند و slot فضای کاری
@@ -25,7 +25,7 @@
 - Section Title: Collapsed false/true (۲)
 - Header: Type Brand/Workspace × Collapsed false/true (۴)
 - Footer: Type User/Card × Collapsed false/true (۴)
-- مرجع Lemon مجموعاً ۴۲ حالت را در ۶ جزء ثبت می‌کند. Adapter فعلی زیرمجموعهٔ اجرایی اصلی را پوشش می‌دهد؛ ماتریس کامل هنوز DoD باز است.
+- مرجع مرجع طراحی مجموعاً ۴۲ حالت را در ۶ جزء ثبت می‌کند. Adapter فعلی زیرمجموعهٔ اجرایی اصلی را پوشش می‌دهد؛ ماتریس کامل هنوز DoD باز است.
 
 ## Parts
 

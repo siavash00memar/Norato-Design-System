@@ -56,8 +56,8 @@ Tooltip با Reka به trigger توصیف‌شده متصل است؛ hover و ke
 
 ## Tokens
 
-`--norato-tooltip-max-inline-size`، `--norato-layer-tooltip`، `--norato-color-surface-code`، `--norato-color-text-on-code`، سطح شیشه‌ای و Stroke شیشه‌ای، `--norato-radius-control`، `--norato-elevation-new`، spacing و focus زرد Norato. آبی Lemon استفاده نشود.
+`--norato-tooltip-max-inline-size`، `--norato-layer-tooltip`، `--norato-color-surface-code`، `--norato-color-text-on-code`، سطح شیشه‌ای و Stroke شیشه‌ای، `--norato-radius-control`، `--norato-elevation-new`، spacing و focus زرد Norato. آبی مرجع طراحی استفاده نشود.
 
 ## DoD
 
-در مرورگر با viewport برابر ۱۲۶۵×۷۲۰، ترکیب ۱۶ حالته، RTL، جهت فلش، عدم کشیدگی/برش، focus کیبورد، Escape و نمایش ۳۲۰/۳۹۰ پیکسلی بررسی شد. Rich Top و Rich Right در فضای ناکافی به‌ترتیب به Bottom و Left flip شدند. عرض کارت مرجع Lemon حدود ۶۲۸ پیکسل و Norato حدود ۵۷۸ پیکسل است و این اختلاف ثبت شده است. هاور پایدار با ابزار مرورگر و بازبینی مستقل صفحه‌خوان هنوز شواهد ندارند؛ DoD تا تکمیل هر دو باز می‌ماند.
+در مرورگر با viewport برابر ۱۲۶۵×۷۲۰، ترکیب ۱۶ حالته، RTL، جهت فلش، عدم کشیدگی/برش، focus کیبورد، Escape و نمایش ۳۲۰/۳۹۰ پیکسلی بررسی شد. Rich Top و Rich Right در فضای ناکافی به‌ترتیب به Bottom و Left flip شدند. عرض کارت مرجع مرجع طراحی حدود ۶۲۸ پیکسل و Norato حدود ۵۷۸ پیکسل است و این اختلاف ثبت شده است. هاور پایدار با ابزار مرورگر و بازبینی مستقل صفحه‌خوان هنوز شواهد ندارند؛ DoD تا تکمیل هر دو باز می‌ماند.

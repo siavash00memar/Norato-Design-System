@@ -48,5 +48,13 @@
   --norato-color-status-error: #c72038;
   --norato-color-status-info: #134f89;
   --norato-color-status-neutral: #6b6b6b;
+  --norato-color-chart-series-1: #fdc101;
+  --norato-color-chart-series-2: #134f89;
+  --norato-color-chart-series-3: #58cc02;
+  --norato-color-chart-series-4: #8b5cf6;
+  --norato-color-chart-series-5: #e65b4f;
+  --norato-color-chart-series-6: #159f9a;
+  --norato-color-chart-series-7: #b7791f;
+  --norato-color-chart-series-8: #6474d8;
   --norato-color-scrim: rgba(26, 26, 26, 0.48);
 }

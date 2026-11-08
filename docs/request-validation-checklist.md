@@ -1,8 +1,17 @@
 # Norato Request Validation Checklist
 
+## ناوبری فهرست کامپوننت‌ها — 2026-11-08
+
+- [x] از Charts به Avatar رفتیم: URL به `#component-avatar` تغییر کرد، عنوان صفحه Avatar شد و فقط یک مورد در فهرست کناری `aria-current="page"` داشت.
+- [x] مورد فعال رنگ زرد Norato گرفت؛ برای Avatar فهرست کناری به‌صورت داخلی پیمایش شد (scrollTop از 0 به 1887)، بدون حرکت دادن ناحیهٔ سند.
+- [x] Back مرورگر URL و وضعیت فعال را به Charts برگرداند. اپ shell و محتوای Charts در همان صفحه باقی ماندند.
+- [x] بارگذاری مستقیم `#component-accordion` همان کامپوننت را فعال کرد و داخل محدودهٔ قابل‌دید فهرست قرار داد؛ Forward مرورگر هم Avatar و نشان فعال آن را بازیابی کرد.
+- [x] با Enter روی Charts، مسیر و انتخاب فعال تغییر کرد؛ حلقهٔ فوکوس صفحه‌کلید قابل مشاهده بود. کنسول مرورگر خطای تازه‌ای نداشت.
+- [x] `pnpm check:tokens`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` گذشتند. Build فقط هشدار اندازهٔ bundle بزرگ‌تر از ۵۰۰KB را گزارش کرد.
+
 ## Skeleton browser review — 2026-11-08
 
-- [x] Compared Lemon and Norato at 1265×720. The Norato page uses the Button-style dotted frame and preserves the avatar/text silhouette with Norato's neutral palette.
+- [x] Compared design reference and Norato at 1265×720. The Norato page uses the Button-style dotted frame and preserves the avatar/text silhouette with Norato's neutral palette.
 - [x] Actual Vue page exposes base/pattern, effect, and direction controls; selecting Shimmer updates the generated code example.
 - [x] Exercised all 24 shape/pattern-effect combinations in the live playground; measured intrinsic shape dimensions and pattern blocks with no vertical stretching.
 - [x] Found and fixed a CSS direction override. Browser measurements now show RTL avatar at inline-end and LTR avatar at inline-start; generated code keeps the selected `dir`.
@@ -13,7 +22,7 @@
 
 ## Banner desktop/mobile and keyboard follow-up — 2026-11-08
 
-- [x] Lemon/Norato same-viewport desktop review at 1265×720. Norato's inert default now uses a one-line announcement and no extra vertical padding; the action keeps its minimum 48px target.
+- [x] design reference/Norato same-viewport desktop review at 1265×720. Norato's inert default now uses a one-line announcement and no extra vertical padding; the action keeps its minimum 48px target.
 - [x] All six desktop tone visuals inspected; Mobile Neutral inspected at 390px and 320px. Five Mobile tone combinations and exact document overflow measurement remain open.
 - [x] RTL icon/message/action/close order, semantic tone palette and dark Inverse + yellow accent reviewed.
 - [x] Action feedback has no navigation; controlled and uncontrolled dismiss/restore work. Space activates both action and close; keyboard focus shows the yellow ring.
@@ -22,7 +31,7 @@
 ## Spinner browser review — 2026-11-08
 
 - [x] Fresh local render at `/#component-spinner` shows the component status as Adapted, a separate live playground with type/tone/size controls, copyable Vue usage, and all nine Button-order contract sections. Browser accessibility tree exposes all sections and names the playground controls; this is not treated as an independent screen-reader pass.
-- [x] At 1265×720, the inert Spinner preview is a centered Norato-yellow Ring in the 576×288px Button-style dotted frame; same-viewport Lemon review showed a 40px dark Ring, so Norato uses its 48px token (about 41px visible arc) with the approved yellow palette.
+- [x] At 1265×720, the inert Spinner preview is a centered Norato-yellow Ring in the 576×288px Button-style dotted frame; same-viewport design reference review showed a 40px dark Ring, so Norato uses its 48px token (about 41px visible arc) with the approved yellow palette.
 - [x] Exercised all 45 type/tone/size configurations in the actual Spinner playground. Each rendered an intrinsic square box matching 16/20/24/32/48px; expected tone colors computed in all states and no combo failed.
 - [x] Verified Ring and Norato use an SVG arc; Dots use three CSS dots. The browser reports `prefers-reduced-motion: reduce`; Ring and all three Dots compute to `animation:none`, with Dots remaining at full opacity.
 - [x] Exercised Inline, Refresh, Overlay and Page. All use one polite status label, hide the decorative child from the accessibility tree, and preserve the selected RTL/LTR direction. Overlay is host-relative and pointer-transparent; Page spans the current viewport and is pointer-transparent.
@@ -39,7 +48,7 @@
 
 ## Select default specimen alignment — 2026-11-08
 
-- [x] At 1280×720, the inert specimen shows no selected value and uses Lemon's Persian placeholder `به شهر انتخاب کن`; the executable playground remains selected to Tehran.
+- [x] At 1280×720, the inert specimen shows no selected value and uses مرجع طراحی's Persian placeholder `به شهر انتخاب کن`; the executable playground remains selected to Tehran.
 - [x] At 1280×720, the 300×48px field and 288px dotted frame remain proportional, with Default marker, RTL document direction, no horizontal overflow, and Tehran preserved in the executable playground. The active browser tool did not permit enforcing the 390×844 viewport; mobile is not claimed as rechecked for this correction.
 
 ## Input stroke hover follow-up — browser evidence (2026-11-08)
@@ -56,7 +65,7 @@
 - [x] Persian query `تنظیمات` yields the matching grouped option; Enter selects it, closes the dialog and restores focus to the trigger.
 - [x] Loading and empty states render live status content. Their combobox no longer references a missing listbox/active descendant; Escape closes.
 - [x] Ctrl+K opens while the trigger is focused. Disabled Settings exposes `aria-disabled=true` and ArrowDown skips it to Projects.
-- [ ] 390/320 viewport, Home/End/ArrowUp, outside-click/Tab, configurable shortcut exclusions, IME/repeat, 8-item cap stress, Lemon matched-viewport comparison and independent screen-reader review remain pending.
+- [ ] 390/320 viewport, Home/End/ArrowUp, outside-click/Tab, configurable shortcut exclusions, IME/repeat, 8-item cap stress, design reference matched-viewport comparison and independent screen-reader review remain pending.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed. Build reports a 898.75KB JS chunk above the 500KB advisory threshold.
 - [x] GitHub checkpoint `c15eff741cce17ddd3190da84069825a66df2c92` is pushed to `origin/master`; local and remote hashes matched and the worktree is clean.
 
@@ -64,7 +73,7 @@
 
 - [x] Text Input's required/error/disabled/loading/success/read-only behavior was inspected in the live playground, including native state flags, status/description associations, and stroke colors. Four size choices and both label placements were exercised.
 - [x] OTP length 5: sequential typing advanced through five cells; ArrowLeft/ArrowRight moved focus; Backspace cleared the focused digit and moved back when the cell was empty; paste populated all five cells and focused the final cell. The playground was restored to six empty cells with every shared toggle off.
-- [ ] Full screenshot comparison across every Lemon Text variant and independent screen-reader review remain open.
+- [ ] Full screenshot comparison across every design reference Text variant and independent screen-reader review remain open.
 
 ## Input page-wide styling — mobile recheck (2026-11-08)
 
@@ -73,15 +82,15 @@
 - [x] Persian placeholders present on Text, Phone and Search compute to RTL, Vazirmatn Light 12px and `#a1a1a1`. Empty Password/OTP/numeric adapters do not render placeholder text. The inert top Email specimen has no helper/message beneath it.
 - [x] Removed generic helper copy from the live Text Input playground and backward-compatible `NoratoField` lab; error/loading/success messages remain state-driven. Optional helper-text APIs remain available to consumers.
 - [x] Desktop browser recheck at 1280×720: six single-line adapter controls measure 48px targets with 36px pseudo-capsules; all field labels compute to Estedad 700. Text, Phone and Search placeholders compute to RTL, Vazirmatn 12px and `rgb(161, 161, 161)`. Textarea remains 108px/multiline. Input page document width is 1265px within the 1280px viewport.
-- [ ] Lemon screenshot comparison for every variant/state and an independent screen-reader review remain open; this style recheck does not close Input DoD.
+- [ ] design reference screenshot comparison for every variant/state and an independent screen-reader review remain open; this style recheck does not close Input DoD.
 
 ## Combobox alignment with cross-component Input styling (2026-11-08)
 
 - [ ] At desktop and 390×844, confirm 36px capsule inside a 48px target, Estedad Bold label, RTL/Vazirmatn Light 12px `#a1a1a1` placeholder, and no document overflow/stretch.
 - [x] At the current live 499×932 viewport, confirmed neutral 1px `#e8e8e8` rest stroke, isolated yellow 1px hover with keyboard focus moved elsewhere, yellow focus Stroke, no field outline/shadow, Clear's independent 2px keyboard outline + yellow halo, and ArrowDown/Escape behavior. Disabled+invalid computes to neutral Stroke; disabled hover cannot activate yellow.
-- [ ] Recompare Lemon Combobox at matched desktop and 390×844 viewports after this correction.
+- [ ] Recompare design reference Combobox at matched desktop and 390×844 viewports after this correction.
 - [x] After the latest Combobox changes: `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass; build reports the existing >500kB main JavaScript chunk advisory.
-- [x] Desktop follow-up: neutral 1px rest stroke, 36px capsule in 48px target, yellow 1px keyboard-focus Stroke, no field outline/shadow, and Escape-to-close verified. Independent action focus, mobile viewport and matched Lemon comparison remain open.
+- [x] Desktop follow-up: neutral 1px rest stroke, 36px capsule in 48px target, yellow 1px keyboard-focus Stroke, no field outline/shadow, and Escape-to-close verified. Independent action focus, mobile viewport and matched design reference comparison remain open.
 - [x] Current 499×932 browser pass covered all 16 size × label × single/multi geometry combinations; all visual capsules remained 36px, target rows 48px (56px XLarge), document width 484px with no horizontal overflow. Exact desktop and 390×844 screenshots after this correction remain open.
 - [x] Menu accessibility regression fixed and verified: active descendant points to a live option while open, is removed after Escape closes the menu, and is valid again after reopening.
 
@@ -102,9 +111,9 @@
 - [x] وضعیت‌های Required/Error/Disabled/Loading/Success/Read-only روی کنترل‌های واقعی بررسی شدند؛ loading هشت `aria-busy`/spinner، 13 ورودی غیرفعال و سه action غیرفعال داشت. پیام خطا به `aria-describedby` وصل و `aria-invalid` فعال شد.
 - [x] کنسول مرورگر error نداشت و انتخاب‌های playground به حالت پیش‌فرض برگشتند. ماتریس کامل ترکیب‌های حالت/اندازه/focus و بررسی صفحه‌خوان مستقل هنوز باز است.
 
-## گزارش مقایسهٔ گالری States در Input — Lemon و Norato، موبایل (2026-11-01)
+## گزارش مقایسهٔ گالری States در Input — مرجع طراحی و Norato، موبایل (2026-11-01)
 
-- [x] Lemon و Norato در viewport یکسان 390×844 باز شدند. Lemon برای Stateها کارت‌های توصیفی دو ستونه دارد؛ گالری Norato پیش از اصلاح، ۴۱ مورد را به‌صورت یک‌ستونه و بدون کنترل نمونه نمایش می‌داد.
+- [x] مرجع طراحی و Norato در viewport یکسان 390×844 باز شدند. مرجع طراحی برای Stateها کارت‌های توصیفی دو ستونه دارد؛ گالری Norato پیش از اصلاح، ۴۱ مورد را به‌صورت یک‌ستونه و بدون کنترل نمونه نمایش می‌داد.
 - [x] Norato اکنون هر ۴۱ خانواده/حالت را با mini-control محدود و anatomy خانوادهٔ مربوط نشان می‌دهد؛ Error قرمز و دارای پیام، Success سبز با تیک، Disabled خاکستری، Loading دارای spinner، Active دارای حلقهٔ focus، Hover و Typing با مرز برند، Read-only با سطح ملایم و Filled با متن دارند.
 - [x] چیدمان Norato در عرض ۳۹۰px دو ستون 167.5px در ظرف 343px دارد؛ همهٔ ۴۱ کارت در قاب‌اند، document width برابر 375px است. Previewهای حالت `aria-hidden` و inert هستند؛ تفاوت رفتار باید در playground زنده سنجیده شود.
 - [x] Error در گالری به‌درستی `invalid` و Success به‌درستی `success` نگاشت می‌شوند؛ قبلاً Success به Default می‌افتاد. Search Typing نیز اکنون حالت مستقل دارد.
@@ -113,7 +122,7 @@
 
 ## گزارش بازبینی Input و اصلاح اندازه‌ها — موبایل و دسکتاپ (2026-11-01)
 
-- [x] صفحهٔ واقعی Lemon و نوراتو در مرورگر بررسی شد؛ viewport موبایل Lemon و نوراتو 390×844 بود. زبان/جهت Norato `fa`/`rtl`، document width برابر 375px و overflow افقی نداشت.
+- [x] صفحهٔ واقعی مرجع طراحی و نوراتو در مرورگر بررسی شد؛ viewport موبایل مرجع طراحی و نوراتو 390×844 بود. زبان/جهت Norato `fa`/`rtl`، document width برابر 375px و overflow افقی نداشت.
 - [x] نمونهٔ بالای نوراتو در موبایل دیده شد: قاب محدودشدهٔ شیشه‌ای با marker و نقطهٔ سبز، فیلد ایمیل، آیکن و راهنما؛ ارتفاع کنترل 48px و چیدمان عمودی بدون کشیدگی بود.
 - [x] playground موبایل: Text/Password/Phone/OTP/Textarea/Number/Amount/Search همگی در viewport قابل مشاهده‌اند؛ متن تلفن LTR، شماره‌گیر OTP افقی در Medium و کنترل‌ها در اندازهٔ عرض والد جا می‌گیرند.
 - [x] چهار اندازهٔ OTP در مرورگر 390px: 48/52/56/60px؛ شش سلول در Small/Medium یک ردیف و در Large/XLarge دو ردیف می‌شوند، سند در تمام حالت‌ها 375px می‌ماند.
@@ -122,8 +131,8 @@
 - [x] Number در حالت Stacked دو action عمودی 48×48px دارد؛ در موبایل فلش‌های بومی تکراری پنهان شدند و ArrowUp از 98 به max=99 رسید. Search دکمهٔ پاک‌کردن اختصاصی و میانبر پیش‌فرض را حفظ می‌کند.
 - [x] Amount مقدار `9007199254740993` را بدون خطای دقت به `۹٬۰۰۷٬۱۹۹٬۲۵۴٬۷۴۰٬۹۹۳` قالب‌بندی کرد؛ برای مقدار خارج از بازهٔ safe integer متن مبلغ به حروف نشان داده نمی‌شود.
 - [x] حالت پایهٔ playground بازیابی شد: Medium، Label Outside، OTP6، Number Stepper، calling code +98 و تمام toggleهای مشترک خاموش. اندازهٔ صفحهٔ نمونه پس از بررسی: viewport 390×844.
-- [x] Lemon مرجع هفت/هشت زیرنوع، چهار اندازه و label placement داخل/بیرون دارد؛ تفاوت حداقل hit target نوراتو عمداً بر مبنای قرارداد 48px نگه داشته شده. بررسی کامل همهٔ ترکیب‌ها و screen-reader مستقل باز است.
-- [ ] مقایسهٔ نهایی Lemon/Norato برای تغییرات اخیر desktop با viewport یکسان و اجرای دوبارهٔ همهٔ ماتریس‌های states/focus هنوز لازم است؛ در نشست قبلی تغییر viewport برای tab دسکتاپ اعمال نشد.
+- [x] مرجع طراحی مرجع هفت/هشت زیرنوع، چهار اندازه و label placement داخل/بیرون دارد؛ تفاوت حداقل hit target نوراتو عمداً بر مبنای قرارداد 48px نگه داشته شده. بررسی کامل همهٔ ترکیب‌ها و screen-reader مستقل باز است.
+- [ ] مقایسهٔ نهایی مرجع طراحی/Norato برای تغییرات اخیر desktop با viewport یکسان و اجرای دوبارهٔ همهٔ ماتریس‌های states/focus هنوز لازم است؛ در نشست قبلی تغییر viewport برای tab دسکتاپ اعمال نشد.
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck/build و `git diff --check` پس از اصلاح اجرا و پاس شدند؛ Vite هشدار chunk بزرگ‌تر از 500KB می‌دهد (678.91KB).
 - [x] اصلاح دقت Amount و شواهدش در `93f2507` به GitHub push شد؛ full state/focus matrix و بررسی مستقل صفحه‌خوان همچنان باز هستند.
 
@@ -154,12 +163,12 @@
 - [x] هیچ مورد geometry/ARIA/overflow ناموفق نبود؛ playground بعد از آزمون به single، medium، label بیرونی، بدون خطا و بدون حالت بارگذاری برگشت.
 - [ ] این اجرا مقایسهٔ تصویری screenshot به screenshot از تمام خانه‌ها یا صفحه‌خوان مستقل نیست؛ مرور pixel-level حالت‌های hover/focus/selected هنوز برای بستن DoD باز است.
 
-## Select — هم‌ترازی گالری States با Lemon (2026-11-01)
+## Select — هم‌ترازی گالری States با مرجع طراحی (2026-11-01)
 
-- [x] DOM مرجع Lemon در `#select` نشان داد States شامل ۹ کارت عنوان+توضیح است؛ کنترل‌های نمونه در Preview/Variants هستند. گالری Norato از pill عمومی به کارت متنی Select-only تغییر کرد.
+- [x] DOM مرجع مرجع طراحی در `#select` نشان داد States شامل ۹ کارت عنوان+توضیح است؛ کنترل‌های نمونه در Preview/Variants هستند. گالری Norato از pill عمومی به کارت متنی Select-only تغییر کرد.
 - [x] هر ۱۸ حالت Select/Multi Select/Select Option باقی ماندند؛ عنوان، نام خانواده، توضیح فارسی و accent توکنی در render تأیید شدند. یادداشت اضافه در قرارداد با parser تداخل داشت و حذف شد؛ تعداد نهایی دقیقاً ۱۸ است.
-- [x] Desktop viewport 1920×863: Norato گالری 584px با چهار ستون auto-fit و کارت‌های 139.98×87.56px؛ Lemon گالری 636px با چهار ستون و کارت‌های 151.5×88.59px. عرض سند Norato 1905px در برابر viewport 1920px است.
-- [x] Mobile viewport 390×844: Norato دو ستون، کارت 167.5×68.38px، document 375px؛ Lemon دو ستون و document 375px. RTL صریح است و سرریز افقی وجود ندارد.
+- [x] Desktop viewport 1920×863: Norato گالری 584px با چهار ستون auto-fit و کارت‌های 139.98×87.56px؛ مرجع طراحی گالری 636px با چهار ستون و کارت‌های 151.5×88.59px. عرض سند Norato 1905px در برابر viewport 1920px است.
+- [x] Mobile viewport 390×844: Norato دو ستون، کارت 167.5×68.38px، document 375px؛ مرجع طراحی دو ستون و document 375px. RTL صریح است و سرریز افقی وجود ندارد.
 - [x] رگرسیون Button: ۱۱ state card همان renderer عمومی را حفظ کردند؛ static state gallery همچنان inert و جدا از adapter است.
 - [ ] صفحه‌خوان مستقل و مقایسهٔ کامل screenshot همهٔ stateهای اجرایی Select همچنان در DoD خانواده باز است.
 - [x] گیت‌های نهایی: `pnpm check:tokens`، `pnpm check:catalog` (49 قرارداد/مسیر)، Vue typecheck، production build و `git diff --check` موفق شدند. Build هشدار bundle 638.78KB بالاتر از 500KB داد.
@@ -169,8 +178,8 @@
 
 - [x] قرارداد subfeature فقط قاب و نمونهٔ ثابت است؛ پرسش API هشت زیرنوع همچنان باز است و adapter اجرایی/گالری تغییر نکرد.
 - [x] selectorهای فعلی `.sample-input-specimen` و `.component-sample:has(.sample-form-controls)` audit شدند؛ قاب و field با قانون scoped موجود و توکن semantic اصلاح شدند.
-- [x] Lemon و Norato در viewport یکسان desktop 1920×863 مقایسه شدند: قاب 636×300 در برابر 584×288px (محدود به ستون محتوا)، field group Lemon 324×94.4px و Norato 324×97.2px؛ control نوراتو 324×48px.
-- [x] Lemon و Norato در viewport یکسان mobile 390×844 مقایسه شدند: قاب 327×300 در برابر 320×288px؛ گروه Lemon 320.8×94.4px؛ کنترل Norato 310×48px. Norato سند 375px عرض دارد، بدون overflow؛ RTL حفظ شده است.
+- [x] مرجع طراحی و Norato در viewport یکسان desktop 1920×863 مقایسه شدند: قاب 636×300 در برابر 584×288px (محدود به ستون محتوا)، field group مرجع طراحی 324×94.4px و Norato 324×97.2px؛ control نوراتو 324×48px.
+- [x] مرجع طراحی و Norato در viewport یکسان mobile 390×844 مقایسه شدند: قاب 327×300 در برابر 320×288px؛ گروه مرجع طراحی 320.8×94.4px؛ کنترل Norato 310×48px. Norato سند 375px عرض دارد، بدون overflow؛ RTL حفظ شده است.
 - [x] رندر واقعی: نشانگر Default، نقطه‌ها و wash قابل مشاهده‌اند؛ preview دارای `aria-hidden="true"` و `inert` است؛ صفحه Preview، Vue playground و ۹ بخش مستقل Button را نشان می‌دهد.
 - [x] گیت‌ها: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. build هشدار bundle بزرگ‌تر از 500KB دارد.
 - [ ] DoD کل Input باز است: دامنهٔ API، گالری‌های خانواده و ماتریس کامل رفتار/دسترس‌پذیری هنوز تعیین یا اجرا نشده‌اند.
@@ -189,11 +198,11 @@
 - [x] ArrowDown سپس Enter گزینهٔ متفاوت اصفهان را انتخاب کرد و مقدار زندهٔ playground به اصفهان به‌روزرسانی شد.
 - [ ] درخواست viewport موبایل ۳۹۰×۸۴۴ در مرورگر فعلی اعمال نشد (ابعاد گزارش‌شده ۱۱۹۵×۷۶۵ بود)؛ این تلاش به‌عنوان آزمون موبایل حساب نشده. DoD باز می‌ماند تا منوی باز با viewport دقیق و ماتریس کامل حالت‌های بصری بررسی شود.
 
-- [x] معیار پذیرش: نمونهٔ ثابت Select مانند Lemon یک فیلد مرکزی در قاب نقطه‌دار شیشه‌ای و نشانگر Default داشته باشد؛ قاب با پالت و توکن Norato، صفحه هم‌ساختار Button و hit target حداقل ۴۸px باقی بماند.
+- [x] معیار پذیرش: نمونهٔ ثابت Select مانند مرجع طراحی یک فیلد مرکزی در قاب نقطه‌دار شیشه‌ای و نشانگر Default داشته باشد؛ قاب با پالت و توکن Norato، صفحه هم‌ساختار Button و hit target حداقل ۴۸px باقی بماند.
 - [x] توالی Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze ثبت شد؛ دامنهٔ این اصلاح فقط نمونهٔ ثابت و تأیید رفتار موجود بود.
 - [x] قبل از تغییر، selector قدیمی `.component-sample.sample-select-preview:not(.compact)` و markup نمونه audit شد؛ همان قانون اصلاح شد و marker scoped `sample-select-state` اضافه شد.
-- [x] رندر واقعی روی سرور تازهٔ Vite در viewport همسان desktop برابر 1920×863: قاب Lemon برابر 636×300px و Norato برابر 584×288px (محدود به ستون محتوا) است؛ فیلدها به‌ترتیب 302.4×68.2 و 300×48px هستند.
-- [x] در viewport همسان mobile برابر 390×844، قاب Lemon برابر 327×300px و Norato برابر 320×288px است؛ فیلد Norato برابر 300×48px، وسط‌چین و RTL است. عرض سند 375px و بدون overflow است.
+- [x] رندر واقعی روی سرور تازهٔ Vite در viewport همسان desktop برابر 1920×863: قاب مرجع طراحی برابر 636×300px و Norato برابر 584×288px (محدود به ستون محتوا) است؛ فیلدها به‌ترتیب 302.4×68.2 و 300×48px هستند.
+- [x] در viewport همسان mobile برابر 390×844، قاب مرجع طراحی برابر 327×300px و Norato برابر 320×288px است؛ فیلد Norato برابر 300×48px، وسط‌چین و RTL است. عرض سند 375px و بدون overflow است.
 - [x] screenshotهای هم‌viewport قاب نقطه‌ای، هالهٔ زرد/آبی و marker مشابه را نشان می‌دهند؛ Norato رنگ‌مایهٔ خود را حفظ می‌کند.
 - [x] در مرورگر تازه: منوی جستجو و گروه‌ها باز شدند، ArrowDown گزینهٔ فعال را جابه‌جا کرد، انتخاب تکی وضعیت را تغییر داد؛ در چندانتخابی مقدار تا زمان تأیید ثابت ماند، انصراف مقدار قبلی را حفظ کرد و تأیید گزینه را ثبت کرد. حالت loading کنترل را disabled کرد و status بارگذاری را نمایش داد.
 - [x] RTL و ارتفاع trigger برابر ۴۸px، ۴ اندازه (۴۸/۴۸/۴۸/۵۶px)، حالت‌های error/disabled/read-only/loading با semantics وابسته، ساختار Preview + Vue + ۹ بخش قرارداد، و گزینهٔ disabled در درخت دسترس‌پذیری بررسی شدند. ماتریس کامل ترکیب حالت‌های بصری هنوز باز است.
@@ -202,22 +211,22 @@
 
 ## گزارش این درخواست — Input، ممیزی پیش از اصلاح (2026-11-01)
 
-- [x] صفحهٔ Lemon و صفحهٔ Norato در مرورگر واقعی بررسی شدند؛ Lemon یک فیلد ایمیل منفرد در frame با ابعاد desktop حدود 636×300px و بدنهٔ کنترل 324×41px دارد.
+- [x] صفحهٔ مرجع طراحی و صفحهٔ Norato در مرورگر واقعی بررسی شدند؛ مرجع طراحی یک فیلد ایمیل منفرد در frame با ابعاد desktop حدود 636×300px و بدنهٔ کنترل 324×41px دارد.
 - [x] Norato در viewport موبایل واقعی 390×844 بررسی شد: عرض document/body برابر 375px، frame برابر 343×123px، input برابر 317×48px، helper و label متصل و جهت خود input برابر LTR هستند؛ overflow افقی وجود ندارد.
-- [x] تفاوت بصری ثبت شد: frame فعلی Norato در موبایل 123px ارتفاع دارد و marker/Icon/glass treatment نمونهٔ Lemon را نشان نمی‌دهد. اندازهٔ 48px هدف تعاملی Norato عمدی است و نباید کاهش یابد.
+- [x] تفاوت بصری ثبت شد: frame فعلی Norato در موبایل 123px ارتفاع دارد و marker/Icon/glass treatment نمونهٔ مرجع طراحی را نشان نمی‌دهد. اندازهٔ 48px هدف تعاملی Norato عمدی است و نباید کاهش یابد.
 - [ ] مقایسهٔ دقیق هم‌viewport، تغییر visual specimen، ماتریس تعاملی و گیت‌های فنی هنوز انجام نشده‌اند. پرسش دامنهٔ اجرایی هشت زیرگونه در `input-clarify.md` در انتظار پاسخ است؛ پیاده‌سازی وابسته آغاز نشده است.
 
 ## گزارش این درخواست — Split Button تکمیل و بازبینی موبایل نهایی (2026-11-01)
 
 - [x] Split Button در viewport موبایل 390×844 واقعی مرورگر باز شد؛ `innerWidth=390`، عرض سند و بدنه 375px، قاب 320×288px و کنترل نمونه 48px ارتفاع دارد. هیچ overflow افقی مشاهده نشد.
-- [x] Lemon در همان viewport بازبینی شد؛ قاب حدود 314×288px است. نسبت و تراکم نمونهٔ Norato هم‌تراز است و palette اختصاصی Norato حفظ می‌شود. Screenshot مرورگر موبایل قاب‌ها و کنترل مرکزی را نشان داد.
+- [x] مرجع طراحی در همان viewport بازبینی شد؛ قاب حدود 314×288px است. نسبت و تراکم نمونهٔ Norato هم‌تراز است و palette اختصاصی Norato حفظ می‌شود. Screenshot مرورگر موبایل قاب‌ها و کنترل مرکزی را نشان داد.
 - [x] دکمهٔ متصل RTL، موقعیت منوی سمت چپ، اندازه‌های چهارگانه، گالری‌های variant/state/size و playground اجرایی قبلاً در مرورگر بررسی شده‌اند؛ keyboard و focus/AX evidence در DoD ثبت است.
 - [x] `docs/request-validation-checklist.md`، contract، task/checklist، ledger و error log بعد از بررسی واقعی به‌روز شدند؛ Split Button DoD بسته شد.
 - [ ] اجرای صفحه‌خوان مستقل انجام نشد؛ درخت دسترس‌پذیری و صفحه‌کلید مرورگر بررسی شده است.
 
 ## گزارش این درخواست — Range (2026-11-01)
 
-- [x] Lemon و Norato در viewport دسکتاپ 1280×720 و موبایل 390×844 بازبینی شدند؛ یک field برچسب‌دار، value روی thumb، marker، track/fill و min/max زیر آن حفظ شد. Norato palette معنایی خودش را دارد؛ قاب به‌دلیل ستون detail در desktop برابر 584×288px و در mobile برابر 320×288px است.
+- [x] مرجع طراحی و Norato در viewport دسکتاپ 1280×720 و موبایل 390×844 بازبینی شدند؛ یک field برچسب‌دار، value روی thumb، marker، track/fill و min/max زیر آن حفظ شد. Norato palette معنایی خودش را دارد؛ قاب به‌دلیل ستون detail در desktop برابر 584×288px و در mobile برابر 320×288px است.
 - [x] در هر دو viewport ماتریس ۱۶حالتهٔ Single/Range × Small/Medium × Default/Disabled اجرا شد؛ slider ارتفاع 48px و هر thumb اندازهٔ 48×48px داشت؛ document mobile برابر 375px و بدون overflow بود.
 - [x] RTL و جهت fill از راست به چپ سنجیده شد. ArrowLeft/Right، Home/End، pointer drag، ترتیب دو thumb، focus ring دوپیکسلی با offset چهارپیکسلی، disabled واقعی، `aria-invalid` و توضیح error متصل بررسی شدند.
 - [x] AX tree برای هر thumb role/name/min/max/current value و برای خطا description و alert نشان داد. صفحه Preview + playground اجرایی + هر ۹ بخش و دکمه‌های copy دارد.
@@ -226,8 +235,8 @@
 
 ## گزارش این درخواست — Segmented Control و ارسال تغییرات موجود (2026-11-01)
 
-- [x] Lemon و Norato در viewport دسکتاپ 1280×900 مقایسه شدند؛ preview Norato قاب 632×288px و Lemon حدود 630px عرض دارد. در هر دو، track افقی، سه گزینه، Default marker و گزینهٔ انتخاب‌شده در سمت راست دیده می‌شوند.
-- [x] مقایسهٔ موبایل در 390×844: Norato frame=320×288px، target گزینه‌ها 48px، عرض سند375px و بدون overflow؛ قاب مرجع Lemon هم در همین viewport بازبینی شد.
+- [x] مرجع طراحی و Norato در viewport دسکتاپ 1280×900 مقایسه شدند؛ preview Norato قاب 632×288px و مرجع طراحی حدود 630px عرض دارد. در هر دو، track افقی، سه گزینه، Default marker و گزینهٔ انتخاب‌شده در سمت راست دیده می‌شوند.
+- [x] مقایسهٔ موبایل در 390×844: Norato frame=320×288px، target گزینه‌ها 48px، عرض سند375px و بدون overflow؛ قاب مرجع مرجع طراحی هم در همین viewport بازبینی شد.
 - [x] پس از fresh Vite startup مسیر کامپوننت Preview، اجرای adapter و هر ۹ بخش مستقل را نشان داد. سرور قبلی به علت cache قدیمی `import.meta.glob` بخش‌های سند را بارگذاری نمی‌کرد؛ restart-only dev server این مشکل نمایش را برطرف کرد.
 - [x] ماتریس ۲۴ گروه (۲ سبک × ۴ اندازه × ۳ تعداد گزینه) در مرورگر: RTL و اولین گزینه در سمت راست، بدون متن بریده، target اندازه‌های Small/Medium/Large=48px و XLarge=56px.
 - [x] رفتار مرورگر: pointer hover، حرکت فوکوس با ArrowLeft/Right در RTL، انتخاب با Space/Enter، Home/End، جلوگیری از خالی‌شدن انتخاب، `aria-pressed`، گروه نام‌دار، فوکوس ۲px، disabled تکی و گروهی بررسی شدند.
@@ -236,8 +245,8 @@
 
 ## گزارش این درخواست — Switch و وضعیت Radio (2026-11-01)
 
-- [x] مرجع Lemon Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در Lemon، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ در نسخهٔ قبلی Norato برای حالت روشن از semantic blue استفاده می‌شد؛ اصلاح 2026-11-02 accent فعال را به زرد تغییر داد.
-- [x] مقایسهٔ بصری desktop در مرورگر با Lemon: هر دو یک Switch Field با marker و متن فارسی در قاب dotted-glass نمایش می‌دهند؛ قاب desktop Norato به عرض ستون محتوا محدود است. در اندازه‌گیری DOM فعلی Norato، frame=320×288px، control=48×48px و track متوسط=40×24px است؛ قاب نمونه و خود track کشیدگی عمودی ندارند.
+- [x] مرجع مرجع طراحی Switch مرور شد: یک Switch Field با label/description و marker، track خاموش glass، حالت روشن مشکی در مرجع طراحی، سه اندازه، ۳۰ variant کنترل و ۶ variant فیلد؛ در نسخهٔ قبلی Norato برای حالت روشن از semantic blue استفاده می‌شد؛ اصلاح 2026-11-02 accent فعال را به زرد تغییر داد.
+- [x] مقایسهٔ بصری desktop در مرورگر با مرجع طراحی: هر دو یک Switch Field با marker و متن فارسی در قاب dotted-glass نمایش می‌دهند؛ قاب desktop Norato به عرض ستون محتوا محدود است. در اندازه‌گیری DOM فعلی Norato، frame=320×288px، control=48×48px و track متوسط=40×24px است؛ قاب نمونه و خود track کشیدگی عمودی ندارند.
 - [x] مقایسهٔ mobile در viewport 390×844 (اندازه‌گیری ثبت‌شده در همین اجرای مرورگر): frame=320×288px، document width=375px و بدون overflow؛ کنترل/متن RTL و target=48px باقی ماندند.
 - [x] سه اندازه × خاموش/روشن در DOM سنجیده شد: trackها 32×20، 40×24 و 48×28px؛ target هر شش حالت 48×48px. در RTL روشن‌شدن knob را به چپ منتقل کرد.
 - [x] Space و Enter در اجرای مستقیم مرورگر مقدار `aria-checked` را به‌ترتیب false→true و true→false تغییر دادند؛ AX tree نقش switch و نام اعلان‌ها را نشان داد. `:focus-visible` با outline آبی ۲px و offset چهارپیکسلی مشاهده شد. `aria-invalid=true`، پیام error و اتصال description/error با `aria-describedby` بررسی شد؛ disabled واقعی نیز `disabled=true` و `:enabled=false` بود.
@@ -248,25 +257,25 @@
 
 ## گزارش این درخواست — Radio Button و ادامه با مدل جدید (2026-11-01)
 
-- [x] منبع Lemon در همان مرورگر برای ترکیب preview، ۳ گزینه، marker، ۴ Anatomy، ۲۰ variant، RTL و keyboard بررسی شد.
+- [x] منبع مرجع طراحی در همان مرورگر برای ترکیب preview، ۳ گزینه، marker، ۴ Anatomy، ۲۰ variant، RTL و keyboard بررسی شد.
 - [x] نمونهٔ نوراتو یک گروه سه‌ردیفی وسط قاب با palette و tokenهای خود Norato است؛ در viewport موبایل 390×844 قاب 320×288px، عرض سند 375px، سه ردیف 48px و کنترل راست‌چین است.
-- [x] مقایسهٔ desktop در viewport 1920: قاب 584×288px (محدود به عرض محتوای صفحه)؛ سه ردیف 48px و بدون کشیدگی کنترل. این عرض با frame Lemon که در محتوای خودش حدود 630px است کاملاً برابر نیست.
+- [x] مقایسهٔ desktop در viewport 1920: قاب 584×288px (محدود به عرض محتوای صفحه)؛ سه ردیف 48px و بدون کشیدگی کنترل. این عرض با frame مرجع طراحی که در محتوای خودش حدود 630px است کاملاً برابر نیست.
 - [x] ArrowDown بین گزینه‌ها و selection را جابه‌جا کرد؛ AX tree گروه نام‌دار و سه radio با selected value درست گزارش کرد؛ focus ring دوپیکسلی بررسی شد.
 - [x] required روی یک ورودی، aria-invalid/error association، disabled واقعی، RTL و هدف کلیک 48px را در browser DOM سنجیدم. اندازه‌های 16/20 در کنترل playground موجود است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` و `pnpm --dir apps/vue typecheck` موفق شدند.
 - [x] `pnpm --dir apps/vue build` موفق شد؛ هشدار پیشین bundle بزرگ‌تر از 500KB همچنان هست. `git diff --check` موفق شد.
 - [x] Radio required بدون انتخاب بازآزمایی شد: پیام الزام انتخاب و aria-invalid روی گروه/ورودی‌ها ظاهر شدند و پیام با aria-describedby به ورودی required متصل شد.
 - [x] ماتریس کنترل اصلی مرورگر برای هر دو اندازهٔ ۱۶ و ۲۰px و مقدار checked/unchecked در حالت‌های Default/Error/Disabled مرور شد؛ اندازهٔ واقعی، checked، disabled و invalid در DOM برای هر ۱۲ ترکیب ثبت شد. ردیف‌ها همگی ۴۸px باقی ماندند.
-- [x] در screenshot هم‌اندازهٔ ۱۲۸۰×۹۰۰، قاب Norato ۵۸۴×۲۸۸px و Lemon Radio نمونهٔ سه‌گزینه‌ای روی قاب شیشه‌ای بود؛ class تعریف‌نشدهٔ `sr-only` باعث نمایش ناخواستهٔ legend می‌شد. selector دسترس‌پذیرِ legend اصلاح شد؛ پس از اصلاح legend به ۱×۱px clip شد و از دید بصری پنهان ماند، ولی در AX باقی است.
+- [x] در screenshot هم‌اندازهٔ ۱۲۸۰×۹۰۰، قاب Norato ۵۸۴×۲۸۸px و مرجع طراحی Radio نمونهٔ سه‌گزینه‌ای روی قاب شیشه‌ای بود؛ class تعریف‌نشدهٔ `sr-only` باعث نمایش ناخواستهٔ legend می‌شد. selector دسترس‌پذیرِ legend اصلاح شد؛ پس از اصلاح legend به ۱×۱px clip شد و از دید بصری پنهان ماند، ولی در AX باقی است.
 - [x] پس از ArrowDown، عنصر فعال همان radio انتخاب‌شده بود؛ `:focus-visible` true، outline دوپیکسلی با offset چهارپیکسلی و حلقهٔ دوپیکسلی semantic ثبت شد.
-- [ ] DoD نهایی Radio باز است: ۲۰ سلول ماتریس دیداری در desktop اکنون حاضر و مرور شده‌اند؛ مرور matrix موبایل، مقایسهٔ هم‌اندازهٔ همان قاب با Lemon و صفحه‌خوان مستقل باقی است.
+- [ ] DoD نهایی Radio باز است: ۲۰ سلول ماتریس دیداری در desktop اکنون حاضر و مرور شده‌اند؛ مرور matrix موبایل، مقایسهٔ هم‌اندازهٔ همان قاب با مرجع طراحی و صفحه‌خوان مستقل باقی است.
 
 ## ادامهٔ DoD Radio — ماتریس دیداری ۲۰حالته (2026-11-01)
 
 - [x] بخش Variants از placeholder عمومی به پنج کارت state اختصاصی Radio تغییر کرد؛ هر کارت چهار ترکیب checked/unchecked و اندازهٔ ۱۶/۲۰px دارد (۲۰ سلول در مجموع). حلقه، نقطهٔ انتخاب و state accentها با شکل دایره‌ای و توکن‌های semantic Norato نمایش داده می‌شوند؛ بخش inert است.
-- [x] رندر واقعی desktop در `http://127.0.0.1:5175/#component-radio` مرور شد. Screenshot همهٔ پنج گروه و ۲۰ سلول را نشان داد؛ کنترل‌ها کشیدگی ندارند. مرجع زندهٔ Lemon `#radio` نیز بررسی شد: بخش Variants از کارت‌های نمونه + محورهای Size/Checked/State استفاده می‌کند؛ Norato اکنون همان محورها را کامل و یک‌جا نشان می‌دهد و رنگ خود را حفظ می‌کند.
+- [x] رندر واقعی desktop در `http://127.0.0.1:5175/#component-radio` مرور شد. Screenshot همهٔ پنج گروه و ۲۰ سلول را نشان داد؛ کنترل‌ها کشیدگی ندارند. مرجع زندهٔ مرجع طراحی `#radio` نیز بررسی شد: بخش Variants از کارت‌های نمونه + محورهای Size/Checked/State استفاده می‌کند؛ Norato اکنون همان محورها را کامل و یک‌جا نشان می‌دهد و رنگ خود را حفظ می‌کند.
 - [x] رگرسیون playground: کلیک سه‌ماهه و ArrowDown تا سالانه مقدار controlled/status/snippet را sync کردند؛ ArrowUp مقدار ماهانه را بازگرداند. Playground همچنان واقعی و جدا از ماتریس ایستا است.
-- [ ] viewport این مرورگرها برابر نبود (Norato: 1180×765، Lemon: 1900×900)، بنابراین مقایسهٔ هم‌اندازهٔ همین matrix و مرور واقعی mobile در این مرحله ثبت نمی‌شود. صفحه‌خوان مستقل هم اجرا نشده است؛ Radio DoD باز می‌ماند.
+- [ ] viewport این مرورگرها برابر نبود (Norato: 1180×765، مرجع طراحی: 1900×900)، بنابراین مقایسهٔ هم‌اندازهٔ همین matrix و مرور واقعی mobile در این مرحله ثبت نمی‌شود. صفحه‌خوان مستقل هم اجرا نشده است؛ Radio DoD باز می‌ماند.
 - [x] گیت‌ها پس از اصلاح tokenها: `pnpm check:tokens`، `pnpm check:catalog` (۴۹ route/contract)، `pnpm --dir apps/vue typecheck` و `pnpm --dir apps/vue build` موفق شدند. Bundle جاوااسکریپت 643.57KB است و هشدار بالای 500KB پابرجاست.
 
 ## ادامهٔ DoD Radio — آزمون تازهٔ صفحه‌کلید و hover (2026-11-01)
@@ -806,47 +815,47 @@
 - [x] کد Vue و مقدارهای فنی توکن‌ها به‌صورت ASCII ماندند تا کپی و اجرا درست باشد.
 - [x] check:tokens، check:catalog، Vue typecheck و production build موفق شدند.
 - [ ] مرور تک‌تک ۴۹ مسیر و آزمون صفحه‌خوان در این نشست انجام نشد.
-## گزارش درخواست — تطبیق ۴۸ کامپوننت با Lemon (در جریان، 2026-10-31)
+## گزارش درخواست — تطبیق ۴۸ کامپوننت با مرجع طراحی (در جریان، 2026-10-31)
 
-- [x] لینک مرجع `https://lemonui.ir/`، تعریف DoD و هدف پیوستهٔ ۴۸ کامپوننت در spec و ledger ثبت شد.
+- [x] لینک مرجع `مرجع طراحی تعریف DoD و هدف پیوستهٔ ۴۸ کامپوننت در spec و ledger ثبت شد.
 - [x] اندازهٔ قاب و فرزند اصلی نمونهٔ ۴۸ صفحه در مرورگر محلی اندازه‌گیری شد؛ اندازه‌گیری، جایگزین مقایسهٔ دیداری هر صفحه نیست.
-- [x] Input در Lemon و Norato به‌صورت دیداری بررسی شد؛ نمونهٔ بالای صفحه به یک فیلد فشرده تبدیل شد. فیلد ۴۸px است و سرریز افقی در viewport بررسی‌شده ندارد.
+- [x] Input در مرجع طراحی و Norato به‌صورت دیداری بررسی شد؛ نمونهٔ بالای صفحه به یک فیلد فشرده تبدیل شد. فیلد ۴۸px است و سرریز افقی در viewport بررسی‌شده ندارد.
 - [x] نمونهٔ اجرایی Input: ورود متن، پیام خطا/aria-invalid، غیرفعال، بارگذاری و الزامی در مرورگر بررسی شد.
-- [x] Input در موبایل ۳۹۰px کنار Lemon بازبینی شد؛ پس از اصلاح شکست مسیر بلند در کد اجرایی، عرض سند Norato برابر ۳۷۵px در viewport ۳۹۰px است. فیلد ۴۸px و قاب ۱۲۳px است.
+- [x] Input در موبایل ۳۹۰px کنار مرجع طراحی بازبینی شد؛ پس از اصلاح شکست مسیر بلند در کد اجرایی، عرض سند Norato برابر ۳۷۵px در viewport ۳۹۰px است. فیلد ۴۸px و قاب ۱۲۳px است.
 - [x] Tab از ورودی به کنترل بعدی حرکت کرد و focus-visible حلقهٔ ۲px زرد با outline آبی نشان داد.
 - [x] حالت Loading در NoratoField با `aria-busy` و پیام status زندهٔ مرتبط اعلام می‌شود؛ Error با متن و `aria-invalid` همراه است و Disabled ورودی را غیرفعال می‌کند.
-- [x] Select در Lemon و Norato روی desktop و viewport موبایل ۳۹۰px مقایسه شد؛ عرض سند موبایل هر دو ۳۷۵px است. قاب نمونهٔ تک‌فیلدی Norato حدود ۱۲۲px در desktop و ۹۸px در mobile؛ کنترل در RTL به‌ترتیب ۵۱۲×۴۸px و ۳۱۸×۴۸px است و عمودی کش نیامده.
+- [x] Select در مرجع طراحی و Norato روی desktop و viewport موبایل ۳۹۰px مقایسه شد؛ عرض سند موبایل هر دو ۳۷۵px است. قاب نمونهٔ تک‌فیلدی Norato حدود ۱۲۲px در desktop و ۹۸px در mobile؛ کنترل در RTL به‌ترتیب ۵۱۲×۴۸px و ۳۱۸×۴۸px است و عمودی کش نیامده.
 - [x] انتخاب مقدار Select با رویداد change و ArrowDown/Enter بررسی شد؛ مقدار انتخاب‌شده در وضعیت زنده منعکس می‌شود. گزینهٔ disabled، required، error/`aria-invalid`، loading/`aria-busy` و status مرتبط، و غیرفعال شدن کنترل بررسی شدند.
 - [x] فوکوس صفحه‌کلیدی Select با `:focus-visible` و حلقهٔ دوپیکسلی زرد با outline آبی در desktop اندازه‌گیری شد.
 - [x] کنترل‌های تغییر وضعیت playground حداقل target ۴۸px دارند؛ عرض سند در ۳۹۰px اندازه‌گیری شد و overflow ندارد.
 - [x] adapter جدید Select منوی شیشه‌ای با گروه و جست‌وجو را باز کرد؛ فیلتر «اصفهان» و انتخاب آن با ArrowDown/Enter، و انتخاب چندتایی مرحله‌ای با لغو/تأیید در مرورگر اجرا شد.
 - [x] Select جدید در viewport ۳۹۰px بازبینی شد: پنل داخل عرض ۳۹۰px ماند، شش گزینه هرکدام ۴۸px بودند، و عرض سند در حالت باز ۳۹۰px بود. جست‌وجو هنگام بازشدن فوکوس گرفت؛ ArrowDown فوکوس را به گزینه برد؛ Escape منو را بست.
 - [x] Error با `aria-invalid` و پیام مرتبط، Disabled با کنترل غیرفعال، Loading با کنترل غیرفعال و پیام status، Read-only با `aria-readonly` و منوی بسته بررسی شد. چهار اندازهٔ Small/Medium/Large/XLarge به‌ترتیب ارتفاع کنترل ۴۸/۴۸/۴۸/۵۶px داشتند.
-- [ ] DoD نسخهٔ جدید Select هنوز باز است: تکمیل مقایسهٔ جزئیات بصری منوی باز و تمام حالت‌های مرجع Lemon لازم است.
+- [ ] DoD نسخهٔ جدید Select هنوز باز است: تکمیل مقایسهٔ جزئیات بصری منوی باز و تمام حالت‌های مرجع مرجع طراحی لازم است.
 - [x] آزمون منوی بدون جست‌وجو در مرورگر: End آخرین گزینهٔ فعال را فوکوس کرد؛ ArrowDown گزینهٔ غیرفعال بعدی را رد کرد و به اولین گزینهٔ فعال برگشت.
 - [x] کشیدگی چندانتخابی رفع شد: پیش از اصلاح، Chip نمایشی ۴۸px و فیلد ۶۶px بود؛ پس از اصلاح، Chip به ۲۴px و فیلد به ۴۸px رسید. در نمای دسکتاپ کنترل مستقل از قاب نمونه اندازه‌گیری و دیده شد.
-- [x] مقایسهٔ تازهٔ نمونهٔ Select با Lemon در دسکتاپ و موبایل ۳۹۰px: کنترل Lemon حدود ۳۰۲×۴۱px و کنترل Norato پس از اصلاح ۳۰۰×۴۸px است؛ اختلاف ارتفاع به هدف تعاملی ۴۸px نوراتو مربوط است. قاب نمونهٔ Norato اکنون ۲۹۶px ارتفاع دارد و فیلد در مرکز آن قرار می‌گیرد؛ در موبایل عرض سند ۳۷۵px و بدون overflow است.
+- [x] مقایسهٔ تازهٔ نمونهٔ Select با مرجع طراحی در دسکتاپ و موبایل ۳۹۰px: کنترل مرجع طراحی حدود ۳۰۲×۴۱px و کنترل Norato پس از اصلاح ۳۰۰×۴۸px است؛ اختلاف ارتفاع به هدف تعاملی ۴۸px نوراتو مربوط است. قاب نمونهٔ Norato اکنون ۲۹۶px ارتفاع دارد و فیلد در مرکز آن قرار می‌گیرد؛ در موبایل عرض سند ۳۷۵px و بدون overflow است.
 - [x] فلش متنی Select با SVG برداری ۲۴px جایگزین شد؛ در مرورگر سمت چپ کنترل RTL دیده شد. در منوی چندانتخابی دسکتاپ فوتر ۶۵px داخل پنل ماند؛ در موبایل ۳۹۰px پنل ۳۴۳px عرض داشت، دکمه‌های فوتر کامل دیده شدند و overflow افقی رخ نداد.
 - [x] گزینه‌های Multi Select اکنون از نشانگر چک‌باکس برداری مشترک استفاده می‌کنند: شش قاب ۲۴px در منو و ردیف‌های ۴۸px در مرورگر دیده شد. انتخاب موقت دو گزینه تا پیش از تأیید مقدار والد را تغییر نداد؛ انصراف مقدار قبلی را نگه داشت و تأیید هر دو Chip را ثبت کرد. در موبایل ۳۹۰px فوتر کامل و بدون overflow بود.
 - [x] Select تک‌انتخابی با انتخاب «اصفهان» همان لحظه مقدار والد را ثبت کرد. حالت برچسب داخلی با Summary و دو Chip پس از اصلاح در دسکتاپ و موبایل ۳۹۰px دقیقاً ۵۶px ارتفاع داشت؛ خلاصهٔ موقت پیش از تأیید ۲ مورد را نشان داد و مقدار والد تا تأیید تغییر نکرد. Anatomy بعد از جابه‌جایی توضیح اضافی دوباره شش جزء دارد.
 - [x] با پنج انتخاب در حالت Chips، فیلد به‌جای چند ردیف فقط «تهران +۴» نمایش داد و ارتفاع ۴۸px ماند؛ در مرورگر تأیید شد.
 - [ ] تکمیل نهایی Input و Select و بررسی ۴۶ خانوادهٔ باقی‌مانده باز است.
 
-## گزارش این درخواست — Rating با مرجع Lemon (DoD مرورگری پاس شد، 2026-11-01)
+## گزارش این درخواست — Rating با مرجع مرجع طراحی (DoD مرورگری پاس شد، 2026-11-01)
 
-- [x] Lemon Rating در دسکتاپ 1280×900 و موبایل 390×844 بازبینی شد؛ specimen نوراتو 584×288px در ستون دسکتاپ و 320×288px در موبایل، عرض سند موبایل 375px و بدون overflow بود.
-- [x] قاب، پس‌زمینهٔ dotted-glass، Default/نقطهٔ سبز، ترتیب RTL، 4.0، چهار ستارهٔ پر، یک ستارهٔ خالی و 128 نظر کنار Lemon مقایسه شد.
+- [x] مرجع طراحی Rating در دسکتاپ 1280×900 و موبایل 390×844 بازبینی شد؛ specimen نوراتو 584×288px در ستون دسکتاپ و 320×288px در موبایل، عرض سند موبایل 375px و بدون overflow بود.
+- [x] قاب، پس‌زمینهٔ dotted-glass، Default/نقطهٔ سبز، ترتیب RTL، 4.0، چهار ستارهٔ پر، یک ستارهٔ خالی و 128 نظر کنار مرجع طراحی مقایسه شد.
 - [x] صفحه مثل Button، نمونهٔ بالایی، playground و ۹ بخش قرارداد مستقل دارد؛ playground سه حالت input/display/summary و snippet را عرضه می‌کند.
-- [x] ۲۴ ترکیب display شامل ۸ مقدار مستند Lemon در سه اندازه بررسی شد؛ fillها درست و ستاره‌ها 16/20/24px بودند. نیم‌ستاره از سمت راست پر شد.
+- [x] ۲۴ ترکیب display شامل ۸ مقدار مستند مرجع طراحی در سه اندازه بررسی شد؛ fillها درست و ستاره‌ها 16/20/24px بودند. نیم‌ستاره از سمت راست پر شد.
 - [x] Input با کلیک و فلش‌ها انتخاب شد؛ تغییر controlled به کد نمونه رسید. هر ۵ target برابر 48×48px است؛ در Large ستاره 32px ماند.
 - [x] حلقهٔ focus صفحه‌کلیدی 2px و offset مطابق قاعدهٔ Button (4px) بود؛ hover و selected دیده شدند؛ disabled هر پنج radio را واقعاً غیرفعال کرد.
 - [x] AX/DOM نقش radio، نام هر گزینه، checked، نام گروه، متن score زنده و progressbarهای توزیع 5→1 با مقدار درصد را نشان داد.
 - [x] `aria-labelledby` نام Rating Input و `aria-describedby` راهنمای زنده را به گروه radio وصل می‌کند.
 - [x] `check:tokens`، `check:catalog`، Vue typecheck، build و `git diff --check` پس از مستندسازی نهایی دوباره اجرا شدند و موفق شدند.
 - صفحه‌خوان مستقل اجرا نشد؛ گزارش به مرورگر، DOM/AX و تعامل صفحه‌کلید محدود است.
-## گزارش درخواست — Split Button با مرجع Lemon (در جریان، 2026-10-31)
+## گزارش درخواست — Split Button با مرجع مرجع طراحی (در جریان، 2026-10-31)
 
-- [x] صفحهٔ Split Button در Lemon و Norato در دسکتاپ و موبایل ۳۹۰px به‌صورت دیداری مقایسه شد؛ رنگ Primary مطابق نوراتو زرد است.
+- [x] صفحهٔ Split Button در مرجع طراحی و Norato در دسکتاپ و موبایل ۳۹۰px به‌صورت دیداری مقایسه شد؛ رنگ Primary مطابق نوراتو زرد است.
 - [x] نمونهٔ دو قرص جدا به کپسول متصل با جداکننده تبدیل شد؛ دکمهٔ اصلی و فلش اجرایی هر دو حداقل ۴۸px هستند.
 - [x] اکشن اصلی، انتخاب گزینه، ArrowDown، Escape، کلیک بیرون، غیرفعال و بارگذاری در مرورگر اجرا شدند.
 - [x] منوی موبایل پس از اصلاح کاملاً در عرض ۳۹۰px قرار گرفت؛ هیچ overflow افقی گزارش نشد.
@@ -856,7 +865,7 @@
 
 ## پیگیری DoD — Split Button (2026-11-01)
 
-- [x] در viewport محلی 1920×863، Norato با Lemon باز و مقایسه شد: frame نوراتو 584×288px (محدود به ستون صفحه) و قاب Lemon حدود 630×298px است. هر دو control متصل، جداکنندهٔ یکتا و نمونهٔ متمرکز دارند؛ ارتفاع control نوراتو 48px است. رنگ Norato زرد معنایی خودش را نگه می‌دارد.
+- [x] در viewport محلی 1920×863، Norato با مرجع طراحی باز و مقایسه شد: frame نوراتو 584×288px (محدود به ستون صفحه) و قاب مرجع طراحی حدود 630×298px است. هر دو control متصل، جداکنندهٔ یکتا و نمونهٔ متمرکز دارند؛ ارتفاع control نوراتو 48px است. رنگ Norato زرد معنایی خودش را نگه می‌دارد.
 - [x] specimen بالای صفحه به adapter واقعی و inert وصل شد؛ نشان Default اضافه شد؛ selectorهای قدیمی `.sample-split` حذف شدند تا CSS موازی باقی نماند.
 - [x] گالری اختصاصی به صفحه متصل شد: ۶ گونهٔ پایه، ۴ اندازه، ۵ حالت؛ گالری اندازه‌ها از DOM چهار ارتفاع 32/40/48/56px را نشان داد.
 - [x] رفتار مرورگر: primary event/status، انتخاب منو/event، بستن با outside click، ArrowDown/Up، Home/End، Escape و بازگشت فوکوس به toggle، Tab خروج از منو، expanded state و هدف‌های مستقل مرور شدند.
@@ -866,20 +875,20 @@
 - [ ] مرورگر متصل در این نوبت API تغییر viewport نداشت؛ اجرای مجدد viewport 390px پس از تغییر قاب به 288px لازم است. پیش‌تر رفتار منوی mobile/no-overflow در 390px ثبت شده بود، اما آن شاهد تغییر قاب نهایی را پوشش نمی‌دهد.
 - صفحه‌خوان مستقل اجرا نشد؛ بررسی به DOM، keyboard و accessibility tree مرورگر محدود است.
 
-## گزارش درخواست — شروع adapter اجرایی Combobox با مرجع Lemon (در جریان، 2026-11-01)
+## گزارش درخواست — شروع adapter اجرایی Combobox با مرجع مرجع طراحی (در جریان، 2026-11-01)
 
-- [x] صفحهٔ Lemon Combobox و صفحهٔ Norato در مرورگر مشاهده شدند؛ مرجع ۹ بخش مستقل و preview فشرده دارد. مرجع Lemon در این نوبت در desktop دیده شد؛ mobile Lemon هنوز بررسی نشده است.
+- [x] صفحهٔ مرجع طراحی Combobox و صفحهٔ Norato در مرورگر مشاهده شدند؛ مرجع ۹ بخش مستقل و preview فشرده دارد. مرجع مرجع طراحی در این نوبت در desktop دیده شد؛ mobile مرجع طراحی هنوز بررسی نشده است.
 - [x] Combobox از Proposed به Adapted تغییر کرد؛ adapter، export، usage example و playground تعاملی به مسیر مستقل متصل شدند.
 - [x] در صفحهٔ Norato هر ۹ بخش قرارداد، بخش Vue اجرایی و نمونهٔ پیش‌نمایش دیده شد.
 - [x] فیلتر فارسی و متن تطبیق‌یافته، ArrowDown و Enter، ثبت مقدار انتخاب‌شده، پیام بدون نتیجه، خطا/`aria-invalid`/`aria-describedby` و Disabled در مرورگر بررسی شدند.
 - [x] ایراد جای‌گذاری پنل به‌علت نبود `ComboboxAnchor` شناسایی و رفع شد؛ پنل پس از اصلاح هم‌راستا با فیلد و درون viewport موبایل باز شد.
 - [x] viewport محلی 390×844: ارتفاع فیلد 50px، جهت گروه RTL و عرض سند 375px در برابر viewport 390px اندازه‌گیری شد؛ overflow افقی وجود نداشت.
-- [x] صفحهٔ desktop در viewport 1280×900 باز شد؛ نمونهٔ Combobox داخل قاب 584×129px و فیلد 512×50px دیده شد. اندازه‌گیری جزئیات desktop Lemon و mobile Lemon هنوز انجام نشده است.
+- [x] صفحهٔ desktop در viewport 1280×900 باز شد؛ نمونهٔ Combobox داخل قاب 584×129px و فیلد 512×50px دیده شد. اندازه‌گیری جزئیات desktop مرجع طراحی و mobile مرجع طراحی هنوز انجام نشده است.
 - [x] `pnpm check:tokens` و Vue typecheck و production build موفق شدند.
 - [x] `pnpm check:catalog` پس از اصلاح قاعدهٔ validator برای adapterهای اختیاری Adapted موفق شد؛ `pnpm check:tokens` و `git diff --check` نیز موفق شدند.
 - [x] Vue typecheck و production build موفق شدند؛ build هشدار bundle بالای 500KB داد.
 - [x] صفحه‌کلید: فهرست باز شد، گزینهٔ فعال `aria-activedescendant` گرفت و Escape منو را بست؛ پنل با فاصلهٔ حدود ۹px زیر کنترل و هم‌عرض فیلد اندازه‌گیری شد.
-- [ ] DoD باز است: Multi، چهار اندازه، loading/recent/create، Clear، keyboard/focus matrix کامل، مقایسهٔ Lemon در mobile و اندازه‌گیری هم‌ارز desktop تکمیل نشده‌اند.
+- [ ] DoD باز است: Multi، چهار اندازه، loading/recent/create، Clear، keyboard/focus matrix کامل، مقایسهٔ مرجع طراحی در mobile و اندازه‌گیری هم‌ارز desktop تکمیل نشده‌اند.
 
 ## ادامهٔ بررسی درخواست — تکمیل رفتارهای Combobox و رفع سرریز (2026-11-01)
 
@@ -887,10 +896,10 @@
 - [x] انتخاب تکی با ArrowDown/Enter، انتخاب چندتایی دو گزینه با ثبت آرایه، چیپ `+۱` در همان ارتفاع ۵۰px، پاک‌کردن جست‌وجو پس از انتخاب، ساخت و ثبت گزینهٔ تازه و نمایش اخیرها در مرورگر اجرا شد.
 - [x] Loading در مرورگر `aria-busy=true`، status زنده و سه خط skeleton نشان داد. Error به پیامش اشاره می‌کند و `aria-invalid=true` و `required` بومی را می‌گذارد؛ Disabled هم ورودی و هم trigger را غیرفعال می‌کند.
 - [x] اندازهٔ بیرونی فیلد در حالت label بیرونی: Small/Medium/Large برابر ۵۰px، XLarge برابر ۵۸px؛ در حالت XLarge/داخل: قاب ۶۴px و ردیف تعاملی ۵۶px. حداقل hit area رعایت شد.
-- [x] Lemon در viewport موبایل 390×844 و Norato در همان viewport بازبینی شدند؛ فیلد preview در هر دو حدود ۳۱۰px است. Norato قاب 320×288px دارد، RTL است، و عرض سند 375px بدون overflow است.
+- [x] مرجع طراحی در viewport موبایل 390×844 و Norato در همان viewport بازبینی شدند؛ فیلد preview در هر دو حدود ۳۱۰px است. Norato قاب 320×288px دارد، RTL است، و عرض سند 375px بدون overflow است.
 - [x] پنل در موبایل زیر فیلد باز شد، با فیلد هم‌عرض ماند، گزینهٔ فارسی را bold کرد و پس از انتخاب بسته شد. `aria-activedescendant` با گزینهٔ فعال تنظیم شد.
 - [x] سرریز playground ناشی از wrapper Reka (سند 417px در viewport 390px) با محدودکردن wrapper/فیلد رفع شد؛ پس از اصلاح عرض سند 375px است.
-- [ ] مرور کامل بصری دسکتاپ با اندازه‌گیری دقیق کارت و همهٔ variantها، صفحه‌خوان واقعی، فوکوس همهٔ اکشن‌ها و ماتریس کامل Lemon هنوز باز است؛ DoD Combobox بسته نشود.
+- [ ] مرور کامل بصری دسکتاپ با اندازه‌گیری دقیق کارت و همهٔ variantها، صفحه‌خوان واقعی، فوکوس همهٔ اکشن‌ها و ماتریس کامل مرجع طراحی هنوز باز است؛ DoD Combobox بسته نشود.
 - [x] گیت‌های فنی بعد از این batch اجرا شدند و نتیجهٔ آن‌ها در انتهای همین گزارش ثبت شده است.
 - [x] گیت‌ها پس از تغییرات جدید اجرا شدند: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` همگی موفق شدند.
 - [x] production build هشدار bundle بالای ۵۰۰KB داد (518.24KB minified)، ولی build موفق بود.
@@ -898,7 +907,7 @@
 
 ## ادامهٔ DoD Combobox — اصلاح نمونه و مرور میان‌مرحله‌ای (2026-11-01)
 
-- [x] صفحه‌های Lemon و Norato در همان پنجره و viewport 1195×765 مقایسه شدند: Lemon قاب 636×300px، field shell برابر 324×68.2px و body برابر 324×41px؛ Norato قاب 540×288px، field برابر 310×50px و برچسب بیرونی 310×20.8px. ستون محتوا در Norato باریک‌تر است؛ قاب محدود می‌ماند و کشیدگی ندارد.
+- [x] صفحه‌های مرجع طراحی و Norato در همان پنجره و viewport 1195×765 مقایسه شدند: مرجع طراحی قاب 636×300px، field shell برابر 324×68.2px و body برابر 324×41px؛ Norato قاب 540×288px، field برابر 310×50px و برچسب بیرونی 310×20.8px. ستون محتوا در Norato باریک‌تر است؛ قاب محدود می‌ماند و کشیدگی ندارد.
 - [x] کمبود marker و نقطه‌ها در screenshot واقعی تأیید شد. `Default` به نمونهٔ inert اضافه شد؛ نقطه‌ها از mix 14٪ توکن آبی semantic Norato ساخته شدند. مرورگر پس از اصلاح قاب نقطه‌دار، wash زرد/آبی Norato، marker، field مرکزی 310×50px و قاب 540×288px را نشان داد.
 - [x] نمونه از playground جداست و DOM صفحه Preview، Vue، و همهٔ ۹ بخش قراردادی را دارد.
 - [x] ۱۶ حالت اندازه‌گیری‌شده (single/multi × label outside/inside × چهار اندازه)، در viewport فعلی: بیرون 50/50/50/58px؛ داخل 56/56/56/64px؛ هدف تعاملی 48px و XLarge 56px. RTL درست و عرض سند 1180px در viewport 1195px بود.
@@ -907,7 +916,7 @@
 - [ ] DoD نهایی باز است: مقایسه و screenshot موبایل پس از اصلاح marker/dot، مرور کامل ماتریس بصری ۹۶ حالت، تمرین فوکوس تمام کنترل‌ها در هر حالت و screen-reader مستقل هنوز انجام نشده‌اند. این دور viewport واقعی موبایل نبود.
 - [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze قبل از اصلاح ثبت شد؛ اصلاح فقط بر نقص رندر مشاهده‌شده محدود ماند.
 - [x] ادامهٔ موبایل پس از اصلاح در viewport واقعی 390×844 بررسی شد: قاب 320×288px، فیلد 212×48px، marker `Default` قابل‌دیدن و عرض سند 375px بدون سرریز است؛ screenshot پس از اصلاح ثبت شد.
-- [x] مقایسهٔ موبایل Lemon/Norato در یک viewport 390×844 با screenshot مرورگر تکمیل شد: Lemon frame 327×300px و Norato 320×288px؛ عرض سند هر دو 375px و field shell نوراتو 310×50px است. نشانگر و نقطه‌های نوراتو دیده می‌شوند و قاب کشیدگی ندارد.
+- [x] مقایسهٔ موبایل مرجع طراحی/Norato در یک viewport 390×844 با screenshot مرورگر تکمیل شد: مرجع طراحی frame 327×300px و Norato 320×288px؛ عرض سند هر دو 375px و field shell نوراتو 310×50px است. نشانگر و نقطه‌های نوراتو دیده می‌شوند و قاب کشیدگی ندارد.
 - [x] با Tab، action پاک‌کردن فوکوس visible می‌گیرد (۲px آبی، offset چهار پیکسل، halo زرد ۲px). trigger طبق Reka با `tabindex=-1` از ترتیب Tab حذف شده؛ ورودی composite با ArrowDown فهرست را باز و گزینه را با `aria-activedescendant` فعال می‌کند.
 - [x] مرورگر پس از reload و ArrowDown یک outline اضافی 3px روی input نشان داد؛ override عمومی حذف و selector scoped به `outline:0` تغییر کرد. اندازهٔ computed بعد از اصلاح: outline داخل input صفر، حلقهٔ field برابر 2px آبی با offset 4px و halo زرد 2px؛ active descendant به گزینهٔ فوکوس‌شده اشاره می‌کند.
 - [x] گیت‌های بعد از تغییر: `pnpm check:tokens`، `pnpm check:catalog`، Vue typecheck، production build و `git diff --check` پاس شدند؛ build هشدار 635.58KB داد.
@@ -920,11 +929,11 @@
 - [x] فهرست دیپلوی‌ها تطبیق داده شد: همان commit با شناسهٔ کوتاه `531c98e` یک دیپلوی `READY` جداگانه دارد؛ شکست Preview به معنی شکست Production نیست.
 - [ ] برای حذف تکرار خطا، تنظیم Framework Preset پروژه در Vercel باید روی Vite اصلاح شود؛ این تغییر تنظیمات هنوز انجام نشده است.
 
-## گزارش این درخواست — Checkbox با مرجع Lemon (در جریان، 2026-11-01)
+## گزارش این درخواست — Checkbox با مرجع مرجع طراحی (در جریان، 2026-11-01)
 
-- [x] Lemon Checkbox در desktop و mobile دیده شد؛ ترکیب‌بندی preview تک‌کنترلی، frame شیشه‌ای نقطه‌دار، چهار بخش Anatomy و ۳۶ variant ثبت شد.
-- [x] مقایسه در viewport موبایل 390×844: Norato frame برابر 320×288px و عرض سند 375px است؛ سرریز افقی ندارد. Desktop در viewport یکسان 1280×900 نیز مقایسه شد؛ frame نوراتو 584×288px در ستون 584px و frame Lemon حدود 630×298px است؛ اختلاف عرض از محدودیت محتوای صفحهٔ Norato می‌آید.
-- [x] قاب، نشانگر Default/نقطهٔ سبز، glass token و border با DOM Lemon مقایسه شدند؛ چهار جزء Anatomy بعد از انتقال یادداشت اندازه به Sizes در مرورگر تأیید شد.
+- [x] مرجع طراحی Checkbox در desktop و mobile دیده شد؛ ترکیب‌بندی preview تک‌کنترلی، frame شیشه‌ای نقطه‌دار، چهار بخش Anatomy و ۳۶ variant ثبت شد.
+- [x] مقایسه در viewport موبایل 390×844: Norato frame برابر 320×288px و عرض سند 375px است؛ سرریز افقی ندارد. Desktop در viewport یکسان 1280×900 نیز مقایسه شد؛ frame نوراتو 584×288px در ستون 584px و frame مرجع طراحی حدود 630×298px است؛ اختلاف عرض از محدودیت محتوای صفحهٔ Norato می‌آید.
+- [x] قاب، نشانگر Default/نقطهٔ سبز، glass token و border با DOM مرجع طراحی مقایسه شدند؛ چهار جزء Anatomy بعد از انتقال یادداشت اندازه به Sizes در مرورگر تأیید شد.
 - [x] صفحه ساختار ۹‌بخشی مستقل دارد؛ adapter Vue و playground اجرایی از specimen inert جدا هستند. وضعیت کاتالوگ به Adapted اصلاح شد تا DoD باز را پنهان نکند.
 - [x] browser behavior: Space، ۲px focus، کلیک کامل label، mixed/`aria-checked="mixed"`، RTL/control-right، target 48.78px، size 16/20، required، disabled و error/description association بررسی شد.
 - [x] مرور ماتریس: ۱۸ ترکیب مقدار false/true/mixed × اندازه 16/20 × حالت default/error/disabled؛ شش ترکیب فوکوس و چهار ترکیب hover برای false/true در هر دو اندازه بررسی شدند. Accessibility tree مقدار mixed را به‌صورت Value 2 و خطا را به‌عنوان پیام مرتبط اعلام می‌کند.
@@ -944,11 +953,11 @@
 - [x] روزهای تقویم target 48×48px دارند؛ در حالت single درخت دسترس‌پذیری، نام تقویم/روزها، امروز، تعطیلی، انتخاب و ماه‌های مجاور را نشان می‌دهد. انتخاب range، Preset، Month، Year و Wheel مدل کنترل‌شده را به‌روزرسانی کردند.
 - [x] گیت‌ها پس از اصلاح چیدمان: `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند.
 - [x] `git diff --check` بدون whitespace error است؛ هشدارهای پایان‌خط CRLF در checkout ویندوزی باقی‌اند.
-- [x] مقایسهٔ موبایل Lemon/Norato در 390×844 با screenshot واقعی انجام شد. قاب Lemon حدود 312×288px دیده می‌شود؛ قاب Norato بعد از اصلاح responsive با اندازه‌گیری DOM برابر 320×306px است. صفحهٔ Norato 375px عرض دارد و سرریز افقی ندارد.
+- [x] مقایسهٔ موبایل مرجع طراحی/Norato در 390×844 با screenshot واقعی انجام شد. قاب مرجع طراحی حدود 312×288px دیده می‌شود؛ قاب Norato بعد از اصلاح responsive با اندازه‌گیری DOM برابر 320×306px است. صفحهٔ Norato 375px عرض دارد و سرریز افقی ندارد.
 - [x] پنل بازه در موبایل در x=12..370 و y≈329..820 داخل viewport است؛ ماه دوم در breakpoint موبایل پنهان می‌شود و هفت روز هفته به ترتیب RTL می‌مانند. هر هفت hit area تعاملی 48×48px اندازه‌گیری شدند.
 - [x] صفحه‌کلید در مرورگر: ArrowLeft/Right و ArrowUp/Down جابه‌جایی روز، PageUp/Down تغییر ماه، Home/End مرزهای هفته، Enter انتخاب مقدار و بستن پنل، Escape بستن پنل و بازگشت فوکوس به trigger. حلقهٔ فوکوس 2px است.
 - [x] Error دارای `aria-invalid=true` و `aria-describedby` به متن خطاست؛ Disabled فیلد و trigger را غیرفعال کرد؛ روز disabled انتخاب‌ناپذیر بود؛ جمعه و تاریخ تعطیلی داده‌شده توسط مصرف‌کننده کلاس/رنگ قرمز گرفتند. Date & Time نمایش فارسی `۱۶:۴۵` و مدل محلی `16:45` را حفظ کرد.
-- [x] مقایسهٔ desktop در viewport برابر 1920×863 با screenshot مرورگر انجام شد: Lemon card حدود 266×211px، Norato card برابر 272×213px؛ قاب Norato برابر 584×302px است و به‌دلیل ستون محتوای صفحه از قاب Lemon باریک‌تر می‌ماند. نسبت و ارتفاع خود تقویم هم‌تراز است؛ پالت Norato طبق قرارداد حفظ شد.
+- [x] مقایسهٔ desktop در viewport برابر 1920×863 با screenshot مرورگر انجام شد: مرجع طراحی card حدود 266×211px، Norato card برابر 272×213px؛ قاب Norato برابر 584×302px است و به‌دلیل ستون محتوای صفحه از قاب مرجع طراحی باریک‌تر می‌ماند. نسبت و ارتفاع خود تقویم هم‌تراز است؛ پالت Norato طبق قرارداد حفظ شد.
 - [x] مرور بصری هر هفت mode در حالت باز انجام شد؛ Range دو ماه، Presets، Date & Time، Month، Year و Wheel از نظر RTL، تراکم و تناسب مرور شدند. انتخاب preset، ماه، سال و چرخ ماه مدل را به‌روز کردند.
 - [x] Loading در مرورگر: spinner دیده شد، فیلد و trigger disabled شدند، wrapper کنترل `aria-busy=true` داشت و پیام status در tree ظاهر شد؛ پنل باز نشد و snippet اجرایی `loading` را درج کرد.
 - [x] DoD مرورگر و گیت‌های فنی کامل است؛ وضعیت کاتالوگ `Implemented` است. صفحه‌خوان مستقل اجرا نشد؛ Accessibility tree و صفحه‌کلید مرور شدند.
@@ -956,7 +965,7 @@
 
 ## Date Picker — تازه‌سازی DoD و رفع مغایرت ledger (2026-11-07)
 
-- [x] مرجع زندهٔ Lemon و صفحهٔ Norato در viewport یکسان 1280×720 و 390×844 بررسی شدند. Desktop: قاب Lemon برابر 628×300px و Norato برابر 584×302px (محدود به ستون صفحه). Mobile: Lemon برابر 327×300px، Norato برابر 320×288px؛ عرض سند Norato برابر 375px و بدون overflow است.
+- [x] مرجع زندهٔ مرجع طراحی و صفحهٔ Norato در viewport یکسان 1280×720 و 390×844 بررسی شدند. Desktop: قاب مرجع طراحی برابر 628×300px و Norato برابر 584×302px (محدود به ستون صفحه). Mobile: مرجع طراحی برابر 327×300px، Norato برابر 320×288px؛ عرض سند Norato برابر 375px و بدون overflow است.
 - [x] نمونهٔ تقویم Norato در موبایل bounded است: card برابر 256px عرض دارد؛ روزهای تقویم هدف 48×48px و سلول‌های ماه/سال ارتفاع 48px دارند. Wheel سه کنترل RTL با ارتفاع 56px و پنل 358×117px دارد؛ پنل موبایل در viewport جا می‌شود.
 - [x] هر هفت mode باز و بررسی شدند: Single، Range، Range + Presets، Date & Time، Month، Year و Wheel. مقدار کنترل‌شده با انتخاب روز، بازهٔ وارونه (که به ترتیب زمانی نرمال شد)، preset «این هفته»، تغییر ساعت به 15:30، انتخاب ماه/سال و تغییر سال/ماه در Wheel به‌روز شد. Native `select` وجود ندارد.
 - [x] RTL و ترتیب شنبه تا جمعه از راست، صفحه‌کلید ArrowLeft و PageDown، Escape و بازگشت فوکوس، نام dialog/grid/day در AX tree، تاریخ disabled، `aria-invalid` و اتصال پیام خطا، و `aria-busy`/status/disabled شدن کنترل در Loading بررسی شدند.
@@ -965,10 +974,10 @@
 
 ## گزارش این درخواست — اصلاح گالری States کامپوننت Radio (2026-11-01)
 
-- [x] مرجع زنده Lemon `#radio` در viewport دسکتاپ 1195×765 و موبایل 390×844 بررسی شد. بخش States مرجع پنج کارت عنوان/شرح دارد و نسخهٔ Norato اکنون همان سلسله‌مراتب را با palette و accentهای معنایی Norato نشان می‌دهد.
+- [x] مرجع زنده مرجع طراحی `#radio` در viewport دسکتاپ 1195×765 و موبایل 390×844 بررسی شد. بخش States مرجع پنج کارت عنوان/شرح دارد و نسخهٔ Norato اکنون همان سلسله‌مراتب را با palette و accentهای معنایی Norato نشان می‌دهد.
 - [x] هشت کارت Norato حفظ شده‌اند: پنج Radio Button و سه Radio Field. خانواده و شرح فارسی خوانا هستند؛ نمایش کپسول عمومی از بخش States حذف شده و نمونهٔ واقعی فقط در Preview/playground باقی مانده است.
-- [x] Desktop: Lemon کارت‌های 151.5×88.6px در چهار ستون دارد؛ Norato به‌علت ستون مستندات سه ستون با عرض 174.7px و ارتفاع 71.6–90.8px دارد. ارتفاع نزدیک مرجع است؛ artwork کنترلی کشیده وجود ندارد.
-- [x] Mobile: viewport برابر 390×844؛ Lemon در دو ستون کارت‌های 158.5×88.6px دارد؛ Norato دو ستون با عرض 167.5px و ارتفاع 68.4–87.6px دارد. عرض سند 375px، جهت RTL، هشت کارت و نبود overflow افقی بررسی شد.
+- [x] Desktop: مرجع طراحی کارت‌های 151.5×88.6px در چهار ستون دارد؛ Norato به‌علت ستون مستندات سه ستون با عرض 174.7px و ارتفاع 71.6–90.8px دارد. ارتفاع نزدیک مرجع است؛ artwork کنترلی کشیده وجود ندارد.
+- [x] Mobile: viewport برابر 390×844؛ مرجع طراحی در دو ستون کارت‌های 158.5×88.6px دارد؛ Norato دو ستون با عرض 167.5px و ارتفاع 68.4–87.6px دارد. عرض سند 375px، جهت RTL، هشت کارت و نبود overflow افقی بررسی شد.
 - [x] رگرسیون: Button با 11 نمونهٔ generic و Select با 18 کارت اختصاصی حفظ شدند؛ انتخاب Radio در playground کار کرد و مقدار اولیهٔ ماهانه بازگردانده شد. ردیف‌های قابل کلیک 48px هستند.
 - [x] گیت‌های `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle برابر 640.11KB دارد و هشدار بیش از 500KB می‌دهد.
 - [x] commit `6091212` به GitHub push شد و `origin/master` با HEAD محلی برابر است.
@@ -976,8 +985,8 @@
 
 ## گزارش این درخواست — اصلاح گالری States کامپوننت Switch (2026-11-01)
 
-- [x] رندر States به کارت‌های ایستای عنوان/توضیح مطابق Lemon تغییر کرد؛ پنج Switch و سه Switch Field، نام خانواده، متن فارسی و accent معنایی Norato حفظ شدند. کپسول تزئینی عمومی در این گالری وجود ندارد.
-- [x] مقایسهٔ مرورگر desktop در 1195×765: Lemon چهار ستون و Norato سه ستون به‌علت عرض محدودتر ستون مستندات؛ mobile در 390×844 هر دو دو ستون‌اند. کارت Norato موبایل 167.5×87.6px، Lemon 158.5×88.6px؛ سند 375px، RTL و بدون overflow افقی. خود Switch در نمونهٔ بالای صفحه قبلاً سنجیده و بدون کشیدگی (track متوسط 40×24px، target 48×48px) ثبت شده است.
+- [x] رندر States به کارت‌های ایستای عنوان/توضیح مطابق مرجع طراحی تغییر کرد؛ پنج Switch و سه Switch Field، نام خانواده، متن فارسی و accent معنایی Norato حفظ شدند. کپسول تزئینی عمومی در این گالری وجود ندارد.
+- [x] مقایسهٔ مرورگر desktop در 1195×765: مرجع طراحی چهار ستون و Norato سه ستون به‌علت عرض محدودتر ستون مستندات؛ mobile در 390×844 هر دو دو ستون‌اند. کارت Norato موبایل 167.5×87.6px، مرجع طراحی 158.5×88.6px؛ سند 375px، RTL و بدون overflow افقی. خود Switch در نمونهٔ بالای صفحه قبلاً سنجیده و بدون کشیدگی (track متوسط 40×24px، target 48×48px) ثبت شده است.
 - [x] playground زنده بعد از تغییر renderer با نام accessible «اعلان‌ها» از Value 0 به 1 رفت و متن وضعیت و نمونهٔ کد updated شد؛ مقدار در UI موقتاً روشن ماند تا مورد آزمون دیده شود.
 - [x] Radio پس از renderer مشترک در صفحهٔ واقعی باز شد؛ هشت entry، family captions و توصیف‌های معنایی بدون خطای render حاضرند؛ playground با مقدار ماهانه در AX tree دیده شد.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 route/contract)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` موفق شدند. Build bundle جاوااسکریپت 641.48KB است و هشدار حجم بالای 500KB می‌دهد.
@@ -993,36 +1002,36 @@
 - [x] ترتیب Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze پیش از implementation ثبت شد.
 - [x] Renderer اختصاصی Variants از ۳۰ سلول Switch و ۶ سلول Switch Field ساخته شده است؛ گالری `inert` و `aria-hidden` است و playground واقعی جدا باقی مانده.
 - [x] اندازه‌های track به توکن و CSS adapter وصل‌اند: ۳۲×۲۰، ۴۰×۲۴ و ۴۸×۲۸px؛ موقعیت knob با logical inline و جهت RTL تنظیم شده است. Hover، focus، disabled و error از توکن‌های معنایی Norato استفاده می‌کنند.
-- [x] رندر محلی صفحه Switch و ساختار کارت‌های مرجع Lemon در مرورگر دیده شد. رنگ on در Lemon تیره و در قرارداد Norato آبی برند است؛ پالت Norato حفظ شد.
+- [x] رندر محلی صفحه Switch و ساختار کارت‌های مرجع مرجع طراحی در مرورگر دیده شد. رنگ on در مرجع طراحی تیره و در قرارداد Norato آبی برند است؛ پالت Norato حفظ شد.
 - [x] قرارداد Switch اصلاح شد تا newlineهای literal خراب حذف شوند و ماتریس جدید و محدودیت‌های شواهد را مستند کند.
-- [ ] مقایسهٔ ماتریس Variants در viewport دقیقاً برابر Lemon، viewport موبایل/overflow و اندازه‌گیری DOM هنوز انجام نشده است.
+- [ ] مقایسهٔ ماتریس Variants در viewport دقیقاً برابر مرجع طراحی، viewport موبایل/overflow و اندازه‌گیری DOM هنوز انجام نشده است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از اصلاح قرارداد موفق‌اند؛ chunk اصلی 646.51KB و بالاتر از هشدار 500KB است.
 - [ ] DoD کامل Switch بسته نیست؛ صفحه‌خوان مستقل و اندازه‌گیری واقعی focus ring و بررسی ماتریس در موبایل باز هستند.
 - [x] commit `bbb95f0` با ماتریس ۳۶ سلولی و شواهد فعلی به `origin/master` push شد؛ HEAD محلی و remote برابرند.
 
-## Input — Lemon visual comparison and eight-adapter DoD progress (2026-11-01)
+## Input — design reference visual comparison and eight-adapter DoD progress (2026-11-01)
 
-- [x] Reviewed actual `#component-input` render in the local Vue app and live Lemon reference at matching desktop 1280×900 and mobile 390×844 viewport sizes. Top specimen retains the single email input, helper, Default marker, dotted/glass frame, Norato color palette and now includes the trailing email icon.
-- [x] Desktop Norato frame/field: 584×288px and 324×49.6px; mobile: 320×288px and 310.4×49.6px. Lemon mobile frame/field: 327.2×300px and 321.4×41px. Norato's larger control target remains at least 48px; its dimensions are column-constrained rather than vertically stretched.
+- [x] Reviewed actual `#component-input` render in the local Vue app and live design reference reference at matching desktop 1280×900 and mobile 390×844 viewport sizes. Top specimen retains the single email input, helper, Default marker, dotted/glass frame, Norato color palette and now includes the trailing email icon.
+- [x] Desktop Norato frame/field: 584×288px and 324×49.6px; mobile: 320×288px and 310.4×49.6px. design reference mobile frame/field: 327.2×300px and 321.4×41px. Norato's larger control target remains at least 48px; its dimensions are column-constrained rather than vertically stretched.
 - [x] Mobile Input family gallery renders eight recognizable subtype specimens with no internal/document horizontal overflow; document width is 375px at a 390px viewport. RTL document language/direction are `fa`/`rtl`.
 - [x] Browser interactions: password show/hide; phone `+98`; OTP digit entry, full paste, arrows and Backspace focus; Persian amount entry/grouping/words (`۱۲۳۴۵` → `۱۲٬۳۴۵`); number increment and keyboard bounds (`98→99`, `99→99`); Search clear and Ctrl+K focus without stealing focus from another input; textarea max length/counter (`179→180`) and vertical resize.
 - [x] Shared playground states: all eight controls disable for disabled/loading; eight live loading messages and eight error alerts were present; all error controls expose `aria-invalid`; action buttons measure 48×48px; keyboard-focused password action has visible outline with 4px offset.
 - [x] Default preview restored after interactions; browser console had no errors. `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue typecheck) and `git diff --check` passed. Production JS main chunk is 673.58KB and Vite reports its >500KB advisory.
-- [ ] Full size/state matrices, OTP length-five per-cell keyboard, stacked Number layout and independent screen-reader review remain open in `specs/013-lemon-component-parity/input-checklist.md`.
+- [ ] Full size/state matrices, OTP length-five per-cell keyboard, stacked Number layout and independent screen-reader review remain open in `specs/013-design-system-parity/input-checklist.md`.
 - [x] Input implementation checkpoint `663af1f` pushed to `origin/master`; local and remote refs matched immediately after push.
 
 ## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
 
-- [x] صفحهٔ محلی Switch از نظر ساختار مرور شد: preview جدا، playground اجرایی و ۹ بخش قرارداد؛ Lemon در `https://lemonui.ir/#switch` همان چینش preview و سه اندازه را نشان می‌دهد. Lemon رنگ روشن مشکی دارد؛ Norato در اصلاح 2026-11-02 زرد برند خود را برای حالت روشن به کار می‌برد.
+- [x] صفحهٔ محلی Switch از نظر ساختار مرور شد: preview جدا، playground اجرایی و ۹ بخش قرارداد؛ مرجع طراحی در `مرجع طراحی همان چینش preview و سه اندازه را نشان می‌دهد. مرجع طراحی رنگ روشن مشکی دارد؛ Norato در اصلاح 2026-11-02 زرد برند خود را برای حالت روشن به کار می‌برد.
 - [x] در عرض viewport دسکتاپ 1280px، DOM ماتریس دقیقاً 30 نمونه Switch و 6 نمونه Switch Field دارد؛ گالری هیچ عنصر تعاملی ندارد، جهت RTL است، trackها 32×20/40×24/48×28px هستند و سند 1265px از عرض viewport بیرون نمی‌زند.
 - [x] adapter واقعی در هر سه اندازه هدف 48×48px دارد. Space روشن و Enter خاموش کرد؛ فوکوس واقعی حلقهٔ 2px با offset چهارپیکسلی داشت. حالت خطا `aria-invalid=true` و اتصال description/error در `aria-describedby` را دارد؛ حالت disabled غیرفعال است. نمونه به وضعیت پیش‌فرض بازگردانده شد.
 - [x] آزمون hover قبلی مرز آبی معنایی `rgb(19, 79, 137)` را گزارش کرد؛ در اصلاح 2026-11-02 مرز hover به توکن زرد Norato تغییر کرد. آزمون تعاملی hover پس از تغییر هنوز انجام نشده است.
 - [ ] viewport موبایل برای خود ماتریس در ابزار مرورگر این اجرا قابل تنظیم نبود؛ مقایسهٔ بخش Variants در viewport کاملاً یکسان، آزمون ترکیبی همهٔ stateها و صفحه‌خوان مستقل نیز باز هستند. Switch کامل اعلام نمی‌شود.
 - [x] کاربر تعهد داده هر تغییر Git به مخزن برود؛ این تغییر مستنداتی پس از بررسی گیت‌ها commit/push و برابری remote تأیید می‌شود.
 
-## گزارش پیگیری — مقایسهٔ هم‌اندازهٔ Radio با Lemon (2026-11-01)
+## گزارش پیگیری — مقایسهٔ هم‌اندازهٔ Radio با مرجع طراحی (2026-11-01)
 
-- [x] رندر Lemon و Norato در viewport برابر 1280×720 در بخش Variants بررسی شد. Lemon چهار specimen کارت‌مانند و selector اندازه/checked/state را در گالری 636px دارد؛ Norato پنج گروه و 20 ترکیب قرارداد را در ستون 584px نشان می‌دهد.
+- [x] رندر مرجع طراحی و Norato در viewport برابر 1280×720 در بخش Variants بررسی شد. مرجع طراحی چهار specimen کارت‌مانند و selector اندازه/checked/state را در گالری 636px دارد؛ Norato پنج گروه و 20 ترکیب قرارداد را در ستون 584px نشان می‌دهد.
 - [x] هندسهٔ DOM ماتریس Norato تأیید شد: 20 حلقه، اندازهٔ ذاتی 16×16 و 20×20px، target سلول 128×48px، RTL و صفر فرزند interactive. screenshot همهٔ پنج state group، حلقهٔ دایره‌ای و نقطهٔ انتخاب آبی را نشان می‌دهد.
 - [ ] ماتریس کامل Radio هنوز در viewport موبایل مرور نشده؛ 20 ترکیب کامل و مقایسهٔ مستقل صفحه‌خوان نیز باز هستند. DoD بسته نمی‌شود.
 
@@ -1035,18 +1044,18 @@
 - [ ] وضعیت‌های اختصاصی error/disabled/success برای OTP، توالی ترکیبی stateها و صفحه‌خوان مستقل هنوز باز هستند؛ DoD خانواده Input بسته نیست.
 - [x] مستندات Input، دفتر ۴۸ خانواده و Request Validation به‌روز شدند. Number refinement پیش‌تر در commit `e9364e2` روی `origin/master` منتشر و هم‌ترازی remote تأیید شده است.
 
-## Time Picker — Lemon comparison and adapter DoD progress (2026-11-01)
+## Time Picker — design reference comparison and adapter DoD progress (2026-11-01)
 
-- [x] Lemon and Norato rendered at matching desktop 1280×720 and narrow mobile 499×932 viewports. Desktop frame/card: Lemon 636×300 / 138×179px, Norato 584×288 / 136×172px (column constrained); mobile: Lemon 436×300px, Norato 452×288px. Norato document width 484px; no horizontal overflow or vertical stretch.
+- [x] design reference and Norato rendered at matching desktop 1280×720 and narrow mobile 499×932 viewports. Desktop frame/card: design reference 636×300 / 138×179px, Norato 584×288 / 136×172px (column constrained); mobile: design reference 436×300px, Norato 452×288px. Norato document width 484px; no horizontal overflow or vertical stretch.
 - [x] Default specimen is inert, uses a bounded dotted glass frame, Default marker, two compact columns and Norato blue selection. The live page has the Button-style preview, executable Vue playground/code and all nine contract sections.
 - [x] Single and range v-model; Columns, Columns 12h, Wheel, Slots and Range modes; 24-hour canonical values; 12h AM/PM mapping; 5 and 15 minute steps; explicit disabled slot; chronological range crossing all verified in the live browser.
 - [x] Popup tested above/below anchor and within viewport at both widths; outside click closes, Escape returns focus; ArrowDown/Enter select; 48px minimum targets and visible 2px focus ring/4px offset observed.
 - [x] Error/required/helper associations, `aria-invalid`, disabled, loading/`aria-busy`, LTR values within RTL page, all nine page sections and synchronized example inspected.
 - [ ] Independent screen-reader review and final technical gates remain. Exact viewport 390px was unavailable in this browser; mobile comparison used 499px (below the 600px responsive breakpoint). DoD remains open until technical gates pass.
 
-## File Upload — Lemon comparison and adapter DoD progress (2026-11-02)
+## File Upload — design reference comparison and adapter DoD progress (2026-11-02)
 
-- [x] Lemon preview and Norato inert specimen reviewed at desktop 1280×720; Lemon frame 636×300px, Norato frame 584×288px because the component-doc content column is narrower. At mobile 499×932, Norato specimen is 320×288px; the document remains inside the viewport. Inner dropzone is bounded, the marker sits at the upper-right, and the sample stays inert.
+- [x] design reference preview and Norato inert specimen reviewed at desktop 1280×720; design reference frame 636×300px, Norato frame 584×288px because the component-doc content column is narrower. At mobile 499×932, Norato specimen is 320×288px; the document remains inside the viewport. Inner dropzone is bounded, the marker sits at the upper-right, and the sample stays inert.
 - [x] Live File Upload page has independent Preview, Vue playground/copyable usage, and all nine contract sections. Catalog status is Adapted and package exports include all four adapters.
 - [x] Tile geometry is 112×112px and avatar is 96×96px; action target measured 48×48px. Persian page and filename direction are separately set; document widths at 1280 and 499 did not exceed their respective viewport widths.
 - [x] Controlled queue fixture traversed selected → uploading (42% host-provided progress) → error (visible reason) → retry/uploading → cancel/removal. No simulated network request or automatic progress is used. Dropzone Enter key left focus on the button and matched `:focus-visible`; disabled checkbox set both the native file input and dropzone button to disabled. Compact mode was selected in the live playground and measured 452×125px on the 499px-wide narrow viewport; text wraps without clipping or horizontal overflow.
@@ -1056,7 +1065,7 @@
 - [ ] File Upload DoD stays open until real chooser/drag/validation behavior is browser-verified.
 ## File Upload validator extraction — 2026-11-01
 
-- [x] Current repository state inspected; existing Lemon comparison, Button-style page, browser behavior record, and unresolved native-file browser checks were reviewed before changes.
+- [x] Current repository state inspected; existing design reference comparison, Button-style page, browser behavior record, and unresolved native-file browser checks were reviewed before changes.
 - [x] Extracted file type/size/count decisions into a pure typed validator used by the Vue adapter; malformed numeric limits now fail closed and an empty accept value follows the native unrestricted convention.
 - [x] Added Node built-in tests for accepted extension/MIME/wildcard files, exact size boundary, mixed valid/rejected batches, each rejection reason, count capacity, single mode, empty accept, and invalid limits.
 - [ ] Browser checklist still fails for native chooser selection, drag payload and actual rendered validation feedback because the available CUA browser context cannot inject files or create browser File/DataTransfer objects. Existing browser layout checks remain valid; this request's full browser checklist is not claimed as passed.
@@ -1064,7 +1073,7 @@
 ## File Upload preview and chooser recheck — 2026-11-07
 
 - [x] Removed duplicate/shadowed specimen branch; desktop 1280×720 and mobile 390×844 show Default marker, dotted frame, centered dropzone and yellow SVG affordance. Norato mobile document width is 375px with no overflow.
-- [x] Matched comparison: Lemon/Norato desktop frame 636×300 / 584×288px and inner dropzone 367×154 / 380×160px. Mobile frame 327×300 / 320×288px and inner dropzone 321×154 / 302×160px; column-limited frame size is not mistaken for a stretch defect.
+- [x] Matched comparison: design reference/Norato desktop frame 636×300 / 584×288px and inner dropzone 367×154 / 380×160px. Mobile frame 327×300 / 320×288px and inner dropzone 321×154 / 302×160px; column-limited frame size is not mistaken for a stretch defect.
 - [x] Real browser chooser verified pointer and keyboard activation (Enter/Space), PNG acceptance, unsupported type, 10,000,001-byte rejection, count rejection, single-file replacement, multiple count ceiling and native input reset.
 - [x] File Upload playground exposes `multiple`; changing the selection mode updates the generated Vue snippet. Both runtime and inert icons use SVG and Norato yellow/dark; the lower specimen wash is neutral.
 - [ ] Native OS drag/drop payload, independent screen-reader review, reduced-motion, and full combined keyboard/state matrix remain open. File Upload maturity stays Adapted.
@@ -1074,35 +1083,35 @@
 ## Navbar — implementation checkpoint (2026-11-02)
 
 - [x] Added and publicly exported `NoratoNavbar`, a standalone Button-style interactive playground, copyable Vue usage, an inert bounded specimen, 20 link state variants, 9 contract sections, responsive token rules, primitive decision, catalog mapping and Figma rules.
-- [x] Default local page reviewed at 1280×720 with Lemon's Navbar reference reviewed in the available browser. Lemon reference defines 6 parts/41 variants and confirms the default Website/Bar composition, right-side brand, links after brand, left actions, 48px focus outline behavior, and mobile drawer. Norato keeps its own blue/yellow brand palette.
+- [x] Default local page reviewed at 1280×720 with design reference's Navbar reference reviewed in the available browser. design reference reference defines 6 parts/41 variants and confirms the default Website/Bar composition, right-side brand, links after brand, left actions, 48px focus outline behavior, and mobile drawer. Norato keeps its own blue/yellow brand palette.
 - [x] Local DOM confirms RTL, no document overflow at 1280px, bounded 584×65px default preview row, 48px nav-link minimum targets, and exactly one `aria-current="page"` link. A Centered/Floating/Underline configuration remains within its 558px local bar. Enter opens the nested menu; Escape closes it and restores trigger focus. Nested links report the current item with `aria-current="page"`.
-- [x] Lemon and Norato were compared at the same 1280×720 viewport. Lemon's static frame was about 628×296px with a 574×50px row; Norato's Button-style content column constrained its frame to 584×288px and the static row to about 514×60px. Difference follows Norato's narrower documentation column and 48px interaction target. All nine App/Website/Centered × Bar/Floating/Transparent combinations measured without horizontal overflow; centered nav stayed exactly centered in its bar.
+- [x] design reference and Norato were compared at the same 1280×720 viewport. design reference's static frame was about 628×296px with a 574×50px row; Norato's Button-style content column constrained its frame to 584×288px and the static row to about 514×60px. Difference follows Norato's narrower documentation column and 48px interaction target. All nine App/Website/Centered × Bar/Floating/Transparent combinations measured without horizontal overflow; centered nav stayed exactly centered in its bar.
 - [x] Review found Back mobile type would hide every menu trigger along with its desktop bar. A separate 48px drawer trigger was added to the Back title row and the CSS hide rule was scoped to the hidden top bar.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, production build and `git diff --check` pass after catalog validator was extended to recognize the new usage example. Vite still warns that the app JS chunk exceeds 500KB (768.04KB).
 - [ ] Same-size 390px/320px mobile comparison, mobile drawer focus/Escape/outside behavior, controlled search/Back event, full link-state matrix, mobile header matrix, outside action and independent screen-reader review remain open because this browser interface cannot set a custom narrow viewport. Navbar is not marked `Implemented` until these required checks are complete.
 
 ## Sidebar — implementation checkpoint (2026-11-02)
 
-- [x] Added public NoratoSidebar Vue adapter, Button-style Playground, copy example, inert specimen with dedicated bounded CSS, 42-part Lemon contract, token/primitive/catalog/export records, and API/accessibility docs. Legacy .sample-sidebar is no longer rendered; dedicated selectors have intrinsic icon sizes and fixed panel bounds.
-- [x] Lemon reference inspected at 1280×720: six component parts, 42 variants, 3px right active marker, tooltip labels when collapsed, 2px focus ring, max two submenu levels. Local 1280×720: document 1265px, specimen frame 494×288 (column constrained), specimen panel 220×216; Lemon frame about 628×296 and panel about 214×220. The local panel retains its proportions rather than stretching across the frame. Interactive links have 48px block size and exactly one current page in the default playground.
+- [x] Added public NoratoSidebar Vue adapter, Button-style Playground, copy example, inert specimen with dedicated bounded CSS, 42-part design reference contract, token/primitive/catalog/export records, and API/accessibility docs. Legacy .sample-sidebar is no longer rendered; dedicated selectors have intrinsic icon sizes and fixed panel bounds.
+- [x] design reference reference inspected at 1280×720: six component parts, 42 variants, 3px right active marker, tooltip labels when collapsed, 2px focus ring, max two submenu levels. Local 1280×720: document 1265px, specimen frame 494×288 (column constrained), specimen panel 220×216; design reference frame about 628×296 and panel about 214×220. The local panel retains its proportions rather than stretching across the frame. Interactive links have 48px block size and exactly one current page in the default playground.
 - [x] At local 499×932, mobile trigger opened a labeled Reka Dialog containing nav links; close button closed it. At desktop, collapsing retained 48px links with accessible labels and titles; control restored to expanded.
-- [ ] Exact 390px/320px compare could not be set in available browser. Escape, outside click/focus restoration, expanded/collapsed × Glass/Bar combinations, all Lemon state matrix, screen reader and host route behavior require more verification; maturity stays Adapted.
+- [ ] Exact 390px/320px compare could not be set in available browser. Escape, outside click/focus restoration, expanded/collapsed × Glass/Bar combinations, all design reference state matrix, screen reader and host route behavior require more verification; maturity stays Adapted.
 - [ ] Required technical gate commands being rerun after final geometry adjustment.
 
 ## Sidebar — DoD browser record (2026-11-02)
 
-- [x] Existing Lemon desktop comparison and local desktop/mobile interactions recorded in Sidebar checkpoint above; geometry was corrected after observed vertical stretch.
+- [x] Existing design reference desktop comparison and local desktop/mobile interactions recorded in Sidebar checkpoint above; geometry was corrected after observed vertical stretch.
 - [ ] The browser bridge became unavailable during the final rerender attempt (rowser.user is unavailable), so the exact post-adjustment screenshot and remaining keyboard/modal/320px cases are unverified. DoD remains open; no completion claim.
 
 ## Tabs — implementation checkpoint (2026-11-02)
 
-- [x] Added exported controlled `NoratoTabs` on the installed Reka Tabs primitive, an inert Lemon-mapped preview, a Button-style page/playground, snippet, nine-section contract and semantic API docs.
-- [x] Fresh Lemon/local renders inspected at 390×844; exact size/orientation interaction, RTL ArrowLeft/End, disabled-tab skipping, focus style, 390/320 responsive dimensions and technical gates recorded below.
+- [x] Added exported controlled `NoratoTabs` on the installed Reka Tabs primitive, an inert design reference-mapped preview, a Button-style page/playground, snippet, nine-section contract and semantic API docs.
+- [x] Fresh design reference/local renders inspected at 390×844; exact size/orientation interaction, RTL ArrowLeft/End, disabled-tab skipping, focus style, 390/320 responsive dimensions and technical gates recorded below.
 
 
 ## Tabs — DoD browser and technical record (2026-11-02)
 
-- [x] Lemon live page reviewed at 1280×720 and 390×844: 4 parts, 39 variants, Line underline, Soft surface, 3 sizes, 2 orientations, RTL order and 2px focus ring. Norato live page rendered at matched 390×844 and 1280×720; the 390px document width stays within the viewport and its specimen frame is 343×136 with a 317×49 tablist. At 320px the 262×49 preview tablist retains four 48px targets with internal horizontal scrolling and no document overflow. The page structures differ, so compare the component treatment rather than overall section height.
+- [x] design reference live page reviewed at 1280×720 and 390×844: 4 parts, 39 variants, Line underline, Soft surface, 3 sizes, 2 orientations, RTL order and 2px focus ring. Norato live page rendered at matched 390×844 and 1280×720; the 390px document width stays within the viewport and its specimen frame is 343×136 with a 317×49 tablist. At 320px the 262×49 preview tablist retains four 48px targets with internal horizontal scrolling and no document overflow. The page structures differ, so compare the component treatment rather than overall section height.
 - [x] Live DOM confirms 4 triggers/4 panels, one selected trigger, matching active panel, disabled tab semantics and 48px targets for Small, Medium, Large. RTL ArrowLeft moves to the visually left next tab; End focuses/selects last enabled tab; focus ring computes to 2px blue outline + 2px yellow halo. Vertical/Soft at 429px has no horizontal document overflow.
 - [x] Copyable example displays a valid `</script>` closing tag. Preview has `inert` and `aria-hidden`; no interactive descendants.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass. Build reports advisory that the JS chunk exceeds 500KB.
@@ -1111,7 +1120,7 @@
 ## Breadcrumbs — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoBreadcrumbs`, Button-style playground, copyable usage and nine-section contract; catalog readiness is Adapted.
-- [x] Lemon/Norato same-viewport desktop and mobile render compared. Desktop Norato specimen is 584×136px with a 212×48px path; 390px specimen 343×136px/document 375px; 320px document remains 320px with internal path scroll. 48px links/disclosure, 2px keyboard focus, RTL separators, current-page ARIA, pointer/Enter disclosure and 3 hidden middle links verified; console error list empty.
+- [x] design reference/Norato same-viewport desktop and mobile render compared. Desktop Norato specimen is 584×136px with a 212×48px path; 390px specimen 343×136px/document 375px; 320px document remains 320px with internal path scroll. 48px links/disclosure, 2px keyboard focus, RTL separators, current-page ARIA, pointer/Enter disclosure and 3 hidden middle links verified; console error list empty.
 - [x] Token/catalog/typecheck/build/diff gates passed; the JS chunk is 800.06KB and Vite warns above 500KB.
 - [ ] Independent screen-reader review and exhaustive visual combination matrix remain open; maturity stays Adapted.
 
@@ -1119,9 +1128,9 @@
 
 - [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.
 - [x] Browser evidence before final specimen CSS/RTL chevron adjustment: page 5 selection updates controlled state and `aria-current`; first/last boundaries disable navigation; focus ring is 2px; live targets are 48px; mobile Numbers scroll internally while Simple fits without document overflow; no console errors.
-- [x] Removed the legacy static pagination sizing rules that forced the specimen to live-control dimensions. Updated the inert specimen to compact 32px Lemon-like page cells; corrected chevron direction from `dir`.
+- [x] Removed the legacy static pagination sizing rules that forced the specimen to live-control dimensions. Updated the inert specimen to compact 32px design reference-like page cells; corrected chevron direction from `dir`.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 records/contracts), Vue typecheck, production build and `git diff --check` pass after final source edits. Production build has a 806.97KB JS chunk advisory.
-- [ ] Browser re-render and matched Lemon/local geometry after the compact specimen and RTL-chevron changes, exhaustive page-window/size/mode combinations, and independent screen-reader review remain open. Keep readiness `Adapted`; DoD is not closed.
+- [ ] Browser re-render and matched design reference/local geometry after the compact specimen and RTL-chevron changes, exhaustive page-window/size/mode combinations, and independent screen-reader review remain open. Keep readiness `Adapted`; DoD is not closed.
 
 ## Primary accent and dropdown consistency — implementation checkpoint (2026-11-02)
 
@@ -1129,7 +1138,7 @@
 - [x] Replaced browser-native option controls in Date Picker wheel/date-time and all docs playground filters/settings with Norato custom dropdowns. Source scan finds no native `<select>`/`<option>` tags in the Vue runtime or app.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass. Build reports an 806.90KB JS chunk advisory.
 - [x] Live browser confirms 429px page width without document overflow; zero native selects in the DOM; custom dropdown ArrowDown/Enter selection; Date Picker custom listbox updates wheel year and date-time hour without closing its parent; Escape closes the menu and returns focus; yellow selected date/current page use dark text; browser console has no errors.
-- [ ] Same-viewport Lemon/Norato desktop and narrow mobile comparison, exhaustive interaction/state matrix and independent screen-reader review remain open. Keep DoD open.
+- [ ] Same-viewport design reference/Norato desktop and narrow mobile comparison, exhaustive interaction/state matrix and independent screen-reader review remain open. Keep DoD open.
 
 ## Playground dropdown RTL alignment — implementation checkpoint (2026-11-02)
 
@@ -1173,7 +1182,7 @@
 
 - [x] Bidi-sensitive chevron glyphs in the runtime component and inert top specimen were replaced with fixed left-pointing SVG chevrons; the specimen home marker is now the same SVG icon used by the adapter.
 - [x] Local browser render of collapsed RTL Breadcrumbs shows all visible separators pointing left, with intrinsic 16×16px icon geometry and no text-based mirroring. Slash remains an independent option.
-- [ ] Independent screen-reader review, full visual variant matrix and 320px/390px Lemon comparison remain outside this screenshot correction's DoD.
+- [ ] Independent screen-reader review, full visual variant matrix and 320px/390px design reference comparison remain outside this screenshot correction's DoD.
 
 ## Range track/thumb endpoint alignment — 2026-11-02
 
@@ -1192,7 +1201,7 @@
 
 ## Input field radius — 2026-11-02
 
-- [x] Lemon input radius is verified at 12px; Input-family fields and OTP use the Norato 12px card radius instead of the capsule radius.
+- [x] design reference input radius is verified at 12px; Input-family fields and OTP use the Norato 12px card radius instead of the capsule radius.
 - [x] Browser confirms runtime OTP, eight subtype specimens, 41 state cards and playground fields compute to 12px; other component radii are untouched and RTL is intact.
 - [x] Token/catalog/typecheck/build and `git diff --check` pass. Change is pushed to GitHub as `28c12ce`.
 - [ ] Mobile viewport and interactive state combinations were not re-exercised in this radius-only request.
@@ -1234,7 +1243,7 @@
 - [x] Live browser screenshot: Button specimen contains only Primary and Secondary, with the dotted warm/cool glass background; no Cancel sample remains.
 - [x] Same browser and viewport comparison against Split Button: both frames measure 583.98×288px with 24px radius. Button controls measure 63.73×48px and 81.78×48px; Split Button main/toggle measure 64×48px and 48×48px.
 - [x] RTL is preserved; document width is 1265px at a 1280px viewport, with no horizontal overflow.
-- [ ] Mobile 390px viewport and separate Lemon screenshot comparison were not run; viewport resizing is unavailable in this browser session.
+- [ ] Mobile 390px viewport and separate design reference screenshot comparison were not run; viewport resizing is unavailable in this browser session.
 - [ ] Keyboard and shared Button state matrix were not re-exercised; this change only alters inert specimen layout/content and leaves the interactive playground/API untouched.
 
 ## Input email specimen — label icon, placeholder and visual height (2026-11-02)
@@ -1273,7 +1282,7 @@
 ## Time Picker selected accent correction — 2026-11-07
 
 - [x] At desktop 1280×720, Norato static and interactive selected cells compute to yellow `rgb(253, 193, 1)` with dark `rgb(26, 26, 26)` text; frame is 584×288px.
-- [x] At mobile 499×932, Norato's 452×288px frame remains bounded, document width is 484px, and no horizontal overflow occurs. Lemon comparison frame is 436×300px and its black selected fill remains unchanged.
+- [x] At mobile 499×932, Norato's 452×288px frame remains bounded, document width is 484px, and no horizontal overflow occurs. design reference comparison frame is 436×300px and its black selected fill remains unchanged.
 - [x] RTL and selected-cell color were captured in the actual local browser. Independent screen-reader review remains open and is not claimed as passed.
 
 ## Input hover stroke consistency — 2026-11-08
@@ -1285,14 +1294,14 @@
 
 ## Navbar visual and responsive follow-up — 2026-11-08
 
-- [x] Lemon/Norato measured at desktop 1280×720 and mobile 390×844; static row is 50px and nearly fills frame width while keeping 48px controls.
+- [x] design reference/Norato measured at desktop 1280×720 and mobile 390×844; static row is 50px and nearly fills frame width while keeping 48px controls.
 - [x] At 320px, document scroll width equals client width (305px) with no horizontal scrollbar; all four mobile header types remain within bounds.
 - [x] Nine desktop layout/style combinations, seven runtime target heights, submenu Enter/Escape focus return, drawer Escape/outside close, controlled Search and Back activation were checked.
 - [ ] Independent screen-reader review and wider full state/focus/current/disabled matrix remain open.
 
 ## Radio matrix mobile geometry and accent alignment — 2026-11-08
 
-- [x] Matched 390×844 browser render: Lemon Variants gallery is 327px wide and 651.5px high; its property selector adds 272.5px. Norato matrix is 343px wide, 886.9px high, five 162.2px cards, four 48px cells per group and 20 cells total.
+- [x] Matched 390×844 browser render: design reference Variants gallery is 327px wide and 651.5px high; its property selector adds 272.5px. Norato matrix is 343px wide, 886.9px high, five 162.2px cards, four 48px cells per group and 20 cells total.
 - [x] Norato document width is 375px with no horizontal overflow. Gallery is inert and RTL; no interactive descendants. Ring sizes are intrinsic 16px/20px and are not stretched.
 - [x] Checked dot and hover border resolve to yellow `rgb(253, 193, 1)`, matching live adapter selection; disabled stays gray, error red, focus ring/halo remains dedicated.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` passed after the color update; the 818.95KB JS chunk still triggers Vite's >500KB advisory.
@@ -1315,7 +1324,7 @@
 - [ ] Independent screen-reader review and exhaustive Input visual/state matrix remain open.
 
 ## Stepper component DoD (2026-11-08)
-- [x] Same-viewport Lemon/Norato desktop 1280×720 comparison; Norato preview frame measured 584×288px versus Lemon 636×300px in their different-width documentation columns. Horizontal step row is 416×55px and Lemon 454×55px; the narrower Norato content column explains the width difference. RTL first step is right; palette uses Norato yellow and neutral surfaces.
+- [x] Same-viewport design reference/Norato desktop 1280×720 comparison; Norato preview frame measured 584×288px versus design reference 636×300px in their different-width documentation columns. Horizontal step row is 416×55px and design reference 454×55px; the narrower Norato content column explains the width difference. RTL first step is right; palette uses Norato yellow and neutral surfaces.
 - [x] Desktop browser rendered Horizontal, Vertical, Compact and Dots; no false interactive elements in the adapter. Vertical indicators align with each step's text; indicator sizes remain tokenized and circular.
 - [x] Playground controlled transition advanced from Address to Payment and updated polite announcement; LTR put Cart first on the left. Dots with Address flagged as Error showed red marker, label and supplied message; semantic list identified the error and live status included the explanation.
 - [x] Compact Error shows a red marker, affected step name and explanation. Dots Small/Medium/Large scale to 4/8px, 8/12px and 12/16px outer diameters, including the current ring; browser was restored to the default horizontal, medium, RTL, Address state.
@@ -1326,7 +1335,7 @@
 ## گزارش درخواست — Stroke فیلدها و Tree View (2026-11-08)
 
 - درخواست Input: ماهیت خط و رنگ Stroke هنگام hover بررسی شد. در مرورگر محلی روی 5174 و 5175، پوستهٔ control مرز/outline/shadow ندارد؛ تنها pseudo-element فیلد Stroke یک‌پیکسلی دارد: default برابر `#E8E8E8` و Hover برابر Norato Yellow `#FDC101`. هیچ کد Input تغییر نکرد چون render فعلی همین رفتار را دارد. تصویر ارسالی pointer را نشان نمی‌دهد؛ بنابراین از روی تصویر به‌تنهایی نمی‌شود Hover را تأیید کرد.
-- Tree View: Lemon در viewport دسکتاپ 1280×720 مرور شد؛ الگوی قاب نقطه‌دار، پنل درخت، RTL، فاصلهٔ 20px، offset فایل 16px، Guides Off و پنج state مرجع ثبت شد. Norato در 5176 همان ساختار صفحهٔ Button و هر 9 بخش قرارداد را render می‌کند؛ قاب 584×288px در عرض ستون محدود صفحه است.
+- Tree View: مرجع طراحی در viewport دسکتاپ 1280×720 مرور شد؛ الگوی قاب نقطه‌دار، پنل درخت، RTL، فاصلهٔ 20px، offset فایل 16px، Guides Off و پنج state مرجع ثبت شد. Norato در 5176 همان ساختار صفحهٔ Button و هر 9 بخش قرارداد را render می‌کند؛ قاب 584×288px در عرض ستون محدود صفحه است.
 - نمونهٔ Norato در قاب نقطه‌دار 288px و پنل شیشه‌ای 256px قرار دارد. ردیف‌های preview برابر 28px و runtime برابر حداقل 48px هستند. در DOM، تورفتگی level 2 برابر 20px و offset فایل 16px است؛ لبهٔ inline انتهای برچسب فایل و پوشهٔ هم‌سطح برابر 745.5px بود.
 - رفتار مرورگر: Guide روشن شد و border راهنما 1px شد؛ انتخاب تکی با کلیک و Enter، باز/بسته‌شدن با chevron و کلیدهای Left/Right، جابه‌جایی با ArrowUp و Home/End، و حلقهٔ فوکوس زرد 2px با offset برابر 2px تأیید شد. کلیک chevron انتخاب قبلی را حفظ کرد؛ End نود disabled را رد کرد؛ فرزند پوشهٔ بسته از درخت دسترس‌پذیری حذف شد.
 - [ ] viewportهای 390px و 320px، فوکوس‌گذاری مستقل صفحه‌خوان و بررسی دستی فعال‌سازی disabled با pointer اجرا نشده‌اند؛ Tree View DoD باز می‌ماند.
@@ -1335,7 +1344,7 @@
 
 ## Alert — 2026-11-08
 
-- [x] Lemon و Norato در viewport یکسان 499×932 بررسی شدند: قاب Lemon 436×300 و alert داخلی 410×74px؛ قاب Norato 452×288 و alert 420×69px. اختلاف قاب از عرض ستون‌های متفاوت صفحه ناشی است؛ alert Norato 10px عریض‌تر و 5px کوتاه‌تر است.
+- [x] مرجع طراحی و Norato در viewport یکسان 499×932 بررسی شدند: قاب مرجع طراحی 436×300 و alert داخلی 410×74px؛ قاب Norato 452×288 و alert 420×69px. اختلاف قاب از عرض ستون‌های متفاوت صفحه ناشی است؛ alert Norato 10px عریض‌تر و 5px کوتاه‌تر است.
 - [x] پیش‌نمایش Alert داخل قاب نقطه‌دار Button، inert و بدون target تعاملی است؛ playground از آن جداست. صفحه ۹ بخش هم‌سطح Button دارد.
 - [x] هر ۲۰ ترکیب tone/style/layout از رابط واقعی انتخاب و رندر شد؛ همه اندازهٔ غیرصفر داشتند، جهت RTL بود، Danger نقش alert و چهار لحن دیگر status داشتند. رنگ ظرف Soft برای پنج لحن با tokenهای Norato هم‌خوان بود؛ اندازهٔ SVG برابر 24×24px بود.
 - [x] Inline اکشن Expanded را مخفی می‌کند؛ action مصرف‌کننده در Expanded نمایش دارد. بستن کنترل‌شده با Space مقدار `v-model` را بست؛ فوکوس کیبورد روی Close حلقهٔ ۲px زرد با offset برابر ۴px و هدف ۴۸×۴۸px نشان داد.
@@ -1355,26 +1364,26 @@
 - [x] At the actual local Input playground, the password field showed a single 1px Norato-yellow Stroke on focus, without the dark generic outline or an outer halo.
 - [x] The shared interactive input shell keeps its yellow hover Stroke; legacy native field, textarea, date input, and select trigger now also use the yellow Stroke on hover/focus. Disabled fields remain excluded from hover recoloring.
 - [x] Generic focus styling remains for buttons, switches, choices, and independent actions; only field controls remove the dark outer outline.
-- [ ] Matched Lemon screenshot comparison across all Input types and independent screen-reader review remain open.
+- [ ] Matched design reference screenshot comparison across all Input types and independent screen-reader review remain open.
 
 ## Toast implementation wiring — 2026-11-08
 
 - [x] NoratoToast exported from `@norato/vue`; catalog resolves the adapter and `toast` usage example; component detail page mounts ToastPlayground.
 - [x] Static Toast preview uses Button-sized dotted specimen composition and package Toast styling without a portal.
-- [x] At 1270×720, visually compared Lemon and Norato: both frames are about 576×288px; Lemon default Toast is about 366×72px and Norato is about 368×70px. Verified the live RTL success message exposes title/description/action/close and closing emits feedback.
+- [x] At 1270×720, visually compared design reference and Norato: both frames are about 576×288px; design reference default Toast is about 366×72px and Norato is about 368×70px. Verified the live RTL success message exposes title/description/action/close and closing emits feedback.
 - [ ] Full 20-variant visual matrix, timer/pause, keyboard, independent screen-reader and 390/320 widths remain unverified; Toast DoD stays open.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build reports a 965.16KB JS chunk above the 500KB advisory threshold.
 
 ## Tooltip first implementation pass — 2026-11-08
 
-- [x] Lemon route inspected; 16 combinations, default dark icon-trigger composition, Bubble/Arrow anatomy, RTL collapsed-sidebar left placement and keyboard focus requirement recorded.
+- [x] design reference route inspected; 16 combinations, default dark icon-trigger composition, Bubble/Arrow anatomy, RTL collapsed-sidebar left placement and keyboard focus requirement recorded.
 - [x] Norato page uses Button-sized dotted preview + inert sample + separate executable playground; at 1270×720 frame geometry is visually comparable. Rich info remains noninteractive; host owns actions.
 - [x] Keyboard focus reveals the tooltip, Escape closes it, and the trigger retains a single 2px yellow focus ring. Trigger description and content are present in the accessibility tree.
 - [ ] Pointer delay, 16-combination render matrix, Popper collision at 390/320, independent screen-reader review and final technical gates remain open.
 
 ## Progress implementation pass — 2026-11-08
 
-- [x] Lemon Progress route inspected: linear/circular forms, 4/8/12px bar thicknesses, 24/32/40px rings, right-to-left fill, 12 o'clock start and small-ring label omission recorded.
+- [x] design reference Progress route inspected: linear/circular forms, 4/8/12px bar thicknesses, 24/32/40px rings, right-to-left fill, 12 o'clock start and small-ring label omission recorded.
 - [x] Norato local detail page uses the shared Button-style dotted preview frame and a distinct executable playground; screenshot confirms the 62% linear value and yellow fill from the right.
 - [x] Accessibility tree exposes one `progressbar` named “بارگذاری فایل” with value 62; the adapter clamps numeric input to 0–100, displays Persian percent text, and leaves it non-focusable.
 - [x] On Linear/Medium/Default, browser values 0/25/50/75/100 update the progressbar value; on Circular/Medium/Default at 25%, the yellow arc starts at 12 o’clock; Circular/Small at 100% has no center percentage.
@@ -1390,8 +1399,8 @@
 
 ## Progress visual and matrix correction — 2026-11-08
 
-- [x] Source: Lemon `#progress`, matched browser viewport 1280×720. Lemon stage is 636×300px; metadata row spans 302.4px and the neutral track directly below is 302.4×8.6px. Norato had put the track between the label and value, so that first pass failed visual acceptance.
-- [x] Corrected Norato to label/value metadata above a full-width track. The inert Button-style sample frame is 584×288px with a 304px token-capped track at 8px Medium thickness; visual hierarchy and row order now match Lemon while retaining Norato's yellow.
+- [x] Source: design reference `#progress`, matched browser viewport 1280×720. design reference stage is 636×300px; metadata row spans 302.4px and the neutral track directly below is 302.4×8.6px. Norato had put the track between the label and value, so that first pass failed visual acceptance.
+- [x] Corrected Norato to label/value metadata above a full-width track. The inert Button-style sample frame is 584×288px with a 304px token-capped track at 8px Medium thickness; visual hierarchy and row order now match design reference while retaining Norato's yellow.
 - [x] All 120 variants were selected through the actual Progress playground in RTL and all 120 in LTR. Current/min/max, localized value text, tone mapping, exact 4/8/12px Linear thickness, 24/32/40px square Circular geometry, percentage center rules, fill ratios and logical start edges all passed with zero failures.
 - [x] At browser viewport settings 390px and 320px, actual content widths were 375px/305px because the scrollbar uses 15px; document width matched content width, with no horizontal overflow. Frame dimensions were 343×288px/273×288px and the track remained horizontally fluid at 304px/263px.
 - [x] Actual UI value input clamps -10 to 0 and 120 to 100; 42.6 rounds to 43. `aria-valuenow`, Persian `aria-valuetext`, and visual fill agree at each boundary.
@@ -1410,13 +1419,13 @@
 - [x] Browser playground exercised all 12 orientation/type/tone combinations and spacing 0/4/8. Rules measured 1 CSS px in their thickness axis; horizontal line remains content-driven, vertical lines remain 1px wide, vertical labels stay upright, and RTL/LTR label-start follows logical inline-start.
 - [x] Decorative mode is hidden from the browser accessibility tree; semantic mode exposes `role=separator`, orientation and label name where supplied. This verifies browser AX output, not a screenreader session.
 - [x] At 390px and 320px viewport settings, the specimen is 343×288px and 273×288px; document width is 375px and 305px respectively, with no horizontal overflow.
-- [x] Lemon screenshot composition was reviewed against Norato's default. Lemon's current tab reported a different CSS viewport than the local tab, so exact same-viewport dimensions are not asserted. Norato retains its neutral semantic border palette.
+- [x] design reference screenshot composition was reviewed against Norato's default. design reference's current tab reported a different CSS viewport than the local tab, so exact same-viewport dimensions are not asserted. Norato retains its neutral semantic border palette.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing advisory that the main JS chunk exceeds 500 kB.
-- [ ] Independent screenreader review remains open; a matched CSS viewport comparison with Lemon also remains open.
+- [ ] Independent screenreader review remains open; a matched CSS viewport comparison with design reference also remains open.
 
 ## Toast — browser review (2026-11-08)
 
-- [x] Lemon and Norato were rendered in the same 1265×720 browser viewport. Both show the centered rich success Toast in the shared dotted frame with icon on the right and close on the left; Norato keeps its semantic green success, glass surface and yellow accent.
+- [x] design reference and Norato were rendered in the same 1265×720 browser viewport. Both show the centered rich success Toast in the shared dotted frame with icon on the right and close on the left; Norato keeps its semantic green success, glass surface and yellow accent.
 - [x] Used the live playground to open and close all 20 combinations (5 tones × 2 surfaces × 2 layouts); the generated Vue props followed each selected combination. The 20 states were exercised, but not all received individual screenshot geometry review.
 - [x] A default 6-second success Toast closed after a 7-second wait. Loading stayed visible after 7 seconds and closed with its manual close control.
 - [x] Action and close controls both activated with Space through the browser accessibility target. Focus ring dimensions, natural Tab-order reachability, custom action callback mode, and pause/resume events remain unverified.
@@ -1441,7 +1450,7 @@
 
 - [x] Local Avatar route presents the inert dotted preview, separate executable playground, copyable Vue usage, and contract sections in Button page order.
 - [x] Browser accessibility tree reports 36 Avatar, 12 Group, 3 Label, and 4 Status variants; broken-image fallback is exposed with a person name. RTL group members and overflow accessible labels are present.
-- [x] Direction and size custom menus open and close in the live playground. Lemon's Avatar page was reviewed and supplies the same 55-variant scope, circle/square, ring/status placement, group RTL rule, and accessibility name guidance.
+- [x] Direction and size custom menus open and close in the live playground. design reference's Avatar page was reviewed and supplies the same 55-variant scope, circle/square, ring/status placement, group RTL rule, and accessibility name guidance.
 - [ ] Exact responsive widths, pixel geometry of all 55 variants, independent screen-reader review, remaining state/keyboard audit and engineering gates are pending. Avatar DoD remains open.
 
 ## Avatar direction and keyboard follow-up — 2026-11-08
@@ -1449,12 +1458,12 @@
 - [x] Selected LTR in the live playground; the displayed group order mirrored and the generated Vue example changed to `dir="ltr"`. Restored RTL after the check.
 - [x] The single Avatar's presence dot remains at physical bottom-left in both RTL and LTR renders. Static specimen has no interactive descendants in browser AX.
 - [x] Direction menu opened using keyboard; Home + Enter selected RTL and closed the menu. Visible keyboard focus is present, though its contrast treatment still needs review across every playground control.
-- [ ] This browser does not expose exact viewport dimensions or a viewport override. Do not count zoom as a 390px/320px viewport measurement; exact mobile document overflow and matched-width Lemon comparison remain open, as do all-55 pixel measurements and independent screen-reader review.
+- [ ] This browser does not expose exact viewport dimensions or a viewport override. Do not count zoom as a 390px/320px viewport measurement; exact mobile document overflow and matched-width design reference comparison remain open, as do all-55 pixel measurements and independent screen-reader review.
 
 ## Badge — implementation and browser review (2026-11-08)
 
 - [x] Badge detail page follows Button structure: inert dotted preview, separate live playground, copyable Vue example, and Overview/Anatomy/Variants/Sizes/States/Parts/Usage/Accessibility/Tokens sections.
-- [x] Lemon and Norato were reviewed at the same 1265×720 browser viewport. Both center a count marker on a rounded bell anchor inside a dotted card; local card geometry is 576×288px and Lemon is 636×300px because their content columns differ.
+- [x] design reference and Norato were reviewed at the same 1265×720 browser viewport. Both center a count marker on a rounded bell anchor inside a dotted card; local card geometry is 576×288px and design reference is 636×300px because their content columns differ.
 - [x] Count/Dot × Small/Medium × Danger/Inverse/Neutral/Success were selected in the actual playground. Count minimum sizes are 16/20px; Dot sizes are exact 8/10px, including 2px white ring. Longer Count text expands horizontally. Neutral's low-contrast first render was corrected with a dedicated neutral status token; Neutral Count and Dot were rechecked afterward.
 - [x] RTL places the marker at the physical top-left; LTR mirrors it to the top-right. Anchor target remains 48×48px; its size does not stretch with the absolute-positioned marker.
 - [x] Count 0 and 3, the 99 boundary, and 100→99+ were checked. Dot hides the value control and exposes “مورد جدید” in the host button label.
@@ -1466,12 +1475,12 @@
 
 - [x] Real local Switch adapter on/off checked states confirm Norato-yellow active track, neutral muted off track, white knob with no Stroke/shadow, and 48×48px target. Hover was isolated from focus: an off Switch remains neutral-filled while its 1px border turns yellow.
 - [x] Static matrix had a legacy `border-strong` token on checked Default and Focus cells. The existing selector now uses Norato yellow; all 30 Switch and 6 Switch Field cells were audited across state, size and value. Checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error red; all knobs remain white and stroke-free.
-- [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. Matrix-specific viewport and same-viewport Lemon comparison, plus independent screen-reader review, remain open.
+- [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. Matrix-specific viewport and same-viewport design reference comparison, plus independent screen-reader review, remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass for this correction; build retains the existing >500kB main bundle warning.
 
 ## Segmented Control Contrast hover — follow-up (2026-11-08)
 
-- [x] At the same 1280×720 viewport, Lemon shows raised white Glass selection; Norato retains its dotted glass frame and Norato-yellow brand accent.
+- [x] At the same 1280×720 viewport, design reference shows raised white Glass selection; Norato retains its dotted glass frame and Norato-yellow brand accent.
 - [x] Reproduced the old bug: selected Contrast hover had white text on `rgb(253, 193, 1)`. After the selector correction, the hovered selected option computes `rgb(26, 26, 26)` text on Norato yellow; resting Glass remains raised white.
 - [x] Exercised the actual playground across 24 combinations (2 styles × 4 sizes × 3 item counts): all groups remained RTL, non-wrapping, selected, and within the group width; targets measured 48px for Small/Medium/Large and 56px for XLarge.
 - [x] Keyboard verified on the live group: ArrowLeft moves focus without changing value; Space selects; Home/Enter and End/Space work; a disabled Month option is skipped; group-disabled disables every native segment button; clicking the current selection does not clear the controlled value.
@@ -1480,14 +1489,14 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` completed successfully. The generated JS bundle is 1,024.79KB; this build emitted no separate chunk-size warning.
 ## Empty State — implementation review (2026-11-08)
 
-- [x] Same-viewport 1280×720 Lemon/Norato preview captured and compared. Lemon frame is 636×300px; Norato's shared Button frame is 584×288px. Both use the dotted preview and Default marker; Norato keeps its yellow/dark primary action and yellow-outline secondary action. The frame difference follows the page content columns.
+- [x] Same-viewport 1280×720 design reference/Norato preview captured and compared. design reference frame is 636×300px; Norato's shared Button frame is 584×288px. Both use the dotted preview and Default marker; Norato keeps its yellow/dark primary action and yellow-outline secondary action. The frame difference follows the page content columns.
 - [x] All 12 layout × size × container combinations rendered in the live Vue playground. Each root remained RTL and within the page; both action targets measured 48px high.
 - [x] Exercised all 24 visual type × size × tone combinations in four short browser batches. Icon geometry measured 20/24/32px inside 40/48/64px circles; illustration geometry measured 40×35/48×42/64×56px inside the same boxes. No visual overflow occurred across all tones.
 - [x] Primary/secondary action slots render named NoratoButton controls; click reports the selected host action, Tab reaches the secondary action with visible focus, and both action targets measure 48px.
 - [x] Horizontal RTL/LTR geometry mirrors: RTL visual at x=772px and content at x=541px; LTR visual at x=541px and content at x=605px in the 584px frame. No internal horizontal overflow.
 - [x] In the rendered preview, a consumer-sized 40×40 SVG visual fit its slot at 40×40px. Raw anchor and button children in the action slot each computed to a 48px minimum/actual height.
 - [x] Chromium mobile emulation at 390×844 and 320×844 showed `innerWidth`, document width and body width equal to each viewport (390/320), with no element outside the viewport. The Button-style dotted frame measured 358×288px at 390px and 288×288px at 320px; horizontal mode stacks below 600px.
-- [x] Lemon captures were made at the same 390px and 320px physical widths. Its responsive navigation retains offscreen links in the DOM, while document width stays bounded to its viewport; these hidden/overflow-clipped navigation nodes were not counted as page overflow.
+- [x] design reference captures were made at the same 390px and 320px physical widths. Its responsive navigation retains offscreen links in the DOM, while document width stays bounded to its viewport; these hidden/overflow-clipped navigation nodes were not counted as page overflow.
 - [x] Browser AX shows one named section associated with heading/description, hides decorative visual, and retains action names. Independent screen-reader review remains required.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after correcting the invalid slot selector.
 - [ ] Independent screen-reader review and the full exhaustive behavior cross-product remain open; browser AX is not counted as a screen-reader session.
@@ -1499,4 +1508,4 @@
 - [x] RTL rail is on the right and LTR rail mirrors to the left. First/middle/last connectors, fixed marker bounds, Avatar circle geometry and image fallback, array order, group boundaries, and status cues were inspected.
 - [x] Browser AX exposes named ordered lists, item heading/time and marker names; static specimen has zero focusable descendants. Keyboard opened and selected the layout menu with visible yellow focus; playground controls were restored to defaults.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after latest changes. Build retains the existing large-main-bundle advisory.
-- [ ] Matched Lemon/Norato viewport comparison, exact mobile widths, and independent screen-reader review remain open. Do not close Timeline DoD until completed.
+- [ ] Matched design reference/Norato viewport comparison, exact mobile widths, and independent screen-reader review remain open. Do not close Timeline DoD until completed.

@@ -21,7 +21,7 @@ Skeleton شکل تقریبی محتوای در حال بارگذاری را نگ
 
 - **Skeleton (8 ترکیب):** Shape: Line، Circle، Rectangle، Pill × Effect: Pulse، Shimmer.
 - **Skeleton Pattern (16 ترکیب):** Type: Text، Avatar Text، List Item، Card، Card Horizontal، Input، Table Row، Stat × Effect: Pulse، Shimmer.
-- Norato از خاکستری خنثی توکنی استفاده می‌کند؛ رنگ تیرهٔ پیش‌فرض Lemon به این پالت منتقل نمی‌شود.
+- Norato از خاکستری خنثی توکنی استفاده می‌کند؛ رنگ تیرهٔ پیش‌فرض مرجع طراحی به این پالت منتقل نمی‌شود.
 
 ## Sizes
 
@@ -68,4 +68,4 @@ Skeleton شکل تقریبی محتوای در حال بارگذاری را نگ
 
 ## DoD
 
-ماتریس ۲۴ ترکیب، Lemon/Norato در viewport یکسان، هندسهٔ ثابت، RTL/LTR shimmer، reduced motion، busy label/AX، ریسپانسیو ۳۹۰/۳۲۰، token/catalog/typecheck/build/diff و مرور مستقل صفحه‌خوان باید تأیید شوند. تا وقتی مرور مستقل صفحه‌خوان و شواهد کامل تصویری ثبت نشده، DoD بسته نیست.
+ماتریس ۲۴ ترکیب، مرجع طراحی/Norato در viewport یکسان، هندسهٔ ثابت، RTL/LTR shimmer، reduced motion، busy label/AX، ریسپانسیو ۳۹۰/۳۲۰، token/catalog/typecheck/build/diff و مرور مستقل صفحه‌خوان باید تأیید شوند. تا وقتی مرور مستقل صفحه‌خوان و شواهد کامل تصویری ثبت نشده، DoD بسته نیست.

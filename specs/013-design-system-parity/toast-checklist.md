@@ -1,0 +1,26 @@
+# Toast — Checklist / Definition of Done
+
+## Contract and structure
+- [x] Constitution → Specify → Clarify → Plan → Checklist → Tasks → Analyze → Implement workflow files are recorded in sequence.
+- [x] Vue API, export, catalog, usage, contract and focus/timing rules agree; catalog and TypeScript checks pass.
+- [x] Page follows Button section order; inert specimen is separate from live playground.
+- [x] Legacy `.sample-toast` rules are removed; wiring and specimen defects are recorded in the error log.
+
+## Visual and responsive
+- [x] Matched 1270×720 desktop screenshots: Button-sized dotted frames are both about 576×288px; the design reference reference Toast is about 366×72px and the Norato static sample is about 368×70px. RTL status icon and close are on the intended sides; static sample follows design reference's default rich success content without action/timer.
+- [x] Matched desktop screenshot review (same design reference/Norato browser tab at 1265×720): both use the shared dotted frame and centered rich success Toast; frame proportions and RTL status/close placement align, with Norato green semantic success and glass surface.
+- [x] Exercised all five tones × two surfaces × two layouts through the real playground; each combination opened and closed, and the generated Vue usage updated to the selected props. One representative rich combination was inspected visually; full per-combination screenshot measurement remains open.
+- [x] RTL order and Dark/Glass contrast use semantic Norato tokens; yellow remains the brand/focus accent. The screenshot confirms status icon at right and close at left. Exact focus-ring measurement remains open.
+- [ ] Desktop and 390/320 CSS-pixel viewports wrap correctly without document overflow. A narrow 484px screenshot is usable and shows no horizontal page overflow; exact 390/320 viewport validation is still pending.
+
+## Behavior and accessibility
+- [x] Controlled `v-model` opens the live Toast and the close control removes it; `close` feedback appears in the playground.
+- [x] Controlled open/close and default six-second timeout work. Loading remained open after a seven-second wait and closed manually.
+- [x] Action and close activate with Space through the actual browser accessibility target. Natural Tab-order reachability and focus-ring measurement remain open.
+- [ ] Uncontrolled open, caller-owned action callback, persistent duration, and pause/resume events verified.
+- [ ] Single polite/assertive announcement path, tone name, content order, six-second default / persistent policy and reduced motion are verified; independent screen-reader review recorded.
+
+## Engineering
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass.
+- [x] Actual browser evidence and open residuals are recorded; DoD remains open while responsive, pause/resume and independent screenreader evidence are outstanding.
+

@@ -6,9 +6,9 @@
 
 ## Clarifications
 
-### Session 2026-11-01 — Lemon parity scope
+### Session 2026-11-01 — design reference parity scope
 
-- The latest active user goal makes Lemon the reference for the remaining components and requires continuing through completion. This supersedes the historical single-date-only limitation below. Implement all seven Lemon modes: Single, Range, Range + Presets, Date & Time, Month, Year, and Wheel; keep Norato palette/tokens and Vue 3 product authority.
+- The latest active user goal makes design reference the reference for the remaining components and requires continuing through completion. This supersedes the historical single-date-only limitation below. Implement all seven design reference modes: Single, Range, Range + Presets, Date & Time, Month, Year, and Wheel; keep Norato palette/tokens and Vue 3 product authority.
 - Holidays are supplied as optional Jalali dates by the consumer; Fridays are always indicated. No official holiday dataset exists in the repository, so none is bundled.
 - Date-time values keep local wall-clock time; range presets resolve against the user's local date.
 
@@ -44,7 +44,7 @@ As a user, I need a clear validation message without losing the selected date.
 
 ## Requirements
 
-- **FR-001**: Date Picker MUST support all seven Lemon modes: Single, Range, Range + Presets, Date & Time, Month, Year, and Wheel.
+- **FR-001**: Date Picker MUST support all seven design reference modes: Single, Range, Range + Presets, Date & Time, Month, Year, and Wheel.
 - **FR-002**: The closed control MUST follow the Figma section’s visual language, including calendar affordance, typography, spacing, radius, and approved colors.
 - **FR-003**: Date Picker MUST expose a persistent associated label and optional helper/error message.
 - **FR-004**: Date Picker MUST support default, focus, open, selected, disabled, loading, and invalid states.

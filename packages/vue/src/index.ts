@@ -4,6 +4,7 @@ import './progress.css'
 import './skeleton.css'
 import './empty-state.css'
 import './avatar.css'
+import './charts.css'
 
 export { default as NoratoButton } from './components/NoratoButton.vue'
 export { default as NoratoBadge } from './components/NoratoBadge.vue'
@@ -99,6 +100,12 @@ export { default as NoratoTimelineItem } from './components/NoratoTimelineItem.v
 export { default as NoratoTimelineMarker } from './components/NoratoTimelineMarker.vue'
 export { default as NoratoActivityFeed } from './components/NoratoActivityFeed.vue'
 export type { NoratoActivityGroup, NoratoTimelineEvent, NoratoTimelineIcon, NoratoTimelineLayout, NoratoTimelineMarkerType, NoratoTimelinePosition, NoratoTimelineTone } from './components/timelineTypes'
+
+export { default as NoratoChartCard } from './components/NoratoChartCard.vue'
+export { default as NoratoStatTile } from './components/NoratoStatTile.vue'
+export { default as NoratoChartLegendItem } from './components/NoratoChartLegendItem.vue'
+export { default as NoratoChartTooltip } from './components/NoratoChartTooltip.vue'
+export type { NoratoChartDirectLabel, NoratoChartSeries, NoratoChartTrend, NoratoChartType } from './components/chartTypes'
 
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'

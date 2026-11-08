@@ -7,7 +7,7 @@
 - Runtime inventory: add the Divider implementation/export and `usageKey` to `packages/components/src/catalog.ts`; record the evaluated primitive in `primitive-map.ts`.
 - Docs: enrich `docs/component-contracts/divider.md`, add `usageExamples.divider`, and create `apps/vue/src/DividerPlayground.vue`.
 - Page: add the live playground branch in `App.vue`, import it, and replace the generic preview with `NoratoDivider` inside the shared inert Button dotted frame in `ComponentSpecimen.vue`.
-- Specimen-only styles: remove `.sample-divider`; cap only the inert top Rule at the Lemon-observed proportion with `--norato-divider-preview-rule-inline-size`; preview height remains the shared frame's height.
+- Specimen-only styles: remove `.sample-divider`; cap only the inert top Rule at the design reference-observed proportion with `--norato-divider-preview-rule-inline-size`; preview height remains the shared frame's height.
 
 ## Composition
 - Reka Separator owns semantic role/orientation/decorative attributes.
@@ -16,7 +16,7 @@
 - Playground controls mirror only public props; generated Vue code and live preview stay synchronized.
 
 ## Verification
-- Inspect Lemon at the same desktop viewport and at mobile width if the browser permits; compare composition, default line and shared preview frame.
+- Inspect design reference at the same desktop viewport and at mobile width if the browser permits; compare composition, default line and shared preview frame.
 - Browser exercise all 12 orientation/type/tone combos plus all 3 spacing settings, RTL/LTR label-start placement, decorative/semantic AX output and measured 1px intrinsic geometry.
 - Inspect 390px and 320px widths for overflow and axis stretching.
 - Run token/catalog checks, Vue typecheck/build and `git diff --check`; record exact evidence and gaps in the request checklist.

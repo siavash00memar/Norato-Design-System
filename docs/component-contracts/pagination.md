@@ -24,7 +24,7 @@ Pagination برای حرکت میان صفحات یک فهرست محدود اس
 - **Pagination (4 variant):** Type: Numbers، Simple؛ Size: Small، Medium.
 - **Page Item (14 variant):** Type: Number، Ellipsis؛ Size: Small، Medium؛ State: Default، Hover، Selected، Disabled، Focus.
 
-این قرارداد تعداد ۱۸ ترکیب Lemon را نگه می‌دارد. adapter همهٔ دکمه‌های تعاملی را حداقل ۴۸px می‌سازد؛ اندازهٔ Small فقط ظاهر متن/فاصله را کوچک می‌کند.
+این قرارداد تعداد ۱۸ ترکیب مرجع طراحی را نگه می‌دارد. adapter همهٔ دکمه‌های تعاملی را حداقل ۴۸px می‌سازد؛ اندازهٔ Small فقط ظاهر متن/فاصله را کوچک می‌کند.
 
 ## Sizes
 

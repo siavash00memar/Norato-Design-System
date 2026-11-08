@@ -13,7 +13,7 @@ const nodes: NoratoTreeNode[] = [
       { id: 'readme', label: 'README.md' },
       { id: 'package', label: 'package.json' },
     ] },
-    { id: 'lemon', label: 'لمون', children: [{ id: 'guide', label: 'راهنما.md' }] },
+    { id: 'guides', label: 'راهنماها', children: [{ id: 'guide', label: 'راهنما.md' }] },
   ] },
   { id: 'archive', label: 'بایگانی', disabled: true, children: [{ id: 'old-project', label: 'پروژهٔ قدیمی' }] },
 ]

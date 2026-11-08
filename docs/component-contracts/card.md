@@ -43,7 +43,7 @@
 - **Content Card — 4 variant:** کارت مقاله، محصول یا پروژه. ابعاد/حالت‌ها: Layout: Vertical، Horizontal، Overlay، Text
 - **Stat Card — 3 variant:** کارت عدد کلیدی با روند. ابعاد/حالت‌ها: Trend: Up، Down، Neutral
 - **Profile Card — 2 variant:** کارت پروفایل. ابعاد/حالت‌ها: Layout: Center، Cover
-- **Pricing Card — 2 variant:** کارت پلن قیمت؛ حالت ویژه با حاشیه‌ی رنگین‌کمانی لمون. ابعاد/حالت‌ها: Highlight: Off، On
+- **Pricing Card — 2 variant:** کارت پلن قیمت؛ حالت ویژه با حاشیه‌ی رنگین‌کمانی نوراتو. ابعاد/حالت‌ها: Highlight: Off، On
 - **Selectable Card — 10 variant:** کارت قابل انتخاب. ابعاد/حالت‌ها: Control: Radio، Checkbox؛ State: Default، Hover، Selected، Disabled، Focus
 
 ## Usage

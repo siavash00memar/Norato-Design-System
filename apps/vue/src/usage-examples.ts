@@ -84,6 +84,16 @@ const items: NoratoMenuItem[] = [
 function selectAction(value: string) { console.log(value) }
 <\/script>
 <template><NoratoMenu id="file-actions" label="اقدام‌های فایل" v-model:open="open" :items="items" @select="selectAction" /></template>`,
+  charts: `<script setup lang="ts">
+import { NoratoChartCard, NoratoStatTile } from '@norato/vue'
+import type { NoratoChartSeries } from '@norato/vue'
+const categories = ['فروردین', 'اردیبهشت', 'خرداد']
+const series: NoratoChartSeries[] = [{ id: 'online', label: 'آنلاین', values: [34, 58, 42] }, { id: 'store', label: 'حضوری', values: [24, 39, 34] }]
+<\\/script>
+<template>
+  <NoratoChartCard title="فروش ماهانه" subtitle="سه ماه اخیر" :categories="categories" :series="series" type="grouped-bar" />
+  <NoratoStatTile label="درآمد کل" value="۱۲۴٬۵۰۰٬۰۰۰" trend="up" change="۱۲٪" />
+</template>`,
   timeline: `<script setup lang="ts">
 import { NoratoActivityFeed, NoratoTimeline, NoratoTimelineItem, NoratoTimelineMarker, type NoratoActivityGroup, type NoratoTimelineEvent } from '@norato/vue'
 const events: NoratoTimelineEvent[] = [

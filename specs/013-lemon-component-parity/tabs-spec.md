@@ -1,4 +1,0 @@
-- Vue 3, RTL and Persian are defaults; Norato semantic tokens define palette, spacing and typography.
-- Lemon is the visual reference; map its style/size/orientation to Norato without distorting tab markers or icons.
-- Each interactive target stays at least 48px; focus and keyboard behavior are explicit.
-- Prefer installed Reka primitives over custom interaction logic.

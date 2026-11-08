@@ -1,12 +1,12 @@
 # Divider — Analyze
 
 ## Evidence inspected
-- Authoritative Lemon route `https://lemonui.ir/#divider` was inspected in the browser. Its AX content states 12 variants; screenshot shows a single subtle horizontal line in the dotted Default preview. It documents 1px, horizontal/vertical, line/center/start label, 0/4/8 spacing and subtle/strong tone.
+- Authoritative design reference route `design reference was inspected in the browser. Its AX content states 12 variants; screenshot shows a single subtle horizontal line in the dotted Default preview. It documents 1px, horizontal/vertical, line/center/start label, 0/4/8 spacing and subtle/strong tone.
 - At analysis start, catalog marked Divider Proposed. The former static `<div class="sample-divider">` had no public Vue adapter or usage example; implementation replaced it with the public adapter.
 - `component-specimen.css` has a legacy `.sample-divider` flex rule that colors `i` children using the correct neutral token but cannot represent vertical or tone variants. It must be removed.
 - `reka-ui@2.11.0` is a direct `@norato/vue` dependency. Its package exports `Separator` (not `SeparatorRoot`) and the implementation provides `role=separator`, orientation, and decorative semantics. This import name is confirmed from the installed package export file and component source.
 - Norato tokens expose border-default `#e8e8e8`, border-strong `#a1a1a1`, and space-1/space-2 for 4/8px. A 400px specimen-only Rule token was added after screenshot comparison; runtime Divider remains unconstrained.
-- The main App renderer already uses catalog records for route names, imports markdown contracts, and places the shared dotted specimen before implementation and contract sections. Divider received a dedicated playground branch; the inert specimen also includes Lemon Default marker.
+- The main App renderer already uses catalog records for route names, imports markdown contracts, and places the shared dotted specimen before implementation and contract sections. Divider received a dedicated playground branch; the inert specimen also includes design reference Default marker.
 
 ## Cross-artifact consistency
 - Scope, six public props, defaults, all 12 combinations, independent spacing values, noninteractive semantics and exact visual success evidence agree between Specify, Clarify, Plan and Checklist.

@@ -48,22 +48,22 @@
 - border: `#e8e8e8`
 - radius: ۲۵px
 
-## Split Button — Lemon visual parity, 2026-10-31
+## Split Button — design reference visual parity, 2026-10-31
 
-- The top specimen follows `https://lemonui.ir/#split-button`: one connected capsule, a single divider, main action on the right and menu toggle on the physical left in RTL. Norato yellow Primary and semantic tokens replace Lemon's dark palette.
+- The top specimen follows `design reference one connected capsule, a single divider, main action on the right and menu toggle on the physical left in RTL. Norato yellow Primary and semantic tokens replace design reference's dark palette.
 - Both runtime segments must be separate 48px-or-larger Tab targets. The menu opens below the toggle with its left edge aligned to the toggle's left edge; ArrowDown/ArrowUp, Home/End, Escape and outside-click behavior follow the documented Vue contract.
 - Split Button size API implements Small/Medium/Large/XLarge with 32/40/48/56px visual capsules; Small/Medium keep 48px native button targets. Verify both visual size and target geometry in the browser.
-- Keep the standalone inert Split Button preview frame 288px high (max width 640px; mobile cap 320px) with the Lemon Default marker and Norato glass tokens. Center the control without stretching it. Render the actual adapter in the 6-variant, 4-size and 5-state galleries; use inert only for those visual specimens.
+- Keep the standalone inert Split Button preview frame 288px high (max width 640px; mobile cap 320px) with the design reference Default marker and Norato glass tokens. Center the control without stretching it. Render the actual adapter in the 6-variant, 4-size and 5-state galleries; use inert only for those visual specimens.
 
-## Input — Lemon visual parity and Norato runtime, 2026-11-01
+## Input — design reference visual parity and Norato runtime, 2026-11-01
 
-- Use `https://lemonui.ir/#input` for the top specimen arrangement: one compact, labeled email field. Preserve Norato semantic colors, Estedad/Vazirmatn and RTL. The latest user rule removes helper text from the top specimen.
+- Use `design reference for the top specimen arrangement: one compact, labeled email field. Preserve Norato semantic colors, Estedad/Vazirmatn and RTL. The latest user rule removes helper text from the top specimen.
 - The top specimen is inert; its email entry is LTR inside an RTL field group. Keep it separate from the live Vue playground, which covers all eight public adapters: Text, Password, Phone, OTP, Textarea, Number, Amount and Search. `NoratoField` remains backward-compatible and does not replace those specialized adapters.
 - Use a 36px visible capsule for single-line Input fields wherever they appear across component pages; this includes the Input top preview, variant/state cards, live adapters and generic `NoratoField` in the all-components lab. Live input/OTP hit targets remain at least 48px; use an inset visual shell where needed. Textarea keeps its multiline height. The top email field remains capped at 324px, the frame at 640×288px desktop/320px mobile, with the Default marker and Norato glass/wash/dots.
 - The user's approved DoD requires the Button-style page structure: Preview, live Vue playground, then nine independently copyable contract sections.
-- Lemon's 32/40/48/56px are reference sizes. Norato's interactive target floor is 48px: single-line controls measure 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measure 48/52/56/60px and wrap without horizontal overflow; three-row Textarea measures 103/108/120/128px. Hide native Number spinners beside Norato's own 48px step actions.
+- design reference's 32/40/48/56px are reference sizes. Norato's interactive target floor is 48px: single-line controls measure 50/52/56/60px outside and 62/64/68/72px inside; OTP cells measure 48/52/56/60px and wrap without horizontal overflow; three-row Textarea measures 103/108/120/128px. Hide native Number spinners beside Norato's own 48px step actions.
 - State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
-- The 41 Input family/state cards follow Lemon's two-column mobile card rhythm and use a compact, bounded mini-control for the specific family state. Keep Error/Success/Disabled/Loading and active/typing treatments visibly distinct. These specimens remain inert; never substitute them for adapter behavior checks.
+- The 41 Input family/state cards follow design reference's two-column mobile card rhythm and use a compact, bounded mini-control for the specific family state. Keep Error/Success/Disabled/Loading and active/typing treatments visibly distinct. These specimens remain inert; never substitute them for adapter behavior checks.
 - Input field shells and OTP cells are capsule-shaped at all sizes and states; use Norato's semantic `--norato-radius-pill` token. Keep this radius scoped to the Input family.
 - Neutral Input and OTP strokes use a 1px `--norato-color-border-default` (`#e8e8e8`) border at rest. Pointer hover and keyboard focus use a 1px `--norato-color-brand-yellow` stroke; this is the capsule's own stroke, and the layout wrapper stays transparent so it cannot add a second gray line. Disabled fields keep a neutral stroke; invalid fields keep their error stroke on hover. Remove contrast outlines and glow shadows. Error and success keep their semantic status colors at rest.
 - Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
@@ -83,12 +83,12 @@
 - فاصله‌ی متن و frame فلش: ۶px
 - فلش از asset واقعی Figma/Material استفاده می‌کند.
 - الزام مشترک Norato برای target تعاملی ۴۸px بر اندازهٔ مرجع ۳۶px مقدم است؛ رندر مرورگر فعلی ۴۸px است. adapter Vue اکنون منوی Reka با جست‌وجو، گروه‌بندی و انتخاب چندتایی مرحله‌ای دارد؛ DoD بصری نهایی آن هنوز باز است.
-- نمونهٔ Select در قاب مستندات، فیلد ۳۰۰px را وسط قاب ۲۹۶px نشان می‌دهد؛ اندازهٔ مشاهده‌شدهٔ Lemon در دسکتاپ و موبایل حدود ۳۰۲px است. عرض فیلد را به عرض قاب نکشانید.
-- نمونهٔ بالای صفحه در حالت Default بدون مقدار انتخاب‌شده است و placeholder فارسی Lemon «به شهر انتخاب کن» را نشان می‌دهد؛ مقدار Tehran/تهران فقط در playground اجرایی می‌ماند.
+- نمونهٔ Select در قاب مستندات، فیلد ۳۰۰px را وسط قاب ۲۹۶px نشان می‌دهد؛ اندازهٔ مشاهده‌شدهٔ مرجع طراحی در دسکتاپ و موبایل حدود ۳۰۲px است. عرض فیلد را به عرض قاب نکشانید.
+- نمونهٔ بالای صفحه در حالت Default بدون مقدار انتخاب‌شده است و placeholder فارسی مرجع طراحی «به شهر انتخاب کن» را نشان می‌دهد؛ مقدار Tehran/تهران فقط در playground اجرایی می‌ماند.
 - فلش Select باید SVG ثابت در قاب ۲۴×۲۴px سمت چپ فیلد RTL باشد؛ نویسهٔ متنی وابسته به فونت برای این نقش مجاز نیست. در حالت باز همان آیکن می‌چرخد.
 - در برچسب داخلی Select، متن برچسب و مقدار/Chip در یک کنترل ۵۶px قرار می‌گیرند؛ فاصلهٔ داخلی نباید دو خط را به ارتفاع ۶۵px بکشد. حداقل هدف تعاملی همچنان ۴۸px است.
 - Multi Select در نمای Chips یک مقدار به‌همراه شمارندهٔ بقیه را نشان می‌دهد؛ همهٔ انتخاب‌ها در منوی باز و Summary در دسترس می‌مانند و خود فیلد با افزایش انتخاب‌ها قد نمی‌کشد.
-- بخش States صفحهٔ مستندات Select از کارت‌های متنی عنوان+توضیح مانند Lemon استفاده می‌کند؛ نام خانواده (Select، Multi Select، Select Option) حفظ می‌شود و accent هر حالت از semantic token نوراتو می‌آید. کنترل واقعی فقط در Preview/Variants و playground دیده می‌شود. گالری static/inert است، عرض desktop کارت‌ها با min/max tokenized به‌صورت خودکار تنظیم می‌شود و در mobile دو ستون دارد.
+- بخش States صفحهٔ مستندات Select از کارت‌های متنی عنوان+توضیح مانند مرجع طراحی استفاده می‌کند؛ نام خانواده (Select، Multi Select، Select Option) حفظ می‌شود و accent هر حالت از semantic token نوراتو می‌آید. کنترل واقعی فقط در Preview/Variants و playground دیده می‌شود. گالری static/inert است، عرض desktop کارت‌ها با min/max tokenized به‌صورت خودکار تنظیم می‌شود و در mobile دو ستون دارد.
 
 ## Date Picker
 
@@ -97,7 +97,7 @@
 - بخش آیکن: ۳۶×۳۶px
 - frame آیکن: ۲۴×۲۴px
 - فاصله‌ی label و control: ۶px
-- صفحهٔ Lemon `https://lemonui.ir/#date-picker` الگوی preview را تعیین می‌کند: قاب dotted-glass با نشان Default، تقویم سفید و کم‌ارتفاع وسط قاب، نام ماه و کنترل‌های قبل/بعد در سرستون، و هفت ستون از شنبه در سمت راست تا جمعه در سمت چپ. پالت اجرا از semantic tokenهای Norato می‌آید.
+- صفحهٔ مرجع طراحی `مرجع طراحی الگوی preview را تعیین می‌کند: قاب dotted-glass با نشان Default، تقویم سفید و کم‌ارتفاع وسط قاب، نام ماه و کنترل‌های قبل/بعد در سرستون، و هفت ستون از شنبه در سمت راست تا جمعه در سمت چپ. پالت اجرا از semantic tokenهای Norato می‌آید.
 - هر هفت حالت Single، Range، Range + Presets، Date & Time، Month، Year و Wheel در playground مستقل صفحهٔ Date Picker قابل اجرا هستند؛ wheel در موبایل سه انتخاب‌گر سال/ماه/روز دارد.
 - اندازهٔ دیداری روز در Small/Medium با target حداقل ۴۸px جدا نگه داشته می‌شود؛ grid هفت‌ستونه داخل پنل با inline-size محدود قرار می‌گیرد و ارتفاعش ثابت از target سلول‌ها ناشی نمی‌شود.
 - محاسبات و سریال‌سازی از PersianCalendar در `@internationalized/date` استفاده می‌کنند. جمعه‌ها حالت Holiday دارند؛ روزهای تعطیل رسمی را مصرف‌کننده با رشتهٔ جلالی می‌دهد. تاریخ و ساعت، زمان محلی را حفظ می‌کند.
@@ -109,18 +109,18 @@
 - frame: ۲۴×۲۴px
 - حالت خاموش و روشن از asset/state واقعی Figma استخراج می‌شوند.
 - فاصله‌ی متن: ۶px
-- Lemon preview composition: one centered three-option group in a 640×288 desktop glass frame, 320×288 on mobile, with a Default/green-dot marker. Norato uses its own yellow selected dot and semantic glass/border tokens; hover border also uses the Norato yellow accent.
+- design reference preview composition: one centered three-option group in a 640×288 desktop glass frame, 320×288 on mobile, with a Default/green-dot marker. Norato uses its own yellow selected dot and semantic glass/border tokens; hover border also uses the Norato yellow accent.
 - Each option row stays 48px tall; the control is on the right in RTL. Runtime sizes are 16px and 20px. Do not stack multiple state groups in the specimen or stretch the control to fill the frame.
 - `NoratoRadioGroup` is controlled by one optional string value; native radio inputs preserve arrow-key group behavior. The separate playground covers required, disabled, invalid, and size settings.
-- The static States gallery follows Lemon's title-plus-description cards. Keep all five Radio Button states and three Radio Field states, with family labels and semantic Norato status accents; do not render the generic elongated pill there. Actual radio specimens stay in Preview and Variants.
+- The static States gallery follows design reference's title-plus-description cards. Keep all five Radio Button states and three Radio Field states, with family labels and semantic Norato status accents; do not render the generic elongated pill there. Actual radio specimens stay in Preview and Variants.
 
-## Switch — Lemon composition, Norato palette
+## Switch — design reference composition, Norato palette
 
-- Reference: `https://lemonui.ir/#switch`; one Switch Field with concise label and optional description, the control beside the copy, and a Default/green-dot marker inside the same dotted glass preview frame as Lemon.
-- Track is light gray (`--norato-color-surface-muted`) when off and Norato brand yellow when on; the checked track has no gray stroke. The white, stroke-free knob moves toward physical left when enabled in RTL and remains inset from both ends. Do not use Lemon's raw black color as Norato brand color.
+- Reference: `design reference one Switch Field with concise label and optional description, the control beside the copy, and a Default/green-dot marker inside the same dotted glass preview frame as design reference.
+- Track is light gray (`--norato-color-surface-muted`) when off and Norato brand yellow when on; the checked track has no gray stroke. The white, stroke-free knob moves toward physical left when enabled in RTL and remains inset from both ends. Do not use design reference's raw black color as Norato brand color.
 - Small/Medium/Large track sizes are 32×20, 40×24 and 48×28px; the actual button remains a 48×48px target. Keep the preview to one field; do not stretch the switch to the frame.
 - `NoratoSwitch` wraps the installed Reka `SwitchRoot`/`SwitchThumb` primitive for `role="switch"`, `aria-checked`, keyboard behavior, controlled boolean state and connected label/description; Norato retains visual token ownership. Use only for settings applied immediately.
-- The static States gallery follows Lemon's title-plus-description card hierarchy and contains five Switch plus three Switch Field entries; keep family names, Persian descriptions, and Norato semantic status accents. Do not use the generic pill artwork there. Interactive Switch specimens belong in Preview and the Vue playground.
+- The static States gallery follows design reference's title-plus-description card hierarchy and contains five Switch plus three Switch Field entries; keep family names, Persian descriptions, and Norato semantic status accents. Do not use the generic pill artwork there. Interactive Switch specimens belong in Preview and the Vue playground.
 
 ## Checkbox
 
@@ -278,8 +278,8 @@
 ## Combobox multi-selection height — 2026-11-01
 
 - Keep multi-selection compact on one line: show the first selected label and a localized `+N` count, not a wrapping stack of chips. Chips remain visual tokens below 48px; the field and its clear/chevron actions retain at least 48px targets.
-- Keep the suggestion menu anchored 8px below the field, matching text bold, and every semantic brand/focus color on Norato tokens. Small/Medium Lemon sizes remain 48px interactive controls to satisfy Norato's global target rule; XLarge is 56px.
-- The inert top specimen uses one centered field, the Lemon-like dotted glass frame, and an upper-right `Default` marker. Reuse the semantic Norato blue/yellow wash and preview tokens; never depend on white glass-line color for dots on Norato's light glass background. Keep the specimen separate from the live playground.
+- Keep the suggestion menu anchored 8px below the field, matching text bold, and every semantic brand/focus color on Norato tokens. Small/Medium design reference sizes remain 48px interactive controls to satisfy Norato's global target rule; XLarge is 56px.
+- The inert top specimen uses one centered field, the design reference-like dotted glass frame, and an upper-right `Default` marker. Reuse the semantic Norato blue/yellow wash and preview tokens; never depend on white glass-line color for dots on Norato's light glass background. Keep the specimen separate from the live playground.
 - Superseded 2026-11-08 by the cross-component Input rule: Combobox keeps a 48px interactive target with a centered 36px capsule; resting Stroke is 1px `#e8e8e8`, hover/focus Stroke is 1px Norato yellow, with no outer field outline or halo. Independent action buttons retain their own keyboard focus indicator.
 - Disabled takes visual priority over validation: a disabled+invalid Combobox keeps the neutral `#e8e8e8` Stroke and muted surface; the error Stroke returns when enabled. Hover never recolors a disabled field.
 - `aria-activedescendant` points to an existing option only while the menu is open. Closing removes the reference; reopening restores a valid active-option reference.
@@ -298,37 +298,37 @@
 
 ## Checkbox preview and field — 2026-11-01
 
-- The inert top preview uses Lemon's compact, centered single-field composition and dotted glass frame; Norato yellow/blue, border, radius, text and focus colors remain semantic Norato tokens.
+- The inert top preview uses design reference's compact, centered single-field composition and dotted glass frame; Norato yellow/blue, border, radius, text and focus colors remain semantic Norato tokens.
 - Show the small `Default` label and green state dot in the upper-right corner of the sample frame. This marker belongs to the specimen, not the live checkbox API.
-- Use the Norato 78% glass token and default light border for the resting box; the checked state uses Norato blue rather than Lemon's black border/fill.
+- Use the Norato 78% glass token and default light border for the resting box; the checked state uses Norato blue rather than design reference's black border/fill.
 - Keep the desktop frame at 640×288px and mobile maximum at 320×288px. Use the preview-specific 24px radius and 12px dot spacing; keep the top specimen to one field. Interactive state exploration stays in the live playground.
 - Keep Checkbox Field RTL with the control on the right, label/description to its left, whole row clickable, 48px minimum row height, and a 16px or 20px visual box.
 
 ## Select specimen — 2026-11-01
 
-- Use Lemon's one-field, centered preview with a small upper-right `Default` marker; keep the specimen inert and the state controls in the live Vue playground.
+- Use design reference's one-field, centered preview with a small upper-right `Default` marker; keep the specimen inert and the state controls in the live Vue playground.
 - Use the Norato dotted glass frame, soft yellow/blue wash, semantic border/radius/elevation; retain the Norato palette and the 48px minimum field target.
 - Constrain the frame to the available documentation column, with 640px desktop and 320px mobile maxima; keep the selected field at 300px max so it cannot stretch vertically or horizontally.
 - Keep the Select control and option content RTL; the chevron/check align at the logical left.
 
 ## Range — 2026-11-01
 
-- Use Lemon's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.
+- Use design reference's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.
 - In RTL, minimum is on the physical right and fill grows right-to-left. Keep values anchored to their thumb positions. Keep the interactive SliderTrack full width; inset the visual rail by 24px (half the 48px thumb target) and render SliderRange inside that rail so fill endpoints meet thumb centers without changing pointer mapping.
 - Use Norato semantic colors. Keep visible thumb/rail compact while the actual pointer/keyboard target is at least 48px; Small/Medium affect rail and thumb appearance only.
 - Exact values should pair with a numeric input; the slider alone communicates approximate adjustment.
 
 ## Segmented Control — 2026-11-01
 
-- Match Lemon's single selected group, raised Glass segment or Contrast segment and horizontal track; the first option is on the right in RTL.
-- Preserve Norato's yellow accent and semantic tokens; do not copy Lemon's black selected color. Contrast selection and its hover use yellow with dark text.
+- Match design reference's single selected group, raised Glass segment or Contrast segment and horizontal track; the first option is on the right in RTL.
+- Preserve Norato's yellow accent and semantic tokens; do not copy design reference's black selected color. Contrast selection and its hover use yellow with dark text.
 - Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
 - Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
 - Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.
 
 ## Rating — 2026-11-01
 
-- Preserve Lemon's top specimen order and scale: Default marker, four filled stars and one empty star for 4.0, Persian score, and review count in one centered RTL row.
+- Preserve design reference's top specimen order and scale: Default marker, four filled stars and one empty star for 4.0, Persian score, and review count in one centered RTL row.
 - Keep read-only star glyphs at the documented 16/20/24px sizes and input glyphs at 24/32px inside 48px targets; do not let the hit area stretch the visible stars.
 - Half stars use a physical right-side fill in RTL. Rating Input accepts whole-star values only; half values remain read-only.
 - Summary presents mean, review count, and five-to-one distribution bars. The sample stays inert; the live Reka RadioGroup and summary controls belong in the page playground.
@@ -336,7 +336,7 @@
 
 ## Time Picker — 2026-11-01
 
-- Use Lemon's compact two-column hour/minute composition, dotted glass frame, Default marker, and bounded centered picker card. Keep the page sample inert and explore behavior in the Vue playground.
+- Use design reference's compact two-column hour/minute composition, dotted glass frame, Default marker, and bounded centered picker card. Keep the page sample inert and explore behavior in the Vue playground.
 - Keep the canonical model 24-hour `HH:mm` and render time digits LTR inside Persian RTL surroundings; 12-hour mode changes only the presentation.
 - Support Columns, Columns 12h, Wheel, Slots and Range. Use five-minute increments by default; slot availability is explicit; range endpoints remain chronological.
 - Preserve at least 48px hit targets and compact visual geometry. The default desktop/mobile preview frame is content-column bounded; the picker panel is capped and repositions above/below the anchor to stay in view.
@@ -344,7 +344,7 @@
 
 ## File Upload — 2026-11-02
 
-- Use Lemon's four-part hierarchy: Dropzone, File Item, Upload Tile, Avatar Upload. Keep the default specimen inert, with a bounded dotted-glass frame, upper-right Default marker and centered inner dropzone.
+- Use design reference's four-part hierarchy: Dropzone, File Item, Upload Tile, Avatar Upload. Keep the default specimen inert, with a bounded dotted-glass frame, upper-right Default marker and centered inner dropzone.
 - Retain Norato semantic colors and Persian RTL surroundings; keep file names and file metadata LTR.
 - Dropzone supports click, Enter/Space and drag/drop. Advertise formats and per-file maximum size before selection; keep invalid file reasons visible.
 - A locally selected file is not an uploaded file. Network transfer and truthful progress are controlled by the host application; preserve retryable error details.
@@ -353,7 +353,7 @@
 
 ## Navbar — 2026-11-01
 
-- Use Lemon's six-part composition and 41 documented variant combinations; preserve the Button-like page structure of inert Preview, executable playground/copy example and nine contract sections.
+- Use design reference's six-part composition and 41 documented variant combinations; preserve the Button-like page structure of inert Preview, executable playground/copy example and nine contract sections.
 - Use Norato yellow with dark text for the primary CTA, brand mark, current/open/hover navigation states, and a warm/neutral dotted specimen wash. Blue stays for link and informational semantics. Preserve RTL navigation order, Vazirmatn body and Estedad headings. Brand sits at inline-end, primary links follow it and actions sit at inline-start.
 - Support App/Website/Centered × Bar/Floating/Transparent on desktop and Default/Back/Search/Large Title × Bar/Transparent on mobile. Mobile drawer and grouped links remain keyboard operable.
 - Keep every link/action target at least 48px while nav text and logo stay intrinsic; the inert sample row may compress to its 48px control height plus stroke. Bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
@@ -362,14 +362,14 @@
 
 ## Sidebar — 2026-11-02
 
-- Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than Lemon's visual rows.
-- Preserve Lemon's brand/workspace header, section title, icon/count items, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
+- Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than design reference's visual rows.
+- Preserve design reference's brand/workspace header, section title, icon/count items, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
 - Use Norato semantic blue/yellow tokens and Persian typography. Collapsed labels remain accessible; mobile uses a modal drawer.
 
 
 ## Tabs — 2026-11-02
 
-- Map Lemon's four parts and 39 variants to the Button-structured page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
+- Map design reference's four parts and 39 variants to the Button-structured page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
 - Keep Norato's blue/yellow palette. Line uses a 2px blue underline; Soft uses the semantic info surface.
 - Support horizontal/vertical orientation and Small/Medium/Large while preserving 48px interaction targets; in vertical RTL, the list stays at inline-end.
 - Keep icons intrinsic, order icon → label → count in RTL, and allow horizontal tab scrolling at narrow widths rather than squeezing or stretching labels.
@@ -377,7 +377,7 @@
 
 ## Breadcrumbs — 2026-11-02
 
-- Follow Lemon's four-part structure and 42 documented combinations on the Button-shaped page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
+- Follow design reference's four-part structure and 42 documented combinations on the Button-shaped page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
 - Keep the semantic path in an ordered list inside a named navigation landmark. Current page remains non-link text with `aria-current="page"`.
 - Use Norato's own semantic palette, RTL direction and Persian fonts. Use a direction-stable SVG chevron pointing left in RTL, per the user's explicit 2026-11-02 correction; slash is neutral.
 - For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
@@ -385,7 +385,7 @@
 
 ## Pagination — 2026-11-02
 
-- Preserve Lemon's five-part anatomy and 18 documented combinations on the Button-shaped page.
+- Preserve design reference's five-part anatomy and 18 documented combinations on the Button-shaped page.
 - Keep Norato's semantic blue palette, RTL ordering and Persian labels; Previous/Page items sit at inline-end, Next at inline-start.
 - Numbers mode uses a bounded page window with first/last pages and a current-page sibling; Simple shows page X of Y with Previous/Next and suits narrow/mobile layouts.
 - Keep all interactive targets at least 48px even for Small. Number buttons expose `aria-current="page"`; boundary controls are truly disabled.
@@ -398,87 +398,98 @@
 - This is documentation-preview geometry only and does not change runtime Button sizing.
 
 ## Stepper — 2026-11-08
-- Preserve Lemon's four progress compositions (Horizontal, Vertical, Compact, Dots) and status hierarchy, with Norato yellow current/completed accent, neutral upcoming connector and Norato error red. The first step follows logical inline-start (right in RTL); never turn status items into navigation controls. Current step has a 2px yellow ring; indicators stay circular/intrinsic and responsive overflow is internal. Use the dedicated --norato-stepper-preview-* tokens for the Button-shaped dotted 288px preview.
+- Preserve design reference's four progress compositions (Horizontal, Vertical, Compact, Dots) and status hierarchy, with Norato yellow current/completed accent, neutral upcoming connector and Norato error red. The first step follows logical inline-start (right in RTL); never turn status items into navigation controls. Current step has a 2px yellow ring; indicators stay circular/intrinsic and responsive overflow is internal. Use the dedicated --norato-stepper-preview-* tokens for the Button-shaped dotted 288px preview.
 - Dots inherit the Stepper size: Small uses 4px upcoming/8px current, Medium 8px/12px and Large 12px/16px outer diameters. Current dots keep a 2px yellow ring inside that size; all dots use border-box geometry and semantic spacing tokens.
 
 ## Menu — 2026-11-08
-- Match Lemon's compact action-menu hierarchy: panel near 235×160px with four concise leaf actions, action icons on the right in RTL, shortcuts on the left, a separator before the final destructive action, and an inert dotted preview frame using Norato's own palette.
+- Match design reference's compact action-menu hierarchy: panel near 235×160px with four concise leaf actions, action icons on the right in RTL, shortcuts on the left, a separator before the final destructive action, and an inert dotted preview frame using Norato's own palette.
 - Runtime menu rows retain at least 48px interaction height. Static specimen rows use the compact 36px token to match the reference preview. Small/Medium/Large remain proportional; icons keep intrinsic sizes.
 - Use Norato yellow for hover and keyboard focus, neutral default surface/stroke and semantic error red for destructive actions. RTL submenu arrows point left and mirror in LTR. Reka DropdownMenu owns menu keyboard and dismissal behavior.
-- **Verified:** matched desktop capture showed Lemon frame/panel 636×300px / 235×160px and Norato column-constrained frame/panel about 576×288px / 234×157px. Root and child menus fit at 390px; RTL/LTR, leaf selection and keyboard close/focus return were checked. Pointer hover remains yellow when focus is on a different row; the disabled hovered item remains visually neutral.
+- **Verified:** matched desktop capture showed design reference frame/panel 636×300px / 235×160px and Norato column-constrained frame/panel about 576×288px / 234×157px. Root and child menus fit at 390px; RTL/LTR, leaf selection and keyboard close/focus return were checked. Pointer hover remains yellow when focus is on a different row; the disabled hovered item remains visually neutral.
 - **Remaining:** 320px viewport and independent screen-reader review are not verified; Menu DoD remains open.
 
 ## Command Palette — 2026-11-08
-- Follow Lemon's single-dialog composition: search row, grouped commands, recent items, shortcut badges and keyboard-hint footer over a blurred backdrop. Keep the documentation specimen inert and bounded inside the same dotted preview frame used by Button.
+- Follow design reference's single-dialog composition: search row, grouped commands, recent items, shortcut badges and keyboard-hint footer over a blurred backdrop. Keep the documentation specimen inert and bounded inside the same dotted preview frame used by Button.
 - Use Norato glass surfaces, semantic tokens and yellow active/focus strokes. Search and Persian command text flow RTL; shortcut badges and key hints are explicitly LTR. Keep runtime targets at least 48px and let results scroll inside the panel.
 - Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
 - **Browser evidence:** at 1280×720, the specimen frame is 584×288px and its panel 448×240px; the live dialog is centered at x=340, y=108 and measures 600×375px. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
-- **Remaining:** 390/320 browser dimensions, equal-viewport Lemon geometry comparison, screen-reader review and full shortcut exclusion matrix remain open; Command Palette DoD remains open.
+- **Remaining:** 390/320 browser dimensions, equal-viewport design reference geometry comparison, screen-reader review and full shortcut exclusion matrix remain open; Command Palette DoD remains open.
 
 ## Tree View — 2026-11-08
-- Follow Lemon’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.
-- Use the five Lemon row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
+- Follow design reference’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.
+- Use the five design reference row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
 - Keep the inert sample in the Button-sized dotted 288px frame, with a compact centered glass panel and Default marker. Runtime rows retain the 48px hit target. Reka TreeRoot/TreeItem owns tree roles, roving focus, direction-aware navigation and typeahead.
 - **Remaining:** 390px/320px viewport and independent screen-reader review are not verified; Tree View DoD remains open.
 
 ## Alert — 2026-11-08
-- Use Lemon's 20 combinations: five status tones, Soft/Glass surface and Inline/Expanded composition. Preserve the status icon right and optional close action left in RTL.
+- Use design reference's 20 combinations: five status tones, Soft/Glass surface and Inline/Expanded composition. Preserve the status icon right and optional close action left in RTL.
 - Keep preview inert and compact in the Button dotted frame. The separate playground controls tone, surface, layout and dismissibility.
-- Use semantic Norato status containers, Estedad title, Vazirmatn body, intrinsic SVG and semantic roles; use yellow for interactive focus. Never reuse Lemon's blue as Norato's brand accent.
+- Use semantic Norato status containers, Estedad title, Vazirmatn body, intrinsic SVG and semantic roles; use yellow for interactive focus. Never reuse design reference's blue as Norato's brand accent.
 - **Remaining:** browser parity, narrow 390/320 widths, manual keyboard/error announcements and independent screen-reader review remain open; Alert DoD remains open.
 
 ## Banner — 2026-11-08
-- Match Lemon's global announcement strip: status icon right, message, optional action and close on the left; desktop keeps one row and mobile stacks message/action. Keep the component full-width in its page placement.
+- Match design reference's global announcement strip: status icon right, message, optional action and close on the left; desktop keeps one row and mobile stacks message/action. Keep the component full-width in its page placement.
 - Use six semantic tones and explicit desktop/mobile options, but apply Norato status containers and yellow as the brand/focus accent. Action dispatches an event; the host owns navigation and visibility persistence.
 - The top specimen is inert, uses the Button-sized dotted frame and Default marker; the lower playground is executable.
 - **Remaining:** browser parity, full keyboard/action/dismiss sequence and 390/320 widths remain open; do not close Banner DoD before these checks.
 
 ## Tooltip — 2026-11-08
-- Match Lemon's 16 combinations (Dark/Glass × Simple/Rich × Top/Bottom/Right/Left) with a compact default icon trigger and Bubble/Arrow in the Button-sized dotted specimen.
+- Match design reference's 16 combinations (Dark/Glass × Simple/Rich × Top/Bottom/Right/Left) with a compact default icon trigger and Bubble/Arrow in the Button-sized dotted specimen.
 - Use Reka Tooltip Provider/Root/Trigger/Portal/Content/Arrow for keyboard focus, hover delay, Escape and collision handling. Preserve the host's semantic trigger and its yellow 2px focus ring; adapter content itself is noninteractive.
 - Keep Rich's supplemental label noninteractive; actual actions remain in host UI. Use Popover for links/forms/actions.
-- Use Norato inverse/glass and semantic text/elevation/radius tokens; RTL is explicit, and Lemon blue is not imported.
+- Use Norato inverse/glass and semantic text/elevation/radius tokens; RTL is explicit, and design reference blue is not imported.
 - **Remaining:** matched screenshots, all 16 variants, keyboard/pointer sequences, 390/320 collision, screen-reader review and repository gates are not yet complete.
 
 ## Progress — 2026-11-08
-- Match Lemon's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.
+- Match design reference's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.
 - Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
 - Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
-- Match Lemon's Linear composition: label and localized percentage share a metadata row above a full-width track. Keep RTL/LTR fill anchored to logical inline-start and circular geometry fixed.
+- Match design reference's Linear composition: label and localized percentage share a metadata row above a full-width track. Keep RTL/LTR fill anchored to logical inline-start and circular geometry fixed.
 - **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.
 
 ## Spinner — 2026-11-08
-- Match Lemon's Ring (30% arc), Dots and custom-brand spinner (45% arc), three tones and five intrinsic square sizes; make Norato's default yellow rather than Lemon's dark default.
+- Match design reference's Ring (30% arc), Dots and custom-brand spinner (45% arc), three tones and five intrinsic square sizes; make Norato's default yellow rather than design reference's dark default.
 - Keep Spinner decorative and Loader the sole polite status announcement. Support Inline, Refresh, Overlay and Page patterns without focus trap or stretching.
 - Use reduced-motion-aware animation, semantic Norato color/size/motion tokens, and the Button-sized dotted inert preview with a separate playground.
-- **Remaining:** browser matrix, responsive checks, reduced-motion review, screen-reader review and Lemon comparison are recorded in the Spinner DoD; keep it open until those pass.
-- Badge follows Lemon's compact count/dot marker over an independent anchor, with a 2px surface ring and top-left placement in RTL. Keep Norato's semantic tones and require the host anchor to provide the count-aware accessible name. Neutral uses a dedicated status token to keep Dot visible on both the sample canvas and its white ring.
+- **Remaining:** browser matrix, responsive checks, reduced-motion review, screen-reader review and design reference comparison are recorded in the Spinner DoD; keep it open until those pass.
+- Badge follows design reference's compact count/dot marker over an independent anchor, with a 2px surface ring and top-left placement in RTL. Keep Norato's semantic tones and require the host anchor to provide the count-aware accessible name. Neutral uses a dedicated status token to keep Dot visible on both the sample canvas and its white ring.
 
-## Skeleton — Lemon shape, Norato palette, 2026-11-08
+## Skeleton — design reference shape, Norato palette, 2026-11-08
 
-- Lemon defines four base shapes, eight content patterns, and Pulse/Shimmer. Keep the expected content silhouette and use one effect across a busy region.
-- Use Norato semantic neutral Skeleton tokens, never Lemon's default dark fill. In RTL, Shimmer moves from left to right; disable animation for reduced motion.
+- design reference defines four base shapes, eight content patterns, and Pulse/Shimmer. Keep the expected content silhouette and use one effect across a busy region.
+- Use Norato semantic neutral Skeleton tokens, never design reference's default dark fill. In RTL, Shimmer moves from left to right; disable animation for reduced motion.
 - Keep skeletons inert and non-focusable, label the busy region, and hide decorative shapes from assistive technology.
 - The component's `dir` attribute must control computed direction and mirror the Avatar/Text inline order; do not override it with inherited `direction` CSS.
 # Empty State
 
-- Use `https://lemonui.ir/#empty-state` as the composition reference; retain Norato semantic color, Vazirmatn/Estedad and RTL-first layout.
+- Use `design reference as the composition reference; retain Norato semantic color, Vazirmatn/Estedad and RTL-first layout.
 - The documentation specimen uses the shared Button dotted/glass frame and Default marker. The component itself has no frame unless `container="card"` is set.
 - Visual is fixed-size and decorative; horizontal layout places it at logical inline-start, and narrow screens stack without clipping. Titles/descriptions provide all meaning.
 - Actions remain caller-owned slots with native, named buttons/links and 48px minimum targets. Do not add implicit navigation or a live region to static content.
 
 # Avatar
 
-- Match Lemon's four families and 55 variants: Avatar 36, Group 12, Label 3, Status 4. Keep the specimen inert and the executable matrices in a separate playground.
-- Keep the 2px surface ring, 24–64px intrinsic avatar sizes, image cover crop, and circle/square shape distinction. Norato's 24/32/40/48/56/64px progression is an explicit 8px-step inference because Lemon only states the endpoints.
-- Use Norato yellow/neutral initials surfaces and semantic presence tokens; do not copy Lemon's dark default or use blue as the brand accent. Show a status label outside the avatar and add status meaning to the avatar's accessible name.
+- Match design reference's four families and 55 variants: Avatar 36, Group 12, Label 3, Status 4. Keep the specimen inert and the executable matrices in a separate playground.
+- Keep the 2px surface ring, 24–64px intrinsic avatar sizes, image cover crop, and circle/square shape distinction. Norato's 24/32/40/48/56/64px progression is an explicit 8px-step inference because design reference only states the endpoints.
+- Use Norato yellow/neutral initials surfaces and semantic presence tokens; do not copy design reference's dark default or use blue as the brand accent. Show a status label outside the avatar and add status meaning to the avatar's accessible name.
 - In RTL, the first group member is on the right, +N remains on the left, and the presence dot sits physically bottom-left. Use logical overlap and verify LTR mirroring.
 - Derive at most two initials, preserve Unicode graphemes, and fall back from failed images without stretching or changing geometry.
 - **Remaining:** matched screenshots, complete 55-variant browser review, RTL/LTR, responsive behavior, accessibility and final DoD remain open until recorded in Avatar's feature checklist.
 
 # Timeline
 
-- Follow Lemon's right-side RTL rail, compact event hierarchy, Dot/Icon/Avatar markers, three item layouts and day-grouped Activity Feed. Preserve its 26 documented combinations.
+- Follow design reference's right-side RTL rail, compact event hierarchy, Dot/Icon/Avatar markers, three item layouts and day-grouped Activity Feed. Preserve its 26 documented combinations.
 - Use Norato semantic neutral/success/warning/error tones. Active is a raised neutral marker with Norato yellow detail; do not use blue as an accent.
 - Keep rail and text mirrored in LTR, event order caller-controlled, avatar crops circular/intrinsic, and all specimens inert. Use ordered-list and time semantics; do not introduce unnecessary focus targets.
 - **Remaining:** matched browser comparison, complete 26-variant matrix, RTL/LTR, narrow widths, accessibility tree and independent screen-reader review remain open in the Timeline DoD.
+## Charts — 2026-11-08
+
+- کارت نمودار ۵۲۰ پیکسل است؛ نمودارها SVG با نسبت ثابت هستند و در عرض کم در قاب خود اسکرول افقی می‌گیرند تا شکل داده‌ها فشرده یا کشیده نشود.
+- ترتیب سری‌ها ثابت است و سری اول زرد Norato است. راهنمای Donut از نام دسته‌ها استفاده می‌کند؛ مقدارها در جدول واقعی نیز حفظ می‌شوند.
+- Tooltip فقط وقتی میزبان `id` اتصال `aria-describedby` را فراهم کند نقش دسترس‌پذیر tooltip می‌گیرد.
+- نمودارهای نمایشی بالای صفحه غیرفعال‌اند؛ تغییر نوع، جهت و روند فقط در playground پایین صفحه انجام می‌شود.
+
+## فهرست کامپوننت‌ها در مستندات — 2026-11-08
+
+- صفحهٔ کامپوننت انتخاب‌شده باید در فهرست کناری با پس‌زمینهٔ زرد Norato و `aria-current="page"` مشخص باشد.
+- تغییر کامپوننت در همان اپ انجام می‌شود؛ URL و تاریخچهٔ مرورگر همگام می‌مانند و انتخاب جاری در محدودهٔ فهرست کناری دیده می‌شود.

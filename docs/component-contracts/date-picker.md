@@ -9,7 +9,7 @@
 
 ## Overview
 
-قرارداد Lemon/Norato: هفت حالت Single، Range، Range + Presets، Date & Time، Month، Year و Wheel با تقویم شمسی. جمعه‌ها مشخص‌اند؛ مصرف‌کننده تاریخ تعطیلات را از منبع مورد اعتماد خودش می‌دهد.
+قرارداد مرجع طراحی/Norato: هفت حالت Single، Range، Range + Presets، Date & Time، Month، Year و Wheel با تقویم شمسی. جمعه‌ها مشخص‌اند؛ مصرف‌کننده تاریخ تعطیلات را از منبع مورد اعتماد خودش می‌دهد.
 
 ## Anatomy
 
@@ -22,7 +22,7 @@
 ## Variants
 
 - **Date Picker (7 mode):** Type: Single، Range، Range + Presets، Date & Time، Month، Year، Wheel؛ Size: Small، Medium
-- **Date Input (80 Lemon variants + Loading):** Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
+- **Date Input (80 مرجع طراحی variants + Loading):** Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
 - **Calendar Month (8 variant):** Size: Small، Medium؛ Selection: None، Single، Range، Multiple
 - **Calendar Header (3 variant):** Size: Small، Medium؛ Type: Arrows، Dropdowns
 - **Calendar Day (20 variant):** Size: Small، Medium؛ State: Default، Hover، Today، Selected، Range Start، In Range، Range End، Holiday، Outside، Disabled
@@ -41,7 +41,7 @@
 ## Parts
 
 - **Date Picker — 7 mode:** پنل کامل تقویم در ۷ حالت. ابعاد/حالت‌ها: Type: Single، Range، Range + Presets، Date & Time، Month، Year، Wheel؛ Size: Small، Medium
-- **Date Input — 80 Lemon variants + Loading:** فیلدی که تقویم رو باز می‌کنه. ابعاد/حالت‌ها: Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
+- **Date Input — 80 مرجع طراحی variants + Loading:** فیلدی که تقویم رو باز می‌کنه. ابعاد/حالت‌ها: Type: Single، Range؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Active، Error، Disabled، Loading؛ Label: Outside، Inside
 - **Calendar Month — 8 variant:** جدول یه ماه. ابعاد/حالت‌ها: Size: Small، Medium؛ Selection: None، Single، Range، Multiple
 - **Calendar Header — 3 variant:** ناوبری بین ماه‌ها. ابعاد/حالت‌ها: Size: Small، Medium؛ Type: Arrows، Dropdowns
 - **Calendar Day — 20 variant:** یه روز با همه‌ی حالت‌ها. ابعاد/حالت‌ها: Size: Small، Medium؛ State: Default، Hover، Today، Selected، Range Start، In Range، Range End، Holiday، Outside، Disabled

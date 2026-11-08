@@ -33,11 +33,11 @@ Deliver a public Vue 3 `NoratoDivider`, an inert 640×288 Button-style dotted sp
 - SC-002: Browser-measured horizontal rule thickness and vertical rule width are exactly 1 CSS px; horizontal component height stays content-driven (one line) and no 288px preview-frame height leaks into the control.
 - SC-003: RTL Label Start appears at the right; LTR Label Start appears at the left.
 - SC-004: Accessibility tree reports no decorative separator and reports orientation/name for semantic mode.
-- SC-005: Desktop and mobile same-viewport composition is reviewed against Lemon; Norato token differences are documented.
+- SC-005: Desktop and mobile same-viewport composition is reviewed against design reference; Norato token differences are documented.
 - SC-006: Token/catalog checks, Vue typecheck/build and `git diff --check` pass.
 
 ## Assumptions
-- The 12 named variants count orientation × type × tone (2×3×2); spacing is an independent dimension, consistent with Lemon's own 12-variant statement.
+- The 12 named variants count orientation × type × tone (2×3×2); spacing is an independent dimension, consistent with design reference's own 12-variant statement.
 - The project's 640×288 preview frame is shared with Button/Split Button. It is specimen framing only; it must not set the adapter height.
 - No clarifying decision remains because this component is noninteractive and the repository's approved delegation asks the assistant to choose defaults where appropriate.
 
