@@ -1169,3 +1169,9 @@
 - **Observation:** At the local desktop Input playground, a Persian Textarea placeholder and typed value appeared at the left edge while its adapter declared `dir="rtl"`.
 - **Correction:** Set explicit RTL/LTR text direction and alignment on the package Textarea; set direction-aware placeholder alignment for RTL text inputs and both Textarea directions in the app.
 - **Validation:** After a full reload at the 1265px desktop viewport, the Persian placeholder and entered Persian sample appear at the right edge. Focus keeps the requested single yellow stroke. Screen-reader and remaining Input state visual checks remain open in `input-checklist.md`.
+
+## ERR-146 — Segment Item state cross-product had no visual gallery (2026-11-08)
+
+- **Observed:** Segmented documented 64 Segment Item combinations, but its Variants section showed axis labels and no combined visual examples.
+- **Correction:** Added an inert 64-cell gallery grouped by style and size; the Vue playground remains responsible for interactive behavior.
+- **Validation:** At the local desktop render, both styles and all four sizes are present; Contrast selected and Hover use yellow with dark text, Disabled is neutral, and Focus shows the high-contrast ring. Matched 390px gallery, exact geometry, interactive cross-product and independent screen-reader review remain open.

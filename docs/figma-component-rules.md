@@ -331,6 +331,7 @@
 - Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
 - Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
 - Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.
+- The Variants section includes an inert 64-cell Segment Item matrix: both styles × four sizes × selected/unselected × Default/Hover/Disabled/Focus. This matrix is visual documentation only; keep the playground as the interactive source.
 
 ## Rating — 2026-11-01
 

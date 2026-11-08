@@ -23,6 +23,8 @@
 - **Segmented Control (24 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Items: 2، 3، 4.
 - **Segment Item (64 variant):** Style: Glass، Contrast؛ Size: Small، Medium، Large، XLarge؛ Selected: false، true؛ State: Default، Hover، Disabled، Focus.
 
+گالری Variants صفحه هر ۶۴ ترکیب Segment Item را در هشت کارت Style×Size نشان می‌دهد. این ماتریس برای مقایسهٔ بصری است، `inert` و از درخت دسترس‌پذیری کنار گذاشته شده؛ تعامل واقعی فقط در Playground اجرا می‌شود. در سبک Contrast، انتخاب‌شده زرد و متن تیره است؛ Disabled اولویت سطح و متن خنثی دارد؛ Focus حلقهٔ کنتراست‌دار را نشان می‌دهد.
+
 ## Sizes
 
 مرجع مرجع طراحی اندازه‌های بصری ۳۲، ۴۰، ۴۸ و ۵۶px را ثبت می‌کند. Norato برای کنترل تعاملی حداقل هدف ۴۸px را حفظ می‌کند؛ Small، Medium و Large هدف ۴۸px و XLarge هدف ۵۶px دارد. متن و فاصلهٔ افقی بین اندازه‌ها تغییر می‌کند؛ متن به‌ترتیب ۱۲، ۱۳، ۱۴ و ۱۶px است.

@@ -33,7 +33,8 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] In a fresh mobile keyboard check, ArrowLeft moved focus from روزانه to هفتگی without changing selection; Space selected هفتگی. Right + Space restored روزانه, and the controlled value/snippet reflected the change.
 - [x] Playground restored to Glass/Medium/3 with روزانه selected; temporary viewport override reset.
 - [x] Fresh Vite render shows the same detail structure as Button: preview, Vue adapter/playground and all nine contract sections. The older running dev process had a stale glob; a fresh process fixed the render without a source workaround.
-- [ ] Independent screenreader software, exact DOM bounding-box/focus-ring measurements and exhaustive 64 item state/style/size combinations were not run; DoD stays open.
+- [x] Variants now renders the 64 Segment Item style×size×selection×state combinations in an inert gallery. Desktop browser review covered both styles and their state groups; Contrast selected remains yellow with dark text, including Hover, and Focus remains high-contrast.
+- [ ] Independent screenreader software, exact DOM bounding-box/focus-ring measurements, mobile gallery inspection, and interactive runtime review across the full 64 item-state cross-product remain open; DoD stays open.
 - [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 
 ## Select behavior acceptance checklist

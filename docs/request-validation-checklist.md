@@ -1581,4 +1581,10 @@
 - [x] Typed Persian sample rendered at the left edge in LTR; RTL behavior and right-edge alignment had already been visually verified in the prior follow-up.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` passed. Build reports the existing >500KB JavaScript chunk advisory.
 - [ ] Independent screen-reader review and full visual matching remain open; Input DoD stays open.
+
+## Segmented Control — Segment Item visual matrix (2026-11-08)
+
+- [x] Added an inert 64-cell gallery covering both styles, four sizes, selected/unselected and Default/Hover/Disabled/Focus states; the live playground remains the interactive source.
+- [x] Local desktop browser review shows the Contrast selected state in yellow with dark text for Default and Hover; focus examples retain a visible high-contrast ring. RTL ordering and fixed target layout remain represented by the existing adapter.
+- [ ] 390px gallery, exact bounding-box/focus-ring measurements, interactive review of all 64 item-state combinations and independent screen-reader session remain open; Segmented DoD stays open.
 - [x] Final token/catalog checks, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed. Build warns that the JS chunk is above 500KB.

@@ -9,6 +9,7 @@ type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
 type RadioMatrixState = { id: string; label: string; kind: string }
 type SwitchMatrixState = { id: string; label: string; kind: string }
+type SegmentedMatrixVariant = { id: string; selected: boolean; state: string; stateLabel: string }
 
 const props = defineProps<{ name: string; section: string; body: string; copiedKey?: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
@@ -115,6 +116,33 @@ const switchMatrixValues = [
   { on: false, label: 'Off' },
   { on: true, label: 'On' },
 ]
+const segmentedMatrixStyles = [
+  { id: 'glass', label: 'Glass' },
+  { id: 'contrast', label: 'Contrast' },
+]
+const segmentedMatrixSizes = [
+  { id: 'small', label: 'Small' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'large', label: 'Large' },
+  { id: 'xlarge', label: 'XLarge' },
+]
+const segmentedMatrixStates = [
+  { id: 'default', label: 'Default' },
+  { id: 'hover', label: 'Hover' },
+  { id: 'disabled', label: 'Disabled' },
+  { id: 'focus', label: 'Focus' },
+]
+const segmentedMatrixGroups = computed(() => segmentedMatrixStyles.flatMap(style => segmentedMatrixSizes.map(size => ({
+  id: `${style.id}-${size.id}`,
+  style,
+  size,
+  variants: [false, true].flatMap(selected => segmentedMatrixStates.map(state => ({
+    id: `${selected ? 'selected' : 'unselected'}-${state.id}`,
+    selected,
+    state: state.id,
+    stateLabel: state.label,
+  }))) as SegmentedMatrixVariant[],
+}))))
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
   const item = `${entry.label} ${entry.source}`.toLocaleLowerCase()
@@ -302,6 +330,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'Variants'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="Variants" />
+      <div v-else-if="name === 'Segmented Control'" class="segmented-item-matrix" aria-label="ماتریس ۶۴ حالت Segment Item" aria-hidden="true" inert>
+        <section v-for="group in segmentedMatrixGroups" :key="group.id" class="segmented-item-matrix-card" :data-style="group.style.id" :data-size="group.size.id">
+          <header><strong>{{ group.style.label }}</strong><span>Segment Item · {{ group.size.label }}</span></header>
+          <div class="segmented-item-matrix-grid">
+            <div v-for="variant in group.variants" :key="variant.id" class="segmented-item-matrix-cell" :data-selected="variant.selected" :data-state="variant.state">
+              <span class="segmented-item-matrix-target" :data-selected="variant.selected" :data-state="variant.state"><span class="segmented-item-matrix-item">روزانه</span></span>
+              <span class="segmented-item-matrix-meta">{{ variant.selected ? 'Selected' : 'Unselected' }} · {{ variant.stateLabel }}</span>
+            </div>
+          </div>
+        </section>
+        <span class="visual-kind">۶۴ ترکیب دیداری · ۲ سبک × ۴ اندازه × ۲ انتخاب × ۴ حالت؛ نمایش ایستا و inert</span>
+      </div>
       <div v-else-if="name === 'Input'" class="input-family-matrix" aria-label="نمونه‌های دیداری هشت زیرنوع Input" aria-hidden="true" inert>
         <article v-for="entry in entries" :key="entry.id" class="input-family-card" :data-family="entry.label.toLowerCase()">
           <header><strong>{{ entry.label }}</strong><small>{{ entry.detail.match(/\d+ variant/i)?.[0] || 'Input family' }}</small></header>
