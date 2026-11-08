@@ -12,9 +12,10 @@
 
 - [x] Form opens, accepts Persian text, submits, closes on success and restores focus to its trigger.
 - [x] Dialog closes with Escape and restores focus. Busy state disables actions and prevents Escape dismissal until the busy interval ends.
-- [ ] Verify outside-click dismissal and `dismissible=false` for Escape and outside click; verify the public close button remains operable when intended.
+- [x] Default Escape and outside-click dismiss the dialog. With `dismissible=false`, Escape and outside click leave it open; Cancel remains operable and closes it.
+- [ ] Verify the public close button remains operable when intended.
 - [ ] Verify all size/tone combinations, cancel and confirm events, disabled confirmation, busy completion, and controlled/uncontrolled `open` updates.
-- [ ] Verify `dialog`/`alertdialog` role and name/description in the browser accessibility tree; conduct an independent screen-reader review and keyboard-only pass.
+- [ ] Verify `dialog`/`alertdialog` role and name/description in the browser accessibility tree. The browser snapshot exposed the title and description but mapped the content surface as a generic container, so the expected role is not yet proven; conduct an independent screen-reader review and keyboard-only pass.
 - [ ] Verify LTR layout, focus order, reduced motion and viewport-bounded scrolling.
 
 ## Technical and delivery gates
