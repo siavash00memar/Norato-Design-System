@@ -28,3 +28,11 @@ No product/API ambiguity blocks this audit. The only permitted implementation ch
 - Mobile follow-up: at 390×844, Lemon frame is 327×300px and Norato is 320×288px; both documents measure 375px with no horizontal overflow. Norato shows its Default marker, semantic dots and a bounded 310×50px field.
 - Keyboard focus follow-up: Clear is reachable by Tab and receives the semantic 2px blue outline/4px offset/2px yellow halo. The Reka trigger uses `tabindex=-1`; the input is the composite keyboard entry point and ArrowDown opens the list and sets the active descendant.
 - Remaining gaps: full combined 96-variant visual comparison, every actionable focus path across states and an independent screen-reader pass. DoD stays open.
+
+## Live audit follow-up — shared Input styling and menu accessibility (2026-11-08)
+
+- Current browser viewport is 499×932 for the local app while the Lemon tab is 1280×720; these captures are not a matched comparison, so exact desktop/390px Lemon parity remains open.
+- Across all 16 live single/multi × inside/outside × four-size combinations, the capsule is 36px; interactive rows are 48px except XLarge at 56px. Inside-label containers measure 56px (Small–Large) and 64px (XLarge). Document width 484px stays below the 499px viewport.
+- Isolated hover from keyboard focus by moving keyboard focus away while the pointer remained over the Combobox input: Stroke remained yellow at 1px and the field had no outline/shadow. Clear retains a visible independent keyboard focus indicator.
+- The browser exposed two correctness defects: disabled+invalid kept an error-red Stroke, and Escape left an `aria-activedescendant` pointing to a removed menu item. Both were fixed and rechecked in the live page. Open/reopen references are valid; closed state removes the reference.
+- Recent, empty, loading (three skeleton lines), create-new, multi-select chip compression, ArrowDown, Enter and Escape were exercised. Full 96-variant screenshot review and independent screen-reader review remain open.

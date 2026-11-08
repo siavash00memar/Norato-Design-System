@@ -64,9 +64,12 @@
 ## Combobox alignment with cross-component Input styling (2026-11-08)
 
 - [ ] At desktop and 390×844, confirm 36px capsule inside a 48px target, Estedad Bold label, RTL/Vazirmatn Light 12px `#a1a1a1` placeholder, and no document overflow/stretch.
-- [ ] Confirm neutral 1px `#e8e8e8` rest stroke and one yellow 1px hover/focus stroke with no blue/black outer ring/halo; independent Clear/Chevron focus remains visible and keyboard/menu behavior is unchanged.
-- [ ] Recompare Lemon Combobox at matched viewports and run required technical gates after implementation.
+- [x] At the current live 499×932 viewport, confirmed neutral 1px `#e8e8e8` rest stroke, isolated yellow 1px hover with keyboard focus moved elsewhere, yellow focus Stroke, no field outline/shadow, Clear's independent 2px keyboard outline + yellow halo, and ArrowDown/Escape behavior. Disabled+invalid computes to neutral Stroke; disabled hover cannot activate yellow.
+- [ ] Recompare Lemon Combobox at matched desktop and 390×844 viewports after this correction.
+- [x] After the latest Combobox changes: `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass; build reports the existing >500kB main JavaScript chunk advisory.
 - [x] Desktop follow-up: neutral 1px rest stroke, 36px capsule in 48px target, yellow 1px keyboard-focus Stroke, no field outline/shadow, and Escape-to-close verified. Independent action focus, mobile viewport and matched Lemon comparison remain open.
+- [x] Current 499×932 browser pass covered all 16 size × label × single/multi geometry combinations; all visual capsules remained 36px, target rows 48px (56px XLarge), document width 484px with no horizontal overflow. Exact desktop and 390×844 screenshots after this correction remain open.
+- [x] Menu accessibility regression fixed and verified: active descendant points to a live option while open, is removed after Escape closes the menu, and is valid again after reopening.
 
 ## Number Input precision refinement — browser evidence (2026-11-01)
 

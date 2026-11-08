@@ -280,6 +280,8 @@
 - Keep the suggestion menu anchored 8px below the field, matching text bold, and every semantic brand/focus color on Norato tokens. Small/Medium Lemon sizes remain 48px interactive controls to satisfy Norato's global target rule; XLarge is 56px.
 - The inert top specimen uses one centered field, the Lemon-like dotted glass frame, and an upper-right `Default` marker. Reuse the semantic Norato blue/yellow wash and preview tokens; never depend on white glass-line color for dots on Norato's light glass background. Keep the specimen separate from the live playground.
 - Superseded 2026-11-08 by the cross-component Input rule: Combobox keeps a 48px interactive target with a centered 36px capsule; resting Stroke is 1px `#e8e8e8`, hover/focus Stroke is 1px Norato yellow, with no outer field outline or halo. Independent action buttons retain their own keyboard focus indicator.
+- Disabled takes visual priority over validation: a disabled+invalid Combobox keeps the neutral `#e8e8e8` Stroke and muted surface; the error Stroke returns when enabled. Hover never recolors a disabled field.
+- `aria-activedescendant` points to an existing option only while the menu is open. Closing removes the reference; reopening restores a valid active-option reference.
 
 ## Button playground presentation (2026-10-28)
 

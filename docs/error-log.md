@@ -994,7 +994,7 @@
 
 - **Observed:** The visible line is the Input capsule Stroke, not a browser focus outline; the input itself has no outline or shadow. Although enabled hover set yellow, the more-specific success-state stroke could override it.
 - **Correction:** Kept the generic enabled-hover rule and added a status-scoped enabled-hover rule after invalid/success styles, matching their specificity and winning by cascade order. Disabled neutral stroke retains priority; no second line or outline was added.
-- **Open verification:** Local browser interactions could not hold pointer hover during capture. Runtime hover color across default/error/success and disabled behavior remains open until confirmed by a real pointer-hover capture.
+- **Historical open verification:** This note was closed by ERR-121, which captured live pointer hover on enabled/error/success and neutral disabled fields.
 
 ## ERR-120 — Banner specimen was taller than Lemon's default (2026-11-08)
 
@@ -1015,6 +1015,18 @@
 - **Correction:** Added semantic `--norato-color-status-neutral` and mapped the Badge Neutral tone to that token with a white foreground; kept the 2px surface ring and semantic Norato palette.
 - **Correction follow-up:** Count uses minimum dimensions so a long localized value such as `۹۹+` expands horizontally; Dot stays fixed at its exact token dimensions.
 - **Verified:** Neutral Count and Dot were rechecked after the color correction; Small Count at 100→99+ was rechecked after horizontal expansion. All 16 type/size/tone cases were reviewed in RTL; other combinations use the same unaffected tone/size rules. Lemon and Norato were compared at the same 1265×720 viewport; Norato’s preview frame is narrower because its documentation column is narrower (576×288px versus 636×300px). Browser AX reports one button with the computed count/new-item name and hides the visual marker. Keyboard focus, native disabled state and Tab skipping disabled anchor passed.
+
+## ERR-123 — Combobox disabled+invalid state kept the error Stroke (2026-11-08)
+
+- **Observed:** With both `data-disabled` and `data-invalid`, the status rule left a red border on the non-interactive field, contradicting the shared Input disabled-state rule.
+- **Correction:** The existing disabled capsule rule now explicitly restores the neutral `--norato-color-border-default` Stroke and muted surface. Enabled error fields keep their error Stroke; disabled hover is excluded from the yellow rule.
+- **Verified:** Live browser computed style for disabled+invalid is 1px `rgb(232, 232, 232)`, native input `disabled` is true, and the field has no outline/shadow.
+
+## ERR-124 — Combobox retained a dangling active-descendant ID after close (2026-11-08)
+
+- **Observed:** After ArrowDown then Escape, `aria-expanded` became false but `aria-activedescendant` still named an option removed from the menu DOM.
+- **Correction:** On menu close, clear the query and remove the stale active-descendant reference after Vue's next render. Reopening delegates the active option back to Reka.
+- **Verified:** Open state references an existing option; Escape removes both the attribute and option target; reopening restores a reference to an existing option. ArrowDown, Enter selection and Escape still work.
 - **Remaining:** The narrow local render showed no page overflow at the available 484px view, but exact 390px/320px measurements and an independent screen-reader session were not available; both remain open.
 
 - **Verification update for ERR-119:** The earlier open note about Input hover is superseded by the real-pointer local/production checks recorded in ERR-121 and the Input hover section of `docs/request-validation-checklist.md`.

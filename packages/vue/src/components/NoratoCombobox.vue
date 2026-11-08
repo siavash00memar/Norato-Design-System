@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import {
   ComboboxAnchor,
   ComboboxContent,
@@ -79,7 +79,12 @@ const clear = () => {
   query.value = ''
   open.value = false
 }
-watch(open, (value) => { if (!value) query.value = '' })
+watch(open, async (value) => {
+  if (value) return
+  query.value = ''
+  await nextTick()
+  if (typeof document !== 'undefined') document.getElementById(`${props.id}-input`)?.removeAttribute('aria-activedescendant')
+})
 watch(() => props.multiple, () => { query.value = ''; open.value = false })
 </script>
 
