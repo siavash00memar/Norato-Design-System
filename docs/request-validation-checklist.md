@@ -1561,6 +1561,13 @@
 - [x] Open trigger computed to `rgb(255, 248, 224)` while the associated content region computed to white; RTL heading and chevron stayed in place.
 - [ ] Verify other row styles, multiple-open mode, and mobile viewport after this visual correction; final component DoD remains open.
 
+## Accordion — desktop interaction and reference review (2026-11-08)
+
+- [x] Compared the rendered preview with the selected visual reference at the same 1536×642 browser viewport. Both use the same centered, compact accordion composition, Persian RTL title/chevron placement and expanded first row; Norato frame is narrower because its docs column is narrower.
+- [x] Playground verified single-row switching, multiple rows, custom slot content, separated/card selections, disabled item and disabled group. ArrowDown skipped a disabled row, Home returned to the first trigger and Enter toggled the focused row.
+- [x] Browser accessibility tree reports expanded/collapsed state, named content regions and disabled triggers. No vertical stretching appeared in the reviewed desktop sample.
+- [ ] 320/390px geometry, four-size/style matrix, focus-ring and reduced-motion review, additional keyboard states, and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
+
 ## Image — implementation checkpoint (2026-11-08)
 
 - [x] Four exported Vue adapters added: `NoratoImage`, `NoratoImageThumbnail`, `NoratoImageGallery`, and `NoratoLightbox`; catalog route resolves to a Button-style detail page with preview, executable playground, usage snippet and nine contract sections.
