@@ -11,6 +11,6 @@
 - [x] T009 Integrate catalog, primitive map, usage example, live playground and Button-style page specimen.
 - [x] T010 Complete nine-section contract; remove legacy specimen CSS and align preview geometry.
 - [ ] T011 Browser-verify variants, spacing, semantics, RTL/LTR, responsiveness and Lemon comparison; update request checklist/error log. Geometry, variants, semantics, responsive widths and visual composition were checked; exact matched Lemon CSS viewport and independent screenreader remain unverified.
-- [ ] T012 Run required repository checks, resolve failures, commit and push the completed checkpoint. Checks passed this turn; commit/push is the remaining action.
+- [x] T012 Run required repository checks, resolve failures, commit and push the completed implementation checkpoint (`6b281e2`, `origin/master`).
 
 **Gate:** Dependencies are ordered; source implementation may begin after Analyze.
