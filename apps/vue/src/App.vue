@@ -1,57 +1,57 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import PlaygroundSelect from './PlaygroundSelect.vue'
-import ComponentSpecimen from './ComponentSpecimen.vue'
-import ContractVisualShowcase from './ContractVisualShowcase.vue'
-import ButtonVariantShowcase from './ButtonVariantShowcase.vue'
-import ButtonStateShowcase from './ButtonStateShowcase.vue'
-import ButtonSizeShowcase from './ButtonSizeShowcase.vue'
-import ButtonPlayground from './ButtonPlayground.vue'
-import BadgePlayground from './BadgePlayground.vue'
-import InputPlayground from './InputPlayground.vue'
-import SelectPlayground from './SelectPlayground.vue'
-import ComboboxPlayground from './ComboboxPlayground.vue'
-import CheckboxPlayground from './CheckboxPlayground.vue'
-import RadioPlayground from './RadioPlayground.vue'
-import SwitchPlayground from './SwitchPlayground.vue'
-import SegmentedPlayground from './SegmentedPlayground.vue'
-import RangePlayground from './RangePlayground.vue'
-import RatingPlayground from './RatingPlayground.vue'
-import DatePickerPlayground from './DatePickerPlayground.vue'
-import TimePickerPlayground from './TimePickerPlayground.vue'
-import FileUploadPlayground from './FileUploadPlayground.vue'
-import NavbarPlayground from './NavbarPlayground.vue'
-import SidebarPlayground from './SidebarPlayground.vue'
-import TabsPlayground from './TabsPlayground.vue'
-import BreadcrumbsPlayground from './BreadcrumbsPlayground.vue'
-import PaginationPlayground from './PaginationPlayground.vue'
-import StepperPlayground from './StepperPlayground.vue'
-import MenuPlayground from './MenuPlayground.vue'
-import CommandPalettePlayground from './CommandPalettePlayground.vue'
-import TreeViewPlayground from './TreeViewPlayground.vue'
-import AlertPlayground from './AlertPlayground.vue'
-import BannerPlayground from './BannerPlayground.vue'
-import ToastPlayground from './ToastPlayground.vue'
-import NotificationCenterPlayground from './NotificationCenterPlayground.vue'
-import TooltipPlayground from './TooltipPlayground.vue'
-import ProgressPlayground from './ProgressPlayground.vue'
-import SpinnerPlayground from './SpinnerPlayground.vue'
-import SkeletonPlayground from './SkeletonPlayground.vue'
-import EmptyStatePlayground from './EmptyStatePlayground.vue'
-import SplitButtonPlayground from './SplitButtonPlayground.vue'
-import DividerPlayground from './DividerPlayground.vue'
-import AccordionPlayground from './AccordionPlayground.vue'
-import ModalPlayground from './ModalPlayground.vue'
-import DrawerPlayground from './DrawerPlayground.vue'
-import PopoverPlayground from './PopoverPlayground.vue'
-import ImagePlayground from './ImagePlayground.vue'
-import CarouselPlayground from './CarouselPlayground.vue'
-import ChatPlayground from './ChatPlayground.vue'
-import AvatarPlayground from './AvatarPlayground.vue'
-import TimelinePlayground from './TimelinePlayground.vue'
-import ChartsPlayground from './ChartsPlayground.vue'
-import TeamGuide from './TeamGuide.vue'
-import ComponentLab from './ComponentLab.vue'
+import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+const PlaygroundSelect = defineAsyncComponent(() => import('./PlaygroundSelect.vue'))
+const ComponentSpecimen = defineAsyncComponent(() => import('./ComponentSpecimen.vue'))
+const ContractVisualShowcase = defineAsyncComponent(() => import('./ContractVisualShowcase.vue'))
+const ButtonVariantShowcase = defineAsyncComponent(() => import('./ButtonVariantShowcase.vue'))
+const ButtonStateShowcase = defineAsyncComponent(() => import('./ButtonStateShowcase.vue'))
+const ButtonSizeShowcase = defineAsyncComponent(() => import('./ButtonSizeShowcase.vue'))
+const ButtonPlayground = defineAsyncComponent(() => import('./ButtonPlayground.vue'))
+const BadgePlayground = defineAsyncComponent(() => import('./BadgePlayground.vue'))
+const InputPlayground = defineAsyncComponent(() => import('./InputPlayground.vue'))
+const SelectPlayground = defineAsyncComponent(() => import('./SelectPlayground.vue'))
+const ComboboxPlayground = defineAsyncComponent(() => import('./ComboboxPlayground.vue'))
+const CheckboxPlayground = defineAsyncComponent(() => import('./CheckboxPlayground.vue'))
+const RadioPlayground = defineAsyncComponent(() => import('./RadioPlayground.vue'))
+const SwitchPlayground = defineAsyncComponent(() => import('./SwitchPlayground.vue'))
+const SegmentedPlayground = defineAsyncComponent(() => import('./SegmentedPlayground.vue'))
+const RangePlayground = defineAsyncComponent(() => import('./RangePlayground.vue'))
+const RatingPlayground = defineAsyncComponent(() => import('./RatingPlayground.vue'))
+const DatePickerPlayground = defineAsyncComponent(() => import('./DatePickerPlayground.vue'))
+const TimePickerPlayground = defineAsyncComponent(() => import('./TimePickerPlayground.vue'))
+const FileUploadPlayground = defineAsyncComponent(() => import('./FileUploadPlayground.vue'))
+const NavbarPlayground = defineAsyncComponent(() => import('./NavbarPlayground.vue'))
+const SidebarPlayground = defineAsyncComponent(() => import('./SidebarPlayground.vue'))
+const TabsPlayground = defineAsyncComponent(() => import('./TabsPlayground.vue'))
+const BreadcrumbsPlayground = defineAsyncComponent(() => import('./BreadcrumbsPlayground.vue'))
+const PaginationPlayground = defineAsyncComponent(() => import('./PaginationPlayground.vue'))
+const StepperPlayground = defineAsyncComponent(() => import('./StepperPlayground.vue'))
+const MenuPlayground = defineAsyncComponent(() => import('./MenuPlayground.vue'))
+const CommandPalettePlayground = defineAsyncComponent(() => import('./CommandPalettePlayground.vue'))
+const TreeViewPlayground = defineAsyncComponent(() => import('./TreeViewPlayground.vue'))
+const AlertPlayground = defineAsyncComponent(() => import('./AlertPlayground.vue'))
+const BannerPlayground = defineAsyncComponent(() => import('./BannerPlayground.vue'))
+const ToastPlayground = defineAsyncComponent(() => import('./ToastPlayground.vue'))
+const NotificationCenterPlayground = defineAsyncComponent(() => import('./NotificationCenterPlayground.vue'))
+const TooltipPlayground = defineAsyncComponent(() => import('./TooltipPlayground.vue'))
+const ProgressPlayground = defineAsyncComponent(() => import('./ProgressPlayground.vue'))
+const SpinnerPlayground = defineAsyncComponent(() => import('./SpinnerPlayground.vue'))
+const SkeletonPlayground = defineAsyncComponent(() => import('./SkeletonPlayground.vue'))
+const EmptyStatePlayground = defineAsyncComponent(() => import('./EmptyStatePlayground.vue'))
+const SplitButtonPlayground = defineAsyncComponent(() => import('./SplitButtonPlayground.vue'))
+const DividerPlayground = defineAsyncComponent(() => import('./DividerPlayground.vue'))
+const AccordionPlayground = defineAsyncComponent(() => import('./AccordionPlayground.vue'))
+const ModalPlayground = defineAsyncComponent(() => import('./ModalPlayground.vue'))
+const DrawerPlayground = defineAsyncComponent(() => import('./DrawerPlayground.vue'))
+const PopoverPlayground = defineAsyncComponent(() => import('./PopoverPlayground.vue'))
+const ImagePlayground = defineAsyncComponent(() => import('./ImagePlayground.vue'))
+const CarouselPlayground = defineAsyncComponent(() => import('./CarouselPlayground.vue'))
+const ChatPlayground = defineAsyncComponent(() => import('./ChatPlayground.vue'))
+const AvatarPlayground = defineAsyncComponent(() => import('./AvatarPlayground.vue'))
+const TimelinePlayground = defineAsyncComponent(() => import('./TimelinePlayground.vue'))
+const ChartsPlayground = defineAsyncComponent(() => import('./ChartsPlayground.vue'))
+const TeamGuide = defineAsyncComponent(() => import('./TeamGuide.vue'))
+const ComponentLab = defineAsyncComponent(() => import('./ComponentLab.vue'))
 import { componentByName, componentBySlug, componentCatalog, foundationChapters, foundationOverviewCards, type ComponentStatus } from '@norato/components'
 import { usageExamples } from './usage-examples'
 const contractDocs = import.meta.glob('../../../docs/component-contracts/*.md', { eager: true, query: '?raw', import: 'default' }) as Record<string, string>
