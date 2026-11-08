@@ -990,8 +990,8 @@
 - **Correction:** Rebuilt the Linear template to put label/value in one row and track below, capped the inert specimen at 304px to match Lemon's measured 302.4px inner track, and added an RTL/LTR control to the executable playground.
 - **Verified:** The corrected local 1280×720 specimen follows the Lemon row order; all 120 variants pass in RTL and all 120 in LTR for role/name/min/max/current/value text, tone color, track thickness/fill ratio, inline-start edge and fixed circle geometry. 390px and 320px renders have no horizontal document overflow; independent screen-reader review remains open.
 
-## ERR-119 — Input Stroke reported gray during hover (2026-11-08)
+## ERR-119 — Input hover stroke was overridden by later status styles (2026-11-08)
 
-- **Observed:** The submitted static screenshot shows a neutral Stroke, but it does not establish whether the pointer was over the control when captured. The visible line is the Input capsule Stroke, not a browser focus outline; the input itself has no outline or shadow.
-- **Current browser evidence:** On the current published Input page, the resting `::before` capsule Stroke computes to `1px solid rgb(232, 232, 232)`; the layout wrapper computes to `0px`, with no outline or shadow. The existing CSS hover selector sets the capsule Stroke to the Norato yellow token.
-- **Open verification:** The user again reports a gray Stroke while hovering. The latest browser interaction did not retain a real pointer hover, so it did not verify the computed hover color. Prior hover evidence does not resolve this new report; the hover DoD is reopened until captured with the pointer actually over the field. No source fix is claimed in this update.
+- **Observed:** The visible line is the Input capsule Stroke, not a browser focus outline; the input itself has no outline or shadow. Although enabled hover set yellow, the more-specific success-state stroke could override it.
+- **Correction:** Kept the generic enabled-hover rule and added a status-scoped enabled-hover rule after invalid/success styles, matching their specificity and winning by cascade order. Disabled neutral stroke retains priority; no second line or outline was added.
+- **Open verification:** Local browser interactions could not hold pointer hover during capture. Runtime hover color across default/error/success and disabled behavior remains open until confirmed by a real pointer-hover capture.

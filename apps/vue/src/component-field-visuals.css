@@ -82,10 +82,6 @@
   background: var(--norato-color-surface-default);
 }
 
-#app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover::before {
-  border-color: var(--norato-color-brand-yellow);
-}
-
 /* The package stylesheet gives the native wrapper its own hover border.
    Keep that duplicate layer transparent so only the capsule stroke is visible. */
 #app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover {
@@ -98,6 +94,16 @@
 
 #app .norato-input-field[data-success]:not([data-invalid]):not([data-disabled]) .norato-input-field__control::before {
   border-color: var(--norato-color-status-success);
+}
+
+/* Hover has priority over status strokes for every enabled field. The explicit
+   status selector matches their specificity and follows them in the cascade. */
+#app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover::before {
+  border-color: var(--norato-color-brand-yellow);
+}
+
+#app .norato-input-field:not([data-disabled]):is([data-invalid], [data-success]) .norato-input-field__control:hover::before {
+  border-color: var(--norato-color-brand-yellow);
 }
 
 #app .norato-input-field[data-disabled] .norato-input-field__control::before {
