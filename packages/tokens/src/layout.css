@@ -243,6 +243,10 @@
   --norato-gutter-expanded: 32px;
   --norato-gutter-large: 48px;
   --norato-gutter-extra-large: 64px;
+  --norato-tooltip-max-inline-size: 260px;
+  --norato-tooltip-arrow-inline-size: 10px;
+  --norato-tooltip-arrow-block-size: 5px;
+  --norato-layer-tooltip: 15;
 }
 
 [dir='rtl'] { direction: rtl; }

@@ -1327,5 +1327,13 @@
 
 - [x] NoratoToast exported from `@norato/vue`; catalog resolves the adapter and `toast` usage example; component detail page mounts ToastPlayground.
 - [x] Static Toast preview uses Button-sized dotted specimen composition and package Toast styling without a portal.
-- [x] At 1270×720, visually compared Lemon and Norato: both frames are about 576×288px; Lemon default Toast is about 366×72px and Norato is about 368×70px. Verified the live RTL success message exposes title/description/action/close and closing emits feedback.\n- [ ] Full 20-variant visual matrix, timer/pause, keyboard, independent screen-reader and 390/320 widths remain unverified; Toast DoD stays open.
+- [x] At 1270×720, visually compared Lemon and Norato: both frames are about 576×288px; Lemon default Toast is about 366×72px and Norato is about 368×70px. Verified the live RTL success message exposes title/description/action/close and closing emits feedback.
+- [ ] Full 20-variant visual matrix, timer/pause, keyboard, independent screen-reader and 390/320 widths remain unverified; Toast DoD stays open.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build reports a 965.16KB JS chunk above the 500KB advisory threshold.
+
+## Tooltip first implementation pass — 2026-11-08
+
+- [x] Lemon route inspected; 16 combinations, default dark icon-trigger composition, Bubble/Arrow anatomy, RTL collapsed-sidebar left placement and keyboard focus requirement recorded.
+- [x] Norato page uses Button-sized dotted preview + inert sample + separate executable playground; at 1270×720 frame geometry is visually comparable. Rich info remains noninteractive; host owns actions.
+- [x] Keyboard focus reveals the tooltip, Escape closes it, and the trigger retains a single 2px yellow focus ring. Trigger description and content are present in the accessibility tree.
+- [ ] Pointer delay, 16-combination render matrix, Popper collision at 390/320, independent screen-reader review and final technical gates remain open.

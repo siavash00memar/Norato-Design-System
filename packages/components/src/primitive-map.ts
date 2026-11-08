@@ -8,6 +8,8 @@ export type PrimitiveDecision = {
  * This is a decision ledger, not a second component inventory or runtime status source.
  */
 export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
+  tooltip: { candidate: 'Installed Reka TooltipProvider/Root/Trigger/Portal/Content/Arrow', decision: 'Use Reka for described-by semantics, keyboard focus and pointer opening, Escape dismissal and collision-aware placement. Preserve the host trigger; tooltip content remains noninteractive, and Rich action-like text is descriptive only. Use Popover for real actions or forms.' },
+  toast: { candidate: 'Installed Reka ToastProvider/Root/Title/Description/Action/Close/Viewport', decision: 'Use Reka for live announcement, timing, pause/resume and dismissal behavior; keep Norato tone, Dark/Glass surfaces, Simple/Rich content, RTL composition and yellow focus styling in the adapter.' },
   banner: { candidate: 'Native Vue section/status semantics', decision: 'Banner is one persistent site-wide announcement before navigation; implement a semantic section/status adapter with caller-owned action and dismissal. Keep it distinct from local Alert and transient Toast.' },
   alert: { candidate: 'Native Vue section/status semantics', decision: 'Alert is persistent in-page feedback with optional caller-owned actions and dismissal; a dialog primitive would impose inappropriate modal behavior. Implement a tokenized semantic Vue adapter; danger uses alert role and other tones use status.' },
   pagination: { candidate: 'Native Vue nav/list/button', decision: 'Pagination changes a controlled list page rather than navigating to a known URL; use native buttons with current-page and disabled-boundary semantics.' },

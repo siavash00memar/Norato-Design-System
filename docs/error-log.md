@@ -953,3 +953,15 @@
 - **Observed:** The hover selector excluded `[data-invalid]`, so enabled error-state Inputs could retain a non-yellow border on pointer hover.
 - **Correction:** Removed only the invalid-state exclusion while retaining the disabled exclusion; updated the Input component contract to document hover priority and error restoration.
 - **Verified:** Local browser previously confirmed a focus-free hover has one yellow 1px capsule Stroke, invalid hover is yellow, resting Stroke is `#e8e8e8`, and the layout wrapper has no border. Disabled hover remains unverified in an interactive screenshot.
+
+## ERR-113 — Tooltip used a legacy static preview with no accessible adapter (2026-11-08)
+
+- **Observed:** The generic Tooltip preview had no Arrow, used a one-off dark selector and did not expose runtime interaction or the 16 Lemon combinations.
+- **Correction:** Removed legacy `.sample-tooltip` rules; added a Reka-based adapter, semantic token styles, an inert Button-sized specimen, a separate 16-variant playground, usage/export/catalog and contract.
+- **Verified:** Matched 1270×720 frames; keyboard focus opened the tooltip, Escape closed it, and the trigger retained a single yellow focus ring. Responsive collision and full matrix remain open.
+
+## ERR-114 — Global focus halo doubled the Tooltip trigger ring (2026-11-08)
+
+- **Observed:** Initial keyboard focus showed the local yellow outline plus the global shadow halo.
+- **Correction:** Reset shadow on the Tooltip trigger's `:focus-visible`, preserving one yellow 2px outline.
+- **Verified:** After the reset, the actual keyboard-focused trigger displayed one clear yellow ring in the local browser.

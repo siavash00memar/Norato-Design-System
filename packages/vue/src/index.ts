@@ -1,4 +1,5 @@
 import './components.css'
+import './tooltip.css'
 
 export { default as NoratoButton } from './components/NoratoButton.vue'
 export { default as NoratoSplitButton } from './components/NoratoSplitButton.vue'
@@ -59,6 +60,9 @@ export type { NoratoAlertLayout, NoratoAlertTone, NoratoAlertVariant } from './c
 
 export { default as NoratoBanner } from './components/NoratoBanner.vue'
 export type { NoratoBannerLayout, NoratoBannerTone } from './components/NoratoBanner.vue'
+
+export { default as NoratoTooltip } from './components/NoratoTooltip.vue'
+export type { NoratoTooltipLayout, NoratoTooltipPlacement, NoratoTooltipSurface } from './components/NoratoTooltip.vue'
 
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'

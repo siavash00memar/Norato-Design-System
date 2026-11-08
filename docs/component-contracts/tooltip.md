@@ -1,62 +1,63 @@
 # Tooltip — قرارداد کامپوننت نوراتو
 
 **حوزه:** Feedback & Status  
-**وضعیت نوراتو:** Proposed  
+**بلوغ:** Adapted؛ بررسی کامل DoD مرورگری ادامه دارد.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ Tooltip سادهٔ Dark در بالای trigger آیکنی، داخل کارت نقطه‌ای ۵۷۶×۲۸۸ پیکسلی هم‌سطح Button است و غیرفعال می‌ماند. playground اجرایی زیر بخش Vue از Reka Tooltip استفاده می‌کند.
 
 ## Overview
 
-قرارداد طراحی Norato: یه حباب کوچیک راهنما که با هاور ظاهر میشه. تیره یا شیشه‌ای، یک‌خطی یا کامل.
+Tooltip نام یا توضیح کوتاهِ یک کنترل را هنگام hover یا focus بیان می‌کند. محتوای ضروری نباید فقط در Tooltip باشد. برای محتوای تعاملی، پنل یا فرم از Popover استفاده کن.
 
 ## Anatomy
 
-- **Bubble** — حباب تیره یا شیشه‌ای
-- **Text** — متن کوتاه
-- **Arrow** — فلش رو به المان
+- **Trigger:** کنترل معنایی متعلق به برنامهٔ میزبان؛ slot آن حفظ می‌شود.
+- **Bubble:** متن ساده یا محتوای Rich؛ عرض محدود و ارتفاع ذاتی.
+- **Arrow:** هم‌رنگ سطح و متصل به Bubble.
 
 ## Variants
 
-- **Tooltip (16 variant):** Style: Dark، Glass؛ Type: Simple، Rich؛ Placement: Top، Bottom، Right، Left
+- **Surface:** Dark یا Glass.
+- **Layout:** Simple یک متن کوتاه؛ Rich شامل عنوان، توضیح و متن همراه غیرتعاملی.
+- **Placement:** Top، Bottom، Right، Left؛ Reka هنگام برخورد با لبه viewport جایگاه را flip می‌کند.
+- ترکیب‌ها: ۲ × ۲ × ۴ = ۱۶.
 
 ## Sizes
 
-- در قرارداد فعلی Norato محور اندازه برای این خانواده مشخص نشده است.
+محور اندازه‌ای در مرجع تعریف نشده. عرض حداکثر از `--norato-tooltip-max-inline-size` پیروی می‌کند و در عرض‌های کم به viewport محدود می‌شود. Trigger حداقل هدف تعاملی ۴۸×۴۸ دارد؛ Bubble متناسب با متن رشد می‌کند و نباید کشیده یا بریده شود.
 
 ## States
 
-- در قرارداد فعلی Norato حالت‌های مجزا برای این خانواده مشخص نشده است.
+- Hidden، Delayed Open، Instant Open پس از hover/focus و Escape/ترک focus یا pointer.
+- Disabled؛ trigger میزبان disabled باقی می‌ماند و Tooltip باز نمی‌شود.
+- Controlled از `v-model:open` و uncontrolled از `defaultOpen`.
+- برای Tooltip انیمیشن ورود/خروج سفارشی اعمال نشده؛ حرکت خودکار ندارد.
 
 ## Parts
 
-- **Tooltip — 16 variant:** حباب راهنما در ۴ جهت. ابعاد/حالت‌ها: Style: Dark، Glass؛ Type: Simple، Rich؛ Placement: Top، Bottom، Right، Left
+- `NoratoTooltip`: API عمومی Vue با trigger slot.
+- Reka Tooltip Provider: delay پیش‌فرض ۵۰۰ms، skip-delay برابر ۳۰۰ms، ورود با keyboard focus.
+- Trigger: محتوای دلخواه میزبان یا دکمهٔ راهنمای پیش‌فرض.
+- Content/Arrow: Portal با collision-aware positioning و ارتباط دسترس‌پذیر description.
 
 ## Usage
 
-### راهنمای کاربرد Norato
-
-- برای دکمه‌های آیکنی همیشه Tooltip بذار.
-- متن رو چند کلمه نگه دار.
-
-### محدودیت‌های کاربرد
-
-- اطلاعات ضروری رو فقط توی Tooltip نذار.
-- لینک یا فرم داخل Tooltip ساده نذار.
-
-### جهت RTL
-
-برای آیتم‌های سایدبار جمع‌شده، Tooltip سمت چپ باز میشه.
+- Tooltip را برای نام آیکن‌دکمه و توضیح بسیار کوتاه استفاده کن.
+- برای آیتم‌های Sidebar جمع‌شده، سمت چپ را درخواست بده؛ collision ممکن است سمت را تغییر دهد.
+- اطلاعات مهم را در متن صفحه نیز ارائه کن.
+- Tooltip ساده را شامل لینک، فرم، دکمه یا کنش focusable نکن. متن همراه در Rich صرفاً توضیحی و تزئینی است؛ کنش واقعی را در trigger/host قرار بده.
+- Tooltipهای متعدد را روی هم نچین؛ زمان بازشدن Reka با skip-delay کوتاه تنظیم شده است.
 
 ## Accessibility
 
-Tooltip باید با فوکوس کیبورد هم ظاهر بشه، نه فقط با موس.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+Tooltip با Reka به trigger توصیف‌شده متصل است؛ hover و keyboard focus آن را باز می‌کنند، Escape می‌بندد. در RTL trigger و متن RTL هستند؛ placement فیزیکی صریح است و CSS Arrow از `data-side` primitive پیروی می‌کند. focus ring بیرونی ۲ پیکسلی زرد روی trigger میزبان باقی می‌ماند؛ adapter حلقهٔ دوم نمی‌سازد. محتوای Tooltip فوکوس‌پذیر نیست.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+`--norato-tooltip-max-inline-size`، `--norato-layer-tooltip`، `--norato-color-surface-code`، `--norato-color-text-on-code`، سطح شیشه‌ای و Stroke شیشه‌ای، `--norato-radius-control`، `--norato-elevation-new`، spacing و focus زرد Norato. آبی Lemon استفاده نشود.
+
+## DoD
+
+مرجع Lemon در ۱۲۷۰×۷۲۰ بررسی شده؛ پیاده‌سازی و نمونهٔ Norato ساخته شده‌اند. مقایسهٔ اندازهٔ برابر، ماتریس ۱۶ حالت، hover/focus/Escape، flip در ۳۹۰/۳۲۰، دسترس‌پذیری مستقل و gateهای نهایی هنوز باید انجام شوند؛ DoD باز است.
