@@ -423,3 +423,9 @@
 - Keep preview inert and compact in the Button dotted frame. The separate playground controls tone, surface, layout and dismissibility.
 - Use semantic Norato status containers, Estedad title, Vazirmatn body, intrinsic SVG and semantic roles; use yellow for interactive focus. Never reuse Lemon's blue as Norato's brand accent.
 - **Remaining:** browser parity, narrow 390/320 widths, manual keyboard/error announcements and independent screen-reader review remain open; Alert DoD remains open.
+
+## Banner — 2026-11-08
+- Match Lemon's global announcement strip: status icon right, message, optional action and close on the left; desktop keeps one row and mobile stacks message/action. Keep the component full-width in its page placement.
+- Use six semantic tones and explicit desktop/mobile options, but apply Norato status containers and yellow as the brand/focus accent. Action dispatches an event; the host owns navigation and visibility persistence.
+- The top specimen is inert, uses the Button-sized dotted frame and Default marker; the lower playground is executable.
+- **Remaining:** browser parity, full keyboard/action/dismiss sequence and 390/320 widths remain open; do not close Banner DoD before these checks.

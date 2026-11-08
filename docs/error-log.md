@@ -923,3 +923,9 @@
 - **Observed:** The shared focus rule added a dark 2px outline and yellow outer shadow around native fields. This made the input look double-stroked and did not match the requested single yellow field Stroke.
 - **Correction:** Limit the focus reset to field-like controls, set their 1px border to Norato yellow on focus, and add yellow hover borders to legacy field/textarea/date/select controls. Preserve focus rings on non-field interactive controls and independent actions.
 - **Verified:** Local Input route: focused Password control renders one yellow 1px capsule Stroke; no dark outer outline/shadow. Generic focus treatment remains on buttons and switches.
+
+## ERR-108 — Banner legacy specimen bypassed the shared page composition (2026-11-08)
+
+- **Observed:** Banner was a generic static row with legacy shared CSS, had no live playground or Vue adapter, and did not use the Button-sized dotted specimen frame.
+- **Correction:** Replace the specimen with an inert NoratoBanner preview, remove all legacy `.sample-banner` selectors, add an executable controlled playground, complete the nine-section contract, and register the Vue export/catalog entry.
+- **Verified:** Technical and browser DoD still in progress; do not treat the component as fully parity-verified until responsive and interaction review is recorded.

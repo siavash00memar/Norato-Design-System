@@ -8,6 +8,7 @@ export type PrimitiveDecision = {
  * This is a decision ledger, not a second component inventory or runtime status source.
  */
 export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
+  banner: { candidate: 'Native Vue section/status semantics', decision: 'Banner is one persistent site-wide announcement before navigation; implement a semantic section/status adapter with caller-owned action and dismissal. Keep it distinct from local Alert and transient Toast.' },
   alert: { candidate: 'Native Vue section/status semantics', decision: 'Alert is persistent in-page feedback with optional caller-owned actions and dismissal; a dialog primitive would impose inappropriate modal behavior. Implement a tokenized semantic Vue adapter; danger uses alert role and other tones use status.' },
   pagination: { candidate: 'Native Vue nav/list/button', decision: 'Pagination changes a controlled list page rather than navigating to a known URL; use native buttons with current-page and disabled-boundary semantics.' },
   stepper: { candidate: 'Native Vue ordered list', decision: 'Stepper communicates progress through sequential work, not free navigation. Derive status from the host-controlled current step and expose ordered-list/current-step semantics without fake buttons or links.' },

@@ -56,3 +56,6 @@ export { default as NoratoTreeView } from './components/NoratoTreeView.vue'
 export type { NoratoTreeNode } from './components/NoratoTreeView.vue'
 export { default as NoratoAlert } from './components/NoratoAlert.vue'
 export type { NoratoAlertLayout, NoratoAlertTone, NoratoAlertVariant } from './components/NoratoAlert.vue'
+
+export { default as NoratoBanner } from './components/NoratoBanner.vue'
+export type { NoratoBannerLayout, NoratoBannerTone } from './components/NoratoBanner.vue'
