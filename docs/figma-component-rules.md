@@ -475,3 +475,10 @@
 - In RTL, the first group member is on the right, +N remains on the left, and the presence dot sits physically bottom-left. Use logical overlap and verify LTR mirroring.
 - Derive at most two initials, preserve Unicode graphemes, and fall back from failed images without stretching or changing geometry.
 - **Remaining:** matched screenshots, complete 55-variant browser review, RTL/LTR, responsive behavior, accessibility and final DoD remain open until recorded in Avatar's feature checklist.
+
+# Timeline
+
+- Follow Lemon's right-side RTL rail, compact event hierarchy, Dot/Icon/Avatar markers, three item layouts and day-grouped Activity Feed. Preserve its 26 documented combinations.
+- Use Norato semantic neutral/success/warning/error tones. Active is a raised neutral marker with Norato yellow detail; do not use blue as an accent.
+- Keep rail and text mirrored in LTR, event order caller-controlled, avatar crops circular/intrinsic, and all specimens inert. Use ordered-list and time semantics; do not introduce unnecessary focus targets.
+- **Remaining:** matched browser comparison, complete 26-variant matrix, RTL/LTR, narrow widths, accessibility tree and independent screen-reader review remain open in the Timeline DoD.

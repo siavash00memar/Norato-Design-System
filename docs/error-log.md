@@ -1074,3 +1074,9 @@
 - **Observed:** The top email specimen was already clean, but the live Text Input playground and the backward-compatible `NoratoField` lab still rendered generic explanatory helper text below the field.
 - **Correction:** Removed the generic helper from those default demos and kept error/loading/success messages state-driven. The public optional `helperText` API remains available to product teams.
 - **Verification:** Browser evidence and engineering checks are recorded in the request-validation checklist. Input visual capsules remain 36px inside a 48px target; titles remain Estedad Bold and Persian placeholders remain RTL.
+
+## ERR-132 — Timeline rail was placed on the wrong side in RTL (2026-11-08)
+
+- **Observed:** Timeline initially anchored its rail with `inset-inline-end`, which places it at physical left when the page direction is RTL. This contradicted the Lemon reference and Norato RTL contract.
+- **Correction:** Changed the rail and marker anchors to `inset-inline-start`; no direction-specific duplicated coordinates were introduced.
+- **Verified:** Browser render now places RTL rail on the physical right and LTR rail on the left. Item content and marker alignment mirror correctly; 499×932 local view has no horizontal overflow (document 484px). Exact 390/320 measurements, matched Lemon viewport comparison, and screen-reader review remain open.

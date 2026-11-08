@@ -1491,3 +1491,12 @@
 - [x] Browser AX shows one named section associated with heading/description, hides decorative visual, and retains action names. Independent screen-reader review remains required.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after correcting the invalid slot selector.
 - [ ] Independent screen-reader review and the full exhaustive behavior cross-product remain open; browser AX is not counted as a screen-reader session.
+
+## Timeline — browser review (2026-11-08)
+
+- [x] Local Timeline detail page follows Button structure: inert dotted preview, executable playground, Vue usage example, and nine contract sections. Public adapters/types and catalog/contract/Figma records are wired.
+- [x] Rendered all 9 item variants, 15 marker variants, and both feed densities. Browser shows no horizontal overflow at the available 499×932 viewport (document width 484px); exact 390px/320px widths remain unavailable.
+- [x] RTL rail is on the right and LTR rail mirrors to the left. First/middle/last connectors, fixed marker bounds, Avatar circle geometry and image fallback, array order, group boundaries, and status cues were inspected.
+- [x] Browser AX exposes named ordered lists, item heading/time and marker names; static specimen has zero focusable descendants. Keyboard opened and selected the layout menu with visible yellow focus; playground controls were restored to defaults.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after latest changes. Build retains the existing large-main-bundle advisory.
+- [ ] Matched Lemon/Norato viewport comparison, exact mobile widths, and independent screen-reader review remain open. Do not close Timeline DoD until completed.

@@ -1,15 +1,15 @@
 # Timeline — قرارداد کامپوننت نوراتو
 
 **حوزه:** Data Display  
-**وضعیت نوراتو:** Proposed  
+**وضعیت نوراتو:** Adapted — چهار adapter Vue پیاده شده‌اند؛ بازبینی نهایی DoD بصری و دسترس‌پذیری ادامه دارد.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحه در قاب نقطه‌دار هم‌اندازهٔ Button نشان داده می‌شود. آزمایش اجرایی زیر آن قرار می‌گیرد.
 
 ## Overview
 
-قرارداد طراحی Norato: نمایش رویدادها به ترتیب زمان؛ از تاریخچه‌ی سفارش تا فید فعالیت‌ها.
+قرارداد طراحی Norato: نمایش رویدادها به ترتیب ورودی، از تاریخچهٔ سفارش تا فید گروه‌بندی‌شدهٔ فعالیت‌ها. آرایه بی‌تغییر و بدون مرتب‌سازی یا کوتاه‌سازی پنهان رندر می‌شود.
 
 ## Anatomy
 
@@ -17,6 +17,7 @@
 - **Marker** — نشانگر رویداد
 - **Title** — عنوان رویداد
 - **Time** — زمان
+- **Description** — توضیح کوتاه اختیاری
 
 ## Variants
 
@@ -60,8 +61,18 @@
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+Timeline محتوای غیرتعاملی است و فوکوس نمی‌گیرد. هر فید یک عنوان قابل‌دسترسی دارد، رویدادها در `ol` معنایی‌اند و زمان با `time` نمایش داده می‌شود. نشانگرها نام دسترس‌پذیر مستقل دارند.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-glass-surface-strong`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-color-success-container`، `--norato-color-warning-container`، `--norato-color-error-container` و توکن‌های فاصله، تایپوگرافی و شعاع.
+
+## Vue API
+
+- `NoratoTimeline`: فهرست مرتب و کنترل‌شده با `events`, `label`, `layout` و `dir`.
+- `NoratoTimelineItem`: رندر یک رخداد با `event`, `layout`, `position` و `dir`؛ تنها آیتم به‌صورت داخلی connector را حذف می‌کند.
+- `NoratoTimelineMarker`: نشانگر مستقل با نوع `dot|icon|avatar`، لحن، آیکن محدودشده و تصویر/نام آواتار.
+- `NoratoActivityFeed`: گروه‌های روز با عنوان و آرایهٔ رویداد صریح از میزبان، به‌همراه تراکم `default|compact`.
+- زمان قابل نمایش `time` است؛ `datetime` اختیاری برای مقدار machine-readable می‌آید.
+- `avatarName` متن جایگزین/initial است. تصویر ناموفق به حروف اول برمی‌گردد.
+- مصرف‌کننده ترتیب را ثابت نگه می‌دارد و بالای ۲۰ رویداد صفحه‌بندی می‌کند.

@@ -84,4 +84,18 @@ const items: NoratoMenuItem[] = [
 function selectAction(value: string) { console.log(value) }
 <\/script>
 <template><NoratoMenu id="file-actions" label="اقدام‌های فایل" v-model:open="open" :items="items" @select="selectAction" /></template>`,
+  timeline: `<script setup lang="ts">
+import { NoratoActivityFeed, NoratoTimeline, NoratoTimelineItem, NoratoTimelineMarker, type NoratoActivityGroup, type NoratoTimelineEvent } from '@norato/vue'
+const events: NoratoTimelineEvent[] = [
+  { id: 'created', title: 'سفارش ثبت شد', time: '۱۰:۲۰', datetime: '2026-11-08T10:20:00+03:30', tone: 'success' },
+  { id: 'packing', title: 'آماده‌سازی سفارش', time: '۱۰:۳۵', tone: 'active', markerType: 'icon', icon: 'package', description: 'بسته در حال آماده شدن است.' },
+]
+const groups: NoratoActivityGroup[] = [{ id: 'today', label: 'امروز', events }]
+<\\/script>
+<template>
+  <NoratoTimeline id="order-history" :events="events" layout="default" label="تاریخچهٔ سفارش" dir="rtl" />
+  <ol aria-label="یک رویداد"><NoratoTimelineItem :event="events[0]!" position="only" layout="card" /></ol>
+  <NoratoTimelineMarker type="avatar" tone="neutral" avatar-name="سارا محمدی" label="سارا محمدی" />
+  <NoratoActivityFeed id="recent-activity" :groups="groups" density="compact" label="فعالیت‌های اخیر" />
+</template>`,
 }

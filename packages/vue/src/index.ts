@@ -94,5 +94,11 @@ export { default as NoratoAvatarLabel } from './components/NoratoAvatarLabel.vue
 export type { NoratoAvatarLabelSize } from './components/NoratoAvatarLabel.vue'
 export { default as NoratoAvatarStatus } from './components/NoratoAvatarStatus.vue'
 
+export { default as NoratoTimeline } from './components/NoratoTimeline.vue'
+export { default as NoratoTimelineItem } from './components/NoratoTimelineItem.vue'
+export { default as NoratoTimelineMarker } from './components/NoratoTimelineMarker.vue'
+export { default as NoratoActivityFeed } from './components/NoratoActivityFeed.vue'
+export type { NoratoActivityGroup, NoratoTimelineEvent, NoratoTimelineIcon, NoratoTimelineLayout, NoratoTimelineMarkerType, NoratoTimelinePosition, NoratoTimelineTone } from './components/timelineTypes'
+
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'
