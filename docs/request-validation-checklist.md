@@ -1135,7 +1135,8 @@
 - [x] Desktop live playground: Soft + Large + Vertical remains legible without visible stretching/clipping. Global disabled disables all four tabs and is reversible; the individually disabled tab remains disabled after toggling global disabled off.
 - [x] Vertical ArrowDown from “همه” selects “فعال” and updates the associated panel. Restored playground to Line/Medium/Horizontal, enabled, “همه”.
 - [x] Updated component-contract indicator wording to match the yellow active indicator/surface in the runtime styles.
-- [ ] Full style × size × orientation × disabled matrix, exhaustive hover/focus state combinations, narrow viewport captures, and independent screen-reader review remain unverified.
+- [x] Live AX matrix covered all 24 style × size × orientation × global-disabled combinations; each state retained four tabs, exactly one selected trigger, one linked panel, and the expected disabled count (one individually disabled or all four globally disabled). Restored Line/Medium/Horizontal, enabled, “همه”.
+- [ ] Exhaustive hover/focus state combinations and independent screen-reader review remain unverified. Prior narrow viewport results are listed in the 2026-11-02 record; fresh 320/390px captures were not taken in this follow-up.
 
 ## Breadcrumbs — implementation checkpoint (2026-11-02)
 
