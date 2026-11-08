@@ -917,3 +917,9 @@
 - **Observed:** Vue boolean prop casting supplied `false` when `modelValue` was omitted, so the uncontrolled specimen rendered an empty branch.
 - **Correction:** Set the Boolean prop default explicitly to `undefined`; the adapter now treats omitted value as locally visible and supports uncontrolled dismissal.
 - **Verified:** Live default specimen renders without `modelValue`; controlled playground closes by Space and updates `v-model`; initial focus uses a 2px yellow outline and the close target measures 48×48px.
+
+## ERR-107 — Native Input controls showed dark generic focus outline (2026-11-08)
+
+- **Observed:** The shared focus rule added a dark 2px outline and yellow outer shadow around native fields. This made the input look double-stroked and did not match the requested single yellow field Stroke.
+- **Correction:** Limit the focus reset to field-like controls, set their 1px border to Norato yellow on focus, and add yellow hover borders to legacy field/textarea/date/select controls. Preserve focus rings on non-field interactive controls and independent actions.
+- **Verified:** Local Input route: focused Password control renders one yellow 1px capsule Stroke; no dark outer outline/shadow. Generic focus treatment remains on buttons and switches.

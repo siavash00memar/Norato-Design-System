@@ -1308,3 +1308,10 @@
 - [x] در viewport 499px عرض سند 484px بود و overflow افقی نداشت.
 - [ ] viewportهای 390px و 320px، مرور تصویری مستقل برای هر ۲۰ ترکیب، بررسی uncontrolled dismiss با دکمه، و screen reader مستقل باقی‌اند؛ Alert DoD باز است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر/قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از آخرین تغییرها پاس شدند؛ build هشدار حجم JS برابر 925.88KB بالاتر از 500KB داد. GitHub checkpoint پس از ثبت این گزارش انجام می‌شود.
+
+## Input Stroke hover/focus correction — 2026-11-08
+
+- [x] At the actual local Input playground, the password field showed a single 1px Norato-yellow Stroke on focus, without the dark generic outline or an outer halo.
+- [x] The shared interactive input shell keeps its yellow hover Stroke; legacy native field, textarea, date input, and select trigger now also use the yellow Stroke on hover/focus. Disabled fields remain excluded from hover recoloring.
+- [x] Generic focus styling remains for buttons, switches, choices, and independent actions; only field controls remove the dark outer outline.
+- [ ] Matched Lemon screenshot comparison across all Input types and independent screen-reader review remain open.
