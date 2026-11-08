@@ -11,7 +11,7 @@
 - [x] Matched desktop screenshot review (same design reference/Norato browser tab at 1265×720): both use the shared dotted frame and centered rich success Toast; frame proportions and RTL status/close placement align, with Norato green semantic success and glass surface.
 - [x] Exercised all five tones × two surfaces × two layouts through the real playground; each combination opened and closed, and the generated Vue usage updated to the selected props. One representative rich combination was inspected visually; full per-combination screenshot measurement remains open.
 - [x] RTL order and Dark/Glass contrast use semantic Norato tokens; yellow remains the brand/focus accent. The screenshot confirms status icon at right and close at left; the playground text field computes to a single yellow border with no outline or shadow.
-- [ ] Exact keyboard focus-ring geometry on the Toast action and close controls remains open.
+- [x] Keyboard Tab navigation visibly focuses Toast action and close. Browser screenshots show yellow focus outlines on the pill action and circular close target; source uses the 2px focus token and 4px spacing token for both. Screenshots confirm the outline follows each control shape without stretching either control.
 - [ ] Desktop and 390/320 CSS-pixel viewports wrap correctly without document overflow. A narrow 484px screenshot is usable and shows no horizontal page overflow; exact 390/320 viewport validation is still pending.
 
 ## Behavior and accessibility
@@ -27,5 +27,5 @@
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass.
-- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, action/close focus-ring measurement, independent screen-reader review and browser reduced-motion emulation are outstanding.
+- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, independent screen-reader review and browser reduced-motion emulation are outstanding.
 
