@@ -80,7 +80,6 @@ export const productPatternTokens = {
   chartStatSparkBlockSize: '--norato-chart-stat-spark-block-size',
   chartStatSparkCompactInlineSize: '--norato-chart-stat-spark-compact-inline-size',
   chartTooltipMinInlineSize: '--norato-chart-tooltip-min-inline-size',
-  chartPreviewPlotMaxBlockSize: '--norato-chart-preview-plot-max-block-size',
   chartPlotMobileMinInlineSize: '--norato-chart-plot-mobile-min-inline-size',
   chartBarRadius: '--norato-chart-bar-radius',
   chartTerminalMarkerRadius: '--norato-chart-terminal-marker-radius',
