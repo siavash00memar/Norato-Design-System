@@ -1388,3 +1388,12 @@
 - [x] Lemon screenshot composition was reviewed against Norato's default. Lemon's current tab reported a different CSS viewport than the local tab, so exact same-viewport dimensions are not asserted. Norato retains its neutral semantic border palette.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing advisory that the main JS chunk exceeds 500 kB.
 - [ ] Independent screenreader review remains open; a matched CSS viewport comparison with Lemon also remains open.
+
+## Toast — browser review (2026-11-08)
+
+- [x] Lemon and Norato were rendered in the same 1265×720 browser viewport. Both show the centered rich success Toast in the shared dotted frame with icon on the right and close on the left; Norato keeps its semantic green success, glass surface and yellow accent.
+- [x] Used the live playground to open and close all 20 combinations (5 tones × 2 surfaces × 2 layouts); the generated Vue props followed each selected combination. The 20 states were exercised, but not all received individual screenshot geometry review.
+- [x] A default 6-second success Toast closed after a 7-second wait. Loading stayed visible after 7 seconds and closed with its manual close control.
+- [x] Action and close controls both activated with Space through the browser accessibility target. Focus ring dimensions, natural Tab-order reachability, custom action callback mode, and pause/resume events remain unverified.
+- [x] Narrow local 484px screenshot showed no horizontal page overflow; exact 390px/320px mobile viewports are not available in this browser session and remain open.
+- [ ] Independent screenreader review and the remaining interaction/responsive checks above remain open; do not treat the browser accessibility tree as a screenreader substitute.

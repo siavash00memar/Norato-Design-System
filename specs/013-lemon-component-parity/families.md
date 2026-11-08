@@ -28,7 +28,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Tree View | tree-view | Implemented | Adapter and contract delivered; DoD visual and behavior comparison in progress |
 | [ ] | Alert | alert | Implemented | Typed Vue adapter, 20 tone/surface/layout combinations, inert Button-frame specimen, interactive playground and nine-section contract added. Same-viewport 499×932 Lemon/Norato frame and alert compared; all 20 combinations rendered with RTL, semantic colors/roles and geometry checks; controlled close by Space, focus ring and 48px target verified. Full screenshot review of all combinations, 390/320 widths, uncontrolled dismiss audit and independent screen-reader review remain open. |
 | [ ] | Banner | banner | Implemented | Adapter, 12 tone/layout combinations, inert preview, playground and docs; browser DoD pending |
-| [ ] | Toast | toast | Proposed | Pending visual and behavior comparison |
+| [ ] | Toast | toast | Adapted | Same 1265×720 browser viewport comparison reviewed; shared dotted composition and RTL icon/close order align. Live playground opened/closed all 20 tone×surface×layout choices. Six-second success auto-dismiss, 7-second persistent Loading, and Space activation of action/close pass. Narrow 484px view had no horizontal overflow. Exact 390/320 checks, per-variant screenshots/geometry, pause/resume events, natural tab-order/focus measurement and independent screen-reader review remain open. |
 | [ ] | Tooltip | tooltip | Proposed | Pending visual and behavior comparison |
 | [ ] | Progress | progress | Adapted | Pending visual and behavior comparison |
 | [ ] | Spinner | spinner | Proposed | Pending visual and behavior comparison |
@@ -44,7 +44,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Avatar | avatar | Proposed | Pending visual and behavior comparison |
 | [ ] | Timeline | timeline | Proposed | Pending visual and behavior comparison |
 | [ ] | Charts | charts | Proposed | Pending visual and behavior comparison |
-| [ ] | Divider | divider | Proposed | Pending visual and behavior comparison |
+| [ ] | Divider | divider | Adapted | Public Reka-backed Vue adapter, Button-style specimen/playground and all 12 variants are present. Browser reviewed RTL/LTR, 1px geometry, spacing and semantic/decorative AX output; 390/320 overflow checks passed in the prior local browser run. Current same-viewport CSS metrics against Lemon and independent screenreader remain open; technical gates passed and checkpoints `6b281e2`/`6599a77` are pushed. |
 | [ ] | Accordion | accordion | Adapted | Pending visual and behavior comparison |
 | [ ] | Modal | modal | Proposed | Pending visual and behavior comparison |
 | [ ] | Drawer | drawer | Proposed | Pending visual and behavior comparison |

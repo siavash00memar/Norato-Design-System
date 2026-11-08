@@ -1,7 +1,7 @@
 # Divider — قرارداد کامپوننت نوراتو
 
 **حوزه:** Data Display  
-**وضعیت نوراتو:** Implemented
+**وضعیت نوراتو:** Adapted — بررسی viewport هم‌اندازه با Lemon و screenreader مستقل در DoD باز است.
 
 ## Preview
 
