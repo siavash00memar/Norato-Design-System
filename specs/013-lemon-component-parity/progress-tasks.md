@@ -7,8 +7,8 @@
 - [x] Define Definition of Done before implementation.
 - [x] Analyze exact Reka Progress semantics, tokens, and legacy selectors.
 - [x] Implement adapter, inert specimen, playground, export/catalog/contract/usage.
-- [ ] Verify matched Lemon, all 120 states, RTL, accessibility and responsive behavior.
+- [x] Verify matched Lemon, all 120 states in RTL/LTR, browser semantics and 390/320 responsive behavior; independent screen-reader review remains open.
 - [x] Run token/catalog checks, Vue typecheck/build and `git diff --check`; record outstanding DoD items.
-- [ ] Checkpoint GitHub.
+- [x] Checkpoint `15ff7c4` pushed to `origin/master`; local worktree was clean after source delivery.
 
 
