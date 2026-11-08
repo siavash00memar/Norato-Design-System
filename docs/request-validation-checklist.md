@@ -1287,4 +1287,14 @@
 - [x] Compact Error shows a red marker, affected step name and explanation. Dots Small/Medium/Large scale to 4/8px, 8/12px and 12/16px outer diameters, including the current ring; browser was restored to the default horizontal, medium, RTL, Address state.
 - [ ] Mobile 390×844 and 320px overflow/scroll comparison and independent screen-reader review remain open because the current browser control has no viewport override and no separate screen-reader run was available.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts/exports), `pnpm --dir apps/vue typecheck` and `pnpm --dir apps/vue build` passed. Build reports one existing-size advisory: JS bundle 833.79KB > 500KB.
-- [ ] `git diff --check`, final CSS/docs review and GitHub checkpoint are pending.
+- [x] `git diff --check` and final CSS/docs review passed for this checkpoint; GitHub checkpoint follows this entry.
+
+## گزارش درخواست — Stroke فیلدها و Tree View (2026-11-08)
+
+- درخواست Input: ماهیت خط و رنگ Stroke هنگام hover بررسی شد. در مرورگر محلی روی 5174 و 5175، پوستهٔ control مرز/outline/shadow ندارد؛ تنها pseudo-element فیلد Stroke یک‌پیکسلی دارد: default برابر `#E8E8E8` و Hover برابر Norato Yellow `#FDC101`. هیچ کد Input تغییر نکرد چون render فعلی همین رفتار را دارد. تصویر ارسالی pointer را نشان نمی‌دهد؛ بنابراین از روی تصویر به‌تنهایی نمی‌شود Hover را تأیید کرد.
+- Tree View: Lemon در viewport دسکتاپ 1280×720 مرور شد؛ الگوی قاب نقطه‌دار، پنل درخت، RTL، فاصلهٔ 20px، offset فایل 16px، Guides Off و پنج state مرجع ثبت شد. Norato در 5176 همان ساختار صفحهٔ Button و هر 9 بخش قرارداد را render می‌کند؛ قاب 584×288px در عرض ستون محدود صفحه است.
+- نمونهٔ Norato در قاب نقطه‌دار 288px و پنل شیشه‌ای 256px قرار دارد. ردیف‌های preview برابر 28px و runtime برابر حداقل 48px هستند. در DOM، تورفتگی level 2 برابر 20px و offset فایل 16px است؛ لبهٔ inline انتهای برچسب فایل و پوشهٔ هم‌سطح برابر 745.5px بود.
+- رفتار مرورگر: Guide روشن شد و border راهنما 1px شد؛ انتخاب تکی با کلیک و Enter، باز/بسته‌شدن با chevron و کلیدهای Left/Right، جابه‌جایی با ArrowUp و Home/End، و حلقهٔ فوکوس زرد 2px با offset برابر 2px تأیید شد. کلیک chevron انتخاب قبلی را حفظ کرد؛ End نود disabled را رد کرد؛ فرزند پوشهٔ بسته از درخت دسترس‌پذیری حذف شد.
+- [ ] viewportهای 390px و 320px، فوکوس‌گذاری مستقل صفحه‌خوان و بررسی دستی فعال‌سازی disabled با pointer اجرا نشده‌اند؛ Tree View DoD باز می‌ماند.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر و قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از آخرین اصلاحات پاس شدند؛ build هشدار اندازهٔ bundle برابر 916.37KB بالاتر از 500KB داد.
+- [x] بازبینی نهایی CSS و مستندات انجام شد؛ GitHub checkpoint پس از ثبت این گزارش انجام می‌شود.

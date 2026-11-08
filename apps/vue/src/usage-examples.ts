@@ -40,6 +40,14 @@ function runCommand(item: NoratoCommandItem) { console.log(item.id) }
   <button type="button" aria-haspopup="dialog" @click="open = true">جست‌وجو یا فرمان</button>
   <NoratoCommandPalette id="commands" v-model:open="open" :groups="groups" shortcut="k" @select="runCommand" />
 </template>`,
+  'tree-view': `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoTreeView, type NoratoTreeNode } from '@norato/vue'
+const selected = ref('readme')
+const expanded = ref(['projects', 'norato'])
+const items: NoratoTreeNode[] = [{ id: 'projects', label: 'پروژه‌ها', children: [{ id: 'norato', label: 'نوراتـو', children: [{ id: 'readme', label: 'README.md' }] }] }]
+</script>
+<template><NoratoTreeView id="projects" v-model="selected" v-model:expanded-ids="expanded" label="پروژه‌ها" :items="items" /></template>`,
   menu: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoMenu, type NoratoMenuItem } from '@norato/vue'

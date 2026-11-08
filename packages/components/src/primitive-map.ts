@@ -28,6 +28,6 @@ export const primitiveMap: Readonly<Record<string, PrimitiveDecision>> = {
   'file-upload': { candidate: 'native input + custom dropzone', decision: 'Use native file inputs and keyboard-operable dropzone; keep transport/progress controlled by the consuming app and avoid a new transfer dependency.' },
   navbar: { candidate: 'shadcn-vue NavigationMenu + Dialog / installed Reka UI NavigationMenuRoot + DialogRoot', decision: 'Use Reka NavigationMenu for website link/disclosure focus and keyboard behavior, plus Reka Dialog for the modal mobile drawer; keep website link semantics and style with Norato tokens.' },
   sidebar: { candidate: 'Reka DialogRoot + native Vue anchors/buttons', decision: 'Use installed Reka Dialog for the responsive modal drawer; native links and buttons keep site-navigation semantics, while controlled section rendering stays in Vue.' },
-  'tree-view': { candidate: 'custom contract', decision: 'Requires multi-select and keyboard navigation review.' },
+  'tree-view': { candidate: 'Reka UI TreeRoot + TreeItem', decision: 'Use installed Reka tree semantics for single selection, controlled expansion, roving focus, typeahead and RTL-aware navigation; adapt stable Norato string IDs, folder/file visuals, yellow focus and guide lines.' },
   tabs: { candidate: 'Reka UI TabsRoot + TabsList + TabsTrigger + TabsContent', decision: 'Use the installed Reka Tabs primitive for controlled selection, roving focus, RTL arrow navigation, orientation and tab-panel semantics; style Line/Soft and Norato hit targets with semantic tokens.' },
 }

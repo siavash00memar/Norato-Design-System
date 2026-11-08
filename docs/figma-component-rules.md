@@ -411,3 +411,9 @@
 - Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
 - **Browser evidence:** at 1280×720, the specimen frame is 584×288px and its panel 448×240px; the live dialog is centered at x=340, y=108 and measures 600×375px. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
 - **Remaining:** 390/320 browser dimensions, equal-viewport Lemon geometry comparison, screen-reader review and full shortcut exclusion matrix remain open; Command Palette DoD remains open.
+
+## Tree View — 2026-11-08
+- Follow Lemon’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.
+- Use the five Lemon row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
+- Keep the inert sample in the Button-sized dotted 288px frame, with a compact centered glass panel and Default marker. Runtime rows retain the 48px hit target. Reka TreeRoot/TreeItem owns tree roles, roving focus, direction-aware navigation and typeahead.
+- **Remaining:** 390px/320px viewport and independent screen-reader review are not verified; Tree View DoD remains open.
