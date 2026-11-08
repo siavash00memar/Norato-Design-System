@@ -1,0 +1,38 @@
+.norato-skeleton,.norato-skeleton-pattern,.norato-skeleton-pattern__content,.norato-skeleton-pattern__lines{box-sizing:border-box;min-inline-size:0}
+.norato-skeleton{position:relative;display:block;overflow:hidden;inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-line-size)),100%);block-size:var(--norato-skeleton-height,var(--norato-skeleton-line-size));background-color:var(--norato-color-skeleton-base);background-image:linear-gradient(100deg,var(--norato-color-skeleton-base) 22%,var(--norato-color-skeleton-highlight) 48%,var(--norato-color-skeleton-base) 74%);background-size:200% 100%;flex:none}
+.norato-skeleton--line{border-radius:var(--norato-radius-pill)}
+.norato-skeleton--circle{aspect-ratio:1;inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-circle-size)),100%);block-size:auto;border-radius:50%}
+.norato-skeleton--rectangle{inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-rectangle-inline-size)),100%);block-size:var(--norato-skeleton-height,var(--norato-skeleton-rectangle-block-size));border-radius:var(--norato-radius-card)}
+.norato-skeleton--pill{inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-pill-inline-size)),100%);block-size:var(--norato-skeleton-height,var(--norato-skeleton-pill-block-size));border-radius:var(--norato-radius-pill)}
+.norato-skeleton-pattern{inline-size:min(100%,var(--norato-skeleton-pattern-inline-size));max-inline-size:100%;direction:inherit}
+.norato-skeleton-pattern__content{display:flex;align-items:center;gap:var(--norato-skeleton-pattern-gap);min-inline-size:0}
+.norato-skeleton-pattern__content>i,.norato-skeleton-pattern__lines>i{display:block;min-inline-size:0;block-size:var(--norato-skeleton-line-size);border-radius:var(--norato-radius-pill);background-color:var(--norato-color-skeleton-base);background-image:linear-gradient(100deg,var(--norato-color-skeleton-base) 22%,var(--norato-color-skeleton-highlight) 48%,var(--norato-color-skeleton-base) 74%);background-size:200% 100%;flex:none}
+.norato-skeleton-pattern__lines{display:grid;flex:1;gap:var(--norato-skeleton-pattern-line-gap);min-inline-size:0}
+.norato-skeleton-pattern__lines>i{inline-size:100%}
+.norato-skeleton-pattern__lines>i:nth-child(2){inline-size:78%}
+.norato-skeleton-pattern__lines>i:nth-child(3){inline-size:54%}
+.norato-skeleton-pattern__content>.norato-skeleton-pattern__avatar{inline-size:var(--norato-skeleton-circle-size);block-size:var(--norato-skeleton-circle-size);border-radius:50%}
+.norato-skeleton-pattern--text .norato-skeleton-pattern__content{display:grid;gap:var(--norato-skeleton-pattern-line-gap)}
+.norato-skeleton-pattern--text .norato-skeleton-pattern__content>i:nth-child(1){inline-size:100%}
+.norato-skeleton-pattern--text .norato-skeleton-pattern__content>i:nth-child(2){inline-size:82%}
+.norato-skeleton-pattern--text .norato-skeleton-pattern__content>i:nth-child(3){inline-size:56%}
+.norato-skeleton-pattern--avatar-text .norato-skeleton-pattern__content,.norato-skeleton-pattern--list-item .norato-skeleton-pattern__content{flex-direction:row}
+.norato-skeleton-pattern--card .norato-skeleton-pattern__content{display:grid;gap:var(--norato-skeleton-pattern-gap);padding:var(--norato-skeleton-pattern-card-padding);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.norato-skeleton-pattern--card .norato-skeleton-pattern__media{inline-size:100%;block-size:var(--norato-skeleton-pattern-card-media-block-size);border-radius:var(--norato-radius-tag)}
+.norato-skeleton-pattern--card-horizontal .norato-skeleton-pattern__content{flex-direction:row;padding:var(--norato-skeleton-pattern-card-padding);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.norato-skeleton-pattern--card-horizontal .norato-skeleton-pattern__media{inline-size:var(--norato-skeleton-pattern-card-horizontal-media-inline-size);block-size:var(--norato-skeleton-pattern-card-horizontal-media-block-size);border-radius:var(--norato-radius-tag)}
+.norato-skeleton-pattern__media{background-color:var(--norato-color-skeleton-base);background-image:linear-gradient(100deg,var(--norato-color-skeleton-base) 22%,var(--norato-color-skeleton-highlight) 48%,var(--norato-color-skeleton-base) 74%);background-size:200% 100%;flex:none}
+.norato-skeleton-pattern--input .norato-skeleton-pattern__content{display:block}
+.norato-skeleton-pattern__input{display:block;inline-size:100%;block-size:var(--norato-control-visual-height);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-control);background-color:var(--norato-color-skeleton-base);background-image:linear-gradient(100deg,var(--norato-color-skeleton-base) 22%,var(--norato-color-skeleton-highlight) 48%,var(--norato-color-skeleton-base) 74%);background-size:200% 100%}
+.norato-skeleton-pattern--table-row .norato-skeleton-pattern__content{display:grid;grid-template-columns:1.4fr 1fr 1fr .6fr;gap:var(--norato-skeleton-pattern-table-gap)}
+.norato-skeleton-pattern--table-row .norato-skeleton-pattern__content>i{inline-size:100%}
+.norato-skeleton-pattern--stat .norato-skeleton-pattern__content{display:grid;justify-items:start;gap:var(--norato-skeleton-pattern-line-gap);padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.norato-skeleton-pattern__stat-value{inline-size:var(--norato-skeleton-pattern-stat-value-inline-size);block-size:var(--norato-skeleton-pattern-stat-value-block-size)!important}
+.norato-skeleton-pattern__stat-label{inline-size:var(--norato-skeleton-pattern-stat-label-inline-size)}
+.norato-skeleton[data-effect="pulse"],.norato-skeleton-pattern[data-effect="pulse"] .norato-skeleton-pattern__content i,.norato-skeleton-pattern[data-effect="pulse"] .norato-skeleton-pattern__media,.norato-skeleton-pattern[data-effect="pulse"] .norato-skeleton-pattern__input{animation:norato-skeleton-pulse var(--norato-skeleton-animation-duration) ease-in-out infinite}
+.norato-skeleton[data-effect="shimmer"],.norato-skeleton-pattern[data-effect="shimmer"] .norato-skeleton-pattern__content i,.norato-skeleton-pattern[data-effect="shimmer"] .norato-skeleton-pattern__media,.norato-skeleton-pattern[data-effect="shimmer"] .norato-skeleton-pattern__input{animation:norato-skeleton-shimmer-rtl var(--norato-skeleton-animation-duration) ease-in-out infinite}
+.norato-skeleton[data-effect="shimmer"]:dir(ltr),.norato-skeleton-pattern[data-effect="shimmer"]:dir(ltr) .norato-skeleton-pattern__content i,.norato-skeleton-pattern[data-effect="shimmer"]:dir(ltr) .norato-skeleton-pattern__media,.norato-skeleton-pattern[data-effect="shimmer"]:dir(ltr) .norato-skeleton-pattern__input{animation-name:norato-skeleton-shimmer-ltr}
+@keyframes norato-skeleton-pulse{50%{opacity:.52}}
+@keyframes norato-skeleton-shimmer-rtl{from{background-position:-100% 0}to{background-position:100% 0}}
+@keyframes norato-skeleton-shimmer-ltr{from{background-position:100% 0}to{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){.norato-skeleton,.norato-skeleton-pattern .norato-skeleton-pattern__content i,.norato-skeleton-pattern .norato-skeleton-pattern__media,.norato-skeleton-pattern .norato-skeleton-pattern__input{animation:none!important}}

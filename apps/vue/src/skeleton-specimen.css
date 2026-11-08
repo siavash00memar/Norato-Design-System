@@ -1,0 +1,2 @@
+.norato-skeleton-specimen{display:grid;place-items:center;inline-size:min(100%,var(--norato-skeleton-preview-card-inline-size));min-block-size:var(--norato-skeleton-preview-card-block-size);padding:var(--norato-skeleton-preview-padding);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.norato-skeleton-specimen>.norato-skeleton-pattern{inline-size:100%}

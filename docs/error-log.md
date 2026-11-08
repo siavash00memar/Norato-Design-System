@@ -1043,3 +1043,10 @@
 - **Correction:** Changed the existing selected Contrast hover rule to semantic primary text; corrected the component contract and Figma rule to yellow with dark text. Glass, disabled styling, focus treatment, API and geometry were left intact.
 - **Verified:** Same 1280×720 browser viewport used for Lemon and Norato. Live hovered Contrast selection now computes yellow fill with `rgb(26, 26, 26)` text. The 24 group combinations (2 styles × 4 sizes × 3 counts) retained RTL order, 48px/56px target heights, selected state and no group overflow. ArrowLeft, Space, Home, Enter, End, disabled-option skipping, group-disabled native buttons, and preservation of a non-empty selected value were verified.
 - **Remaining:** The attempted browser viewport override did not change the local browser's 1280×720 viewport, so this exact correction was not rechecked at 390px. The 64-item state/style/size cross-product and independent screen-reader session remain open; catalog maturity stays Adapted.
+
+## ERR-127 — Legacy Skeleton specimen bypassed component API (2026-11-08)
+
+- **Observed:** Skeleton's catalog entry was Proposed and its specimen was hard-coded `.sample-skeleton` markup with six page CSS rules; no public Vue adapter, semantic color tokens, or executable playground existed.
+- **Correction:** Added typed base/pattern Vue adapters, Norato neutral tokens, Button-page preview/playground wiring and replaced the six legacy selector rules with shared runtime styles. Added reduced-motion and RTL/LTR shimmer direction handling.
+- **Verified update:** Desktop Lemon/Norato specimens were compared at 1265×720. The frame follows the Button specimen size and dotted treatment, and Avatar Text holds its intended intrinsic geometry. The live playground switches to Shimmer and updates the generated Vue example. Token/catalog checks, Vue typecheck/build and `git diff --check` pass.
+- **Remaining:** Runtime 24-case visual/behavior validation, RTL/LTR motion direction, 390/320 widths and independent screen-reader review remain open; DoD stays open. Build still reports the existing 1,032.62KB JavaScript chunk advisory.

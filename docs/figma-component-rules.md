@@ -452,3 +452,9 @@
 - Use reduced-motion-aware animation, semantic Norato color/size/motion tokens, and the Button-sized dotted inert preview with a separate playground.
 - **Remaining:** browser matrix, responsive checks, reduced-motion review, screen-reader review and Lemon comparison are recorded in the Spinner DoD; keep it open until those pass.
 - Badge follows Lemon's compact count/dot marker over an independent anchor, with a 2px surface ring and top-left placement in RTL. Keep Norato's semantic tones and require the host anchor to provide the count-aware accessible name. Neutral uses a dedicated status token to keep Dot visible on both the sample canvas and its white ring.
+
+## Skeleton — Lemon shape, Norato palette, 2026-11-08
+
+- Lemon defines four base shapes, eight content patterns, and Pulse/Shimmer. Keep the expected content silhouette and use one effect across a busy region.
+- Use Norato semantic neutral Skeleton tokens, never Lemon's default dark fill. In RTL, Shimmer moves from left to right; disable animation for reduced motion.
+- Keep skeletons inert and non-focusable, label the busy region, and hide decorative shapes from assistive technology.

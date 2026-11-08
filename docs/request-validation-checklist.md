@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Skeleton browser review — 2026-11-08
+
+- [x] Compared Lemon and Norato at 1265×720. The Norato page uses the Button-style dotted frame and preserves the avatar/text silhouette with Norato's neutral palette.
+- [x] Actual Vue page exposes base/pattern, effect, and direction controls; selecting Shimmer updates the generated code example.
+- [x] Verified the pattern region exposes `role="region"`, `aria-busy="true"`, a Persian accessible label, and hides decorative children. No browser-rendered page overflow was observed at this desktop viewport.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck/build, and `git diff --check` pass. Build reports a 1,032.62KB JavaScript chunk advisory.
+- [ ] 24 combinations, RTL/LTR shimmer direction, normal/reduced-motion comparison, exact 390/320 overflow measurements and independent screen-reader review remain open; Skeleton DoD stays open.
+
 ## Banner desktop/mobile and keyboard follow-up — 2026-11-08
 
 - [x] Lemon/Norato same-viewport desktop review at 1265×720. Norato's inert default now uses a one-line announcement and no extra vertical padding; the action keeps its minimum 48px target.

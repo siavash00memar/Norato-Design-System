@@ -1,6 +1,7 @@
 import './components.css'
 import './tooltip.css'
 import './progress.css'
+import './skeleton.css'
 
 export { default as NoratoButton } from './components/NoratoButton.vue'
 export { default as NoratoBadge } from './components/NoratoBadge.vue'
@@ -75,6 +76,10 @@ export { default as NoratoSpinner } from './components/NoratoSpinner.vue'
 export type { NoratoSpinnerSize, NoratoSpinnerTone, NoratoSpinnerType } from './components/NoratoSpinner.vue'
 export { default as NoratoLoader } from './components/NoratoLoader.vue'
 export type { NoratoLoaderType } from './components/NoratoLoader.vue'
+export { default as NoratoSkeleton } from './components/NoratoSkeleton.vue'
+export type { NoratoSkeletonEffect, NoratoSkeletonShape } from './components/NoratoSkeleton.vue'
+export { default as NoratoSkeletonPattern } from './components/NoratoSkeletonPattern.vue'
+export type { NoratoSkeletonPatternEffect, NoratoSkeletonPatternType } from './components/NoratoSkeletonPattern.vue'
 
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'

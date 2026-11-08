@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import './component-specimen.css'
+import './skeleton-specimen.css'
 import './split-button-specimen.css'
 import './navbar-specimen.css'
 import './sidebar-specimen.css'
@@ -10,7 +11,7 @@ import './badge-specimen.css'
 import './alert-specimen.css'
 import './banner-specimen.css'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { NoratoAlert, NoratoBanner, NoratoProgress, NoratoSpinner, NoratoButton, NoratoDivider, NoratoBadge, NoratoChoiceGroup, NoratoField, NoratoTextInput, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating, NoratoSplitButton, NoratoStepper, NoratoTreeView, type NoratoTreeNode } from '@norato/vue'
+import { NoratoAlert, NoratoBanner, NoratoProgress, NoratoSpinner, NoratoSkeletonPattern, NoratoButton, NoratoDivider, NoratoBadge, NoratoChoiceGroup, NoratoField, NoratoTextInput, NoratoSelect, NoratoCombobox, NoratoCheckbox, NoratoRadioGroup, NoratoSwitch, NoratoRange, NoratoRating, NoratoSplitButton, NoratoStepper, NoratoTreeView, type NoratoTreeNode } from '@norato/vue'
 import { MenuCopyIcon, MenuDeleteIcon, MenuEditIcon, MenuShareIcon } from './menu-icons'
 import { CommandPaletteNewIcon, CommandPaletteProjectsIcon, CommandPaletteSearchIcon, CommandPaletteSettingsIcon } from './command-palette-icons'
 const { name, compact } = defineProps<{ name: string; compact?: boolean }>()
@@ -25,7 +26,7 @@ onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListe
 </script>
 
 <template>
-  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button' || name==='Badge' || name==='Alert' || name==='Banner' || name==='Toast' || name==='Tooltip' || name==='Progress' || name==='Spinner' || name==='Divider', 'sample-divider-preview': name==='Divider', 'sample-alert-preview': name==='Alert', 'sample-banner-preview': name==='Banner', 'sample-input-preview': name==='Input', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker', 'sample-time-picker-preview': name==='Time Picker', 'sample-file-upload-preview': name==='File Upload', 'sample-navbar-shell': name==='Navbar', 'sample-sidebar-shell': name==='Sidebar', 'sample-split-preview': name==='Split Button', 'sample-stepper-preview': name==='Stepper', 'sample-menu-specimen': name==='Menu', 'sample-command-palette-specimen': name==='Command Palette', 'sample-tree-view-specimen': name==='Tree View' }" aria-hidden="true" inert>
+  <div class="component-sample" :class="{ compact, 'sample-button-specimen': name==='Button' || name==='Badge' || name==='Alert' || name==='Banner' || name==='Toast' || name==='Tooltip' || name==='Progress' || name==='Spinner' || name==='Skeleton' || name==='Divider', 'sample-divider-preview': name==='Divider', 'sample-alert-preview': name==='Alert', 'sample-banner-preview': name==='Banner', 'sample-input-preview': name==='Input', 'sample-select-preview': name==='Select', 'sample-combobox-preview': name==='Combobox', 'sample-checkbox-preview': name==='Checkbox', 'sample-radio-preview': name==='Radio Button', 'sample-switch-preview': name==='Switch', 'sample-segmented-preview': name==='Segmented Control', 'sample-range-preview': name==='Range', 'sample-rating-preview': name==='Rating', 'sample-date-picker-preview': name==='Date Picker', 'sample-time-picker-preview': name==='Time Picker', 'sample-file-upload-preview': name==='File Upload', 'sample-navbar-shell': name==='Navbar', 'sample-sidebar-shell': name==='Sidebar', 'sample-split-preview': name==='Split Button', 'sample-stepper-preview': name==='Stepper', 'sample-menu-specimen': name==='Menu', 'sample-command-palette-specimen': name==='Command Palette', 'sample-tree-view-specimen': name==='Tree View' }" aria-hidden="true" inert>
     <template v-if="name==='Banner'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoBanner id="banner-specimen" tone="info" description="جشنوارهٔ پاییزه شروع شد؛ تا ۳۰٪ تخفیف روی همهٔ پلن‌ها." action-label="ببین" /></template>
     <template v-else-if="name==='Alert'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoAlert id="alert-specimen" tone="info" variant="soft" layout="expanded" title="نسخهٔ جدید آماده است" description="نوراتو با قابلیت‌های تازه منتشر شد." /></template>
     <div v-else-if="name==='Button'" class="sample-button-row"><NoratoButton label="اصلی" variant="primary" /><NoratoButton label="جایگزین" variant="secondary" /></div>
@@ -56,7 +57,7 @@ onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListe
     <template v-else-if="name==='Tooltip'"><div class="norato-tooltip-specimen"><div class="norato-tooltip__bubble" data-surface="dark" data-layout="simple" data-side="top" dir="rtl">کپی لینک</div><button class="norato-tooltip__trigger" type="button" aria-label="کپی لینک"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l2-2A5 5 0 0 0 12 4l-1.1 1.1M14 11a5 5 0 0 0-7.1 0l-2 2A5 5 0 0 0 12 20l1.1-1.1" /></svg></button></div></template>
     <div v-else-if="name==='Progress'" class="norato-progress-specimen" dir="rtl"><NoratoProgress id="progress-specimen" :value="62" label="بارگذاری فایل" variant="linear" size="medium" tone="default" show-value /></div>
     <NoratoSpinner v-else-if="name==='Spinner'" type="ring" tone="default" :size="48" />
-    <div v-else-if="name==='Skeleton'" class="sample-skeleton"><i /><span><b /><b /><b /></span></div>
+    <div v-else-if="name==='Skeleton'" class="norato-skeleton-specimen" dir="rtl"><NoratoSkeletonPattern type="avatar-text" effect="pulse" label="در حال بارگذاری کارت" dir="rtl" /></div>
     <div v-else-if="name==='Empty State'" class="sample-empty"><b>▧</b><strong>هنوز پروژه‌ای نساختی</strong><span>اولین پروژه‌ات را بساز تا اینجا نمایش داده شود.</span><button class="button primary">ساخت پروژه</button></div>
     <div v-else-if="name==='Notification Center'" class="sample-notifications"><header><b>اعلان‌ها</b><a>خواندن همه</a></header><div><i>●</i><span><b>سارا روی طرحت نظر داد</b><small>۲ دقیقه پیش</small></span></div></div>
     <table v-else-if="name==='Table'" class="sample-table"><thead><tr><th>نام</th><th>وضعیت</th><th>پروژه</th></tr></thead><tbody><tr><td>سارا محمدی</td><td>فعال</td><td>۱۲</td></tr><tr><td>علی رضایی</td><td>مرخصی</td><td>۷</td></tr></tbody></table>
