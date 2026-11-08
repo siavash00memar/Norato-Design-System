@@ -6,6 +6,7 @@
 - [x] Norato palette, shared dotted preview frame, Persian RTL arrangement, and trigger focus styling reviewed in the browser.
 - [x] Four physical placements and attached arrow checked: bottom, top, right, and left.
 - [x] Simple, actions, and form variants rendered; after importing the playground stylesheet, the live control row, switches, field and actions render with Norato styling.
+- [x] Source review confirms the panel width is capped at 320px and available viewport width, block size is capped, and overflow is scrollable. This is code evidence only; it does not count as a mobile browser screenshot.
 - [ ] Capture and compare exact 390px and 320px viewports with the design reference.
 - [ ] Review narrow viewport collision handling and ensure panel content never clips or stretches.
 
