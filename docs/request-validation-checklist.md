@@ -1444,6 +1444,13 @@
 - [x] Direction and size custom menus open and close in the live playground. Lemon's Avatar page was reviewed and supplies the same 55-variant scope, circle/square, ring/status placement, group RTL rule, and accessibility name guidance.
 - [ ] Exact responsive widths, pixel geometry of all 55 variants, independent screen-reader review, remaining state/keyboard audit and engineering gates are pending. Avatar DoD remains open.
 
+## Avatar direction and keyboard follow-up — 2026-11-08
+
+- [x] Selected LTR in the live playground; the displayed group order mirrored and the generated Vue example changed to `dir="ltr"`. Restored RTL after the check.
+- [x] The single Avatar's presence dot remains at physical bottom-left in both RTL and LTR renders. Static specimen has no interactive descendants in browser AX.
+- [x] Direction menu opened using keyboard; Home + Enter selected RTL and closed the menu. Visible keyboard focus is present, though its contrast treatment still needs review across every playground control.
+- [ ] This browser does not expose exact viewport dimensions or a viewport override. Do not count zoom as a 390px/320px viewport measurement; exact mobile document overflow and matched-width Lemon comparison remain open, as do all-55 pixel measurements and independent screen-reader review.
+
 ## Badge — implementation and browser review (2026-11-08)
 
 - [x] Badge detail page follows Button structure: inert dotted preview, separate live playground, copyable Vue example, and Overview/Anatomy/Variants/Sizes/States/Parts/Usage/Accessibility/Tokens sections.

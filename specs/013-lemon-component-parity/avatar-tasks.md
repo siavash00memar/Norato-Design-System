@@ -18,4 +18,5 @@
 - [x] Browser accessibility tree exposes the expected 36 Avatar combinations, 12 Group combinations, three Label sizes, four status states, and accessible image-fallback output. Group labels and hidden-person counts appear in the tree.
 - [x] RTL group sample exposes member order followed by overflow count; Lemon's written reference specifies first person right and +N left. Norato palette is retained.
 - [x] Playground direction and size menus open/close; no native browser dropdown presentation is used.
-- [ ] Do not close Avatar DoD yet: exact 390px/320px overflow, measured geometry for all 55 variants, matched responsive screenshot comparison, pointer/keyboard state audit, independent screen-reader review, and final gates/push remain.
+- [x] Keyboard opened the direction menu, Home + Enter selected RTL, and the generated Vue snippet updated from LTR to RTL. Screenshots at the available narrow browser view show status dots at physical bottom-left in both directions.
+- [ ] Do not close Avatar DoD yet: exact 390px/320px overflow, measured geometry for all 55 variants, matched responsive screenshot comparison, full playground focus audit, independent screen-reader review, and final gates remain.
