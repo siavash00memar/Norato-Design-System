@@ -10,12 +10,12 @@
 - [ ] Implement and verify; close DoD only with recorded evidence.
 
 ## Implementation tasks
-- [ ] Add fixed semantic palette tokens for chart series 1–8 and token schema entries.
-- [ ] Add typed Vue 3 adapters and safe SVG geometry for all six chart types.
-- [ ] Implement Stat Tile trends, Legend Item 1–4, and accessible dark Tooltip.
-- [ ] Add accessible summary/table alternative and invalid-data handling.
-- [ ] Replace legacy `.sample-chart` with reusable adapter; remove its selectors after audit.
-- [ ] Add playground for 14 variants, direction, keyboard/focus and responsive review.
-- [ ] Wire index, example, catalog, contract and Figma rules without marking DoD complete prematurely.
-- [ ] Run required engineering gates; browser-check design reference parity, all variants, RTL/LTR and responsive widths.
-- [ ] Record results/defects, commit, push, and verify remote revision.
+- [x] Add fixed semantic palette tokens for chart series 1–8 and token schema entries.
+- [x] Add typed Vue 3 adapters and safe SVG geometry for all six chart types.
+- [x] Implement Stat Tile trends, Legend Item 1–4, and accessible dark Tooltip.
+- [x] Add accessible summary/table alternative and invalid-data handling.
+- [x] Replace legacy `.sample-chart` with reusable adapter; remove its selectors after audit.
+- [x] Add playground for 14 variants, direction, keyboard/focus and responsive review.
+- [x] Wire index, example, catalog, contract and Figma rules without marking DoD complete prematurely.
+- [x] Run required engineering gates; browser-check design reference parity, all variants, RTL/LTR and responsive widths.
+- [ ] Record final results/defects, commit, push, and verify remote revision.

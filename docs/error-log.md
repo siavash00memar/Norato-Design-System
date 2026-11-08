@@ -1080,3 +1080,15 @@
 - **Observed:** Timeline initially anchored its rail with `inset-inline-end`, which places it at physical left when the page direction is RTL. This contradicted the design reference reference and Norato RTL contract.
 - **Correction:** Changed the rail and marker anchors to `inset-inline-start`; no direction-specific duplicated coordinates were introduced.
 - **Verified:** Browser render now places RTL rail on the physical right and LTR rail on the left. Item content and marker alignment mirror correctly; 499×932 local view has no horizontal overflow (document 484px). Exact 390/320 measurements, matched design reference viewport comparison, and screen-reader review remain open.
+
+## ERR-133 — Charts playground state and specimen drifted from the approved contract (2026-11-08)
+
+- **Observed:** The trend selector did not control the first Stat Tile, the four-item Legend rendered all eight palette entries, the live chart omitted its consumer-owned header action, the Tooltip trigger was not associated with a tooltip role, keyboard focus used the wrong blue accent, and the static specimen used two bar series with mismatched values.
+- **Correction:** Connected the selected trend to the first tile and updated neutral change text; limited the sample Legend to four items; added a 48px keyboard-operable header action with status feedback and a yellow focus ring; linked tooltip ID/role to `aria-describedby`; changed the inert specimen to one series using the reference data and faded earlier bars.
+- **Verified:** All three trends changed sparkline, color, arrow and status; four Legend items render; tooltip relationship resolves; static specimen has no focusable elements. At a matched 1280×720 view, Norato plot is 336×157.7px against about 334.8×156.9px in the design reference.
+
+## ERR-134 — RTL page direction clipped the chart's left numeric axis on narrow screens (2026-11-08)
+
+- **Observed:** At a 320px viewport, the SVG was internally scrollable but inherited RTL scroll direction, hiding its left-side numeric axis at the initial position.
+- **Correction:** Set the chart plot viewport's `dir` explicitly to `ltr`, preserving RTL on the component card and page while keeping the numeric axis at the visible leading edge.
+- **Verified:** At 320×844, the first axis label stays visible, the SVG remains at a 2.13 ratio and 280×131px, and document width remains 305px. At 390×844, the 309×145px plot fits without inner scrolling; body/document width is 375px.

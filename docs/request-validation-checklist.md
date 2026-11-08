@@ -1509,3 +1509,16 @@
 - [x] Browser AX exposes named ordered lists, item heading/time and marker names; static specimen has zero focusable descendants. Keyboard opened and selected the layout menu with visible yellow focus; playground controls were restored to defaults.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after latest changes. Build retains the existing large-main-bundle advisory.
 - [ ] Matched design reference/Norato viewport comparison, exact mobile widths, and independent screen-reader review remain open. Do not close Timeline DoD until completed.
+
+## Charts — mobile axis, data and visual checkpoint (2026-11-08)
+
+- [x] Compared design reference and Norato at the matched 1280×720 viewport. The dotted Norato preview frame is 584×288px versus about 636×332px in the reference, while the inner chart plot is 336×157.7px versus 334.8×156.9px; both retain a 2.13 aspect ratio.
+- [x] The inert sample renders one bar series with the reference values 34, 58, 42, 72, 51 and 66; its scale is 0/40/80, the first five bars are subdued, and the final bar is Norato yellow with one direct value label.
+- [x] Selected all six chart types in the live playground. All six categories remained ordered; bar/horizontal/donut showed one series, grouped-bar/line/area showed two, and the correct marks rendered without data issues.
+- [x] Opened the data table for all six chart types. Every table retained the rendered category order and each visible series' exact values.
+- [x] Exercised Up, Down and Neutral Stat Tile choices. Each changed the leading tile's trend shape, color, arrow and Persian status text. Four Legend items render; all eight token colors are distinct and series 1 is `#fdc101`.
+- [x] Switched the live playground RTL→LTR→RTL; chart and Stat Tile direction changed while the SVG plot wrapper stayed LTR. Tooltip uses `role="tooltip"`; trigger `aria-describedby` resolves to its ID. Static preview has zero focusable descendants.
+- [x] At 390×844, document width is 375px and plot geometry is 309×145px with no internal overflow. At 320×844, document width is 305px; the 280×131px plot preserves its ratio and scrolls internally. The LTR viewport keeps the numeric axis visible; document width remains bounded.
+- [x] Corrected the mobile plot wrapper's inherited RTL direction after the first 320px render clipped the left numeric axis; explicit `dir="ltr"` is now on the SVG viewport.
+- [ ] Browser accessibility tree is reviewed; independent screen-reader review remains open.
+- [x] Final `pnpm check:tokens`, `pnpm check:catalog`, `pnpm test:charts` (7/7), Vue typecheck/build, and `git diff --check` passed after the latest markup change. Build output is 1,096.07KB and retains the >500KB advisory; record commit and remote sync after delivery.

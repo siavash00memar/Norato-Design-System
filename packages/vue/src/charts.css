@@ -13,7 +13,7 @@
 .norato-chart-tooltip[data-series="3"] i{background:var(--norato-color-chart-series-3)}.norato-chart-tooltip[data-series="4"] i{background:var(--norato-color-chart-series-4)}.norato-chart-tooltip[data-series="5"] i{background:var(--norato-color-chart-series-5)}.norato-chart-tooltip[data-series="6"] i{background:var(--norato-color-chart-series-6)}.norato-chart-tooltip[data-series="7"] i{background:var(--norato-color-chart-series-7)}.norato-chart-tooltip[data-series="8"] i{background:var(--norato-color-chart-series-8)}
 .norato-chart-legend-item[data-series="3"] i{background:var(--norato-color-chart-series-3)}.norato-chart-legend-item[data-series="4"] i{background:var(--norato-color-chart-series-4)}.norato-chart-legend-item[data-series="5"] i{background:var(--norato-color-chart-series-5)}.norato-chart-legend-item[data-series="6"] i{background:var(--norato-color-chart-series-6)}.norato-chart-legend-item[data-series="7"] i{background:var(--norato-color-chart-series-7)}.norato-chart-legend-item[data-series="8"] i{background:var(--norato-color-chart-series-8)}
 .norato-chart-legend-item[data-shape="line"] i{inline-size:var(--norato-space-3);block-size:var(--norato-border-medium)}
-.norato-chart-card__plot-wrap{inline-size:100%;min-inline-size:0;overflow:hidden}
+.norato-chart-card__plot-wrap{inline-size:100%;min-inline-size:0;overflow:hidden;direction:ltr}
 .norato-chart-card__plot{display:block;inline-size:100%;block-size:auto;overflow:visible;direction:ltr}
 .norato-chart-card__axis line{stroke:var(--norato-color-border-default);stroke-width:var(--norato-border-thin)}
 .norato-chart-card__axis text{fill:var(--norato-color-text-placeholder);font-family:var(--norato-font-body);font-size:var(--norato-type-body-caption-size)}

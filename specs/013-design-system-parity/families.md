@@ -43,7 +43,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Chip | chip | Adapted | Pending visual and behavior comparison |
 | [ ] | Avatar | avatar | Adapted | Four Vue adapters and 55-variant playground added; visual/accessibility DoD remains open |
 | [ ] | Timeline | timeline | Proposed | Pending visual and behavior comparison |
-| [ ] | Charts | charts | Proposed | Pending visual and behavior comparison |
+| [ ] | Charts | charts | Adapted | Same 1280×720 plot comparison; all six chart types and three trends rendered, four legend entries and tooltip linked. At 390px plot is 309×145px with no page overflow; at 320px it is 280×131px in an internal LTR scroll area and the page remains 305px wide. 7/7 data tests, token/catalog checks, Vue typecheck/build pass. Independent screen-reader review remains open; see `charts-checklist.md`. |
 | [ ] | Divider | divider | Adapted | Public Reka-backed Vue adapter, Button-style specimen/playground and all 12 variants are present. Browser reviewed RTL/LTR, 1px geometry, spacing and semantic/decorative AX output; 390/320 overflow checks passed in the prior local browser run. Current same-viewport CSS metrics against design reference and independent screenreader remain open; technical gates passed and checkpoints `6b281e2`/`6599a77` are pushed. |
 | [ ] | Accordion | accordion | Adapted | Pending visual and behavior comparison |
 | [ ] | Modal | modal | Proposed | Pending visual and behavior comparison |

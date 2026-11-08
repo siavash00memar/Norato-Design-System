@@ -107,7 +107,7 @@ const chartSummary = computed(() => `${props.title}. ${props.categories.length} 
     <div class="norato-chart-card__legend" :dir="dir" v-if="type === 'donut' || series.length > 1"><NoratoChartLegendItem v-for="(item,index) in (type === 'donut' ? categories : series.map(item => item.label))" :key="`${item}-${index}`" :label="item" :series="(index % 8 + 1) as 1|2|3|4|5|6|7|8" /></div>
     <p :id="summaryId" class="norato-chart-card__summary">{{ chartSummary }}</p>
     <p v-if="issue" class="norato-chart-card__issue" role="status">{{ issue }}</p>
-    <div v-else class="norato-chart-card__plot-wrap">
+    <div v-else class="norato-chart-card__plot-wrap" dir="ltr">
       <svg class="norato-chart-card__plot" viewBox="0 0 520 244" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <template v-if="type !== 'donut'">
           <g v-if="type !== 'horizontal-bar'" class="norato-chart-card__axis">
