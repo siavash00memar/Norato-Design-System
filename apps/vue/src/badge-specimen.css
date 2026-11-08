@@ -1,0 +1,2 @@
+.sample-badge-anchor{display:grid;place-items:center;box-sizing:border-box;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);padding:0;border:0;border-radius:var(--norato-radius-control);background:var(--norato-color-surface-default);color:var(--norato-color-text-primary)}
+.sample-badge-anchor svg{display:block;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);fill:none;stroke:currentColor;stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round}

@@ -1413,3 +1413,14 @@
 - [x] Source now explicitly matches hover on the native input and its wrapper after state styles; focus retains its yellow Stroke and no new ring/shadow was added.
 - [x] Disabled Input remained muted with its neutral Stroke when targeted by the pointer. Browser viewport was the existing narrow view; the page's broader responsive DoD remains independently tracked.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 1,015.47KB chunk advisory.
+
+## Badge — implementation and browser review (2026-11-08)
+
+- [x] Badge detail page follows Button structure: inert dotted preview, separate live playground, copyable Vue example, and Overview/Anatomy/Variants/Sizes/States/Parts/Usage/Accessibility/Tokens sections.
+- [x] Lemon and Norato were reviewed at the same 1265×720 browser viewport. Both center a count marker on a rounded bell anchor inside a dotted card; local card geometry is 576×288px and Lemon is 636×300px because their content columns differ.
+- [x] Count/Dot × Small/Medium × Danger/Inverse/Neutral/Success were selected in the actual playground. Count minimum sizes are 16/20px; Dot sizes are exact 8/10px, including 2px white ring. Longer Count text expands horizontally. Neutral's low-contrast first render was corrected with a dedicated neutral status token; Neutral Count and Dot were rechecked afterward.
+- [x] RTL places the marker at the physical top-left; LTR mirrors it to the top-right. Anchor target remains 48×48px; its size does not stretch with the absolute-positioned marker.
+- [x] Count 0 and 3, the 99 boundary, and 100→99+ were checked. Dot hides the value control and exposes “مورد جدید” in the host button label.
+- [x] Browser accessibility tree exposes the host button once with the complete accessible label; the visible marker is aria-hidden. Keyboard focus is visible, native disabled is exposed, and Tab skips the disabled host anchor. This is browser/AX evidence, not a screen-reader session.
+- [x] The available local narrow view (484px screenshot) showed no horizontal page overflow. Exact 390px/320px measurements and independent screen-reader review remain open.
+- [x] Token/catalog checks, Vue typecheck, production build and `git diff --check` pass after final changes. Build retains the existing advisory that the main JavaScript chunk exceeds 500 kB.

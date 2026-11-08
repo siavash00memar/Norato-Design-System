@@ -1007,3 +1007,14 @@
 - **Observed:** The supplied Input screenshot showed the capsule Stroke in gray where pointer hover was expected to turn it Norato yellow. The existing page CSS had a wrapper-hover rule, but the capture contradicted the expected interaction.
 - **Correction:** Kept the single 1px capsule Stroke and explicitly match hover on the native input as well as its wrapper, after state selectors. No additional outline, ring, or shadow was added.
 - **Verified:** On the local live Input playground, hovering the default, error, and success text field left focus elsewhere and kept the hovered Stroke yellow; non-hovered fields retained their respective state colors. Disabled stayed muted with a neutral Stroke when targeted by the pointer.
+- **Revalidated:** The live password field was separately hovered in the current local page; computed capsule Stroke was `rgb(253, 193, 1)` at `1px`, while the layout wrapper border was `0px`. Screenshot showed the hovered field yellow and adjacent resting field neutral. No code change was needed; a gray field indicates it was not hovered in that captured state or the browser was showing a stale stylesheet.
+
+## ERR-122 — Badge neutral Dot lacked contrast on the specimen surface (2026-11-08)
+
+- **Observed:** In the first 16-variant browser pass, the Neutral Dot nearly blended into the light-gray playground stage.
+- **Correction:** Added semantic `--norato-color-status-neutral` and mapped the Badge Neutral tone to that token with a white foreground; kept the 2px surface ring and semantic Norato palette.
+- **Correction follow-up:** Count uses minimum dimensions so a long localized value such as `۹۹+` expands horizontally; Dot stays fixed at its exact token dimensions.
+- **Verified:** Neutral Count and Dot were rechecked after the color correction; Small Count at 100→99+ was rechecked after horizontal expansion. All 16 type/size/tone cases were reviewed in RTL; other combinations use the same unaffected tone/size rules. Lemon and Norato were compared at the same 1265×720 viewport; Norato’s preview frame is narrower because its documentation column is narrower (576×288px versus 636×300px). Browser AX reports one button with the computed count/new-item name and hides the visual marker. Keyboard focus, native disabled state and Tab skipping disabled anchor passed.
+- **Remaining:** The narrow local render showed no page overflow at the available 484px view, but exact 390px/320px measurements and an independent screen-reader session were not available; both remain open.
+
+- **Verification update for ERR-119:** The earlier open note about Input hover is superseded by the real-pointer local/production checks recorded in ERR-121 and the Input hover section of `docs/request-validation-checklist.md`.

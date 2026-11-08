@@ -3,6 +3,7 @@
 Vue 3 adapters available through the private workspace package `@norato/vue`:
 
 - `NoratoButton`: variant, disabled, loading and pressed states.
+- `NoratoBadge`: Count/Dot marker with tone/size variants and a scoped anchor label. It does not render an interactive anchor; bind the provided `accessibleName` to the host button or link.
 - `NoratoField`: labeled input; controlled with `v-model`.
 - `NoratoTextInput`, `NoratoPasswordInput`, `NoratoPhoneInput`, `NoratoOtpInput`, `NoratoNumberInput`, `NoratoAmountInput`, and `NoratoSearchInput`: independent controlled input adapters with shared Norato field semantics.
 - `NoratoTextarea`: labeled textarea; controlled with `v-model`.

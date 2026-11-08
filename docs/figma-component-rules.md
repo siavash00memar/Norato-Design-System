@@ -449,3 +449,4 @@
 - Keep Spinner decorative and Loader the sole polite status announcement. Support Inline, Refresh, Overlay and Page patterns without focus trap or stretching.
 - Use reduced-motion-aware animation, semantic Norato color/size/motion tokens, and the Button-sized dotted inert preview with a separate playground.
 - **Remaining:** browser matrix, responsive checks, reduced-motion review, screen-reader review and Lemon comparison are recorded in the Spinner DoD; keep it open until those pass.
+- Badge follows Lemon's compact count/dot marker over an independent anchor, with a 2px surface ring and top-left placement in RTL. Keep Norato's semantic tones and require the host anchor to provide the count-aware accessible name. Neutral uses a dedicated status token to keep Dot visible on both the sample canvas and its white ring.

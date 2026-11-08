@@ -259,6 +259,11 @@
   --norato-control-visual-height: 36px;
   --norato-icon-sm: 18px;
   --norato-icon-md: 24px;
+  --norato-badge-count-size-small: 16px;
+  --norato-badge-count-size-medium: 20px;
+  --norato-badge-dot-size-small: 8px;
+  --norato-badge-dot-size-medium: 10px;
+  --norato-badge-preview-stage-block-size: calc(var(--norato-control-target-min) + var(--norato-space-16));
   --norato-readable-measure: 65ch;
 
   --norato-gutter-compact: 16px;

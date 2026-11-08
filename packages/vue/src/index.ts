@@ -3,6 +3,8 @@ import './tooltip.css'
 import './progress.css'
 
 export { default as NoratoButton } from './components/NoratoButton.vue'
+export { default as NoratoBadge } from './components/NoratoBadge.vue'
+export type { NoratoBadgeSize, NoratoBadgeTone, NoratoBadgeType } from './components/NoratoBadge.vue'
 export { default as NoratoDivider } from './components/NoratoDivider.vue'
 export type { NoratoDividerOrientation, NoratoDividerSpacing, NoratoDividerTone, NoratoDividerType } from './components/NoratoDivider.vue'
 export { default as NoratoSplitButton } from './components/NoratoSplitButton.vue'
