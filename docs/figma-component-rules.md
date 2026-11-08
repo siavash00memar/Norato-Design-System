@@ -499,3 +499,8 @@
 
 - صفحهٔ کامپوننت انتخاب‌شده باید در فهرست کناری با پس‌زمینهٔ زرد Norato و `aria-current="page"` مشخص باشد.
 - تغییر کامپوننت در همان اپ انجام می‌شود؛ URL و تاریخچهٔ مرورگر همگام می‌مانند و انتخاب جاری در محدودهٔ فهرست کناری دیده می‌شود.
+
+# Accordion — selected/open row
+
+- Open trigger uses Norato's warning-container fill, distinct from the white expanded content region.
+- Keep every sibling title visible when selection changes; the prior row's panel may close in single mode, but its trigger/title remains.

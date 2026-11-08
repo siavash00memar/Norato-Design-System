@@ -115,6 +115,11 @@
   transform: rotate(180deg);
 }
 
+.norato-accordion__trigger[data-state="open"] {
+  background: var(--norato-color-warning-container);
+  color: var(--norato-color-text-primary);
+}
+
 .norato-accordion__trigger:hover:not(:disabled) {
   background: var(--norato-color-warning-container);
 }
@@ -136,6 +141,7 @@
 
 .norato-accordion__panel {
   overflow: hidden;
+  background: var(--norato-color-surface-default);
   color: var(--norato-color-text-secondary);
   font-size: var(--norato-type-body-small-size);
   line-height: var(--norato-type-body-small-line-height);

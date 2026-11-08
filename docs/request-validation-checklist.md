@@ -1541,3 +1541,9 @@
 - [x] Browser confirmed trigger exposes `aria-haspopup`, `aria-expanded`, and the generated content relationship; dialog name comes from the trigger and its description is associated. Escape closes and restores focus. Collision handling moved the requested bottom placement to top near the viewport edge.
 - [ ] Compare matched viewport captures with the design reference; review all 12 type × placement combinations, alignments, modal/disabled states, outside click, keyboard focus, arrow direction, and 390/320 widths. Independent screen-reader review also remains open.
 - [ ] Run final tokens/catalog checks, Vue typecheck/build, forbidden brand scan and `git diff --check` after the current preview/example updates. Do not close Popover DoD yet.
+
+## Accordion — selected row separation follow-up (2026-11-08)
+
+- [x] Switched the live playground from the first open row to the second. The first title remained visible in the accessibility tree and browser render.
+- [x] Open trigger computed to `rgb(255, 248, 224)` while the associated content region computed to white; RTL heading and chevron stayed in place.
+- [ ] Verify other row styles, multiple-open mode, and mobile viewport after this visual correction; final component DoD remains open.
