@@ -1309,6 +1309,13 @@
 - [ ] viewportهای 390px و 320px، مرور تصویری مستقل برای هر ۲۰ ترکیب، بررسی uncontrolled dismiss با دکمه، و screen reader مستقل باقی‌اند؛ Alert DoD باز است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر/قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از آخرین تغییرها پاس شدند؛ build هشدار حجم JS برابر 925.88KB بالاتر از 500KB داد. GitHub checkpoint پس از ثبت این گزارش انجام می‌شود.
 
+## Input hover Stroke in state gallery — 2026-11-08
+
+- [x] Root cause: the inert Input state gallery grouped `hover` with `typing` and assigned both the neutral border token. This made the documented Hover examples look gray even though the interactive Input adapter uses a yellow hover Stroke.
+- [x] Separated the gallery states: Hover now uses Norato yellow; Typing retains the neutral Stroke. Default remains `#e8e8e8`; active/error/disabled retain their dedicated treatments.
+- [x] Local Input States browser screenshot confirms Text/Phone Hover use a yellow capsule Stroke; Default remains neutral, while Error, Success and Disabled preserve their own treatments. No extra outer Stroke is drawn by this inert gallery.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build retains the existing 934.28KB JavaScript chunk advisory (>500KB).
+
 ## Input Stroke hover/focus correction — 2026-11-08
 
 - [x] At the actual local Input playground, the password field showed a single 1px Norato-yellow Stroke on focus, without the dark generic outline or an outer halo.

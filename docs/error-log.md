@@ -929,3 +929,9 @@
 - **Observed:** Banner was a generic static row with legacy shared CSS, had no live playground or Vue adapter, and did not use the Button-sized dotted specimen frame.
 - **Correction:** Replace the specimen with an inert NoratoBanner preview, remove all legacy `.sample-banner` selectors, add an executable controlled playground, complete the nine-section contract, and register the Vue export/catalog entry.
 - **Verified:** Technical and browser DoD still in progress; do not treat the component as fully parity-verified until responsive and interaction review is recorded.
+
+## ERR-109 — Input Hover gallery showed a neutral Stroke (2026-11-08)
+
+- **Observed:** inert Input state cards styled `Hover` and `Typing` with the same neutral Stroke, contradicting the approved yellow hover rule and the interactive adapters.
+- **Correction:** separated the specimen selectors; Hover uses the Norato yellow token and Typing remains neutral.
+- **Verified:** local Input states screenshot shows yellow Text/Phone Hover capsules, neutral Default, and preserved Error/Success/Disabled strokes.

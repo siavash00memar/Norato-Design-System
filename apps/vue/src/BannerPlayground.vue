@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { NoratoBanner, type NoratoBannerLayout, type NoratoBannerTone } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 
@@ -9,11 +9,17 @@ const tone = ref<NoratoBannerTone>('info')
 const layout = ref<NoratoBannerLayout>('desktop')
 const visible = ref(true)
 const dismissible = ref(true)
+const controlMode = ref<'controlled' | 'uncontrolled'>('controlled')
+const uncontrolledDismissed = ref(false)
 const actionFeedback = ref('')
 const tones: { value: NoratoBannerTone; label: string }[] = [
   { value: 'info', label: 'اطلاع' }, { value: 'success', label: 'موفقیت' }, { value: 'warning', label: 'هشدار' }, { value: 'danger', label: 'خطا' }, { value: 'neutral', label: 'خنثی' }, { value: 'inverse', label: 'معکوس' },
 ]
 const layouts: { value: NoratoBannerLayout; label: string }[] = [{ value: 'desktop', label: 'Desktop' }, { value: 'mobile', label: 'Mobile' }]
+const controlModes = [{ value: 'controlled' as const, label: 'کنترل‌شده' }, { value: 'uncontrolled' as const, label: 'مستقل' }]
+const bannerVisible = computed(() => controlMode.value === 'controlled' ? visible.value : !uncontrolledDismissed.value)
+watch(controlMode, () => { visible.value = true; uncontrolledDismissed.value = false; actionFeedback.value = '' })
+function restoreBanner() { visible.value = true; uncontrolledDismissed.value = false; actionFeedback.value = '' }
 const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoBanner } from '@norato/vue'\nconst visible = ref(true)\nfunction openOffer() { /* navigate in the host app */ }\n<\/script>\n<template>\n  <NoratoBanner id="site-announcement" v-model="visible" tone="${tone.value}" layout="${layout.value}" title="جشنوارهٔ پاییزه شروع شد" description="تا ۳۰٪ تخفیف روی همهٔ پلن‌ها." action-label="ببین" dismissible @action="openOffer" />\n<\/template>`)
 </script>
 
@@ -22,12 +28,14 @@ const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'
     <div class="banner-playground__controls">
       <PlaygroundSelect id="banner-tone" v-model="tone" label="لحن بنر" :options="tones" />
       <PlaygroundSelect id="banner-layout" v-model="layout" label="چیدمان" :options="layouts" />
+      <PlaygroundSelect id="banner-control-mode" v-model="controlMode" label="مدل کنترل" :options="controlModes" />
       <label class="banner-playground__dismissible"><input v-model="dismissible" type="checkbox" /> قابل‌بستن</label>
     </div>
     <NoratoBanner
-      v-if="visible"
+      v-if="bannerVisible"
       id="banner-playground-preview"
-      v-model="visible"
+      :model-value="controlMode === 'controlled' ? visible : undefined"
+      @update:model-value="visible = $event"
       :tone="tone"
       :layout="layout"
       title="جشنوارهٔ پاییزه شروع شد"
@@ -35,8 +43,9 @@ const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'
       action-label="ببین"
       :dismissible="dismissible"
       @action="actionFeedback = 'اقدام بنر فعال شد.'"
+      @dismiss="uncontrolledDismissed = controlMode === 'uncontrolled'"
     />
-    <div v-else class="banner-playground__restore"><span role="status">بنر بسته شد.</span><button class="copy-section-button" type="button" @click="visible = true">نمایش دوباره</button></div>
+    <div v-else class="banner-playground__restore"><span role="status">بنر بسته شد.</span><button class="copy-section-button" type="button" @click="restoreBanner">نمایش دوباره</button></div>
     <p v-if="actionFeedback" class="banner-playground__feedback" role="status">{{ actionFeedback }}</p>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'banner-code', code)">{{ props.copiedKey === 'banner-code' ? 'کپی شد' : 'کپی کد' }}</button></div>
     <pre class="usage-code" dir="ltr"><code>{{ code }}</code></pre>
