@@ -1,5 +1,17 @@
 # Norato Request Validation Checklist
 
+## Carousel inert specimen correction — browser review (2026-11-08)
+
+- [x] Matched reference/Norato screenshot review at 1265×713. The inert preview has a dotted frame, Default marker, right-aligned title, correctly ordered arrows, three square local illustrations, and a centered yellow active indicator.
+- [x] The card art is CSS geometry with semantic Norato tokens; no remote image or added blue accent is used. Legacy text-only `i` slide styling was removed from the component specimen stylesheet.
+- [ ] Exact 390/320 measurements, live pointer/touch and LTR/boundary cross-product, and independent screen-reader review remain open; see `carousel-checklist.md`.
+
+## Carousel runtime height and navigation follow-up — browser review (2026-11-08)
+
+- [x] At slide 5, text-only cards previously inherited the tallest slide's height. After the flex alignment correction they keep their natural height; the five-item playground now includes local art for each card.
+- [x] Next advanced slide 1→2; direct selection moved to slide 5 and the Next control disabled; ArrowRight in RTL returned to slide 4. The active indicator and controlled-index selector stayed synchronized, with visible track focus.
+- [ ] Mouse/touch gesture, LTR keyboard flow, programmatic external model changes, exact mobile widths and independent screen-reader run remain open.
+
 ## ناوبری فهرست کامپوننت‌ها — 2026-11-08
 
 - [x] از Charts به Avatar رفتیم: URL به `#component-avatar` تغییر کرد، عنوان صفحه Avatar شد و فقط یک مورد در فهرست کناری `aria-current="page"` داشت.

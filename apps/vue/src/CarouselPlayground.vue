@@ -22,8 +22,8 @@ const items: NoratoCarouselItem[] = [
   { id: 'path', title: 'مسیرهای تازه', description: 'ایده‌هایی برای تجربه‌های روزمره', image: artwork('#8ab7c5', '#829180'), alt: 'چشم‌انداز کوهستانی' },
   { id: 'craft', title: 'ساخته‌های دست', description: 'انتخاب‌هایی با جزئیات ماندگار', image: artwork('#edc1aa', '#a46e5a'), alt: 'رنگ‌های گرم و طبیعی' },
   { id: 'home', title: 'برای خانه', description: 'چیزهای کوچک برای حال بهتر', image: artwork('#ead7a9', '#a3a477'), alt: 'چشم‌انداز آرام' },
-  { id: 'nature', title: 'هوای تازه', description: 'الهام از طبیعت و رنگ‌های گرم' },
-  { id: 'daily', title: 'روزهای ساده', description: 'پیشنهادهایی برای هر روز' },
+  { id: 'nature', title: 'هوای تازه', description: 'الهام از طبیعت و رنگ‌های گرم', image: artwork('#b7cfd5', '#7c907e'), alt: 'هوای تازه در طبیعت' },
+  { id: 'daily', title: 'روزهای ساده', description: 'پیشنهادهایی برای هر روز', image: artwork('#e7d6aa', '#9e8067'), alt: 'چشم‌انداز گرم و آرام' },
 ]
 const visibleItems = computed(() => items.slice(0, count.value))
 const indexOptions = computed(() => visibleItems.value.map((_, index) => ({ value: index, label: `اسلاید ${index + 1}` })))

@@ -1,0 +1,14 @@
+.sample-carousel__controls{display:flex;direction:ltr;gap:var(--norato-space-2)}
+.sample-carousel__controls i{display:grid;place-items:center;inline-size:calc(var(--norato-space-8) + var(--norato-space-2));block-size:calc(var(--norato-space-8) + var(--norato-space-2));border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-default);font-style:normal}
+.sample-carousel__controls i::before{inline-size:var(--norato-space-4);block-size:var(--norato-space-3);background:var(--norato-color-text-primary);content:""}
+.sample-carousel__controls i:first-child::before{clip-path:polygon(0 50%,45% 0,45% 35%,100% 35%,100% 65%,45% 65%,45% 100%)}
+.sample-carousel__controls i:last-child::before{clip-path:polygon(100% 50%,55% 0,55% 35%,0 35%,0 65%,55% 65%,55% 100%)}
+.sample-carousel__track{direction:rtl}
+.sample-carousel__slide{position:relative;min-inline-size:0;aspect-ratio:1;overflow:hidden;padding:0;border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.sample-carousel__art{position:absolute;inset:0;display:block;overflow:hidden;background:var(--norato-color-warning-container)}
+.sample-carousel__art::before{position:absolute;inset-block-start:14%;inset-inline-end:15%;inline-size:22%;aspect-ratio:1;border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow);content:""}
+.sample-carousel__art::after{position:absolute;inset-inline:0;inset-block-end:0;block-size:64%;clip-path:polygon(0 100%,0 52%,35% 0,63% 70%,78% 28%,100% 72%,100% 100%);background:var(--norato-color-success-container);content:""}
+.sample-carousel__art>span{position:absolute;inset-inline:0;inset-block-end:0;block-size:18%;background:var(--norato-color-status-success)}
+.sample-carousel__art--two{background:var(--norato-color-info-container)}
+.sample-carousel__art--three{background:var(--norato-color-surface-muted)}
+@media(max-width:600px){.sample-carousel__slide{flex-basis:42%}}

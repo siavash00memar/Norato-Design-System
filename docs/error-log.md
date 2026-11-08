@@ -1175,3 +1175,15 @@
 - **Observed:** Segmented documented 64 Segment Item combinations, but its Variants section showed axis labels and no combined visual examples.
 - **Correction:** Added an inert 64-cell gallery grouped by style and size; the Vue playground remains responsible for interactive behavior.
 - **Validation:** At the local desktop render, both styles and all four sizes are present; Contrast selected and Hover use yellow with dark text, Disabled is neutral, and Focus shows the high-contrast ring. Matched 390px gallery, exact geometry, interactive cross-product and independent screen-reader review remain open.
+
+## ERR-147 — Carousel page specimen had empty slides and lacked the shared preview frame (2026-11-08)
+
+- **Observed:** The inert Carousel specimen showed text-only beige cards, text chevrons and no dotted frame or Default marker. Its arrangement was visibly unlike the three square media cards in the reference preview.
+- **Correction:** Replaced the text-only cards with three square CSS landscape illustrations using semantic Norato surface/status tokens and the yellow accent; added vector-like RTL arrow marks, a Default marker and the shared dotted Button-style frame. Removed the old `i`-specific slide rule and retargeted the track rule to its dedicated class, so no competing legacy card selector remains.
+- **Verified:** Same-size 1265×713 screenshots show the three square cards, right-aligned heading, left-side arrow pair and centered yellow active indicator. The frame is narrower in Norato because its documentation content column is narrower. Mobile breakpoints and interaction DoD remain open in `carousel-checklist.md`.
+
+## ERR-148 — Text-only Carousel slides stretched to the tallest media slide (2026-11-08)
+
+- **Observed:** At the last slides, text-only slide cards filled the vertical height of image-bearing slides even though their own content was short.
+- **Correction:** Set the horizontal track to `align-items:flex-start` to preserve each slide's natural block size. Added local artwork to the last two interactive sample items so the default five-slide demo remains visually consistent without remote assets.
+- **Verified:** At the final index, the text-only cards shrank to their content height instead of the former full-height cards; ArrowRight in RTL moved to index 4 and the active indicator followed. The playground now exposes meaningful alt text for all five local artwork items. Touch/mouse gestures and LTR remain open.
