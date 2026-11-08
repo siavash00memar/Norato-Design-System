@@ -4,7 +4,7 @@
 .norato-skeleton--circle{aspect-ratio:1;inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-circle-size)),100%);block-size:auto;border-radius:50%}
 .norato-skeleton--rectangle{inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-rectangle-inline-size)),100%);block-size:var(--norato-skeleton-height,var(--norato-skeleton-rectangle-block-size));border-radius:var(--norato-radius-card)}
 .norato-skeleton--pill{inline-size:min(var(--norato-skeleton-width,var(--norato-skeleton-pill-inline-size)),100%);block-size:var(--norato-skeleton-height,var(--norato-skeleton-pill-block-size));border-radius:var(--norato-radius-pill)}
-.norato-skeleton-pattern{inline-size:min(100%,var(--norato-skeleton-pattern-inline-size));max-inline-size:100%;direction:inherit}
+.norato-skeleton-pattern{inline-size:min(100%,var(--norato-skeleton-pattern-inline-size));max-inline-size:100%}
 .norato-skeleton-pattern__content{display:flex;align-items:center;gap:var(--norato-skeleton-pattern-gap);min-inline-size:0}
 .norato-skeleton-pattern__content>i,.norato-skeleton-pattern__lines>i{display:block;min-inline-size:0;block-size:var(--norato-skeleton-line-size);border-radius:var(--norato-radius-pill);background-color:var(--norato-color-skeleton-base);background-image:linear-gradient(100deg,var(--norato-color-skeleton-base) 22%,var(--norato-color-skeleton-highlight) 48%,var(--norato-color-skeleton-base) 74%);background-size:200% 100%;flex:none}
 .norato-skeleton-pattern__lines{display:grid;flex:1;gap:var(--norato-skeleton-pattern-line-gap);min-inline-size:0}

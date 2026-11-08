@@ -458,3 +458,4 @@
 - Lemon defines four base shapes, eight content patterns, and Pulse/Shimmer. Keep the expected content silhouette and use one effect across a busy region.
 - Use Norato semantic neutral Skeleton tokens, never Lemon's default dark fill. In RTL, Shimmer moves from left to right; disable animation for reduced motion.
 - Keep skeletons inert and non-focusable, label the busy region, and hide decorative shapes from assistive technology.
+- The component's `dir` attribute must control computed direction and mirror the Avatar/Text inline order; do not override it with inherited `direction` CSS.

@@ -8,5 +8,5 @@
 - [x] Analyze: inspect exact source paths, token conventions and legacy selectors.
 - [x] Implement shared base and pattern adapters, wire public package exports and catalog.
 - [x] Build inert specimen, playground, generated snippet and Button-style contract sections.
-- [ ] Verify all 24 combinations, RTL/LTR shimmer, reduced motion, accessible region, 390/320 widths and independent screen-reader behavior; current visual comparison and technical gates pass, remaining items are recorded in the DoD.
+- [ ] Verify normal-motion shimmer travel, 390/320 widths and independent screen-reader behavior; all 24 combinations, RTL/LTR order, reduced motion, accessible region, desktop Lemon comparison and technical gates pass.
 - [ ] Push verified checkpoint to GitHub.

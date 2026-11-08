@@ -4,9 +4,12 @@
 
 - [x] Compared Lemon and Norato at 1265×720. The Norato page uses the Button-style dotted frame and preserves the avatar/text silhouette with Norato's neutral palette.
 - [x] Actual Vue page exposes base/pattern, effect, and direction controls; selecting Shimmer updates the generated code example.
-- [x] Verified the pattern region exposes `role="region"`, `aria-busy="true"`, a Persian accessible label, and hides decorative children. No browser-rendered page overflow was observed at this desktop viewport.
+- [x] Exercised all 24 shape/pattern-effect combinations in the live playground; measured intrinsic shape dimensions and pattern blocks with no vertical stretching.
+- [x] Found and fixed a CSS direction override. Browser measurements now show RTL avatar at inline-end and LTR avatar at inline-start; generated code keeps the selected `dir`.
+- [x] Browser reports `prefers-reduced-motion: reduce`; all Skeleton animations compute to `none`. The single playground busy region has a Persian name, decorative content is hidden, and it contains zero focusable descendants.
+- [x] No browser-rendered page overflow was observed at the 1280×720 viewport.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck/build, and `git diff --check` pass. Build reports a 1,032.62KB JavaScript chunk advisory.
-- [ ] 24 combinations, RTL/LTR shimmer direction, normal/reduced-motion comparison, exact 390/320 overflow measurements and independent screen-reader review remain open; Skeleton DoD stays open.
+- [ ] Browser preference prevented visual confirmation of normal-motion shimmer travel. Exact 390/320 overflow measurements and independent screen-reader review also remain open; Skeleton DoD stays open.
 
 ## Banner desktop/mobile and keyboard follow-up — 2026-11-08
 

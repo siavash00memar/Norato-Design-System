@@ -6,6 +6,7 @@ Build a Vue Skeleton family with four base shapes (Line, Circle, Rectangle, Pill
 ## Acceptance contract
 - Provide separate `NoratoSkeleton` and `NoratoSkeletonPattern` exports with typed shape/effect and pattern/effect APIs.
 - Preserve intrinsic, non-stretched geometry. Width/height overrides are optional and bounded by the host container; circle remains square.
+- The authored `dir` must determine computed CSS direction, flex order, and the direction-specific shimmer rule; no inherited-direction override may mask it.
 - Patterns remain inert and RTL-first, matching realistic content rather than rendering generic repeated blocks.
 - Use Norato semantic neutral base/highlight tokens; do not copy Lemon's default dark color.
 - A single labeled loading region exposes `aria-busy="true"`; decorative skeleton blocks are hidden from assistive technology. The primitive itself is not focusable.
