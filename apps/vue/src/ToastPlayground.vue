@@ -16,6 +16,7 @@ const actionCloses = ref(true)
 const dismissible = ref(true)
 const duration = ref(6000)
 const feedback = ref('')
+const timerState = ref('')
 const actionTriggeredClosing = ref(false)
 const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoToast } from '@norato/vue'\nconst open = ref(false)\n<\/script>\n<template>\n  <NoratoToast id="save-toast" v-model="open" title="تغییرات ذخیره شد" description="تغییرات پروژه با موفقیت ذخیره شدند." tone="${tone.value}" surface="${surface.value}" layout="${layout.value}" ${action.value ? 'action-label="بازگردانی"' : ''} :action-closes="${actionCloses.value}" dismissible :duration="${duration.value}" />\n</template>`)
 function onAction() {
@@ -23,11 +24,23 @@ function onAction() {
   actionTriggeredClosing.value = actionCloses.value
 }
 function onClose() {
+  timerState.value = ''
   if (actionTriggeredClosing.value) {
     actionTriggeredClosing.value = false
     return
   }
   feedback.value = 'پیام بسته شد.'
+}
+function onPause() {
+  timerState.value = 'متوقف'
+}
+function onResume() {
+  timerState.value = 'ادامه دارد'
+}
+function showToast() {
+  feedback.value = ''
+  timerState.value = ''
+  open.value = true
 }
 </script>
 
@@ -50,6 +63,8 @@ function onClose() {
         :duration="duration"
         @action="onAction"
         @close="onClose"
+        @pause="onPause"
+        @resume="onResume"
       />
       <span v-if="!open" class="toast-playground__empty">برای دیدن Toast، دکمهٔ نمایش را بزن.</span>
     </div>
@@ -63,13 +78,18 @@ function onClose() {
       <label class="button-playground-switch"><input v-model="action" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>اقدام</span></label>
       <label v-if="action" class="button-playground-switch"><input v-model="actionCloses" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بستن با اقدام</span></label>
       <label class="button-playground-switch"><input v-model="dismissible" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>قابل‌بستن</span></label>
-      <button class="norato-button" type="button" :disabled="open" @click="open=true; feedback=''">نمایش Toast</button>
+      <button class="norato-button" type="button" :disabled="open" @click="showToast">نمایش Toast</button>
     </div>
     <p v-if="feedback" role="status" class="toast-playground__feedback">{{ feedback }}</p>
+    <p v-if="timerState" class="toast-playground__timer-state" aria-hidden="true">وضعیت زمان‌سنج: {{ timerState }}</p>
     <div class="button-playground-code">
       <div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy','toast-playground',snippet)">{{ props.copiedKey==='toast-playground'?'کپی شد':'کپی کد' }}</button></div>
       <pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre>
     </div>
   </div>
 </template>
+
+<style scoped>
+.toast-playground__timer-state{margin:0;min-block-size:var(--norato-control-target-min);display:flex;align-items:center;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+</style>
 

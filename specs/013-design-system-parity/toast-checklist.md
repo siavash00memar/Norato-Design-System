@@ -16,10 +16,10 @@
 ## Behavior and accessibility
 - [x] Controlled `v-model` opens the live Toast and the close control removes it; `close` feedback appears in the playground.
 - [x] Controlled open/close and default six-second timeout work. Loading remained open after a seven-second wait and closed manually.
-- [x] Action and close activate with Space through the actual browser accessibility target. Natural Tab-order reachability and focus-ring measurement remain open.
+- [x] Action and close activate with Space through the actual browser accessibility target. Natural Tab order reached Toast action, close, and the next field; focus paused the timer and leaving resumed it.
 - [x] The real playground exposes `actionCloses`, and its generated snippet follows the selected value. Browser verification confirms callback feedback remains visible when the action closes the Toast, and the Toast stays open while feedback appears when `actionCloses=false`; manual close still reports its own feedback.
 - [x] The persistent duration option generated `:duration="0"`; a timed persistence wait was not part of this pass (the earlier 7-second Loading wait remains the verified persistence evidence). The playground was restored to its default 6-second duration and `actionCloses=true` after the callback review.
-- [ ] Uncontrolled open and pause/resume events verified.
+- [ ] Uncontrolled open verified. Focus-based pause/resume events are verified; pointer-only hover remains open.
 - [ ] Single polite/assertive announcement path, tone name, content order, six-second default / persistent policy and reduced motion are verified; independent screen-reader review recorded.
 
 ## Engineering
