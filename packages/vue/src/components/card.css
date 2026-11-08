@@ -1,0 +1,69 @@
+.norato-card{box-sizing:border-box;min-inline-size:0;border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface);color:var(--norato-color-text-primary);box-shadow:none}
+.norato-card[data-style="glass"]{border-color:var(--norato-color-glass-line);background:var(--norato-color-glass-surface);box-shadow:var(--norato-elevation-box)}
+.norato-card[data-style="elevated"]{border-color:var(--norato-color-glass-line);background:var(--norato-color-surface-default);box-shadow:var(--norato-elevation-box)}
+.norato-card[data-style="outline"]{background:transparent}
+.norato-card[data-style="filled"]{border-color:transparent;background:var(--norato-color-surface-subtle)}
+.norato-card[data-selected="true"]{border-color:var(--norato-color-glass-line);background:var(--norato-color-glass-surface-strong)}
+.norato-card[data-disabled="true"]{color:var(--norato-color-text-disabled);opacity:.64}
+.norato-content-card__link{display:flex;min-inline-size:0;min-block-size:100%;flex-direction:column;color:inherit;text-decoration:none;outline:none}
+.norato-content-card__link:focus-visible{border-radius:inherit;outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.norato-content-card:has(.norato-content-card__link[href]):hover{border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
+.norato-content-card__media{display:grid;place-items:center;min-inline-size:0;overflow:hidden;aspect-ratio:16/9;border-radius:var(--norato-radius-card) var(--norato-radius-card) 0 0;background:var(--norato-color-surface-subtle)}
+.norato-content-card__media>*{display:block;inline-size:100%;block-size:100%;object-fit:cover}
+.norato-content-card__content{display:flex;min-inline-size:0;flex:1;flex-direction:column;align-items:flex-start;gap:var(--norato-space-2);padding:var(--norato-space-4)}
+.norato-content-card__eyebrow{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-content-card__title{margin:0;color:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-type-heading-title-size);font-weight:var(--norato-type-heading-title-weight);line-height:var(--norato-type-heading-title-line-height);overflow-wrap:anywhere}
+.norato-content-card__description{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height);overflow-wrap:anywhere}
+.norato-content-card__footer{display:flex;align-items:center;gap:var(--norato-space-2);margin-block-start:auto;padding-block-start:var(--norato-space-2);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-content-card[data-layout="horizontal"] .norato-content-card__link{flex-direction:row;align-items:stretch}
+.norato-content-card[data-layout="horizontal"] .norato-content-card__media{flex:none;inline-size:min(35%,var(--norato-card-horizontal-media-size));aspect-ratio:1;border-radius:0 var(--norato-radius-card) var(--norato-radius-card) 0}
+.norato-content-card[dir="ltr"][data-layout="horizontal"] .norato-content-card__media{border-radius:var(--norato-radius-card) 0 0 var(--norato-radius-card)}
+.norato-content-card[data-layout="overlay"] .norato-content-card__link{position:relative;justify-content:flex-end;min-block-size:var(--norato-card-overlay-min-block-size);overflow:hidden;border-radius:inherit;background:var(--norato-color-surface-subtle)}
+.norato-content-card[data-layout="overlay"] .norato-content-card__media{position:absolute;inset:0;aspect-ratio:auto;border-radius:inherit}
+.norato-content-card[data-layout="overlay"] .norato-content-card__media::after{position:absolute;inset:0;background:linear-gradient(transparent,var(--norato-color-scrim));content:""}
+.norato-content-card[data-layout="overlay"] .norato-content-card__content{z-index:1;color:var(--norato-color-text-on-brand)}
+.norato-content-card[data-layout="overlay"] .norato-content-card__title,.norato-content-card[data-layout="overlay"] .norato-content-card__description,.norato-content-card[data-layout="overlay"] .norato-content-card__eyebrow,.norato-content-card[data-layout="overlay"] .norato-content-card__footer{color:inherit}
+.norato-content-card[data-layout="text"] .norato-content-card__link{min-block-size:auto}
+.norato-stat-card{display:grid;justify-items:start;gap:var(--norato-space-2);padding:var(--norato-space-4)}
+.norato-stat-card__label{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-stat-card__value{color:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-type-doc-section-size);font-weight:var(--norato-type-heading-title-weight);line-height:var(--norato-type-heading-title-line-height);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.norato-stat-card__trend{display:inline-flex;align-items:center;gap:var(--norato-space-1);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-stat-card[data-trend="up"] .norato-stat-card__trend{color:var(--norato-color-status-success)}
+.norato-stat-card[data-trend="down"] .norato-stat-card__trend{color:var(--norato-color-status-error)}
+.norato-profile-card{position:relative;display:flex;min-inline-size:0;flex-direction:column;align-items:center;gap:var(--norato-space-3);overflow:hidden;padding:var(--norato-space-5);text-align:center}
+.norato-profile-card[data-layout="cover"]{padding-block-start:var(--norato-card-cover-content-offset)}
+.norato-profile-card__cover{position:absolute;inset:0 0 auto;block-size:var(--norato-card-cover-block-size);overflow:hidden;background:var(--norato-color-warning-container)}
+.norato-profile-card__cover img{inline-size:100%;block-size:100%;object-fit:cover}
+.norato-profile-card__avatar{position:relative;display:grid;place-items:center;flex:none;inline-size:var(--norato-card-avatar-size);block-size:var(--norato-card-avatar-size);overflow:hidden;border:var(--norato-border-medium) solid var(--norato-color-surface-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary);object-fit:cover}
+.norato-profile-card__content{position:relative;display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.norato-profile-card__content strong{font-family:var(--norato-font-heading);font-weight:var(--norato-type-heading-title-weight);overflow-wrap:anywhere}
+.norato-profile-card__content span{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);overflow-wrap:anywhere}
+.norato-profile-card__footer{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--norato-space-2);max-inline-size:100%}
+.norato-pricing-card{position:relative;display:flex;min-inline-size:0;flex-direction:column;align-items:flex-start;gap:var(--norato-space-3);padding:var(--norato-space-5)}
+.norato-pricing-card[data-featured="true"]{border-color:var(--norato-color-brand-yellow);background:linear-gradient(145deg,var(--norato-color-surface-default),var(--norato-color-warning-container));box-shadow:var(--norato-elevation-box)}
+.norato-pricing-card__badge{align-self:flex-start;padding-inline:var(--norato-space-2);padding-block:var(--norato-space-1);border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary);font-size:var(--norato-type-doc-caption-size);font-weight:var(--norato-type-body-bold-weight)}
+.norato-pricing-card__name{margin:0;font-family:var(--norato-font-heading);font-size:var(--norato-type-body-large-size);font-weight:var(--norato-type-heading-title-weight)}
+.norato-pricing-card__description{margin:0;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
+.norato-pricing-card__price{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--norato-space-1);margin:0}
+.norato-pricing-card__price strong{font-family:var(--norato-font-heading);font-size:var(--norato-type-heading-h3-size);font-weight:var(--norato-type-heading-title-weight);font-variant-numeric:tabular-nums}
+.norato-pricing-card__price span{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-pricing-card__features{display:grid;gap:var(--norato-space-2);margin:0;padding-inline-start:var(--norato-space-4);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
+.norato-pricing-card__action{inline-size:100%;margin-block-start:auto;padding-block-start:var(--norato-space-2)}
+.norato-pricing-card__action>:is(a,button){min-inline-size:var(--norato-control-target-min);min-block-size:var(--norato-control-target-min)}
+.norato-selectable-card{position:relative;display:flex;min-block-size:var(--norato-control-target-min);align-items:center;gap:var(--norato-space-3);padding:var(--norato-space-4);cursor:pointer;transition:border-color var(--norato-motion-duration-press) var(--norato-motion-ease-out),background var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-selectable-card:hover:not([data-disabled="true"]){border-color:var(--norato-color-brand-yellow)}
+.norato-selectable-card:focus-within{outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.norato-selectable-card[data-disabled="true"]{cursor:not-allowed}
+.norato-selectable-card__control{position:absolute;inline-size:var(--norato-border-thin);block-size:var(--norato-border-thin);overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.norato-selectable-card__copy{display:grid;flex:1;gap:var(--norato-space-1);min-inline-size:0}
+.norato-selectable-card__copy strong{font-family:var(--norato-font-heading);font-weight:var(--norato-type-heading-title-weight);overflow-wrap:anywhere}
+.norato-selectable-card__copy>span{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height);overflow-wrap:anywhere}
+.norato-selectable-card__indicator{display:grid;place-items:center;flex:none;inline-size:var(--norato-card-indicator-size);block-size:var(--norato-card-indicator-size);border:var(--norato-border-medium) solid var(--norato-color-border-strong);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-default)}
+.norato-selectable-card[data-control="checkbox"] .norato-selectable-card__indicator{border-radius:var(--norato-radius-checkbox)}
+.norato-selectable-card__indicator>span{inline-size:var(--norato-card-indicator-mark-size);block-size:var(--norato-card-indicator-mark-size);transform:scale(0);border-radius:inherit;background:var(--norato-color-text-primary);transition:transform var(--norato-motion-duration-press) var(--norato-motion-ease-out)}
+.norato-selectable-card[data-selected="true"]{border-color:var(--norato-color-glass-line);background:var(--norato-color-glass-surface-strong)}
+.norato-selectable-card[data-selected="true"] .norato-selectable-card__indicator{border-color:var(--norato-color-brand-yellow)}
+.norato-selectable-card[data-selected="true"] .norato-selectable-card__indicator>span{transform:scale(1)}
+.norato-selectable-card[data-control="checkbox"][data-selected="true"] .norato-selectable-card__indicator>span{inline-size:var(--norato-card-checkbox-mark-inline-size);block-size:var(--norato-card-checkbox-mark-block-size);border-radius:0;background:transparent;border-inline-end:var(--norato-border-focus) solid var(--norato-color-text-primary);border-block-end:var(--norato-border-focus) solid var(--norato-color-text-primary);transform:translateY(var(--norato-space-observed-2)) rotate(45deg)}
+@media(max-width:599px){.norato-content-card[data-layout="horizontal"] .norato-content-card__media{inline-size:var(--norato-card-horizontal-media-size)}.norato-content-card[data-layout="horizontal"] .norato-content-card__content{padding:var(--norato-space-3)}.norato-profile-card,.norato-pricing-card{padding:var(--norato-space-4)}}
+@media(prefers-reduced-motion:reduce){.norato-selectable-card,.norato-selectable-card__indicator>span{transition:none}}

@@ -1,5 +1,17 @@
 /** Copyable, reviewed API examples keyed by the canonical catalog's `usageKey`. */
 export const usageExamples: Readonly<Record<string, string>> = {
+  card: `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoContentCard, NoratoSelectableCard, NoratoStatCard } from '@norato/vue'
+const selectedPlan = ref(false)
+</script>
+<template>
+  <NoratoContentCard id="guide-card" title="ساختن یک دیزاین سیستم فارسی" description="از توکن‌ها تا کامپوننت‌ها، قدم‌به‌قدم." meta="راهنما · ۵ دقیقه" href="/guide" dir="rtl">
+    <template #footer>نگار محمدی</template>
+  </NoratoContentCard>
+  <NoratoStatCard label="کاربران فعال" value="۱۲٬۴۸۰" trend="up" trend-label="۱۲٪ بیشتر از ماه قبل" dir="rtl" />
+  <NoratoSelectableCard id="plan-pro" title="پلن حرفه‌ای" description="برای تیم‌های در حال رشد" control="radio" v-model="selectedPlan" dir="rtl" />
+</template>`,
   carousel: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoCarousel, type NoratoCarouselItem } from '@norato/vue'

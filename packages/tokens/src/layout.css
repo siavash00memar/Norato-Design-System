@@ -1,5 +1,16 @@
 :root {
   --norato-chart-card-inline-size: 520px;
+  --norato-card-horizontal-media-size: 112px;
+  --norato-card-overlay-min-block-size: 200px;
+  --norato-card-avatar-size: 72px;
+  --norato-card-cover-block-size: 104px;
+  --norato-card-cover-content-offset: 62px;
+  --norato-card-indicator-size: 20px;
+  --norato-card-indicator-mark-size: 10px;
+  --norato-card-checkbox-mark-inline-size: 6px;
+  --norato-card-checkbox-mark-block-size: 10px;
+  --norato-card-playground-inline-size: 360px;
+  --norato-card-preview-inline-size: 300px;
   --norato-chat-avatar-size: 40px;
   --norato-chat-layout-min-block-size: 360px;
   --norato-chat-layout-max-block-size: 620px;

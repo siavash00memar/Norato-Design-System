@@ -1705,3 +1705,10 @@
 - [x] Browser reviewed all three side-panel sizes and all three Bottom Sheet detents. Default outside click closes; with dismissible off, Escape and outside click leave it open while the explicit close remains functional. Selecting a filter and applying closes the sheet. Current page settings were restored to right/medium/auto and dismissible on.
 - [ ] Matched mobile widths, long-content scroll, clear-filters outcome, LTR and independent screen-reader review remain open. Snapshot maps the drawer surface as a generic container, so explicit dialog role and screen-reader announcement remain unverified. Drawer DoD stays open.
 - [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.
+
+## Card — implementation checkpoint (2026-11-09)
+
+- [x] Added six Vue adapters, public exports, catalog readiness, a Button-sized static specimen, interactive playground and component contract. Norato surfaces retain the yellow selection/focus accent.
+- [x] Browser exercised the six card kinds, all four content layouts and code synchronization; radio group keyboard navigation changed the controlled value, checkbox mode toggled, and disabled radio controls were exposed as disabled.
+- [x] Token/catalog checks, Vue typecheck, production build, `git diff --check` and project scan for prohibited reference-brand text passed.
+- [ ] Matched reference/local viewport comparison, stat/profile/pricing visual variants, link activation, focus-only appearance, RTL/LTR geometry, 390/320 widths, long text and independent screen-reader review remain open in `specs/013-design-system-parity/card-checklist.md`.
