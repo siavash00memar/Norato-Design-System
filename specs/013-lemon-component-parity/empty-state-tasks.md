@@ -12,7 +12,8 @@
 - [x] Finish desktop horizontal RTL/LTR geometry checks; mirrored visual/content placement measured in both directions.
 - [x] Exercise all 24 visual type × size × tone combinations; icon/art geometry fits its 40/48/64px container with no overflow.
 - [x] Verify action click, keyboard focus, 48px targets and browser AX name/description/decorative hiding.
-- [ ] Record 390/320 viewport evidence; exact viewport override did not take effect in the current browser.
-- [ ] Verify custom visual and raw anchor/button slots; independent screen-reader review remains open.
+- [x] Record 390/320 viewport evidence with Chromium device emulation; both widths have zero document overflow and horizontal layout stacks cleanly.
+- [x] Verify a consumer-sized custom SVG visual and raw anchor/button slot minimums (40×40px visual, 48px actions).
+- [ ] Independent screen-reader review remains open.
 - [x] Run final engineering gates: token/catalog checks, Vue typecheck/build and `git diff --check` pass.
 - [x] Push verified checkpoint `580ba73` to GitHub; local and remote were synchronized before this checklist update.

@@ -1465,7 +1465,9 @@
 - [x] Exercised all 24 visual type × size × tone combinations in four short browser batches. Icon geometry measured 20/24/32px inside 40/48/64px circles; illustration geometry measured 40×35/48×42/64×56px inside the same boxes. No visual overflow occurred across all tones.
 - [x] Primary/secondary action slots render named NoratoButton controls; click reports the selected host action, Tab reaches the secondary action with visible focus, and both action targets measure 48px.
 - [x] Horizontal RTL/LTR geometry mirrors: RTL visual at x=772px and content at x=541px; LTR visual at x=541px and content at x=605px in the 584px frame. No internal horizontal overflow.
-- [ ] Verify custom visual content and consumer-provided raw anchor/button slot sizing; 390px/320px viewport/card behavior also remains open.
+- [x] In the rendered preview, a consumer-sized 40×40 SVG visual fit its slot at 40×40px. Raw anchor and button children in the action slot each computed to a 48px minimum/actual height.
+- [x] Chromium mobile emulation at 390×844 and 320×844 showed `innerWidth`, document width and body width equal to each viewport (390/320), with no element outside the viewport. The Button-style dotted frame measured 358×288px at 390px and 288×288px at 320px; horizontal mode stacks below 600px.
+- [x] Lemon captures were made at the same 390px and 320px physical widths. Its responsive navigation retains offscreen links in the DOM, while document width stays bounded to its viewport; these hidden/overflow-clipped navigation nodes were not counted as page overflow.
 - [x] Browser AX shows one named section associated with heading/description, hides decorative visual, and retains action names. Independent screen-reader review remains required.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after correcting the invalid slot selector.
-- [ ] Independent screen-reader review remains required; the browser AX tree is not counted as a screen-reader session.
+- [ ] Independent screen-reader review and the full exhaustive behavior cross-product remain open; browser AX is not counted as a screen-reader session.

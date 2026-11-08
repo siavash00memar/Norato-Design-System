@@ -1061,7 +1061,7 @@
 
 - **Observed:** Catalog marked Empty State as Adapted without an adapter or usage example. Its specimen was hard-coded markup with a blue glyph and a single generic button; there was no live playground.
 - **Correction:** Added Vue `NoratoEmptyState` and `NoratoEmptyStateVisual`, tokenized fixed visual geometry, host-owned action/visual slots, and a responsive RTL/LTR playground. The legacy `.sample-empty` selectors were removed in place; the preview now uses the shared Button frame and marker.
-- **Verification:** Matched 1280×720 preview, all 12 layout combinations, all 24 visual combinations, action interaction, browser AX and horizontal RTL/LTR geometry are recorded in `docs/request-validation-checklist.md`. Exact mobile widths, two consumer slots and independent screen-reader review remain open.
+- **Verification:** Matched 1280×720 and mobile 390/320 preview captures, all 12 layout combinations, all 24 visual combinations, action interaction, browser AX and horizontal RTL/LTR geometry are recorded in `docs/request-validation-checklist.md`. A 40×40 consumer SVG remained intrinsic in the visual slot; raw anchor/button actions measured 48px. Independent screen-reader review remains open.
 
 ## ERR-130 — Empty State action slot selector was invalid in the production CSS parser (2026-11-08)
 
