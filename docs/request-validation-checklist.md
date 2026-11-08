@@ -1343,6 +1343,7 @@
 - [x] Lemon Progress route inspected: linear/circular forms, 4/8/12px bar thicknesses, 24/32/40px rings, right-to-left fill, 12 o'clock start and small-ring label omission recorded.
 - [x] Norato local detail page uses the shared Button-style dotted preview frame and a distinct executable playground; screenshot confirms the 62% linear value and yellow fill from the right.
 - [x] Accessibility tree exposes one `progressbar` named “بارگذاری فایل” with value 62; the adapter clamps numeric input to 0–100, displays Persian percent text, and leaves it non-focusable.
+- [x] On Linear/Medium/Default, browser values 0/25/50/75/100 update the progressbar value; on Circular/Medium/Default at 25%, the yellow arc starts at 12 o’clock; Circular/Small at 100% has no center percentage.
 - [x] Source geometry uses fixed intrinsic sizes for circle/track; legacy `.sample-progress` rules removed.
-- [ ] Matched desktop screenshots, all 120 combinations, values 0/25/50/75/100 in actual browser, RTL/LTR, 390/320 viewports and independent screen-reader review remain open; Progress DoD stays open.
+- [ ] Full 120-combination matrix (including repeated value states), matched desktop screenshots, RTL/LTR, 390/320 viewports and independent screen-reader review remain open; the attempted full browser loop exceeded its 120-second limit and was stopped at a partial state, which was then reset. Progress DoD stays open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass for the first implementation pass.
