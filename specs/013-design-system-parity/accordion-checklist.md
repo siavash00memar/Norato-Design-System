@@ -17,12 +17,15 @@
 - [x] Multiple mode produces two independently open rows and status “۲ ردیف باز است.” Switching modes resets to a valid value for that mode.
 - [x] Disabled second item is exposed as a disabled button; disabled whole group exposes all enabled triggers as disabled. A disabled expanded item retains its value and panel.
 - [x] ArrowDown from the first trigger moved focus to the next enabled trigger, skipping the disabled second item. Home moved focus to the first trigger; Enter opened the focused row. Focused trigger remained represented in the accessibility tree.
+- [x] Additional keyboard checks: Tab moved to the next trigger and exposed the yellow 2px focus ring; ArrowUp returned to the first trigger; Space toggled it; End moved focus to the last trigger. Closed custom-content panels remove their nested action from the accessibility tree.
 - [x] Custom content slot renders its supplied paragraph and Norato action. Generated Vue snippet updates to match custom-content and multiple settings.
 - [x] Separated + card row options update the live preview; selection is exposed through the custom listbox, not a native browser dropdown.
+- [x] Size selector applied Small, Large and XLarge; selected size was reflected in the generated Vue snippet. The XLarge live row grew naturally and did not stretch to fill the preview. Medium was the initial value.
 - [x] Desktop screenshot shows intrinsic row/content height and no vertical stretching in grouped/separated samples.
 - [ ] Verify 320px and 390px viewport geometry, horizontal overflow and narrow-screen wrapping.
 - [ ] Compare Small, Medium, Large and XLarge trigger geometry and complete layout × row-style × size × expansion × state combinations.
-- [ ] Verify actual Accordion trigger focus-ring color/contrast, Space activation, ArrowUp, End, collapsible=false, LTR direction and reduced-motion rendering.
+- [x] Keyboard focus on a live trigger visibly shows the yellow 2px ring; Space activation, ArrowUp and End pass.
+- [ ] Verify `collapsible=false`, LTR direction and reduced-motion rendering.
 - [ ] Verify focus remains within expected tab order for closed panels and inspect actual panel `aria-labelledby`/`aria-controls` relations beyond the accessibility tree labels.
 - [ ] Independent screen-reader review.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.

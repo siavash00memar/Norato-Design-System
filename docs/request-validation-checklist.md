@@ -1566,7 +1566,9 @@
 - [x] Compared the rendered preview with the selected visual reference at the same 1536×642 browser viewport. Both use the same centered, compact accordion composition, Persian RTL title/chevron placement and expanded first row; Norato frame is narrower because its docs column is narrower.
 - [x] Playground verified single-row switching, multiple rows, custom slot content, separated/card selections, disabled item and disabled group. ArrowDown skipped a disabled row, Home returned to the first trigger and Enter toggled the focused row.
 - [x] Browser accessibility tree reports expanded/collapsed state, named content regions and disabled triggers. No vertical stretching appeared in the reviewed desktop sample.
-- [ ] 320/390px geometry, four-size/style matrix, focus-ring and reduced-motion review, additional keyboard states, and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
+- [x] Follow-up keyboard pass: Tab moved focus to the next trigger with a visible yellow 2px ring; ArrowUp, Space and End worked. Closed custom-content panels removed their nested action from the accessibility tree.
+- [x] Playground size control applied Small, Large and XLarge and synchronized the usage snippet; the XLarge live row grew naturally without filling/stretching the preview.
+- [ ] 320/390px geometry, complete size/style matrix, `collapsible=false`, LTR direction, reduced-motion rendering and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
 
 ## Image — implementation checkpoint (2026-11-08)
 
