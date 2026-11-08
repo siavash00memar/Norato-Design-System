@@ -13,6 +13,7 @@ Vue 3 adapters available through the private workspace package `@norato/vue`:
 - `NoratoAccordion`: controlled single or multiple disclosure groups with keyboard navigation and custom item content.
 - `NoratoSelect`: Reka-backed RTL select with search, groups, staged multi-selection and `v-model`.
 - `NoratoChoiceGroup`: checkbox or radio group; controlled with `v-model:selected` (array of selected option values).
+- `NoratoList`, `NoratoListGroup`, and `NoratoListItem`: semantic list surfaces with plain/inset/grouped variants, descriptions, values, badges, links, buttons, checkboxes and switches.
 - `NoratoDatePicker`: controlled, seven-mode Jalali adapter with a keyboard-operable calendar. design reference visual and full behavior DoD remains in progress; verify the documented contract before production use.
 
 The workspace package is private and not published to a registry. Its entrypoint includes shared component styles. Import semantic tokens once in the application stylesheet with `@import '@norato/tokens/css';`. The workspace links resolve with `pnpm install` from the repository root.

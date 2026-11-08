@@ -36,7 +36,28 @@ const team = [
   'empty-state': `<script setup lang="ts">\nimport { NoratoButton, NoratoEmptyState } from '@norato/vue'\n<\\/script>\n<template>\n  <NoratoEmptyState id="projects-empty" title="هنوز پروژه‌ای نساختی" description="اولین پروژه‌ات را بساز تا اینجا نمایش داده شود." layout="vertical" size="medium" visual-type="icon" visual-tone="neutral" dir="rtl">\n    <template #primary-action><NoratoButton label="ساخت پروژه" variant="primary" /></template>\n    <template #secondary-action><NoratoButton label="راهنما" variant="secondary" /></template>\n  </NoratoEmptyState>\n</template>`,
   badge: `<script setup lang="ts">\nimport { NoratoBadge } from '@norato/vue'\n<\\/script>\n\n<template>\n  <NoratoBadge anchor-label="اعلان‌ها" :count="3" type="count" size="medium" tone="danger">\n    <template #anchor="{ accessibleName }">\n      <button type="button" :aria-label="accessibleName">اعلان‌ها</button>\n    </template>\n  </NoratoBadge>\n</template>`,
   table: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoTable, type NoratoTableColumn, type NoratoTableRow } from '@norato/vue'\nconst selected = ref<Array<string | number>>([])\nconst columns: NoratoTableColumn[] = [\n  { key: 'name', label: 'نام', type: 'user', sortable: true },\n  { key: 'status', label: 'وضعیت', type: 'status', sortable: true },\n  { key: 'projects', label: 'پروژه', type: 'number', sortable: true },\n]\nconst rows: NoratoTableRow[] = [{ id: 'sara', name: { name: 'سارا محمدی', description: 'طراح محصول' }, status: 'فعال', projects: 12 }]\n<\\/script>\n<template><NoratoTable id="team" label="اعضای تیم" :columns="columns" :rows="rows" row-key="id" v-model="selected" selectable searchable :page-size="10" /></template>`,
-  divider: `<script setup lang="ts">\nimport { NoratoDivider } from '@norato/vue'\n<\/script>\n\n<template>\n  <NoratoDivider orientation="horizontal" type="label-center" label="یا"  :spacing="8" tone="subtle" />\n<\/template>`,
+  list: `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoList, NoratoListGroup, NoratoListItem } from '@norato/vue'
+const notifications = ref(true)
+const weeklySummary = ref(false)
+const selectedRow = ref('language')
+</script>
+<template>
+  <NoratoList label="تنظیمات حساب" variant="grouped" dir="rtl">
+    <NoratoListGroup id="account-settings" label="حساب کاربری">
+      <NoratoListItem id="notifications" title="اعلان‌ها" description="پیام‌ها و یادآورها" action="switch" leading="icon" v-model="notifications">
+        <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></template>
+      </NoratoListItem>
+      <NoratoListItem id="language" title="زبان" action="button" leading="icon" value="فارسی" chevron selectable :selected="selectedRow === 'language'" @activate="selectedRow = 'language'">
+        <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg></template>
+      </NoratoListItem>
+    </NoratoListGroup>
+    <NoratoListGroup id="preferences" label="ترجیحات">
+      <NoratoListItem id="weekly-summary" title="گزارش هفتگی" description="خلاصهٔ فعالیت‌های هفته" action="checkbox" leading="none" v-model="weeklySummary" />
+    </NoratoListGroup>
+  </NoratoList>
+</template>`,  divider: `<script setup lang="ts">\nimport { NoratoDivider } from '@norato/vue'\n<\/script>\n\n<template>\n  <NoratoDivider orientation="horizontal" type="label-center" label="یا"  :spacing="8" tone="subtle" />\n<\/template>`,
   spinner: `<script setup lang="ts">\nimport { NoratoLoader } from '@norato/vue'\n<\/script>\n<template><NoratoLoader type="inline" label="در حال بارگذاری" spinner-type="norato" tone="default" :size="24" /></template>`,
   skeleton: `<script setup lang="ts">\nimport { NoratoSkeletonPattern } from '@norato/vue'\n<\/script>\n<template><NoratoSkeletonPattern type="avatar-text" effect="shimmer" label="در حال بارگذاری فهرست" dir="rtl" /></template>`,
   progress: `<script setup lang="ts">\nimport { NoratoProgress } from '@norato/vue'\n<\/script>\n<template><NoratoProgress id="upload-progress" :value="62" label="بارگذاری فایل" variant="linear" size="medium" tone="default" show-value /></template>`,  tooltip: `<script setup lang="ts">\nimport { NoratoTooltip } from '@norato/vue'\n<\/script>\n<template><NoratoTooltip id="copy-link" title="کپی لینک" surface="dark" layout="simple" placement="top"><template #trigger><button type="button" aria-label="کپی لینک">کپی</button></template></NoratoTooltip></template>`,  toast: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoToast } from '@norato/vue'\nconst open = ref(false)\n<\/script>\n<template><button type="button" @click="open = true">نمایش پیام</button><NoratoToast id="save-toast" v-model="open" title="تغییرات ذخیره شد" description="پروژه با موفقیت ذخیره شد." tone="success" surface="glass" layout="rich" action-label="بازگردانی" dismissible :duration="6000" /></template>`,  banner: `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoBanner } from '@norato/vue'\nconst visible = ref(true)\nfunction openOffer() { /* navigate in the host app */ }\n<\/script>\n<template>\n  <NoratoBanner id="site-announcement" v-model="visible" tone="info" layout="desktop" title="جشنوارهٔ پاییزه شروع شد" description="تا ۳۰٪ تخفیف روی همهٔ پلن‌ها." action-label="ببین" @action="openOffer" />\n<\/template>`,

@@ -41,6 +41,8 @@
   --norato-menu-preview-item-block-size: 36px;
   --norato-menu-item-icon-size: var(--norato-icon-sm);
   --norato-menu-item-gap: 8px;
+  --norato-list-playground-inline-size: 300px;
+  --norato-list-checkbox-size: 20px;
   --norato-menu-separator-inset: 8px;
   --norato-layer-menu: 20;
   --norato-layer-command-palette: var(--norato-layer-modal);
