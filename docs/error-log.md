@@ -989,3 +989,9 @@
 - **Observed:** Matched Lemon review showed the reference places the label and value on a metadata row above a full-width track; Norato had squeezed the track between both texts.
 - **Correction:** Rebuilt the Linear template to put label/value in one row and track below, capped the inert specimen at 304px to match Lemon's measured 302.4px inner track, and added an RTL/LTR control to the executable playground.
 - **Verified:** The corrected local 1280×720 specimen follows the Lemon row order; all 120 variants pass in RTL and all 120 in LTR for role/name/min/max/current/value text, tone color, track thickness/fill ratio, inline-start edge and fixed circle geometry. 390px and 320px renders have no horizontal document overflow; independent screen-reader review remains open.
+
+## ERR-119 — Input Stroke reported gray during hover (2026-11-08)
+
+- **Observed:** The submitted static screenshot shows a neutral Stroke, but it does not establish whether the pointer was over the control when captured. The visible line is the Input capsule Stroke, not a browser focus outline; the input itself has no outline or shadow.
+- **Verified:** On the current local Input page, a real pointer hover over the Password action yields one 1px Norato-yellow capsule Stroke (`rgb(253, 193, 1)`) and a transparent 0px layout wrapper. On the published page, hover yields one 1px yellow wrapper Stroke with no capsule pseudo-layer. In both versions the resting Stroke is `#e8e8e8` and no second gray line or focus ring is present.
+- **Disposition:** No source change was needed because the requested hover rule is already active in both renders. A static screenshot cannot establish the pointer state; if gray remains while the pointer is visibly over the field, capture a fresh screenshot after reloading the local page to distinguish a stale render from the resting state.

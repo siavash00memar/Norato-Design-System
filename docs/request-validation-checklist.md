@@ -1371,3 +1371,10 @@
 - [x] At browser viewport settings 390px and 320px, actual content widths were 375px/305px because the scrollbar uses 15px; document width matched content width, with no horizontal overflow. Frame dimensions were 343×288px/273×288px and the track remained horizontally fluid at 304px/263px.
 - [x] Actual UI value input clamps -10 to 0 and 120 to 100; 42.6 rounds to 43. `aria-valuenow`, Persian `aria-valuetext`, and visual fill agree at each boundary.
 - [ ] Independent screen-reader review remains open. Browser accessibility tree exposes the progress name and value but is not treated as a screen-reader substitute.
+
+## Input hover Stroke follow-up — 2026-11-08
+
+- [x] Interpreted the reported line as the field's own 1px capsule Stroke; computed input outline and shadow are both absent.
+- [x] Hovered Password with a real browser pointer on local `http://127.0.0.1:5177/#component-input`: capsule Stroke is 1px Norato yellow (`rgb(253, 193, 1)`), outer layout wrapper is 0px/transparent, and no second gray line appears. Resting capsule Stroke remains `#e8e8e8`.
+- [x] Repeated on `https://norato-design-system.vercel.app/#component-input`: hover resolves to one 1px yellow wrapper Stroke, with no pseudo-element layer or focus outline. Local and production implementations differ in which single layer paints the Stroke, but the visible behavior matches the approved contract.
+- [ ] The supplied screenshot has no visible pointer position, so it cannot confirm that the field was actually hovered at capture time. Keyboard focus and disabled hover were not retested for this visual follow-up.
