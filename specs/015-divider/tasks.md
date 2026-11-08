@@ -10,7 +10,7 @@
 - [x] T008 Implement NoratoDivider with Reka semantics, tokenized styles, public types and package export.
 - [x] T009 Integrate catalog, primitive map, usage example, live playground and Button-style page specimen.
 - [x] T010 Complete nine-section contract; remove legacy specimen CSS and align preview geometry.
-- [ ] T011 Browser-verify variants, spacing, semantics, RTL/LTR, responsiveness and design reference comparison; update request checklist/error log. Geometry, variants, semantics, responsive widths and visual composition were checked; exact matched design reference CSS viewport and independent screenreader remain unverified.
+- [x] T011 Browser-verify variants, spacing, semantics, RTL/LTR, responsiveness and design reference comparison; update request checklist/error log. Exact matched desktop, 390px and 320px CSS viewport comparisons are recorded; independent screenreader review remains a separate open DoD item.
 - [x] T012 Run required repository checks, resolve failures, commit and push the completed implementation checkpoint (`6b281e2`, `origin/master`).
 
 **Gate:** Dependencies are ordered; source implementation may begin after Analyze.

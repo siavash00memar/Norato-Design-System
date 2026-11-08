@@ -12,10 +12,10 @@
 - [x] All 12 variants and 3 spacing values render, including vertical, labeled and tone differences.
 - [x] Rules measure exactly 1 CSS px and do not stretch on the cross axis; frame is responsive at desktop and mobile widths.
 - [x] RTL/LTR label-start placement, semantic/decorative accessibility output verified through browser accessibility tree.
-- [ ] design reference desktop and mobile comparison is recorded with Norato palette differences called out. Composition was compared by browser screenshot; the design reference tab reported a different CSS viewport than Norato, so same-viewport metrics are not claimed.
+- [x] design reference desktop and mobile comparison is recorded with Norato palette differences called out. At matched 1280×720, reference stage/rule measure 636×300px / 345.6×1.08px (320px CSS rule with reference scale), versus Norato 584×288px / 320×1px; line width is 54.3% vs 54.8% of each stage. At 390×844 the stages are 327×300px / 343×288px and rules 320.76×1.08px / 320×1px. At 320×844 they are 257×300px / 273×288px and rules 245.16×1.08px / 263×1px. The narrower documentation column and different stage heights remain visible; Norato keeps its neutral semantic border palette.
 - [x] 390px and 320px viewport checks show no overflow.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [x] `docs/request-validation-checklist.md` contains browser evidence and the unresolved screenreader/viewport limits.
+- [x] `docs/request-validation-checklist.md` contains matched desktop/mobile browser evidence and clearly identifies the remaining independent screenreader review.
 - [ ] Independent screenreader review remains open; browser AX inspection is not presented as a substitute.
 
 **Gate:** DoD is actionable; no placeholder item is being treated as passed. Proceed to Tasks.

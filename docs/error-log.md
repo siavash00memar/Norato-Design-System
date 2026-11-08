@@ -1092,3 +1092,9 @@
 - **Observed:** At a 320px viewport, the SVG was internally scrollable but inherited RTL scroll direction, hiding its left-side numeric axis at the initial position.
 - **Correction:** Set the chart plot viewport's `dir` explicitly to `ltr`, preserving RTL on the component card and page while keeping the numeric axis at the visible leading edge.
 - **Verified:** At 320×844, the first axis label stays visible, the SVG remains at a 2.13 ratio and 280×131px, and document width remains 305px. At 390×844, the 309×145px plot fits without inner scrolling; body/document width is 375px.
+
+## ERR-135 — Divider specimen default disagreed with the visual reference (2026-11-08)
+
+- **Observed:** The inert top preview showed an unnecessary center label and used a 400px rule, while the reference default is a plain subtle line with 320px CSS width.
+- **Correction:** Changed the specimen to the public line variant without a label and reduced its tokenized rule width to 320px; runtime behavior is unchanged.
+- **Verified:** Matched 1280×720, 390×844 and 320×844 viewport measurements and screenshots were compared. The local rule remains 1px thick and responsive with no document overflow at 390/320. The local documentation frame is narrower/shorter than the reference due to its page column; relative line composition is close. Independent screenreader review remains open.

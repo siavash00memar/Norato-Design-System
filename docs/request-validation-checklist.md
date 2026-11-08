@@ -1419,9 +1419,9 @@
 - [x] Browser playground exercised all 12 orientation/type/tone combinations and spacing 0/4/8. Rules measured 1 CSS px in their thickness axis; horizontal line remains content-driven, vertical lines remain 1px wide, vertical labels stay upright, and RTL/LTR label-start follows logical inline-start.
 - [x] Decorative mode is hidden from the browser accessibility tree; semantic mode exposes `role=separator`, orientation and label name where supplied. This verifies browser AX output, not a screenreader session.
 - [x] At 390px and 320px viewport settings, the specimen is 343×288px and 273×288px; document width is 375px and 305px respectively, with no horizontal overflow.
-- [x] design reference screenshot composition was reviewed against Norato's default. design reference's current tab reported a different CSS viewport than the local tab, so exact same-viewport dimensions are not asserted. Norato retains its neutral semantic border palette.
+- [x] Matched design reference/Norato screenshots and measurements at 1280×720: reference stage/rule 636×300px / 345.6×1.08px (320px CSS width with the reference's 1.08 scale); Norato stage/rule 584×288px / 320×1px. Rule/stage proportions are 54.3% and 54.8%. At 390×844, reference stage/rule 327×300px / 320.76×1.08px; Norato 343×288px / 320×1px. At 320×844, reference 257×300px / 245.16×1.08px and document width 326px; Norato 273×288px / 263×1px and document width 305px. The 320px reference screenshot has a horizontal scrollbar while Norato does not. Frame width/height differences remain visible; the centered line treatment is close. Norato retains its neutral semantic border palette.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing advisory that the main JS chunk exceeds 500 kB.
-- [ ] Independent screenreader review remains open; a matched CSS viewport comparison with design reference also remains open.
+- [ ] Independent screenreader review remains open; browser accessibility-tree inspection is not treated as a substitute.
 
 ## Toast — browser review (2026-11-08)
 
