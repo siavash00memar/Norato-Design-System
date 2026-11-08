@@ -67,6 +67,10 @@ export type { NoratoTooltipLayout, NoratoTooltipPlacement, NoratoTooltipSurface 
 
 export { default as NoratoProgress } from './components/NoratoProgress.vue'
 export type { NoratoProgressSize, NoratoProgressTone, NoratoProgressVariant } from './components/NoratoProgress.vue'
+export { default as NoratoSpinner } from './components/NoratoSpinner.vue'
+export type { NoratoSpinnerSize, NoratoSpinnerTone, NoratoSpinnerType } from './components/NoratoSpinner.vue'
+export { default as NoratoLoader } from './components/NoratoLoader.vue'
+export type { NoratoLoaderType } from './components/NoratoLoader.vue'
 
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'

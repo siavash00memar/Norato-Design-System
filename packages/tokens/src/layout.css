@@ -146,6 +146,18 @@
   --norato-progress-circle-stroke-medium: 4px;
   --norato-progress-circle-stroke-large: 5px;
   --norato-progress-preview-inline-size: 320px;
+  --norato-spinner-size-16: 16px;
+  --norato-spinner-size-20: 20px;
+  --norato-spinner-size-24: 24px;
+  --norato-spinner-size-32: 32px;
+  --norato-spinner-size-48: 48px;
+  --norato-spinner-stroke-16: 2px;
+  --norato-spinner-stroke-20: 2px;
+  --norato-spinner-stroke-24: 3px;
+  --norato-spinner-stroke-32: 3px;
+  --norato-spinner-stroke-48: 4px;
+  --norato-spinner-animation-duration: 900ms;
+  --norato-spinner-dot-delay: 150ms;
   --norato-space-1: 4px;
   --norato-space-2: 8px;
   --norato-space-3: 12px;

@@ -442,3 +442,9 @@
 - Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
 - Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
 - **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.
+
+## Spinner — 2026-11-08
+- Match Lemon's Ring (30% arc), Dots and custom-brand spinner (45% arc), three tones and five intrinsic square sizes; make Norato's default yellow rather than Lemon's dark default.
+- Keep Spinner decorative and Loader the sole polite status announcement. Support Inline, Refresh, Overlay and Page patterns without focus trap or stretching.
+- Use reduced-motion-aware animation, semantic Norato color/size/motion tokens, and the Button-sized dotted inert preview with a separate playground.
+- **Remaining:** browser matrix, responsive checks, reduced-motion review, screen-reader review and Lemon comparison are recorded in the Spinner DoD; keep it open until those pass.

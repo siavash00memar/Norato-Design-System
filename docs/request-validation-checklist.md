@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## Spinner browser review — 2026-11-08
+
+- [x] At 1265×720, the inert Spinner preview is a centered Norato-yellow Ring in the 576×288px Button-style dotted frame; same-viewport Lemon review showed a 40px dark Ring, so Norato uses its 48px token (about 41px visible arc) with the approved yellow palette.
+- [x] Exercised all 45 type/tone/size configurations in the actual Spinner playground. Each rendered an intrinsic square box matching 16/20/24/32/48px; expected tone colors computed in all states and no combo failed.
+- [x] Verified Ring and Norato use an SVG arc; Dots use three CSS dots. The browser reports `prefers-reduced-motion: reduce`; Ring and all three Dots compute to `animation:none`, with Dots remaining at full opacity.
+- [x] Exercised Inline, Refresh, Overlay and Page. All use one polite status label, hide the decorative child from the accessibility tree, and preserve the selected RTL/LTR direction. Overlay is host-relative and pointer-transparent; Page spans the current viewport and is pointer-transparent.
+- [x] Loader `active=false` removes its status; reactivating restores one status region. LTR moves the spinner to the inline-start side of the label.
+- [ ] The available browser did not expose an explicit viewport override; 390/320 layout remains unverified. Independent screen-reader review also remains open; do not close Spinner DoD until those checks pass.
+
 ## Menu local browser review — 2026-11-08
 
 - [x] Actual desktop page renders an inert action-menu specimen and a separate interactive adapter playground.

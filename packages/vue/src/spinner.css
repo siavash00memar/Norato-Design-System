@@ -1,0 +1,41 @@
+.norato-spinner {
+  --norato-spinner-ink: var(--norato-color-brand-yellow);
+  --norato-spinner-track: var(--norato-color-border-default);
+  --norato-spinner-stroke-width: var(--norato-spinner-stroke-24);
+  display: inline-grid;
+  flex: none;
+  place-items: center;
+  inline-size: var(--norato-spinner-size-24);
+  block-size: var(--norato-spinner-size-24);
+  color: var(--norato-spinner-ink);
+  vertical-align: middle;
+}
+
+.norato-spinner[data-size="16"] { inline-size: var(--norato-spinner-size-16); block-size: var(--norato-spinner-size-16); --norato-spinner-stroke-width: var(--norato-spinner-stroke-16); }
+.norato-spinner[data-size="20"] { inline-size: var(--norato-spinner-size-20); block-size: var(--norato-spinner-size-20); --norato-spinner-stroke-width: var(--norato-spinner-stroke-20); }
+.norato-spinner[data-size="24"] { inline-size: var(--norato-spinner-size-24); block-size: var(--norato-spinner-size-24); --norato-spinner-stroke-width: var(--norato-spinner-stroke-24); }
+.norato-spinner[data-size="32"] { inline-size: var(--norato-spinner-size-32); block-size: var(--norato-spinner-size-32); --norato-spinner-stroke-width: var(--norato-spinner-stroke-32); }
+.norato-spinner[data-size="48"] { inline-size: var(--norato-spinner-size-48); block-size: var(--norato-spinner-size-48); --norato-spinner-stroke-width: var(--norato-spinner-stroke-48); }
+.norato-spinner[data-tone] { color: var(--norato-spinner-ink); }
+.norato-spinner[data-tone="subtle"] { --norato-spinner-ink: var(--norato-color-text-secondary); }
+.norato-spinner[data-tone="inverse"] { --norato-spinner-ink: var(--norato-color-text-on-code); --norato-spinner-track: var(--norato-color-border-strong); }
+.norato-spinner__ring,.norato-spinner__dots { display: block; inline-size: 100%; block-size: 100%; overflow: visible; }
+.norato-spinner__ring { transform-box: fill-box; transform-origin: center; animation: norato-spinner-rotate var(--norato-spinner-animation-duration) linear infinite; }
+.norato-spinner__track,.norato-spinner__arc { fill: none; stroke-linecap: round; stroke-width: var(--norato-spinner-stroke-width); }
+.norato-spinner__track { stroke: var(--norato-spinner-track); }
+.norato-spinner__arc { stroke: currentColor; stroke-dasharray: 30 70; }
+.norato-spinner__arc.is-norato { stroke-dasharray: 45 55; }
+.norato-spinner__dots { display: flex; align-items: center; justify-content: center; gap: 12%; }
+.norato-spinner__dots i { display: block; flex: 0 0 20%; aspect-ratio: 1; border-radius: 50%; background: currentColor; animation: norato-spinner-dot var(--norato-spinner-animation-duration) linear infinite; }
+.norato-spinner__dots i:nth-child(2) { animation-delay: var(--norato-spinner-dot-delay); }
+.norato-spinner__dots i:nth-child(3) { animation-delay: calc(var(--norato-spinner-dot-delay) * 2); }
+
+.norato-loader { display: inline-flex; align-items: center; justify-content: center; gap: var(--norato-space-2); max-inline-size: 100%; color: var(--norato-color-text-secondary); font-family: var(--norato-font-body); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); text-align: start; }
+.norato-loader--refresh { display: flex; inline-size: 100%; min-block-size: var(--norato-control-target-min); }
+.norato-loader--overlay { position: absolute; z-index: var(--norato-layer-modal); inset: 0; display: flex; inline-size: 100%; min-block-size: 100%; padding: var(--norato-space-4); border-radius: inherit; background: var(--norato-color-glass-surface-strong); pointer-events: none; }
+.norato-loader--page { position: fixed; z-index: var(--norato-layer-modal); inset: 0; display: flex; inline-size: 100%; min-block-size: 100dvh; padding: var(--norato-space-4); background: var(--norato-color-glass-surface-strong); pointer-events: none; }
+.norato-loader__label { min-inline-size: 0; overflow-wrap: anywhere; }
+
+@keyframes norato-spinner-rotate { to { transform: rotate(360deg); } }
+@keyframes norato-spinner-dot { 0%, 60%, 100% { opacity: .24; } 30% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .norato-spinner__ring,.norato-spinner__dots i { animation: none; opacity: 1; } }

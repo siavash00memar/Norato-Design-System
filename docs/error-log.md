@@ -971,3 +971,15 @@
 - **Observed:** The catalog advertised Progress but the Button-style page rendered a legacy fixed-height bar, so the visual sample and executable component contract did not agree.
 - **Correction:** Removed `.sample-progress` styling and mounted the new determinate `NoratoProgress` specimen; added the Vue playground and semantic size/status tokens.
 - **Verified:** At the local Input/Progress routes, Progress renders as an RTL horizontal bar with a 62% value and yellow fill. Lemon's Progress page confirms right-to-left fill, 4/8/12px linear sizes, and 24/32/40px circular sizes. Desktop-matched screenshots, complete 120-state matrix, 390/320 viewports and independent screen-reader review remain open.
+
+## ERR-116 — Spinner page used a blue legacy arc with no runtime API (2026-11-08)
+
+- **Observed:** The catalog marked Spinner Proposed, the page used a generic static `.sample-spinner`, its arc borrowed Norato brand blue, and no Vue exports or Loader patterns existed.
+- **Correction:** Remove the legacy specimen rule; implement decorative Ring/Dots/Norato forms and an accessible Loader wrapper using Norato semantic yellow/subtle/inverse colors, intrinsic token sizes and reduced-motion support. Add a 45-option playground and four Loader modes inside the Button page structure.
+- **Verified:** Actual local desktop render now uses the Button-sized dotted frame and a centered 48px Norato-yellow Ring; the API/page/playground exports and status catalog are connected. Mobile, reduced-motion emulation and independent screen-reader checks remain open.
+
+## ERR-117 — Spinner playground inherited its host text color (2026-11-08)
+
+- **Observed:** The generic Button playground preview set its own text color after the package Spinner rule, making `tone="default"` render gray in the executable playground although the inert specimen was yellow.
+- **Correction:** Scope the spinner’s explicit color to its semantic `data-tone` so host presentation styles cannot override the requested tone. Use 48px in the inert specimen, matching Lemon’s visible ring while staying within Norato’s documented size choices.
+- **Verified:** All 45 interactive type/tone/size combinations computed the expected color and exact square 16/20/24/32/48px box; no combination failed.
