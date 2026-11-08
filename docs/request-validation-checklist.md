@@ -1378,3 +1378,13 @@
 - [x] Hovered Password with a real browser pointer on local `http://127.0.0.1:5177/#component-input`: capsule Stroke is 1px Norato yellow (`rgb(253, 193, 1)`), outer layout wrapper is 0px/transparent, and no second gray line appears. Resting capsule Stroke remains `#e8e8e8`.
 - [x] Repeated on `https://norato-design-system.vercel.app/#component-input`: hover resolves to one 1px yellow wrapper Stroke, with no pseudo-element layer or focus outline. Local and production implementations differ in which single layer paints the Stroke, but the visible behavior matches the approved contract.
 - [ ] The supplied screenshot has no visible pointer position, so it cannot confirm that the field was actually hovered at capture time. Keyboard focus and disabled hover were not retested for this visual follow-up.
+
+## Divider — browser review (2026-11-08)
+
+- [x] Local Divider route renders the Button-style nine-section page, fixed inert dotted specimen, distinct live playground, copyable Vue usage and public contract.
+- [x] Browser playground exercised all 12 orientation/type/tone combinations and spacing 0/4/8. Rules measured 1 CSS px in their thickness axis; horizontal line remains content-driven, vertical lines remain 1px wide, vertical labels stay upright, and RTL/LTR label-start follows logical inline-start.
+- [x] Decorative mode is hidden from the browser accessibility tree; semantic mode exposes `role=separator`, orientation and label name where supplied. This verifies browser AX output, not a screenreader session.
+- [x] At 390px and 320px viewport settings, the specimen is 343×288px and 273×288px; document width is 375px and 305px respectively, with no horizontal overflow.
+- [x] Lemon screenshot composition was reviewed against Norato's default. Lemon's current tab reported a different CSS viewport than the local tab, so exact same-viewport dimensions are not asserted. Norato retains its neutral semantic border palette.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing advisory that the main JS chunk exceeds 500 kB.
+- [ ] Independent screenreader review remains open; a matched CSS viewport comparison with Lemon also remains open.
