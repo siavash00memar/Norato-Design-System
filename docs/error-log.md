@@ -1030,3 +1030,9 @@
 - **Remaining:** The narrow local render showed no page overflow at the available 484px view, but exact 390px/320px measurements and an independent screen-reader session were not available; both remain open.
 
 - **Verification update for ERR-119:** The earlier open note about Input hover is superseded by the real-pointer local/production checks recorded in ERR-121 and the Input hover section of `docs/request-validation-checklist.md`.
+
+## ERR-125 — Static Switch matrix kept a gray checked Stroke (2026-11-08)
+
+- **Observed:** Live adapter on-state was yellow with a white, stroke-free knob, but six static matrix cells (checked Default and Focus across three sizes) still used the stronger gray border token. This contradicted the Switch contract and made the gallery differ from the working control.
+- **Correction:** Replaced the legacy checked matrix border token with Norato yellow in the existing matrix rule; no additional override or change to knob geometry was added. Error and Disabled states keep their semantic borders.
+- **Verified:** All 30 Switch and 6 Switch Field cells were checked in the live DOM; checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error semantic red; every knob is white with 0px border and no shadow. Screenshots reviewed all five Switch state groups at the available 499×932 local viewport. Document width 484px has no horizontal overflow. Exact 390×844 and matched Lemon Variants comparisons and independent screen-reader review remain open.

@@ -1427,3 +1427,10 @@
 - [x] Browser accessibility tree exposes the host button once with the complete accessible label; the visible marker is aria-hidden. Keyboard focus is visible, native disabled is exposed, and Tab skips the disabled host anchor. This is browser/AX evidence, not a screen-reader session.
 - [x] The available local narrow view (484px screenshot) showed no horizontal page overflow. Exact 390px/320px measurements and independent screen-reader review remain open.
 - [x] Token/catalog checks, Vue typecheck, production build and `git diff --check` pass after final changes. Build retains the existing advisory that the main JavaScript chunk exceeds 500 kB.
+
+## Switch matrix checked Stroke — follow-up (2026-11-08)
+
+- [x] Real local Switch adapter on/off checked states confirm Norato-yellow active track, neutral muted off track, white knob with no Stroke/shadow, and 48×48px target. Hover was isolated from focus: an off Switch remains neutral-filled while its 1px border turns yellow.
+- [x] Static matrix had a legacy `border-strong` token on checked Default and Focus cells. The existing selector now uses Norato yellow; all 30 Switch and 6 Switch Field cells were audited across state, size and value. Checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error red; all knobs remain white and stroke-free.
+- [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. Matrix-specific viewport and same-viewport Lemon comparison, plus independent screen-reader review, remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass for this correction; build retains the existing >500kB main bundle warning.

@@ -8,4 +8,5 @@
 6. [x] Commit `bbb95f0` pushed; local HEAD matches remote `master`.
 
 7. [x] Correct stale blue checked/hover/focus styles and align checked knobs across adapter, state galleries, and playground switches with Norato yellow/dark styling.
-8. [ ] Re-render and visually verify every state and size after this correction; keep full DoD open until outstanding matrix and accessibility checks pass.
+8. [x] Re-render all five state groups after the stroke correction; computed-style audit covered every size/value cell and the 6 Switch Field cells. Full DoD remains open for exact mobile/matched Lemon review and screen-reader validation.
+9. [x] Remove the legacy gray `border-strong` token from checked static Switch/Switch Field matrix tracks; verify checked Default/Focus are yellow while Error/Disabled retain semantic colors.
