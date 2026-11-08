@@ -1431,6 +1431,19 @@
 - [x] Disabled Input remained muted with its neutral Stroke when targeted by the pointer. Browser viewport was the existing narrow view; the page's broader responsive DoD remains independently tracked.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 1,015.47KB chunk advisory.
 
+## Input hovered Stroke clarification — 2026-11-08
+
+- [x] The line in the supplied screenshot corresponds to the Input field's own 1px capsule Stroke; it is not a second wrapper border or browser focus outline.
+- [x] Existing local behavior has been verified with the pointer over the password field while focus moved elsewhere: hover Stroke is Norato yellow, rest Stroke is `#e8e8e8`, and the outer layout wrapper has no border.
+- [x] No duplicate CSS override was added because the current render already satisfies the requested yellow hover Stroke. The user's screenshot may show an earlier/stale render or pointer no longer over the field; the screenshot alone does not show pointer location.
+
+## Avatar implementation checkpoint — browser evidence (2026-11-08)
+
+- [x] Local Avatar route presents the inert dotted preview, separate executable playground, copyable Vue usage, and contract sections in Button page order.
+- [x] Browser accessibility tree reports 36 Avatar, 12 Group, 3 Label, and 4 Status variants; broken-image fallback is exposed with a person name. RTL group members and overflow accessible labels are present.
+- [x] Direction and size custom menus open and close in the live playground. Lemon's Avatar page was reviewed and supplies the same 55-variant scope, circle/square, ring/status placement, group RTL rule, and accessibility name guidance.
+- [ ] Exact responsive widths, pixel geometry of all 55 variants, independent screen-reader review, remaining state/keyboard audit and engineering gates are pending. Avatar DoD remains open.
+
 ## Badge — implementation and browser review (2026-11-08)
 
 - [x] Badge detail page follows Button structure: inert dotted preview, separate live playground, copyable Vue example, and Overview/Anatomy/Variants/Sizes/States/Parts/Usage/Accessibility/Tokens sections.

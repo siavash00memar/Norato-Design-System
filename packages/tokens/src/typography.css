@@ -1,4 +1,10 @@
 :root {
+  --norato-avatar-initials-size-xs: 10px;
+  --norato-avatar-initials-size-s: 12px;
+  --norato-avatar-initials-size-m: 14px;
+  --norato-avatar-initials-size-l: 16px;
+  --norato-avatar-initials-size-xl: 18px;
+  --norato-avatar-initials-size-2xl: 20px;
   --norato-font-body: 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
   --norato-font-heading: 'Estedad', 'Vazir', 'Vazirmatn', Tahoma, sans-serif;
   --norato-font-heading-black: 'Estedad', 'Vazir', 'Vazirmatn', Tahoma, sans-serif;

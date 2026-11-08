@@ -1,0 +1,38 @@
+.norato-avatar{position:relative;display:inline-grid;place-items:center;box-sizing:border-box;flex:none;inline-size:var(--norato-avatar-size-m);block-size:var(--norato-avatar-size-m);overflow:visible;border:var(--norato-avatar-ring-width) solid var(--norato-color-surface-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-family:var(--norato-font-body);font-size:var(--norato-avatar-initials-size-m);font-weight:var(--norato-type-body-bold-weight);line-height:1;text-align:center;vertical-align:middle;isolation:isolate}
+.norato-avatar[data-size="xs"]{inline-size:var(--norato-avatar-size-xs);block-size:var(--norato-avatar-size-xs);font-size:var(--norato-avatar-initials-size-xs)}
+.norato-avatar[data-size="s"]{inline-size:var(--norato-avatar-size-s);block-size:var(--norato-avatar-size-s);font-size:var(--norato-avatar-initials-size-s)}
+.norato-avatar[data-size="l"]{inline-size:var(--norato-avatar-size-l);block-size:var(--norato-avatar-size-l);font-size:var(--norato-avatar-initials-size-l)}
+.norato-avatar[data-size="xl"]{inline-size:var(--norato-avatar-size-xl);block-size:var(--norato-avatar-size-xl);font-size:var(--norato-avatar-initials-size-xl)}
+.norato-avatar[data-size="2xl"]{inline-size:var(--norato-avatar-size-2xl);block-size:var(--norato-avatar-size-2xl);font-size:var(--norato-avatar-initials-size-2xl)}
+.norato-avatar[data-shape="square"]{border-radius:var(--norato-radius-tag)}
+.norato-avatar__image{position:absolute;inset:0;display:block;inline-size:100%;block-size:100%;border-radius:inherit;object-fit:cover}
+.norato-avatar__initials{display:block;max-inline-size:100%;overflow:hidden;padding-inline:var(--norato-space-1);text-overflow:clip;white-space:nowrap}
+.norato-avatar__icon{inline-size:50%;block-size:50%;fill:none;stroke:currentColor;stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round}
+.norato-avatar__presence{position:absolute;z-index:2;inset-block-end:calc(-1 * var(--norato-avatar-ring-width));inset-inline-start:0;inset-inline-end:auto;box-sizing:border-box;inline-size:var(--norato-avatar-status-size);block-size:var(--norato-avatar-status-size);border:var(--norato-border-medium) solid var(--norato-color-surface-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-status-neutral)}
+.norato-avatar[data-status="online"] .norato-avatar__presence{background:var(--norato-color-status-success)}
+.norato-avatar[data-status="busy"] .norato-avatar__presence{background:var(--norato-color-status-error)}
+.norato-avatar[data-status="away"] .norato-avatar__presence{background:var(--norato-color-status-warning)}
+.norato-avatar[data-status="offline"] .norato-avatar__presence{background:var(--norato-color-status-neutral)}
+.norato-avatar[data-dir="rtl"] .norato-avatar__presence{inset-inline-start:auto;inset-inline-end:0}
+.norato-avatar-group{--norato-avatar-group-overlap:var(--norato-avatar-group-overlap-m);display:flex;align-items:center;max-inline-size:100%;min-inline-size:0;margin:0;padding:0;overflow:visible;list-style:none}
+.norato-avatar-group[data-size="s"]{--norato-avatar-group-overlap:var(--norato-avatar-group-overlap-s)}
+.norato-avatar-group[data-size="l"]{--norato-avatar-group-overlap:var(--norato-avatar-group-overlap-l)}
+.norato-avatar-group[data-size="xl"]{--norato-avatar-group-overlap:var(--norato-avatar-group-overlap-xl)}
+.norato-avatar-group__item{position:relative;display:grid;place-items:center;flex:none;margin-inline-start:calc(-1 * var(--norato-avatar-group-overlap));padding:0;list-style:none;z-index:var(--norato-avatar-stack-index)}
+.norato-avatar-group__item:first-child{margin-inline-start:0}
+.norato-avatar-group__overflow{box-sizing:border-box;inline-size:var(--norato-avatar-size-m);block-size:var(--norato-avatar-size-m);border:var(--norato-avatar-ring-width) solid var(--norato-color-surface-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary);font-family:var(--norato-font-body);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-body-bold-weight)}
+.norato-avatar-group[data-size="s"] .norato-avatar-group__overflow{inline-size:var(--norato-avatar-size-s);block-size:var(--norato-avatar-size-s)}
+.norato-avatar-group[data-size="l"] .norato-avatar-group__overflow{inline-size:var(--norato-avatar-size-l);block-size:var(--norato-avatar-size-l)}
+.norato-avatar-group[data-size="xl"] .norato-avatar-group__overflow{inline-size:var(--norato-avatar-size-xl);block-size:var(--norato-avatar-size-xl)}
+.norato-avatar-label{display:flex;align-items:center;gap:var(--norato-avatar-label-gap);min-inline-size:0;max-inline-size:100%;font-family:var(--norato-font-body)}
+.norato-avatar-label__content{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.norato-avatar-label__name{overflow:hidden;color:var(--norato-color-text-primary);font-size:var(--norato-type-body-regular-size);font-weight:var(--norato-type-body-bold-weight);text-overflow:ellipsis;white-space:nowrap}
+.norato-avatar-label__description{overflow:hidden;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);text-overflow:ellipsis;white-space:nowrap}
+.norato-avatar-label[data-size="s"] .norato-avatar-label__name{font-size:var(--norato-type-body-small-size)}
+.norato-avatar-status{display:inline-flex;align-items:center;gap:var(--norato-avatar-status-gap);color:var(--norato-color-text-secondary);font-family:var(--norato-font-body);font-size:var(--norato-type-body-small-size)}
+.norato-avatar-status__dot{inline-size:var(--norato-avatar-status-size);block-size:var(--norato-avatar-status-size);border-radius:var(--norato-radius-pill);background:var(--norato-color-status-neutral)}
+.norato-avatar-status[data-status="online"] .norato-avatar-status__dot{background:var(--norato-color-status-success)}
+.norato-avatar-status[data-status="busy"] .norato-avatar-status__dot{background:var(--norato-color-status-error)}
+.norato-avatar-status[data-status="away"] .norato-avatar-status__dot{background:var(--norato-color-status-warning)}
+.norato-avatar-status[data-status="offline"] .norato-avatar-status__dot{background:var(--norato-color-status-neutral)}
+@media(max-width:480px){.norato-avatar-label{max-inline-size:100%}}

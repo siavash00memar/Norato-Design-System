@@ -41,7 +41,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Card | card | Adapted | Pending visual and behavior comparison |
 | [ ] | Tag | tag | Adapted | Pending visual and behavior comparison |
 | [ ] | Chip | chip | Adapted | Pending visual and behavior comparison |
-| [ ] | Avatar | avatar | Proposed | Pending visual and behavior comparison |
+| [ ] | Avatar | avatar | Adapted | Four Vue adapters and 55-variant playground added; visual/accessibility DoD remains open |
 | [ ] | Timeline | timeline | Proposed | Pending visual and behavior comparison |
 | [ ] | Charts | charts | Proposed | Pending visual and behavior comparison |
 | [ ] | Divider | divider | Adapted | Public Reka-backed Vue adapter, Button-style specimen/playground and all 12 variants are present. Browser reviewed RTL/LTR, 1px geometry, spacing and semantic/decorative AX output; 390/320 overflow checks passed in the prior local browser run. Current same-viewport CSS metrics against Lemon and independent screenreader remain open; technical gates passed and checkpoints `6b281e2`/`6599a77` are pushed. |

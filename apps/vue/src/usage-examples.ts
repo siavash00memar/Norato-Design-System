@@ -1,5 +1,22 @@
 /** Copyable, reviewed API examples keyed by the canonical catalog's `usageKey`. */
 export const usageExamples: Readonly<Record<string, string>> = {
+  avatar: `<script setup lang="ts">
+import { NoratoAvatar, NoratoAvatarGroup, NoratoAvatarLabel, NoratoAvatarStatus } from '@norato/vue'
+const team = [
+  { id: 'sara', name: 'سارا محمدی', initials: 'سم' },
+  { id: 'armin', name: 'آرمین رضایی', initials: 'آر' },
+  { id: 'niloofar', name: 'نیلوفر احمدی', initials: 'نآ' },
+  { id: 'kian', name: 'کیان موسوی', initials: 'کم' },
+  { id: 'mina', name: 'مینا کریمی', initials: 'مک' },
+  { id: 'ali', name: 'علی نادری', initials: 'عن' },
+] as const
+<\/script>
+<template>
+  <NoratoAvatar name="سارا محمدی" type="initials" size="m" shape="circle" status="online" />
+  <NoratoAvatarGroup :items="team" size="m" :max="5" label="اعضای تیم" dir="rtl" />
+  <NoratoAvatarLabel name="سارا محمدی" description="طراح محصول" size="m" status="online" />
+  <NoratoAvatarStatus status="online" />
+</template>`,
   'empty-state': `<script setup lang="ts">\nimport { NoratoButton, NoratoEmptyState } from '@norato/vue'\n<\\/script>\n<template>\n  <NoratoEmptyState id="projects-empty" title="هنوز پروژه‌ای نساختی" description="اولین پروژه‌ات را بساز تا اینجا نمایش داده شود." layout="vertical" size="medium" visual-type="icon" visual-tone="neutral" dir="rtl">\n    <template #primary-action><NoratoButton label="ساخت پروژه" variant="primary" /></template>\n    <template #secondary-action><NoratoButton label="راهنما" variant="secondary" /></template>\n  </NoratoEmptyState>\n</template>`,
   badge: `<script setup lang="ts">\nimport { NoratoBadge } from '@norato/vue'\n<\\/script>\n\n<template>\n  <NoratoBadge anchor-label="اعلان‌ها" :count="3" type="count" size="medium" tone="danger">\n    <template #anchor="{ accessibleName }">\n      <button type="button" :aria-label="accessibleName">اعلان‌ها</button>\n    </template>\n  </NoratoBadge>\n</template>`,
   divider: `<script setup lang="ts">\nimport { NoratoDivider } from '@norato/vue'\n<\/script>\n\n<template>\n  <NoratoDivider orientation="horizontal" type="label-center" label="یا"  :spacing="8" tone="subtle" />\n<\/template>`,

@@ -466,3 +466,12 @@
 - The documentation specimen uses the shared Button dotted/glass frame and Default marker. The component itself has no frame unless `container="card"` is set.
 - Visual is fixed-size and decorative; horizontal layout places it at logical inline-start, and narrow screens stack without clipping. Titles/descriptions provide all meaning.
 - Actions remain caller-owned slots with native, named buttons/links and 48px minimum targets. Do not add implicit navigation or a live region to static content.
+
+# Avatar
+
+- Match Lemon's four families and 55 variants: Avatar 36, Group 12, Label 3, Status 4. Keep the specimen inert and the executable matrices in a separate playground.
+- Keep the 2px surface ring, 24–64px intrinsic avatar sizes, image cover crop, and circle/square shape distinction. Norato's 24/32/40/48/56/64px progression is an explicit 8px-step inference because Lemon only states the endpoints.
+- Use Norato yellow/neutral initials surfaces and semantic presence tokens; do not copy Lemon's dark default or use blue as the brand accent. Show a status label outside the avatar and add status meaning to the avatar's accessible name.
+- In RTL, the first group member is on the right, +N remains on the left, and the presence dot sits physically bottom-left. Use logical overlap and verify LTR mirroring.
+- Derive at most two initials, preserve Unicode graphemes, and fall back from failed images without stretching or changing geometry.
+- **Remaining:** matched screenshots, complete 55-variant browser review, RTL/LTR, responsive behavior, accessibility and final DoD remain open until recorded in Avatar's feature checklist.
