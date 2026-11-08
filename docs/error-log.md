@@ -995,3 +995,9 @@
 - **Observed:** The visible line is the Input capsule Stroke, not a browser focus outline; the input itself has no outline or shadow. Although enabled hover set yellow, the more-specific success-state stroke could override it.
 - **Correction:** Kept the generic enabled-hover rule and added a status-scoped enabled-hover rule after invalid/success styles, matching their specificity and winning by cascade order. Disabled neutral stroke retains priority; no second line or outline was added.
 - **Open verification:** Local browser interactions could not hold pointer hover during capture. Runtime hover color across default/error/success and disabled behavior remains open until confirmed by a real pointer-hover capture.
+
+## ERR-120 — Banner specimen was taller than Lemon's default (2026-11-08)
+
+- **Observed:** Same-viewport desktop review showed Norato's inert Banner at about 58px high because the specimen used both title and description and added vertical padding; Lemon's default was a one-line announcement around 41px high.
+- **Correction:** Made the inert sample a single-line announcement and removed unnecessary vertical padding from the Banner, bringing the stripe to about 50px while preserving the 48px minimum action target and responsive content layout.
+- **Verified:** At 1265×720 the specimen now follows Lemon's one-line hierarchy. All six desktop tones, mobile Neutral at 390/320, RTL order, Inverse contrast, controlled/uncontrolled dismissal and keyboard activation were reviewed. Five mobile tones and independent screen-reader review remain open.

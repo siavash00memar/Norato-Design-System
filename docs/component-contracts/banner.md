@@ -62,3 +62,7 @@ const visible = ref(true)
 ## Tokens
 
 از توکن‌های semantic متن، سطح، status و container برای لحن‌ها استفاده می‌شود؛ رنگ‌های برند فقط از Norato می‌آیند: `--norato-color-brand-yellow` و `--norato-color-focus-ring`. تایپوگرافی `--norato-font-heading` و `--norato-font-body` است. هیچ مقدار رنگ خام صفحه‌ای تعریف نشده.
+
+## DoD
+
+در ۱۲۶۵×۷۲۰، ترکیب پیش‌فرض Lemon/Norato و هر شش لحن دسکتاپ مرور شد؛ نمونهٔ inert نوراتو به متن یک‌خطی و نوار فشرده‌تر تغییر کرد. چیدمان Mobile در Neutral در ۳۹۰ و ۳۲۰ پیکسل دیده شد و رفتار اقدام، بستن کنترل‌شده/محلی، Space و focus زرد بررسی شد. پنج لحن موبایل، اندازه‌گیری دقیق overflow، تطبیق موبایل با Lemon و بازبینی مستقل screen reader باقی‌اند؛ DoD باز است.

@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Banner desktop/mobile and keyboard follow-up — 2026-11-08
+
+- [x] Lemon/Norato same-viewport desktop review at 1265×720. Norato's inert default now uses a one-line announcement and no extra vertical padding; the action keeps its minimum 48px target.
+- [x] All six desktop tone visuals inspected; Mobile Neutral inspected at 390px and 320px. Five Mobile tone combinations and exact document overflow measurement remain open.
+- [x] RTL icon/message/action/close order, semantic tone palette and dark Inverse + yellow accent reviewed.
+- [x] Action feedback has no navigation; controlled and uncontrolled dismiss/restore work. Space activates both action and close; keyboard focus shows the yellow ring.
+- [ ] Independent screen-reader review and browser AX role announcement remain open; Banner DoD stays open.
+
 ## Spinner browser review — 2026-11-08
 
 - [x] At 1265×720, the inert Spinner preview is a centered Norato-yellow Ring in the 576×288px Button-style dotted frame; same-viewport Lemon review showed a 40px dark Ring, so Norato uses its 48px token (about 41px visible arc) with the approved yellow palette.
