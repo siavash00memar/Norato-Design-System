@@ -1136,6 +1136,7 @@
 - [x] Vertical ArrowDown from “همه” selects “فعال” and updates the associated panel. Restored playground to Line/Medium/Horizontal, enabled, “همه”.
 - [x] Updated component-contract indicator wording to match the yellow active indicator/surface in the runtime styles.
 - [x] Live AX matrix covered all 24 style × size × orientation × global-disabled combinations; each state retained four tabs, exactly one selected trigger, one linked panel, and the expected disabled count (one individually disabled or all four globally disabled). Restored Line/Medium/Horizontal, enabled, “همه”.
+- [x] In the default live layout, ArrowLeft follows RTL order and skips the disabled tab while updating the panel; screenshot confirms high-contrast focus plus yellow halo, yellow-tinted enabled hover and neutral disabled hover.
 - [ ] Exhaustive hover/focus state combinations and independent screen-reader review remain unverified. Prior narrow viewport results are listed in the 2026-11-02 record; fresh 320/390px captures were not taken in this follow-up.
 
 ## Breadcrumbs — implementation checkpoint (2026-11-02)
