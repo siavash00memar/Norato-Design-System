@@ -126,19 +126,30 @@
   font-family: var(--norato-font-body);
 }
 
-#app .norato-input-field__input::placeholder,
-#app .norato-textarea::placeholder {
-  text-align: end;
+#app .norato-input-field__input[dir="rtl"]::placeholder,
+#app .norato-textarea[dir="rtl"]::placeholder {
+  direction: rtl;
+  text-align: right;
 }
 
-#app .norato-input-field__input:placeholder-shown {
-  direction: rtl !important;
-  text-align: end;
+#app .norato-textarea[dir="ltr"]::placeholder {
+  direction: ltr;
+  text-align: left;
 }
 
-#app .norato-textarea:placeholder-shown {
+#app .norato-input-field__input[dir="rtl"]:placeholder-shown {
   direction: rtl !important;
-  text-align: end;
+  text-align: right !important;
+}
+
+#app .norato-textarea[dir="rtl"]:placeholder-shown {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+#app .norato-textarea[dir="ltr"]:placeholder-shown {
+  direction: ltr !important;
+  text-align: left !important;
 }
 
 #app .norato-field {

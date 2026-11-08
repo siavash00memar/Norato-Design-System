@@ -48,3 +48,10 @@
 
 - [x] Playground exposes min/max/step, keeps defaults `0/99/1`, and generates matching Vue props.
 - [x] Button stepping and native keyboard behavior preserve decimal precision and clamp at configured bounds for integer and decimal steps.
+
+## Persian Textarea direction follow-up — 2026-11-08
+
+- [x] At the live 1265px desktop render, the Textarea placeholder and typed Persian sample were left-aligned despite the adapter's `dir="rtl"` contract.
+- [x] Added explicit RTL/LTR text direction and alignment to the package Textarea and direction-aware placeholder rules to the app presentation stylesheet.
+- [x] Reloaded the local page: blank placeholder and typed Persian text both appear at the right edge; focus uses the single yellow stroke without a dark outer ring.
+- [ ] Independent screen-reader review and full visual matching of every design-reference state remain open; Input DoD stays open.

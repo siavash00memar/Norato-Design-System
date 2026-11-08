@@ -1019,6 +1019,7 @@
 - [x] Default preview restored after interactions; browser console had no errors. `pnpm check:tokens`, `pnpm check:catalog` (49 entries), `pnpm --dir apps/vue build` (includes Vue typecheck) and `git diff --check` passed. Production JS main chunk is 673.58KB and Vite reports its >500KB advisory.
 - [ ] Full size/state matrices, OTP length-five per-cell keyboard, stacked Number layout and independent screen-reader review remain open in `specs/013-design-system-parity/input-checklist.md`.
 - [x] Input implementation checkpoint `663af1f` pushed to `origin/master`; local and remote refs matched immediately after push.
+- [x] 2026-11-08 live desktop follow-up: found and corrected the RTL Textarea placeholder/value alignment; browser screenshot confirms Persian placeholder and entered text align right. LTR Textarea has an explicit left-alignment rule in code but still needs a browser check. Input DoD remains open for full state screenshot parity and independent screen-reader review.
 
 ## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
 

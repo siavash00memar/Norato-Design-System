@@ -1157,3 +1157,9 @@
 - **Observation:** the first CSS rule tightened every adjacent message, even when the sender changed, reducing the visual separation between conversational turns.
 - **Correction:** constrain tighter spacing to adjacent incoming/incoming or outgoing/outgoing message pairs.
 - **Validation:** the live Chat playground was reloaded and its incoming/outgoing sequence was reviewed; message types and sender states remain independently selectable. Additional viewport and full matrix checks remain open in `chat-checklist.md`.
+
+## ERR-145 — Input Textarea Persian text aligned to the left in RTL (2026-11-08)
+
+- **Observation:** At the local desktop Input playground, a Persian Textarea placeholder and typed value appeared at the left edge while its adapter declared `dir="rtl"`.
+- **Correction:** Set explicit RTL/LTR text direction and alignment on the package Textarea; set direction-aware placeholder alignment for RTL text inputs and both Textarea directions in the app.
+- **Validation:** After a full reload at the 1265px desktop viewport, the Persian placeholder and entered Persian sample appear at the right edge. Focus keeps the requested single yellow stroke. Screen-reader and remaining Input state visual checks remain open in `input-checklist.md`.
