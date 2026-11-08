@@ -1635,3 +1635,10 @@
 - [x] Accessibility tree exposes one named tree and nested rows/groups, with selected, expanded, and disabled states. Reka TreeItem supplies level/position metadata. Independent screen-reader announcement remains unverified.
 - [x] Focus screenshot exposed a second browser-default dark outline. Clearing the focused item root fixed the duplicate; the fresh screenshot shows one 2px yellow row ring with the 2px tokenized offset.
 - [ ] Exact 390px/320px document overflow, pointer-only Hover, reduced-motion browser emulation and independent screen-reader review remain open. Desktop screenshot and source tokens confirm 48px interactive row minimum and 20px/16px logical indentation; narrow row geometry still needs measurement.
+
+## Input — follow-up browser review (2026-11-09)
+
+- [x] Compared local and design-reference Input pages in the same 1920×900 browser window. Raster frame estimates are 580×288px locally and 632×300px in the reference; local frame width follows the content column.
+- [x] Local top specimen visibly uses the envelope beside its title, a Persian RTL placeholder, no sample email and no generic helper line. Token/source inspection confirms a 36px pill shell in a 48px interaction target, 1px neutral `#e8e8e8` default stroke and a single yellow stroke on focus.
+- [x] Focused the live name field; the screenshot showed the yellow capsule stroke without a second dark outline. Input page remains on the fresh browser route; no sample value or playground toggles were changed.
+- [ ] Exact 390/320 current browser comparison, all visual variant screenshots and independent screen-reader review remain open; Input DoD stays open.
