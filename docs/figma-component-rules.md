@@ -488,6 +488,13 @@
 - Use Norato semantic neutral/success/warning/error tones. Active is a raised neutral marker with Norato yellow detail; do not use blue as an accent.
 - Keep rail and text mirrored in LTR, event order caller-controlled, avatar crops circular/intrinsic, and all specimens inert. Use ordered-list and time semantics; do not introduce unnecessary focus targets.
 - **Remaining:** matched browser comparison, complete 26-variant matrix, RTL/LTR, narrow widths, accessibility tree and independent screen-reader review remain open in the Timeline DoD.
+
+# Image — 2026-11-08
+
+- Preserve source geometry with 1:1, 4:3, 16:9 or 3:4 aspect ratios; `cover` may crop and `contain` preserves the full source. Never stretch an image to fill an unrelated height.
+- Gallery supports Grid, Masonry and Featured (main + thumbnails). Selected thumbnail uses Norato yellow; keyboard focus remains a separate visible ring.
+- Keep all thumbnail targets at least 48×48px. Lightbox media is bounded by the viewport and keeps its intrinsic ratio.
+- **Remaining:** matched desktop/mobile imagery and interaction comparison is not recorded yet; see the Image DoD checklist.
 ## Charts — 2026-11-08
 
 - کارت نمودار ۵۲۰ پیکسل است؛ نمودارها SVG با نسبت ثابت هستند و در عرض کم در قاب خود اسکرول افقی می‌گیرند تا شکل داده‌ها فشرده یا کشیده نشود.

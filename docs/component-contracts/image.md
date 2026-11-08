@@ -1,70 +1,60 @@
 # Image — قرارداد کامپوننت نوراتو
 
 **حوزه:** Media & Chat  
-**وضعیت نوراتو:** Proposed  
-
-## Preview
-
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+**وضعیت نوراتو:** Implemented؛ مرور کامل بصری و دسترس‌پذیری مستقل همچنان باز است.
 
 ## Overview
 
-قرارداد طراحی Norato: قاب تصویر با نسبت‌های مختلف، تامبنیل، گالری و نمایشگر تمام‌صفحه.
+خانوادهٔ تصویر شامل تصویر با نسبت ثابت، بندانگشتی انتخابی، گالری سه‌چیدمان و نمایشگر تمام‌صفحه است. منبع تصویر هرگز با تغییر نسبت قاب کشیده نمی‌شود؛ `cover` برش می‌دهد و `contain` حاشیهٔ خالی را حفظ می‌کند.
 
 ## Anatomy
 
-- **Frame** — قاب با نسبت ثابت
-- **Image** — تصویر
-- **Caption** — زیرنویس روی سایه
-- **More** — شمارنده‌ی تصاویر بیشتر
+- **Media frame:** قاب با نسبت انتخابی و محتوای تصویر با `object-fit`.
+- **Caption:** شرح فارسی روی گرادیان تیرهٔ پایین قاب.
+- **Thumbnail:** تصویر کوچک قابل انتخاب با هدف تعاملی حداقل ۴۸ پیکسل.
+- **Gallery:** شبکه، Masonry یا تصویر اصلی همراه بندانگشتی‌ها.
+- **Lightbox:** تصویر محدود به فضای دید، کنترل بستن و پیمایش.
 
 ## Variants
 
-- **Image (16 variant):** Ratio: 1:1، 4:3، 16:9، 3:4؛ State: Default، Hover، Loading، Error
-- **Thumbnail (9 variant):** Size: Small، Medium، Large؛ State: Default، Selected، More
-- **Gallery (3 variant):** Layout: Grid، Masonry، Main + Thumbnails
-- **Lightbox (1 variant):** محور variant مشخص نشده
+- **Image (16 ترکیب):** Ratio: Square، Landscape، Wide، Portrait؛ State: Default، Hover، Loading، Error.
+- **Thumbnail (9 ترکیب):** Size: Small، Medium، Large؛ State: Default، Selected، More.
+- **Gallery (3):** Layout: Grid، Masonry، Featured (Main + Thumbnails).
+- **Lightbox (1):** نمایش تمام‌صفحه با کنترل قبلی/بعدی وقتی بیش از یک تصویر هست.
 
 ## Sizes
 
-- **Thumbnail:** Small، Medium، Large
+- **Image ratio:** Square برابر ۱:۱، Landscape برابر ۴:۳، Wide برابر ۱۶:۹ و Portrait برابر ۳:۴.
+- **Thumbnail:** Small برابر ۴۸، Medium برابر ۶۴ و Large برابر ۸۰ پیکسل؛ اندازهٔ دکمه حداقل ۴۸×۴۸ می‌ماند.
+- **Lightbox media:** حداکثر ۹۰vw در ۷۸dvh دسکتاپ و ۷۶vw در ۷۲dvh موبایل؛ نسبت ذاتی تصویر حفظ می‌شود.
 
 ## States
 
-- **Image:** Default، Hover، Loading، Error
-- **Thumbnail:** Default، Selected، More
+- **Default:** تصویر با نسبت مشخص و بدون تغییر شکل نمایش داده می‌شود.
+- **Hover:** بزرگ‌نمایی محدود و گذرا؛ با کاهش حرکت غیرفعال می‌شود.
+- **Loading:** قاب ثابت و وضعیت قابل اعلام؛ تغییر ابعاد ندارد.
+- **Error:** جایگزین نمادین و متن خطا داخل همان نسبت قاب.
+- **Selected:** دورخط زرد Norato روی بندانگشتی انتخاب‌شده.
+- **Disabled:** دکمهٔ بندانگشتی غیرقابل فعال‌سازی و کم‌رنگ.
 
 ## Parts
 
-- **Image — 16 variant:** قاب تصویر. ابعاد/حالت‌ها: Ratio: 1:1، 4:3، 16:9، 3:4؛ State: Default، Hover، Loading، Error
-- **Thumbnail — 9 variant:** تصویر کوچیک گالری. ابعاد/حالت‌ها: Size: Small، Medium، Large؛ State: Default، Selected، More
-- **Gallery — 3 variant:** چیدمان‌های گالری. ابعاد/حالت‌ها: Layout: Grid، Masonry، Main + Thumbnails
-- **Lightbox — 1 variant:** نمایشگر تمام‌صفحه.
+- **NoratoImage:** `src`, `alt`, `caption`, `ratio`, `state`, `objectFit`, `dir`.
+- **NoratoImageThumbnail:** `src`, `alt`, `label`, `size`, `selected`, `moreCount`, `disabled` و رویداد `select`.
+- **NoratoImageGallery:** `id`, `label`, `items`, `layout`, `columns`, `dir` و مقدار کنترل‌شدهٔ index.
+- **NoratoLightbox:** `id`, `items`, `label`, `dir`، مقدار `open` و index کنترل‌شده.
 
 ## Usage
 
-### راهنمای کاربرد Norato
-
-- برای همه‌ی تصاویر یه نسبت ثابت انتخاب کن.
-- حالت خطا رو طراحی کن.
-
-### محدودیت‌های کاربرد
-
-- تصویر رو کشیده یا فشرده نکن.
-- متن مهم رو روی تصویر بدون سایه ننویس.
-
-### جهت RTL
-
-زیرنویس پایین تصویر با متن سفید روی سایه.
+برای عکس معنادار `alt` توصیفی بده؛ برای تصویر صرفاً تزئینی `alt=""` استفاده کن. نسبت متناسب با محتوای تصاویر را انتخاب کن. `cover` برای عکس‌های صحنه‌ای برش می‌دهد؛ از `contain` برای تصویر محصولی که باید کامل دیده شود استفاده کن. برای انتخاب چند تصویر، Grid یا Featured را به‌کار ببر و Gallery را با index کنترل‌شده نگه دار.
 
 ## Accessibility
 
-هر تصویر معنادار متن جایگزین (alt) داره.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+- هر تصویر معنادار متن جایگزین دارد؛ تصویر تزئینی alt خالی می‌گیرد.
+- دکمه‌های گالری و بندانگشتی نام فارسی قابل‌فهم، وضعیت انتخاب و هدف حداقل ۴۸ پیکسلی دارند.
+- Lightbox از Dialog برای فوکوس modal، Escape، بازگرداندن فوکوس و عنوان دسترس‌پذیر استفاده می‌کند؛ قبلی/بعدی با دکمه و کلیدهای جهت‌دار در دسترس‌اند.
+- پیام بارگذاری و خطا برای فناوری کمکی نام‌گذاری شده‌اند. حرکت تصویری با `prefers-reduced-motion` خاموش می‌شود.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از توکن‌های معنایی Norato استفاده کن: `--norato-color-surface-subtle`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-scrim`، توکن‌های `--norato-radius-*`، `--norato-space-*`، `--norato-control-target-min` و `--norato-layer-modal`. قاب رسانه با `aspect-ratio` هندسی تعریف می‌شود و ارتفاع ثابتی ندارد.

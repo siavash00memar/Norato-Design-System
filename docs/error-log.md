@@ -1139,3 +1139,9 @@
 - **اصلاح:** trigger باز با توکن زرد کم‌رنگ Norato مشخص شد و panel سطح سفید خود را صریح می‌گیرد.
 - **اعتبارسنجی:** در مرورگر trigger باز `rgb(255, 248, 224)` و panel `rgb(255, 255, 255)` محاسبه شد؛ عنوان هر سه trigger `visibility: visible` داشت.
 - **قاعدهٔ پیشگیری:** برای حالت باز، trigger و محتوای گسترش‌یافته باید از نظر رنگ سطح قابل‌تفکیک باشند و تغییر ردیف نباید عنوان‌های خواهر را حذف کند.
+
+## ERR-142 — Image family had only an inert placeholder (2026-11-08)
+
+- **Observation:** The Image catalog route exposed a generic static rectangle and no executable Vue API despite documenting Image, Thumbnail, Gallery and Lightbox.
+- **Correction:** Added four adapters and wired the detail page, playground, catalog exports and usage snippet. Media geometry now follows intrinsic aspect ratio with `object-fit` rather than fixed-height stretching.
+- **Validation:** Browser review at 385×630 confirmed Grid/Masonry/Featured without visible horizontal overflow; Default/Loading/Error states keep their frame, and the Lightbox opens with focus, wraps on RTL arrow navigation, then Escape closes and returns focus. An oversized error icon found during review was constrained to the semantic icon token. Full matched geometry and remaining DoD are tracked in `image-checklist.md`.

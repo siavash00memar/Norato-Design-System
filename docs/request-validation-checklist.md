@@ -1547,3 +1547,11 @@
 - [x] Switched the live playground from the first open row to the second. The first title remained visible in the accessibility tree and browser render.
 - [x] Open trigger computed to `rgb(255, 248, 224)` while the associated content region computed to white; RTL heading and chevron stayed in place.
 - [ ] Verify other row styles, multiple-open mode, and mobile viewport after this visual correction; final component DoD remains open.
+
+## Image — implementation checkpoint (2026-11-08)
+
+- [x] Four exported Vue adapters added: `NoratoImage`, `NoratoImageThumbnail`, `NoratoImageGallery`, and `NoratoLightbox`; catalog route resolves to a Button-style detail page with preview, executable playground, usage snippet and nine contract sections.
+- [x] Intrinsic image aspect ratios and `object-fit` prevent geometric stretching; source errors preserve frame geometry. Yellow selection and keyboard focus use distinct visual treatments; thumbnail target is at least 48px.
+- [ ] Fresh browser render, matched desktop/mobile comparison, all 29 contract combinations, 390/320 viewport geometry, all gallery/lightbox keyboard and focus transitions, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
+- [x] Fresh Vite browser render confirmed Button-style preview/playground/snippet plus all nine rendered contract sections. Same mobile viewport was used while viewing the design reference and Norato (385×630). Grid/Masonry/Featured render; at 385px Grid is two columns without visible overflow. Default, Loading and Error frames retain their ratio and accessible name. Lightbox opens focused on close, ArrowRight wraps 1→4 in RTL, Escape closes and returns focus. Full matched geometry/cross-product checks remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build pass. Build emits the existing warning that its JavaScript chunk exceeds 500KB; `git diff --check` passes with line-ending normalization warnings only.
