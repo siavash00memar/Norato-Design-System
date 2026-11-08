@@ -1560,9 +1560,10 @@
 
 - [x] Button-style detail route exposes inert visual preview, executable Vue playground, copyable snippet, and all nine contract sections.
 - [x] Four adapter exports, controlled index, RTL previous/next semantics, indicator, and native scroll-snap are present.
-- [x] Browser review at 385px confirmed adjacent-slide peek, first slide/dot at right, Norato yellow active indicator, intrinsic art ratio, next-arrow navigation, and ArrowLeft progression.
-- [x] Fixed page vertical shift and active-indicator race; removed external playground image dependencies.
-- [ ] Matched desktop comparison, 320px overflow, 390px layout, all 22 variants, touch/mouse, LTR, controlled-model and screen-reader review remain open in `specs/013-design-system-parity/carousel-checklist.md`.
+- [x] Browser review at 385px confirmed adjacent-slide peek, first slide/dot at right, Norato yellow active indicator, intrinsic art ratio, direct slide-2 selection, and Space-key next navigation to slide 3.
+- [x] Added a visible 22-combination matrix for 3 Carousel sizes, 3 Slot sizes, 8 Indicator variants and 8 Dot variants; accessibility tree confirms all 19 Slot/Indicator/Dot samples render.
+- [x] Replaced manual RTL scroll-delta arithmetic with inline-centered slide scrolling (`block: nearest`) after review identified RTL index/scroll mismatch.
+- [ ] Matched desktop comparison, 320px overflow, 390px layout, touch/mouse, no-wrap boundaries, first/middle/last direct selection, LTR, external controlled-model updates and screen-reader review remain open in `specs/013-design-system-parity/carousel-checklist.md`.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build warns about the >500KB JavaScript chunk.
 
 ## Chat — implementation checkpoint (2026-11-08)

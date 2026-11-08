@@ -9,6 +9,9 @@
   --norato-chat-wave-bar-inline-size: 2px;
   --norato-chat-wave-gap: 2px;
   --norato-chat-composer-max-block-size: 120px;
+  --norato-carousel-slide-small-max-inline-size: 280px;
+  --norato-carousel-slide-medium-max-inline-size: 360px;
+  --norato-carousel-slide-large-max-inline-size: 440px;
   --norato-chart-preview-card-inline-size: 360px;
   --norato-chart-stat-min-block-size: 88px;
   --norato-chart-stat-spark-inline-size: 72px;

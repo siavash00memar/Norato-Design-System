@@ -1146,11 +1146,11 @@
 - **Correction:** Added four adapters and wired the detail page, playground, catalog exports and usage snippet. Media geometry now follows intrinsic aspect ratio with `object-fit` rather than fixed-height stretching.
 - **Validation:** Browser review at 385×630 confirmed Grid/Masonry/Featured without visible horizontal overflow; Default/Loading/Error states keep their frame, and the Lightbox opens with focus, wraps on RTL arrow navigation, then Escape closes and returns focus. An oversized error icon found during review was constrained to the semantic icon token. Full matched geometry and remaining DoD are tracked in `image-checklist.md`.
 
-## ERR-143 — Carousel navigation moved the page and desynchronized its indicator (2026-11-08)
+## ERR-143 — RTL Carousel index selection and scroll could diverge (2026-11-08)
 
-- **Observation:** `scrollIntoView()` moved the document vertically while the carousel was below the fold. Immediate scroll sampling could restore the prior active dot, and remote demo images were not reliable in a disconnected browser.
-- **Correction:** compute the target slide's physical center delta and scroll only the track; debounce active-index synchronization. Playground art is now inline SVG, eliminating external asset dependency.
-- **Validation:** local 385px browser review showed the page position held while next-arrow then ArrowLeft actions advanced slides and the active dot followed. Both first-slide position and yellow Norato accent were visible. Further 320/390, desktop and full-matrix checks remain in `carousel-checklist.md`.
+- **Observation:** Manual physical scroll-delta arithmetic was not reliable in RTL; selecting a slide could leave the indicator and centered card out of sync. Remote demo images were also unreliable in a disconnected browser.
+- **Correction:** center the selected slide with `scrollIntoView({ block: 'nearest', inline: 'center' })`, retain debounced active-index synchronization, and use inline SVG playground artwork with no external asset dependency.
+- **Validation:** local 385px review selected slide 2 directly and showed its card centered with the adjacent slide peeking; Space on the next control advanced to slide 3 and updated the controlled-index selector. The 22-option matrix renders. Matched desktop/320/390, touch/mouse, LTR, boundary and independent screen-reader checks remain in `carousel-checklist.md`.
 
 ## ERR-144 — Chat grouping collapsed spacing between different senders (2026-11-08)
 

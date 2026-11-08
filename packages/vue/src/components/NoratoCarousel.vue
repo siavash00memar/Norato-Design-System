@@ -9,11 +9,13 @@ const track = ref<HTMLElement>()
 const total = computed(() => props.items.length)
 let scrollTimer: ReturnType<typeof setTimeout> | undefined
 const bounded = (value: number) => Math.max(0, Math.min(total.value - 1, value))
-function go(index: number) { const next = bounded(index); const el = track.value; const target = el?.children.item(next) as HTMLElement | null; if (!el || !target || next === active.value) return; const viewport = el.getBoundingClientRect(); const slide = target.getBoundingClientRect(); const delta = (slide.left + slide.right - viewport.left - viewport.right) / 2; active.value = next; el.scrollBy({ left: delta, behavior: 'smooth' }) }
+function scrollTo(index: number) { const target = track.value?.children.item(index) as HTMLElement | null; if (!target) return; target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }) }
+function go(index: number) { active.value = bounded(index) }
 function onScroll() { clearTimeout(scrollTimer); scrollTimer = setTimeout(() => { const el = track.value; if (!el) return; const slides = [...el.children] as HTMLElement[]; if (!slides.length) return; const center = el.getBoundingClientRect().left + el.clientWidth / 2; let best = 0; let distance = Infinity; slides.forEach((slide, i) => { const r = slide.getBoundingClientRect(); const d = Math.abs((r.left + r.right) / 2 - center); if (d < distance) { best = i; distance = d } }); active.value = best }, 140) }
 onBeforeUnmount(() => clearTimeout(scrollTimer))
 function onKeydown(event: KeyboardEvent) { if (event.key === 'ArrowLeft') { event.preventDefault(); go(active.value + (props.dir === 'rtl' ? 1 : -1)) } else if (event.key === 'ArrowRight') { event.preventDefault(); go(active.value + (props.dir === 'rtl' ? -1 : 1)) } }
 watch(total, () => { active.value = bounded(active.value) })
+watch(active, value => { const next = bounded(value); if (next !== value) { active.value = next; return } scrollTo(next) })
 </script>
 <template>
   <section :id="id" class="norato-carousel" :data-size="size" :dir="dir" role="region" aria-roledescription="کاروسل" :aria-label="label">
