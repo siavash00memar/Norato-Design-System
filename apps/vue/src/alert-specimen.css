@@ -1,0 +1,2 @@
+.sample-alert-preview .sample-checkbox-state{position:absolute;inset-block-start:var(--norato-space-4);inset-inline-end:var(--norato-space-4);display:flex;align-items:center;gap:var(--norato-space-2);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size)}
+.sample-alert-preview .sample-checkbox-state i{inline-size:var(--norato-space-2);block-size:var(--norato-space-2);border-radius:var(--norato-radius-pill);background:var(--norato-color-status-success)}

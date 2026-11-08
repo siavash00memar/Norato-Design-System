@@ -417,3 +417,9 @@
 - Use the five Lemon row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
 - Keep the inert sample in the Button-sized dotted 288px frame, with a compact centered glass panel and Default marker. Runtime rows retain the 48px hit target. Reka TreeRoot/TreeItem owns tree roles, roving focus, direction-aware navigation and typeahead.
 - **Remaining:** 390px/320px viewport and independent screen-reader review are not verified; Tree View DoD remains open.
+
+## Alert — 2026-11-08
+- Use Lemon's 20 combinations: five status tones, Soft/Glass surface and Inline/Expanded composition. Preserve the status icon right and optional close action left in RTL.
+- Keep preview inert and compact in the Button dotted frame. The separate playground controls tone, surface, layout and dismissibility.
+- Use semantic Norato status containers, Estedad title, Vazirmatn body, intrinsic SVG and semantic roles; use yellow for interactive focus. Never reuse Lemon's blue as Norato's brand accent.
+- **Remaining:** browser parity, narrow 390/320 widths, manual keyboard/error announcements and independent screen-reader review remain open; Alert DoD remains open.

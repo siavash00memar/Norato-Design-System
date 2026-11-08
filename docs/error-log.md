@@ -905,3 +905,15 @@
 - **Observed:** `aria-controls` always referenced a listbox id even when loading or empty states replaced the listbox.
 - **Correction:** Set `aria-controls` and `aria-activedescendant` only while results are rendered.
 - **Verified:** Loading/empty combobox has no dangling references; the live status state remains exposed.
+
+## ERR-105 — Alert inherited generic specimen styling (2026-11-08)
+
+- **Observed:** The generic `.sample-alert` preview used one hard-coded blue edge and shared layout rules, so its 20 documented combinations could not be represented consistently.
+- **Correction:** Removed `.sample-alert` from the generic shared selectors, replaced the page specimen with the semantic `NoratoAlert` adapter, and scoped all Alert presentation to its component stylesheet.
+- **Status:** Source correction applied; browser parity and responsive verification remain pending.
+
+## ERR-106 — Alert was hidden when modelValue was omitted (2026-11-08)
+
+- **Observed:** Vue boolean prop casting supplied `false` when `modelValue` was omitted, so the uncontrolled specimen rendered an empty branch.
+- **Correction:** Set the Boolean prop default explicitly to `undefined`; the adapter now treats omitted value as locally visible and supports uncontrolled dismissal.
+- **Verified:** Live default specimen renders without `modelValue`; controlled playground closes by Space and updates `v-model`; initial focus uses a 2px yellow outline and the close target measures 48×48px.

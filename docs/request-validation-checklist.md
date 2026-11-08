@@ -1298,3 +1298,13 @@
 - [ ] viewportهای 390px و 320px، فوکوس‌گذاری مستقل صفحه‌خوان و بررسی دستی فعال‌سازی disabled با pointer اجرا نشده‌اند؛ Tree View DoD باز می‌ماند.
 - [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر و قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از آخرین اصلاحات پاس شدند؛ build هشدار اندازهٔ bundle برابر 916.37KB بالاتر از 500KB داد.
 - [x] بازبینی نهایی CSS و مستندات انجام شد؛ GitHub checkpoint پس از ثبت این گزارش انجام می‌شود.
+
+## Alert — 2026-11-08
+
+- [x] Lemon و Norato در viewport یکسان 499×932 بررسی شدند: قاب Lemon 436×300 و alert داخلی 410×74px؛ قاب Norato 452×288 و alert 420×69px. اختلاف قاب از عرض ستون‌های متفاوت صفحه ناشی است؛ alert Norato 10px عریض‌تر و 5px کوتاه‌تر است.
+- [x] پیش‌نمایش Alert داخل قاب نقطه‌دار Button، inert و بدون target تعاملی است؛ playground از آن جداست. صفحه ۹ بخش هم‌سطح Button دارد.
+- [x] هر ۲۰ ترکیب tone/style/layout از رابط واقعی انتخاب و رندر شد؛ همه اندازهٔ غیرصفر داشتند، جهت RTL بود، Danger نقش alert و چهار لحن دیگر status داشتند. رنگ ظرف Soft برای پنج لحن با tokenهای Norato هم‌خوان بود؛ اندازهٔ SVG برابر 24×24px بود.
+- [x] Inline اکشن Expanded را مخفی می‌کند؛ action مصرف‌کننده در Expanded نمایش دارد. بستن کنترل‌شده با Space مقدار `v-model` را بست؛ فوکوس کیبورد روی Close حلقهٔ ۲px زرد با offset برابر ۴px و هدف ۴۸×۴۸px نشان داد.
+- [x] در viewport 499px عرض سند 484px بود و overflow افقی نداشت.
+- [ ] viewportهای 390px و 320px، مرور تصویری مستقل برای هر ۲۰ ترکیب، بررسی uncontrolled dismiss با دکمه، و screen reader مستقل باقی‌اند؛ Alert DoD باز است.
+- [x] `pnpm check:tokens`، `pnpm check:catalog` (49 مسیر/قرارداد)، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` پس از آخرین تغییرها پاس شدند؛ build هشدار حجم JS برابر 925.88KB بالاتر از 500KB داد. GitHub checkpoint پس از ثبت این گزارش انجام می‌شود.

@@ -54,3 +54,5 @@ export { default as NoratoCommandPalette } from './components/NoratoCommandPalet
 export type { NoratoCommandGroup, NoratoCommandItem } from './components/NoratoCommandPalette.vue'
 export { default as NoratoTreeView } from './components/NoratoTreeView.vue'
 export type { NoratoTreeNode } from './components/NoratoTreeView.vue'
+export { default as NoratoAlert } from './components/NoratoAlert.vue'
+export type { NoratoAlertLayout, NoratoAlertTone, NoratoAlertVariant } from './components/NoratoAlert.vue'
