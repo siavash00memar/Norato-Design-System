@@ -12,15 +12,28 @@ const tone = ref<NoratoToastTone>('success')
 const surface = ref<NoratoToastSurface>('glass')
 const layout = ref<NoratoToastLayout>('rich')
 const action = ref(true)
+const actionCloses = ref(true)
 const dismissible = ref(true)
 const duration = ref(6000)
 const feedback = ref('')
-const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoToast } from '@norato/vue'\nconst open = ref(false)\n<\/script>\n<template>\n  <NoratoToast id="save-toast" v-model="open" title="تغییرات ذخیره شد" description="تغییرات پروژه با موفقیت ذخیره شدند." tone="${tone.value}" surface="${surface.value}" layout="${layout.value}" ${action.value ? 'action-label="بازگردانی"' : ''} dismissible :duration="${duration.value}" />\n</template>`)
+const actionTriggeredClosing = ref(false)
+const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoToast } from '@norato/vue'\nconst open = ref(false)\n<\/script>\n<template>\n  <NoratoToast id="save-toast" v-model="open" title="تغییرات ذخیره شد" description="تغییرات پروژه با موفقیت ذخیره شدند." tone="${tone.value}" surface="${surface.value}" layout="${layout.value}" ${action.value ? 'action-label="بازگردانی"' : ''} :action-closes="${actionCloses.value}" dismissible :duration="${duration.value}" />\n</template>`)
+function onAction() {
+  feedback.value = 'اقدام بازگردانی اجرا شد.'
+  actionTriggeredClosing.value = actionCloses.value
+}
+function onClose() {
+  if (actionTriggeredClosing.value) {
+    actionTriggeredClosing.value = false
+    return
+  }
+  feedback.value = 'پیام بسته شد.'
+}
 </script>
 
 <template>
   <div class="button-playground toast-playground" dir="rtl">
-    <header><strong>آزمایش Toast اجرایی</strong><span>۲۰ ترکیب ظاهری، زمان نمایش، اقدام، بستن و رفتار کنترل‌شده را بررسی کن.</span></header>
+    <header><strong>آزمایش Toast اجرایی</strong><span>۲۰ ترکیب ظاهری، زمان نمایش، بازخورد اقدام و نحوهٔ بستن Toast را بررسی کن.</span></header>
     <div class="button-playground-preview toast-playground__preview">
       <NoratoToast
         id="toast-playground-message"
@@ -31,11 +44,12 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
         :surface="surface"
         :layout="layout"
         :action-label="action ? 'بازگردانی' : ''"
+        :action-closes="actionCloses"
         action-alt-text="عمل انجام‌شده را بازگردان"
         :dismissible="dismissible"
         :duration="duration"
-        @action="feedback='اقدام بازگردانی اجرا شد.'"
-        @close="feedback='پیام بسته شد.'"
+        @action="onAction"
+        @close="onClose"
       />
       <span v-if="!open" class="toast-playground__empty">برای دیدن Toast، دکمهٔ نمایش را بزن.</span>
     </div>
@@ -47,6 +61,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <PlaygroundSelect id="toast-layout" v-model="layout" label="چیدمان" :options="[{value:'simple',label:'Simple'},{value:'rich',label:'Rich'}]" />
       <PlaygroundSelect id="toast-duration" v-model="duration" label="زمان نمایش" :options="[{value:6000,label:'۶ ثانیه'},{value:9000,label:'۹ ثانیه'},{value:0,label:'ماندگار'}]" />
       <label class="button-playground-switch"><input v-model="action" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>اقدام</span></label>
+      <label v-if="action" class="button-playground-switch"><input v-model="actionCloses" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بستن با اقدام</span></label>
       <label class="button-playground-switch"><input v-model="dismissible" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>قابل‌بستن</span></label>
       <button class="norato-button" type="button" :disabled="open" @click="open=true; feedback=''">نمایش Toast</button>
     </div>

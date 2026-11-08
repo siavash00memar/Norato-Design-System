@@ -1450,7 +1450,9 @@
 - [x] design reference and Norato were rendered in the same 1265×720 browser viewport. Both show the centered rich success Toast in the shared dotted frame with icon on the right and close on the left; Norato keeps its semantic green success, glass surface and yellow accent.
 - [x] Used the live playground to open and close all 20 combinations (5 tones × 2 surfaces × 2 layouts); the generated Vue props followed each selected combination. The 20 states were exercised, but not all received individual screenshot geometry review.
 - [x] A default 6-second success Toast closed after a 7-second wait. Loading stayed visible after 7 seconds and closed with its manual close control.
-- [x] Action and close controls both activated with Space through the browser accessibility target. Focus ring dimensions, natural Tab-order reachability, custom action callback mode, and pause/resume events remain unverified.
+- [x] Action and close controls both activated with Space through the browser accessibility target; the callback was also verified through the live playground with both action-dismissal settings. Focus ring dimensions, natural Tab-order reachability, and pause/resume events remain unverified.
+- [x] Playground now exposes the action-closes choice and generates the corresponding `action-closes` prop. In browser, callback feedback remains visible when the action closes the toast; with `actionCloses=false`, the toast remains open and callback feedback is visible. Manual close keeps its separate close feedback. Defaults were restored after the pass.
+- [ ] Exact 390/320 viewport geometry, Tab-order and measured focus ring, uncontrolled mode, pause/resume, per-variant screenshots and independent screen-reader review remain open. The earlier 484px width is not used as a substitute for mobile breakpoints.
 - [x] Narrow local 484px screenshot showed no horizontal page overflow; exact 390px/320px mobile viewports are not available in this browser session and remain open.
 - [ ] Independent screenreader review and the remaining interaction/responsive checks above remain open; do not treat the browser accessibility tree as a screenreader substitute.
 
