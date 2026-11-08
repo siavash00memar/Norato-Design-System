@@ -1032,6 +1032,7 @@
 - [ ] Full size/state matrices, OTP length-five per-cell keyboard, stacked Number layout and independent screen-reader review remain open in `specs/013-design-system-parity/input-checklist.md`.
 - [x] Input implementation checkpoint `663af1f` pushed to `origin/master`; local and remote refs matched immediately after push.
 - [x] 2026-11-08 live desktop follow-up: found and corrected the RTL Textarea placeholder/value alignment; browser screenshot confirms Persian placeholder and entered text align right. LTR Textarea has an explicit left-alignment rule in code but still needs a browser check. Input DoD remains open for full state screenshot parity and independent screen-reader review.
+- [x] 2026-11-09 matched 1907×907 browser comparison: preview frame, dotted glass treatment, Default marker and capsule field are present in both pages. Norato retains the user-approved Persian placeholder and title-adjacent envelope, with sample address/helper omitted. The Norato frame measures about 580×288px vs 632×300px in the reference; content-column widths differ. Norato’s inert States section uses 41 family-specific field examples while the reference uses ten descriptive state cards. No stretch or desktop overflow was visible; mobile recapture, full visual-state parity and independent screen-reader review remain open.
 
 ## گزارش پیگیری — ممیزی مرورگری Switch (2026-11-01)
 
