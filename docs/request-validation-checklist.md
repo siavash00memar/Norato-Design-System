@@ -71,6 +71,8 @@
 - [x] At 390×844, the Input page is RTL and document width is 375px, so no horizontal overflow occurs.
 - [x] All eight Input adapters were inspected in the live playground: labels compute to Estedad 700; each single-line capsule uses a 48px target with a centered 36px visual face. OTP keeps its 48px cell target and 36px visual face; Textarea remains multiline.
 - [x] Persian placeholders present on Text, Phone and Search compute to RTL, Vazirmatn Light 12px and `#a1a1a1`. Empty Password/OTP/numeric adapters do not render placeholder text. The inert top Email specimen has no helper/message beneath it.
+- [x] Removed generic helper copy from the live Text Input playground and backward-compatible `NoratoField` lab; error/loading/success messages remain state-driven. Optional helper-text APIs remain available to consumers.
+- [x] Desktop browser recheck at 1280×720: six single-line adapter controls measure 48px targets with 36px pseudo-capsules; all field labels compute to Estedad 700. Text, Phone and Search placeholders compute to RTL, Vazirmatn 12px and `rgb(161, 161, 161)`. Textarea remains 108px/multiline. Input page document width is 1265px within the 1280px viewport.
 - [ ] Lemon screenshot comparison for every variant/state and an independent screen-reader review remain open; this style recheck does not close Input DoD.
 
 ## Combobox alignment with cross-component Input styling (2026-11-08)
@@ -1456,3 +1458,14 @@
 - [x] Playground restored to Glass/Medium/3 with Daily selected and disabled toggles off.
 - [ ] Exact 390×844 viewport verification remains open: the browser viewport override API did not change the active tab from 1280×720. The full 64 item-state cross-product and an independent screen-reader session also remain open; do not close component DoD.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` completed successfully. The generated JS bundle is 1,024.79KB; this build emitted no separate chunk-size warning.
+## Empty State — implementation review (2026-11-08)
+
+- [x] Same-viewport 1280×720 Lemon/Norato preview captured and compared. Lemon frame is 636×300px; Norato's shared Button frame is 584×288px. Both use the dotted preview and Default marker; Norato keeps its yellow/dark primary action and yellow-outline secondary action. The frame difference follows the page content columns.
+- [x] All 12 layout × size × container combinations rendered in the live Vue playground. Each root remained RTL and within the page; both action targets measured 48px high.
+- [x] Exercised all 24 visual type × size × tone combinations in four short browser batches. Icon geometry measured 20/24/32px inside 40/48/64px circles; illustration geometry measured 40×35/48×42/64×56px inside the same boxes. No visual overflow occurred across all tones.
+- [x] Primary/secondary action slots render named NoratoButton controls; click reports the selected host action, Tab reaches the secondary action with visible focus, and both action targets measure 48px.
+- [x] Horizontal RTL/LTR geometry mirrors: RTL visual at x=772px and content at x=541px; LTR visual at x=541px and content at x=605px in the 584px frame. No internal horizontal overflow.
+- [ ] Verify custom visual content and consumer-provided raw anchor/button slot sizing; 390px/320px viewport/card behavior also remains open.
+- [x] Browser AX shows one named section associated with heading/description, hides decorative visual, and retains action names. Independent screen-reader review remains required.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after correcting the invalid slot selector.
+- [ ] Independent screen-reader review remains required; the browser AX tree is not counted as a screen-reader session.

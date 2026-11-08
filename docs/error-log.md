@@ -1057,3 +1057,20 @@
 - **Observed:** `families.md` still described a blue outline and yellow halo for the Combobox field, although the cross-component Input rule superseded that treatment. The current component contract and checklist specify a single yellow capsule Stroke.
 - **Correction:** Updated only the stale family-ledger evidence to distinguish the field's yellow 1px Stroke from focus indication on the independent Clear action. No CSS change was needed.
 - **Verified:** Current `.norato-combobox__field:has(.norato-combobox__input:focus-visible)::before` changes only the field Stroke to the Norato-yellow token; the field and input have no focus outline or box-shadow. The historical blue Clear focus measurement remains separately recorded. The exhaustive visual gallery and independent screen-reader DoD remain open.
+# ERR-129 — Empty State specimen was static and used an unapproved blue glyph (2026-11-08)
+
+- **Observed:** Catalog marked Empty State as Adapted without an adapter or usage example. Its specimen was hard-coded markup with a blue glyph and a single generic button; there was no live playground.
+- **Correction:** Added Vue `NoratoEmptyState` and `NoratoEmptyStateVisual`, tokenized fixed visual geometry, host-owned action/visual slots, and a responsive RTL/LTR playground. The legacy `.sample-empty` selectors were removed in place; the preview now uses the shared Button frame and marker.
+- **Verification:** Matched 1280×720 preview, all 12 layout combinations, all 24 visual combinations, action interaction, browser AX and horizontal RTL/LTR geometry are recorded in `docs/request-validation-checklist.md`. Exact mobile widths, two consumer slots and independent screen-reader review remain open.
+
+## ERR-130 — Empty State action slot selector was invalid in the production CSS parser (2026-11-08)
+
+- **Observed:** The build's CSS minifier rejected Vue's `:slotted()` pseudo-class in a standalone global stylesheet, so the intended 48px minimum action height was not portable to consumer-provided slot elements.
+- **Correction:** Replaced it with a direct-child button/link selector that matches the component's rendered slot structure.
+- **Verified:** Live sample action buttons measured 48px; the post-correction production build and `git diff --check` pass. Consumer-provided raw anchor/button slot sizing is not independently exercised yet.
+
+## ERR-131 — Default Input playground showed unrequested helper copy (2026-11-08)
+
+- **Observed:** The top email specimen was already clean, but the live Text Input playground and the backward-compatible `NoratoField` lab still rendered generic explanatory helper text below the field.
+- **Correction:** Removed the generic helper from those default demos and kept error/loading/success messages state-driven. The public optional `helperText` API remains available to product teams.
+- **Verification:** Browser evidence and engineering checks are recorded in the request-validation checklist. Input visual capsules remain 36px inside a 48px target; titles remain Estedad Bold and Persian placeholders remain RTL.

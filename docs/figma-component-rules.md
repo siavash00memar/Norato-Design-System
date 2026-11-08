@@ -69,6 +69,7 @@
 - Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
 - Simultaneous status priority: Error suppresses Success; Loading suppresses Success until processing completes. Keep existing Error visible during Loading, expose `aria-busy`, and never reference a status message ID that is not rendered.
 - Latest component-page rule (2026-11-02): every Input title/label wherever it appears across component pages uses Estedad Bold; placeholders are RTL, Vazirmatn Light 12px `#a1a1a1`. Remove the old helper line under the top email sample. All single-line Input visual capsules are 36px while interactive hit boxes stay 48px minimum; OTP visual capsules are 36px with 48px targets. Keep Textarea multiline and preserve LTR values for phone/amount.
+- Follow-up (2026-11-08): Default Input specimens and the Input playground show no generic helper copy beneath fields. Keep the optional `helperText` API and status messages for consuming applications; do not use them as default preview copy.
 - The generic backward-compatible `NoratoField` shares this appearance in the all-components playground; its input itself remains 48px and carries a centered 36px capsule.
 - Latest specimen correction (2026-11-02): place the decorative envelope icon beside the «ایمیل» title inside the semantic label; title uses Estedad Bold. Use the Persian placeholder «ایمیل خود را وارد کنید» with Vazirmatn Light 12px and `--norato-color-text-placeholder-subtle` (`#a1a1a1`); remove `name@example.com`. The inert top sample's visual control height is 36px. Keep live interactive controls at their documented minimum 48px target.
 
@@ -459,3 +460,9 @@
 - Use Norato semantic neutral Skeleton tokens, never Lemon's default dark fill. In RTL, Shimmer moves from left to right; disable animation for reduced motion.
 - Keep skeletons inert and non-focusable, label the busy region, and hide decorative shapes from assistive technology.
 - The component's `dir` attribute must control computed direction and mirror the Avatar/Text inline order; do not override it with inherited `direction` CSS.
+# Empty State
+
+- Use `https://lemonui.ir/#empty-state` as the composition reference; retain Norato semantic color, Vazirmatn/Estedad and RTL-first layout.
+- The documentation specimen uses the shared Button dotted/glass frame and Default marker. The component itself has no frame unless `container="card"` is set.
+- Visual is fixed-size and decorative; horizontal layout places it at logical inline-start, and narrow screens stack without clipping. Titles/descriptions provide all meaning.
+- Actions remain caller-owned slots with native, named buttons/links and 48px minimum targets. Do not add implicit navigation or a live region to static content.

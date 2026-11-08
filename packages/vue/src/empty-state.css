@@ -1,0 +1,30 @@
+.norato-empty-state{display:flex;align-items:center;justify-content:center;gap:var(--norato-empty-state-gap);inline-size:100%;min-inline-size:0;padding:var(--norato-empty-state-padding);border:var(--norato-border-thin) solid transparent;border-radius:var(--norato-radius-card);background:transparent;color:var(--norato-color-text-primary);text-align:start;box-sizing:border-box}
+.norato-empty-state[data-container="card"]{border-color:var(--norato-color-glass-line);background:var(--norato-color-glass-surface);box-shadow:var(--norato-elevation-box)}
+.norato-empty-state--vertical{flex-direction:column;text-align:center}
+.norato-empty-state--horizontal{flex-direction:row}
+.norato-empty-state__content{display:grid;justify-items:inherit;gap:var(--norato-space-2);min-inline-size:0;max-inline-size:var(--norato-empty-state-content-max);}
+.norato-empty-state__visual{display:grid;place-items:center;flex:none;min-inline-size:0;min-block-size:0}
+.norato-empty-state__title{margin:0;color:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-empty-state-title-size);font-weight:var(--norato-type-heading-title-weight);line-height:var(--norato-empty-state-title-line-height)}
+.norato-empty-state__description{max-inline-size:var(--norato-empty-state-content-max);margin:0;color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
+.norato-empty-state__actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:inherit;gap:var(--norato-space-2);margin-block-start:var(--norato-space-1)}
+.norato-empty-state__actions>:is(button,a){min-block-size:var(--norato-control-target-min)}
+.norato-empty-visual{position:relative;display:grid;place-items:center;flex:none;inline-size:var(--norato-empty-state-visual-medium);block-size:var(--norato-empty-state-visual-medium);border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.norato-empty-visual[data-size="small"]{inline-size:var(--norato-empty-state-visual-small);block-size:var(--norato-empty-state-visual-small)}
+.norato-empty-visual[data-size="large"]{inline-size:var(--norato-empty-state-visual-large);block-size:var(--norato-empty-state-visual-large)}
+.norato-empty-visual[data-tone="success"]{background:var(--norato-color-success-container);color:var(--norato-color-status-success)}
+.norato-empty-visual[data-tone="warning"]{background:var(--norato-color-warning-container);color:var(--norato-color-status-warning)}
+.norato-empty-visual[data-tone="danger"]{background:var(--norato-color-error-container);color:var(--norato-color-status-error)}
+.norato-empty-visual__icon{inline-size:var(--norato-empty-state-icon-medium);block-size:var(--norato-empty-state-icon-medium);fill:none;stroke:currentColor;stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round}
+.norato-empty-visual[data-size="small"] .norato-empty-visual__icon{inline-size:var(--norato-empty-state-icon-small);block-size:var(--norato-empty-state-icon-small)}
+.norato-empty-visual[data-size="large"] .norato-empty-visual__icon{inline-size:var(--norato-empty-state-icon-large);block-size:var(--norato-empty-state-icon-large)}
+.norato-empty-visual__art{inline-size:var(--norato-empty-state-art-medium);block-size:auto;overflow:visible}
+.norato-empty-visual[data-size="small"] .norato-empty-visual__art{inline-size:var(--norato-empty-state-art-small)}
+.norato-empty-visual[data-size="large"] .norato-empty-visual__art{inline-size:var(--norato-empty-state-art-large)}
+.norato-empty-visual__art path,.norato-empty-visual__art circle{stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.norato-empty-visual__art .norato-empty-visual__back{fill:var(--norato-color-surface-default)}
+.norato-empty-visual__art .norato-empty-visual__front{fill:var(--norato-color-warning-container)}
+.norato-empty-visual[data-tone="success"] .norato-empty-visual__front{fill:var(--norato-color-success-container)}
+.norato-empty-visual[data-tone="warning"] .norato-empty-visual__front{fill:var(--norato-color-warning-container)}
+.norato-empty-visual[data-tone="danger"] .norato-empty-visual__front{fill:var(--norato-color-error-container)}
+@media(max-width:599px){.norato-empty-state--horizontal{flex-direction:column;text-align:center}.norato-empty-state__content{justify-items:center}.norato-empty-state__actions{justify-content:center}}
+@media(prefers-reduced-motion:reduce){.norato-empty-state *{scroll-behavior:auto}}

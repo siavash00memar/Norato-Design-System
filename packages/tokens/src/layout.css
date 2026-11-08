@@ -42,6 +42,18 @@
   --norato-tree-label-line-height: var(--norato-type-body-regular-line-height);
   --norato-tree-focus-offset: 2px;
   --norato-tree-marker-size: 8px;
+  --norato-empty-state-visual-small: 40px;
+  --norato-empty-state-visual-medium: 48px;
+  --norato-empty-state-visual-large: 64px;
+  --norato-empty-state-icon-small: 20px;
+  --norato-empty-state-icon-medium: 24px;
+  --norato-empty-state-icon-large: 32px;
+  --norato-empty-state-art-small: 40px;
+  --norato-empty-state-art-medium: 48px;
+  --norato-empty-state-art-large: 64px;
+  --norato-empty-state-gap: var(--norato-space-4);
+  --norato-empty-state-padding: var(--norato-space-4);
+  --norato-empty-state-content-max: 360px;
   --norato-tree-preview-frame-inline-size: 640px;
   --norato-tree-preview-frame-block-size: 288px;
   --norato-tree-preview-compact-block-size: 112px;

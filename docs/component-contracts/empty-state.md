@@ -1,66 +1,101 @@
 # Empty State — قرارداد کامپوننت نوراتو
 
 **حوزه:** Feedback & Status  
-**وضعیت نوراتو:** Adapted  
+**وضعیت adapter:** Implemented؛ مرور کامل DoD و screen reader جداگانه دنبال می‌شود.
 
 ## Preview
 
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
+نمونهٔ بالای صفحه فقط مرجع بصری و inert است. قاب نقطه‌ای و برچسب Default متعلق به صفحهٔ مستندات است؛ در خود `NoratoEmptyState` قاب داخلی فقط با `container="card"` فعال می‌شود.
 
 ## Overview
 
-قرارداد طراحی Norato: وقتی چیزی برای نمایش نیست: داده‌ای نیست، نتیجه‌ای پیدا نشد یا خطایی رخ داده. همیشه بگو قدم بعدی چیه.
+وقتی داده یا محتوایی برای نمایش نیست، عنوان باید وضعیت را روشن کند و توضیح، قدم بعدی را پیشنهاد دهد. از تزئین برای انتقال معنای ضروری استفاده نکن.
+
+### API اجرایی Vue
+
+`NoratoEmptyState` از `id`، `title` و `description` ضروری و propهای زیر پشتیبانی می‌کند:
+
+| Prop | مقدارها | پیش‌فرض | توضیح |
+| --- | --- | --- | --- |
+| `layout` | `vertical`, `horizontal` | `vertical` | چیدمان افقی، تصویر را در inline-start قرار می‌دهد. |
+| `size` | `small`, `medium`, `large` | `medium` | اندازهٔ تصویر و ریتم محتوا. |
+| `container` | `none`, `card` | `none` | سطح کارت داخلی اختیاری. |
+| `visualType` | `icon`, `illustration` | `icon` | نوع visual داخلی. |
+| `visualTone` | `neutral`, `success`, `warning`, `danger` | `neutral` | لحن تکمیلی visual؛ معنای وضعیت را متن بیان می‌کند. |
+| `dir` | `rtl`, `ltr` | `rtl` | جهت محلی کامپوننت. |
+
+Slotهای اختیاری: `visual` برای visual سفارشی تزئینی، `primary-action` و `secondary-action`. این adapter اکشن تولید نمی‌کند، مقصد تعیین نمی‌کند و رویداد زنده اعلام نمی‌کند؛ عملکرد و دسترس‌پذیری اکشن‌ها متعلق به برنامهٔ میزبان است.
+
+`NoratoEmptyStateVisual` به‌صورت جداگانه با `type`، `size`، `tone` و `dir` قابل استفاده است.
 
 ## Anatomy
 
-- **Visual** — آیکن یا تصویرسازی
-- **Title** — عنوان کوتاه
-- **Description** — توضیح و راهنمایی
-- **Actions** — اکشن اصلی و فرعی
+- **Visual** — آیکن یا تصویرسازی با اندازهٔ ذاتی
+- **Title** — عنوان معنایی
+- **Description** — توضیح و راهنمای قدم بعد
+- **Actions** — slot اکشن اصلی و فرعی
 
 ## Variants
 
-- **Empty State (12 variant):** Layout: Vertical، Horizontal؛ Size: Small، Medium، Large؛ Container: None، Card
-- **Empty State Visual (24 variant):** Type: Icon، Illustration؛ Size: Small، Medium، Large؛ Tone: Neutral، Success، Warning، Danger
+- **Empty State (12 ترکیب):** Layout: Vertical، Horizontal؛ Size: Small، Medium، Large؛ Container: None، Card
+- **Empty State Visual (24 ترکیب):** Type: Icon، Illustration؛ Size: Small، Medium، Large؛ Tone: Neutral، Success، Warning، Danger
 
 ## Sizes
 
 - **Empty State:** Small، Medium، Large
-- **Empty State Visual:** Small، Medium، Large
+- **Visual:** Small 40px، Medium 48px، Large 64px؛ تصویرسازی نسبت ابعاد خود را حفظ می‌کند.
+- همهٔ دکمه‌ها و لینک‌های داخل action slots حداقل 48px ارتفاع تعاملی دارند.
 
 ## States
 
-- در قرارداد فعلی Norato حالت‌های مجزا برای این خانواده مشخص نشده است.
+این کامپوننت وضعیت تعاملی یا داده‌ای مستقل ندارد. حالت خالی، موفقیت، هشدار یا خطا را متن مصرف‌کننده مشخص می‌کند؛ tone فقط ظاهر visual را تنظیم می‌کند.
 
 ## Parts
 
-- **Empty State — 12 variant:** حالت خالی با عنوان، توضیح و اکشن. ابعاد/حالت‌ها: Layout: Vertical، Horizontal؛ Size: Small، Medium، Large؛ Container: None، Card
-- **Empty State Visual — 24 variant:** تصویر یا آیکن حالت خالی. ابعاد/حالت‌ها: Type: Icon، Illustration؛ Size: Small، Medium، Large؛ Tone: Neutral، Success، Warning، Danger
+- **Empty State — 12 ترکیب:** محتوای معنایی در چیدمان عمودی/افقی، اندازهٔ کوچک/متوسط/بزرگ، با سطح داخلی اختیاری
+- **Empty State Visual — 24 ترکیب:** آیکن یا تصویرسازی؛ اندازهٔ کوچک/متوسط/بزرگ؛ لحن خنثی/موفقیت/هشدار/خطر
 
 ## Usage
 
-### راهنمای کاربرد Norato
+```vue
+<script setup lang="ts">
+import { NoratoButton, NoratoEmptyState } from '@norato/vue'
+</script>
 
-- بگو چرا خالیه و چیکار باید کرد.
-- یه اکشن اصلی واضح بذار.
+<template>
+  <NoratoEmptyState
+    id="projects-empty"
+    title="هنوز پروژه‌ای نساختی"
+    description="اولین پروژه‌ات را بساز تا اینجا نمایش داده شود."
+    layout="vertical"
+    size="medium"
+    dir="rtl"
+  >
+    <template #primary-action>
+      <NoratoButton label="ساخت پروژه" variant="primary" />
+    </template>
+    <template #secondary-action>
+      <NoratoButton label="راهنما" variant="secondary" />
+    </template>
+  </NoratoEmptyState>
+</template>
+```
 
-### محدودیت‌های کاربرد
+### راهنمای کاربرد
 
-- فقط «داده‌ای وجود ندارد» ننویس.
-- تصویر شلوغ یا بزرگ نذار.
-
-### جهت RTL
-
-در چیدمان افقی، تصویر سمت راست میاد.
+- متن عنوان بگوید چرا چیزی نمایش داده نمی‌شود؛ توضیح، قدم بعد را روشن کند.
+- اکشن اصلی واضح و اختیاری است؛ از اکشن فرعی فقط برای مسیر کم‌اهمیت‌تر استفاده کن.
+- برای هر استفاده `id` یکتا بده؛ کامپوننت آن را برای ارتباط نام و توضیح مصرف می‌کند.
+- اکشن‌ها رفتار و مقصد ندارند مگر میزبان آن‌ها را تعیین کند.
 
 ## Accessibility
 
-تصویر تزئینیه و متن عنوان باید کامل معنی رو برسونه.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+- ریشه یک `<section>` نام‌گذاری‌شده است و عنوان/توضیح با شناسه‌های مشتق از `id` به آن متصل‌اند.
+- visual پیش‌فرض و slot سفارشی داخل ناحیهٔ `aria-hidden` قرار دارد؛ متن باید به‌تنهایی معنی کامل را منتقل کند.
+- نقش `status` یا `alert` به محتوای ثابت تحمیل نمی‌شود؛ میزبان هنگام به‌روزرسانی پویا باید نیاز به live region را تعیین کند.
+- اکشن‌های نمونه دکمهٔ native و نام‌دارند؛ میزبان برای لینک/دکمهٔ سفارشی باید نام دسترس‌پذیر و رفتار کیبوردی را حفظ کند.
+- ساختار درخت دسترس‌پذیری مرورگر با API مرور می‌شود؛ این بررسی جای جلسهٔ مستقل screen reader را نمی‌گیرد.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-brand-yellow`، `--norato-color-warning-container`، `--norato-color-success-container`، `--norato-color-error-container`، `--norato-color-status-success`، `--norato-color-status-warning`، `--norato-color-status-error`، `--norato-empty-state-visual-*`، `--norato-empty-state-icon-*`، `--norato-empty-state-art-*`، `--norato-empty-state-gap`، `--norato-empty-state-padding` و `--norato-empty-state-content-max` استفاده می‌شود.

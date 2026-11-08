@@ -28,7 +28,7 @@ const plans = [
   <section class="content-grid component-lab">
     <article class="glass-card demo-card">
       <h2>NoratoField · v-model</h2>
-      <NoratoField id="lab-name" v-model="name" label="نام و نام خانوادگی" placeholder="مثلاً نگار محمدی" helper-text="این مقدار با v-model به والد برمی‌گردد." :error-text="nameError" required />
+      <NoratoField id="lab-name" v-model="name" label="نام و نام خانوادگی" placeholder="مثلاً نگار محمدی" :error-text="nameError" required />
       <p class="lab-value">مقدار فعلی: <b>{{ name || '—' }}</b></p>
       <NoratoButton label="بررسی فرم" variant="primary" @click="submitted = true" />
     </article>
