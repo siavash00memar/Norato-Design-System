@@ -5,5 +5,5 @@
 3. Implement `NoratoProgress` with linear/circular variants, validated controlled `value`, four tones and three sizes, accessible Persian value text.
 4. Replace inert preview with Button-sized dotted specimen; build a Playground that selects form, size, tone and value and emits copyable usage code.
 5. Register package export, catalog usage, contract, primitive map, and Figma component rules.
-6. Compare matched desktop Lemon/Norato renders; verify 120 matrix combinations, RTL fill, circular start/shape, value boundaries, AX and 390/320 overflow.
+6. Match Lemon's metadata-above-full-width-track composition; compare matched desktop Lemon/Norato renders; verify 120 matrix combinations in RTL and LTR, circular start/shape, value boundaries, AX and 390/320 overflow.
 7. Run token/catalog/typecheck/build/diff gates; leave DoD open for unverified evidence; checkpoint GitHub after gates pass.

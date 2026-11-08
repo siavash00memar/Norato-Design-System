@@ -1362,3 +1362,12 @@
 - [x] Local browser at `/#component-spinner`: viewport widths 390px and 320px show the Button-style specimen fully within the page; `documentElement.scrollWidth` and `body.scrollWidth` did not exceed `innerWidth`.
 - [x] Measured specimen geometry remains fixed-height at 288px and shrinks only in width with the containing column (343px at the 390px test setting; 273px at 320px); spinner remains centered and square. The browser’s content width was 375px and 305px respectively because its vertical scrollbar occupies 15px.
 - [ ] Independent screen-reader review remains outstanding for Spinner; browser accessibility tree inspection is not being treated as a substitute.
+
+## Progress visual and matrix correction — 2026-11-08
+
+- [x] Source: Lemon `#progress`, matched browser viewport 1280×720. Lemon stage is 636×300px; metadata row spans 302.4px and the neutral track directly below is 302.4×8.6px. Norato had put the track between the label and value, so that first pass failed visual acceptance.
+- [x] Corrected Norato to label/value metadata above a full-width track. The inert Button-style sample frame is 584×288px with a 304px token-capped track at 8px Medium thickness; visual hierarchy and row order now match Lemon while retaining Norato's yellow.
+- [x] All 120 variants were selected through the actual Progress playground in RTL and all 120 in LTR. Current/min/max, localized value text, tone mapping, exact 4/8/12px Linear thickness, 24/32/40px square Circular geometry, percentage center rules, fill ratios and logical start edges all passed with zero failures.
+- [x] At browser viewport settings 390px and 320px, actual content widths were 375px/305px because the scrollbar uses 15px; document width matched content width, with no horizontal overflow. Frame dimensions were 343×288px/273×288px and the track remained horizontally fluid at 304px/263px.
+- [x] Actual UI value input clamps -10 to 0 and 120 to 100; 42.6 rounds to 43. `aria-valuenow`, Persian `aria-valuetext`, and visual fill agree at each boundary.
+- [ ] Independent screen-reader review remains open. Browser accessibility tree exposes the progress name and value but is not treated as a screen-reader substitute.

@@ -43,11 +43,13 @@ const getAccessibleValue = () => valueText.value
     :get-value-text="getAccessibleValue"
   >
     <template v-if="variant === 'linear'">
-      <span v-if="label" class="norato-progress__label">{{ label }}</span>
+      <div v-if="label || showValue" class="norato-progress__meta">
+        <span v-if="label" class="norato-progress__label">{{ label }}</span>
+        <span v-if="showValue" class="norato-progress__value">{{ valueText }}</span>
+      </div>
       <div class="norato-progress__track" aria-hidden="true">
         <ProgressIndicator class="norato-progress__fill" :style="{ inlineSize: `${value}%` }" />
       </div>
-      <span v-if="showValue" class="norato-progress__value">{{ valueText }}</span>
     </template>
     <template v-else>
       <svg class="norato-progress__ring" viewBox="0 0 40 40" aria-hidden="true" focusable="false">

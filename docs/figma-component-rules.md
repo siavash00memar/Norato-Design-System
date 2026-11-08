@@ -441,6 +441,7 @@
 - Match Lemon's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.
 - Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
 - Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
+- Match Lemon's Linear composition: label and localized percentage share a metadata row above a full-width track. Keep RTL/LTR fill anchored to logical inline-start and circular geometry fixed.
 - **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.
 
 ## Spinner — 2026-11-08

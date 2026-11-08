@@ -983,3 +983,9 @@
 - **Observed:** The generic Button playground preview set its own text color after the package Spinner rule, making `tone="default"` render gray in the executable playground although the inert specimen was yellow.
 - **Correction:** Scope the spinner’s explicit color to its semantic `data-tone` so host presentation styles cannot override the requested tone. Use 48px in the inert specimen, matching Lemon’s visible ring while staying within Norato’s documented size choices.
 - **Verified:** All 45 interactive type/tone/size combinations computed the expected color and exact square 16/20/24/32/48px box; no combination failed.
+
+## ERR-118 — Progress track shared a row with label and percentage (2026-11-08)
+
+- **Observed:** Matched Lemon review showed the reference places the label and value on a metadata row above a full-width track; Norato had squeezed the track between both texts.
+- **Correction:** Rebuilt the Linear template to put label/value in one row and track below, capped the inert specimen at 304px to match Lemon's measured 302.4px inner track, and added an RTL/LTR control to the executable playground.
+- **Verified:** The corrected local 1280×720 specimen follows the Lemon row order; all 120 variants pass in RTL and all 120 in LTR for role/name/min/max/current/value text, tone color, track thickness/fill ratio, inline-start edge and fixed circle geometry. 390px and 320px renders have no horizontal document overflow; independent screen-reader review remains open.
