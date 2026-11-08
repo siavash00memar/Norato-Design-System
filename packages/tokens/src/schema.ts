@@ -75,6 +75,7 @@ export const productPatternTokens = {
   skeletonPreviewPadding: '--norato-skeleton-preview-padding',
   chartCardInlineSize: '--norato-chart-card-inline-size',
   chartPreviewCardInlineSize: '--norato-chart-preview-card-inline-size',
+  accordionPreviewInlineSize: '--norato-accordion-preview-inline-size',
   chartStatMinBlockSize: '--norato-chart-stat-min-block-size',
   chartStatSparkInlineSize: '--norato-chart-stat-spark-inline-size',
   chartStatSparkBlockSize: '--norato-chart-stat-spark-block-size',
