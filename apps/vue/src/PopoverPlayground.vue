@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { NoratoButton, NoratoPopover, NoratoTextInput, type NoratoPopoverAlign, type NoratoPopoverPlacement, type NoratoPopoverVariant } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
+import './popover-playground.css'
 
 const props = defineProps<{ copiedKey: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
