@@ -21,6 +21,7 @@
 
 ## Spinner browser review — 2026-11-08
 
+- [x] Fresh local render at `/#component-spinner` shows the component status as Adapted, a separate live playground with type/tone/size controls, copyable Vue usage, and all nine Button-order contract sections. Browser accessibility tree exposes all sections and names the playground controls; this is not treated as an independent screen-reader pass.
 - [x] At 1265×720, the inert Spinner preview is a centered Norato-yellow Ring in the 576×288px Button-style dotted frame; same-viewport Lemon review showed a 40px dark Ring, so Norato uses its 48px token (about 41px visible arc) with the approved yellow palette.
 - [x] Exercised all 45 type/tone/size configurations in the actual Spinner playground. Each rendered an intrinsic square box matching 16/20/24/32/48px; expected tone colors computed in all states and no combo failed.
 - [x] Verified Ring and Norato use an SVG arc; Dots use three CSS dots. The browser reports `prefers-reduced-motion: reduce`; Ring and all three Dots compute to `animation:none`, with Dots remaining at full opacity.
