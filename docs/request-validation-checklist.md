@@ -1533,3 +1533,11 @@
 - [x] Compared local and design-reference default specimen screenshots at 390×844. Both use a dotted scene with the panel aligned to the physical right, panel height near the scene height, and a visible underlay; Norato panel proportion is about 56% of scene width. Norato keeps the existing Button preview frame and yellow palette.
 - [x] Vue typecheck/build, token and catalog checks, and diff whitespace checks passed; build reports the existing large JavaScript chunk advisory.
 - [ ] Independent screen-reader review remains open; the browser accessibility tree and keyboard interaction were reviewed, but no screen reader was run.
+
+## Popover — implementation checkpoint (2026-11-08)
+
+- [x] Detail page follows the Button structure: inert preview, executable playground, copyable Vue example, and nine contract sections.
+- [x] Corrected the preview's RTL centering; removed overlapping background copy and replaced the external sample URL with a Norato example link.
+- [x] Browser confirmed trigger exposes `aria-haspopup`, `aria-expanded`, and the generated content relationship; dialog name comes from the trigger and its description is associated. Escape closes and restores focus. Collision handling moved the requested bottom placement to top near the viewport edge.
+- [ ] Compare matched viewport captures with the design reference; review all 12 type × placement combinations, alignments, modal/disabled states, outside click, keyboard focus, arrow direction, and 390/320 widths. Independent screen-reader review also remains open.
+- [ ] Run final tokens/catalog checks, Vue typecheck/build, forbidden brand scan and `git diff --check` after the current preview/example updates. Do not close Popover DoD yet.

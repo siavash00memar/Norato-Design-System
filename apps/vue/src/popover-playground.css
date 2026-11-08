@@ -1,0 +1,12 @@
+.popover-playground { display: grid; gap: var(--norato-space-4); }
+.popover-playground__stage { display: grid; place-items: center; min-block-size: var(--norato-split-button-preview-frame-block-size); padding: var(--norato-space-6); border: var(--norato-border-thin) dotted var(--norato-color-border-default); border-radius: var(--norato-radius-modal); background-color: var(--norato-color-glass-surface); background-image: radial-gradient(var(--norato-color-glass-line) var(--norato-preview-dot-size),transparent var(--norato-preview-dot-size)),radial-gradient(ellipse at 8% 5%,var(--norato-color-warning-container),transparent 55%),radial-gradient(ellipse at 92% 100%,var(--norato-color-info-container),transparent 55%); background-size: var(--norato-preview-grid-size) var(--norato-preview-grid-size),100% 100%,100% 100%; box-shadow: var(--norato-elevation-box); }
+.popover-playground__controls { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--norato-space-4); align-items: end; }
+.popover-playground__states { display: flex; flex-wrap: wrap; gap: var(--norato-space-4); }
+.popover-playground__states label { display: inline-flex; align-items: center; gap: var(--norato-space-2); min-block-size: var(--norato-control-target-min); color: var(--norato-color-text-primary); font-size: var(--norato-type-body-small-size); cursor: pointer; }
+.popover-playground__states input { inline-size: var(--norato-icon-sm); block-size: var(--norato-icon-sm); margin: 0; accent-color: var(--norato-color-brand-yellow); }
+.popover-playground__states input:focus-visible { outline: var(--norato-border-focus) solid var(--norato-color-focus-ring); outline-offset: var(--norato-space-1); }
+.norato-popover__link { display: block; max-inline-size: 100%; overflow-wrap: anywhere; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); text-align: left; text-decoration-color: var(--norato-color-border-default); text-underline-offset: var(--norato-space-1); }
+.norato-popover__link:hover { color: var(--norato-color-text-primary); text-decoration-color: var(--norato-color-brand-yellow-strong); }
+.popover-playground__feedback { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); }
+@media (max-width: 800px) { .popover-playground__controls { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) { .popover-playground__controls { grid-template-columns: minmax(0,1fr); } .popover-playground__stage { padding: var(--norato-space-4); } }

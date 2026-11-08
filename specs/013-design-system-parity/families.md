@@ -48,7 +48,7 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Accordion | accordion | Adapted | Pending visual and behavior comparison |
 | [ ] | Modal | modal | Proposed | Pending visual and behavior comparison |
 | [ ] | Drawer | drawer | Proposed | Pending visual and behavior comparison |
-| [ ] | Popover | popover | Proposed | Pending visual and behavior comparison |
+| [ ] | Popover | popover | Implemented | Dedicated Vue adapter/export, 3 content types × 4 placements, playground, inert specimen, and nine contract sections added. First browser capture found the RTL specimen panel clipped outside its frame; physical centering was corrected and re-captured. Remaining matched desktop/mobile comparison, 12 combinations, focus/dismiss/RTL geometry, independent screen-reader and technical gates are recorded in the request-validation checklist. |
 | [ ] | Image | image | Proposed | Pending visual and behavior comparison |
 | [ ] | Carousel | carousel | Proposed | Pending visual and behavior comparison |
 | [ ] | Chat | chat | Proposed | Pending visual and behavior comparison |

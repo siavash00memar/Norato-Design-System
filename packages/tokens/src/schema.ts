@@ -93,6 +93,8 @@ export const productPatternTokens = {
   drawerHandleInlineSize: '--norato-drawer-handle-inline-size',
   drawerHandleBlockSize: '--norato-drawer-handle-block-size',
   drawerSpecimenInlineSize: '--norato-drawer-specimen-inline-size',
+  popoverMaxInlineSize: '--norato-popover-max-inline-size',
+  popoverMaxBlockSize: '--norato-popover-max-block-size',
   chartStatMinBlockSize: '--norato-chart-stat-min-block-size',
   chartStatSparkInlineSize: '--norato-chart-stat-spark-inline-size',
   chartStatSparkBlockSize: '--norato-chart-stat-spark-block-size',

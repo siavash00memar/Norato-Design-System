@@ -172,6 +172,8 @@
   --norato-drawer-handle-inline-size: 36px;
   --norato-drawer-handle-block-size: 4px;
   --norato-drawer-specimen-inline-size: 252px;
+  --norato-popover-max-inline-size: 320px;
+  --norato-popover-max-block-size: 480px;
   --norato-split-button-preview-frame-inline-size: 640px;
   --norato-toast-inline-size: 368px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;

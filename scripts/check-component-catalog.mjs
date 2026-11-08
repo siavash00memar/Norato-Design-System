@@ -22,7 +22,7 @@ for (const [fieldIndex, label] of [[1, 'id'], [2, 'slug'], [3, 'name']]) {
 }
 
 const listedContracts = new Set()
-  const allowedUsageKeys = new Set(['button', 'split-button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker', 'time-picker', 'file-upload', 'navbar', 'sidebar', 'tabs', 'breadcrumbs', 'pagination', 'stepper', 'menu', 'command-palette', 'tree-view', 'alert', 'banner', 'toast', 'tooltip', 'progress', 'spinner', 'skeleton', 'empty-state', 'divider', 'accordion', 'modal', 'drawer', 'badge', 'avatar', 'timeline', 'charts'])
+  const allowedUsageKeys = new Set(['button', 'split-button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker', 'time-picker', 'file-upload', 'navbar', 'sidebar', 'tabs', 'breadcrumbs', 'pagination', 'stepper', 'menu', 'command-palette', 'tree-view', 'alert', 'banner', 'toast', 'tooltip', 'progress', 'spinner', 'skeleton', 'empty-state', 'divider', 'accordion', 'modal', 'drawer', 'popover', 'badge', 'avatar', 'timeline', 'charts'])
 const requiredContractSections = ['Overview', 'Anatomy', 'Variants', 'Sizes', 'States', 'Parts', 'Usage', 'Accessibility', 'Tokens']
 const specimenSource = fs.readFileSync(path.join(root, 'apps/vue/src/ComponentSpecimen.vue'), 'utf8')
 const usageSource = fs.readFileSync(path.join(root, 'apps/vue/src/usage-examples.ts'), 'utf8')

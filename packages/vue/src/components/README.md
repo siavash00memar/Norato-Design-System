@@ -9,6 +9,7 @@ Vue 3 adapters available through the private workspace package `@norato/vue`:
 - `NoratoTextarea`: labeled textarea; controlled with `v-model`.
 - `NoratoModal` and `NoratoDialog`: controlled modal surfaces with tokenized sizes, semantic tones and accessible focus management.
 - `NoratoDrawer`: controlled right/left side panel or bottom sheet with size and detent options, accessible dialog behavior and RTL-first defaults.
+- `NoratoPopover`: controlled floating panel with simple, actions and form content, a collision-aware arrow placement, and an accessible title.
 - `NoratoAccordion`: controlled single or multiple disclosure groups with keyboard navigation and custom item content.
 - `NoratoSelect`: Reka-backed RTL select with search, groups, staged multi-selection and `v-model`.
 - `NoratoChoiceGroup`: checkbox or radio group; controlled with `v-model:selected` (array of selected option values).
