@@ -54,4 +54,6 @@
 - [x] At the live 1265px desktop render, the Textarea placeholder and typed Persian sample were left-aligned despite the adapter's `dir="rtl"` contract.
 - [x] Added explicit RTL/LTR text direction and alignment to the package Textarea and direction-aware placeholder rules to the app presentation stylesheet.
 - [x] Reloaded the local page: blank placeholder and typed Persian text both appear at the right edge; focus uses the single yellow stroke without a dark outer ring.
+- [x] Added a live RTL/LTR direction selector to the Input playground and synchronized it with the generated Vue snippet. Browser selection to LTR updated the live textarea and emitted `textareaDir = ref('ltr')` plus `dir="ltr"`; typed Persian text appeared at the left edge.
+- [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass after the playground update. Build retains the existing >500KB JavaScript chunk advisory.
 - [ ] Independent screen-reader review and full visual matching of every design-reference state remain open; Input DoD stays open.

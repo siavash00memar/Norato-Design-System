@@ -1574,4 +1574,11 @@
 - [x] Reference/local narrow viewport comparison confirmed RTL incoming-right/outgoing-left, grouped metadata, and Norato yellow outgoing accent.
 - [x] Keyboard Enter sent and announced a message; draft cleared. Sender/type controls and display-only recording state were exercised; the recording status correctly disables text entry.
 - [ ] Full 10 sender × type visuals, six part states, 320/390/desktop geometry, file event, LTR, remaining keyboard/disabled behavior and independent screen-reader review remain open in `specs/013-design-system-parity/chat-checklist.md`.
+
+## Input — Textarea direction follow-up (2026-11-08)
+
+- [x] Browser selected LTR in the live Input playground; its generated example synchronized to `textareaDir = ref('ltr')` and `dir="ltr"`.
+- [x] Typed Persian sample rendered at the left edge in LTR; RTL behavior and right-edge alignment had already been visually verified in the prior follow-up.
+- [x] Token/catalog checks, Vue typecheck/build and `git diff --check` passed. Build reports the existing >500KB JavaScript chunk advisory.
+- [ ] Independent screen-reader review and full visual matching remain open; Input DoD stays open.
 - [x] Final token/catalog checks, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed. Build warns that the JS chunk is above 500KB.
