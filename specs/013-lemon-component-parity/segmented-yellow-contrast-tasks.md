@@ -7,4 +7,4 @@
 - [x] Verify desktop visual states, 24 group variants, interaction, RTL, focus and disabled behavior; compare Lemon at equal viewport.
 - [ ] Exact mobile viewport, full 64 item-state cross-product and independent screen-reader review remain.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [ ] Commit and push the verified change to the current GitHub branch per the standing user instruction.
+- [x] Commit and push the verified change to `origin/master` (`ed29b1686b8ae57b7397368db1a18acecb344771`).
