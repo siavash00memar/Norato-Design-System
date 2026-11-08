@@ -82,13 +82,13 @@
   background: var(--norato-color-surface-default);
 }
 
-#app .norato-input-field:not([data-disabled]):not([data-invalid]) .norato-input-field__control:hover::before {
+#app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover::before {
   border-color: var(--norato-color-brand-yellow);
 }
 
 /* The package stylesheet gives the native wrapper its own hover border.
    Keep that duplicate layer transparent so only the capsule stroke is visible. */
-#app .norato-input-field:not([data-disabled]):not([data-invalid]) .norato-input-field__control:hover {
+#app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover {
   border-color: transparent;
 }
 

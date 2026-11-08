@@ -119,6 +119,7 @@
   --norato-stepper-preview-radius: 24px;
   --norato-stepper-preview-content-inline-size: 416px;
   --norato-split-button-preview-frame-inline-size: 640px;
+  --norato-toast-inline-size: 368px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;
   --norato-split-button-preview-frame-block-size: 288px;
   --norato-split-button-preview-radius: 24px;
@@ -156,6 +157,7 @@
   --norato-elevation-box: 0 2px 4px #00000026;
   --norato-layer-popover: 10;
   --norato-layer-modal: 20;
+  --norato-layer-toast: 30;
   --norato-elevation-modal: 0 10px 8px #00000040;
   --norato-elevation-pressed: inset 2px 4px 4px #0000002e;
   --norato-elevation-chatbot: 0 2px 10px #00000026;

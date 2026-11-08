@@ -935,3 +935,21 @@
 - **Observed:** inert Input state cards styled `Hover` and `Typing` with the same neutral Stroke, contradicting the approved yellow hover rule and the interactive adapters.
 - **Correction:** separated the specimen selectors; Hover uses the Norato yellow token and Typing remains neutral.
 - **Verified:** local Input states screenshot shows yellow Text/Phone Hover capsules, neutral Default, and preserved Error/Success/Disabled strokes.
+
+## ERR-110 — Toast adapter existed but was not wired to the package or catalog (2026-11-08)
+
+- **Observed:** ToastPlayground imported `NoratoToast` and its types, but `@norato/vue` did not export them. The catalog marked Toast Proposed and lacked executable usage, so Vue typecheck failed.
+- **Correction:** Export Toast component/types, register it as Adapted, add a reviewed usage example, mount its playground in the component detail page and replace its legacy static preview with the package's Button-sized Toast styling.
+- **Verified:** Technical gates are pending; browser DoD remains open until matched Lemon comparison and behavior checks are recorded.
+
+## ERR-111 — Toast static specimen was wider/taller than Lemon (2026-11-08)
+
+- **Observed:** The initial Norato specimen filled the entire Button preview frame and included action/timer controls, while Lemon's default example was a compact rich success toast.
+- **Correction:** Bound the inert sample to the Toast inline-size token and aligned its anatomy/content with Lemon's default example; kept action and timer in the live variant playground.
+- **Verified:** Matched 1270×720 browser captures show approximately 368×70px Norato versus 366×72px Lemon Toast cards in approximately 576×288px frames. Full variant parity remains open.
+
+## ERR-112 — Enabled invalid Input hover was excluded from yellow Stroke (2026-11-08)
+
+- **Observed:** The hover selector excluded `[data-invalid]`, so enabled error-state Inputs could retain a non-yellow border on pointer hover.
+- **Correction:** Removed only the invalid-state exclusion while retaining the disabled exclusion; updated the Input component contract to document hover priority and error restoration.
+- **Verified:** Local browser previously confirmed a focus-free hover has one yellow 1px capsule Stroke, invalid hover is yellow, resting Stroke is `#e8e8e8`, and the layout wrapper has no border. Disabled hover remains unverified in an interactive screenshot.

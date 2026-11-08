@@ -59,3 +59,6 @@ export type { NoratoAlertLayout, NoratoAlertTone, NoratoAlertVariant } from './c
 
 export { default as NoratoBanner } from './components/NoratoBanner.vue'
 export type { NoratoBannerLayout, NoratoBannerTone } from './components/NoratoBanner.vue'
+
+export { default as NoratoToast } from './components/NoratoToast.vue'
+export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'

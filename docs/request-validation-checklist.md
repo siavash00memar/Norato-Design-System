@@ -1322,3 +1322,10 @@
 - [x] The shared interactive input shell keeps its yellow hover Stroke; legacy native field, textarea, date input, and select trigger now also use the yellow Stroke on hover/focus. Disabled fields remain excluded from hover recoloring.
 - [x] Generic focus styling remains for buttons, switches, choices, and independent actions; only field controls remove the dark outer outline.
 - [ ] Matched Lemon screenshot comparison across all Input types and independent screen-reader review remain open.
+
+## Toast implementation wiring — 2026-11-08
+
+- [x] NoratoToast exported from `@norato/vue`; catalog resolves the adapter and `toast` usage example; component detail page mounts ToastPlayground.
+- [x] Static Toast preview uses Button-sized dotted specimen composition and package Toast styling without a portal.
+- [x] At 1270×720, visually compared Lemon and Norato: both frames are about 576×288px; Lemon default Toast is about 366×72px and Norato is about 368×70px. Verified the live RTL success message exposes title/description/action/close and closing emits feedback.\n- [ ] Full 20-variant visual matrix, timer/pause, keyboard, independent screen-reader and 390/320 widths remain unverified; Toast DoD stays open.
+- [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build reports a 965.16KB JS chunk above the 500KB advisory threshold.
