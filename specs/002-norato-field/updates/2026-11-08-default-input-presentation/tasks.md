@@ -9,4 +9,4 @@
 - [x] Implement: remove generic helper copy from InputPlayground and the NoratoField lab.
 - [x] Verify desktop Input and inventory renders: 36px capsules within 48px targets, Estedad Bold labels, RTL 12px Vazirmatn placeholders at `#a1a1a1`, and generic helper copy absent.
 - [x] Run final engineering gates: token/catalog checks, Vue typecheck/build and `git diff --check` pass. The prior 390×844 Input overflow check and adapter matrix remain recorded in the main validation checklist.
-- [ ] Push verified checkpoint to GitHub.
+- [x] Push verified checkpoint `580ba73` to GitHub; remote synchronization is confirmed.

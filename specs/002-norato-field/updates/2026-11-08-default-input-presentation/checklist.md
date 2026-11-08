@@ -6,5 +6,5 @@
 - [ ] Textarea remains multiline; phone/amount typed values remain LTR.
 - [ ] Browser accessibility tree keeps labels/descriptions meaningful and actions keyboard reachable.
 - [ ] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [ ] Push checkpoint to GitHub and verify remote synchronization.
+- [x] Checkpoint `580ba73` is pushed to GitHub; remote synchronization is confirmed.
 - [ ] Record unavailable mobile or independent screen-reader evidence as open instead of claiming a pass.

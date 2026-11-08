@@ -29,4 +29,4 @@
 
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass after this update.
 - [ ] Browser review, Lemon comparison, any failures, and all open limits are recorded before closing DoD.
-- [ ] Verified checkpoint is pushed to `origin/master`; local worktree is clean.
+- [x] Verified checkpoint `580ba73` is pushed to `origin/master`; remote synchronization is confirmed.

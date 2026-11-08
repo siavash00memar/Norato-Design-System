@@ -15,4 +15,4 @@
 - [ ] Record 390/320 viewport evidence; exact viewport override did not take effect in the current browser.
 - [ ] Verify custom visual and raw anchor/button slots; independent screen-reader review remains open.
 - [x] Run final engineering gates: token/catalog checks, Vue typecheck/build and `git diff --check` pass.
-- [ ] Push a verified checkpoint to GitHub and confirm clean worktree.
+- [x] Push verified checkpoint `580ba73` to GitHub; local and remote were synchronized before this checklist update.
