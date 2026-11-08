@@ -19,7 +19,8 @@
 - [x] Action and close activate with Space through the actual browser accessibility target. Natural Tab order reached Toast action, close, and the next field; focus paused the timer and leaving resumed it.
 - [x] The real playground exposes `actionCloses`, and its generated snippet follows the selected value. Browser verification confirms callback feedback remains visible when the action closes the Toast, and the Toast stays open while feedback appears when `actionCloses=false`; manual close still reports its own feedback.
 - [x] The persistent duration option generated `:duration="0"`; a timed persistence wait was not part of this pass (the earlier 7-second Loading wait remains the verified persistence evidence). The playground was restored to its default 6-second duration and `actionCloses=true` after the callback review.
-- [ ] Uncontrolled open verified. Focus-based pause/resume events are verified; pointer-only hover remains open.
+- [ ] Uncontrolled open verified.
+- [x] Pointer hover paused the persistent Toast timer (`متوقف`); moving/clicking outside resumed it (`ادامه دارد`). The playground was restored to 6 seconds and the Toast closed.
 - [ ] Single polite/assertive announcement path, tone name, content order, six-second default / persistent policy and reduced motion are verified; independent screen-reader review recorded.
 
 ## Engineering
