@@ -7,6 +7,15 @@ const active = ref(0)
 const items: NoratoCarouselItem[] = [{ id: 'one', title: 'پیشنهاد امروز' }, { id: 'two', title: 'انتخاب دوم' }, { id: 'three', title: 'انتخاب سوم' }]
 <\/script>
 <template><NoratoCarousel id="suggestions" v-model="active" label="پیشنهادها" title="پیشنهادهای امروز" :items="items" size="medium" dir="rtl" /></template>`,
+  chat: `<script setup lang="ts">
+import { NoratoChat, type NoratoChatMessageData } from '@norato/vue'
+const messages: NoratoChatMessageData[] = [
+  { id: '1', sender: 'incoming', type: 'text', senderName: 'سارا', text: 'سلام، حالت چطوره؟', time: '۱۰:۳۰' },
+  { id: '2', sender: 'outgoing', type: 'reply', text: 'خوبم، ممنون.', time: '۱۰:۳۱', read: true, replyTo: { sender: 'سارا', text: 'حالت چطوره؟' } },
+]
+function sendMessage(text: string) { /* update application state */ }
+<\/script>
+<template><NoratoChat id="support-chat" label="گفتگو با سارا" title="سارا محمدی" initials="سم" online date-label="امروز" :messages="messages" @send="sendMessage" /></template>`,
   avatar: `<script setup lang="ts">
 import { NoratoAvatar, NoratoAvatarGroup, NoratoAvatarLabel, NoratoAvatarStatus } from '@norato/vue'
 const team = [

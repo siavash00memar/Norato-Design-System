@@ -1,5 +1,14 @@
 :root {
   --norato-chart-card-inline-size: 520px;
+  --norato-chat-avatar-size: 40px;
+  --norato-chat-layout-min-block-size: 360px;
+  --norato-chat-layout-max-block-size: 620px;
+  --norato-chat-bubble-max-inline-size: 420px;
+  --norato-chat-media-max-inline-size: 280px;
+  --norato-chat-file-icon-inline-size: 36px;
+  --norato-chat-wave-bar-inline-size: 2px;
+  --norato-chat-wave-gap: 2px;
+  --norato-chat-composer-max-block-size: 120px;
   --norato-chart-preview-card-inline-size: 360px;
   --norato-chart-stat-min-block-size: 88px;
   --norato-chart-stat-spark-inline-size: 72px;

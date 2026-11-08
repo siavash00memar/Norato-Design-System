@@ -1151,3 +1151,9 @@
 - **Observation:** `scrollIntoView()` moved the document vertically while the carousel was below the fold. Immediate scroll sampling could restore the prior active dot, and remote demo images were not reliable in a disconnected browser.
 - **Correction:** compute the target slide's physical center delta and scroll only the track; debounce active-index synchronization. Playground art is now inline SVG, eliminating external asset dependency.
 - **Validation:** local 385px browser review showed the page position held while next-arrow then ArrowLeft actions advanced slides and the active dot followed. Both first-slide position and yellow Norato accent were visible. Further 320/390, desktop and full-matrix checks remain in `carousel-checklist.md`.
+
+## ERR-144 — Chat grouping collapsed spacing between different senders (2026-11-08)
+
+- **Observation:** the first CSS rule tightened every adjacent message, even when the sender changed, reducing the visual separation between conversational turns.
+- **Correction:** constrain tighter spacing to adjacent incoming/incoming or outgoing/outgoing message pairs.
+- **Validation:** the live Chat playground was reloaded and its incoming/outgoing sequence was reviewed; message types and sender states remain independently selectable. Additional viewport and full matrix checks remain open in `chat-checklist.md`.

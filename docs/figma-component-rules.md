@@ -520,3 +520,11 @@
 - **Observation:** at 385px, arrow navigation initially scrolled the page vertically and immediate scroll events could reset the active dot.
 - **Correction:** scroll the carousel track to the target slide center and debounce active-index synchronization until scrolling settles.
 - **Validation:** local mobile screenshot showed first slide right-aligned, neighboring slide peeking on the left, and arrow plus ArrowLeft navigation advancing the card and active indicator together.
+
+## Chat — sender sides and message grouping
+
+- In RTL, incoming remains right aligned and outgoing remains left aligned. Do not rely on color alone to identify sender.
+- The outgoing bubble uses Norato yellow with primary text; incoming uses a neutral surface. Keep text bubbles below the available conversation width.
+- Reduce vertical spacing only between consecutive messages from the same sender. Preserve the normal gap when the sender changes.
+- Images retain intrinsic proportion and audio/file controls keep their accessible names and 48px target.
+- **Validation:** local mobile page was reviewed alongside the matching reference capture. Enter sent a typed outgoing message and reset the composer; the message-type selector exposed its image alternative text, and the display-only recording state disabled text input.

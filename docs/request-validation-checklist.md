@@ -1564,3 +1564,12 @@
 - [x] Fixed page vertical shift and active-indicator race; removed external playground image dependencies.
 - [ ] Matched desktop comparison, 320px overflow, 390px layout, all 22 variants, touch/mouse, LTR, controlled-model and screen-reader review remain open in `specs/013-design-system-parity/carousel-checklist.md`.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Build warns about the >500KB JavaScript chunk.
+
+## Chat — implementation checkpoint (2026-11-08)
+
+- [x] Button-style route provides an inert structured preview, interactive Playground, copyable Vue snippet and nine contract sections.
+- [x] Six Vue exports cover the root conversation, message, header, date divider, typing indicator and composer.
+- [x] Reference/local narrow viewport comparison confirmed RTL incoming-right/outgoing-left, grouped metadata, and Norato yellow outgoing accent.
+- [x] Keyboard Enter sent and announced a message; draft cleared. Sender/type controls and display-only recording state were exercised; the recording status correctly disables text entry.
+- [ ] Full 10 sender × type visuals, six part states, 320/390/desktop geometry, file event, LTR, remaining keyboard/disabled behavior and independent screen-reader review remain open in `specs/013-design-system-parity/chat-checklist.md`.
+- [x] Final token/catalog checks, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed. Build warns that the JS chunk is above 500KB.

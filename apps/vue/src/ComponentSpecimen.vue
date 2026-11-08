@@ -82,7 +82,7 @@ onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListe
     <div v-else-if="name==='Popover'" class="sample-popover-scene"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><div class="sample-popover-anchor"><button type="button">اشتراک‌گذاری <span aria-hidden="true">⌄</span></button><section class="sample-popover-panel" dir="rtl"><i aria-hidden="true" /><b>لینک اشتراک</b><span dir="ltr">norato.design/share/8df</span></section></div></div>
     <div v-else-if="name==='Image'" class="sample-image-visual" role="img" aria-label="غروب خورشید بر فراز تپه‌ها"><span>غروب در مسیر شمال</span></div>
     <div v-else-if="name==='Carousel'" class="sample-carousel"><header><strong>پیشنهادهای امروز</strong><span aria-hidden="true">‹　›</span></header><div><i>مسیرهای تازه</i><i>ساخته‌های دست</i><i>برای خانه</i></div><footer><i></i><i></i><i></i></footer></div>
-    <div v-else-if="name==='Chat'" class="sample-chat"><b>سارا　<span>آنلاین</span></b><p class="incoming">فایل نوراتو را دیدی؟</p><p class="outgoing">بله، ساختار کامپوننت‌ها روشن است.</p><footer>پیام…　➤</footer></div>
+    <div v-else-if="name==='Chat'" class="sample-chat"><header><b>سارا محمدی <span>آنلاین</span></b><i aria-hidden="true">☎　···</i></header><small>امروز</small><p class="incoming">سلام! فایل راهنما رو دیدی؟ <time>۱۰:۳۰</time></p><p class="outgoing">بله، ساختارش خیلی روشنه. <time>۱۰:۳۱　✓✓</time></p><footer><span>پیامت را بنویس…</span><i aria-hidden="true">＋　➤</i></footer></div>
   </div>
 </template>
 
