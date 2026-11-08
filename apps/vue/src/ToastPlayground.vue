@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { NoratoToast, type NoratoToastLayout, type NoratoToastSurface, type NoratoToastTone } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 
@@ -15,10 +15,24 @@ const action = ref(true)
 const actionCloses = ref(true)
 const dismissible = ref(true)
 const duration = ref(6000)
+const stateMode = ref<'controlled' | 'uncontrolled'>('controlled')
+const toastKey = ref(0)
 const feedback = ref('')
 const timerState = ref('')
 const actionTriggeredClosing = ref(false)
-const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoToast } from '@norato/vue'\nconst open = ref(false)\n<\/script>\n<template>\n  <NoratoToast id="save-toast" v-model="open" title="تغییرات ذخیره شد" description="تغییرات پروژه با موفقیت ذخیره شدند." tone="${tone.value}" surface="${surface.value}" layout="${layout.value}" ${action.value ? 'action-label="بازگردانی"' : ''} :action-closes="${actionCloses.value}" dismissible :duration="${duration.value}" />\n</template>`)
+const snippet = computed(() => {
+  const controlled = stateMode.value === 'controlled'
+  const visibility = controlled ? 'v-model="open"' : ':default-open="true"'
+  const imports = `${controlled ? "import { ref } from 'vue'\n" : ''}import { NoratoToast } from '@norato/vue'\n`
+  const state = controlled ? 'const open = ref(false)\n' : ''
+  return `<script setup lang="ts">\n${imports}${state}<\/script>\n<template>\n  <NoratoToast id="save-toast" ${visibility} title="تغییرات ذخیره شد" description="تغییرات پروژه با موفقیت ذخیره شدند." tone="${tone.value}" surface="${surface.value}" layout="${layout.value}" ${action.value ? 'action-label="بازگردانی"' : ''} :action-closes="${actionCloses.value}" dismissible :duration="${duration.value}" />\n</template>`
+})
+watch(stateMode, () => {
+  open.value = false
+  feedback.value = ''
+  timerState.value = ''
+  toastKey.value += 1
+})
 function onAction() {
   feedback.value = 'اقدام بازگردانی اجرا شد.'
   actionTriggeredClosing.value = actionCloses.value
@@ -37,10 +51,14 @@ function onPause() {
 function onResume() {
   timerState.value = 'ادامه دارد'
 }
+function onModelUpdate(value: boolean) {
+  open.value = value
+}
 function showToast() {
   feedback.value = ''
   timerState.value = ''
   open.value = true
+  if (stateMode.value === 'uncontrolled') toastKey.value += 1
 }
 </script>
 
@@ -49,8 +67,10 @@ function showToast() {
     <header><strong>آزمایش Toast اجرایی</strong><span>۲۰ ترکیب ظاهری، زمان نمایش، بازخورد اقدام و نحوهٔ بستن Toast را بررسی کن.</span></header>
     <div class="button-playground-preview toast-playground__preview">
       <NoratoToast
+        :key="toastKey"
         id="toast-playground-message"
-        v-model="open"
+        :model-value="stateMode === 'controlled' ? open : undefined"
+        :default-open="stateMode === 'uncontrolled' && open"
         :title="title"
         :description="description"
         :tone="tone"
@@ -62,6 +82,7 @@ function showToast() {
         :dismissible="dismissible"
         :duration="duration"
         @action="onAction"
+        @update:model-value="onModelUpdate"
         @close="onClose"
         @pause="onPause"
         @resume="onResume"
@@ -75,6 +96,7 @@ function showToast() {
       <PlaygroundSelect id="toast-surface" v-model="surface" label="سطح" :options="[{value:'dark',label:'Dark'},{value:'glass',label:'Glass'}]" />
       <PlaygroundSelect id="toast-layout" v-model="layout" label="چیدمان" :options="[{value:'simple',label:'Simple'},{value:'rich',label:'Rich'}]" />
       <PlaygroundSelect id="toast-duration" v-model="duration" label="زمان نمایش" :options="[{value:6000,label:'۶ ثانیه'},{value:9000,label:'۹ ثانیه'},{value:0,label:'ماندگار'}]" />
+      <PlaygroundSelect id="toast-mode" v-model="stateMode" label="مدل وضعیت" :options="[{value:'controlled',label:'کنترل‌شده'},{value:'uncontrolled',label:'کنترل‌نشده'}]" />
       <label class="button-playground-switch"><input v-model="action" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>اقدام</span></label>
       <label v-if="action" class="button-playground-switch"><input v-model="actionCloses" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>بستن با اقدام</span></label>
       <label class="button-playground-switch"><input v-model="dismissible" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>قابل‌بستن</span></label>

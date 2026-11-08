@@ -19,11 +19,11 @@
 - [x] Action and close activate with Space through the actual browser accessibility target. Natural Tab order reached Toast action, close, and the next field; focus paused the timer and leaving resumed it.
 - [x] The real playground exposes `actionCloses`, and its generated snippet follows the selected value. Browser verification confirms callback feedback remains visible when the action closes the Toast, and the Toast stays open while feedback appears when `actionCloses=false`; manual close still reports its own feedback.
 - [x] The persistent duration option generated `:duration="0"`; a timed persistence wait was not part of this pass (the earlier 7-second Loading wait remains the verified persistence evidence). The playground was restored to its default 6-second duration and `actionCloses=true` after the callback review.
-- [ ] Uncontrolled open verified.
+- [x] In uncontrolled mode, the playground opens Toast from `defaultOpen`, close emits state back to the playground so it can reopen, and the generated snippet removes `v-model`/the unused `ref` import. The non-closing action emits its callback and leaves Toast open; manual close then closes it.
 - [x] Pointer hover paused the persistent Toast timer (`متوقف`); moving/clicking outside resumed it (`ادامه دارد`). The playground was restored to 6 seconds and the Toast closed.
 - [ ] Single polite/assertive announcement path, tone name, content order, six-second default / persistent policy and reduced motion are verified; independent screen-reader review recorded.
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass.
-- [x] Actual browser evidence and open residuals are recorded; DoD remains open while responsive, uncontrolled, pause/resume, focus-order, screenshot-matrix and independent screen-reader evidence are outstanding.
+- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, independent screen-reader review and final announcement/reduced-motion audit are outstanding.
 

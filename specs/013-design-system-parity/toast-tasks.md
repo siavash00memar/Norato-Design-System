@@ -9,4 +9,5 @@
 - [x] Implement adapter, usage/export/catalog, inert specimen, live playground and Button-style docs.
 - [ ] Verify matched design reference/Norato rendering and all 20 configurations, timing/interaction/keyboard/RTL/AX/responsive states.
 - [ ] Run gates, record DoD residuals and checkpoint GitHub.
+- [x] Add a controlled/uncontrolled playground selector and exercise open/close plus generated snippets for both visibility modes.
 
