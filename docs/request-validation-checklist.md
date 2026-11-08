@@ -1522,3 +1522,14 @@
 - [x] Corrected the mobile plot wrapper's inherited RTL direction after the first 320px render clipped the left numeric axis; explicit `dir="ltr"` is now on the SVG viewport.
 - [ ] Browser accessibility tree is reviewed; independent screen-reader review remains open.
 - [x] Final `pnpm check:tokens`, `pnpm check:catalog`, `pnpm test:charts` (7/7), Vue typecheck/build, and `git diff --check` passed after the latest markup change. Build output is 1,096.07KB and retains the >500KB advisory. Checkpoint `c9b2344` was pushed and matched `origin/master` on verification.
+
+## Drawer browser review — 2026-11-08
+
+- [x] Opened the design reference Drawer page and confirmed the documented default is physical right in RTL, with only inner corners rounded; the reference includes side panel and bottom-sheet variants.
+- [x] Norato Drawer is a controlled Reka Dialog adapter with title/description, close action, side positioning, sizes, bottom detents, footer slot, and dismissible control; actual page exposes an interactive Vue playground and copyable usage.
+- [x] At 1920×863, default RTL side panel measured 400×863 at the physical right edge. The left side measured 400px at x=0. At 390×844, bottom half detent measured 390×422, and document width remained 390px.
+- [x] Escape closed the panel and restored focus to the opener. With dismissible disabled, Escape and pointer outside both left it open. Dialog role, title association, named 48×48 close target were present.
+- [x] At 320×844, right and left side panels each measured 304px and stayed against their physical edge; the document stayed 320px wide. Full Bottom Sheet measured 320×812 with its 32px top inset and no horizontal overflow. At 390×844, half Bottom Sheet measured 390×422.
+- [x] Compared local and design-reference default specimen screenshots at 390×844. Both use a dotted scene with the panel aligned to the physical right, panel height near the scene height, and a visible underlay; Norato panel proportion is about 56% of scene width. Norato keeps the existing Button preview frame and yellow palette.
+- [x] Vue typecheck/build, token and catalog checks, and diff whitespace checks passed; build reports the existing large JavaScript chunk advisory.
+- [ ] Independent screen-reader review remains open; the browser accessibility tree and keyboard interaction were reviewed, but no screen reader was run.

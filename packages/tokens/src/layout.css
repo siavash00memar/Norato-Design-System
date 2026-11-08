@@ -165,6 +165,13 @@
   --norato-modal-specimen-scene-block-size: 232px;
   --norato-modal-specimen-scene-mobile-block-size: 280px;
   --norato-modal-specimen-card-inline-size: 320px;
+  --norato-drawer-width-small: 320px;
+  --norato-drawer-width-medium: 400px;
+  --norato-drawer-width-large: 480px;
+  --norato-drawer-max-block-size: 640px;
+  --norato-drawer-handle-inline-size: 36px;
+  --norato-drawer-handle-block-size: 4px;
+  --norato-drawer-specimen-inline-size: 252px;
   --norato-split-button-preview-frame-inline-size: 640px;
   --norato-toast-inline-size: 368px;
   --norato-split-button-preview-frame-mobile-inline-size: 320px;
