@@ -115,6 +115,20 @@ const series: NoratoChartSeries[] = [{ id: 'online', label: 'آنلاین', valu
   <NoratoChartCard title="فروش ماهانه" subtitle="سه ماه اخیر" :categories="categories" :series="series" type="grouped-bar" />
   <NoratoStatTile label="درآمد کل" value="۱۲۴٬۵۰۰٬۰۰۰" trend="up" change="۱۲٪" />
 </template>`,
+  'notification-center': `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoNotificationCenter, type NoratoNotification } from '@norato/vue'
+const notifications = ref<NoratoNotification[]>([
+  { id: 'design-comment', title: 'سارا روی طراحی‌ت نظر داد', time: '۲ دقیقه پیش', group: 'امروز', type: 'user', mention: true, read: false, avatarName: 'سارا محمدی' },
+  { id: 'update-installed', title: 'آپدیت ۱.۱ نصب شد', time: 'دیروز', group: 'دیروز', type: 'system', read: true },
+])
+const open = ref(false)
+function openNotification(notification: NoratoNotification) { /* navigate to its destination */ }
+function persistNotifications(next: NoratoNotification[]) { notifications.value = next }
+<\/script>
+<template>
+  <NoratoNotificationCenter id="notifications" v-model:open="open" :model-value="notifications" presentation="popover" label="اعلان‌ها" @update:model-value="persistNotifications" @select="openNotification" />
+</template>`,
   timeline: `<script setup lang="ts">
 import { NoratoActivityFeed, NoratoTimeline, NoratoTimelineItem, NoratoTimelineMarker, type NoratoActivityGroup, type NoratoTimelineEvent } from '@norato/vue'
 const events: NoratoTimelineEvent[] = [

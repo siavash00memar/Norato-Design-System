@@ -12,6 +12,7 @@ import './popover.css'
 import './image.css'
 import './carousel.css'
 import './chat.css'
+import './notification-center.css'
 
 export { default as NoratoButton } from './components/NoratoButton.vue'
 export { default as NoratoBadge } from './components/NoratoBadge.vue'
@@ -146,3 +147,5 @@ export type { NoratoChartDirectLabel, NoratoChartSeries, NoratoChartTrend, Norat
 
 export { default as NoratoToast } from './components/NoratoToast.vue'
 export type { NoratoToastLayout, NoratoToastSurface, NoratoToastTone } from './components/NoratoToast.vue'
+export { default as NoratoNotificationCenter } from './components/NoratoNotificationCenter.vue'
+export type { NoratoNotification, NoratoNotificationAction, NoratoNotificationPresentation, NoratoNotificationType } from './components/NoratoNotificationCenter.vue'

@@ -531,3 +531,10 @@
 - Reduce vertical spacing only between consecutive messages from the same sender. Preserve the normal gap when the sender changes.
 - Images retain intrinsic proportion and audio/file controls keep their accessible names and 48px target.
 - **Validation:** local mobile page was reviewed alongside the matching reference capture. Enter sent a typed outgoing message and reset the composer; the message-type selector exposed its image alternative text, and the display-only recording state disabled text input.
+
+## Notification Center — grouping and unread state
+
+- Keep the page's inert visual specimen in the same dotted glass frame size as Button; place its implementation playground below the preview, following Button's page structure.
+- Use a compact floating Popover for the bell presentation and a viewport-bounded side panel for the panel presentation. Group items under day labels without stretching avatar/icon geometry.
+- Unread title, marker and soft surface use Norato yellow tokens. User/system marks stay neutral; do not import another system's accent colors.
+- In RTL the bell badge sits at the upper inline-start corner; headings, groups and actions follow RTL reading order. Preserve 48px controls and use natural text truncation inside bounded rows.

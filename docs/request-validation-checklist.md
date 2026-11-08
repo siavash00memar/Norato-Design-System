@@ -1642,3 +1642,11 @@
 - [x] Local top specimen visibly uses the envelope beside its title, a Persian RTL placeholder, no sample email and no generic helper line. Token/source inspection confirms a 36px pill shell in a 48px interaction target, 1px neutral `#e8e8e8` default stroke and a single yellow stroke on focus.
 - [x] Focused the live name field; the screenshot showed the yellow capsule stroke without a second dark outline. Input page remains on the fresh browser route; no sample value or playground toggles were changed.
 - [ ] Exact 390/320 current browser comparison, all visual variant screenshots and independent screen-reader review remain open; Input DoD stays open.
+
+## Notification Center — implementation and browser checkpoint (2026-11-09)
+
+- [x] Added a typed Vue adapter with Popover and side-panel presentations, controlled/uncontrolled notification data, All/Mentions filtering, grouped days, unread updates, mark-all-read, optional actions, disabled trigger and empty state. Added a live Playground, a static Button-sized specimen, usage example and component contract.
+- [x] Compared local and reference screenshots in the same 1920×900 browser viewport. Approximate frames are 580×288px locally and 630×300px in the reference, constrained by the docs column; inner preview panel is about 320×171px locally and 322×174px in the reference. Spacing and 32px avatar geometry were adjusted. Yellow unread state and neutral marks are retained.
+- [x] Browser verified Popover/Panel open, Escape close and trigger focus return; All/Mentions filtering; empty state; mark-all-read and individual read state; action event feedback; selection closes and updates read status; controlled/uncontrolled models; disabled bell. Browser accessibility tree exposes names, groups, disabled state and live unread status.
+- [ ] 390/320 responsive comparison and no-overflow evidence remain open; exact LTR placement and target-size measurements remain open; keyboard-only open and outside-click dismiss were not tested. Independent screen-reader review remains open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build, and `git diff --check` pass. Build reports the existing large JavaScript chunk advisory (1,238.52KB). Repository scan found no forbidden reference-brand name after removing the one temporary checklist mention.
