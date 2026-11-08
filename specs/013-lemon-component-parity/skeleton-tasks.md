@@ -9,4 +9,4 @@
 - [x] Implement shared base and pattern adapters, wire public package exports and catalog.
 - [x] Build inert specimen, playground, generated snippet and Button-style contract sections.
 - [ ] Verify normal-motion shimmer travel, 390/320 widths and independent screen-reader behavior; all 24 combinations, RTL/LTR order, reduced motion, accessible region, desktop Lemon comparison and technical gates pass.
-- [ ] Push verified checkpoint to GitHub.
+- [x] Push verified checkpoint to GitHub (`38e03ab`).
