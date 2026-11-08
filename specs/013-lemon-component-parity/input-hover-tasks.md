@@ -7,6 +7,6 @@
 - [x] Checklist: create explicit DoD checks.
 - [x] Tasks: track implementation, validation, and documentation.
 - [x] Analyze: identify later success-state CSS overriding the earlier hover stroke.
-- [x] Implement a single enabled-hover rule after status strokes without adding a second stroke.
-- [ ] Run required repository gates and browser checks.
-- [ ] Update contract and recurring CSS error log.
+- [x] Implement one enabled-hover rule after status strokes; explicitly match hover on the native input without adding a second stroke.
+- [x] Run required repository gates and browser checks, including disabled hover.
+- [x] Update recurring CSS error log and request-validation record.

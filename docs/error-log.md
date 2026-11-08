@@ -1001,3 +1001,9 @@
 - **Observed:** Same-viewport desktop review showed Norato's inert Banner at about 58px high because the specimen used both title and description and added vertical padding; Lemon's default was a one-line announcement around 41px high.
 - **Correction:** Made the inert sample a single-line announcement and removed unnecessary vertical padding from the Banner, bringing the stripe to about 50px while preserving the 48px minimum action target and responsive content layout.
 - **Verified:** At 1265×720 the specimen now follows Lemon's one-line hierarchy. All six desktop tones, mobile Neutral at 390/320, RTL order, Inverse contrast, controlled/uncontrolled dismissal and keyboard activation were reviewed. Five mobile tones and independent screen-reader review remain open.
+
+## ERR-121 — Input hover Stroke stayed gray in the user capture (2026-11-08)
+
+- **Observed:** The supplied Input screenshot showed the capsule Stroke in gray where pointer hover was expected to turn it Norato yellow. The existing page CSS had a wrapper-hover rule, but the capture contradicted the expected interaction.
+- **Correction:** Kept the single 1px capsule Stroke and explicitly match hover on the native input as well as its wrapper, after state selectors. No additional outline, ring, or shadow was added.
+- **Verified:** On the local live Input playground, hovering the default, error, and success text field left focus elsewhere and kept the hovered Stroke yellow; non-hovered fields retained their respective state colors. Disabled stayed muted with a neutral Stroke when targeted by the pointer.

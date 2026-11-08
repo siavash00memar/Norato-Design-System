@@ -1405,3 +1405,11 @@
 - [x] Action and close controls both activated with Space through the browser accessibility target. Focus ring dimensions, natural Tab-order reachability, custom action callback mode, and pause/resume events remain unverified.
 - [x] Narrow local 484px screenshot showed no horizontal page overflow; exact 390px/320px mobile viewports are not available in this browser session and remain open.
 - [ ] Independent screenreader review and the remaining interaction/responsive checks above remain open; do not treat the browser accessibility tree as a screenreader substitute.
+
+## Input hover Stroke — follow-up (2026-11-08)
+
+- [x] User screenshot confirms the visible capsule Stroke remained gray on pointer hover; interpreted it as the field's own Stroke, not an extra ring.
+- [x] Local browser on the Input page: moved pointer over the text field, then moved keyboard focus away with Tab; the field remained yellow while unfocused, distinguishing hover from focus. Repeated while Error and Success playground statuses were enabled; the hovered field turned yellow and other fields retained their semantic colors. Playground toggles were restored afterward.
+- [x] Source now explicitly matches hover on the native input and its wrapper after state styles; focus retains its yellow Stroke and no new ring/shadow was added.
+- [x] Disabled Input remained muted with its neutral Stroke when targeted by the pointer. Browser viewport was the existing narrow view; the page's broader responsive DoD remains independently tracked.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports the existing 1,015.47KB chunk advisory.

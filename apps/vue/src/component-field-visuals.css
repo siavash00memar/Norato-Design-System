@@ -96,16 +96,6 @@
   border-color: var(--norato-color-status-success);
 }
 
-/* Hover has priority over status strokes for every enabled field. The explicit
-   status selector matches their specificity and follows them in the cascade. */
-#app .norato-input-field:not([data-disabled]) .norato-input-field__control:hover::before {
-  border-color: var(--norato-color-brand-yellow);
-}
-
-#app .norato-input-field:not([data-disabled]):is([data-invalid], [data-success]) .norato-input-field__control:hover::before {
-  border-color: var(--norato-color-brand-yellow);
-}
-
 #app .norato-input-field[data-disabled] .norato-input-field__control::before {
   border-color: var(--norato-color-border-default);
   background: var(--norato-color-surface-muted);
@@ -113,6 +103,13 @@
 
 .norato-input-field[data-readonly] .norato-input-field__control::before {
   background: var(--norato-color-surface-subtle);
+}
+
+/* Keep the single capsule stroke yellow when the pointer is over either the
+   input itself or its wrapper. This rule follows status/disabled strokes. */
+#app .norato-input-field:not([data-disabled]) .norato-input-field__control:is(:hover, :has(.norato-input-field__input:hover))::before,
+#app .norato-input-field:not([data-disabled]):is([data-invalid], [data-success]) .norato-input-field__control:is(:hover, :has(.norato-input-field__input:hover))::before {
+  border-color: var(--norato-color-brand-yellow);
 }
 
 .norato-input-field__control > :is(input, button, span, kbd, .norato-input-field__loading) {
