@@ -1130,6 +1130,13 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass. Build reports advisory that the JS chunk exceeds 500KB.
 - [ ] Independent screen-reader review and exhaustive cross-product of all variant/state combinations remain open; keep maturity `Adapted`.
 
+## Tabs — follow-up browser review (2026-11-09)
+
+- [x] Desktop live playground: Soft + Large + Vertical remains legible without visible stretching/clipping. Global disabled disables all four tabs and is reversible; the individually disabled tab remains disabled after toggling global disabled off.
+- [x] Vertical ArrowDown from “همه” selects “فعال” and updates the associated panel. Restored playground to Line/Medium/Horizontal, enabled, “همه”.
+- [x] Updated component-contract indicator wording to match the yellow active indicator/surface in the runtime styles.
+- [ ] Full style × size × orientation × disabled matrix, exhaustive hover/focus state combinations, narrow viewport captures, and independent screen-reader review remain unverified.
+
 ## Breadcrumbs — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoBreadcrumbs`, Button-style playground, copyable usage and nine-section contract; catalog readiness is Adapted.
