@@ -1709,6 +1709,8 @@
 ## Card — implementation checkpoint (2026-11-09)
 
 - [x] Added six Vue adapters, public exports, catalog readiness, a Button-sized static specimen, interactive playground and component contract. Norato surfaces retain the yellow selection/focus accent.
-- [x] Browser exercised the six card kinds, all four content layouts and code synchronization; radio group keyboard navigation changed the controlled value, checkbox mode toggled, and disabled radio controls were exposed as disabled.
+- [x] Same 1905×951 viewport comparison measured the Norato frame/card at about 580×288/272×248px and the design reference at 630×299/270×250px. Reduced the specimen card to 272px and inset/rounded its media; the page frame remains narrower because of the documentation column.
+- [x] Browser exercised all six card kinds, four base styles and their selected/disabled states, four content layouts, three stat trends, both profile layouts, pricing feature state, radio and checkbox selection. Generated Vue examples synchronize with chosen variant/state.
 - [x] Token/catalog checks, Vue typecheck, production build, `git diff --check` and project scan for prohibited reference-brand text passed.
-- [ ] Matched reference/local viewport comparison, stat/profile/pricing visual variants, link activation, focus-only appearance, RTL/LTR geometry, 390/320 widths, long text and independent screen-reader review remain open in `specs/013-design-system-parity/card-checklist.md`.
+- [x] Browser confirmed article navigation to `/guide`, radio ArrowDown/Space selection, yellow keyboard focus, checkbox toggling and disabled radio exposure.
+- [ ] 390/320 overflow, long text and independent screen-reader review remain open in `specs/013-design-system-parity/card-checklist.md`.

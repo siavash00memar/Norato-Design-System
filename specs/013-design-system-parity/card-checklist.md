@@ -11,11 +11,11 @@ Status: in progress
 
 ## Visual and runtime review
 
-- [ ] Compare local and reference screenshots at the same desktop viewport; record frame/card dimensions and correct any anatomy or spacing mismatch. Prior screenshots were at different effective viewport widths; local frame was about 580×288px and reference about 630×299px, so this is not a matched comparison.
-- [ ] Exercise all four base styles and four content layouts; inspect stat trend colors and profile/pricing variants. Browser review confirmed all four content layouts (vertical, horizontal, overlay, text) and generated code synchronization; stat trend colors and profile/pricing variants still need visual review.
-- [ ] Verify selection, radio group behavior, checkbox toggle, link target, keyboard focus and disabled behavior in the browser. Browser confirmed radio group ArrowDown changes selection, checkbox mode toggles, selected value is reflected in code, and disabled radio controls are exposed as disabled in the accessibility tree. Link target and keyboard-only focus styling remain unverified.
-- [ ] Check image/media intrinsic proportions, long Persian text, RTL/LTR and 390px/320px overflow.
-- [ ] Review the accessibility tree and independently confirm screen-reader announcements when available.
+- [x] Compare local and reference screenshots at the same 1905×951 desktop viewport. The Norato frame/card measured approximately 580×288px / 272×248px; the reference frame/card measured about 630×299px / 270×250px. The page frame remains narrower because of Norato's docs column; the content card now matches the reference card dimensions and has an inset, rounded media panel.
+- [x] Exercise all four base styles, base selected/disabled, four content layouts, all three stat trends, both profile layouts, pricing featured toggle and selectable radio/checkbox modes. Browser confirmed generated code synchronizes with each newly added base-state, stat-trend and profile-cover selection. Pricing feature state and selectable radio/checkbox behavior were already verified.
+- [x] Verify selection, radio group behavior, checkbox toggle, keyboard focus and disabled behavior in the browser. Radio group ArrowDown and Space update the controlled selection; screenshot shows the 2px yellow focus ring; checkbox mode toggles; disabled radios are exposed as disabled; activating the named article link navigates to `/guide`.
+- [ ] Check image/media intrinsic proportions, long Persian text, RTL/LTR and 390px/320px overflow. RTL and LTR render with no stretching at desktop; mobile overflow and long-text behavior need viewport-specific checks.
+- [ ] Review the accessibility tree and independently confirm screen-reader announcements when available. Browser accessibility tree exposes named links, radio/checkbox controls, checked values and disabled state; no separate screen-reader session was available for this review.
 
 ## Technical gates
 

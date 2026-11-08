@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 
-const props = defineProps<{ id: string; label: string; modelValue: string | number; options: { value: string | number; label: string }[] }>()
-const emit = defineEmits<{ 'update:modelValue': [value: string | number] }>()
+const props = defineProps<{ id: string; label: string; modelValue: string | number | boolean; options: { value: string | number | boolean; label: string }[] }>()
+const emit = defineEmits<{ 'update:modelValue': [value: string | number | boolean] }>()
 const root = ref<HTMLElement | null>(null)
 const trigger = ref<HTMLButtonElement | null>(null)
 const open = ref(false)
@@ -19,7 +19,7 @@ function dismiss(returnFocus = false) {
   open.value = false
   if (returnFocus) nextTick(() => trigger.value?.focus())
 }
-function choose(value: string | number) {
+function choose(value: string | number | boolean) {
   emit('update:modelValue', value)
   dismiss(true)
 }
@@ -67,7 +67,7 @@ onUnmounted(() => document.removeEventListener('pointerdown', onOutsidePointer))
     </button>
     <Transition name="button-playground-menu">
       <ul v-if="open" :id="`${id}-options`" class="button-playground-options" role="listbox" :aria-labelledby="`${id}-label`" @keydown="onMenuKeydown">
-        <li v-for="option in options" :key="option.value" role="option" tabindex="-1" :aria-selected="modelValue === option.value" @click="choose(option.value)">{{ option.label }}</li>
+        <li v-for="option in options" :key="String(option.value)" role="option" tabindex="-1" :aria-selected="modelValue === option.value" @click="choose(option.value)">{{ option.label }}</li>
       </ul>
     </Transition>
   </div>

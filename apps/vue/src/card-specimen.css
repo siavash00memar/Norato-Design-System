@@ -1,7 +1,8 @@
 .sample-card-preview{position:relative;display:grid;place-items:center;inline-size:100%;min-inline-size:0}
 .sample-card-preview__card{inline-size:min(100%,var(--norato-card-preview-inline-size));overflow-wrap:anywhere}
 .sample-card-preview__art{inline-size:100%;aspect-ratio:2.2/1;background:radial-gradient(circle at 70% 32%,var(--norato-color-brand-yellow) 0 11%,transparent 11.5%),radial-gradient(circle at 28% 72%,var(--norato-color-warning-container) 0 35%,transparent 35.5%),linear-gradient(135deg,var(--norato-color-surface-default),var(--norato-color-surface-muted))}
-.sample-card-preview__card .norato-content-card__media{aspect-ratio:2.2/1}
+.sample-card-preview__card .norato-content-card__media{aspect-ratio:2/1;padding:var(--norato-space-2);border-radius:0;background:transparent}
+.sample-card-preview__art{border-radius:var(--norato-radius-card)}
 .sample-card-preview__card .norato-content-card__content{gap:var(--norato-space-1);padding:var(--norato-space-3)}
 .sample-card-preview__card .norato-content-card__title{font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
 .sample-card-preview__card .norato-content-card__description,.sample-card-preview__card .norato-content-card__footer,.sample-card-preview__card .norato-content-card__eyebrow{font-size:var(--norato-type-body-min-size);line-height:var(--norato-type-body-small-line-height)}
