@@ -18,13 +18,16 @@ const props = withDefaults(defineProps<{
   items: NoratoTreeNode[]
   modelValue?: string
   expandedIds?: string[]
+  defaultSelectedId?: string
+  defaultExpandedIds?: string[]
   showGuides?: boolean
   disabled?: boolean
   dir?: 'rtl' | 'ltr'
-}>(), { expandedIds: () => [], showGuides: false, disabled: false, dir: 'rtl' })
+}>(), { defaultExpandedIds: () => [], showGuides: false, disabled: false, dir: 'rtl' })
 
 const emit = defineEmits<{ 'update:modelValue': [id: string | undefined]; 'update:expandedIds': [ids: string[]] }>()
 const nodeModel = computed(() => findNode(props.items, props.modelValue))
+const defaultNode = computed(() => findNode(props.items, props.defaultSelectedId))
 const childrenFor = (node: NoratoTreeNode) => node.children?.length ? node.children : undefined
 const getKey = (node: NoratoTreeNode) => node.id
 
@@ -50,7 +53,9 @@ function selectNode(node: NoratoTreeNode | undefined) {
     :data-guides="showGuides ? 'on' : 'off'"
     :items="items"
     :model-value="nodeModel"
+    :default-value="defaultNode"
     :expanded="expandedIds"
+    :default-expanded="defaultExpandedIds"
     :get-key="getKey"
     :get-children="childrenFor"
     :disabled="disabled"

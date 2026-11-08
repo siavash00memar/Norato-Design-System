@@ -2,7 +2,7 @@
 
 **حوزه:** Navigation
 **وضعیت نوراتو:** Implemented؛ مرور کامل DoD ادامه دارد
-**adapter:** `NoratoTreeView` در Vue 3، تک‌انتخاب، کنترل‌شده
+**adapter:** `NoratoTreeView` در Vue 3، تک‌انتخاب، کنترل‌شده یا کنترل‌نشده
 
 ## Preview
 
@@ -44,7 +44,7 @@
 
 ## Usage
 
-`NoratoTreeView` فهرست `NoratoTreeNode[]` با شناسه‌های پایدار می‌گیرد. صفحهٔ اجرای همین مستند یک مثال Vue کامل و قابل کپی نشان می‌دهد.
+`NoratoTreeView` فهرست `NoratoTreeNode[]` با شناسه‌های پایدار می‌گیرد. انتخاب تکی و شناسه‌های پوشهٔ باز می‌توانند controlled باشند؛ در حالت uncontrolled، از `defaultSelectedId` و `defaultExpandedIds` برای مقدار اولیه استفاده کن. مقدار controlled بر مقدار default اولویت دارد. صفحهٔ اجرای همین مستند مثال Vue را برای هر دو مدل تولید می‌کند.
 
 - برای انتخاب، `v-model` یک شناسهٔ نود را نگه می‌دارد.
 - برای بازبودن پوشه‌ها، `v-model:expanded-ids` آرایهٔ شناسه‌ها را کنترل می‌کند.
@@ -74,3 +74,9 @@
 ## Tokens
 
 از توکن‌های `--norato-color-brand-yellow`، `--norato-color-warning-container`، `--norato-color-surface-subtle`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-text-disabled`، `--norato-tree-indent`، `--norato-tree-file-offset`، `--norato-tree-row-height`، `--norato-tree-preview-row-height`، `--norato-tree-focus-offset`، `--norato-tree-icon-size`، `--norato-tree-chevron-size`، `--norato-tree-preview-frame-*`، توکن‌های شعاع، فاصله، تایپوگرافی و focus استفاده می‌شود.
+
+## DoD
+
+در مرورگر هم‌اندازه، ترکیب پیش‌فرض درخت، پنل، نشان Default و ساختار RTL با مرجع بصری مقایسه شد. اسکرین‌شات raster قاب نوراتو را حدود 577×288 و قاب مرجع را حدود 630×299 نشان می‌دهد؛ پنل‌ها حدود 256×129 و 258×134 هستند. Guides خاموش/روشن، selection، chevron، صفات accessibility، controlled/uncontrolled، disabled سراسری، حرکت صفحه‌کلید و حلقهٔ فوکوس زرد مرور شدند. رندر تازه پس از اصلاح، حلقهٔ تیرهٔ اضافه را ندارد.
+
+موارد باز: عرض‌های دقیق ۳۹۰/۳۲۰، Hover مستقل، emulation کاهش حرکت و صفحه‌خوان مستقل. DoD تا ثبت این موارد باز می‌ماند.

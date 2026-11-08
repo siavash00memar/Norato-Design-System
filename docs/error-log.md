@@ -1187,3 +1187,10 @@
 - **Observed:** At the last slides, text-only slide cards filled the vertical height of image-bearing slides even though their own content was short.
 - **Correction:** Set the horizontal track to `align-items:flex-start` to preserve each slide's natural block size. Added local artwork to the last two interactive sample items so the default five-slide demo remains visually consistent without remote assets.
 - **Verified:** At the final index, the text-only cards shrank to their content height instead of the former full-height cards; ArrowRight in RTL moved to index 4 and the active indicator followed. The playground now exposes meaningful alt text for all five local artwork items. Touch/mouse gestures and LTR remain open.
+
+## ERR-149 — Tree View showed a dark browser-default focus outline (2026-11-08)
+
+- **Observed:** Keyboard focus on a TreeItem showed a dark outer outline at the same time as the intended Norato-yellow row ring.
+- **Cause:** The recursive item's focusable root retained its default outline while the child row rendered the component's own focus indicator.
+- **Correction:** Clear outline and shadow on the focused TreeItem root; keep the 2px yellow outline with a 2px tokenized offset on its row.
+- **Verified:** After hot reload, same desktop browser screenshot shows one yellow outline around the focused row and no dark duplicate. Keyboard Home/End/Up/Down/Left/Right, Enter, Space, typeahead, disabled-row skip, folder row selection+toggle and chevron-only expansion were also exercised. Narrow viewport, reduced-motion emulation and independent screen-reader checks remain open.

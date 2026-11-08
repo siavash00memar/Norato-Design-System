@@ -42,6 +42,11 @@ const rowIndent = (node: NoratoTreeNode, level: number) => {
   list-style: none;
 }
 
+:global(.norato-tree-item:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
 .norato-tree-item__row {
   display: flex;
   align-items: center;

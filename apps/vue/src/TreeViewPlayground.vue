@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { NoratoTreeView, type NoratoTreeNode } from '@norato/vue'
+import PlaygroundSelect from './PlaygroundSelect.vue'
 
 const props = defineProps<{ copiedKey?: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
 const selected = ref('readme')
 const expanded = ref(['projects', 'norato'])
 const showGuides = ref(false)
+const disabled = ref(false)
+const stateMode = ref<'controlled' | 'uncontrolled'>('controlled')
+const treeKey = ref(0)
 const nodes: NoratoTreeNode[] = [
   { id: 'projects', label: 'پروژه‌ها', children: [
     { id: 'norato', label: 'نوراتـو', children: [
@@ -17,15 +21,43 @@ const nodes: NoratoTreeNode[] = [
   ] },
   { id: 'archive', label: 'بایگانی', disabled: true, children: [{ id: 'old-project', label: 'پروژهٔ قدیمی' }] },
 ]
-const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoTreeView, type NoratoTreeNode } from '@norato/vue'\nconst selected = ref('readme')\nconst expanded = ref(['projects', 'norato'])\nconst items: NoratoTreeNode[] = [\n  { id: 'projects', label: 'پروژه‌ها', children: [\n    { id: 'norato', label: 'نوراتـو', children: [{ id: 'readme', label: 'README.md' }] },\n  ] },\n]\n<\/script>\n<template><NoratoTreeView id="projects" v-model="selected" v-model:expanded-ids="expanded" label="پروژه‌ها" :items="items" /></template>`)
+const code = computed(() => {
+  const controlled = stateMode.value === 'controlled'
+  const model = controlled
+    ? 'v-model="selected" v-model:expanded-ids="expanded"'
+    : "default-selected-id=\"readme\" :default-expanded-ids=\"['projects', 'norato']\""
+  const lines = [
+    '<script setup lang="ts">',
+    ...(controlled ? ["import { ref } from 'vue'"] : []),
+    "import { NoratoTreeView, type NoratoTreeNode } from '@norato/vue'",
+    ...(controlled ? ["const selected = ref('readme')", "const expanded = ref(['projects', 'norato'])"] : []),
+    'const items: NoratoTreeNode[] = [',
+    "  { id: 'projects', label: 'پروژه‌ها', children: [",
+    "    { id: 'norato', label: 'نوراتـو', children: [{ id: 'readme', label: 'README.md' }] },",
+    '  ] },',
+    ']',
+    '<\/script>',
+    '<template>',
+    '  <NoratoTreeView id="projects" ' + model + (disabled.value ? ' disabled' : '') + ' label="پروژه‌ها" :items="items" />',
+    '</template>',
+  ]
+  return lines.join(String.fromCharCode(10))
+})
+watch(stateMode, () => {
+  selected.value = 'readme'
+  expanded.value = ['projects', 'norato']
+  treeKey.value += 1
+})
 </script>
 
 <template>
   <div class="tree-view-playground" dir="rtl">
     <div class="tree-view-playground__controls">
+      <PlaygroundSelect id="tree-state-mode" v-model="stateMode" label="مدل وضعیت" :options="[{value:'controlled',label:'کنترل‌شده'},{value:'uncontrolled',label:'کنترل‌نشده'}]" />
       <label><input v-model="showGuides" type="checkbox" /> نمایش خطوط راهنما</label>
+      <label><input v-model="disabled" type="checkbox" /> غیرفعال‌کردن درخت</label>
     </div>
-    <NoratoTreeView id="tree-playground" v-model="selected" v-model:expanded-ids="expanded" label="پروژه‌ها" :items="nodes" :show-guides="showGuides" />
+    <NoratoTreeView :key="treeKey" id="tree-playground" :model-value="stateMode === 'controlled' ? selected : undefined" :expanded-ids="stateMode === 'controlled' ? expanded : undefined" :default-selected-id="stateMode === 'uncontrolled' ? 'readme' : undefined" :default-expanded-ids="stateMode === 'uncontrolled' ? ['projects', 'norato'] : []" label="پروژه‌ها" :items="nodes" :show-guides="showGuides" :disabled="disabled" @update:model-value="selected = $event ?? ''" @update:expanded-ids="expanded = $event" />
     <p class="tree-view-playground__selection" role="status">شناسهٔ انتخاب‌شده: <code dir="ltr">{{ selected || '—' }}</code></p>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'tree-view-code', code)">{{ props.copiedKey === 'tree-view-code' ? 'کپی شد' : 'کپی کد' }}</button></div>
     <pre class="usage-code" dir="ltr"><code>{{ code }}</code></pre>

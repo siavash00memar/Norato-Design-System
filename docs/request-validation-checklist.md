@@ -1626,3 +1626,12 @@
 - [x] Local desktop browser review shows the Contrast selected state in yellow with dark text for Default and Hover; focus examples retain a visible high-contrast ring. RTL ordering and fixed target layout remain represented by the existing adapter.
 - [ ] 390px gallery, exact bounding-box/focus-ring measurements, interactive review of all 64 item-state combinations and independent screen-reader session remain open; Segmented DoD stays open.
 - [x] Final token/catalog checks, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed. Build warns that the JS chunk is above 500KB.
+
+## Tree View — browser review (2026-11-09)
+
+- [x] Compared the local preview and reference at the same browser window size. Raster measurements are approximate: frame 577×288 vs 630×299; inner panel 256×129 vs 258×134. Default marker, compact glass panel, RTL folder/file order and open/closed arrow direction align; local preview uses Norato text/palette and preserves its narrower docs-column frame.
+- [x] The interactive page exposes Guides Off/On and controlled/uncontrolled models. Guide toggle leaves selection/expansion intact. Controlled and default IDs initialize nested items; clicking a folder selects and expands it, then clicking its chevron toggles expansion without changing selection. Generated snippets track both modes.
+- [x] Keyboard review: Up/Down/Home/End, RTL Left/Right, Enter/Space and typeahead all work. Disabled node is skipped and cannot be selected; global disabled marks every row disabled and blocks expansion/selection. Tab enters the tree at its first item and exits to the next control.
+- [x] Accessibility tree exposes one named tree and nested rows/groups, with selected, expanded, and disabled states. Reka TreeItem supplies level/position metadata. Independent screen-reader announcement remains unverified.
+- [x] Focus screenshot exposed a second browser-default dark outline. Clearing the focused item root fixed the duplicate; the fresh screenshot shows one 2px yellow row ring with the 2px tokenized offset.
+- [ ] Exact 390px/320px document overflow, pointer-only Hover, reduced-motion browser emulation and independent screen-reader review remain open. Desktop screenshot and source tokens confirm 48px interactive row minimum and 20px/16px logical indentation; narrow row geometry still needs measurement.

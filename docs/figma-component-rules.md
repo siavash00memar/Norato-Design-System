@@ -167,6 +167,7 @@
 - Search Dropdown active reference `8775:24026` (supersedes `8775:23957`): open RTL dropdown card 324px wide and 558px high; inner field/list width 300px; input height 36px; open list white with 258px height; option rows 36px; uses Norato SVG Checkboxes for multi-select states and Figma arrow/search assets.
 - Search Dropdown option rule: options are multi-select and must use the canonical Norato Checkbox SVG component; text-only checkmarks are forbidden.
 - در adapter Vue، نشانگر برداری مشترک `NoratoCheckboxVisual` برای گزینه‌های Multi Select استفاده می‌شود؛ قاب ۲۴×۲۴px است، ردیف ۴۸px هدف تعاملی دارد و چک‌باکس نمایشی نقش تعاملی جدا نمی‌گیرد.
+**Superseded historical Tree View notes (do not apply):** The Checkbox-tree rows, blue arrow assets, Figma IDs, typography, sizing and selection state machine in the following legacy bullets describe an abandoned experiment. The active single-select file-navigation contract is defined in “Tree View — 2026-11-08” below.
 - Tree View references `8775:24029` (closed parent) and `8822:10062` (open parent): RTL parent/child hierarchy, 36px rows, 24px expand icons, nested child branches, and independently expandable children. The active implementation is recursive and stateful.
 - Tree View interaction rule: every node has the canonical Norato Checkbox; expand/collapse uses the provided Figma 24×24 SVG arrow asset, never a text glyph or CSS character.
 - Tree View asset rule: the expand arrow MUST use the exact Figma Tree View asset saved as
@@ -426,7 +427,8 @@
 - Follow design reference’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.
 - Use the five design reference row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
 - Keep the inert sample in the Button-sized dotted 288px frame, with a compact centered glass panel and Default marker. Runtime rows retain the 48px hit target. Reka TreeRoot/TreeItem owns tree roles, roving focus, direction-aware navigation and typeahead.
-- **Remaining:** 390px/320px viewport and independent screen-reader review are not verified; Tree View DoD remains open.
+- Reset the focused TreeItem root outline so the only keyboard indicator is the 2px Norato-yellow row ring with the 2px offset; do not let the primitive's browser-default ring appear alongside it.
+- **Remaining:** exact 390px/320px viewport, pointer-only hover, reduced-motion emulation and independent screen-reader review are not verified; Tree View DoD remains open.
 
 ## Alert — 2026-11-08
 - Use design reference's 20 combinations: five status tones, Soft/Glass surface and Inline/Expanded composition. Preserve the status icon right and optional close action left in RTL.

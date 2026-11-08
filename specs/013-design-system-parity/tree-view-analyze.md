@@ -29,3 +29,10 @@
 ## DoD gate
 
 No implementation is declared complete until design reference/Norato visual comparison, RTL, keyboard/focus/disabled/selection behavior, responsive widths, accessibility tree, project gates, and GitHub checkpoint are recorded in the request checklist.
+
+## Follow-up audit — 2026-11-09
+
+- Matched local and reference browser screenshots at the same window size. The preview structure and default tree contents match; the Norato documentation column constrains its frame to about 577×288 screenshot pixels while the reference frame is about 630×299. Tree panels remain similarly centered and sized (about 256×129 vs 258×134).
+- Keyboard focus revealed a browser-default dark outline on the outer TreeItem in addition to the intended yellow row ring. Cleared the outer root outline/shadow; the fresh screenshot now shows only the tokenized yellow ring.
+- Found that `expandedIds` defaulted to an empty array and forced controlled expansion. Removed that default and added `defaultSelectedId`/`defaultExpandedIds`, matching the Reka TreeRoot API. Browser Playground now covers both controlled and uncontrolled models and keeps generated usage in sync.
+- Browser review confirms RTL parent/child movement, Up/Down/Home/End, Enter/Space, typeahead, disabled-item skip, pointer folder select+expand, chevron-only expansion, global disabled and Tab entry/exit. Exact mobile widths, pointer-only hover, reduced-motion emulation and independent screen-reader review remain open.
