@@ -7,6 +7,7 @@
 - [x] Define DoD before implementation.
 - [x] Analyze installed Reka Tooltip API and exact legacy selectors/tokens.
 - [x] Implement Vue adapter, inert specimen, playground, catalog/export, contract and usage sample.
-- [ ] Compare full variant matrix against Lemon; verify RTL, responsive collision and independent accessibility review.
-- [ ] Run all gates, record open DoD and checkpoint GitHub.
+- [x] Compare full 16-variant matrix against Lemon; verify RTL geometry, responsive collision, keyboard focus and Escape. Evidence and remaining comparison delta recorded in checklist/analyze.
+- [ ] Verify sustained pointer hover delay and obtain independent screen-reader review; keep DoD open until both have evidence.
+- [x] Run all engineering gates; record open DoD and checkpoint GitHub.
 
