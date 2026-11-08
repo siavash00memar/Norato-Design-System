@@ -1037,6 +1037,12 @@
 - **Correction:** Replaced the legacy checked matrix border token with Norato yellow in the existing matrix rule; no additional override or change to knob geometry was added. Error and Disabled states keep their semantic borders.
 - **Verified:** All 30 Switch and 6 Switch Field cells were checked in the live DOM; checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error semantic red; every knob is white with 0px border and no shadow. Screenshots reviewed all five Switch state groups at the available 499×932 local viewport. Document width 484px has no horizontal overflow. Exact 390×844 and matched design reference Variants comparisons and independent screen-reader review remain open.
 
+## ERR-127 — Static Switch matrix hid the white knob in the off state (2026-11-08)
+
+- **Observed:** The live adapter used a muted neutral off track, but the static matrix used the nearly white glass surface. The white knob blended into that off track, making the switch look entirely white.
+- **Correction:** The static matrix off track now uses `--norato-color-surface-muted`, matching the live adapter. Checked remains Norato yellow; the white knob keeps zero stroke and no shadow.
+- **Verified:** Browser screenshots at a 1265×713 desktop viewport show the off-state track in light gray with a distinct white knob in the 30-cell matrix; the 6-cell Switch Field is present. The same viewport was used to inspect the design reference Variants section; its black checked state remains replaced with Norato yellow. Mobile 390×844 and independent screen-reader review remain open.
+
 ## ERR-126 — Selected Segmented Contrast text turned white on hover (2026-11-08)
 
 - **Observed:** The Contrast selected segment uses Norato yellow, but its more-specific hover selector changed the label to white. Live browser computed `rgb(255, 255, 255)` on `rgb(253, 193, 1)`, reducing text contrast. The component contract also still described a blue selected segment.

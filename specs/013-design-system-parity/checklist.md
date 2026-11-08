@@ -13,11 +13,11 @@ Only check a line when the corresponding evidence was observed for that componen
 
 ## Switch evidence (2026-11-01)
 
-- [x] design reference page and Norato page inspected in the browser; design reference preview has one label/description field and Default marker; Norato uses the same composition and its own semantic blue palette.
+- [x] design reference page and Norato page inspected in the browser; design reference preview has one label/description field and Default marker; Norato uses the same composition and its own semantic yellow palette.
 - [x] Current Norato geometry measured: frame 320×288px, target 48×48px, medium track 40×24px; RTL and no horizontal document overflow. Earlier 390×844 browser measurement also found a 375px document width.
 - [x] Browser keyboard check: Space toggled `aria-checked` false→true; Enter toggled true→false. AX tree exposed role `switch`, name “اعلان‌ها” and associated description.
 - [x] Three track sizes × off/on retained the 48×48 target in the earlier browser matrix; track geometry was 32×20, 40×24 and 48×28px.
-- [x] Repeated in the current run: all six size/value cells retain the specified dimensions and target; pointer hover changes border to semantic blue; Space/Enter toggle; error association and true disabled behavior pass; initial state restored.
+- [x] Earlier implementation check observed a blue hover border; that stale result is superseded by the Norato yellow hover rule and current yellow checked track. Space/Enter, error association and true disabled behavior were previously verified; full live state recheck remains open.
 - [x] Current Reka adapter revision: error exposes `aria-invalid=true` and associated error text; disabled is a real disabled switch; keyboard focus shows a 2px outline with 4px offset.
 - [x] Token/catalog, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 - [ ] Full 30 Switch + 6 Switch Field visual state combinations, keyboard focus-ring measurement, and independent screenreader review remain open.
