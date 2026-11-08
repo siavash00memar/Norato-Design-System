@@ -544,3 +544,9 @@
 - Keep the inert preview in the shared Button-sized dotted glass frame; show the destructive confirmation as the default visual specimen with danger action on the left and cancel on the right in RTL.
 - Dialog surfaces use Norato semantic status colors for tone while interactive focus remains yellow. Keep the overlay behind the dialog and bound long content to the viewport instead of stretching the surface.
 - The page follows Button's structure: static preview, live playground, copyable Vue usage, then the component contract sections.
+
+## Drawer — physical side and inner corners
+
+- `side="right"` and `side="left"` refer to physical viewport edges in both RTL and LTR; the default RTL side opens on the right.
+- Round only the two corners facing the page content. A right-side panel has rounded left corners; a left-side panel has rounded right corners. Bottom sheets round both top corners.
+- The static preview uses the same right-side geometry as the default interactive drawer. Keep its panel and handle at intrinsic sizes.

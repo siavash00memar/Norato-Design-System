@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import './drawer-playground.css'
 import { NoratoButton, NoratoCheckbox, NoratoDrawer, type NoratoDrawerDetent, type NoratoDrawerSide, type NoratoDrawerSize } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 

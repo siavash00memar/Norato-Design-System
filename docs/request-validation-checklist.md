@@ -1659,3 +1659,12 @@
 - [x] Browser verified default outside-click dismissal, and with `dismissible=false`, both Escape and outside click leave the dialog open; Cancel closes it. Escape in the default state also closes the dialog and restores focus to its trigger.
 - [ ] Matched responsive 390/320 viewport measurements, all sizes/tones, explicit `dialog`/`alertdialog` role (the snapshot currently maps the surface as a generic container), LTR and independent screen-reader review remain open. Modal DoD stays open.
 - [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.
+
+## Drawer — desktop visual review (2026-11-09)
+
+- [x] Compared the local and design-reference pages at 1920×900. Frame estimates are 580×300px locally versus 630×324px in the reference; the local content column is narrower. The initial screenshot exposed the local default RTL specimen on the left, contrary to the reference. Updated specimen placement and live side-panel inner-corner radii to use physical left/right edges.
+- [x] Fresh local screenshot shows the static default panel on the right. Live left-side selection renders at the left edge with opposite inner corners; Bottom Sheet opens from the bottom with its handle. Escape closes and restores focus to the launch trigger. Browser accessibility tree exposes dialog title, description, close action, filter group, checkboxes and footer actions, but the surface is mapped as a generic container by this snapshot and the role still needs explicit confirmation.
+- [x] Found that `drawer-playground.css` was not imported at all; this left the controls unformatted and native fieldset styling visible. Imported it and removed the fieldset border while retaining semantic grouping.
+- [x] Browser reviewed all three side-panel sizes and all three Bottom Sheet detents. Default outside click closes; with dismissible off, Escape and outside click leave it open while the explicit close remains functional. Selecting a filter and applying closes the sheet. Current page settings were restored to right/medium/auto and dismissible on.
+- [ ] Matched mobile widths, long-content scroll, clear-filters outcome, LTR and independent screen-reader review remain open. Snapshot maps the drawer surface as a generic container, so explicit dialog role and screen-reader announcement remain unverified. Drawer DoD stays open.
+- [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.
