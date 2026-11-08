@@ -1105,6 +1105,12 @@
 - **Correction:** Changed the specimen to the public line variant without a label and reduced its tokenized rule width to 320px; runtime behavior is unchanged.
 - **Verified:** Matched 1280×720, 390×844 and 320×844 viewport measurements and screenshots were compared. The local rule remains 1px thick and responsive with no document overflow at 390/320. The local documentation frame is narrower/shorter than the reference due to its page column; relative line composition is close. Independent screenreader review remains open.
 
+## ERR-136 — Timeline specimen density and event time hierarchy drifted (2026-11-09)
+
+- **Observed:** At the matched 1907×907 browser viewport, the inert local specimen had three events instead of four and placed event times beside titles, while the reference places times below titles with a roomier vertical rhythm.
+- **Correction:** Added the fourth future event to the inert specimen; moved the event heading to a right-aligned vertical flow and increased default item spacing using semantic Norato spacing tokens. Compact layout retains reduced spacing.
+- **Verified:** Fresh local browser capture shows four ordered events with time below each title and the active marker in Norato yellow. RTL rail remains right-aligned. The preview frame is still about 580×288px versus about 630×326px in the reference; exact 390/320 captures and independent screen-reader review remain open.
+
 ## ERR-136 — ارتفاع واقعی فیلد از ۳۶px عبور می‌کرد
 
 - **مشاهده:** ورودی‌های adapter بعد از تنظیم min-height، به‌خاطر selector قدیمی app روی ۴۸px می‌ماندند و wrapper به ۴۲px می‌رسید؛ بنابراین فرم داخل Modal هم از اندازهٔ توافق‌شده پیروی نمی‌کرد.

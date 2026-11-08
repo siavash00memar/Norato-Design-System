@@ -1536,7 +1536,9 @@
 - [x] RTL rail is on the right and LTR rail mirrors to the left. First/middle/last connectors, fixed marker bounds, Avatar circle geometry and image fallback, array order, group boundaries, and status cues were inspected.
 - [x] Browser AX exposes named ordered lists, item heading/time and marker names; static specimen has zero focusable descendants. Keyboard opened and selected the layout menu with visible yellow focus; playground controls were restored to defaults.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after latest changes. Build retains the existing large-main-bundle advisory.
-- [ ] Matched design reference/Norato viewport comparison, exact mobile widths, and independent screen-reader review remain open. Do not close Timeline DoD until completed.
+- [x] Matched 1907×907 browser comparison completed on 2026-11-09. The local inert specimen now has the reference's four chronological states; event times are below titles and vertical rhythm is closer. RTL rail remains on the right; Norato's active marker stays yellow/neutral.
+- [x] Source-level review confirms responsive width constraints and no fixed-height stretching in Timeline items; actual 390×844 and 320×844 browser captures remain open.
+- [ ] The local preview frame is still about 580×288px versus about 630×326px in the reference. Independent screen-reader review and current engineering gates also remain open; keep DoD open.
 
 ## Charts — mobile axis, data and visual checkpoint (2026-11-08)
 
