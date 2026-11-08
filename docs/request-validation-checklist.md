@@ -1144,6 +1144,12 @@
 - [x] Token, catalog, Vue typecheck, production build and diff checks pass; build still reports the existing large JS chunk advisory.
 - [ ] Full 42-case visual matrix and independent screen-reader review remain open.
 
+## Breadcrumbs — composed configuration audit (2026-11-09)
+
+- [x] Browser exercised all 24 combinations of style, size, separator and collapse, checking the selected states after every change. Screenshot samples for Glass/Small/Slash and Glass/Large/Slash show a neutral current item, yellow disclosure and RTL flow.
+- [x] Disclosure opens to expose all three hidden links by pointer and closes by Enter; the hidden links leave the accessibility tree when closed. Playground controls were restored to Plain/Medium/Chevron/collapsed.
+- [ ] Hover/focus visual cross-product and independent screen-reader review remain open.
+
 ## Pagination — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.
