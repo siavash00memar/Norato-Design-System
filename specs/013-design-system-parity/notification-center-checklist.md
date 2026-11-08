@@ -9,7 +9,6 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 - [x] Reviewed specimen frame, panel, rows and avatar/icon proportions; changed avatars to 32px small-avatar token and aligned specimen panel height with reference. No stretched geometry is visible in desktop captures.
 - [x] Compared Popover, Panel and Empty states; Norato yellow is used for unread/selected cues, with neutral user/system marks.
 - [ ] Review layout at 390px and 320px; verify document and panel have no unintended horizontal overflow.
-- [ ] Review layout at 390px and 320px; verify document and panel have no unintended horizontal overflow.
 
 ## Behavior
 
@@ -28,11 +27,11 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 
 ## Technical gates
 
-- [ ] `pnpm check:tokens`
-- [ ] `pnpm check:catalog`
-- [ ] Vue TypeScript check
-- [ ] Vue app production build
-- [ ] `git diff --check`
+- [x] `pnpm check:tokens`
+- [x] `pnpm check:catalog`
+- [x] Vue TypeScript check
+- [x] Vue app production build
+- [x] `git diff --check`
 - [x] Repository scan confirms no forbidden reference-brand name has been introduced.
 
 ## Evidence and open findings
