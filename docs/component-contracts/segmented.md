@@ -9,12 +9,12 @@
 
 ## Overview
 
-برای جابه‌جایی بین ۲ تا ۴ نمای مرتبط از همان محتوا به کار می‌رود. سبک Glass انتخاب را روی سطح سفید و برجسته می‌کند؛ سبک Contrast از آبی معنایی Norato استفاده می‌کند. کنترل انتخاب تکی و controlled است و همیشه یک مقدار معتبر نگه می‌دارد.
+برای جابه‌جایی بین ۲ تا ۴ نمای مرتبط از همان محتوا به کار می‌رود. سبک Glass انتخاب را روی سطح سفید و برجسته می‌کند؛ سبک Contrast از زرد برند Norato با متن تیره استفاده می‌کند. کنترل انتخاب تکی و controlled است و همیشه یک مقدار معتبر نگه می‌دارد.
 
 ## Anatomy
 
 - **Track** — سطح شیشه‌ای کم‌رنگ نگه‌دارندهٔ گزینه‌ها
-- **Selected Segment** — گزینهٔ انتخاب‌شده با سطح برجسته یا پس‌زمینهٔ آبی
+- **Selected Segment** — گزینهٔ انتخاب‌شده با سطح برجستهٔ سفید در Glass یا پس‌زمینهٔ زرد Norato با متن تیره در Contrast
 - **Segment** — دکمهٔ گزینه با label و آیکن اختیاری
 - **Icon** — کامپوننت آیکن اختیاری پیش از label
 
@@ -30,7 +30,7 @@
 ## States
 
 - **Default:** گزینه‌ها در track شیشه‌ای؛ مقدار controlled مشخص است.
-- **Selected:** Glass سفید و برجسته؛ Contrast آبی برند با متن سفید.
+- **Selected:** Glass سفید و برجسته؛ Contrast زرد برند با متن تیره، در سکون و Hover.
 - **Hover:** متن گزینهٔ قابل‌تعامل با رنگ برند مشخص می‌شود.
 - **Disabled:** کنترل یا گزینهٔ خاص غیرقابل‌تعامل و با متن خنثی نمایش داده می‌شود.
 - **Focus:** حلقهٔ بیرونی ۲px برای گزینهٔ دارای focus-visible.
@@ -67,4 +67,4 @@ Reka `ToggleGroupRoot` و `ToggleGroupItem` را با `type="single"`، `dir="rt
 
 ## Tokens
 
-از `--norato-color-glass-surface`، `--norato-color-surface-default`، `--norato-color-brand-blue`، `--norato-color-text-primary`، `--norato-color-text-on-brand`، `--norato-color-warning-container`، `--norato-color-info-container`، `--norato-color-border-default`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، توکن‌های spacing، `--norato-radius-pill`، `--norato-elevation-box` و `--norato-control-target-min` استفاده می‌شود. ابعاد قاب و XLarge از توکن‌های `--norato-segmented-preview-*` و `--norato-segmented-xlarge-visual-block-size` می‌آیند.
+از `--norato-color-glass-surface`، `--norato-color-surface-default`، `--norato-color-brand-yellow`، `--norato-color-text-primary`، `--norato-color-warning-container`، `--norato-color-info-container`، `--norato-color-border-default`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، توکن‌های spacing، `--norato-radius-pill`، `--norato-elevation-box` و `--norato-control-target-min` استفاده می‌شود. ابعاد قاب و XLarge از توکن‌های `--norato-segmented-preview-*` و `--norato-segmented-xlarge-visual-block-size` می‌آیند.

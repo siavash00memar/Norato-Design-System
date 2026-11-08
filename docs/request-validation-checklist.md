@@ -1434,3 +1434,13 @@
 - [x] Static matrix had a legacy `border-strong` token on checked Default and Focus cells. The existing selector now uses Norato yellow; all 30 Switch and 6 Switch Field cells were audited across state, size and value. Checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error red; all knobs remain white and stroke-free.
 - [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. Matrix-specific viewport and same-viewport Lemon comparison, plus independent screen-reader review, remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass for this correction; build retains the existing >500kB main bundle warning.
+
+## Segmented Control Contrast hover — follow-up (2026-11-08)
+
+- [x] At the same 1280×720 viewport, Lemon shows raised white Glass selection; Norato retains its dotted glass frame and Norato-yellow brand accent.
+- [x] Reproduced the old bug: selected Contrast hover had white text on `rgb(253, 193, 1)`. After the selector correction, the hovered selected option computes `rgb(26, 26, 26)` text on Norato yellow; resting Glass remains raised white.
+- [x] Exercised the actual playground across 24 combinations (2 styles × 4 sizes × 3 item counts): all groups remained RTL, non-wrapping, selected, and within the group width; targets measured 48px for Small/Medium/Large and 56px for XLarge.
+- [x] Keyboard verified on the live group: ArrowLeft moves focus without changing value; Space selects; Home/Enter and End/Space work; a disabled Month option is skipped; group-disabled disables every native segment button; clicking the current selection does not clear the controlled value.
+- [x] Playground restored to Glass/Medium/3 with Daily selected and disabled toggles off.
+- [ ] Exact 390×844 viewport verification remains open: the browser viewport override API did not change the active tab from 1280×720. The full 64 item-state cross-product and an independent screen-reader session also remain open; do not close component DoD.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` completed successfully. The generated JS bundle is 1,024.79KB; this build emitted no separate chunk-size warning.
