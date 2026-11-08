@@ -1401,7 +1401,10 @@
 - [x] Accessibility tree exposes one `progressbar` named “بارگذاری فایل” with value 62; the adapter clamps numeric input to 0–100, displays Persian percent text, and leaves it non-focusable.
 - [x] On Linear/Medium/Default, browser values 0/25/50/75/100 update the progressbar value; on Circular/Medium/Default at 25%, the yellow arc starts at 12 o’clock; Circular/Small at 100% has no center percentage.
 - [x] Source geometry uses fixed intrinsic sizes for circle/track; legacy `.sample-progress` rules removed.
-- [ ] Full 120-combination matrix (including repeated value states), matched desktop screenshots, RTL/LTR, 390/320 viewports and independent screen-reader review remain open; the attempted full browser loop exceeded its 120-second limit and was stopped at a partial state, which was then reset. Progress DoD stays open.
+- [x] The earlier full-loop attempt timed out and was reset. The follow-up correction review subsequently exercised all 120 combinations in RTL and all 120 in LTR through the real playground, with zero geometry, fill-direction, tone, value or accessibility-value mismatches; the partial attempt is superseded by that completed pass.
+- [x] Matched desktop review at 1280×720 confirms metadata above a full-width track: reference stage 636×300px/track 302.4×8.6px; Norato Button-style frame 584×288px/track 304×8px. Current local render was rechecked against the reference: RTL title/value placement and right-starting Norato-yellow fill remain correct.
+- [x] 390px and 320px viewport checks keep document width bounded to 375px/305px content widths; sample frame remains 343×288px/273×288px and track remains responsive without vertical stretch.
+- [x] Boundary checks verify -10→0, 120→100 and 42.6→43 in visual fill, `aria-valuenow` and Persian `aria-valuetext`.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass for the first implementation pass.
 
 ## Spinner responsive verification — 2026-11-08
@@ -1418,6 +1421,12 @@
 - [x] At browser viewport settings 390px and 320px, actual content widths were 375px/305px because the scrollbar uses 15px; document width matched content width, with no horizontal overflow. Frame dimensions were 343×288px/273×288px and the track remained horizontally fluid at 304px/263px.
 - [x] Actual UI value input clamps -10 to 0 and 120 to 100; 42.6 rounds to 43. `aria-valuenow`, Persian `aria-valuetext`, and visual fill agree at each boundary.
 - [ ] Independent screen-reader review remains open. Browser accessibility tree exposes the progress name and value but is not treated as a screen-reader substitute.
+
+## Progress — parity record aligned with completed matrix review (2026-11-08)
+
+- [x] The older 120-variant timeout note is superseded by the completed 120 RTL + 120 LTR pass documented in “Progress visual and matrix correction” above.
+- [x] Fresh side-by-side render confirms the reference composition while preserving Norato's yellow accent and the already-recorded natural track geometry.
+- [ ] Independent screen-reader review remains the only open Progress DoD item; browser AX is not counted as that review.
 
 ## Input hover Stroke follow-up — 2026-11-08
 
