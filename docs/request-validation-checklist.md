@@ -2023,3 +2023,9 @@
 - [x] Matched 1536×703 viewport: frame measures 632×300px locally and 636×300px in the visual reference. The inert Combobox control width is 324px in both renders after setting its semantic preview token to 324px.
 - [x] The local control preserves RTL text and both chevrons/search icon placement; its 36px visual capsule remains inside the 48px target.
 - [ ] Mobile recapture after the shared frame-token refinement, full screenshot matrix, and independent screen-reader review remain open for Combobox.
+
+## Checkbox shared-frame comparison — browser evidence (2026-11-09)
+
+- [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
+- [x] Checkbox control is 20×20px locally vs 19.44×19.44px in the reference; its row remains 48px high, with the Persian label, description, and checkbox in the expected RTL order. Frame marker placement is 12.8px from the top in both renders.
+- [ ] This comparison covers the static desktop specimen. It does not add mobile recapture or screen-reader evidence to the existing component record.
