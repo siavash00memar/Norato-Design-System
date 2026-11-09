@@ -14,3 +14,5 @@
 12. [ ] Re-run matched design reference/Norato desktop and exact 390×844 comparisons, exhaustive combined screenshot review, every actionable focus path, independent screen-reader review and technical gates before closing DoD.
 13. [x] Resolve the shared cold-load blank state with an inert preview-frame fallback; verify fresh direct desktop loads for Button and Combobox and confirm the production bundle remains code-split without a size warning.
 14. [ ] Verify the transient fallback under throttled loading and capture exact mobile viewport/dimensions for both direct routes; preserve the remaining Combobox visual, keyboard and screen-reader DoD gaps.
+15. [ ] Replace the generic States fallback with six Combobox-specific inert RTL capsule samples; retain the 36px/48px geometry, approved state colors and tokenized Persian typography.
+16. [ ] Compare the revised States gallery with the reference at desktop and mobile widths, verify no blue state accent or horizontal overflow, update the contract/checklist/request validation/error log, and run the required technical gates.

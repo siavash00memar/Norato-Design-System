@@ -8,6 +8,7 @@
 6. Keep DoD open where independent screen-reader or any visual/interaction evidence is still missing; push verified changes to GitHub.
 7. For the cross-component Input rule, replace the Combobox's existing native field border/blue outer focus treatment with a centered 36px tokenized capsule inside its unchanged 48px target, and align label/placeholder typography. Validate actual desktop/mobile render and interaction.
 8. Fix the shared cold-load gap in the async `ComponentSpecimen` host with an inert, tokenized frame fallback; verify Button and Combobox and inspect production bundle impact.
+9. Replace the Combobox States gallery's generic blue mark with six inert RTL capsule previews; verify each state color, 36px capsule, 48px row, responsive layout and matched reference composition in the browser.
 
 ## Known gaps going into the audit
 

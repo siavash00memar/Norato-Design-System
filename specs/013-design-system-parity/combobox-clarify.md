@@ -31,3 +31,11 @@ None for this audit. It verifies existing behavior and visual parity without exp
 - Keep the specimen chunk asynchronous to avoid inflating the initial JavaScript bundle. During loading, show an inert Norato-tokenized frame that preserves the detail and compact inventory geometry, then replace it with the real specimen.
 
 **Acceptance:** direct cold loads of Combobox and Button never show an empty specimen region at desktop or narrow widths; the frame placeholder is replaced by the correct specimen, with no horizontal overflow or meaningful frame-height jump.
+
+## States gallery clarification (2026-11-09)
+
+- The confirmed six gallery states are Default, Hover, Typing, Filled, Error and Disabled, matching the existing component contract.
+- Use a static, inert Combobox-shaped sample for each state. Preserve the existing live adapter and playground; this correction adds no public API or behavior.
+- Reuse the approved field contract: RTL, 36px visible capsule inside a 48px row, Estedad Bold label treatment, Vazirmatn Light 12px placeholder, neutral `#e8e8e8` default/disabled Stroke, yellow hover/typing/filled Stroke and red Error Stroke. Remove the generic blue dot/bar from this Combobox gallery.
+
+**Clarify gate: passed; no unresolved product decision.**

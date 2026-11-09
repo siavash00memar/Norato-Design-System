@@ -32,6 +32,8 @@
 
 - **Combobox:** Default، Hover، Typing، Filled، Error، Disabled
 
+The inert documentation States gallery uses six Combobox-specific field previews, not the shared generic mark. Each preview keeps RTL, a 36px capsule within a 48px interactive row, neutral `#e8e8e8` default/disabled Stroke, yellow hover/typing/filled Stroke and red Error Stroke. Placeholder samples use Vazirmatn Light at 12px; labels use Estedad Bold.
+
 adapter حالت‌های Default، Hover، Typing، Filled، Error، Disabled، Loading، Empty، Recent و Create را دارد. برای رعایت هدف تعاملی ۴۸px در Norato، Small و Medium به کنترل ۴۸px نگاشت می‌شوند؛ Large برابر ۴۸px و XLarge برابر ۵۶px است. با احتساب قاب یک‌پیکسلی، ارتفاع بیرونی کنترل به‌ترتیب ۵۰ و ۵۸px است. مقایسهٔ بصری نهایی هنوز لازم است.
 
 ## Parts

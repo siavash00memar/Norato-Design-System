@@ -13,6 +13,7 @@ Complete the open design reference parity DoD for the existing Norato Vue Combob
 5. A disabled field keeps its neutral Stroke even when validation error is also present; a closed menu has no dangling `aria-activedescendant`, while reopening exposes an ID that resolves to a live option.
 6. Confirm the component page retains Preview, Vue usage/playground and all nine Button-like contract sections.
 7. Run token/catalog checks, Vue typecheck, production build and diff validation; update contract, family ledger, error log and request checklist with evidence and gaps.
+8. In the inert States gallery, render six Combobox-specific RTL field previews with the current capsule, typography and state colors; do not use the shared blue dot/bar fallback for Combobox.
 
 ## Out of scope
 

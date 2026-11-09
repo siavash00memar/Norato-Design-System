@@ -36,3 +36,11 @@ No product/API ambiguity blocks this audit. The only permitted implementation ch
 - Isolated hover from keyboard focus by moving keyboard focus away while the pointer remained over the Combobox input: Stroke remained yellow at 1px and the field had no outline/shadow. Clear retains a visible independent keyboard focus indicator.
 - The browser exposed two correctness defects: disabled+invalid kept an error-red Stroke, and Escape left an `aria-activedescendant` pointing to a removed menu item. Both were fixed and rechecked in the live page. Open/reopen references are valid; closed state removes the reference.
 - Recent, empty, loading (three skeleton lines), create-new, multi-select chip compression, ArrowDown, Enter and Escape were exercised. Full 96-variant screenshot review and independent screen-reader review remain open.
+
+## States gallery mismatch (2026-11-09)
+
+- At 390×844, the rendered Combobox States section shows a generic capsule with a blue dot and blue bar in every card; Typing is also classified as Default by the shared generic state mapper.
+- This sample does not depict the six contract states or the approved Norato field palette and geometry. The source is the shared fallback branch in `ContractVisualShowcase.vue`, not the live `NoratoCombobox` adapter.
+- Correct the documentation gallery with a scoped Combobox preview. Keep the live API untouched, retain RTL and token usage, and verify the six visible states in the actual browser. Full state matrix and independent screen-reader review remain separate open DoD items.
+
+- Follow-up audit found the first mapper also read only label/source, although the state axis may be stored in detail; the mapper now normalizes all three and emits one card per required kind. The browser verification of this final mapper is still pending because the active local tab repeatedly timed out.

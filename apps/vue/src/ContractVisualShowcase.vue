@@ -207,6 +207,32 @@ const stateKind = (entry: Entry) => {
   if (/read.?only|فقط.?خواندنی/.test(state)) return 'readonly'
   return 'default'
 }
+const comboboxStateKind = (entry: Entry) => {
+  const state = `${entry.label} ${entry.detail} ${entry.source}`.toLocaleLowerCase()
+  if (/typing|تایپ/.test(state)) return 'typing'
+  if (/hover|شناور/.test(state)) return 'hover'
+  if (/filled|پرشده/.test(state)) return 'filled'
+  if (/error|invalid|خطا|نامعتبر/.test(state)) return 'invalid'
+  if (/disabled|غیرفعال/.test(state)) return 'disabled'
+  return 'default'
+}
+const comboboxStateEntries = computed(() => {
+  const kinds = new Set(['default', 'hover', 'typing', 'filled', 'invalid', 'disabled'])
+  const seen = new Set<string>()
+  return stateEntries.value.filter(entry => {
+    const kind = comboboxStateKind(entry)
+    if (!kinds.has(kind) || seen.has(kind)) return false
+    seen.add(kind)
+    return true
+  })
+})
+const comboboxStateValue = (entry: Entry) => {
+  const kind = comboboxStateKind(entry)
+  if (kind === 'typing') return 'پژوهش'
+  if (kind === 'filled') return 'طراحی محصول'
+  if (kind === 'invalid') return 'مهارت نامعتبر'
+  return 'جست‌وجو یا انتخاب کنید…'
+}
 
 const inputStateKind = (entry: Entry) => {
   const state = `${entry.label} ${entry.detail}`.toLocaleLowerCase()
@@ -518,7 +544,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
             <span v-else class="preview-shape"><i /><i /><i /></span>
             <span class="preview-label">{{ entry.label }}</span>
           </div>
-          <strong>{{ entry.label }}</strong>
+          <strong>{{ comboboxStateKind(entry) === 'invalid' ? 'Error' : comboboxStateKind(entry).replace(/^./, value => value.toUpperCase()) }}</strong>
           <small v-if="description(entry)" dir="auto">{{ description(entry) }}</small>
           <div v-if="entry.axes.length" class="variant-axes">
             <div v-for="axis in entry.axes" :key="axis.name" class="variant-axis">
@@ -571,6 +597,19 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
       </div>
       <div v-else-if="name === 'Chip'" class="chip-states-grid" aria-label="حالت‌های Chip" aria-hidden="true" inert>
         <article v-for="state in chipStates" :key="state.id" class="chip-state-card" :data-state="state.id"><NoratoChip label="طراحی" mode="filter" :model-value="state.id === 'selected'" :disabled="state.id === 'disabled'" size="medium" dir="rtl" /><strong>{{ state.label }}</strong><small>{{ state.id === 'focus' ? 'حلقهٔ زرد ۲px' : state.id === 'selected' ? 'aria-pressed=true' : state.id === 'disabled' ? 'غیرفعال' : state.id === 'hover' ? 'Stroke زرد' : 'aria-pressed=false' }}</small></article>
+      </div>
+      <div v-else-if="name === 'Combobox'" class="combobox-state-grid" aria-label="حالت‌های Combobox" aria-hidden="true" inert>
+        <article v-for="entry in comboboxStateEntries" :key="entry.id" class="combobox-state-card" :data-state="comboboxStateKind(entry)">
+          <div class="combobox-state-target">
+            <div class="combobox-state-field" :data-state="comboboxStateKind(entry)" dir="rtl">
+              <svg class="combobox-state-search" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5" /><path d="m16 16 4 4" /></svg>
+              <span class="combobox-state-value" :data-placeholder="!['typing', 'filled', 'invalid'].includes(comboboxStateKind(entry))">{{ comboboxStateValue(entry) }}</span>
+              <svg class="combobox-state-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+            </div>
+          </div>
+          <strong>{{ entry.label }}</strong>
+          <small dir="auto">{{ entry.detail }}</small>
+        </article>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
@@ -735,6 +774,19 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .contract-visual--chip :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
 .contract-visual--chip :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
 .contract-visual--chip :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.combobox-state-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
+.combobox-state-card{display:grid;gap:var(--norato-space-1);min-inline-size:0;padding-block:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
+.combobox-state-target{display:flex;align-items:center;min-block-size:var(--norato-control-target-min);min-inline-size:0}
+.combobox-state-field{display:flex;align-items:center;gap:var(--norato-space-1);box-sizing:border-box;inline-size:min(100%,var(--norato-combobox-preview-inline-size));block-size:var(--norato-control-visual-height);min-inline-size:0;padding-inline:var(--norato-space-2);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-glass-surface-strong);color:var(--norato-color-text-primary)}
+.combobox-state-field[data-state="hover"],.combobox-state-field[data-state="typing"],.combobox-state-field[data-state="filled"]{border-color:var(--norato-color-brand-yellow)}
+.combobox-state-field[data-state="invalid"]{border-color:var(--norato-color-status-error)}
+.combobox-state-field[data-state="disabled"]{border-color:var(--norato-color-border-default);background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary)}
+.combobox-state-search,.combobox-state-chevron{flex:none;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:var(--norato-border-medium)}
+.combobox-state-value{flex:1;min-inline-size:0;overflow:hidden;text-align:start;text-overflow:ellipsis;white-space:nowrap;font-family:var(--norato-font-body);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-body-regular-weight)}
+.combobox-state-value[data-placeholder="true"]{color:var(--norato-color-text-placeholder-subtle);font-weight:var(--norato-type-body-light-weight)}
+.combobox-state-card>strong{font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-heading-title-weight)}
+.combobox-state-card>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+@media(max-width:599px){.combobox-state-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.chip-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chip-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

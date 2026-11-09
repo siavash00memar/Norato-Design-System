@@ -2026,6 +2026,7 @@
 - [x] Matched 1536×703 viewport: frame measures 632×300px locally and 636×300px in the visual reference. The inert Combobox control width is 324px in both renders after setting its semantic preview token to 324px.
 - [x] The local control preserves RTL text and both chevrons/search icon placement; its 36px visual capsule remains inside the 48px target.
 - [x] Post-refinement matched mobile captures: at 390×844, reference frame 327.2×300px and Norato 326.4×300px; both documents 375px. At 320×844, reference frame 256.8×300px and Norato 256×300px; local document 305px with no horizontal overflow, reference document 326px with a horizontal scrollbar. The local 48px interactive target is retained.
+- [ ] Combobox States gallery currently uses a generic blue dot/bar instead of six state-accurate fields; verify scoped correction, state strokes, 36px/48px geometry, RTL and mobile layout in the rendered page before closing this item.
 - [ ] Exhaustive combined-state screenshot matrix, cold-load fallback capture, and independent screen-reader review remain open for Combobox.
 
 ## Checkbox shared-frame comparison — browser evidence (2026-11-09)

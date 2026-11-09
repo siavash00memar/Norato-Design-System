@@ -15,3 +15,8 @@ The current user direction makes design reference (`design reference) the visual
 ## Gate
 
 **Passed for a bounded Combobox parity and DoD audit.** Existing evidence says the component and nine-section page exist, while the visual/interaction matrix and some mobile comparisons remain open.
+
+## States gallery correction (2026-11-09)
+
+- Scope is the inert States documentation gallery only; the adapter API and live playground behavior remain unchanged.
+- Each of the six documented states must show a real RTL Combobox field silhouette with the approved 36px capsule inside a 48px row, using neutral default/disabled Stroke, yellow hover/typing/filled Stroke, and error red for Error. Do not use blue as a field accent.

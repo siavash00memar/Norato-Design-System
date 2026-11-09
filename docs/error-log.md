@@ -1386,6 +1386,13 @@
 - **Correction:** The base disabled-track rule now sets both `border-color` and `background` to the disabled neutral surface. Error message and accessibility semantics remain unchanged.
 - **Verification:** In the local browser after Vite hot reload, Error + Disabled was tested in both checked and unchecked values. Both tracks rendered the same neutral disabled surface/border; AX exposed the switch as disabled, and the error alert remained present. Exhaustive live combined-state coverage and independent screen-reader review remain open.
 
+## ERR-177 — Combobox States gallery used a generic blue mark (2026-11-09)
+
+- **Observed:** At 390×844, all Combobox state cards showed the same generic blue dot/bar and yellow capsule, including Default, Typing and Disabled. The gallery did not depict the actual Combobox input or its state-specific Stroke.
+- **Cause:** The shared generic `state-visual-grid` fallback rendered for Combobox, and its generic state mapper did not recognize Typing.
+- **Correction:** Add a scoped, inert Combobox state gallery with six RTL field samples. Use 36px capsule/48px target, neutral default/disabled Stroke, yellow hover/typing/filled Stroke and semantic error Stroke; use Norato typography/color tokens.
+- **Verification:** Pending matched browser review at desktop and mobile widths after implementation; the broader state matrix and independent screen-reader review remain open.
+
 ## ERR-024 — تایپوگرافی فیلدهای تنظیمات از عنوان والد ارث‌بری می‌کرد
 
 - **کامپوننت:** Input و playgroundهای مشترک کامپوننت‌ها
@@ -1393,3 +1400,5 @@
 - **علت:** `font: inherit` روی کنترل فرزند، فونت عنوان والد را جایگزین فونت بدنه می‌کرد؛ selector عمومی همچنین checkboxهای سوئیچ را در دامنهٔ input متنی می‌آورد.
 - **اصلاح:** فیلدهای متنی و انتخابی تنظیمات صریحاً از توکن‌های Vazirmatn بدنه، اندازهٔ ۱۲px و وزن عادی استفاده می‌کنند؛ checkbox از selector فیلد متنی کنار گذاشته شد. عنوان همچنان Estedad Bold باقی می‌ماند.
 - **قاعدهٔ پیشگیری:** تایپوگرافی فیلد را مستقل از label تعیین کنید؛ `font: inherit` را در ورودی‌هایی که والدشان عنوان ضخیم است استفاده نکنید.
+
+- **وضعیت:** fallback آبی با gallery اختصاصی تعویض شد و mapper برای هر شش حالت از label/detail/source استفاده می‌کند؛ gates ساخت/توکن/کاتالوگ/types پاس‌اند. رندر نهایی این اصلاح در مرورگر به‌علت timeout تب تأیید نشده و DoD باز است.
