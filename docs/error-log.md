@@ -1488,3 +1488,9 @@
 - **Observed:** On a 430×676 mobile render, Reka flipped the 480px Popover above a bell at y=314.2px, leaving its bounds at y=-173.6..306.4px and clipping the top.
 - **Correction:** Scoped the Popover max block size to Reka's placement-aware available height, Norato's existing 480px maximum and the viewport inset. Added an RTL-default direction selector to the Notification Center playground and synchronized the generated usage snippet.
 - **Verification:** At the same 430×676 edge case, Popover now measures y=8..306.2px within 298.2px available height, long content scrolls internally, rows remain 70.4px and controls/actions remain ≥48px. RTL/LTR Popover and Panel placement, document bounds and Escape focus return were browser-checked. Exact 390/320 widths, bottom-edge placement, keyboard-only navigation, screen reader and reduced-motion checks remain open; DoD is not closed.
+
+## ERR-192 — Command Palette preview frame was shorter than the reference (2026-11-09)
+
+- **Observed:** Same-window 1904×950 screenshots showed the reference frame at about 630×332px and Norato at about 628×300px, although both panels were already close in size.
+- **Correction:** Raised only `--norato-command-palette-preview-frame-block-size` from 300px to 332px; the panel and item row dimensions remain unchanged.
+- **Verification:** Follow-up local render measures about 628×330px with a ~446×242px panel vs the reference's ~630×331px frame and ~452×244px panel. Token, catalog, Vue typecheck, production build and diff checks pass. Exact row/footer dimensions, mobile and independent screen-reader checks remain open.

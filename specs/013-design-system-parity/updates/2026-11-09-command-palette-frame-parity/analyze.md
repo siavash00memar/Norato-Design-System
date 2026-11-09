@@ -1,0 +1,3 @@
+# Analysis — Command Palette frame parity
+
+At the same 1904×950 Chrome screenshot size, the reference frame spans approximately x=640–1270 and y=295–627, about 630×332px. Norato initially spanned x=632–1260 and y=271–571, about 628×300px. After changing only the semantic frame height token from 300px to 332px, the live local frame is about 628×330px, within about 1px of the reference height. The panel appears about 452×244px in the reference and 446×242px in Norato; its 448×240px token remains unchanged. Screenshot-coordinate readings are approximate; exact row/footer geometry and mobile remain unverified.

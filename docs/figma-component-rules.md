@@ -423,12 +423,12 @@
 - **Verified:** matched desktop capture showed design reference frame/panel 636×300px / 235×160px and Norato column-constrained frame/panel about 576×288px / 234×157px. Root and child menus fit at 390px; RTL/LTR, leaf selection and keyboard close/focus return were checked. Pointer hover remains yellow when focus is on a different row; the disabled hovered item remains visually neutral.
 - **Remaining:** 320px viewport and independent screen-reader review are not verified; Menu DoD remains open.
 
-## Command Palette — 2026-11-08
+## Command Palette — 2026-11-09
 - Follow design reference's single-dialog composition: search row, grouped commands, recent items, shortcut badges and keyboard-hint footer over a blurred backdrop. Keep the documentation specimen inert and bounded inside the same dotted preview frame used by Button.
 - Use Norato glass surfaces, semantic tokens and yellow active/focus strokes. Search and Persian command text flow RTL; shortcut badges and key hints are explicitly LTR. Keep runtime targets at least 48px and let results scroll inside the panel.
 - Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
-- **Browser evidence:** at 1280×720, the specimen frame is 584×288px and its panel 448×240px; the live dialog is centered at x=340, y=108 and measures 600×375px. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
-- **Remaining:** 390/320 browser dimensions, equal-viewport design reference geometry comparison, screen-reader review and full shortcut exclusion matrix remain open; Command Palette DoD remains open.
+- **Browser evidence:** same-viewport 1904×950 screenshots initially showed a 630×332px reference frame vs Norato 628×300px. After raising only the semantic frame-height token to 332px, Norato measures about 628×330px. The panel remains about 446×242px vs 452×244px, with its intrinsic rows unchanged. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
+- **Remaining:** exact row/footer geometry, 390/320 responsive dimensions, screen-reader review and the full shortcut exclusion matrix remain open; Command Palette DoD remains open.
 
 ## Tree View — 2026-11-08
 - Follow design reference’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.

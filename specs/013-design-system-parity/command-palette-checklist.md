@@ -6,7 +6,7 @@
 - [x] Contract, Figma rules, request checklist, family ledger and error log match the implementation and evidence.
 
 ## Visual and responsive
-- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry.
+- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. Fresh 1904×950 desktop screenshots show the frame aligned at about 628×330px vs 630×331px after the 332px token adjustment; the panel is about 446×242px vs 452×244px. Exact row/footer geometry remains to be measured.
 - [x] Default/results/empty/loading and item default/active/disabled states have distinct Norato semantics.
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
 - [ ] Desktop, 390px and 320px panels remain bounded with no document overflow or stretched icons/rows.
@@ -22,6 +22,11 @@
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports a 898.75KB JS chunk above the 500KB advisory threshold.
 - [x] Local browser review and verification evidence are recorded; responsive, exact matched design reference, full interaction matrix and independent screen-reader items above remain open before calling the component done.
+
+## Desktop preview-frame parity — 2026-11-09
+- [x] Same-window screenshots before the change showed the Norato frame 32px shorter than the reference; widths differed by about 2px.
+- [x] Updated only `--norato-command-palette-preview-frame-block-size` from 300px to 332px. The live local frame now measures about 628×330px against the reference's 630×331px; the panel and rows were not enlarged to fill the extra space.
+- [ ] Panel, row and footer geometry need a more exact measurement; 390/320px comparison and independent screen-reader review remain open.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

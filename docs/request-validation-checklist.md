@@ -2234,3 +2234,9 @@
 - [x] Persian search filters to the matching command; an unmatched query exposes the no-results message.
 - [x] Home/End and ArrowUp/Down update the active item; disabled Settings is skipped; Enter selects Projects and updates the live status.
 - [ ] Responsive, matched-reference, configurable/editable-target/repeat/IME shortcut, Tab/outside-dismiss, reduced-motion, result-cap stress and independent screen-reader checks remain open.
+
+## Command Palette preview frame — 2026-11-09
+
+- [x] Same-window 1904×950 screenshots showed about 630×332px reference vs 628×300px local frame; the semantic frame token is now 332px.
+- [x] Follow-up screenshot shows the local frame about 628×330px and panel about 446×242px without increasing row dimensions.
+- [ ] 390/320 responsive comparison, exact row/footer measurements, reduced-motion/overlay review and independent screen-reader review remain open.
