@@ -9,7 +9,7 @@
 - [x] Same-viewport design reference/Norato comparison at 499×932: design reference frame/alert 436×300 / 410×74px; Norato frame/alert 452×288 / 420×69px. Inline layout, hierarchy and icon placement compared; page columns differ slightly.
 - [x] All 20 tone/style/layout combinations rendered in browser; dimensions, roles and representative semantic background colors recorded. Full visual screenshot review of every combination remains open.
 - [x] RTL direction, right-side 24×24 intrinsic icon, action wrapping and no horizontal overflow at 499px verified.
-- [ ] 390px and 320px widths have no horizontal overflow.
+- [x] At 390×844 and 320×844, both Inline and Expanded playground layouts remain within the viewport. Document widths are 375px/305px; the implementation frame and Alert measure 343px/273px. Expanded grows naturally to 117px high and Inline to 62px. The icon remains 24×24px and the close target remains 48×48px.
 
 ## Behavior/accessibility
 - [x] Inline and Expanded render correct content; caller action slot renders only for Expanded.
@@ -21,4 +21,4 @@
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass; build emits a 925.88KB JS chunk advisory above 500KB.
-- [ ] Browser evidence and remaining limitations recorded; do not close DoD while any required item remains open.
+- [x] Browser evidence and remaining limitations are recorded. The 20-state pixel screenshot review, independent screen-reader review, and assistive-technology review of uncontrolled dismissal/focus remain open; do not close DoD while these required items remain open.

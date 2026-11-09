@@ -1891,6 +1891,12 @@
 - [x] Long-copy matrix passed at 320×844 and 390×844 across vertical, horizontal, overlay and text layouts in RTL and LTR (16 cases). Document widths stayed 305px/375px; horizontal media stayed square at 112×112px; vertical media retained 16:9 proportions (239×134px at 320px, 309×174px at 390px). No horizontal overflow or media stretching.
 - [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/card-checklist.md`.
 
+## Alert — mobile layout follow-up (2026-11-09)
+
+- [x] At 390×844 and 320×844, both Inline and Expanded playground layouts fit without horizontal overflow. Document widths are 375px and 305px; Alert widths are 343px and 273px.
+- [x] Expanded content grows to 117px naturally; Inline is 62px. The semantic icon remains 24×24px and the close target remains 48×48px. RTL and `status` role are intact.
+- [ ] Full screenshot review across all 20 tone/style/layout combinations, independent screen-reader review, and assistive-technology review of uncontrolled dismissal/focus remain open; see `specs/013-design-system-parity/alert-checklist.md`.
+
 ## Chip — long-label removal and mobile preview follow-up (2026-11-09)
 
 - [x] At 390×844 and 320×844, document widths are 375px and 305px; the long 300+ character Persian Chip remains 240×48px in Filter and removable Input modes.
