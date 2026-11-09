@@ -1960,6 +1960,7 @@
 - [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.
 - [x] Browser shows the Checkbox specimen uses `NoratoCheckbox`. The live Switch in RTL measured a 48×48px target and a 40×24px track; checked track is Norato yellow, with a 16×16px white knob, zero border and no shadow. The playground was returned to unchecked.
 - [x] Live Switch Error + Disabled was exercised with On=false and On=true. In the off state, the error selector previously overrode the disabled border and left a red stroke; disabled CSS now applies the same neutral track border for both values. AX continued to expose a disabled switch and the error alert remained visible.
+- [x] Live follow-up at Small size rendered On=true + Error and both On values with Error + Disabled; disabled interaction preserved its value. Playground restored to Medium, off, enabled and no-error.
 - [x] After the Switch correction, token/catalog checks, Vue TypeScript validation, production build and `git diff --check` passed; the 428.44KB production entry chunk emitted no large-chunk warning.
 - [ ] Matched mobile comparison is complete (2026-11-09); exhaustive live combined-state coverage and independent screen-reader review remain open for Switch. Checkbox's independent screen-reader review remains open.
 
