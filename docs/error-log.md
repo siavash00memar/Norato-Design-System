@@ -1420,3 +1420,10 @@
 - **Cause:** The presentation correction was applied to the docs shell without moving the legacy public adapter's visual contract into the shipped package stylesheet.
 - **Correction:** Move the capsule geometry, neutral/yellow/error/disabled Stroke precedence and RTL placeholder typography into the package stylesheet; remove the conflicting package base selectors and docs-only field shim.
 - **Verification:** Source inspection confirms the app shim is removed and the package stylesheet now owns the field presentation. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass. Consuming-package browser review remains pending because local browser tab automation timed out.
+
+## ERR-181 — Input desktop preview frame was 4px narrower than the reference (2026-11-09)
+
+- **Observed:** Same-viewport desktop screenshots showed the Input preview frame narrower than the reference while retaining the correct 300px height.
+- **Cause:** The specimen width stopped at its parent content width before reaching its capped frame token.
+- **Correction:** Added a 2px semantic-token allowance only to the non-compact desktop Input specimen; kept the existing responsive width override.
+- **Verification:** Fresh same-viewport browser screenshots show the frame widths visually aligned and both 300px high. Token/typecheck/catalog/build/diff gates and fresh 390px/320px browser validation are still pending at this log entry.
