@@ -1350,7 +1350,8 @@
 - [x] Live browser screenshot: Button specimen contains only Primary and Secondary, with the dotted warm/cool glass background; no Cancel sample remains.
 - [x] Same browser and viewport comparison against Split Button: both frames measure 583.98×288px with 24px radius. Button controls measure 63.73×48px and 81.78×48px; Split Button main/toggle measure 64×48px and 48×48px.
 - [x] RTL is preserved; document width is 1265px at a 1280px viewport, with no horizontal overflow.
-- [ ] Mobile 390px viewport and separate design reference screenshot comparison were not run; viewport resizing is unavailable in this browser session.
+- [x] Same-browser mobile comparison at 390×844: Norato Button and Split Button frames are both 343×288px, with 375px document width and RTL intact. At 320×844, both frames are 273×288px and document width is 305px; no horizontal overflow.
+- [x] The design-reference Button frame at 390×844 measures 327×300px. Norato's 343×288px geometry is an intentional adaptation to the approved Split Button parity; the only visual specimens remain Primary and Secondary.
 - [ ] Keyboard and shared Button state matrix were not re-exercised; this change only alters inert specimen layout/content and leaves the interactive playground/API untouched.
 
 ## Input email specimen — label icon, placeholder and visual height (2026-11-02)
