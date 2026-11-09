@@ -6,4 +6,4 @@
 - [x] Same-viewport browser captures were reviewed: Norato's keyboard focus ring is yellow and 2px; reference documentation calls for a 2px keyboard ring. Reference color was not copied; Norato palette remains authoritative.
 - [ ] Independent screen-reader review remains an explicit separate DoD item.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
-- [ ] GitHub push is pending for this checkpoint.
+- [x] Checkpoint `e4b28e1` is pushed to `origin/master`; the remote head matches the local commit.
