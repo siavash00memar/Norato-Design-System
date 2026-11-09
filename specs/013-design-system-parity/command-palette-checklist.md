@@ -14,7 +14,8 @@
 - [x] Reduced-motion browser emulation confirms the loading spinner is fully static; visible and live Loading status, `aria-busy`, RTL and viewport bounds remain correct.
 
 ## Behavior and accessibility
-- [ ] Ctrl/⌘+K opens; configurable/false shortcut, editable-target, repeat and IME exclusions work.
+- [x] Default Ctrl+K opens. Browser checks confirm it is ignored in input, textarea, empty and plaintext-only contenteditable regions, ARIA textbox roles, repeated events, active composition and keyCode 229.
+- [ ] Meta+K behavior and configurable/false shortcut values remain to be verified.
 - [x] Search normalization/filtering, grouping, suggested/recent, empty and loading work. Eight-results cap is implemented but not stress-checked in browser.
 - [x] ArrowUp/Down, Home/End, Enter, disabled skip, Escape/outside, selection, focus entry/return and Tab behavior work. Fresh 2026-11-09 live review confirms ArrowUp/Down, Home/End on an empty query, disabled-item skipping, Enter selection, Escape and outside-click dismissal, trigger focus restoration, and Tab/Shift+Tab remaining within the modal.
 - [x] Dialog, labelled input, listbox/group/option names, selected/disabled state, live loading/results and icon hiding appear in AX tree; dangling aria-controls in empty/loading was fixed and rechecked.
@@ -34,6 +35,12 @@
 - [x] At 320×844, local frame/panel/search/two rows/footer measured 272×341, 260×271, 258×72, 250×43 and 258×72.2px against reference 272×341, 261×271, 259×72, 246×43 and 259×73px. Reference overflow was not copied; local document stays 320px wide.
 - [x] Both viewport DOM checks preserve RTL and 18×18px icons; the inert sample's 43px rows do not change the live dialog's 48px target.
 - [ ] Independent screen-reader review, full shortcut exclusion matrix, and result-cap stress remain open.
+
+## Editable shortcut exclusion — 2026-11-10
+- [x] A real browser reproduced the defect: empty and plaintext-only contenteditable regions opened the palette before correction.
+- [x] After using `isContentEditable`, Ctrl+K still opens from the page and stays closed for input, textarea, both editable modes, and an ARIA textbox.
+- [x] Repeat, `isComposing`, and keyCode 229 events remain excluded.
+- [ ] Meta+K/configurable false shortcut behavior and independent screen-reader review remain open.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

@@ -2407,3 +2407,9 @@
 - [x] At 320×844, local frame/panel/search/rows/footer measured 272×341, 260×271, 258×72, 250×43 and 258×72.2px against reference 272×341, 261×271, 259×72, 246×43 and 259×73px.
 - [x] Both local documents match viewport width; RTL sample content and 18×18px icons remain intact. Only the inert sample changes; live command targets remain 48px.
 - [ ] Independent screen-reader review, full shortcut exclusion matrix, and result-cap stress remain open.
+
+# Command Palette editable shortcut exclusion — 2026-11-10
+
+- [x] Ctrl+K opens from the page. It stays closed for input, textarea, empty/contenteditable plaintext-only regions, and an ARIA textbox.
+- [x] Repeat, active composition, and keyCode 229 events stay closed.
+- [ ] Meta+K and configurable/false shortcut props remain unverified; independent screen-reader review remains open.

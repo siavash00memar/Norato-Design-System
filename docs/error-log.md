@@ -1549,3 +1549,11 @@
 - **Correction:** Added semantic mobile/narrow preview tokens, grouped keyboard hints, and responsive rules scoped only to the static specimen.
 - **Verification:** At 390×844 and 320×844, frame, panel, search, row and footer measurements are within 4px of matched reference values; local document width equals each viewport and icons remain 18×18px. Live dialog rules and 48px targets are unchanged.
 - **Prevention:** Measure frame and inner specimen geometry separately at each target viewport; do not infer mobile parity from a desktop capture.
+
+## ERR-200 — Command Palette shortcut opened inside editable regions (2026-11-10)
+
+- **Observed:** Ctrl+K opened the live palette from empty and `plaintext-only` contenteditable elements; input, textarea, role textbox, repeat and IME events were already excluded.
+- **Cause:** The global handler matched only the literal `[contenteditable="true"]` attribute, which misses valid editable values and inherited editable regions.
+- **Correction:** Check the browser's `HTMLElement.isContentEditable` signal while retaining native form and ARIA textbox exclusions.
+- **Verification:** Browser checks after the correction show normal page Ctrl+K opens; input, textarea, empty/plaintext-only editable regions, role textbox, repeated key, composition and keyCode 229 stay closed.
+- **Prevention:** Use `isContentEditable` for editing context instead of enumerating attribute strings.

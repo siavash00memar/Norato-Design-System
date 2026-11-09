@@ -99,7 +99,7 @@ function onGlobalKeydown(event: KeyboardEvent) {
   if (!props.shortcut || !props.shortcut.trim() || open.value || event.repeat || event.isComposing || event.keyCode === 229) return
   if ((!event.ctrlKey && !event.metaKey) || event.altKey || event.shiftKey || event.key.toLocaleLowerCase() !== props.shortcut.toLocaleLowerCase()) return
   const target = event.target
-  if (target instanceof HTMLElement && target.closest('input, textarea, select, [contenteditable="true"], [role="textbox"], [role="searchbox"]')) return
+  if (target instanceof HTMLElement && (target.isContentEditable || target.closest('input, textarea, select, [role="textbox"], [role="searchbox"]'))) return
   event.preventDefault()
   open.value = true
 }
