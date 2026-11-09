@@ -23,6 +23,13 @@
 - [x] Accessibility tree still exposes all 22 variant examples. A side-by-side screenshot review showed the Button-style specimens remain bounded and no document horizontal scrollbar is rendered.
 - [ ] This viewport correction does not close Carousel's touch, external `v-model`, reduced-motion emulation or independent screen-reader review.
 
+## Carousel parent-controlled model (2026-11-09)
+
+- [x] Separate host-side action updated the parent's model from slide 1 to 2 by pointer; selected card, yellow indicator, selector and Previous state synchronized.
+- [x] Pressing Enter on the same focused action advanced the model to slide 3; selector/status followed and focus remained on the host action.
+- [x] Control inherits a 48px minimum from the shared tokenized button style.
+- [ ] Added control's 390px/320px visual bounds, touch scrolling, reduced-motion browser emulation and independent screen-reader review remain open.
+
 ## Chat mobile frame review (2026-11-09)
 
 - [x] Actual local Chat route rendered in same-origin 320px and 390px browser frames. The diagnostic observed inner viewports of 320px and 390px; document client/scroll widths were 305/305px and 375/375px.

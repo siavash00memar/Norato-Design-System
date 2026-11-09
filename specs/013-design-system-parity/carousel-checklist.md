@@ -23,7 +23,7 @@
 - [x] Playground exposes all 22 combinations: 3 Carousel sizes via selector, 3 Slot sizes, 8 Indicator variants and 8 Dot variants. Accessibility tree confirms all 3 slots, 8 indicators and 8 dots are rendered.
 - [x] Browser interaction: Next moves 1→2; direct selection reaches 5 and disables Next at the end; ArrowRight in RTL returns to 4. The selected-index control and yellow indicator follow the selected slide, and the focused track shows its yellow ring.
 - [x] At a mixed image/text-only state before the demo artwork was completed, short text slides expanded to match the tall image slide. Track now aligns slides to the top so cards keep their intrinsic content height. The live five-slide sample now supplies local artwork on every item.
-- [ ] Touch scrolling, external `v-model` changes beyond the playground selector, and independent screen-reader review remain open.
+- [ ] Touch scrolling and independent screen-reader review remain open; a separate parent-owned `v-model` action is verified in the follow-up below.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, build and `git diff --check` pass. Production bundle remains above 500KB advisory threshold.
 
 **DoD decision:** Do not mark the family fully reviewed until all unchecked viewport, variant, interaction and screen-reader items pass.
@@ -51,4 +51,12 @@
 - [x] At CSS frame widths 390px and 320px, the rendered document now measures client/scroll widths 375/375px and 305/305px; the matrix itself has equal client/scroll widths in both frames.
 - [x] The mobile indicator cards reflow to one column. Their Norato indicator controls remain 48×48px; the 5-indicator row fits without clipping or a local scrollbar. Dot examples stack label and control and retain RTL.
 - [x] Accessibility tree continues to expose all 22 examples. Browser screenshot review confirms the static specimen retains its intrinsic card proportions and page has no horizontal scrollbar at either width.
-- [ ] Touch swipe, an external consumer-controlled `v-model` change outside the playground, independent screen-reader review, and reduced-motion browser emulation remain open; Carousel DoD remains open.
+- [ ] Touch swipe, reduced-motion browser emulation and independent screen-reader review remain open; Carousel DoD remains open.
+
+## Parent-controlled model follow-up (2026-11-09)
+
+- [x] Added a clearly named host-side control to the live playground; it updates the parent `active` ref directly, separately from the index selector.
+- [x] Mouse activation moved the carousel from slide 1 to slide 2; the selected card and yellow active dot moved with it, the controlled-index selector read slide 2, and Previous became enabled.
+- [x] Keyboard Enter on the same control moved the parent model to slide 3; selector and visible status read slide 3, with focus remaining on the control.
+- [x] The control uses the shared `.copy-section-button` style and the 48px `--norato-control-target-min` token.
+- [ ] 390px/320px visual review of the added playground control, touch scrolling, reduced-motion emulation and independent screen-reader review remain open.
