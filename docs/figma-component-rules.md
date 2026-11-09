@@ -330,6 +330,7 @@
 - Match design reference's single selected group, raised Glass segment or Contrast segment and horizontal track; the first option is on the right in RTL.
 - Preserve Norato's yellow accent and semantic tokens; do not copy design reference's black selected color. Contrast selection and its hover use yellow with dark text.
 - Disabled styling takes precedence over selected styling in both Glass and Contrast; a disabled selected item uses a neutral surface/text and no elevation. Yellow Contrast is reserved for enabled selection.
+- In the controlled Vue API, a parent may retain the current value when its item becomes disabled; the Playground exposes this Selected + Disabled state without silently changing the model.
 - Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
 - Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
 - Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.

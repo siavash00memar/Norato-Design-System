@@ -14,6 +14,13 @@
 - [x] The full 64-case visual audit found Contrast + Selected + Disabled still yellow due to selector specificity. Fixed both the live component rule and static matrix rule; confirmed neutral `rgb(245,245,245)` surface, disabled `rgb(107,107,107)` text and no elevation in the live disabled selected state.
 - [ ] Independent screen-reader review remains open for Segmented Control.
 
+## Segmented selected item disabled — controlled-state follow-up (2026-11-09)
+
+- [x] Changed the live Playground reset condition to preserve the controlled selected value when its matching item becomes disabled; changing the option count still resets only when the selected item is removed.
+- [x] In browser, selected Month then enabled its disabled toggle. `month` remained the generated controlled model value, while the Month button exposed selected and disabled semantics.
+- [x] Screenshot review in Glass and Contrast confirmed neutral disabled surface/text and no selected elevation; disabled styling overrides the selected yellow/raised treatment.
+- [ ] Independent screen-reader review remains open for Segmented Control.
+
 ## Chip implementation checkpoint (2026-11-09)
 
 - [x] Added `NoratoChip` with controlled filter and removable input modes, RTL/LTR direction, leading icon, size options, disabled state and named removal control.

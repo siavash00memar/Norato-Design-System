@@ -1265,3 +1265,10 @@
 - **Cause:** The `::after` scrim had no `content` declaration, so the pseudo-element did not generate a box.
 - **Correction:** Added empty content to render the token-based translucent scrim, retained the caption above it, and applied the treatment to the default image and keyboard-focused gallery triggers. Reduced-motion mode continues to disable transitions and zoom.
 - **Verified:** Browser inspection after the fix shows the shade on the live Image adapter at Square, Landscape, Wide and Portrait ratios without changing each ratio. The `cover`/`contain` control still updates the standalone adapter and generated example. Reduced-motion review remains open.
+
+## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
+
+- **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.
+- **Cause:** A watcher treated `disabled` as if the selected item had been removed from the available values.
+- **Correction:** The watcher now resets only when an option-count change removes the selected value. A parent may preserve the controlled value while its item becomes disabled; the item remains non-interactive and uses neutral disabled styling.
+- **Verified:** Browser confirmed the generated model remains `month` after disabling Month. Screenshot review in both Glass and Contrast shows the neutral disabled appearance with no selection elevation. This check does not replace an independent screen-reader review.

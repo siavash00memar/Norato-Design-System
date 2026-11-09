@@ -37,6 +37,12 @@ Only check a line when the corresponding evidence was observed for that componen
 - [ ] Independent screenreader software, exact DOM bounding-box/focus-ring measurements, mobile gallery inspection, and interactive runtime review across the full 64 item-state cross-product remain open; DoD stays open.
 - [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
 
+## Segmented selected item disabled — controlled-state follow-up (2026-11-09)
+
+- [x] The Playground preserves its controlled value when the selected item becomes disabled; it resets only if the selected item is removed by reducing option count.
+- [x] Browser confirmed Month stays the selected value after disabling that item; its disabled semantics and neutral disabled styling take precedence over selection in both Glass and Contrast.
+- [ ] Full interactive runtime state cross-product and independent screen-reader review remain open.
+
 ## Select behavior acceptance checklist
 
 - [x] Reka UI 2.11.0 با Vue peer `>=3.4.0` و Vue پروژه `^3.5.0` سازگار است؛ primitiveهای SelectRoot/Content/Item در بستهٔ نصب‌شده بررسی شدند.

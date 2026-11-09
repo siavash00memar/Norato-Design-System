@@ -19,7 +19,9 @@ const allItems: NoratoSegmentedItem[] = [
 ]
 const items = computed(() => allItems.slice(0, count.value).map(item => ({ ...item, disabled: item.value === 'month' && disabledItem.value })))
 watch(items, available => {
-  if (!available.some(item => item.value === selected.value && !item.disabled)) selected.value = available.find(item => !item.disabled)?.value || ''
+  // A controlled parent may keep the current value when its item becomes disabled.
+  // Only reset when the selected value is removed by changing the option count.
+  if (!available.some(item => item.value === selected.value)) selected.value = available.find(item => !item.disabled)?.value || ''
 })
 const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoSegmentedControl } from '@norato/vue'\nconst period = ref('${selected.value}')\nconst views = ${JSON.stringify(items.value)}\n<\\/script>\n\n<template>\n  <NoratoSegmentedControl id="period" v-model="period" label="دورهٔ نمایش" :items="views" style="${style.value}" size="${size.value}"${disabled.value ? ' disabled' : ''} />\n</template>`)
 </script>
