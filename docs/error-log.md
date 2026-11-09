@@ -1213,3 +1213,10 @@
 - **Cause:** The mobile media rule used `--norato-space-10`, which is not a defined token; the invalid padding declaration computed to zero.
 - **Correction:** Removed the undefined override and retained the existing 48px semantic spacing token at narrow widths.
 - **Verified:** Browser bounding boxes at 390px and 320px show a minimum 16px marker/title clearance across all nine item cases, all 26 variants present, and no horizontal overflow. RTL and LTR rail/content positions were checked at 320px. Independent screen-reader review remains unverified.
+
+## ERR-152 — Accordion direction prop did not reach the DOM inheritance tree (2026-11-09)
+
+- **Observed:** Selecting LTR in the Accordion playground left rendered text and chevron in RTL positions.
+- **Cause:** The underlying Accordion root consumed its `dir` prop without placing a `dir` attribute on a DOM ancestor, so it inherited RTL from the page.
+- **Correction:** Added a `dir` wrapper around the primitive and `display: contents` so the wrapper sets direction inheritance without adding a layout box. Added explicit direction and collapsibility playground controls and included them in the generated Vue example.
+- **Verified:** Browser computed direction and title/chevron placement now switch in LTR; the 16 layout/style/size combinations were checked expanded and collapsed; collapsible=false remains open and announces disabled; trigger/panel ARIA references resolve. Reduced-motion emulation and independent screen-reader review remain open in `accordion-checklist.md`.

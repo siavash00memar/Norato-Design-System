@@ -1768,3 +1768,10 @@
 - [x] Browser review confirmed the playground control is named «تزئینی» and defaults on. In decorative mode, the rendered separator has `aria-hidden="true"` and `role="none"`.
 - [x] With decoration off and orientation vertical, the rendered component exposes `role="separator"` and `aria-orientation="vertical"`; its measured rule is 1×48px. Playground was restored to decorative/horizontal/subtle/8px/RTL.
 - [ ] Independent screen-reader review remains open; no claim of announced output was made.
+
+## Accordion — direction and interaction matrix follow-up (2026-11-09)
+
+- [x] Added playground controls and generated-code options for `dir` and `collapsible`; corrected the component root's inherited direction so LTR placement mirrors as expected.
+- [x] Browser verified `collapsible=false`, measured all four trigger sizes (48/52/56/64px), and exercised 16 layout/style/size configurations expanded and collapsed (32 states).
+- [x] Verified all trigger/panel `aria-controls` and `aria-labelledby` references, hidden closed panels, and closed custom-content exclusion from keyboard/AX navigation.
+- [ ] Reduced-motion browser emulation and independent screen-reader review remain open in `specs/013-design-system-parity/accordion-checklist.md`.

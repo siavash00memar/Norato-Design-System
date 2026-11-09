@@ -1,3 +1,7 @@
+.norato-accordion-direction {
+  display: contents;
+}
+
 .norato-accordion {
   display: grid;
   inline-size: 100%;

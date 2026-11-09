@@ -12,6 +12,8 @@ const expandedValue = ref<string | string[] | undefined>('free')
 const layout = ref<NoratoAccordionLayout>('grouped')
 const itemStyle = ref<NoratoAccordionItemStyle>('plain')
 const size = ref<NoratoAccordionSize>('medium')
+const collapsible = ref(true)
+const direction = ref<'rtl' | 'ltr'>('rtl')
 const disabled = ref(false)
 const secondItemDisabled = ref(false)
 const customContent = ref(false)
@@ -27,7 +29,7 @@ watch(multiple, value => { expandedValue.value = value ? ['free'] : 'free' })
 const snippet = computed(() => {
   const value = multiple.value ? "['free']" : "'free'"
   const contentSlot = customContent.value ? `\n    <template #content="{ item }">\n      <p>{{ item.content }}</p>\n      <NoratoButton label="بیشتر بدانید" variant="secondary" />\n    </template>` : ''
-  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoAccordion${customContent.value ? ', NoratoButton' : ''}, type NoratoAccordionItem } from '@norato/vue'\nconst expanded = ref<string | string[] | undefined>(${value})\nconst items: NoratoAccordionItem[] = [\n  { value: 'free', title: 'نوراتو رایگانه؟', content: 'اطلاعات بیشتر' },\n  { value: 'theme', title: 'حالت تیره هم دارد؟', content: 'تنظیمات نمایش' },\n]\n<\\/script>\n\n<template>\n  <NoratoAccordion id="faq" v-model="expanded" :items="items"${multiple.value ? ' multiple' : ''} layout="${layout.value}" item-style="${itemStyle.value}" size="${size.value}"${disabled.value ? ' disabled' : ''}>${contentSlot}\n  </NoratoAccordion>\n</template>`
+  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoAccordion${customContent.value ? ', NoratoButton' : ''}, type NoratoAccordionItem } from '@norato/vue'\nconst expanded = ref<string | string[] | undefined>(${value})\nconst items: NoratoAccordionItem[] = [\n  { value: 'free', title: 'نوراتو رایگانه؟', content: 'اطلاعات بیشتر' },\n  { value: 'theme', title: 'حالت تیره هم دارد؟', content: 'تنظیمات نمایش' },\n]\n<\\/script>\n\n<template>\n  <NoratoAccordion id="faq" v-model="expanded" :items="items"${multiple.value ? ' multiple' : ''} layout="${layout.value}" item-style="${itemStyle.value}" size="${size.value}" :collapsible="${collapsible.value}" dir="${direction.value}"${disabled.value ? ' disabled' : ''}>${contentSlot}\n  </NoratoAccordion>\n</template>`
 })
 </script>
 
@@ -35,7 +37,7 @@ const snippet = computed(() => {
   <div class="accordion-playground" dir="rtl">
     <header><strong>آزمایش آکاردئون اجرایی</strong><span>با ردیف‌ها و حالت‌های مختلف کار کن و خروجی واقعی Vue را ببین.</span></header>
     <div class="accordion-playground__preview">
-      <NoratoAccordion id="accordion-playground" v-model="expandedValue" :items="items" :multiple="multiple" :layout="layout" :item-style="itemStyle" :size="size" :disabled="disabled">
+      <NoratoAccordion id="accordion-playground" v-model="expandedValue" :items="items" :multiple="multiple" :layout="layout" :item-style="itemStyle" :size="size" :collapsible="collapsible" :dir="direction" :disabled="disabled">
         <template v-if="customContent" #content="{ item }">
           <p>{{ item.content }}</p>
           <NoratoButton label="بیشتر بدانید" variant="secondary" />
@@ -46,6 +48,8 @@ const snippet = computed(() => {
       <PlaygroundSelect id="accordion-layout" v-model="layout" label="چیدمان" :options="[{value:'grouped',label:'گروهی'},{value:'separated',label:'جدا'}]" />
       <PlaygroundSelect id="accordion-item-style" v-model="itemStyle" label="سبک ردیف" :options="[{value:'plain',label:'ساده'},{value:'card',label:'کارت'}]" />
       <PlaygroundSelect id="accordion-size" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" />
+      <PlaygroundSelect id="accordion-direction" v-model="direction" label="جهت آکاردئون" :options="[{value:'rtl',label:'راست‌به‌چپ'},{value:'ltr',label:'چپ‌به‌راست'}]" />
+      <label class="accordion-playground__toggle"><input v-model="collapsible" type="checkbox" /><span aria-hidden="true" />بستن ردیف باز مجاز است</label>
       <label class="accordion-playground__toggle"><input v-model="multiple" type="checkbox" /><span aria-hidden="true" />بازشدن چند ردیف</label>
       <label class="accordion-playground__toggle"><input v-model="secondItemDisabled" type="checkbox" /><span aria-hidden="true" />غیرفعال‌کردن ردیف دوم</label>
       <label class="accordion-playground__toggle"><input v-model="disabled" type="checkbox" /><span aria-hidden="true" />غیرفعال‌کردن گروه</label>

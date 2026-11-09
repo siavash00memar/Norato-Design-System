@@ -25,11 +25,12 @@
 - [x] At 390px content width, document width remains 390px with no horizontal overflow; the shared sample frame measures 358.4×288px and the accordion 320px wide. The open live playground measures 320×190.4px with naturally sized rows.
 - [x] At 320px content width, document width remains 320px with no horizontal overflow; sample frame measures 288×288px, live playground frame 288×243.2px, accordion 254.4px wide. Expanded content measures about 252.8×50.4px and triggers 52px high; Persian content wraps without stretching.
 - [x] Matched reference comparison at 390px: reference frame 342.4×300px with accordion 337.8×179.3px. At 320px reference frame is 272×300px but its document has 6px overflow from navigation/tools; Norato remains within viewport. Norato's shared Button frame and narrower documentation column account for the frame difference; row content stays compact.
-- [ ] Compare Small, Medium, Large and XLarge trigger geometry and complete layout × row-style × size × expansion × state combinations.
+- [x] Compared Small, Medium, Large and XLarge trigger geometry: 48, 52, 56 and 64px. Exercised all 16 layout × row-style × size configurations in both expanded and collapsed states (32 combinations); each retained three equal-width rows, expected trigger height and no page/component overflow.
 - [x] Keyboard focus on a live trigger visibly shows the yellow 2px ring; Space activation, ArrowUp and End pass.
-- [ ] Verify `collapsible=false`, LTR direction and reduced-motion rendering in the browser.
-- [ ] Verify focus remains within expected tab order for closed panels and inspect actual panel `aria-labelledby`/`aria-controls` relations beyond the accessibility tree labels.
+- [x] `collapsible=false` kept the currently open row expanded and exposed its trigger as `aria-disabled=true`; activating it did not close the row. LTR selector now sets the inherited DOM direction, with title/chevron placement mirrored correctly. The playground snippet includes both settings.
+- [ ] Verify reduced-motion rendering in a browser with the preference emulated.
+- [x] Inspected all three trigger/panel pairs: every `aria-controls` resolves to its panel, each panel's `aria-labelledby` resolves back to its trigger, and closed panels are hidden. Closed custom-content actions are excluded from the accessibility tree and keyboard tab sequence.
 - [ ] Independent screen-reader review.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.
 
-**DoD decision:** Keep Accordion open until the unchecked viewport, variant, interaction and assistive-technology items pass. The desktop review is evidence of a close structural match, not proof of the complete component DoD.
+**DoD decision:** Keep Accordion open until reduced-motion browser emulation and an independent screen-reader review pass. Desktop and mobile checks are evidence of a close structural match, not proof of the complete component DoD.

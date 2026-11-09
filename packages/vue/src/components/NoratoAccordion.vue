@@ -63,7 +63,8 @@ const toggleItem = (value: string, itemDisabled = false) => {
 </script>
 
 <template>
-  <AccordionRoot
+  <div class="norato-accordion-direction" :dir="dir">
+    <AccordionRoot
     :id="id"
     class="norato-accordion"
     :data-layout="layout"
@@ -75,7 +76,7 @@ const toggleItem = (value: string, itemDisabled = false) => {
     :disabled="disabled"
     :dir="dir"
     :unmount-on-hide="false"
-  >
+    >
     <AccordionItem
       v-for="item in items"
       :key="item.value"
@@ -117,5 +118,6 @@ const toggleItem = (value: string, itemDisabled = false) => {
         </div>
       </div>
     </AccordionItem>
-  </AccordionRoot>
+    </AccordionRoot>
+  </div>
 </template>
