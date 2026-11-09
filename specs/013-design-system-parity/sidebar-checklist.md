@@ -31,3 +31,11 @@
 - [x] Turning the playground's disabled control on removed navigation links from the accessibility tree, rendered labels as disabled content, and disabled the collapse button. Turning it off restored links and the enabled collapse control.
 - [x] Collapsing the sidebar changed the control's accessible name/state and kept the remaining item links exposed with their Persian accessible names; expanding restored section headings, nested links, and footer content.
 - [ ] Exact 390px/320px comparison, Glass/Bar × expanded/collapsed screenshots, keyboard activation of group controls, mobile Escape/outside-click/focus restoration, active `aria-current`, and independent screen-reader review remain open.
+
+## Sidebar — icon and palette refinement
+
+- [x] Replaced font-dependent collapse/expand, mobile menu, and close characters with intrinsic 20px SVG icons. RTL collapse points toward the rail and expand points into the content area; the button's Persian accessible name and expanded state remain unchanged.
+- [x] Changed the brand mark and user avatar from blue to the Norato pale-yellow surface with primary text. Focus contrast remains on its dedicated high-contrast token.
+- [x] Fresh browser render shows the static specimen and live Sidebar brand/avatar on pale yellow with dark text. The live collapse control changed from “جمع کردن نوار کناری”/expanded to “باز کردن نوار کناری”/collapsed; expanding restored section headings and child links. Both directions use the new SVG paths.
+- [ ] Mobile trigger/close SVGs are present in source but are not visually exercised under the mobile breakpoint yet; exact 390px/320px, modal dismissal/focus restoration and independent screen-reader review remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, Vue production build, `git diff --check`, and repository scan for the prohibited reference name passed after the icon and palette adjustments.

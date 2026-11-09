@@ -1180,6 +1180,14 @@
 - [x] Collapsing changed the button's accessible name/state while item links retained their accessible names; expanding restored section headings, nested links and footer content.
 - [ ] Exact 390px/320px comparison, mobile dismissal/focus restoration, keyboard activation, complete visual state matrix, and independent screen-reader review remain open in `specs/013-design-system-parity/sidebar-checklist.md`.
 
+## Sidebar — icon and palette follow-up (2026-11-09)
+
+- [x] Replaced collapse/expand and mobile menu/close glyph characters with fixed 20px inline SVG icons. The two direction-specific collapse states preserve the button's accessible names and `aria-expanded` behavior.
+- [x] Changed the Sidebar brand and user marks to Norato pale yellow with primary text; the contrast-focused keyboard outline continues using its dedicated contrast token.
+- [x] Fresh browser screenshot confirms the inert specimen and live Sidebar brand/avatar use the pale-yellow token with primary text. Toggling collapse changed the accessible name and collapsed state; expanding restored section headings and nested links.
+- [x] Post-change token/catalog checks, Vue TypeScript validation, production build, `git diff --check`, and repository scan for the prohibited reference name passed.
+- [ ] Mobile menu/close icons, exact 390px/320px layout, modal dismissal/focus restoration and screen-reader review remain unverified; see `specs/013-design-system-parity/sidebar-checklist.md`.
+
 ## Tabs — implementation checkpoint (2026-11-02)
 
 - [x] Added exported controlled `NoratoTabs` on the installed Reka Tabs primitive, an inert design reference-mapped preview, a Button-style page/playground, snippet, nine-section contract and semantic API docs.

@@ -73,4 +73,4 @@ const sections: NoratoSidebarSection[] = [{ label: 'فضای کاری', items: [
 Navigation از `nav` با نام دسترس‌پذیر استفاده می‌کند؛ لینک جاری `aria-current` دارد. دکمهٔ جمع‌کردن نام و `aria-expanded` دارد. Dialog موبایل focus trap/restore و Escape را مدیریت می‌کند. Focus ring بیرونی ۲px و targets حداقل ۴۸px هستند.
 
 ## Tokens
-`--norato-color-surface-default`, `--norato-color-text-primary`, `--norato-color-brand-blue`, `--norato-color-info-container`, `--norato-color-focus-contrast`, `--norato-color-glass-line`, `--norato-control-target-min` و توکن‌های `--norato-sidebar-*`.
+`--norato-color-surface-default`, `--norato-color-text-primary`, `--norato-color-warning-container`, `--norato-color-focus-contrast`, `--norato-color-glass-line`, `--norato-control-target-min` و توکن‌های `--norato-sidebar-*`. نشان برند و آواتار از زمینهٔ زرد کم‌رنگ با متن اصلی استفاده می‌کنند تا رنگ تأکیدی Norato در Sidebar حفظ شود.
