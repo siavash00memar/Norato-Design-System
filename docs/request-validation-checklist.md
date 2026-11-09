@@ -4,6 +4,14 @@
 - [x] Browser geometry confirms both variant grids and the matrix have matching client/scroll widths at both sizes; the 5-dot indicators fit and keep 48×48px targets, and the dot examples stack in RTL.
 - [x] Accessibility tree still exposes all 22 variant examples. A side-by-side screenshot review showed the Button-style specimens remain bounded and no document horizontal scrollbar is rendered.
 - [ ] This viewport correction does not close Carousel's touch, external `v-model`, reduced-motion emulation or independent screen-reader review.
+
+## Chat mobile frame review (2026-11-09)
+
+- [x] Actual local Chat route rendered in same-origin 320px and 390px browser frames. The diagnostic observed inner viewports of 320px and 390px; document client/scroll widths were 305/305px and 375/375px.
+- [x] Chat shell bounds are 273×513px at 320px and 343×478px at 390px. The chat region retains RTL in both frames; the accessibility tree exposes its named region/log, header controls, message content and composer controls.
+- [x] Visual browser capture confirms the narrow 320px preview remains within its frame; no horizontal document scrollbar appears in either frame.
+- [ ] This does not establish matched-reference vertical proportions, desktop parity, all ten matched screenshots, file selection, LTR, keyboard focus-loop or independent screen-reader completion.
+
 # Norato Request Validation Checklist
 
 ## Carousel live LTR and direct selection follow-up (2026-11-09)

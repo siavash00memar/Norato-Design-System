@@ -22,7 +22,8 @@
 - [x] Message type selector changed the active specimen to image and announced its alt text.
 - [ ] Matched screenshot review of all 10 sender × message-type visuals.
 - [x] Live browser and accessibility-tree review of all 10 sender × message-type selections and all six part states.
-- [ ] Test 320px and 390px mobile, matched desktop and any overflow/stretch.
+- [x] Same-origin browser frames rendered at 320px and 390px. At 320px, the document is 305px wide, the chat shell is 273×513px and RTL is true; at 390px, the document is 375px wide, the shell is 343×478px and RTL is true. Both document scroll widths equal their client widths; no horizontal overflow was measured.
+- [ ] Matched desktop comparison and reference-matched visual review of all ten sender × message-type combinations; investigate vertical geometry/stretch against the reference before closing.
 - [ ] Exercise file chooser/attach event, LTR, disabled form, send button, Shift+Enter, empty state and keyboard focus loop.
 - [ ] Independent screen-reader verification.
 - [x] Final `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed after edits. Build warns that the JS chunk is above 500KB.
@@ -35,6 +36,7 @@
 - [x] Header, date divider, typing indicator, composer default/typing/recording and disabled-chat states were inspected in the live preview. Recording remains explicitly display-only and disables text entry.
 - [x] Enter sent the draft and cleared the composer. Shift+Enter retained the draft and did not send it. The send button sent a non-empty draft and returned to disabled when empty.
 - [x] The playground disabled-chat toggle disabled attachment and recording controls; reenabling restored them.
-- [ ] 320px and 390px mobile, matched desktop, and overflow/stretch review.
+- [x] Same-origin browser frames rendered at 320px and 390px. At 320px, the document is 305px wide, the chat shell is 273×513px and RTL is true; at 390px, the document is 375px wide, the shell is 343×478px and RTL is true. Both document scroll widths equal their client widths; no horizontal overflow was measured.
+- [ ] Matched desktop comparison and reference-matched visual review of all ten sender × message-type combinations; investigate vertical geometry/stretch against the reference before closing.
 - [ ] Matched screenshots for every message combination; file chooser/attach event, LTR, a full empty-state review, keyboard focus loop and independent screen-reader verification remain open.
 - [x] Technical checks from the adjacent Carousel change pass: token/catalog checks, Vue typecheck, production build and `git diff --check`.
