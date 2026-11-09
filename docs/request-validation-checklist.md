@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Input preview frame width (2026-11-09)
+
+- [x] Matched browser viewport is 1536×647 CSS px; local frame now measures 635.98×300px against the reference's 636×300px.
+- [x] Verified the static Input anatomy remains intact: 36px visual capsule inside a 48px target, 50px radius, 1px neutral token stroke, Estedad 700 title and Vazirmatn Light 12px RTL placeholder in `#a1a1a1`.
+- [ ] Post-change 390px/320px recapture and full Input state visual matrix remain open; mobile width rule is unchanged in the scoped CSS diff.
+
 ## Radio disabled+error state priority (2026-11-09)
 
 - [x] Live Error-only keeps the error stroke; Disabled-only uses the neutral disabled stroke.

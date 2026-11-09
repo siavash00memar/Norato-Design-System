@@ -1458,3 +1458,9 @@
 - **Observed:** Error-only used the red stroke and Disabled-only used the neutral `rgb(107, 107, 107)` stroke, but Error+Disabled stayed red because the invalid selector had greater specificity than the disabled selector.
 - **Correction:** Added a Radio-scoped invalid+disabled override for the neutral resting stroke and muted checked indicator, using existing Norato disabled tokens. `aria-invalid`, the error description, native disabled state and selected value remain intact.
 - **Verification:** Settled live browser state for Error+Disabled computes the neutral `rgb(107, 107, 107)` border and dot, preserves `aria-invalid="true"`, the linked message, selected Monthly value and RTL 48px row; all options are natively disabled. Error-only remains red, Disabled-only remains neutral, and the keyboard focus ring remains a yellow 2px spread. Engineering gates and GitHub push are pending.
+
+## ERR-187 — Input desktop preview frame remained 2px narrow (2026-11-09)
+
+- **Observed:** At a matched 1536×647 viewport the local Input specimen frame measured 634×300px while the design reference measured 636×300px.
+- **Correction:** Changed only the non-compact desktop Input frame allowance from the 2px border token to the semantic 4px spacing token; the mobile cap and other component frames are unchanged.
+- **Verification:** After HMR, local frame measures 635.98×300px against the reference's 636×300px. The inset specimen remains a 36px visual capsule inside its 48px target; label is Estedad 700 and placeholder is Vazirmatn Light 12px, RTL and `#a1a1a1`. Wider/narrower post-change viewport recapture remains open because this browser surface does not expose viewport resizing. Technical gates and GitHub push are pending.
