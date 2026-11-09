@@ -1301,6 +1301,13 @@
 - **Correction:** Wrapped the labeled field in a 48px target and moved its border/surface to a centered 36px pill pseudo-surface. The input remains full-target and readonly; the calendar icon remains an independent 48px action. The label now uses Estedad Bold and its placeholder uses RTL Vazirmatn Light styling.
 - **Verified:** Fresh local browser render confirms the 36px capsule. Opening the calendar and closing with Escape still work; focus/hover produces one yellow Stroke. Invalid remains an error-colored resting state, while focus restores yellow; disabled uses a muted surface and disabled text. Mobile geometry and matched-reference comparison remain open.
 
+## ERR-166 — Select trigger and menu search drew legacy full-height strokes (2026-11-09)
+
+- **Observed:** Select's trigger and searchable menu field retained card-shaped 48px strokes and could paint a second outline over the new capsule treatment.
+- **Cause:** Legacy open/hover selectors and application-wide input focus styling still targeted the original controls.
+- **Correction:** Added a centered 36px capsule surface to the Select trigger and search target, neutralized the legacy trigger border/background, and removed the internal search input border while preserving its full-size interaction target.
+- **Verified:** Fresh local browser review shows one 36px yellow capsule stroke on the open trigger and focused search field; option grouping, selected marker and menu remain visible. Mobile sizing and same-viewport visual reference comparison remain open.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.

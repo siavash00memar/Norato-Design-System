@@ -210,18 +210,20 @@ watch(() => props.multiple, (multiple) => {
           @escape-key-down="multiple ? cancelMultiple() : (isOpen = false)"
         >
           <div v-if="searchable" class="norato-select__search-wrap" @pointerdown.stop>
-            <input
-              :id="`${id}-search`"
-              ref="searchInput"
-              v-model="searchQuery"
-              class="norato-select__search"
-              type="search"
-              :dir="effectiveDir"
-              :placeholder="searchPlaceholder"
-              :aria-label="`جست‌وجوی ${label}`"
-              autocomplete="off"
-              @keydown="handleSearchKeydown"
-            />
+            <div class="norato-select__search-field">
+              <input
+                :id="`${id}-search`"
+                ref="searchInput"
+                v-model="searchQuery"
+                class="norato-select__search"
+                type="search"
+                :dir="effectiveDir"
+                :placeholder="searchPlaceholder"
+                :aria-label="`جست‌وجوی ${label}`"
+                autocomplete="off"
+                @keydown="handleSearchKeydown"
+              />
+            </div>
           </div>
           <SelectViewport class="norato-select__viewport">
             <SelectGroup v-for="(group, groupIndex) in visibleGroups" :key="`${group.label ?? 'ungrouped'}-${groupIndex}`" class="norato-select__group">

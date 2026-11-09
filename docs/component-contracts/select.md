@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصری ثابت در ابتدای صفحه با قاب شیشه‌ای نقطه‌دار ۲۸۸px، نشانگر Default و یک فیلد ۳۰۰×۴۸px نمایش داده می‌شود. حالت Default بدون مقدار انتخاب‌شده است و placeholder فارسی «به شهر انتخاب کن» را نشان می‌دهد، هم‌راستا با مرجع طراحی. قاب در ستون مستندات به عرض موجود محدود است و کنترل کشیده نمی‌شود. adapter اجرایی در بخش Vue منوی شیشه‌ای، جستجو، گروه‌بندی و چندانتخابی با Chips/Summary و تأیید/انصراف را فراهم می‌کند؛ DoD کامل responsive و ماتریس حالت‌ها هنوز باز است.
+نمونهٔ بصری ثابت در ابتدای صفحه با قاب شیشه‌ای نقطه‌دار ۲۸۸px، نشانگر Default و یک فیلد ۳۰۰×۴۸px نمایش داده می‌شود. حالت Default بدون مقدار انتخاب‌شده است و placeholder فارسی «به شهر انتخاب کن» را نشان می‌دهد، هم‌راستا با مرجع طراحی. پوستهٔ قابل‌دیدن Select و فیلد جست‌وجو ۳۶px و کپسولی است و هدف تعاملی حداقل ۴۸px باقی می‌ماند. عنوان فیلد Estedad Bold است. قاب در ستون مستندات به عرض موجود محدود است و کنترل کشیده نمی‌شود. adapter اجرایی در بخش Vue منوی شیشه‌ای، جستجو، گروه‌بندی و چندانتخابی با Chips/Summary و تأیید/انصراف را فراهم می‌کند؛ DoD کامل responsive و ماتریس حالت‌ها هنوز باز است.
 
 ## Overview
 
@@ -26,14 +26,14 @@
 - **Multi Select (96 variant):** Type: Label Inside، Label Outside؛ Display: Chips، Summary؛ Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Open، Filled، Error، Disabled
 - **Select Menu (8 variant):** Size: Small، Medium، Large، XLarge؛ Type: Single، Multi
 - **Select Option (40 variant):** Size: Small، Medium، Large، XLarge؛ Type: Single، Multi؛ State: Default، Hover، Selected، Disabled، Focus
-- **Select Menu / Search (4 variant):** Size: Small، Medium، Large، XLarge
+- **Select Menu / Search (4 variant):** Size: Small، Medium، Large، XLarge؛ هدف جستجو ۴۸px با پوستهٔ دیداری کپسولی ۳۶px
 - **Select Menu / Group Title (4 variant):** Size: Small، Medium، Large، XLarge
 - **Select Menu / Footer (4 variant):** Size: Small، Medium، Large، XLarge
 - **Select Menu / Divider (1 variant):** محور variant مشخص نشده
 
 ## Sizes
 
-- ابعاد ثبت‌شدهٔ مرجع بصری: Small 32px، Medium 40px، Large 48px، XLarge 56px. در adapter اجرایی Norato حداقل هدف تعاملی ۴۸px رعایت می‌شود؛ ارتفاع مشاهده‌شدهٔ کنترل Label Outside به‌ترتیب ۴۸، ۴۸، ۴۸ و ۵۶px است. Label Inside به دلیل چیدمان عمودی label/value در هر چهار اندازه ۵۶px است. Multi Select در نمایش Chips و Summary همین هندسه را حفظ می‌کند.
+- ابعاد ثبت‌شدهٔ مرجع بصری: Small 32px، Medium 40px، Large 48px، XLarge 56px. در adapter اجرایی Norato حداقل هدف تعاملی ۴۸px رعایت می‌شود؛ ارتفاع مشاهده‌شدهٔ کنترل Label Outside به‌ترتیب ۴۸، ۴۸، ۴۸ و ۵۶px است. پوستهٔ دیداری همهٔ اندازه‌ها ۳۶px کپسولی و در مرکز هدف تعاملی است. Label Inside به دلیل چیدمان عمودی label/value در هر چهار اندازه ۵۶px است. Multi Select در نمایش Chips و Summary همین هندسه را حفظ می‌کند.
 
 ## States
 
@@ -70,11 +70,11 @@
 
 ## Accessibility
 
-با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده. گزینهٔ فعال با حلقهٔ focus-visible دوپیکسلی، offset چهارپیکسلی و هالهٔ semantic رنگ Norato مشخص می‌شود.
+با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده. گزینهٔ فعال با حلقهٔ focus-visible دوپیکسلی، offset چهارپیکسلی و هالهٔ semantic رنگ Norato مشخص می‌شود. تریگر Select و جست‌وجوی منو با فوکوس کیبورد یک Stroke زرد دارند و حلقهٔ بیرونی دوم نمی‌سازند.
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+برای گزینه‌ها و دکمه‌های تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است. تریگر و فیلد جست‌وجو به‌عنوان ورودی‌ها از یک Stroke زرد در پوستهٔ کپسولی خود استفاده می‌کنند.
 
 ## Tokens
 

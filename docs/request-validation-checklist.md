@@ -1779,6 +1779,8 @@
 - [ ] Table search mobile sizing and same-viewport reference comparison remain open.
 - [x] Date Picker value field now uses a 36px capsule within its 48px target. Local browser confirmed keyboard opening, Escape close/focus return, hover/focus yellow Stroke, invalid state, and muted disabled state. The calendar action retains its 48px target.
 - [ ] Date Picker field mobile sizing and same-viewport reference comparison remain open.
+- [x] Select trigger and internal search now use 36px capsule surfaces inside their minimum 48px interaction targets. Desktop browser review confirms one yellow Stroke on the open trigger and focused search field, with no duplicate outer border.
+- [ ] Select capsule mobile sizing and same-viewport reference comparison remain open.
 - [x] Refreshed the live Input page at desktop size. Phone prefix, min/max/step and select controls visibly render as compact capsules; focus on the phone prefix shows one yellow stroke without a dark outline.
 - [x] Token and catalog checks, Vue typecheck/build and `git diff --check` pass.
 - [ ] Other component routes, 390/320px layouts, hover and disabled states remain unverified for this shared styling change.
