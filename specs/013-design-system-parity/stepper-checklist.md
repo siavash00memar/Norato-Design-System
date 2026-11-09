@@ -9,6 +9,7 @@
 
 ## Runtime, semantics and accessibility
 - [x] Controlled current step, derived states, error override and live announcement tested in the desktop browser.
+- [x] Fresh live follow-up: selecting Payment updates the ordered status list, current-step announcement and generated snippet; marking Payment as error adds the visible red marker/explanation and includes the message in the live status. Keyboard focus on the direction control shows the yellow focus ring; the playground was restored to Address/No error.
 - [x] RTL/LTR first-step ordering and vertical indicator alignment reviewed; vertical RTL/mobile viewport pass remains open.
 - [x] Optional descriptions and three Step Indicator sizes are represented; Dots Small/Medium/Large scaling and circular ring geometry were reviewed in the live playground.
 - [ ] Invalid/duplicate ids and empty lists are not exhaustively runtime-tested; behavior is documented and typechecked.
@@ -19,5 +20,5 @@
 ## Technical gates
 - [x] Token and catalog checks pass (catalog: 49 routes/contracts/exports).
 - [x] Vue typecheck and production build pass; build emits the existing >500KB chunk advisory.
-- [ ] `git diff --check` passes; CSS and docs diff reviewed.
+- [x] `git diff --check` passes; only docs changed in this follow-up and the diff was reviewed.
 - [ ] Catalog maturity/status, family ledger, checklist and GitHub checkpoint match actual evidence.

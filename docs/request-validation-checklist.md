@@ -2020,6 +2020,13 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass after the playground correction; the build retains the existing large-chunk advisory.
 - [ ] Same-viewport mobile comparison and independent screen-reader review remain open.
 
+## Stepper — live state and keyboard-focus follow-up (2026-11-09)
+
+- [x] In the live RTL playground, selecting Payment updates the ordered step states, «مرحلهٔ ۳ از ۴: پرداخت» status and copyable Vue snippet.
+- [x] Marking Payment as Error shows the red indicator and explanation; the live status includes the error message. AX reports the status-list item as Payment with the error explanation.
+- [x] Keyboard focus on the direction selector shows the Norato yellow focus ring. The playground was restored to Address/No error and the snippet reflects that state.
+- [ ] Exact 390/320 viewport comparison, 48px target measurement and independent screen-reader review remain open.
+
 ## Switch and Checkbox specimen audit — browser follow-up (2026-11-09)
 
 - [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.
