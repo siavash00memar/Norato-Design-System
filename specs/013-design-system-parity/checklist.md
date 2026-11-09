@@ -41,6 +41,8 @@ Only check a line when the corresponding evidence was observed for that componen
 
 - [x] The Playground preserves its controlled value when the selected item becomes disabled; it resets only if the selected item is removed by reducing option count.
 - [x] Browser confirmed Month stays the selected value after disabling that item; its disabled semantics and neutral disabled styling take precedence over selection in both Glass and Contrast.
+- [x] Fresh browser follow-up: ArrowLeft moved focus from Day to Week without changing the selected value; Space selected Week and synchronized the status/snippet; Right + Space restored Day. With Month disabled, arrow navigation skipped it. Disabling selected Month preserved the value and exposed selected+disabled state with neutral styling; disabling the whole group exposed all items as disabled.
+- [x] Playground restored to Glass/Medium/3 with Day selected and both group/item enabled.
 - [ ] Full interactive runtime state cross-product and independent screen-reader review remain open.
 
 ## Select behavior acceptance checklist

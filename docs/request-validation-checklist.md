@@ -1979,6 +1979,13 @@
 - [x] Both 16px and 20px circles rendered proportionally beside RTL labels. Playground restored to monthly, enabled, optional, no-error and 20px.
 - [ ] Full live focus/hover/state cross-product and independent screen-reader review remain open for Radio Button.
 
+## Segmented Control live interaction follow-up (2026-11-09)
+
+- [x] ArrowLeft in RTL moved focus Day → Week without changing the selection; Space selected Week, updated the status and snippet, and Right + Space restored Day.
+- [x] Disabling Month while selected preserved `month` and showed the neutral disabled appearance; AX exposed the item as both selected and disabled. Arrow navigation skipped disabled Month. Disabling the group exposed all three items as disabled.
+- [x] Playground restored to Glass/Medium/3 options, Day selected, group and items enabled.
+- [ ] Full live runtime state cross-product and independent screen-reader review remain open for Segmented Control.
+
 # Select warm-focus contrast follow-up — browser evidence (2026-11-09)
 
 - [x] Replaced the blue focus contrast outline with a dark amber Norato focus contrast token (`#805A00`) while keeping the yellow outer focus ring. Measured contrast is 6.21:1 on white and 3.79:1 on the Norato-yellow ring.
