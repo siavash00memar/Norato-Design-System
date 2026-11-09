@@ -1280,6 +1280,13 @@
 - **Correction:** Updated shared text/number/select demo controls and affected Divider, Spinner and generic specimen fields to the 36px visual-height token and pill radius. Labels use Estedad Bold; field hover/focus uses the 1px Norato yellow Stroke without a second outline; placeholder text uses the approved RTL Vazirmatn Light treatment.
 - **Verified:** After a fresh desktop render, the Input playground's phone prefix, min/max/step fields, and shared selects visibly use the 36px pill shell; focusing the prefix shows one yellow stroke without a dark outline. Token/catalog/typecheck/build/diff checks pass. Other routes, mobile geometry and hover/disabled combinations remain unverified; do not infer cross-page parity from this focused check.
 
+## ERR-163 — Pagination and Foundation fields retained legacy control styling (2026-11-09)
+
+- **Observed:** The Pagination playground's numeric controls and Foundation's identity/search examples did not follow the established 36px capsule field treatment.
+- **Cause:** These controls use app-level and shared component stylesheet selectors that were outside the earlier playground-field correction.
+- **Correction:** Applied the visual-height token and pill radius, Estedad Bold labels, RTL Vazirmatn Light placeholders, neutral resting Stroke, and single yellow hover/focus Stroke to the affected controls.
+- **Verified:** Local browser review confirms Pagination numeric controls render as capsules and focused `صفحهٔ جاری` has one yellow Stroke without a dark ring. Foundation name and search fields render as capsules; focused `نام` shows the yellow Stroke. The existing interaction wrappers remain intact. Mobile dimensions, disabled-state styling, and matched-reference comparison remain open.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.

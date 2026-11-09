@@ -1773,6 +1773,8 @@
 ## Cross-page playground input styling — browser follow-up (2026-11-09)
 
 - [x] Updated shared text/number/select demo controls and affected specimen controls to use the 36px visual-height token, pill radius and Norato neutral/yellow strokes. Playground field titles use Estedad Bold and placeholders use the established RTL Vazirmatn Light treatment.
+- [x] Follow-up on Pagination and Foundation: numeric controls and Foundation name/search examples visibly render as capsules; keyboard/pointer focus on Pagination's current-page field and Foundation's name field shows one yellow Stroke without a dark outer ring.
+- [ ] Mobile sizing, disabled-state styling and same-viewport reference comparison for the Pagination and Foundation controls remain open.
 - [x] Refreshed the live Input page at desktop size. Phone prefix, min/max/step and select controls visibly render as compact capsules; focus on the phone prefix shows one yellow stroke without a dark outline.
 - [x] Token and catalog checks, Vue typecheck/build and `git diff --check` pass.
 - [ ] Other component routes, 390/320px layouts, hover and disabled states remain unverified for this shared styling change.
