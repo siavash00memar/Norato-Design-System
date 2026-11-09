@@ -33,6 +33,8 @@
 
 - Browser follow-up (2026-11-09, matched 1907×907 desktop window): local and reference Input pages were reviewed side by side. Both retain the dotted glass preview frame, corner status marker and centered capsule field; local keeps the approved Persian placeholder/title-adjacent envelope and omits the sample address/helper copy. Local preview is about 580×288px versus about 632×300px in the reference; the content columns differ in width. In the States section, Norato shows family-specific inert field specimens while the reference shows ten descriptive state cards; Norato's denser 41-example gallery is intentional but not a one-to-one composition match. No vertical stretching or horizontal overflow was visible in this desktop capture. This comparison does not replace mobile recapture or the outstanding complete visual-state and independent screen-reader reviews.
 
+- Browser follow-up (2026-11-09, matched 1265×713 window): a fresh live screenshot reconfirmed the same width discrepancy (Norato frame approximately 580px; reference approximately 630px) while preserving the approved capsule, RTL placeholder and centered placement. Source audit traced the narrower specimen to the shared `.component-doc` two-column layout, whose first column also defines the preview width; it is not an Input-only sizing rule. Keep Input DoD open and address this at the shared component-page layout level so Input remains structurally aligned with Button. No local-only width override was added.
+
 ## Playground field consistency follow-up (2026-11-09)
 
 - [x] Fresh desktop browser render confirms the live Input playground's phone-prefix, min/max/step and select controls now use the 36px pill presentation; focus shows the single yellow stroke without a dark outline.
