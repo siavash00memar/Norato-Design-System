@@ -15,7 +15,7 @@
 
 ## Behavior and accessibility
 - [x] Default Ctrl+K opens. Browser checks confirm it is ignored in input, textarea, empty and plaintext-only contenteditable regions, ARIA textbox roles, repeated events, active composition and keyCode 229.
-- [ ] Meta+K behavior and configurable/false shortcut values remain to be verified.
+- [x] Ctrl+K and Meta+K open with the default `k`; temporary browser checks confirmed `shortcut="j"` opens only on Ctrl+J, while `:shortcut="false"` ignores Ctrl+K and Meta+K. The manual trigger still opens when global shortcuts are disabled.
 - [x] Search normalization/filtering, grouping, suggested/recent, empty and loading work. Browser stress check with more than eight matching items confirmed the first group renders exactly eight; a separate one-item group still renders one.
 - [x] ArrowUp/Down, Home/End, Enter, disabled skip, Escape/outside, selection, focus entry/return and Tab behavior work. Fresh 2026-11-09 live review confirms ArrowUp/Down, Home/End on an empty query, disabled-item skipping, Enter selection, Escape and outside-click dismissal, trigger focus restoration, and Tab/Shift+Tab remaining within the modal.
 - [x] Dialog, labelled input, listbox/group/option names, selected/disabled state, live loading/results and icon hiding appear in AX tree; dangling aria-controls in empty/loading was fixed and rechecked.
@@ -45,6 +45,12 @@
 ## Result cap — 2026-11-10
 - [x] With temporary data exceeding the limit, the live browser rendered exactly eight options in the first group and retained one option in the separate Recent group.
 - [x] Temporary test data was removed from the playground; implementation continues to cap each group independently.
+
+## Shortcut configuration — 2026-11-10
+- [x] Default Meta+K opened the palette in the live browser.
+- [x] With temporary `shortcut="j"`, Ctrl+K stayed closed and Ctrl+J opened.
+- [x] With temporary `:shortcut="false"`, Ctrl+K and Meta+K stayed closed; clicking the visible trigger opened the dialog.
+- [x] Restored playground to default `shortcut="k"`; no temporary demo changes remain.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

@@ -2418,3 +2418,9 @@
 
 - [x] A live browser render with more than eight matching entries showed exactly eight rows in that group; the independent Recent group retained its one row.
 - [x] Temporary overflow fixture entries were removed from the playground after verification.
+
+# Command Palette shortcut options — 2026-11-10
+
+- [x] Default Meta+K opens. With `shortcut="j"`, Ctrl+K stays closed and Ctrl+J opens.
+- [x] With `shortcut=false`, Ctrl+K and Meta+K stay closed while the manual trigger opens the dialog.
+- [x] Restored the playground to its default `shortcut="k"` example; no temporary source fixture remains.
