@@ -536,6 +536,8 @@
 - **Observation:** at 385px, arrow navigation initially scrolled the page vertically and immediate scroll events could reset the active dot.
 - **Correction:** scroll the carousel track to the target slide center and debounce active-index synchronization until scrolling settles.
 - **Validation:** local mobile screenshot showed first slide right-aligned, neighboring slide peeking on the left, and arrow plus ArrowLeft navigation advancing the card and active indicator together.
+- Mobile variant cards reflow to one column below 600px; Norato 48px interaction targets remain intrinsic. Dot cards stack their label/control, and semantic spacing tokens let five indicators fit without stretching or page overflow.
+- **Verified:** same-origin 390px/320px frames measure document client/scroll widths 375/375px and 305/305px; every sample matrix remains within bounds and its 48×48px targets remain unchanged. Carousel DoD stays open for touch, independent external `v-model`, reduced-motion browser emulation and screen-reader review.
 
 ## Chat — sender sides and message grouping
 

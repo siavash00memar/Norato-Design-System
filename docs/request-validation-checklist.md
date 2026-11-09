@@ -1,3 +1,9 @@
+## Carousel responsive matrix overflow correction (2026-11-09)
+
+- [x] Same-origin browser frames verified exact outer CSS widths 390px and 320px; document client/scroll widths are 375/375px and 305/305px respectively (the difference is the browser's vertical scrollbar).
+- [x] Browser geometry confirms both variant grids and the matrix have matching client/scroll widths at both sizes; the 5-dot indicators fit and keep 48×48px targets, and the dot examples stack in RTL.
+- [x] Accessibility tree still exposes all 22 variant examples. A side-by-side screenshot review showed the Button-style specimens remain bounded and no document horizontal scrollbar is rendered.
+- [ ] This viewport correction does not close Carousel's touch, external `v-model`, reduced-motion emulation or independent screen-reader review.
 # Norato Request Validation Checklist
 
 ## Carousel live LTR and direct selection follow-up (2026-11-09)
@@ -5,8 +11,8 @@
 - [x] In the live RTL playground, direct selection of slides 2, 3, 4 and 5 updated the visible card, yellow active dot and controlled-index selector; returning to slide 1 disabled Previous.
 - [x] In LTR, control labels reversed and ArrowRight moved 4→5; ArrowLeft returned to 4 after the smooth scroll settled. Playground was restored to RTL and slide 1.
 - [x] A 1265×713 browser screenshot showed no horizontal document scrollbar on desktop.
-- [x] Same-origin test frames provided exact 390px and 320px CSS viewport widths; screenshots show the specimen frame fits but the document still displays horizontal scroll in both.
-- [ ] The overflowing document element and exact `scrollWidth` are not yet identified; keep Carousel responsive DoD open until fixed and rechecked.
+- [x] Before the matrix correction, same-origin 390px/320px frames showed the preview bounded but the document overflowing; after the correction, the responsive follow-up below records matching client/scroll widths.
+- [x] The issue was traced to the two-column mobile variant matrix (historical cause and correction are recorded in the 2026-11-09 follow-up above).
 
 ## Input variant-axis chip color (2026-11-09)
 

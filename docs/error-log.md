@@ -1494,3 +1494,11 @@
 - **Observed:** Same-window 1904×950 screenshots showed the reference frame at about 630×332px and Norato at about 628×300px, although both panels were already close in size.
 - **Correction:** Raised only `--norato-command-palette-preview-frame-block-size` from 300px to 332px; the panel and item row dimensions remain unchanged.
 - **Verification:** Follow-up local render measures about 628×330px with a ~446×242px panel vs the reference's ~630×331px frame and ~452×244px panel. Token, catalog, Vue typecheck, production build and diff checks pass. Exact row/footer dimensions, mobile and independent screen-reader checks remain open.
+
+## ERR-193 — Carousel mobile variant matrix expanded document width (2026-11-09)
+
+- **Observed:** At a 390px CSS frame, document client width was 375px but scroll width reached 472px. The preview stage itself was bounded.
+- **Cause:** The mobile matrix retained two columns. Five 48px indicator targets plus spacing occupied 272px inside a 155px card; the card's scrollable overflow propagated through the matrix and documentation column. The live carousel track was already internally scrollable and was not the cause.
+- **Correction:** Reflow mobile variant galleries to one column, expand only the sample-gallery row across the matrix's existing padding using semantic spacing tokens, reduce example card padding to a tokenized inset, and stack dot labels above controls. Keep all indicator targets at 48px and preserve desktop layout.
+- **Verification:** Exact 390px/320px same-origin frames now measure document client/scroll widths 375/375px and 305/305px; matrix and variant grid scroll widths equal their client widths. All 22 examples remain in the accessibility tree, the 48×48px indicator target is unchanged, and the browser render shows no local or page scrollbar.
+- **Prevention:** At responsive breakpoints, inspect intrinsic width of dense variant samples at their actual grid-cell size; avoid relying on `minmax(0,1fr)` alone when child controls have fixed minimum targets.
