@@ -1437,12 +1437,6 @@
 
 ## ERR-183 — Combobox desktop frame width needed retuning (2026-11-09)
 
-- **Observed:** Existing matched evidence recorded a 632px Norato frame versus 636px in the reference. A new local render after the initial allowance looked slightly over-expanded; a fresh exact reference comparison could not be made because browser viewport sizes differed.
-- **Correction:** Reduce the scoped non-compact Combobox frame allowance to the 1px `--norato-border-thin` token. Preserve the 300px frame height and existing mobile selector.
-- **Verification:** Current local frame measures 632.98×300px at 1536×703. Exact width parity, post-change mobile widths, full gallery states and independent screen-reader review remain unverified; DoD stays open.
-
-## ERR-183 — Combobox desktop frame width needed retuning (2026-11-09)
-
 - **Observed:** Existing matched evidence recorded a 632px Norato frame versus 636px in the reference.
 - **Correction:** Set the scoped non-compact Combobox frame allowance to semantic `--norato-space-1` while preserving the 300px height and existing mobile selector.
 - **Verification:** Matched live DOM at 1536×703 measures reference 636×300px and Norato 635.98×300px. Post-change mobile widths, full gallery states and independent screen-reader review remain open; DoD stays open.
