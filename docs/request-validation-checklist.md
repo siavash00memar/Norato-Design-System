@@ -1762,3 +1762,9 @@
 - [x] Opened the chart data disclosure in the local browser. The accessibility tree exposed a named table, caption, category row headers, series column header, and all six values in source order.
 - [x] Pressed Space on the disclosure; the tree changed from expanded/table-present to collapsed/table-absent. The decorative SVG stayed out of the accessibility tree; chart title and summary remained available.
 - [ ] Independent screen-reader session remains unperformed; see `specs/013-design-system-parity/charts-checklist.md`.
+
+## Divider — semantic and decorative output follow-up (2026-11-09)
+
+- [x] Browser review confirmed the playground control is named «تزئینی» and defaults on. In decorative mode, the rendered separator has `aria-hidden="true"` and `role="none"`.
+- [x] With decoration off and orientation vertical, the rendered component exposes `role="separator"` and `aria-orientation="vertical"`; its measured rule is 1×48px. Playground was restored to decorative/horizontal/subtle/8px/RTL.
+- [ ] Independent screen-reader review remains open; no claim of announced output was made.
