@@ -1756,3 +1756,9 @@
 - [x] RTL and LTR positions switch correctly at 320px. Playground restored to RTL/default before review ended.
 - [x] Compared the desktop static specimen with the selected reference at 1907×907; Norato's shared Button-style frame remains about 580×288px versus 630×326px in the reference because the documentation content column is narrower.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Commit `37565c0547c5cf834119dd06821583c9fc158ac8` is pushed and matches the GitHub branch. Independent screen-reader review remains open.
+
+## Charts — browser accessibility tree follow-up (2026-11-09)
+
+- [x] Opened the chart data disclosure in the local browser. The accessibility tree exposed a named table, caption, category row headers, series column header, and all six values in source order.
+- [x] Pressed Space on the disclosure; the tree changed from expanded/table-present to collapsed/table-absent. The decorative SVG stayed out of the accessibility tree; chart title and summary remained available.
+- [ ] Independent screen-reader session remains unperformed; see `specs/013-design-system-parity/charts-checklist.md`.
