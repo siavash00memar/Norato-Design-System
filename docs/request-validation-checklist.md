@@ -2045,3 +2045,9 @@
 - [x] On the live Input page, four setting fields changed from inherited Estedad Bold to explicit Vazirmatn regular 12px; measured RTL direction, 36px height, pill radius and `#e8e8e8` resting border on every field.
 - [x] Shared generic playground text controls exclude checkbox switches from the text-field sizing rule.
 - [ ] Hover/focus transition and remaining Input visual variants still require browser review; this does not close the Input family DoD.
+
+## Input matched mobile comparison — 2026-11-09
+
+- [x] At 390×844, both reference and Norato documents measure 375px wide. Preview frame measures 327.2×300px in the reference and 328×300px in Norato.
+- [x] Norato's top field is a 36px visual capsule in a 48px target. Label computes to Estedad/700; RTL placeholder computes to Vazirmatn/12px/300. User-approved removal of example address/helper remains in effect.
+- [ ] This verifies only the top specimen at mobile width; full Input variants/states and independent screen-reader review remain open.
