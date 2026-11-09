@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Drawer reduced-motion browser check (2026-11-10)
+
+- [x] In an isolated Chromium target at 390×844, `prefers-reduced-motion: reduce` was active. The RTL right-side Drawer opened at 374px wide, flush to the viewport edge, with `role="dialog"`, `aria-modal="true"`, focus inside, and no horizontal document overflow.
+- [x] Drawer and overlay computed styles both had `transition: none` and `animation-name: none`; the close control dismissed the Drawer. The temporary target was closed after validation.
+- [ ] This check does not close Drawer’s full focus/hover matrix or independent screen-reader review; see `specs/013-design-system-parity/drawer-checklist.md`.
+
 ## Modal reduced-motion browser check (2026-11-10)
 
 - [x] In an isolated Chromium target at 390×844, `prefers-reduced-motion: reduce` was active. Opening the live Dialog rendered an RTL `alertdialog` at 320px wide; document width matched the 390px viewport.

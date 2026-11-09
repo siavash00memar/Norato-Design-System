@@ -8,7 +8,7 @@
 - [x] Wired the playground stylesheet into the page; it had not been imported, leaving the controls unformatted and the fieldset in browser-default styling. Removed the fieldset border treatment while keeping semantic field grouping.
 - [x] Compared the responsive experience at 390px and 320px. Side panels and all three bottom detents stayed within the viewport; document width matched the viewport.
 - [x] Reviewed all three side sizes at desktop and auto/half/full Bottom Sheet detents. The panels stay within their expected width/height and content does not stretch to fill unused space.
-- [ ] Review visual focus/hover states and reduced-motion behavior.
+- [ ] Review the complete visual focus/hover state matrix.
 - [x] Long content scrolls inside the panel at all Bottom Sheet detents at 390px and 320px without clipping or horizontal overflow.
 
 ## Behavior and accessibility
@@ -18,7 +18,8 @@
 - [x] Default outside click dismisses. `dismissible=false` prevents Escape and outside-click dismissal while the explicit close button still works. Selecting a filter and applying it closes the panel.
 - [x] Verified each filter independently; clear-filters resets both options, leaves the drawer open and announces completion. Apply announces completion and closes the drawer.
 - [x] Confirmed the live panel exposes `role="dialog"`, `aria-modal="true"`, and title/description references; Tab remains within the dialog across close, filters and actions. LTR direction reaches both drawer and checkbox adapters.
-- [ ] Independent screen-reader review and reduced-motion browser emulation remain unverified.
+- [ ] Independent screen-reader review remains unverified.
+- [x] Reduced-motion browser emulation at 390×844: Chromium reported `prefers-reduced-motion: reduce`; the right-side panel opened as an RTL modal dialog, 374px wide and flush with the viewport edge, with document width matching the viewport. Focus entered the dialog; panel and overlay computed styles had `transition: none` and `animation-name: none`; the close action closed it. The isolated browser target was closed afterward.
 - [x] Verified tall-content scroll containment at 390px and 320px for all Bottom Sheet detents. Desktop size/detent dimensions remain within viewport.
 
 ## Technical and delivery gates
