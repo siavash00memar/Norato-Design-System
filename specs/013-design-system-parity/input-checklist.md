@@ -103,6 +103,12 @@
 - [x] Canonical section order now matches Button through Tokens. All 41 family-specific specimens remain in a supplemental input-state matrix after the nine canonical sections; at 320px they are two columns, inert, and within the 305px document.
 - [ ] Full adapter visual/state matrix, playground consistency, all accessibility behavior and independent screen-reader review remain open; Input DoD stays open.
 
+## Matched Input States gallery screenshot review — 2026-11-10
+
+- [x] Local and design-reference pages were captured in same-size 1265×713 browser viewports. Both States galleries show ten cards in four RTL columns, grouped 4/4/2; their card order and labels align.
+- [x] Local cards preserve Norato's semantic status palette and Persian explanations. No visible stretching or overflow appeared in the side-by-side review.
+- [ ] This verifies the generic ten-state gallery only; it does not close the eight-adapter live size/state matrix, all states against the reference, mobile matrix review, or independent screen-reader evidence.
+
 ## Live Input page structure and accessibility-tree spot check — 2026-11-09
 
 - [x] Fresh local Chrome accessibility-tree inspection confirms the Input page exposes the eight adapter controls, labeled settings/actions, and all nine canonical contract-section anchors in RTL.

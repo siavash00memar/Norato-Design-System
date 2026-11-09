@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Matched Input States gallery review (2026-11-10)
+
+- [x] Local and reference galleries were reviewed in same-size 1265×713 browser viewports. Both show ten cards in four RTL columns with matching 4/4/2 rows and matching state order.
+- [x] Norato keeps its own semantic colors and Persian state descriptions; no visible stretching or overflow appeared in the comparison.
+- [ ] The comparison is limited to the generic States gallery; the eight-adapter live state/size matrix and independent screen-reader review remain open in `input-checklist.md`.
+
 ## Shared playground text and number fields (2026-11-10)
 
 - [x] Source audit found 18 native text/number settings across Button, Split Button, Input, Progress, Rating, Spinner, Pagination, Divider, Toast and Tooltip playgrounds; each is opted into `.playground-text-field`.
