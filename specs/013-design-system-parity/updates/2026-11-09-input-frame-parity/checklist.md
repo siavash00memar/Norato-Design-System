@@ -5,4 +5,4 @@
 - [x] Field anatomy is verified: 36px visual capsule inside 48px target, RTL placeholder and title/icon placement remain intact.
 - [ ] Mobile width override remains bounded with no overflow.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
-- [ ] Checkpoint is pushed to `origin/master` and remote head is verified.
+- [x] Checkpoint `b863c24` is pushed to `origin/master`; remote head matches local and the worktree is clean.
