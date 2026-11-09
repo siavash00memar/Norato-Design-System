@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref, type ComponentPublicInstance } from 'vue'
 import { NoratoAlert, NoratoButton, type NoratoAlertLayout, type NoratoAlertTone, type NoratoAlertVariant } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 
@@ -10,6 +10,19 @@ const variant = ref<NoratoAlertVariant>('glass')
 const layout = ref<NoratoAlertLayout>('expanded')
 const visible = ref(true)
 const dismissible = ref(true)
+const restoreButton = ref<ComponentPublicInstance | null>(null)
+const alertPreview = ref<ComponentPublicInstance | null>(null)
+async function focusRestoreButton() {
+  await nextTick()
+  const target = restoreButton.value?.$el
+  if (target instanceof HTMLButtonElement) target.focus()
+}
+async function restoreAlert() {
+  visible.value = true
+  await nextTick()
+  const target = alertPreview.value?.$el
+  if (target instanceof HTMLElement) target.querySelector<HTMLButtonElement>('.norato-alert__close')?.focus()
+}
 const tones: { value: NoratoAlertTone; label: string }[] = [
   { value: 'info', label: 'اطلاعات' }, { value: 'success', label: 'موفقیت' }, { value: 'warning', label: 'هشدار' }, { value: 'danger', label: 'خطا' }, { value: 'neutral', label: 'خنثی' },
 ]
@@ -27,6 +40,7 @@ const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'
       <label class="alert-playground__dismissible"><input v-model="dismissible" type="checkbox" /> قابل‌بستن</label>
     </div>
     <NoratoAlert
+      ref="alertPreview"
       v-if="visible"
       id="alert-playground-preview"
       v-model="visible"
@@ -37,10 +51,11 @@ const code = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'
       title="نسخهٔ جدید آماده است"
       message="تغییرات ذخیره شد"
       description="نوراتو با قابلیت‌های تازه منتشر شد."
+      @dismiss="focusRestoreButton"
     >
       <template #actions><NoratoButton label="مشاهدهٔ تغییرات" variant="secondary" /></template>
     </NoratoAlert>
-    <div v-else class="alert-playground__restore"><span role="status">پیام بسته شد.</span><NoratoButton label="نمایش دوباره" variant="secondary" @click="visible = true" /></div>
+    <div v-else class="alert-playground__restore"><span role="status">پیام بسته شد.</span><NoratoButton ref="restoreButton" label="نمایش دوباره" variant="secondary" @click="restoreAlert" /></div>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'alert-code', code)">{{ props.copiedKey === 'alert-code' ? 'کپی شد' : 'کپی کد' }}</button></div>
     <pre class="usage-code" dir="ltr"><code>{{ code }}</code></pre>
   </div>

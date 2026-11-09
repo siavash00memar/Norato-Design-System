@@ -2268,3 +2268,10 @@
 - [x] Every tone remained RTL. Danger exposed `role=alert`; the other five exposed `role=status`. Banner geometry was 343×105px at 390 and 273×105px at 320; action/close targets were 68×48px and 48×48px; icon remained 18×18px.
 - [x] Document client/scroll widths matched at both viewports (375/375px and 305/305px); no horizontal overflow observed.
 - [ ] Matched-width mobile visual comparison and independent screen-reader review remain open; Banner DoD remains open.
+
+# Alert playground keyboard dismissal focus — 2026-11-09
+
+- [x] Reproduced: Space on the dismiss button removed the controlled Alert and left `document.body` focused.
+- [x] After the playground-only fix, Space and Enter dismissal move focus to “نمایش دوباره”; Enter on that control restores the Alert and moves focus to its close button.
+- [x] Screenshot confirms the yellow focus ring on the re-opened close control. The playground was left in its default Info/Glass/Expanded state.
+- [ ] Uncontrolled adapter dismissal and independent screen-reader review remain open; Alert DoD stays open.
