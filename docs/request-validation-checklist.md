@@ -1275,6 +1275,11 @@
 - [x] Disclosure opens to expose all three hidden links by pointer and closes by Enter; the hidden links leave the accessibility tree when closed. Playground controls were restored to Plain/Medium/Chevron/collapsed.
 - [ ] Hover/focus visual cross-product and independent screen-reader review remain open.
 
+## Breadcrumbs — keyboard-focus follow-up (2026-11-09)
+
+- [x] In the local browser, Shift+Tab from the expanded disclosure moved focus to the Home link. AX identified the focused link; the screenshot showed the Norato yellow focus ring and dark-amber contrast outline. A pointer click on the inert visual specimen kept the route on Breadcrumbs.
+- [ ] This sample does not verify the remaining hover/focus combinations or independent screen-reader announcements.
+
 ## Pagination — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.

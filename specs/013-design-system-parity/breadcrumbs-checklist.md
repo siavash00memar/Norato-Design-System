@@ -29,3 +29,8 @@
 - [x] Browser review of Glass + Small + Slash found the current-page pill using the blue information container; replaced it with the raised neutral glass surface and Norato elevation.
 - [x] Fresh browser capture confirms the current item is a neutral raised surface while the disclosure remains yellow. The complete style/size/separator/state matrix and independent screen-reader review remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass after the surface correction; Vite retains the existing >500KB JS chunk advisory.
+
+## Keyboard-focus follow-up — 2026-11-09
+
+- [x] Fresh local browser review: with the disclosure expanded, Shift+Tab focused the Home link; the accessibility tree named the focused link and the screenshot showed the Norato yellow ring with its dark-amber contrast outline. Clicking the inert specimen did not navigate away from Breadcrumbs.
+- [ ] This single focus sample does not close the full 42-part hover/focus visual matrix or the independent screen-reader review.
