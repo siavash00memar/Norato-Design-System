@@ -17,8 +17,6 @@
 - [x] Cancel and confirm emit their respective outcomes and close; both action buttons become disabled while busy, the dialog exposes `aria-busy="true"`, and the playground reports busy completion. Busy state prevents Escape dismissal.
 - [x] Browser accessibility tree exposes the confirmation as a named `alertdialog` and the form as a named `dialog`, each with its title and description references resolving to live elements.
 - [ ] Verify disabled confirmation, controlled/uncontrolled `open` updates, a complete keyboard-only focus loop, independent screen-reader review, LTR layout, reduced motion and viewport-bounded long-content scrolling.
-- [ ] Verify LTR layout, focus order, reduced motion and viewport-bounded scrolling.
-
 ## Technical and delivery gates
 
 - [x] `pnpm check:tokens` and `pnpm check:catalog` pass; catalog reports 49 unique routes/contracts.
