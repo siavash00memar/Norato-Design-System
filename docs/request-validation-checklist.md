@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Chip implementation checkpoint (2026-11-09)
+
+- [x] Added `NoratoChip` with controlled filter and removable input modes, RTL/LTR direction, leading icon, size options, disabled state and named removal control.
+- [x] Connected package exports, styles, tokens, catalog, usage examples, static specimen, interactive playground and component contract. The page uses the Button-style documentation structure.
+- [x] Local browser review confirmed the selected filter uses Norato yellow, the removable input keeps its remove icon inside the capsule, generated examples update, and removal clears the value. The gallery renders all 20 size × state combinations.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, production build and `git diff --check` pass. Repository scan found no prohibited reference-name matches.
+- [ ] Keyboard-only filter activation, disabled removal, long-label truncation, 390/320 overflow, independent screen-reader review, and full same-viewport state comparison remain open; see `specs/013-design-system-parity/chip-checklist.md`. Chip DoD remains open.
+
 ## Tag implementation checkpoint (2026-11-09)
 
 - [x] Added the public non-interactive `NoratoTag` Vue adapter with semantic tones, soft/outline appearance, four intrinsic sizes, optional icon/status dot, RTL default and explicit LTR support.

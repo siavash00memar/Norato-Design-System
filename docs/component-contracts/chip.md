@@ -1,63 +1,65 @@
 # Chip — قرارداد کامپوننت نوراتو
 
-**حوزه:** Data Display  
-**وضعیت نوراتو:** Adapted  
-
-## Preview
-
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
-
 ## Overview
 
-قرارداد طراحی Norato: چیپ فیلتر یا ورودی؛ شیشه‌ای در حالت عادی و مشکی وقتی انتخاب شده. در Multi Select و ردیف فیلترها استفاده میشه.
+Chip برای انتخاب فیلتر یا نمایش برچسب ورودیِ قابل‌حذف است. این دو کاربرد با `mode="filter"` و `mode="input"` از هم جدا می‌شوند. ظاهر انتخاب‌شده از سطح زرد ملایم و Stroke زرد استفاده می‌کند؛ پرکردگی مشکی یا Accent آبی ندارد.
 
 ## Anatomy
 
-- **Container** — کپسول شیشه‌ای یا مشکی
-- **Leading Icon** — آیکن یا تیک
-- **Label** — متن
-- **Remove** — آیکن حذف
+- **Filter container:** دکمهٔ native با هدف صفحه‌کلیدی حداقل ۴۸ پیکسل؛ کپسول دیداری اندازهٔ مستقل دارد.
+- **Leading icon:** آیکن تزئینی اختیاری در slot به همین نام؛ در حالت انتخاب‌شده اگر آیکن سفارشی نفرستی تیک نمایش داده می‌شود.
+- **Label:** متن کوتاه و ضروری از prop به نام `label`؛ متن بلند بریده می‌شود و اندازهٔ Chip را نمی‌کشد.
+- **Remove:** فقط در mode ورودی؛ دکمهٔ مستقل با نام دسترس‌پذیر `حذف {label}` و رویداد `remove`.
 
 ## Variants
 
-- **Chip (20 variant):** Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Selected، Disabled، Focus
+- Mode: `filter` یا `input`.
+- Filter: انتخاب کنترل‌شده از طریق `v-model`; فعال‌سازی native دکمه با Space یا Enter کار می‌کند.
+- Input: برچسب غیرقابل‌انتخاب با دکمهٔ حذف مستقل.
+- Unselected: سطح شیشه‌ای سفید و Stroke خنثی `#E8E8E8`.
+- Hover و Selected: سطح زرد کم‌رنگ و Stroke زرد Norato.
+- Disabled: سطح خنثی و بدون تعامل؛ فوکوس زرد ۲ پیکسلی در حالت فعال.
 
 ## Sizes
 
-- **Chip:** Small، Medium، Large، XLarge
+| Size | ارتفاع دیداری حداقل |
+| --- | ---: |
+| Small | 24px |
+| Medium | 28px |
+| Large | 32px |
+| XLarge | 36px |
+
+ارتفاع دکمهٔ فیلتر و هدف حذف حداقل ۴۸ پیکسل می‌ماند؛ کپسول دیداری فشرده است.
 
 ## States
 
-- **Chip:** Default، Hover، Selected، Disabled، Focus
+- Filter: default، hover، selected، disabled و focus.
+- Input: default و disabled؛ حذف فقط در دسترس بودن دکمهٔ حذف را کنترل می‌کند.
+- State انتخاب از `modelValue` می‌آید و `aria-pressed` را همگام نگه می‌دارد.
 
 ## Parts
 
-- **Chip — 20 variant:** چیپ با آیکن اول و آخر. ابعاد/حالت‌ها: Size: Small، Medium، Large، XLarge؛ State: Default، Hover، Selected، Disabled، Focus
+- `NoratoChip` props: `label` ضروری، `mode`, `modelValue`, `disabled`, `size`, `dir`.
+- Events: `update:modelValue` برای filter؛ `remove(label)` برای input.
+- Slot اختیاری `leadingIcon` تزئینی است و با `aria-hidden` پنهان می‌شود.
+- Size tokens: `--norato-chip-height-small`, `--norato-chip-height-medium`, `--norato-chip-height-large`, `--norato-chip-height-xlarge`.
 
 ## Usage
 
-### راهنمای کاربرد Norato
+- برای فیلترهای قابل‌ترکیب از mode فیلتر استفاده کن؛ Chip را جای دکمهٔ اقدام نگذار.
+- برای برچسبِ داخل فرم یا چندانتخابی از mode ورودی استفاده کن و state حذف را در برنامه به‌روز کن.
+- متن را کوتاه نگه دار و حذف را با رنگ یا آیکن تنها توضیح نده.
+- RTL پیش‌فرض است؛ آیکن آغاز در راست و دکمهٔ حذف در چپ قرار می‌گیرد.
 
-- برای فیلترهای قابل ترکیب ازش استفاده کن.
-- حالت انتخاب‌شده رو واضح نشون بده.
-
-### محدودیت‌های کاربرد
-
-- Chip رو جای دکمه‌ی اکشن نذار.
-- متن طولانی نذار.
-
-### جهت RTL
-
-آیکن حذف سمت چپ چیپ قرار می‌گیره.
+نمونهٔ اجرایی و کد قابل‌کپی در playground همین صفحه قرار دارد.
 
 ## Accessibility
 
-Chip قابل انتخاب وضعیت pressed یا checked داره.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+- Filter یک `<button>` واقعی با `aria-pressed`, disabled native و هدف حداقل ۴۸ پیکسل است.
+- دکمهٔ حذف در mode ورودی ۴۸×۴۸ پیکسل و نامش «حذف {label}» است.
+- Focus هر دو دکمه با Stroke/حلقهٔ ۲ پیکسلی زرد دیده می‌شود.
+- آیکن تزئینی وارد نام دسترس‌پذیر نمی‌شود؛ متن label معنای انتخاب را فراهم می‌کند.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+ارتفاع‌های دیداری از توکن‌های اختصاصی Chip، هدف از `--norato-control-target-min`، رنگ‌ها از توکن‌های سطح/متن/مرز/زرد/زرد ملایم، و شکل و فاصله از توکن‌های Norato می‌آیند. در این قرارداد رنگ آبی به‌عنوان Accent Chip استفاده نمی‌شود.

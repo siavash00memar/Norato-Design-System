@@ -18,6 +18,16 @@ import { NoratoTag } from '@norato/vue'
 <template>
   <NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">منتشر شده</NoratoTag>
 </template>`,
+  chip: `<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoChip } from '@norato/vue'
+const selected = ref(false)
+function removeChip(label: string) { /* update application state */ }
+<\/script>
+<template>
+  <NoratoChip label="طراحی" mode="filter" v-model="selected" size="medium" dir="rtl" />
+  <NoratoChip label="پروژه‌ها" mode="input" size="medium" dir="rtl" @remove="removeChip" />
+</template>`,
   carousel: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoCarousel, type NoratoCarouselItem } from '@norato/vue'

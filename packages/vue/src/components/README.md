@@ -5,6 +5,7 @@ Vue 3 adapters available through the private workspace package `@norato/vue`:
 - `NoratoButton`: variant, disabled, loading and pressed states.
 - `NoratoBadge`: Count/Dot marker with tone/size variants and a scoped anchor label. It does not render an interactive anchor; bind the provided `accessibleName` to the host button or link.
 - `NoratoTag`: non-interactive status/category label with five semantic tones, soft/outline appearance, four intrinsic sizes, optional decorative leading/trailing icons (legacy `icon` alias) and status dot.
+- `NoratoChip`: controlled selectable filter (`v-model`) or removable input chip, four intrinsic sizes, RTL default, optional decorative leading icon and keyboard-friendly remove action.
 - `NoratoField`: labeled input; controlled with `v-model`.
 - `NoratoTextInput`, `NoratoPasswordInput`, `NoratoPhoneInput`, `NoratoOtpInput`, `NoratoNumberInput`, `NoratoAmountInput`, and `NoratoSearchInput`: independent controlled input adapters with shared Norato field semantics.
 - `NoratoTextarea`: labeled textarea; controlled with `v-model`.

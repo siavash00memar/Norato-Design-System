@@ -4,7 +4,7 @@ import SplitButtonShowcase from './SplitButtonShowcase.vue'
 import StepperContractShowcase from './StepperContractShowcase.vue'
 import MenuContractShowcase from './MenuContractShowcase.vue'
 import CommandPaletteContractShowcase from './CommandPaletteContractShowcase.vue'
-import { NoratoTag, type NoratoTagAppearance, type NoratoTagSize, type NoratoTagTone } from '@norato/vue'
+import { NoratoChip, NoratoTag, type NoratoChipSize, type NoratoTagAppearance, type NoratoTagSize, type NoratoTagTone } from '@norato/vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
@@ -163,6 +163,19 @@ const tagVariantSizes: { id: NoratoTagSize; label: string }[] = [
 ]
 const tagSizeHeights: Record<NoratoTagSize, number> = { small: 24, medium: 28, large: 32, xlarge: 36 }
 const tagVariantCombos = tagVariantAppearances.flatMap(appearance => tagVariantSizes.map(size => ({ appearance, size })))
+const chipSizes: { id: NoratoChipSize; label: string; height: number }[] = [
+  { id: 'small', label: 'کوچک', height: 24 },
+  { id: 'medium', label: 'متوسط', height: 28 },
+  { id: 'large', label: 'بزرگ', height: 32 },
+  { id: 'xlarge', label: 'خیلی بزرگ', height: 36 },
+]
+const chipStates = [
+  { id: 'default', label: 'عادی' },
+  { id: 'hover', label: 'هاور' },
+  { id: 'selected', label: 'انتخاب‌شده' },
+  { id: 'disabled', label: 'غیرفعال' },
+  { id: 'focus', label: 'فوکوس' },
+]
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
   const item = `${entry.label} ${entry.source}`.toLocaleLowerCase()
@@ -276,7 +289,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 </script>
 
 <template>
-  <div class="contract-visual" :class="[`contract-visual--${title}`, { 'contract-visual--tag': name === 'Tag' }]" :data-component="name" :data-section="section" dir="rtl">
+  <div class="contract-visual" :class="[`contract-visual--${title}`, { 'contract-visual--tag': name === 'Tag', 'contract-visual--chip': name === 'Chip' }]" :data-component="name" :data-section="section" dir="rtl">
     <MenuContractShowcase v-if="name === 'Menu' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <CommandPaletteContractShowcase v-if="name === 'Command Palette' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <template v-else-if="section === 'Overview'">
@@ -294,6 +307,11 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Anatomy' || section === 'Parts'">
       <StepperContractShowcase v-if="name === 'Stepper' && section === 'Anatomy'" section="Anatomy" />
+      <div v-else-if="name === 'Chip' && section === 'Anatomy'" class="chip-anatomy">
+        <div class="chip-anatomy-preview" aria-hidden="true" inert><NoratoChip label="فیلتر فعال" mode="filter" :model-value="true" size="medium" dir="rtl" /><NoratoChip label="برچسب ورودی" mode="input" size="medium" dir="rtl" /></div>
+        <ol class="chip-anatomy-parts"><li v-for="entry in entries" :key="entry.id"><b>{{ String(entry.id + 1).padStart(2, '0') }}</b><span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span></li></ol>
+        <span class="visual-kind">فیلتر و برچسب ورودی دو رفتار جدا دارند؛ نمونه‌ها از adapter اجرایی ساخته شده‌اند.</span>
+      </div>
       <div v-else-if="name === 'Tag' && section === 'Anatomy'" class="tag-anatomy" aria-label="ساختار برچسب">
         <div class="tag-anatomy-preview" aria-hidden="true" inert>
           <NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">
@@ -357,6 +375,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <b class="tag-part-status">در adapter Vue</b>
         </article>
       </div>
+      <div v-else-if="name === 'Chip' && section === 'Parts'" class="chip-parts-grid">
+        <article v-for="entry in entries" :key="entry.id" class="chip-part-card">
+          <div class="chip-part-sample" aria-hidden="true" inert>
+            <NoratoChip v-if="entry.id === 1" label="طراحی" mode="input" size="medium" dir="rtl" />
+            <NoratoChip v-else-if="entry.id === 2" label="طراحی" mode="filter" size="medium" dir="rtl"><template #leadingIcon><span class="chip-part-check">✓</span></template></NoratoChip>
+            <NoratoChip v-else-if="entry.id === 3" label="پروژه‌های اخیر" mode="filter" :model-value="true" size="xlarge" dir="rtl" />
+            <NoratoChip v-else label="طراحی" mode="filter" :model-value="true" size="medium" dir="rtl" />
+          </div>
+          <span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span>
+          <b class="chip-part-status">{{ entry.id === 1 ? 'فقط mode ورودی' : 'در adapter Vue' }}</b>
+        </article>
+      </div>
       <div v-else class="anatomy-visual">
         <div class="anatomy-component-mark" :data-kind="sampleKind(entries[0] || {label:name, source:name} as Entry)">
           <span>{{ name }}</span>
@@ -387,6 +417,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           </div>
         </section>
         <span class="visual-kind">۶۴ ترکیب دیداری · ۲ سبک × ۴ اندازه × ۲ انتخاب × ۴ حالت؛ نمایش ایستا و inert</span>
+      </div>
+      <div v-else-if="name === 'Chip'" class="chip-variant-matrix" aria-label="ماتریس ۲۰ حالت فیلتر Chip" aria-hidden="true" inert>
+        <section v-for="chipSize in chipSizes" :key="chipSize.id" class="chip-variant-group">
+          <header><strong>{{ chipSize.label }}</strong><span dir="ltr">{{ chipSize.height }}px · target 48px</span></header>
+          <div class="chip-variant-grid">
+            <article v-for="state in chipStates" :key="state.id" class="chip-variant-cell" :data-state="state.id">
+              <NoratoChip label="طراحی" mode="filter" :model-value="state.id === 'selected'" :disabled="state.id === 'disabled'" :size="chipSize.id" dir="rtl" />
+              <small>{{ state.label }}</small>
+            </article>
+          </div>
+        </section>
+        <span class="visual-kind">۲۰ حالت از adapter واقعی · ۴ اندازه × ۵ حالت؛ نمونه‌ها غیرتعاملی هستند.</span>
       </div>
       <div v-else-if="name === 'Tag'" class="tag-variant-matrix" aria-label="ماتریس ۴۰ گونهٔ Tag" aria-hidden="true" inert>
         <section v-for="tone in tagVariantTones" :key="tone.id" class="tag-variant-group">
@@ -499,6 +541,10 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         </article>
         <span class="visual-kind">ارتفاع‌ها حداقل‌اند؛ عرض و ارتفاع با متن و آیکن کش نمی‌آید.</span>
       </div>
+      <div v-else-if="name === 'Chip'" class="chip-size-grid" aria-label="چهار اندازهٔ Chip" aria-hidden="true" inert>
+        <article v-for="item in chipSizes" :key="item.id" class="chip-size-card"><div><NoratoChip label="فیلتر" mode="filter" :model-value="true" :size="item.id" dir="rtl" /></div><strong>{{ item.label }}</strong><small dir="ltr">{{ item.height }}px · min-height</small></article>
+        <span class="visual-kind">ارتفاع دیداری بر اساس اندازه تغییر می‌کند؛ هدف تعاملی همچنان ۴۸ پیکسل است.</span>
+      </div>
       <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
@@ -522,6 +568,9 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
       <div v-else-if="name === 'Tag'" class="tag-state-note">
         <article><NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">منتشر شده</NoratoTag><span><strong>بدون حالت تعاملی</strong><small>{{ entries[0]?.detail }}</small></span></article>
         <span class="visual-kind">Tag وارد ترتیب Tab نمی‌شود و حالت hover، focus، selected یا disabled نمی‌گیرد.</span>
+      </div>
+      <div v-else-if="name === 'Chip'" class="chip-states-grid" aria-label="حالت‌های Chip" aria-hidden="true" inert>
+        <article v-for="state in chipStates" :key="state.id" class="chip-state-card" :data-state="state.id"><NoratoChip label="طراحی" mode="filter" :model-value="state.id === 'selected'" :disabled="state.id === 'disabled'" size="medium" dir="rtl" /><strong>{{ state.label }}</strong><small>{{ state.id === 'focus' ? 'حلقهٔ زرد ۲px' : state.id === 'selected' ? 'aria-pressed=true' : state.id === 'disabled' ? 'غیرفعال' : state.id === 'hover' ? 'Stroke زرد' : 'aria-pressed=false' }}</small></article>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
@@ -635,7 +684,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .tag-anatomy-parts>li{display:flex;align-items:flex-start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
 .tag-anatomy-parts>li>span,.tag-part-card>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
 .tag-anatomy-parts small,.tag-part-card small{color:var(--norato-color-text-secondary);line-height:1.7}
-.tag-part-index{display:grid;place-items:center;flex:0 0 26px;inline-size:26px;block-size:26px;border-radius:var(--norato-radius-full);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-min-size)}
+.tag-part-index{display:grid;place-items:center;flex:0 0 26px;inline-size:26px;block-size:26px;border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-min-size)}
 .tag-parts-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
 .tag-part-card{display:grid;gap:var(--norato-space-3);align-content:start;min-inline-size:0;padding:var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
 .tag-part-sample{display:grid;place-items:center;min-block-size:64px;padding:var(--norato-space-3);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
@@ -653,6 +702,40 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .contract-visual--tag :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
 .contract-visual--tag :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
 .contract-visual--tag :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.chip-anatomy,.chip-parts-grid{display:grid;gap:var(--norato-space-4);min-inline-size:0}
+.chip-anatomy-preview{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--norato-space-3);min-block-size:128px;padding:var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:linear-gradient(135deg,var(--norato-color-surface-default),var(--norato-color-surface-subtle))}
+.chip-anatomy-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--norato-space-2);margin:0;padding:0;list-style:none}
+.chip-anatomy-parts>li{display:flex;align-items:flex-start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.chip-anatomy-parts>li>b{display:grid;place-items:center;flex:none;inline-size:var(--norato-space-6);block-size:var(--norato-space-6);border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);font-size:var(--norato-type-body-min-size)}
+.chip-anatomy-parts>li>span,.chip-part-card>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.chip-anatomy-parts small,.chip-part-card small{color:var(--norato-color-text-secondary);line-height:var(--norato-type-body-small-line-height)}
+.chip-parts-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.chip-part-card{display:grid;gap:var(--norato-space-3);align-content:start;min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.chip-part-sample{display:grid;place-items:center;min-block-size:var(--norato-control-target-min);padding:var(--norato-space-2);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
+.chip-part-check{display:grid;place-items:center;inline-size:100%;block-size:100%;color:var(--norato-color-text-primary)}
+.chip-part-status{justify-self:start;padding:var(--norato-space-1) var(--norato-space-2);border-radius:var(--norato-radius-pill);background:var(--norato-color-warning-container);font-size:var(--norato-type-body-min-size);font-weight:var(--norato-type-body-medium-weight)}
+.chip-variant-matrix{display:grid;gap:var(--norato-space-3);min-inline-size:0}
+.chip-variant-group{display:grid;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.chip-variant-group>header{display:flex;align-items:center;justify-content:space-between;gap:var(--norato-space-2);padding-block-end:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
+.chip-variant-group>header>span,.chip-variant-cell>small,.chip-size-card>small,.chip-state-card>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size)}
+.chip-variant-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--norato-space-2)}
+.chip-variant-cell{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-1);min-inline-size:0;padding-block:var(--norato-space-1);text-align:center}
+.chip-variant-cell[data-state="hover"] :deep(.norato-chip__surface){border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
+.chip-variant-cell[data-state="focus"] :deep(.norato-chip)::after{position:absolute;inset:var(--norato-space-1);border:var(--norato-border-focus) solid var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill);content:"";pointer-events:none}
+.chip-size-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
+.chip-size-card{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);text-align:center}
+.chip-size-card>div{display:grid;place-items:center;inline-size:100%;min-block-size:var(--norato-control-target-min);padding:var(--norato-space-2);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
+.chip-size-grid>.visual-kind{grid-column:1/-1}
+.chip-states-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:var(--norato-space-2)}
+.chip-state-card{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);text-align:center}
+.chip-state-card[data-state="hover"] :deep(.norato-chip__surface){border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
+.chip-state-card[data-state="focus"] :deep(.norato-chip)::after{position:absolute;inset:var(--norato-space-1);border:var(--norato-border-focus) solid var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill);content:"";pointer-events:none}
+.contract-visual--chip :deep(.usage-indicator){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.contract-visual--chip :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
+.contract-visual--chip :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
+.contract-visual--chip :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
+.contract-visual--chip :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 @media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){.chip-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chip-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>

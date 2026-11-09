@@ -17,6 +17,10 @@
   --norato-tag-height-xlarge: 36px;
   --norato-tag-icon-size: 14px;
   --norato-tag-dot-size: 6px;
+  --norato-chip-height-small: 24px;
+  --norato-chip-height-medium: 28px;
+  --norato-chip-height-large: 32px;
+  --norato-chip-height-xlarge: 36px;
   --norato-chat-avatar-size: 40px;
   --norato-chat-layout-min-block-size: 360px;
   --norato-chat-layout-max-block-size: 620px;
