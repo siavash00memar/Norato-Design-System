@@ -2307,3 +2307,11 @@
 - [x] After the playground-only fix, Space and Enter dismissal move focus to “نمایش دوباره”; Enter on that control restores the Alert and moves focus to its close button.
 - [x] Screenshot confirms the yellow focus ring on the re-opened close control. The playground was left in its default Info/Glass/Expanded state.
 - [ ] Uncontrolled adapter dismissal and independent screen-reader review remain open; Alert DoD stays open.
+
+# Alert uncontrolled dismissal — 2026-11-09
+
+- [x] Added a distinct uncontrolled playground mode; the rendered adapter receives neither `v-model` nor `modelValue`.
+- [x] Browser pointer dismissal removed the uncontrolled Alert while preserving a visible status and focused restore button; Enter restored it and focused its close control.
+- [x] Space dismissal produced the same hidden/status/focus state. The code sample omitted `v-model` in independent mode and included it in controlled mode.
+- [x] Switched back to controlled mode; its Alert and generated example restored correctly. Playground remained RTL; the adapter close control uses its existing 48px minimum target token.
+- [ ] Independent assistive-technology review and full 20-state screenshot review remain open; Alert DoD stays open.

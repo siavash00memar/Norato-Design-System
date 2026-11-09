@@ -18,8 +18,8 @@
 - [x] Tone is included as screen-reader-only text alongside the status message; visual icons differ by severity, so color is not the only cue.
 - [x] Fresh local-browser follow-up: switching the live playground from Info to Success updates the selected tone, rendered icon/color, accessible close label, and generated Vue snippet together. Closing the controlled Success Alert replaces it with the closed status and restore action; restoring it and returning the tone to Info returns the playground to its default state. Turning off “dismissible” removes the close button from the live preview. Follow-up keyboard review found focus previously fell to the document root after dismissing the controlled preview. The playground now focuses “نمایش دوباره” after Space/Enter dismissal and returns focus to the close control after re-opening; browser screenshots show the yellow keyboard ring. This does not verify uncontrolled adapter dismissal or independent screen-reader behavior.
 - [ ] Independent screen-reader review is recorded; automated accessibility tree/role inspection is not a substitute.
-- [ ] Uncontrolled adapter dismissal and independent assistive-technology review remain open.
+- [x] Uncontrolled dismissal is demonstrated without a model binding; pointer and Space dismissal hide the alert, Enter restores it, status and focus restoration remain visible, and the generated example omits `v-model` in independent mode.
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass; build emits a 925.88KB JS chunk advisory above 500KB.
-- [x] Browser evidence and remaining limitations are recorded. The 20-state pixel screenshot review, uncontrolled adapter dismissal, and independent screen-reader review remain open; do not close DoD while these required items remain open.
+- [x] Browser evidence and remaining limitations are recorded. The 20-state pixel screenshot review and independent screen-reader review remain open; do not close DoD while these required items remain open.
