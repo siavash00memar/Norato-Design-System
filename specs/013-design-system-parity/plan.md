@@ -32,7 +32,7 @@
 ## Tooltip desktop frame width — 2026-11-10
 
 - A matched 1265×720 browser capture showed the shared page shell limited the Tooltip preview to 631.98px while the reference stage measured 636px; height already matched at 300px.
-- A global shell-cap increase was tested and rejected because it regressed recorded Input and Select frame widths by 4px and 2px. Keep the shared shell stable and scope the existing 4px spacing-token allowance to Tooltip's desktop preview section only.
+- A global shell-cap increase was tested and rejected because it regressed recorded Input and Select frame widths by 4px and 2px. Keep the shared shell stable and apply the existing 4px spacing-token allowance directly to Tooltip's desktop specimen frame.
 - Verify the rendered Tooltip geometry, unchanged Button/Input/Select frames, page overflow, and token/catalog/type/build gates before recording the correction.
 
 ## Select refinement analysis

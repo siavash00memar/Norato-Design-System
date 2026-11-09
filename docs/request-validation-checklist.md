@@ -2471,6 +2471,6 @@
 
 # Tooltip preview width correction — 2026-11-10
 
-- [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its preview section; the shared detail shell remains unchanged.
+- [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.
 - [ ] Re-measure the final scoped Tooltip frame and confirm Button/Input/Select bounds remain unchanged; verify RTL composition and no document overflow.
 - [ ] Exact 390/320px re-capture and independent screen-reader review remain open; mobile is not claimed as rechecked in this change.

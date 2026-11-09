@@ -43,4 +43,4 @@
 @media(max-width:839px){.state-visual-grid--input{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.state-visual-grid--input{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){.input-state-field{transition:none}.input-state-spinner{animation-duration:.01ms;animation-iteration-count:1}}
-@media(min-width:840px){.component-doc>#doc-preview:has(.sample-tooltip-preview){inline-size:calc(100% + var(--norato-space-1));margin-inline:calc(-1 * var(--norato-border-thick))}}
+@media(min-width:840px){.component-doc>#doc-preview.doc-preview-tooltip .component-sample{inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-split-button-preview-frame-inline-size))}}

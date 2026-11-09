@@ -14,7 +14,7 @@ Only check a line when the corresponding evidence was observed for that componen
 ## Tooltip desktop frame width follow-up — 2026-11-10
 
 - [x] Matched 1265×720 browser comparison measured Tooltip reference stage at 636×300px and Norato at 631.98×300px before correction.
-- [x] Width correction is scoped to Tooltip's preview; the shared shell is unchanged. Recheck final Tooltip geometry and confirm Button/Input/Select bounds match their prior measurements.
+- [x] Width correction is scoped directly to Tooltip's specimen; the shared shell is unchanged. Recheck final Tooltip geometry and confirm Button/Input/Select bounds match their prior measurements.
 - [ ] Mobile re-capture and complete component-wide regression review remain open; the global DoD stays active.
 
 ## Switch evidence (2026-11-01)
