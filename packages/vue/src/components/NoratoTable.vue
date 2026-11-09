@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import './table.css'
 
 export type NoratoTableSize = 'compact' | 'default' | 'comfortable'
@@ -89,6 +89,7 @@ const visibleRows = computed(() => {
   const start = (currentPage.value - 1) * normalizedPageSize.value
   return filteredRows.value.slice(start, start + normalizedPageSize.value)
 })
+const emptySource = computed(() => props.rows.length === 0)
 const firstItem = computed(() => filteredRows.value.length ? (currentPage.value - 1) * normalizedPageSize.value + 1 : 0)
 const lastItem = computed(() => Math.min(currentPage.value * normalizedPageSize.value, filteredRows.value.length))
 const allVisibleSelected = computed(() => visibleRows.value.length > 0 && visibleRows.value.every(row => selectedKeys.value.includes(rowId(row, 0))))
@@ -146,6 +147,19 @@ function progressValue(value: unknown): number {
 }
 const selectAll = ref<HTMLInputElement | null>(null)
 watch([someVisibleSelected, allVisibleSelected], () => { if (selectAll.value) selectAll.value.indeterminate = someVisibleSelected.value })
+const previousPageButton = ref<HTMLButtonElement | null>(null)
+const nextPageButton = ref<HTMLButtonElement | null>(null)
+async function movePage(direction: -1 | 1) {
+  const activatedButton = direction < 0 ? previousPageButton.value : nextPageButton.value
+  const shouldRestoreFocus = typeof document !== 'undefined' && document.activeElement === activatedButton
+  setPage(currentPage.value + direction)
+  if (!shouldRestoreFocus) return
+  await nextTick()
+  if (activatedButton?.disabled) {
+    const availableButton = direction < 0 ? nextPageButton.value : previousPageButton.value
+    if (availableButton && !availableButton.disabled) availableButton.focus()
+  }
+}
 </script>
 
 <template>
@@ -192,10 +206,10 @@ watch([someVisibleSelected, allVisibleSelected], () => { if (selectAll.value) se
             <tr v-if="expandable && expanded.has(rowId(row, (currentPage - 1) * pageSize + rowIndex))" class="norato-table__detail-row"><td :colspan="columnSpan"><slot name="row-detail" :row="row">{{ cellText(row.detail) }}</slot></td></tr>
           </template>
         </tbody>
-        <tbody v-else><tr><td :colspan="columnSpan"><div class="norato-table__empty" role="status"><strong>{{ query ? noResultsLabel : emptyLabel }}</strong><slot name="empty" /></div></td></tr></tbody>
+        <tbody v-else><tr><td :colspan="columnSpan"><div class="norato-table__empty" role="status"><strong>{{ emptySource ? emptyLabel : noResultsLabel }}</strong><slot name="empty" /></div></td></tr></tbody>
       </table>
     </div>
     <span class="sr-only" :id="`${id}-range`">{{ firstItem.toLocaleString('fa-IR') }} تا {{ lastItem.toLocaleString('fa-IR') }} از {{ filteredRows.length.toLocaleString('fa-IR') }} ردیف</span>
-    <footer v-if="pageCount > 1" class="norato-table__footer"><span class="norato-table__range">{{ firstItem.toLocaleString('fa-IR') }}–{{ lastItem.toLocaleString('fa-IR') }} از {{ filteredRows.length.toLocaleString('fa-IR') }}</span><nav class="norato-table__pagination" aria-label="صفحه‌بندی جدول"><button type="button" aria-label="صفحهٔ قبل" :disabled="currentPage <= 1" @click="setPage(currentPage - 1)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"/></svg></button><span aria-current="page">{{ currentPage.toLocaleString('fa-IR') }} / {{ pageCount.toLocaleString('fa-IR') }}</span><button type="button" aria-label="صفحهٔ بعد" :disabled="currentPage >= pageCount" @click="setPage(currentPage + 1)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6"/></svg></button></nav></footer>
+    <footer v-if="pageCount > 1" class="norato-table__footer"><span class="norato-table__range">{{ firstItem.toLocaleString('fa-IR') }}–{{ lastItem.toLocaleString('fa-IR') }} از {{ filteredRows.length.toLocaleString('fa-IR') }}</span><nav class="norato-table__pagination" aria-label="صفحه‌بندی جدول"><button ref="previousPageButton" type="button" aria-label="صفحهٔ قبل" :disabled="currentPage <= 1" @click="movePage(-1)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"/></svg></button><span aria-current="page" aria-live="polite">{{ currentPage.toLocaleString('fa-IR') }} / {{ pageCount.toLocaleString('fa-IR') }}</span><button ref="nextPageButton" type="button" aria-label="صفحهٔ بعد" :disabled="currentPage >= pageCount" @click="movePage(1)"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6"/></svg></button></nav></footer>
   </section>
 </template>

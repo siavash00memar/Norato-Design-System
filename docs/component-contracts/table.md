@@ -45,9 +45,9 @@
 ## States
 
 - **Default / Hover / Selected** — سطح عادی، hover خنثی و انتخاب‌شده با زرد ملایم
-- **Loading** — `aria-busy` روی viewport جدول و پیام وضعیت؛ تعامل انتخاب/مرتب‌سازی در انتظار دادهٔ جاری بی‌اثر است
-- **Empty** — وقتی داده‌ای وجود ندارد؛ slot `empty` اختیاری
-- **No Results** — پیام مستقل پس از جستجوی بی‌نتیجه
+- **Loading** — `aria-busy` روی viewport جدول و پیام وضعیت؛ انتخاب و مرتب‌سازی در انتظار دادهٔ جاری بی‌اثر است و این وضعیت بر پیام‌های خالی اولویت دارد
+- **Empty** — وقتی `rows` خالی است؛ مستقل از query؛ slot `empty` اختیاری
+- **No Results** — وقتی دادهٔ مبنا وجود دارد اما query هیچ ردیفی پیدا نمی‌کند
 - **Disabled** — این API وضعیت سراسری disabled ندارد؛ میزبان باید کنترل‌های سلول را با قرارداد همان کنترل غیرفعال کند
 
 ## Parts
@@ -55,7 +55,7 @@
 - **Selection:** `selectable`, `v-model` و `update:modelValue`; انتخاب سرستون محدود به ردیف‌های قابل‌مشاهدهٔ صفحه است.
 - **Sorting:** `sortable` روی ستون؛ چرخهٔ None → Ascending → Descending → None و رویداد `sort`.
 - **Search:** `searchable`, `searchPlaceholder`; جستجو در رشته‌های قابل‌نمایش داده و بازگشت به صفحهٔ اول.
-- **Pagination:** `pageSize` و `page`; رویداد `update:page`; مقدار page در صورت عدم اتصال کنترل‌نشده است.
+- **Pagination:** `pageSize` و `page`; رویداد `update:page`; مقدار page در صورت عدم اتصال کنترل‌نشده است. مقدار صفحه در live region مودبانه قرار می‌گیرد؛ اگر کنترل فعال بعد از تغییر غیرفعال شود، فوکوس به دکمهٔ فعال مقابل منتقل می‌شود. فلش‌ها جهت متن را دنبال می‌کنند.
 - **Expand:** `expandable` و slot `row-detail`.
 - **Cell extension:** slotهای `cell`، `cell-{columnKey}`؛ slot خاص ستون بر slot عمومی تقدم دارد.
 - **Toolbar extension:** slotهای `actions` و `bulk-actions`؛ slot دوم `selected-keys` و تابع `clear` دریافت می‌کند.

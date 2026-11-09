@@ -2315,3 +2315,14 @@
 - [x] Space dismissal produced the same hidden/status/focus state. The code sample omitted `v-model` in independent mode and included it in controlled mode.
 - [x] Switched back to controlled mode; its Alert and generated example restored correctly. Playground remained RTL; the adapter close control uses its existing 48px minimum target token.
 - [ ] Independent assistive-technology review and full 20-state screenshot review remain open; Alert DoD stays open.
+
+# Table empty-state and pagination — 2026-11-09
+
+- [x] At the desktop browser viewport, nonmatching search on five source rows exposed «نتیجه‌ای پیدا نشد»; switching to an empty source without clearing the query exposed «هنوز داده‌ای برای نمایش وجود ندارد.»; switching back kept the query and restored no-results; matching «سارا» returned her row.
+- [x] With empty source and loading enabled, the browser exposed only «در حال بارگذاری»; select-all and sort controls were disabled. `aria-busy` remains attached to the table viewport.
+- [x] Selection persisted across numeric sorting and pagination. Page 1/2 disabled Previous; page 2/2 disabled Next; row range updated to 4–5 of 5.
+- [x] Keyboard sort and row checkbox activation updated order/selection. Search and sort focus showed yellow rings; row detail opened with Space and its focus ring remained visible.
+- [x] Activating Next at page 1→2 transferred focus to Previous after Next disabled; Previous at page 2→1 transferred focus to Next. The page indicator uses `aria-live="polite"`.
+- [x] Compact, Default and Comfortable states rendered at their 48px, 56px and 64px row-size tokens.
+- [x] Playground direction defaults to RTL and updates the generated snippet. RTL and LTR browser screenshots show mirrored columns and correctly directed Previous/Next arrows.
+- [ ] Exact same-viewport reference geometry, 390/320 responsive frames and independent screen-reader output remain open; Table DoD stays open.
