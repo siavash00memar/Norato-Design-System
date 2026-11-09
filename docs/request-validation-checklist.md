@@ -1775,3 +1775,11 @@
 - [x] Browser verified `collapsible=false`, measured all four trigger sizes (48/52/56/64px), and exercised 16 layout/style/size configurations expanded and collapsed (32 states).
 - [x] Verified all trigger/panel `aria-controls` and `aria-labelledby` references, hidden closed panels, and closed custom-content exclusion from keyboard/AX navigation.
 - [ ] Reduced-motion browser emulation and independent screen-reader review remain open in `specs/013-design-system-parity/accordion-checklist.md`.
+
+## Modal — size, tone and mobile follow-up (2026-11-09)
+
+- [x] Browser checked all 12 size × tone combinations. Dialog widths are 320/480/640px at desktop and all twelve kept a natural 256px height.
+- [x] At 390/320px viewports, the dialog measured 320/288px wide, remained within the viewport and caused no horizontal document overflow.
+- [x] Cancel and confirm outcomes, public close action, focus restoration, dialog/alertdialog roles and title/description references were inspected. Close target measured 48×48px.
+- [x] Busy mode exposed `aria-busy="true"`, disabled both actions and reported completion; busy dismiss behavior remains blocked as intended.
+- [ ] Disabled confirmation, controlled/uncontrolled `open`, complete keyboard-only loop, LTR, long-content scrolling, reduced-motion and independent screen-reader review remain open in `specs/013-design-system-parity/modal-checklist.md`.
