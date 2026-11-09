@@ -2026,19 +2026,21 @@
 - [x] Matched 1536×703 viewport: frame measures 632×300px locally and 636×300px in the visual reference. The inert Combobox control width is 324px in both renders after setting its semantic preview token to 324px.
 - [x] The local control preserves RTL text and both chevrons/search icon placement; its 36px visual capsule remains inside the 48px target.
 - [x] Post-refinement matched mobile captures: at 390×844, reference frame 327.2×300px and Norato 326.4×300px; both documents 375px. At 320×844, reference frame 256.8×300px and Norato 256×300px; local document 305px with no horizontal overflow, reference document 326px with a horizontal scrollbar. The local 48px interactive target is retained.
-- [ ] Combobox States gallery currently uses a generic blue dot/bar instead of six state-accurate fields; verify scoped correction, state strokes, 36px/48px geometry, RTL and mobile layout in the rendered page before closing this item.
+- [x] Combobox States gallery was replaced with six state-accurate RTL fields; desktop geometry/strokes and 390px mobile layout were checked in browser.
 - [ ] Exhaustive combined-state screenshot matrix, cold-load fallback capture, and independent screen-reader review remain open for Combobox.
 
 ## Combobox desktop frame width tuning — browser follow-up (2026-11-09)
 
 - [x] Matched local/reference browser viewport at 1536×703: reference frame is 636×300px and Norato is 635.98×300px.
 - [x] Scoped non-compact frame allowance uses semantic `--norato-space-1`; field sizing and mobile override are unchanged.
-- [ ] Fresh 390/320 checks, full visual state gallery and independent screen-reader review remain open.
+- [x] Matched 390×844 viewport: reference frame 327.2×300px, Norato 326.4×300px, documents 375px with no horizontal overflow; 36px fields/48px targets and all six RTL state strokes remain correct.
+- [ ] Matched 320px local post-change check, full live state matrix and independent screen-reader review remain open.
 
 ## Combobox States gallery — desktop browser follow-up (2026-11-09)
 
 - [x] Desktop DOM review shows six inert cards in RTL, each with a 36px field inside a 48px target; computed strokes are neutral for Default/Disabled, yellow for Hover/Typing/Filled, and semantic error red.
-- [ ] Review gallery appearance and overflow at 390px/320px; full live state matrix and independent screen-reader review remain open.
+- [x] At 390×844, six cards stay within the 375px document; the preview frame is 326.4×300px versus 327.2×300px in the reference, with no horizontal overflow.
+- [ ] Matched 320px local state-gallery review, full live state matrix and independent screen-reader review remain open.
 ## Checkbox shared-frame comparison — browser evidence (2026-11-09)
 
 - [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
