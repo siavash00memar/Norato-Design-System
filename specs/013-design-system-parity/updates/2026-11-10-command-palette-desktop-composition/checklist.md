@@ -4,4 +4,5 @@
 - [x] Match frame/panel dimensions and desktop row inset without stretching content.
 - [x] Put the search icon on the RTL start edge and make the footer two aligned rows.
 - [x] Review desktop output in the live browser and preserve the previously verified 390/320 responsive frame and panel geometry; keep static search glyphs 18px and row glyphs 16px.
-- [ ] Run required gates, update parent DoD records, and push.
+- [x] Verify live matching/no-result/loading states, disabled-item semantics and ArrowDown skipping; restore the playground to enabled/suggested defaults.
+- [x] Run required gates, update parent DoD records, and push.

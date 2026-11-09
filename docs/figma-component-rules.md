@@ -430,7 +430,7 @@
 - Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
 - **Browser evidence:** matched desktop render at 1904×950: local frame/panel/search/group/rows/footer measure 635.98×334, 454×246, 452×48, 452×31, 440×43 and 452×72.19px; the current reference measures 636×333.88, 453.6×246.1, 451.44×47.25, 451.44×30.64, 438.48×43.2 and 451.44×73.17px. Maximum dimensional difference is 1.52px. The RTL search icon sits at the right edge; row icons use a 26px tile and 16px glyph; key hints align in two rows.
 - **Mobile browser evidence (2026-11-10):** at 390×844 the local frame/panel/search/rows/footer measure 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they measure 272×341, 260×271, 258×72, 250×43 and 258×72.2px. These are within 4px of the matched reference; document width equals viewport; search icons stay 18×18px and row icons are 16×16px.
-- **Remaining:** full live interaction matrix and independent screen-reader review remain open; Command Palette DoD remains open.
+- **Remaining:** independent screen-reader review remains open; Command Palette DoD remains open.
 
 ## Tree View — 2026-11-08
 - Follow design reference’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.

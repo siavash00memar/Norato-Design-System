@@ -2412,14 +2412,15 @@
 
 - [x] At 390×844, local frame/panel/search/rows/footer measured 342×318, 338×246, 336×48, 320×43 and 336×72.2px against reference 342×318, 337×246, 335×47, 322×43 and 335×73px.
 - [x] At 320×844, local frame/panel/search/rows/footer measured 272×341, 260×271, 258×72, 250×43 and 258×72.2px against reference 272×341, 261×271, 259×72, 246×43 and 259×73px.
-- [x] Both local documents match viewport width; RTL sample content and 18×18px icons remain intact. Only the inert sample changes; live command targets remain 48px.
-- [ ] Independent screen-reader review, full shortcut exclusion matrix, and result-cap stress remain open.
+- [x] Both local documents match viewport width; RTL sample content, 18×18px search glyphs and 16×16px row glyphs remain intact. Only the inert sample changes; live command targets remain 48px.
+- [ ] Independent screen-reader review remains open; shortcut exclusions and the per-group result cap are verified in their later follow-ups.
 
 # Command Palette editable shortcut exclusion — 2026-11-10
 
 - [x] Ctrl+K opens from the page. It stays closed for input, textarea, empty/contenteditable plaintext-only regions, and an ARIA textbox.
 - [x] Repeat, active composition, and keyCode 229 events stay closed.
-- [ ] Meta+K and configurable/false shortcut props remain unverified; independent screen-reader review remains open.
+- [x] Meta+K, configurable shortcut, and disabled shortcut behavior were verified in the following dated section.
+- [ ] Independent screen-reader review remains open.
 
 # Command Palette result cap — 2026-11-10
 
@@ -2434,14 +2435,15 @@
 
 # Command Palette desktop panel geometry — 2026-11-10
 
-- [x] At 1904×950, local frame/panel measure 631.98×332px and 452×244px; the recorded reference is 630×331px and 452×244px.
-- [x] Search and rows remain 450×48px and 450×43px; both icons remain intrinsic at 18×18px.
+- [x] At 1904×950, local frame/panel measure 635.98×334px and 454×246px; rendered reference dimensions are 636×333.88px and 453.6×246.1px.
+- [x] Search and rows measure 452×48px and 440×43px; search glyph remains 18px and row glyphs 16px in their icon tiles.
 - [x] Rechecked 390×844 and 320×844 mobile specimens; dimensions remain within 4px of reference with no horizontal overflow.
-- [ ] Exact desktop row/footer comparison and independent screen-reader output remain open.
+- [x] Exact desktop row/footer comparison was completed in the Desktop composition follow-up below.
 
 # Command Palette desktop composition — 2026-11-10
 
 - [x] At 1904×950, local frame/panel/search/group/rows/footer measure 635.98×334, 454×246, 452×48, 452×31, 440×43 and 452×72.19px; rendered reference values are 636×333.88, 453.6×246.1, 451.44×47.25, 451.44×30.64, 438.48×43.2 and 451.44×73.17px.
 - [x] All dimensions are within 1.52px; 6px row inset, 10px content gap, 26px icon tile and 16px icon match the rendered composition. The RTL search icon is on the right; footer hints occupy two aligned rows.
 - [x] At 390×844 and 320×844, previously measured frame/panel geometry remains 342×318/338×246px and 272×341/260×271px. Search glyphs remain 18×18px, row glyphs 16×16px, and the document remains bounded to the viewport.
-- [ ] Complete live interaction matrix and independent screen-reader review remain open.
+- [x] Live interactions for results, no-results, Loading, disabled-item skipping, shortcuts, filtering, keyboard selection, dismissal and focus return are documented in the family checklist.
+- [ ] Independent screen-reader review remains open.

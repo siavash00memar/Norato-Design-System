@@ -10,3 +10,4 @@ At 1904×950 the local frame is 631.98×332px vs the matched reference's 636×33
 - Search, group title, rows and footer match the recorded reference within 2px; row inset and key hint groups remain visibly distinct.
 - Search icon appears at the RTL start edge; row icons have a bounded 26px tile with a 16px icon.
 - Preserve 390×844/320×844 measurements, RTL, 18×18 mobile search icon, no page overflow, Norato colors, and the live dialog/API.
+- Sweep the live default, matching query, no-result, loading, disabled command and ArrowDown-skip states; restore the playground to its default values afterward.
