@@ -10,6 +10,10 @@ const dot = ref(true)
 const leadingIcon = ref(false)
 const trailingIcon = ref(false)
 const dir = ref<'rtl' | 'ltr'>('rtl')
+const textLength = ref<'short' | 'long'>('short')
+const labelText = computed(() => textLength.value === 'short'
+  ? 'منتشر شده'
+  : 'نسخهٔ تازهٔ سیستم طراحی نوراتو منتشر شد؛ شامل بهبود دسترس‌پذیری و اصلاح جزئیات رابط کاربری')
 const props = defineProps<{ copiedKey: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
 const iconSlot = (slot: 'leadingIcon' | 'trailingIcon') => `  <template #${slot}><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg></template>`
@@ -17,8 +21,8 @@ const snippet = computed(() => {
   const attrs = ` tone="${tone.value}" appearance="${appearance.value}" size="${size.value}"${dot.value ? ' dot' : ''} dir="${dir.value}"`
   const slots = [leadingIcon.value ? iconSlot('leadingIcon') : '', trailingIcon.value ? iconSlot('trailingIcon') : ''].filter(Boolean)
   return slots.length
-    ? `<NoratoTag${attrs}>\n${slots.join('\n')}\n  منتشر شده\n</NoratoTag>`
-    : `<NoratoTag${attrs}>منتشر شده</NoratoTag>`
+    ? `<NoratoTag${attrs}>\n${slots.join('\n')}\n  ${labelText.value}\n</NoratoTag>`
+    : `<NoratoTag${attrs}>${labelText.value}</NoratoTag>`
 })
 </script>
 
@@ -29,7 +33,7 @@ const snippet = computed(() => {
       <NoratoTag class="tag-playground__tag" :tone="tone" :appearance="appearance" :size="size" :dot="dot" :dir="dir">
         <template v-if="leadingIcon" #leadingIcon><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg></template>
         <template v-if="trailingIcon" #trailingIcon><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 8 3 3 7-7" /></svg></template>
-        منتشر شده
+        {{ labelText }}
       </NoratoTag>
       <p class="tag-playground__note">Tag فقط برای نمایش وضعیت است و خودش تعاملی نیست.</p>
     </div>
@@ -38,6 +42,7 @@ const snippet = computed(() => {
       <PlaygroundSelect id="tag-appearance" v-model="appearance" label="سبک" :options="[{value:'soft',label:'نرم'},{value:'outline',label:'خط‌دار'}]" />
       <PlaygroundSelect id="tag-size" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'},{value:'xlarge',label:'خیلی بزرگ'}]" />
       <PlaygroundSelect id="tag-direction" v-model="dir" label="جهت" :options="[{value:'rtl',label:'RTL'},{value:'ltr',label:'LTR'}]" />
+      <PlaygroundSelect id="tag-text-length" v-model="textLength" label="طول متن" :options="[{value:'short',label:'کوتاه'},{value:'long',label:'بلند'}]" />
     </div>
     <div class="button-playground-toggles">
       <label class="button-playground-switch"><input v-model="dot" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>نقطهٔ وضعیت</span></label>

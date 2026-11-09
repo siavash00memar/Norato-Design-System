@@ -1589,6 +1589,13 @@
 - [x] Token/catalog checks, Vue typecheck/build, repository scan and `git diff --check` pass after this checkpoint.
 - [x] Checkpoint `99f8b3f` pushed to `origin/master`; remote hash matched.
 
+## Tag — long text and mobile geometry follow-up (2026-11-09)
+
+- [x] Added a short/long label control to the interactive playground; generated Vue code reflects label, direction, size and icon/dot settings.
+- [x] At 320×844 and 390×844, document widths were 305px and 375px. Long text clipped with ellipsis inside the available Tag width and did not stretch its 28px medium height.
+- [x] Exercised all eight optional dot/leading/trailing icon combinations at 320px; icons stayed 14×14px, the dot 6×6px, and Tag height stayed fixed. RTL and LTR visual ordering were confirmed. All four size heights matched 24/28/32/36px.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/tag-checklist.md`.
+
 ## Avatar direction and keyboard follow-up — 2026-11-08
 
 - [x] Selected LTR in the live playground; the displayed group order mirrored and the generated Vue example changed to `dir="ltr"`. Restored RTL after the check.
