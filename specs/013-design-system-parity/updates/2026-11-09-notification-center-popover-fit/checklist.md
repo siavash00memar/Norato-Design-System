@@ -7,4 +7,4 @@
 - [x] At 430×676 the document remains 414px wide with no horizontal overflow.
 - [ ] Exact 390×844/320×640 viewports, bottom-edge placement, keyboard-only navigation and independent screen-reader review remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass.
-- [ ] Evidence is recorded; changes are pushed and remote parity verified.
+- [x] Evidence is recorded; changes are pushed and remote parity verified (`779ba38`).
