@@ -1393,6 +1393,19 @@
 - **Correction:** Add a scoped, inert Combobox state gallery with six RTL field samples. Use 36px capsule/48px target, neutral default/disabled Stroke, yellow hover/typing/filled Stroke and semantic error Stroke; use Norato typography/color tokens.
 - **Verification:** Token/catalog checks, Vue typecheck and production build pass. Pending matched browser review at desktop and mobile widths after implementation; the local browser tabs timed out during follow-up, so the broader state matrix and independent screen-reader review remain open.
 
+## ERR-178 — Generic Variants cards inherited Combobox state labels (2026-11-09)
+
+- **Observed:** A source audit found the prior Combobox gallery patch had replaced the heading binding in the shared Variants gallery, which would show inferred Combobox state names for unrelated component variants.
+- **Cause:** The template edit targeted the first matching generic `<strong>{{ entry.label }}</strong>` rather than the Combobox-specific card heading.
+- **Correction:** Restore `entry.label` in the shared Variants gallery. Keep state normalization scoped to Combobox.
+- **Verification:** Source diff confirms the shared Variants heading uses the entry label again; production build and browser verification are pending.
+
+## ERR-179 — Decorative component marks used blue accent (2026-11-09)
+
+- **Observed:** Static Time Picker clock art and generic Anatomy index markers used brand blue as decorative emphasis, contrary to the approved Norato-yellow component accent rule.
+- **Correction:** Use Norato yellow for the clock accent and neutral border/text tokens for generic, non-selected Anatomy markers. Blue remains available for links and informational semantics.
+- **Verification:** Source diff confirms only those inert gallery selectors changed; matched desktop/mobile browser review remains pending.
+
 ## ERR-024 — تایپوگرافی فیلدهای تنظیمات از عنوان والد ارث‌بری می‌کرد
 
 - **کامپوننت:** Input و playgroundهای مشترک کامپوننت‌ها

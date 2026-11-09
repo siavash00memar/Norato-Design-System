@@ -544,7 +544,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
             <span v-else class="preview-shape"><i /><i /><i /></span>
             <span class="preview-label">{{ entry.label }}</span>
           </div>
-          <strong>{{ comboboxStateKind(entry) === 'invalid' ? 'Error' : comboboxStateKind(entry).replace(/^./, value => value.toUpperCase()) }}</strong>
+          <strong>{{ entry.label }}</strong>
           <small v-if="description(entry)" dir="auto">{{ description(entry) }}</small>
           <div v-if="entry.axes.length" class="variant-axes">
             <div v-for="axis in entry.axes" :key="axis.name" class="variant-axis">

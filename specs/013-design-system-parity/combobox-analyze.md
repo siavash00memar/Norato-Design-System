@@ -44,3 +44,4 @@ No product/API ambiguity blocks this audit. The only permitted implementation ch
 - Correct the documentation gallery with a scoped Combobox preview. Keep the live API untouched, retain RTL and token usage, and verify the six visible states in the actual browser. Full state matrix and independent screen-reader review remain separate open DoD items.
 
 - Follow-up audit found the first mapper also read only label/source, although the state axis may be stored in detail; the mapper now normalizes all three and emits one card per required kind. The browser verification of this final mapper is still pending because the active local tab repeatedly timed out.
+- A source review of the same patch found a misplaced Combobox-only label binding in the generic Variants section. Restore the generic `entry.label`; Combobox state labels remain scoped to the Combobox gallery. This correction is recorded as a regression found during audit.

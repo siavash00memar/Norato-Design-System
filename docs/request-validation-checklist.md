@@ -2061,3 +2061,10 @@
 - [x] At 320×844, reference frame is 256.8×300px and Norato is 256×300px (0.8px narrower). Norato document is 305px wide with no overflow; the reference document is 326px and shows horizontal overflow. The local 48px trigger is 246.4px wide vs reference field 245.4px.
 - [x] Responsive frame cap now uses the available viewport and Norato spacing token, retaining the 300px frame height without narrow-screen stretch.
 - [ ] Full Select state screenshot matrix and independent screen-reader review remain open.
+
+## Shared contract gallery corrections — 2026-11-09
+
+- [x] Source correction: restore `entry.label` for the shared Variants card heading; keep Combobox state normalization scoped to Combobox cards.
+- [x] Source correction: use Norato yellow for the static clock accent and neutral tokens for non-selected Anatomy markers; preserve blue for links and informational semantics.
+- [ ] Browser review of affected generic Variants, Anatomy and Time Picker pages at desktop/mobile sizes remains pending. The local Chrome tab is minimized and tab automation timed out; the in-app browser also timed out. No rendered result is claimed.
+- [ ] Recheck Combobox six-state gallery mappings and 36px/48px geometry at desktop/mobile sizes; the prior visual data predates the final mapper change.
