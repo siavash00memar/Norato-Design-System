@@ -2029,6 +2029,12 @@
 - [ ] Combobox States gallery currently uses a generic blue dot/bar instead of six state-accurate fields; verify scoped correction, state strokes, 36px/48px geometry, RTL and mobile layout in the rendered page before closing this item.
 - [ ] Exhaustive combined-state screenshot matrix, cold-load fallback capture, and independent screen-reader review remain open for Combobox.
 
+## Combobox desktop frame width tuning — browser follow-up (2026-11-09)
+
+- [x] Local Combobox page rendered at 1536×703; the non-compact specimen measures 632.98×300px and retains 300px height.
+- [x] Scoped desktop frame allowance now uses the 1px Norato border-thin token; the mobile override is untouched in source.
+- [ ] Exact width parity could not be verified in this capture because the reference page was at 1280×720. Fresh 390/320 checks, full visual state gallery and independent screen-reader review remain open.
+
 ## Checkbox shared-frame comparison — browser evidence (2026-11-09)
 
 - [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
