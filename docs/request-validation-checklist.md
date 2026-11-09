@@ -2460,3 +2460,11 @@
 - [x] At 390×844 and 320×844, previously measured frame/panel geometry remains 342×318/338×246px and 272×341/260×271px. Search glyphs remain 18×18px, row glyphs 16×16px, and the document remains bounded to the viewport.
 - [x] Live interactions for results, no-results, Loading, disabled-item skipping, shortcuts, filtering, keyboard selection, dismissal and focus return are documented in the family checklist.
 - [ ] Independent screen-reader review remains open.
+
+# Select specimen placeholder correction — 2026-11-10
+
+- [x] Fresh local browser render exposed an incomplete Persian placeholder in the static Select specimen; corrected it to «یک شهر انتخاب کنید».
+- [x] Before correction, rendered field measured 300×48px in a 300×300px RTL dotted frame and included a left-side chevron. No size, focus, or color rule was changed.
+- [x] After HMR the visible placeholder is «یک شهر انتخاب کنید»; DOM reports a 300×48px trigger inside a 633.98×300px RTL frame, with the chevron present.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
+- [ ] Select's full screenshot matrix and independent screen-reader review remain open.

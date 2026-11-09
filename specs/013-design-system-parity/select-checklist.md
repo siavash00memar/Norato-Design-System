@@ -4,7 +4,7 @@
 - [x] design reference source and current Select contract/playground inspected.
 - [x] Legacy selector audit found the unframed Select-specific rule; neutralize/rewrite it rather than append a competing override.
 - [x] Top specimen matches design reference composition and has the Default marker using Norato tokens.
-- [x] Top specimen content matches design reference's Default state at 1280×720: no preselected value, Persian placeholder visible; live playground default remains Tehran. Mobile viewport was not re-enforced in this correction and is not claimed as newly rechecked.
+- [x] Top specimen content shows no preselected value and the complete Persian placeholder «یک شهر انتخاب کنید»; live playground default remains Tehran.
 - [x] No vertical or horizontal stretch; desktop and 390px mobile geometry measured with equal design reference viewport.
 - [x] RTL and 48px target retained.
 - [x] Keyboard focus on the active option has a visible tokenized 2px ring with 4px offset; Enter selected Isfahan and updated the committed value in the browser.
@@ -28,3 +28,9 @@
 - [x] Same-viewport 1265×713 screenshots after applying a 2px semantic token allowance show the local Select preview frame visually aligned in width with the reference and both remain 300px high.
 - [x] Trigger/menu geometry and the mobile frame selector were not modified.
 - [ ] The 390px/320px browser review after this source change, complete state screenshot matrix, and independent screen-reader review remain open; Select DoD stays open.
+
+## Placeholder copy correction — 2026-11-10
+
+- [x] Fresh browser render exposed the inert top specimen's placeholder as the incomplete phrase «به شهر انتخاب کن».
+- [x] Corrected the specimen to «یک شهر انتخاب کنید»; the field remains 300×48px, RTL, unselected, and includes the left-side chevron inside the 300×300px dotted frame.
+- [ ] Full state screenshot comparison and independent screen-reader review remain open; Select DoD stays open.

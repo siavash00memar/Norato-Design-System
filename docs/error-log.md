@@ -1573,3 +1573,11 @@
 - **Correction:** Added semantic preview geometry tokens, bounded 26px icon tiles with 16px glyphs, fixed the static DOM order for RTL search, and made footer hints stack into two RTL-aligned rows. Live dialog styles were not changed.
 - **Verification:** At 1904×950, frame/panel/search/group/rows/footer differ from the current rendered reference by at most 1.52px. The live browser shows the corrected icon order and two-row footer. Previously measured 390×844 and 320×844 frame/panel dimensions remain fixed, with no page overflow.
 - **Prevention:** Compare transformed reference geometry in rendered pixels; record search, group, row and footer separately from the outer frame, and scope static-sample corrections away from live dialog styles.
+
+## ERR-203 — Select specimen placeholder was incomplete (2026-11-10)
+
+- **Observed:** The inert top Select specimen displayed «به شهر انتخاب کن», omitting the start of the intended prompt.
+- **Cause:** Its static `placeholder` prop contained incomplete Persian copy.
+- **Correction:** Set the sample prompt to «یک شهر انتخاب کنید» without changing live adapter behavior or field geometry.
+- **Verification:** After HMR the visible text is «یک شهر انتخاب کنید»; the RTL trigger is 300×48px within the 300px-high frame and its chevron remains present. Token/catalog checks, Vue typecheck, production build and `git diff --check` pass.
+- **Prevention:** Inspect the rendered Persian string in the browser; do not infer visible copy from the playground snippet.

@@ -15,3 +15,4 @@
 13. [x] Warm the shared focus contrast outline to dark amber while retaining the yellow ring; verify live listbox keyboard focus, Escape dismissal and trigger focus return, and update the Select state gallery evidence. Full state screenshot and screen-reader DoD remain open.
 
 14. [x] Re-capture Select at 390×844 and 320×844 after the shared-frame refinement, correct the narrow mobile frame cap, and record same-viewport geometry/overflow in the checklist and request validation.
+15. [x] Correct the inert top specimen's incomplete Persian placeholder to «یک شهر انتخاب کنید» and verify the rendered text without changing the live playground fixture.
