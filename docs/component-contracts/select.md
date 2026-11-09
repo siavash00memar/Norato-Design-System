@@ -70,7 +70,7 @@
 
 ## Accessibility
 
-با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده. گزینهٔ فعال با حلقهٔ focus-visible دوپیکسلی، offset چهارپیکسلی و هالهٔ semantic رنگ Norato مشخص می‌شود. تریگر Select و جست‌وجوی منو با فوکوس کیبورد یک Stroke زرد دارند و حلقهٔ بیرونی دوم نمی‌سازند.
+با کلیدهای بالا و پایین بین گزینه‌ها جابه‌جا میشه و Enter انتخاب می‌کنه؛ Esc منو رو می‌بنده. گزینهٔ فعال با حلقهٔ focus-visible دوپیکسلی، offset چهارپیکسلی و outline کنتراست‌دارِ کهربایی همراه با هالهٔ زرد Norato مشخص می‌شود. تریگر Select و جست‌وجوی منو با فوکوس کیبورد یک Stroke زرد دارند و حلقهٔ بیرونی دوم نمی‌سازند.
 
 ### قاعدهٔ عمومی Focus در Norato
 
@@ -78,6 +78,6 @@
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای open/selected و تأکید اصلی، `--norato-color-brand-blue` برای معناهای اطلاعاتی، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow` برای open/selected و تأکید اصلی، `--norato-color-brand-blue` برای معناهای اطلاعاتی، `--norato-color-focus-contrast` (کهربایی تیره)، `--norato-color-focus-ring` (زرد)، و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
 
 قاب نمونه از `--norato-select-preview-frame-inline-size`، `--norato-select-preview-frame-mobile-inline-size`، `--norato-select-preview-frame-block-size` و `--norato-select-preview-frame-radius` استفاده می‌کند؛ رنگ شیشه/نقطه/هاله و ارتفاع کنترل از توکن‌های عمومی Norato می‌آیند. روی viewport عریض، اندازهٔ قاب ممکن است به ستون محتوای صفحه محدود شود.

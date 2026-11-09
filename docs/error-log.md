@@ -1371,3 +1371,10 @@
 - **Cause:** The typography token name was not part of the registered Norato tokens, and the scale rounded only to the nearest ceiling tick without reserving direct-label clearance.
 - **Correction:** Use the registered `--norato-type-heading-title-size`; when the rounded maximum exactly equals the data maximum, add one nice tick of headroom. Keep already-padded scales unchanged.
 - **Verification:** `pnpm test:charts` covers the exact-ceiling case and the existing fixture scale. Browser recheck and all project gates are recorded in the Charts checklist; independent screen-reader review remains open.
+
+## ERR-175 — Focus contrast outline used blue alongside the Norato-yellow focus ring (2026-11-09)
+
+- **Observed:** Select's static Focus state showed a blue marker, and interactive focus styles pair `--norato-color-focus-contrast` with the yellow ring. The blue outline read as a second brand accent against the user's yellow palette.
+- **Cause:** The shared focus-contrast semantic token still pointed to the legacy brand-blue value even though the ring itself is Norato yellow.
+- **Correction:** Set the contrast outline to dark amber `#805A00`; retain the yellow focus ring and the separate blue tokens used for links and information. The amber outline has a 6.21:1 ratio on white and 3.79:1 on Norato yellow.
+- **Verification:** Local Select now renders its static Focus marker in dark amber. In the live Reka listbox, ArrowDown moved focus from search to the selected Tehran option; its focused outline is dark amber with the yellow ring, and the selected value stayed unchanged. Escape closed the menu and returned focus to the trigger. Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Select's full state screenshot matrix and independent screen-reader review remain open.

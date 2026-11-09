@@ -12,3 +12,4 @@
 10. [x] Update contracts and parity records, commit, and push the Select in-progress delivery; re-run after new source changes.
 11. [x] Refine the static States gallery to design reference's title/description card hierarchy without changing the Select adapter or generic Button renderer; compare desktop and mobile.
 12. [x] Re-run technical gates; the Select adapter's remaining full visual-state screenshot review is tracked separately and DoD remains open.
+13. [x] Warm the shared focus contrast outline to dark amber while retaining the yellow ring; verify live listbox keyboard focus, Escape dismissal and trigger focus return, and update the Select state gallery evidence. Full state screenshot and screen-reader DoD remain open.

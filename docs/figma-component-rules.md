@@ -4,6 +4,7 @@
 
 - Current reference: Figma file `WWw9btcZcWPxJGpWw8fko5`, 14 chapters `9678:58478`–`9678:60263`; see [figma-source-ledger.md](figma-source-ledger.md) for extracted values and uncertainty.
 - Brand Yellow is `#FDC101`; brand Blue is `#134F89`. Old direct link blues `#2A60E7` and `#2D81FF` remain documented as inconsistent legacy instances, not brand tokens.
+- Keyboard focus pairs the Norato-yellow outer ring with a dark amber contrast outline (`--norato-color-focus-contrast: #805A00`) so the indicator remains visible against white and yellow surfaces without using blue as the focus accent.
 - Observed info/tag pairs are kept distinct: Info `#FFF8E0/#FBEAB2`; Tag Blue `#E4F2FF/#B0D7FE`.
 - Source spacing values are evidence, not a regular product scale. Documentation-only page gutters/gaps are not promoted to component tokens.
 - Source radii `5/12/25/36/50px`, observed component surface `25px`, and observed elevation styles live as evidence-named tokens; component-specific accepted contracts remain authoritative.
@@ -233,7 +234,7 @@
 
 - Primary fill uses Norato yellow with dark text. Secondary uses a 2px Norato-yellow stroke and dark text.
 - Button variant/state samples align content to the top with consistent gaps; sample buttons keep intrinsic width. Button preview uses compact specimen padding.
-- The focus indicator keeps the contrast outline paired with the yellow ring.
+- The focus indicator keeps the dark amber contrast outline paired with the yellow ring.
 - Button → Anatomy documentation presents the assembled primary sample and an RTL exploded map: Container is the empty enclosing outline; optional Leading Icon, Label and optional Trailing Icon are separate contents and the label appears once. Icon layers are explicitly conceptual because the current Vue adapter does not support icon slots.
 
 ## Button type and shape rule — 2026-10-28

@@ -1960,3 +1960,10 @@
 - [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.
 - [x] Browser shows the Checkbox specimen uses `NoratoCheckbox`. The live Switch in RTL measured a 48×48px target and a 40×24px track; checked track is Norato yellow, with a 16×16px white knob, zero border and no shadow. The playground was returned to unchecked.
 - [ ] Matched mobile comparison, exhaustive combined-state review and independent screen-reader review remain open for Switch; Checkbox's independent screen-reader review remains open.
+
+# Select warm-focus contrast follow-up — browser evidence (2026-11-09)
+
+- [x] Replaced the blue focus contrast outline with a dark amber Norato focus contrast token (`#805A00`) while keeping the yellow outer focus ring. Measured contrast is 6.21:1 on white and 3.79:1 on the Norato-yellow ring.
+- [x] The static Select Focus marker now appears dark amber. In the live Select, ArrowDown moved focus from the searchable field to Tehran without changing the controlled selection; the screenshot showed the amber outline and yellow ring. Escape closed the Reka listbox and returned focus to its trigger.
+- [x] Token validation, catalog integrity (49 routes/contracts), Vue TypeScript validation, production build, and `git diff --check` pass.
+- [ ] Full visual state/variant screenshot comparison and independent screen-reader review remain open; Select DoD is not complete.
