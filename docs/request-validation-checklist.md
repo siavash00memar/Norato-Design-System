@@ -1885,3 +1885,9 @@
 - [x] Source search found no native `<select>` or `<option>` tags in `apps/vue/src` or `packages/vue/src`. Shared `PlaygroundSelect` uses a button plus `role="listbox"`/`role="option"`, with ArrowUp/ArrowDown, Home/End, Enter, Space and Escape handling in source.
 - [x] Live browser verification on Select: its searchable grouped list opened, exposed a disabled option, Escape closed and returned focus to its trigger, ArrowDown/ArrowUp moved option focus and Enter committed a selection. Fixture was restored to Tehran and both field and status summary showed the baseline value.
 - [ ] Fresh rendered and keyboard verification across the other dropdown-consuming component pages remains open; source audit and this Select pass do not cover every page.
+
+## Pagination specimen comparison (2026-11-09)
+
+- [x] Compared local and reference previews in the same 1920×1080 browser viewport. Local specimen now has the centered 288px Norato dotted-glass frame and a yellow current page; its previous/next arrows have no browser-default outline circles. The local frame is about 580px wide due to the documentation column versus about 630px in the reference; no visible distortion.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build passed after the change.
+- [ ] Mobile viewport comparison, complete visual state/size/edge matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/pagination-checklist.md`.
