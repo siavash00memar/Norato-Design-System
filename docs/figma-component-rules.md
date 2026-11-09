@@ -497,10 +497,11 @@
 
 - Preserve source geometry with 1:1, 4:3, 16:9 or 3:4 aspect ratios; `cover` may crop and `contain` preserves the full source. Never stretch an image to fill an unrelated height.
 - Keep the inert image specimen media capped at 320px through `--norato-image-preview-media-inline-size`; preserve the shared 288px Button frame and let aspect ratio determine media height.
+- The default artwork uses a warm sunset field, a cropped soft sun disc, a cool lower edge, and a shaded caption. Keep the illustration abstract and direction-neutral while retaining the local Norato yellow accent. Refreshed browser comparison confirms its composition now follows the reference; the fixed 4:3 media and shared frame remain proportional.
 - Gallery supports Grid, Masonry and Featured (main + thumbnails). Selected thumbnail uses Norato yellow; keyboard focus remains a separate visible ring.
 - Keep all thumbnail targets at least 48×48px. Lightbox media is bounded by the viewport and keeps its intrinsic ratio.
 - **Review note:** At the recorded 1280×720 viewport, the Norato frame measured 584×288px and media 320×240px; the reference measured 636×331px with media 324×243px. At 390px, Norato measured 343×288px with media 320×240px; reference measured 327×315px with media 320.76×243px. At 320px, Norato measured 273×288px with media 263×197.25px and no document overflow; reference measured 257×315px with media 245×243px and a 326px-wide document. The 4:3 media proportions are preserved; shared-frame geometry still differs and requires a deliberate review against the Button frame rule.
-- **Remaining:** crop/contain appearance, all states and thumbnail combinations, lightbox bounds/focus sequence, exact keyboard/accessibility matrix, and independent screen-reader review are open; see the Image DoD checklist.
+- **Remaining:** failed-source retry, Hover across all ratios, responsive review after the expanded thumbnail playground, Lightbox bounds/focus sequence, reduced-motion emulation, and independent screen-reader review are open; see the Image DoD checklist.
 ## Charts — 2026-11-08
 
 - کارت نمودار ۵۲۰ پیکسل است؛ نمودارها SVG با نسبت ثابت هستند و در عرض کم در قاب خود اسکرول افقی می‌گیرند تا شکل داده‌ها فشرده یا کشیده نشود.

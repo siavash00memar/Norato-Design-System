@@ -1251,4 +1251,16 @@
 
 - **Observed:** The 380px-wide 4:3 static artwork in the Image specimen was taller than the shared 288px Button frame, making that preview appear stretched vertically. The playground also did not expose the Image adapter's `objectFit` choice.
 - **Correction:** Added the semantic `--norato-image-preview-media-inline-size` token at 320px, capped the static specimen art with it, and added a `cover`/`contain` control that updates both the live Image adapter and generated Vue snippet.
-- **Verified:** Previously recorded browser measurements show the Image frame returned to 584×288px on desktop and 343×288px at 390px; media is 320×240px (4:3). At 320px media is 263×197.25px and the Norato document remains 305px wide. The live reference comparison still shows a different outer frame geometry; crop/contain visuals and remaining Image DoD are open in `image-checklist.md`. Browser automation could not be resumed in this checkpoint, so no new visual evidence is claimed.
+- **Verified:** Browser measurements show the Image frame at 584×288px on desktop and 343×288px at 390px; media is 320×240px (4:3). At 320px media is 263×197.25px and the Norato document remains 305px wide. A refreshed visual check confirmed the capped specimen no longer expands the shared frame. The reference's outer frame remains taller; see the recorded comparison in `image-checklist.md`.
+
+## ERR-158 — Image specimen artwork composition differed from the reference (2026-11-09)
+
+- **Observed:** The matched browser view showed a mountain-silhouette illustration where the selected design reference uses a warm image field, a large soft sun disc and a cool lower edge.
+- **Correction:** Replaced the inert specimen's landscape bands and small accent sun with a CSS-only warm gradient, cropped circular glow, cool lower gradient and the existing shaded caption. Updated the accessible name to describe the abstract sunset artwork.
+- **Verified:** Refreshed browser screenshot shows the warm field, circular glow, cooler lower edge and caption against the dotted frame; the media remains 320×240px and 4:3. The full DoD remains open in `image-checklist.md`.
+
+## ERR-159 — Image hover state lacked a dark shade (2026-11-09)
+
+- **Observed:** The adapter zoomed its media on hover, but did not add the dark shade required by the reference state.
+- **Correction:** Added a token-based translucent scrim and opacity transition, kept the caption above the scrim, and applied the same affordance when gallery triggers receive keyboard focus. Reduced-motion mode disables both transition and zoom.
+- **Verified:** Browser screenshot at the live wide Image adapter shows the hovered treatment without changing its aspect ratio. The `cover`/`contain` control updates the standalone adapter and generated example; `contain` shows the full source with side gutters while `cover` fills the frame. Hover selectors apply only to the default image state; full cross-ratio hover and reduced-motion review remain open.
