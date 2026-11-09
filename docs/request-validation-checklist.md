@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Segmented disabled-selection priority — browser review (2026-11-09)
+
+- [x] At 390×844 and 320×640, Norato page widths remained within the CSS viewport (375px and 305px); 64 inert cells rendered in eight cards and the matrix did not create horizontal overflow.
+- [x] Same-viewport reference comparison: static frame 320×288px vs 327×300px at 390; 273×288px vs 257×300px at 320. Norato preserves its shared frame height and avoids the reference's 320px document overflow.
+- [x] The full 64-case visual audit found Contrast + Selected + Disabled still yellow due to selector specificity. Fixed both the live component rule and static matrix rule; confirmed neutral `rgb(245,245,245)` surface, disabled `rgb(107,107,107)` text and no elevation in the live disabled selected state.
+- [ ] Independent screen-reader review remains open for Segmented Control.
+
 ## Chip implementation checkpoint (2026-11-09)
 
 - [x] Added `NoratoChip` with controlled filter and removable input modes, RTL/LTR direction, leading icon, size options, disabled state and named removal control.

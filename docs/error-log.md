@@ -1239,3 +1239,10 @@
 - **Observation:** The inner static scene inherited the frame's full minimum height, expanding the shared 288px preview to 314px. Its content-width panel could also extend beyond the frame. In the live adapter, long content exceeded Reka's available viewport height; a horizontal placement on a 320px viewport could overlap the trigger.
 - **Correction:** Removed the inherited scene minimum, sized the static panel to a semantic 240px token with frame padding, constrained live height by Reka's available viewport space, and used a fixed grid track so the body scrolls internally. Horizontal placement requests switch to bottom at 840px and narrower screens. Non-modal Tab now exits the focus loop at the edge and dismisses the panel; modal mode retains the loop.
 - **Verified:** Matched 390×844 and 320×640 captures, specimen panel containment, live body scroll, LTR, vertical collision, non-modal Tab exit and modal focus loop. Independent screen-reader review remains open in `popover-checklist.md`.
+
+## ERR-156 — Segmented Contrast selection overrode disabled styling (2026-11-09)
+
+- **Observed:** In the 64-case gallery, selected Contrast items stayed yellow and dark when the item state was Disabled. The runtime adapter had the same specificity conflict when a selected value became disabled.
+- **Cause:** The Contrast selected selector was more specific than the generic selected-disabled rule, so its yellow surface and elevation won.
+- **Correction:** Added a Contrast-specific selected-disabled rule to both the runtime component stylesheet and the inert item matrix; the disabled surface and text now take priority and elevation is removed.
+- **Verified:** Checked all 64 matrix cases at the 320px CSS viewport with zero failures. The live selected option remained controlled after disabling its group and computed to muted surface/text with no elevation. At 390×844 and 320×640 the Norato document remained 375px/305px wide, with no overflow. Independent screen-reader review remains open.

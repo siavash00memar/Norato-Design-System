@@ -18,3 +18,4 @@
 .segmented-item-matrix-target[data-state="focus"]{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
 .segmented-item-matrix-meta{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size);line-height:var(--norato-type-body-small-line-height)}
 @media(max-width:599px){.segmented-item-matrix-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.segmented-item-matrix-card[data-style="contrast"] .segmented-item-matrix-target[data-state="disabled"][data-selected="true"] .segmented-item-matrix-item{background:var(--norato-color-surface-subtle);color:var(--norato-color-text-disabled);box-shadow:none}
