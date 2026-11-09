@@ -1934,3 +1934,9 @@
 - [x] Live browser exercised all four type/size combinations and page totals 1, 7, 8 and 12. Boundary buttons disabled at both ends; Simple summary and generated snippet tracked the selected values.
 - [x] Found and fixed the boundary accessible name that previously announced page 0/13; browser AX now reports stable Previous/Next names, including disabled boundaries.
 - [ ] Very large/irregular totals, mobile viewport comparison and independent screen-reader review remain open.
+
+## Pagination — mobile frame follow-up (2026-11-09)
+
+- [x] At 390×844 and 320×844 in Simple mode, frames measure 343×74px and 273×74px; document widths remain 375px and 305px. The controls remain 48px high.
+- [x] With 120 pages/current page 60, Numbers mode scrolls internally: the nav's content width is 483px while its visible width is 317px at 390px, and 247px at 320px. Document width stays bounded at both sizes.
+- [ ] Same-viewport mobile comparison, complete large/irregular totals matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/pagination-checklist.md`.
