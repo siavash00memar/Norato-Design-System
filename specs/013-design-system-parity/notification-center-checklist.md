@@ -8,7 +8,7 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 - [x] Confirm Button-equivalent dotted specimen frame and page section order: visual specimen, live Vue playground, then contract sections.
 - [x] Reviewed specimen frame, panel, rows and avatar/icon proportions; changed avatars to 32px small-avatar token and aligned specimen panel height with reference. No stretched geometry is visible in desktop captures.
 - [x] Compared Popover, Panel and Empty states; Norato yellow is used for unread/selected cues, with neutral user/system marks.
-- [ ] Review exact 390px and 320px layouts; verify document and panel have no unintended horizontal overflow. Fresh mobile browser work was at 430×676 and does not replace these exact widths.
+- [x] Review exact 390×844 and 320×640 browser layouts. At 390×844 the document is 375px wide; Popover is 320×382.2px at x=47,y=8, and Panel is 390×844px at x=0; no document overflow. At 320×640 the document is 305px wide; Popover is 296×401.4px at x=8,y=8, and Panel is 320×640px at x=0; no document overflow. In both Popover sizes the 483px content scrolls internally and the 48px bell has an 8px panel gap.
 
 ## Behavior
 
@@ -45,4 +45,5 @@ Record same-viewport dimensions, tested interactions, viewport sizes, console fi
 - [x] Scoped `.norato-notification-center__content` max block size to the smaller of the Norato 480px cap, Reka Popper's available collision height, and the viewport inset. In the same edge case, the panel now measures 298.2px high at y=8..306.2px; Reka available height is 298.2px and internal scrollHeight exceeds clientHeight.
 - [x] Notification rows remain 70.4px and all bell, filter, header and action controls remain at least 48px; document width is 414px at a 430px viewport with no horizontal overflow.
 - [x] Added a live RTL/LTR playground selector, default RTL, and generated snippet sync. In LTR, Popover stays inside the viewport and panel aligns to inline-end; Escape closes Popover and restores focus to the bell.
-- [ ] Exact 390×844/320×640 comparison, bottom-edge placement, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.
+- [x] Exact 390×844 and 320×640 layout/no-overflow review is recorded above. At 390×1034, real pointer activation with the bell at y=921..969 and navigation starting at y=977 opens Popover at x=47,y=433,w=320,h=480; it ends at y=913, leaving 8px to both bell and navigation. Content scrolls internally (483/478px) and document width remains 375px.
+- [ ] At 390×1000 and initial page scroll, the fixed mobile navigation overlaps the lower 26px of the bell; review whether this is acceptable with the page's scroll-to-reveal behavior. Outside-click dismissal, independent screen-reader review and reduced-motion emulation also remain open; family DoD stays open.
