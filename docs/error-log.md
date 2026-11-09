@@ -1349,3 +1349,10 @@
 - **Cause:** The accessibility-card text grid allowed its child text items to retain their intrinsic minimum width, even after its parent track was bounded.
 - **Correction:** Bound the text grid to a `minmax(0, 1fr)` track and let its heading/detail children wrap inside the available inline size.
 - **Verified:** At 390×844 and 320×844, Tree View document widths are 375px/305px and all rows remain 48px high. The same 320px check on Input reports 305px document width with no overflow. Pointer-only hover, reduced-motion emulation and independent screen-reader review remain open.
+
+## ERR-172 — Static choice and switch specimens used the wrong accent (2026-11-09)
+
+- **Observed:** A source audit found that the inert Checkbox, Radio, Drawer choice and Switch specimens still used the Norato blue token, despite the approved yellow accent for selected controls.
+- **Cause:** The old shared specimen stylesheet retained legacy blue declarations after the live adapters had moved to the yellow accent.
+- **Correction:** Changed the static choice controls' `accent-color` and the sample Switch track to the semantic yellow token; preserved the existing white Switch thumb and all component geometry.
+- **Verified:** Exact source selectors now resolve to the yellow token. Browser rendering could not be confirmed in this pass because the available browser input/capture calls returned access/capture errors; DoD visual confirmation remains open. Token/catalog, typecheck, production build and diff checks are the required post-change gates.
