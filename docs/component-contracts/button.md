@@ -54,6 +54,7 @@ propهای قدیمی `iconOnly` و `accessibleLabel` در کد وجود دار�
 - Social Button: `Default`، `Hover`، `Pressed`، `Disabled` و `Focus`.
 - نمونه‌های `Loading` و `Disabled` در گالری، وضعیت دیداری را نشان می‌دهند؛ رفتار هر API فقط در صورت پشتیبانی adapter اجرایی است.
 - `Hover` با `:hover`، `Focus` با `:focus-visible` و فشردن موقت با `:active` نمایش داده می‌شوند. prop `pressed` وضعیت معنایی `aria-pressed` را برای دکمهٔ toggle تنظیم می‌کند و به‌تنهایی ظاهر فشردهٔ دائمی ایجاد نمی‌کند.
+- Hover دکمهٔ `Secondary` از زمینهٔ زرد ملایم `--norato-color-warning-container`، Stroke زرد برند و متن تیره استفاده می‌کند؛ در این تعامل از توکن آبی اطلاعاتی استفاده نکنید.
 
 ## Parts
 

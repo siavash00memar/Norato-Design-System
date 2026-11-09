@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Secondary Button hover accent correction (2026-11-10)
+
+- [x] The shared `Secondary` Button hover no longer uses the blue informational surface; it now uses Norato's yellow warning-container token, yellow brand Stroke and dark text.
+- [x] Actual pointer hover on Drawer’s live Secondary action at the local 5173 route computes to `rgb(255, 248, 224)` background, `rgb(253, 193, 1)` border and `rgb(26, 26, 26)` text.
+- [ ] This confirms the shared action hover treatment only; Drawer’s complete control/focus matrix and independent screen-reader review remain open.
+
 ## Drawer reduced-motion browser check (2026-11-10)
 
 - [x] In an isolated Chromium target at 390×844, `prefers-reduced-motion: reduce` was active. The RTL right-side Drawer opened at 374px wide, flush to the viewport edge, with `role="dialog"`, `aria-modal="true"`, focus inside, and no horizontal document overflow.

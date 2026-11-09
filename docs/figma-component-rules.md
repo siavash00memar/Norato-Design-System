@@ -30,6 +30,7 @@
 ## Button
 
 - The top Button specimen uses the Split Button preview frame tokens (640px max width, 320px mobile cap, 288px height, 24px radius) and the same dotted glass warm/cool wash. Show only Primary and Secondary, each 48px high like Split Button Large; preserve intrinsic widths and use semantic Norato tokens.
+- Secondary Button hover uses Norato's yellow `--norato-color-warning-container` with the yellow brand Stroke and dark text; do not use the blue informational container for this interaction state.
 
 - مرجع: Figma `8775:23830`، instanceهای `8775:23831` تا `8775:23833`
 - عرض: ۱۲۱px

@@ -9,6 +9,7 @@
 - [x] Compared the responsive experience at 390px and 320px. Side panels and all three bottom detents stayed within the viewport; document width matched the viewport.
 - [x] Reviewed all three side sizes at desktop and auto/half/full Bottom Sheet detents. The panels stay within their expected width/height and content does not stretch to fill unused space.
 - [ ] Review the complete visual focus/hover state matrix.
+- [x] After the shared Button hover correction, a real pointer hover over Drawer’s Secondary action computes to the Norato yellow container (`rgb(255, 248, 224)`), yellow brand border (`rgb(253, 193, 1)`) and dark text. Remaining controls and their keyboard-focus states still need the complete matrix review.
 - [x] Long content scrolls inside the panel at all Bottom Sheet detents at 390px and 320px without clipping or horizontal overflow.
 
 ## Behavior and accessibility
