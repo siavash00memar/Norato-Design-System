@@ -1584,7 +1584,8 @@
 - [x] Broken-image example renders two Persian initials within the same fixed avatar frame. Source constrains explicit initials to two grapheme clusters and derives no more than two.
 - [x] Tab traversed all six controls. Type menu ArrowDown/ArrowUp/Enter updated type and generated code; screenshots confirm a single yellow focus ring for controls/options. Presence remains bottom-left in both directions.
 - [x] Added the missing Default marker to the inert specimen; tuned Avatar playground focus from the generic dark/halo treatment to one yellow outline.
-- [ ] Exact 390/320 viewport overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/avatar-checklist.md`.
+- [x] At 390×844 and 320×844, document widths are 375px and 305px; the Avatar playground measures 343px and 273px. No horizontal overflow, descendant overflow, or off-viewport element was found; all group-grid cells fit the 273px playground at 320px.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/avatar-checklist.md`.
 - [x] Token/catalog checks, Vue typecheck/build, repository scan and `git diff --check` pass after this checkpoint.
 - [x] Checkpoint `99f8b3f` pushed to `origin/master`; remote hash matched.
 

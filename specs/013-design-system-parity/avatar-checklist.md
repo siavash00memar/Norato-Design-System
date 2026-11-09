@@ -13,7 +13,7 @@
 - [x] Rendered all 36 Avatar, 12 Group, 3 Label and 4 Status variants. Token/CSS geometry is fixed: Avatar 24/32/40/48/56/64px; Group 32/40/48/56px with 8/10/12/14px overlap; Label avatars 32/40/48px; presence dot 10px. Browser screenshots show circle/square crops, fallback glyphs and overlapping groups without visible stretching or clipping.
 - [x] Browser tree confirms all 55 configured variants, image-fallback accessible output, six sizes, and both shapes; pixel geometry still needs measurement.
 - [x] RTL/LTR group order and overlap are confirmed in browser captures: first member is on the right in RTL and left in LTR; `+N` mirrors to the opposite edge. Presence remains bottom-left.
-- [ ] Exact 390px/320px document overflow remains unverified.
+- [x] At 390×844 and 320×844, Avatar page document widths are 375px and 305px with no horizontal overflow. The live playground remains within 343px/273px; all group-grid cells fit their 273px mobile container, and no playground descendant extends beyond the viewport.
 - [x] Live browser screenshots confirm the presence dot stays at physical bottom-left in both directions, and the generated example tracks the selected RTL/LTR mode.
 
 ## Behavior and accessibility
@@ -28,5 +28,5 @@
 ## Engineering and delivery
 
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after this checkpoint.
-- [ ] Evidence and unresolved gates are recorded in the request checklist; exact mobile-width and independent screen-reader checks remain open.
+- [x] Mobile evidence and the remaining independent screen-reader limitation are recorded in the request checklist.
 - [x] Verified checkpoint `99f8b3f` is pushed and matches `origin/master`.
