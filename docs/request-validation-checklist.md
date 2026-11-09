@@ -2039,3 +2039,9 @@
 - [x] Scoped the compact row height and 16px row gap to the inert preview. The live playground remains unchanged; fresh DOM measurement shows three live rows at 48px, 48.8px, and 48px.
 - [x] At 390×844, the local Radio Button specimen frame measures 328×300px and the document remains 375px wide (no horizontal overflow). The specimen renders all three options on mobile.
 - [ ] A same-viewport mobile comparison against the visual reference, the full live visual-state/focus cross-product, and independent screen-reader review remain open.
+
+## Shared playground input typography — browser follow-up (2026-11-09)
+
+- [x] On the live Input page, four setting fields changed from inherited Estedad Bold to explicit Vazirmatn regular 12px; measured RTL direction, 36px height, pill radius and `#e8e8e8` resting border on every field.
+- [x] Shared generic playground text controls exclude checkbox switches from the text-field sizing rule.
+- [ ] Hover/focus transition and remaining Input visual variants still require browser review; this does not close the Input family DoD.

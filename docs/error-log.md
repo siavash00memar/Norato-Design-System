@@ -1385,3 +1385,11 @@
 - **Cause:** `.norato-switch-field[data-invalid] .norato-switch__track` and the disabled base rule had equal selector specificity; the disabled rule changed only the background, so the error border continued to win for the unchecked value. The checked-disabled selector separately neutralized its border.
 - **Correction:** The base disabled-track rule now sets both `border-color` and `background` to the disabled neutral surface. Error message and accessibility semantics remain unchanged.
 - **Verification:** In the local browser after Vite hot reload, Error + Disabled was tested in both checked and unchecked values. Both tracks rendered the same neutral disabled surface/border; AX exposed the switch as disabled, and the error alert remained present. Exhaustive live combined-state coverage and independent screen-reader review remain open.
+
+## ERR-024 — تایپوگرافی فیلدهای تنظیمات از عنوان والد ارث‌بری می‌کرد
+
+- **کامپوننت:** Input و playgroundهای مشترک کامپوننت‌ها
+- **نشانه:** کنترل‌های تنظیمات ۳۶px و کپسولی بودند، اما متن ورودی از برچسب Estedad Bold ارث می‌برد و با Vazirmatn بدنه هم‌خوان نبود.
+- **علت:** `font: inherit` روی کنترل فرزند، فونت عنوان والد را جایگزین فونت بدنه می‌کرد؛ selector عمومی همچنین checkboxهای سوئیچ را در دامنهٔ input متنی می‌آورد.
+- **اصلاح:** فیلدهای متنی و انتخابی تنظیمات صریحاً از توکن‌های Vazirmatn بدنه، اندازهٔ ۱۲px و وزن عادی استفاده می‌کنند؛ checkbox از selector فیلد متنی کنار گذاشته شد. عنوان همچنان Estedad Bold باقی می‌ماند.
+- **قاعدهٔ پیشگیری:** تایپوگرافی فیلد را مستقل از label تعیین کنید؛ `font: inherit` را در ورودی‌هایی که والدشان عنوان ضخیم است استفاده نکنید.

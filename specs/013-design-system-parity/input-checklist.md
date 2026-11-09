@@ -75,3 +75,5 @@
 - [x] Added a live RTL/LTR direction selector to the Input playground and synchronized it with the generated Vue snippet. Browser selection to LTR updated the live textarea and emitted `textareaDir = ref('ltr')` plus `dir="ltr"`; typed Persian text appeared at the left edge.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass after the playground update. Build retains the existing >500KB JavaScript chunk advisory.
 - [ ] Independent screen-reader review and full visual matching of every design-reference state remain open; Input DoD stays open.
+
+- [x] Follow-up 2026-11-09: Browser review exposed four Input playground settings fields inheriting Estedad Bold from their labels. Shared settings fields now explicitly use Vazirmatn 12px regular, RTL, 36px capsule geometry, and E8E8E8 resting Stroke. Checked the four rendered controls after HMR; all report 36px height, 50px radius, RTL, E8E8E8, Vazirmatn 12px/400. Hover/focus color validation and full Input visual-state/independent screen-reader DoD remain open.
