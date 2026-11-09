@@ -2031,10 +2031,9 @@
 
 ## Combobox desktop frame width tuning — browser follow-up (2026-11-09)
 
-- [x] Local Combobox page rendered at 1536×703; the non-compact specimen measures 632.98×300px and retains 300px height.
-- [x] Scoped desktop frame allowance now uses the 1px Norato border-thin token; the mobile override is untouched in source.
-- [ ] Exact width parity could not be verified in this capture because the reference page was at 1280×720. Fresh 390/320 checks, full visual state gallery and independent screen-reader review remain open.
-
+- [x] Matched local/reference browser viewport at 1536×703: reference frame is 636×300px and Norato is 635.98×300px.
+- [x] Scoped non-compact frame allowance uses semantic `--norato-space-1`; field sizing and mobile override are unchanged.
+- [ ] Fresh 390/320 checks, full visual state gallery and independent screen-reader review remain open.
 ## Checkbox shared-frame comparison — browser evidence (2026-11-09)
 
 - [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
