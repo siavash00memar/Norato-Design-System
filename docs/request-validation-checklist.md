@@ -1525,7 +1525,19 @@
 - [x] Local Avatar route presents the inert dotted preview, separate executable playground, copyable Vue usage, and contract sections in Button page order.
 - [x] Browser accessibility tree reports 36 Avatar, 12 Group, 3 Label, and 4 Status variants; broken-image fallback is exposed with a person name. RTL group members and overflow accessible labels are present.
 - [x] Direction and size custom menus open and close in the live playground. design reference's Avatar page was reviewed and supplies the same 55-variant scope, circle/square, ring/status placement, group RTL rule, and accessibility name guidance.
-- [ ] Exact responsive widths, pixel geometry of all 55 variants, independent screen-reader review, remaining state/keyboard audit and engineering gates are pending. Avatar DoD remains open.
+- [x] At this checkpoint, the 55-variant geometry, keyboard and engineering review were still pending; the 2026-11-09 follow-up records those checks.
+- [ ] Exact mobile widths and independent screen-reader review remain open. Avatar DoD remains open.
+
+## Avatar visual and keyboard follow-up — 2026-11-09
+
+- [x] Same desktop viewport captures compared the reference anatomy/variant tiles with Norato's preview and full matrix. Norato's preview is about 580×288px versus the reference's 630×300px, reflecting the narrower documentation column; its yellow/neutral palette remains distinct.
+- [x] Browser screenshots reviewed the 36 Avatar, 12 Group, 3 Label and 4 Status cases. Token geometry is fixed at Avatar 24–64px, Group 32–56px with 8–14px overlap, Label 32/40/48px and 10px presence dot. The matrix shows fixed circles/squares and no stretching; groups overlap and `+N` appears on the opposite side of the first person for RTL/LTR.
+- [x] Broken-image example renders two Persian initials within the same fixed avatar frame. Source constrains explicit initials to two grapheme clusters and derives no more than two.
+- [x] Tab traversed all six controls. Type menu ArrowDown/ArrowUp/Enter updated type and generated code; screenshots confirm a single yellow focus ring for controls/options. Presence remains bottom-left in both directions.
+- [x] Added the missing Default marker to the inert specimen; tuned Avatar playground focus from the generic dark/halo treatment to one yellow outline.
+- [ ] Exact 390/320 viewport overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/avatar-checklist.md`.
+- [x] Token/catalog checks, Vue typecheck/build, repository scan and `git diff --check` pass after this checkpoint.
+- [ ] Push this verified checkpoint and confirm remote sync.
 
 ## Avatar direction and keyboard follow-up — 2026-11-08
 

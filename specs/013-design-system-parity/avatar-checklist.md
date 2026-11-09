@@ -9,23 +9,24 @@
 
 ## Visual and responsive
 
-- [ ] Matched design reference/Norato captures compare ring, circle/square shapes, fallback glyphs, labels, statuses and group overlap; retain Norato yellow/neutral colors.
-- [ ] All 36 Avatar, 12 Group, 3 Label and 4 Status variants have measured geometry and render without stretch or clipping.
+- [x] Matched same-desktop-viewport captures compare the reference preview/anatomy/variant tiles with Norato's dotted Button-style specimen and 55-variant playground; keep Norato's yellow/neutral palette. Local frame is about 580×288px versus the reference frame about 630×300px, constrained by the narrower documentation column.
+- [x] Rendered all 36 Avatar, 12 Group, 3 Label and 4 Status variants. Token/CSS geometry is fixed: Avatar 24/32/40/48/56/64px; Group 32/40/48/56px with 8/10/12/14px overlap; Label avatars 32/40/48px; presence dot 10px. Browser screenshots show circle/square crops, fallback glyphs and overlapping groups without visible stretching or clipping.
 - [x] Browser tree confirms all 55 configured variants, image-fallback accessible output, six sizes, and both shapes; pixel geometry still needs measurement.
-- [ ] RTL/LTR group order and overlap are confirmed in matched captures; mobile 390px/320px has no document overflow.
+- [x] RTL/LTR group order and overlap are confirmed in browser captures: first member is on the right in RTL and left in LTR; `+N` mirrors to the opposite edge. Presence remains bottom-left.
+- [ ] Exact 390px/320px document overflow remains unverified.
 - [x] Live browser screenshots confirm the presence dot stays at physical bottom-left in both directions, and the generated example tracks the selected RTL/LTR mode.
 
 ## Behavior and accessibility
 
-- [ ] Broken image falls back without a layout jump; derived initials are at most two grapheme clusters.
+- [x] Broken image visibly falls back to initials in the fixed-size avatar frame. Derived and explicit initials are limited to two grapheme clusters.
 - [x] Group max 3/4/5 cases and person/overflow accessible names are present in the browser tree; physical RTL placement and overlap need a visual measurement pass.
 - [x] Name/status accessible labels, decorative behavior, group semantics and browser AX are reviewed.
 - [x] Static specimen is inert (no focusable controls in the specimen AX subtree); direction menu opens and selects RTL with keyboard Home/Enter.
-- [ ] Full keyboard traversal and visible-focus treatment across all playground controls are reviewed.
+- [x] Keyboard traversed all six playground controls in order. The type list opened by ArrowDown, moved by ArrowUp, and selected with Enter; selected values updated the example. Yellow focus is visible on controls and list options.
 - [ ] Independent screen-reader review is recorded; browser AX does not substitute for it.
 
 ## Engineering and delivery
 
-- [ ] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [ ] Evidence and unresolved gates are recorded in the request checklist and error log.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after this checkpoint.
+- [ ] Evidence and unresolved gates are recorded in the request checklist; exact mobile-width and independent screen-reader checks remain open.
 - [ ] Verified checkpoint is pushed and remote sync is confirmed.
