@@ -35,7 +35,7 @@ const snippet = computed(() => mode.value === 'filter'
       <NoratoChip v-if="mode === 'filter'" :label="label" mode="filter" v-model="selected" :disabled="disabled" :size="size" :dir="direction" />
       <template v-else>
         <NoratoChip v-if="!removedLabel" :label="label" mode="input" :disabled="disabled" :size="size" :dir="direction" @remove="handleRemove" />
-        <div v-else class="chip-playground__removed" role="status">برچسب «{{ removedLabel }}» حذف شد <button ref="restoreButtonRef" type="button" @click="restoreChip">بازگردانی</button></div>
+        <div v-else class="chip-playground__removed"><span class="chip-playground__removed-message" role="status">برچسب «{{ removedLabel }}» حذف شد</span><button ref="restoreButtonRef" type="button" @click="restoreChip">بازگردانی</button></div>
       </template>
     </div>
     <div class="button-playground-controls chip-playground__controls">
@@ -58,7 +58,8 @@ const snippet = computed(() => mode.value === 'filter'
 <style scoped>
 .chip-playground__preview{display:flex;align-items:center;justify-content:center;gap:var(--norato-space-3);min-block-size:calc(var(--norato-control-target-min) + var(--norato-space-8));padding:var(--norato-space-4)}
 .chip-playground__controls{grid-template-columns:repeat(auto-fit,minmax(min(100%,var(--norato-space-32)),1fr))}
-.chip-playground__removed{display:flex;align-items:center;gap:var(--norato-space-2);color:var(--norato-color-text-secondary)}
+.chip-playground__removed{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--norato-space-2);inline-size:100%;min-inline-size:0;color:var(--norato-color-text-secondary)}
+.chip-playground__removed-message{min-inline-size:0;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;line-height:var(--norato-type-body-small-line-height)}
 .chip-playground__removed button{min-block-size:var(--norato-control-target-min);padding-inline:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-default);color:var(--norato-color-text-primary);font:inherit;cursor:pointer}
 .chip-playground__removed button:hover{border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
 </style>

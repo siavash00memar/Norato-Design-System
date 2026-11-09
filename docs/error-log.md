@@ -1335,3 +1335,10 @@
 - **Cause:** The horizontal link aligned children with `stretch`, which overrode the media's intrinsic square `aspect-ratio` as the text column grew.
 - **Correction:** The horizontal media opts out of cross-axis stretching and stays top-aligned. Its width and square aspect ratio now determine its height; no fixed height was added.
 - **Verified:** At 320px LTR and 390px RTL the media measured 112×112px, the document remained within the viewport, and the generated usage direction matched the selected direction. The vertical media remained 309×174px (16:9) at 390px RTL. Long-copy stress and full layout/direction coverage remain open.
+
+## ERR-170 — Removing a long Chip expanded the mobile playground vertically (2026-11-09)
+
+- **Observed:** With a 300+ character Persian label, removing an Input Chip expanded the preview to 469px because the live status repeated the full label in its layout.
+- **Cause:** The status region laid out the full announcement as an unbounded flex item beside Restore.
+- **Correction:** Kept the complete announcement in a dedicated `role="status"` text element, visually clamped it to two lines, and placed Restore in a separate grid column.
+- **Verified:** At 320px and 390px, the preview is 85px tall, document widths are 305px and 375px, and the status text remains complete in the accessibility tree. Restore stays 78×48px; focus moves to Restore after removal and returns to the remove control after restoration. Independent screen-reader review remains open.

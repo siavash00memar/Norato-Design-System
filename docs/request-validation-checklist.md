@@ -1889,6 +1889,13 @@
 - [x] Found and fixed the horizontal Content Card thumbnail stretching beside a taller text column. The square media now measures 112×112px at 320px LTR and 390px RTL; vertical media remains 16:9 at 309×174px. The direction control and generated Vue code were checked; the playground was restored to RTL/vertical afterward.
 - [ ] Long Persian copy stress, all layout/direction combinations at narrow widths and independent screen-reader review remain open; see `specs/013-design-system-parity/card-checklist.md`.
 
+## Chip — long-label removal and mobile preview follow-up (2026-11-09)
+
+- [x] At 390×844 and 320×844, document widths are 375px and 305px; the long 300+ character Persian Chip remains 240×48px in Filter and removable Input modes.
+- [x] Found a tall-state regression in the playground: removing the long Input Chip expanded its preview to 469px. Separated the live status text from Restore and clamped the visible message to two lines; the preview now stays 85px high at both widths while the status retains its full 350-character text in the accessibility tree.
+- [x] Restore remains 78×48px and receives focus after removal; restoring the Chip returns focus to its remove action. RTL remains intact and no horizontal overflow occurs.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/chip-checklist.md`.
+
 ## List — links and disabled state follow-up (2026-11-09)
 
 - [x] Added enabled link, toggleable disabled-link state, and disabled button examples to the interactive Playground and its generated Vue example. Link activation updates the polite status without navigating away from the docs page. Disabled link changes to non-link content and both disabled rows are omitted from sequential Tab navigation.

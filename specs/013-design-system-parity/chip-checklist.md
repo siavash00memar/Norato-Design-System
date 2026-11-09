@@ -17,7 +17,7 @@
 - [x] Reviewed default, hover, selected, disabled and keyboard-focus visuals. CSS keeps the visual pill intrinsic and interaction target at the 48px token; removed a duplicate focus halo found in the browser screenshot.
 - [x] Checked leading icon and remove placement in RTL and LTR.
 - [x] A 240px semantic maximum-width token caps the Chip. In the browser, a 300+-character Persian label visibly truncates with ellipsis instead of stretching the capsule; confirmed in both Filter and removable Input modes, and generated code reflects the long label.
-- [ ] 390/320px overflow remains unverified.
+- [x] At 390×844 and 320×844, document widths are 375px and 305px with no horizontal overflow. A 300+ character Persian label remains capped to a 240×48px Chip in both modes. Removing it keeps the preview at 85px high, the live status text remains complete in the accessibility tree, and the 78×48px Restore action receives focus; restoring returns focus to the remove control.
 - [x] Browser accessibility tree exposes the filter's pressed state and the input Chip's group label and named remove action. Removing then restoring an input Chip places focus on Restore and returns it to Remove.
 - [ ] Independent screen-reader review remains unverified.
 
@@ -28,4 +28,4 @@
 
 ## Evidence
 
-The adapter, catalog/export/usage integration, live playground, static specimen, contract, 20-case matrix and tokens are implemented. DoD remains open until long-label and narrow viewport checks, plus an independent screen-reader review, are recorded.
+The adapter, catalog/export/usage integration, live playground, static specimen, contract, 20-case matrix and tokens are implemented. Long-label and narrow-viewport browser checks now pass; DoD remains open for an independent screen-reader review.
