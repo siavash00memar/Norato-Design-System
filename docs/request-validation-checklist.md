@@ -1755,4 +1755,4 @@
 - [x] Rechecked all 26 cases (9 item, 15 marker, 2 feed); no horizontal document overflow or matrix-cell overflow. Closest marker/title separation is 16px at both widths.
 - [x] RTL and LTR positions switch correctly at 320px. Playground restored to RTL/default before review ended.
 - [x] Compared the desktop static specimen with the selected reference at 1907×907; Norato's shared Button-style frame remains about 580×288px versus 630×326px in the reference because the documentation content column is narrower.
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Independent screen-reader review remains open; remote sync is pending.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Commit `37565c0547c5cf834119dd06821583c9fc158ac8` is pushed and matches the GitHub branch. Independent screen-reader review remains open.

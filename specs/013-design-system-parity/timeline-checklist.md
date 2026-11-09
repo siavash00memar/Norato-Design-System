@@ -22,4 +22,4 @@
 ## Engineering and delivery
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass for the responsive spacing fix.
 - [x] Evidence and unresolved gates are recorded in request checklist and error log.
-- [ ] Verified checkpoint is pushed and remote sync is confirmed.
+- [x] Verified checkpoint `37565c0547c5cf834119dd06821583c9fc158ac8` is pushed; `git ls-remote` confirms the remote branch has the same hash.
