@@ -15,7 +15,7 @@ Status: in progress
 - [x] Native checkbox can be toggled; keyboard focus is visibly yellow.
 - [x] Browser follow-up: selecting the alternate row updates the exclusive selected value and polite status. The previously selected row's title remains visible; selected surface is pale yellow and visually distinct from the list surface. The grouped variant preserves both group headings and all row titles.
 - [x] Keyboard Tab order reaches switch, selectable button, checkbox and second selectable button in sequence. Enter and Space activate the selectable rows; switch and checkbox each toggle and expose their updated values in the accessibility tree. Playground values were restored afterward.
-- [ ] Verify link navigation/event behavior and disabled rows; the current playground does not expose those cases yet.
+- [x] Playground now includes an enabled link, a toggleable disabled-link state, and a disabled button. Browser activation emitted the link event without changing the docs URL; turning the disabled-link control on removed the item from link semantics, and disabled button/link rows were skipped by Tab.
 - [ ] Verify responsive behavior at 390px and 320px, including document overflow.
 - [ ] Independently confirm screen-reader announcements and row-action roles.
 

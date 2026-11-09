@@ -1859,4 +1859,9 @@
 
 - [x] Selected row changed from `زبان` to `حساب کاربری` and back. Both row titles remained visible, and the active row used a pale-yellow fill distinct from its surrounding list surface in both inset and grouped layouts.
 - [x] In grouped layout, Tab moved through switch → selectable row → checkbox → selectable row. Enter and Space changed the selected row; switch and checkbox toggled and reported their values in the browser accessibility tree. Fixture values and layout were restored.
-- [ ] Links, disabled rows, 390/320px overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
+- [ ] 390/320px overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
+
+## List — links and disabled state follow-up (2026-11-09)
+
+- [x] Added enabled link, toggleable disabled-link state, and disabled button examples to the interactive Playground and its generated Vue example. Link activation updates the polite status without navigating away from the docs page. Disabled link changes to non-link content and both disabled rows are omitted from sequential Tab navigation.
+- [ ] 390/320px layout and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.

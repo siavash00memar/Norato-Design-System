@@ -9,6 +9,8 @@ const variant = ref<NoratoListVariant>('inset')
 const notifications = ref(true)
 const weeklySummary = ref(false)
 const currentItem = ref('language')
+const helpLinkDisabled = ref(false)
+const lastAction = ref('')
 const variantOptions = [
   { value: 'plain', label: 'ساده' },
   { value: 'inset', label: 'کارت تو‌رفته' },
@@ -19,11 +21,20 @@ const notificationRow = `<NoratoListItem id="notifications" title="اعلان‌
 const languageRow = `<NoratoListItem id="language" title="زبان" action="button" value="فارسی" chevron selectable :selected="currentItem === 'language'" @activate="currentItem = 'language'" />`
 const weeklyRow = `<NoratoListItem id="weekly-summary" title="گزارش هفتگی" description="خلاصهٔ فعالیت‌های هفته" action="checkbox" v-model="weeklySummary" />`
 const profileRow = `<NoratoListItem id="profile" title="حساب کاربری" action="button" leading="avatar" value="مدیریت" chevron selectable :selected="currentItem === 'profile'" @activate="currentItem = 'profile'" />`
+const helpRow = `<NoratoListItem id="help" title="مرکز راهنما" action="link" href="/help" value="راهنما" :disabled="helpLinkDisabled" @activate="openHelp" />`
+const disabledRow = `<NoratoListItem id="disabled" title="فضای ذخیره‌سازی" action="button" value="غیرفعال" disabled />`
+function keepPreviewInPlace(event: MouseEvent) {
+  if ((event.target as HTMLElement).closest('a[href]')) event.preventDefault()
+}
+function selectItem(item: 'language' | 'profile') {
+  currentItem.value = item
+  lastAction.value = ''
+}
 const snippet = computed(() => {
   const rows = variant.value === 'grouped'
-    ? `    <NoratoListGroup id="account" label="حساب کاربری">\n      ${notificationRow}\n      ${languageRow}\n    </NoratoListGroup>\n    <NoratoListGroup id="preferences" label="ترجیحات">\n      ${weeklyRow}\n      ${profileRow}\n    </NoratoListGroup>`
-    : `    ${notificationRow}\n    ${languageRow}\n    ${weeklyRow}\n    ${profileRow}`
-  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoList, NoratoListGroup, NoratoListItem } from '@norato/vue'\nconst notifications = ref(true)\nconst weeklySummary = ref(false)\nconst currentItem = ref('language')\n${scriptEnd}\n<template>\n  <NoratoList label="تنظیمات حساب" variant="${variant.value}" dir="rtl">\n${rows}\n  </NoratoList>\n</template>`
+    ? `    <NoratoListGroup id="account" label="حساب کاربری">\n      ${notificationRow}\n      ${languageRow}\n    </NoratoListGroup>\n    <NoratoListGroup id="preferences" label="ترجیحات">\n      ${weeklyRow}\n      ${profileRow}\n      ${helpRow}\n      ${disabledRow}\n    </NoratoListGroup>`
+    : `    ${notificationRow}\n    ${languageRow}\n    ${weeklyRow}\n    ${profileRow}\n    ${helpRow}\n    ${disabledRow}`
+  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoList, NoratoListGroup, NoratoListItem } from '@norato/vue'\nconst notifications = ref(true)\nconst weeklySummary = ref(false)\nconst currentItem = ref('language')\nconst helpLinkDisabled = ref(false)\nfunction openHelp() { /* navigate in the host app */ }\n${scriptEnd}\n<template>\n  <NoratoList label="تنظیمات حساب" variant="${variant.value}" dir="rtl">\n${rows}\n  </NoratoList>\n</template>`
 })
 </script>
 
@@ -32,37 +43,42 @@ const snippet = computed(() => {
     <p class="list-playground__note">سه چیدمان، سوییچ و انتخاب ردیف را همین‌جا امتحان کن.</p>
     <div class="list-playground__controls">
       <PlaygroundSelect id="list-variant" v-model="variant" label="چیدمان فهرست" :options="variantOptions" />
-      <span class="list-playground__state" role="status" aria-live="polite">{{ currentItem === 'language' ? 'زبان فارسی انتخاب شده' : 'حساب کاربری انتخاب شده' }}</span>
+      <span class="list-playground__state" role="status" aria-live="polite">{{ lastAction || (currentItem === 'language' ? 'زبان فارسی انتخاب شده' : 'حساب کاربری انتخاب شده') }}</span>
+      <label class="button-playground-switch"><input v-model="helpLinkDisabled" type="checkbox"/><span class="button-playground-track" aria-hidden="true"><span/></span><span>پیوند راهنما غیرفعال</span></label>
     </div>
-    <div class="list-playground__stage" dir="rtl">
+    <div class="list-playground__stage" dir="rtl" @click="keepPreviewInPlace">
       <NoratoList label="تنظیمات حساب" :variant="variant" dir="rtl">
         <template v-if="variant === 'grouped'">
           <NoratoListGroup id="account-settings" label="حساب کاربری">
             <NoratoListItem id="list-notifications" title="اعلان‌ها" description="پیام‌ها و یادآورها" action="switch" leading="icon" v-model="notifications">
               <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></template>
             </NoratoListItem>
-            <NoratoListItem id="list-language" title="زبان" action="button" leading="icon" value="فارسی" chevron selectable :selected="currentItem === 'language'" @activate="currentItem = 'language'">
+            <NoratoListItem id="list-language" title="زبان" action="button" leading="icon" value="فارسی" chevron selectable :selected="currentItem === 'language'" @activate="selectItem('language')">
               <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg></template>
             </NoratoListItem>
           </NoratoListGroup>
           <NoratoListGroup id="preferences" label="ترجیحات">
             <NoratoListItem id="list-summary" title="گزارش هفتگی" description="خلاصهٔ فعالیت‌های هفته" action="checkbox" leading="none" v-model="weeklySummary" />
-            <NoratoListItem id="list-profile" title="حساب کاربری" action="button" leading="avatar" value="مدیریت" chevron selectable :selected="currentItem === 'profile'" @activate="currentItem = 'profile'">
+            <NoratoListItem id="list-profile" title="حساب کاربری" action="button" leading="avatar" value="مدیریت" chevron selectable :selected="currentItem === 'profile'" @activate="selectItem('profile')">
               <template #leading><span class="list-playground__avatar" aria-hidden="true">ن‌م</span></template>
             </NoratoListItem>
+            <NoratoListItem id="list-help" title="مرکز راهنما" action="link" href="/help" value="راهنما" :disabled="helpLinkDisabled" @activate="lastAction = 'رویداد مسیر راهنما دریافت شد'" />
+            <NoratoListItem id="list-disabled" title="فضای ذخیره‌سازی" action="button" value="غیرفعال" disabled />
           </NoratoListGroup>
         </template>
         <template v-else>
           <NoratoListItem id="list-notifications" title="اعلان‌ها" description="پیام‌ها و یادآورها" action="switch" leading="icon" v-model="notifications">
             <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" /></svg></template>
           </NoratoListItem>
-          <NoratoListItem id="list-language" title="زبان" action="button" leading="icon" value="فارسی" chevron selectable :selected="currentItem === 'language'" @activate="currentItem = 'language'">
+          <NoratoListItem id="list-language" title="زبان" action="button" leading="icon" value="فارسی" chevron selectable :selected="currentItem === 'language'" @activate="selectItem('language')">
             <template #leading><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg></template>
           </NoratoListItem>
           <NoratoListItem id="list-summary" title="گزارش هفتگی" description="خلاصهٔ فعالیت‌های هفته" action="checkbox" leading="none" v-model="weeklySummary" />
-          <NoratoListItem id="list-profile" title="حساب کاربری" action="button" leading="avatar" value="مدیریت" chevron selectable :selected="currentItem === 'profile'" @activate="currentItem = 'profile'">
+          <NoratoListItem id="list-profile" title="حساب کاربری" action="button" leading="avatar" value="مدیریت" chevron selectable :selected="currentItem === 'profile'" @activate="selectItem('profile')">
             <template #leading><span class="list-playground__avatar" aria-hidden="true">ن‌م</span></template>
           </NoratoListItem>
+          <NoratoListItem id="list-help" title="مرکز راهنما" action="link" href="/help" value="راهنما" :disabled="helpLinkDisabled" @activate="lastAction = 'رویداد مسیر راهنما دریافت شد'" />
+          <NoratoListItem id="list-disabled" title="فضای ذخیره‌سازی" action="button" value="غیرفعال" disabled />
         </template>
       </NoratoList>
     </div>
