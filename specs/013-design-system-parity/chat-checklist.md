@@ -20,7 +20,8 @@
 - [x] Typed a message and pressed Enter; the outgoing message appeared, draft cleared and composer returned to default.
 - [x] Recording toggle enters display-only state, disables text entry and exposes the stop label; helper copy states it is not real audio recording.
 - [x] Message type selector changed the active specimen to image and announced its alt text.
-- [ ] Review all 10 sender × message-type visuals and the six part states.
+- [ ] Matched screenshot review of all 10 sender × message-type visuals.
+- [x] Live browser and accessibility-tree review of all 10 sender × message-type selections and all six part states.
 - [ ] Test 320px and 390px mobile, matched desktop and any overflow/stretch.
 - [ ] Exercise file chooser/attach event, LTR, disabled form, send button, Shift+Enter, empty state and keyboard focus loop.
 - [ ] Independent screen-reader verification.
@@ -30,10 +31,10 @@
 
 ## Follow-up review (2026-11-09)
 
-- [x] Browser review of all 10 sender × message-type combinations (text, reply, image, file, voice): incoming remained on the RTL right and outgoing on the left; image stayed within its media frame; file and audio controls exposed their labels.
+- [x] Live browser/accessibility-tree review covered all 10 sender × message-type selections (text, reply, image, file, voice); incoming remained on the RTL right and outgoing on the left, with named image, file and audio content. Screenshots were reviewed for representative variants; matched screenshots of every combination remain open.
 - [x] Header, date divider, typing indicator, composer default/typing/recording and disabled-chat states were inspected in the live preview. Recording remains explicitly display-only and disables text entry.
 - [x] Enter sent the draft and cleared the composer. Shift+Enter retained the draft and did not send it. The send button sent a non-empty draft and returned to disabled when empty.
 - [x] The playground disabled-chat toggle disabled attachment and recording controls; reenabling restored them.
 - [ ] 320px and 390px mobile, matched desktop, and overflow/stretch review.
-- [ ] File chooser/attach event, LTR, a full empty-state review, keyboard focus loop and independent screen-reader verification remain open.
+- [ ] Matched screenshots for every message combination; file chooser/attach event, LTR, a full empty-state review, keyboard focus loop and independent screen-reader verification remain open.
 - [x] Technical checks from the adjacent Carousel change pass: token/catalog checks, Vue typecheck, production build and `git diff --check`.
