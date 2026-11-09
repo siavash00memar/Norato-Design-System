@@ -12,3 +12,5 @@
 10. [x] Re-audit the new shared Input contract across all 16 size × label × single/multi geometry combinations in the current live browser; record the remaining viewport mismatch honestly.
 11. [x] Resolve disabled+invalid border priority and the dangling `aria-activedescendant` revealed by real browser review; verify neutral disabled Stroke and open/close/reopen ARIA integrity.
 12. [ ] Re-run matched design reference/Norato desktop and exact 390×844 comparisons, exhaustive combined screenshot review, every actionable focus path, independent screen-reader review and technical gates before closing DoD.
+13. [x] Resolve the shared cold-load blank state with an inert preview-frame fallback; verify fresh direct desktop loads for Button and Combobox and confirm the production bundle remains code-split without a size warning.
+14. [ ] Verify the transient fallback under throttled loading and capture exact mobile viewport/dimensions for both direct routes; preserve the remaining Combobox visual, keyboard and screen-reader DoD gaps.

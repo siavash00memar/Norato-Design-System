@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import ComponentSpecimenLoading from './ComponentSpecimenLoading.vue'
 const PlaygroundSelect = defineAsyncComponent(() => import('./PlaygroundSelect.vue'))
-const ComponentSpecimen = defineAsyncComponent(() => import('./ComponentSpecimen.vue'))
+const ComponentSpecimen = defineAsyncComponent({
+  loader: () => import('./ComponentSpecimen.vue'),
+  loadingComponent: ComponentSpecimenLoading,
+  delay: 0,
+})
 const ContractVisualShowcase = defineAsyncComponent(() => import('./ContractVisualShowcase.vue'))
 const ButtonVariantShowcase = defineAsyncComponent(() => import('./ButtonVariantShowcase.vue'))
 const ButtonStateShowcase = defineAsyncComponent(() => import('./ButtonStateShowcase.vue'))

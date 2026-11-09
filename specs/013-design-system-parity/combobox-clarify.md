@@ -23,3 +23,11 @@ None for this audit. It verifies existing behavior and visual parity without exp
 - This is a visual correction to the existing adapter, not an API expansion.
 
 **Decision source:** latest explicit user-approved cross-component Input styling. This supersedes the older Combobox blue focus-ring note below/in historical evidence.
+
+## Shared specimen cold-load follow-up (2026-11-09)
+
+- A fresh direct load can render the detail heading and preview note before the asynchronous `ComponentSpecimen` is ready; the first capture may therefore show an empty preview area. The unchanged page displays the specimen on the following capture.
+- Preserve the page's actual component preview from first paint. Do not solve this with a Combobox-only style override; the specimen host is shared by all component detail pages.
+- Keep the specimen chunk asynchronous to avoid inflating the initial JavaScript bundle. During loading, show an inert Norato-tokenized frame that preserves the detail and compact inventory geometry, then replace it with the real specimen.
+
+**Acceptance:** direct cold loads of Combobox and Button never show an empty specimen region at desktop or narrow widths; the frame placeholder is replaced by the correct specimen, with no horizontal overflow or meaningful frame-height jump.

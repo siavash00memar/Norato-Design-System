@@ -1,10 +1,13 @@
 # Norato Request Validation Checklist
 
-## Shared specimen mobile visibility — investigation checkpoint (2026-11-09)
+## Shared component specimen cold-load — implementation checkpoint (2026-11-09)
 
-- [x] Narrow in-app-browser screenshots showed the visual specimen missing on both Button and Combobox while their preview heading and source note remained; the same symptom on the reference Button page rules out treating this as a Combobox-only issue.
-- [x] Confirmed the local Vite server on port 5173 is running from this repository.
-- [ ] Recheck in the real Chrome tab with an explicitly measured mobile viewport, identify whether the specimen is actually hidden or only omitted by the in-app-browser capture, then fix the shared cause if reproduced. Do not add a page-specific CSS workaround before that check.
+- [x] On a fresh direct load of Combobox, the first narrow-browser capture showed the preview title and note but no specimen; the next capture of the unchanged page showed the full frame and field.
+- [x] In the same narrow viewport, Button showed its specimen immediately. Source review confirms `ComponentSpecimen` is wrapped in `defineAsyncComponent` without a loading fallback in `App.vue`.
+- [x] Added an inert, reduced-motion-aware, Norato-tokenized fallback for `ComponentSpecimen`; it reserves the documented base/large frame height and a compact inventory state while leaving the real specimen code-split.
+- [x] Fresh direct browser renders of Button and Combobox show their respective real specimens in the desktop browser capture after load. The 288px preview frames remain bounded and the Button sample contains only its Primary and Secondary examples.
+- [x] Production build passes without a chunk-size warning: the initial JS is 426.85 KB (117.35 KB gzip), and the async specimen is 33.71 KB (8.75 KB gzip). The earlier eager import produced a 542.77 KB (144.42 KB gzip) initial chunk.
+- [ ] Verify the transient fallback itself on a deliberately throttled cold load, and validate exact mobile frame heights for both direct routes; the current browser backend did not provide a controlled viewport/network throttle.
 
 ## Tooltip shared skip-delay provider — implementation checkpoint (2026-11-09)
 
