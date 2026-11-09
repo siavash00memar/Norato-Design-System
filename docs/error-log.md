@@ -1427,3 +1427,10 @@
 - **Cause:** The specimen width stopped at its parent content width before reaching its capped frame token.
 - **Correction:** Added a 2px semantic-token allowance only to the non-compact desktop Input specimen; kept the existing responsive width override.
 - **Verification:** Fresh same-viewport browser screenshots show the frame widths visually aligned and both 300px high. Token, catalog, TypeScript, production build and diff gates pass. Fresh 390px/320px browser validation remains open because the current browser surface does not expose a viewport override.
+
+## ERR-182 — Select desktop preview frame was narrower than the reference (2026-11-09)
+
+- **Observed:** Matched desktop evidence recorded a 632px local preview frame versus a 636px reference frame; the height was already 300px.
+- **Cause:** Available content width constrained the non-compact specimen before its semantic frame-size cap.
+- **Correction:** Added the same scoped 2px border-medium allowance used for the Input frame; the mobile override and Select trigger are unchanged.
+- **Verification:** Same-viewport 1265×713 screenshots show the frame widths visually aligned and both 300px high. Token/catalog/typecheck/production-build/diff gates pass. Post-change 390px/320px browser review remains open because the current browser surface does not expose a viewport override.
