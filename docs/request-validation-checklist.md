@@ -1888,7 +1888,8 @@
 
 - [x] Selected row changed from `زبان` to `حساب کاربری` and back. Both row titles remained visible, and the active row used a pale-yellow fill distinct from its surrounding list surface in both inset and grouped layouts.
 - [x] In grouped layout, Tab moved through switch → selectable row → checkbox → selectable row. Enter and Space changed the selected row; switch and checkbox toggled and reported their values in the browser accessibility tree. Fixture values and layout were restored.
-- [ ] 390/320px overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
+- [x] At 390×844 and 320×844, plain, inset and grouped layouts fit within document widths of 375px and 305px. The stage measures 300px/273px, inner List 282px/255px; rows remain at least 48px tall. No horizontal overflow.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/list-checklist.md`.
 
 ## Card — mobile media proportion follow-up (2026-11-09)
 
@@ -1915,7 +1916,8 @@
 ## List — links and disabled state follow-up (2026-11-09)
 
 - [x] Added enabled link, toggleable disabled-link state, and disabled button examples to the interactive Playground and its generated Vue example. Link activation updates the polite status without navigating away from the docs page. Disabled link changes to non-link content and both disabled rows are omitted from sequential Tab navigation.
-- [ ] 390/320px layout and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
+- [x] Enabled and disabled link/button samples remain within the responsive layout at both tested widths.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/list-checklist.md`.
 
 ## Custom dropdown source audit (2026-11-09)
 

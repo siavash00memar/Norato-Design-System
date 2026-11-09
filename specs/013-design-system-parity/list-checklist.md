@@ -16,7 +16,7 @@ Status: in progress
 - [x] Browser follow-up: selecting the alternate row updates the exclusive selected value and polite status. The previously selected row's title remains visible; selected surface is pale yellow and visually distinct from the list surface. The grouped variant preserves both group headings and all row titles.
 - [x] Keyboard Tab order reaches switch, selectable button, checkbox and second selectable button in sequence. Enter and Space activate the selectable rows; switch and checkbox each toggle and expose their updated values in the accessibility tree. Playground values were restored afterward.
 - [x] Playground now includes an enabled link, a toggleable disabled-link state, and a disabled button. Browser activation emitted the link event without changing the docs URL; turning the disabled-link control on removed the item from link semantics, and disabled button/link rows were skipped by Tab.
-- [ ] Verify responsive behavior at 390px and 320px, including document overflow.
+- [x] At 390×844 and 320×844, plain, inset and grouped layouts stay within document widths of 375px and 305px. The stage measures 300px/273px and list content 282px/255px; all row targets remain at least 48px tall. No horizontal overflow.
 - [ ] Independently confirm screen-reader announcements and row-action roles.
 
 ## Technical gates
@@ -28,4 +28,4 @@ Status: in progress
 - [x] `git diff --check`
 - [x] Scan project files for prohibited external reference name.
 
-Close this checklist only after all remaining items pass or are explicitly documented as unavailable with evidence.
+Close this checklist only after all remaining items pass or are explicitly documented as unavailable with evidence. Independent screen-reader review remains open.
