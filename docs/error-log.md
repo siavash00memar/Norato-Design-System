@@ -1328,3 +1328,10 @@
 - **Cause:** A watcher treated `disabled` as if the selected item had been removed from the available values.
 - **Correction:** The watcher now resets only when an option-count change removes the selected value. A parent may preserve the controlled value while its item becomes disabled; the item remains non-interactive and uses neutral disabled styling.
 - **Verified:** Browser confirmed the generated model remains `month` after disabling Month. Screenshot review in both Glass and Contrast shows the neutral disabled appearance with no selection elevation. This check does not replace an independent screen-reader review.
+
+## ERR-169 — Horizontal Content Card media stretched to text height (2026-11-09)
+
+- **Observed:** At 320px, the horizontal Content Card declared a square media ratio but rendered its thumbnail at 112×215px beside the text, visibly stretching the media vertically.
+- **Cause:** The horizontal link aligned children with `stretch`, which overrode the media's intrinsic square `aspect-ratio` as the text column grew.
+- **Correction:** The horizontal media opts out of cross-axis stretching and stays top-aligned. Its width and square aspect ratio now determine its height; no fixed height was added.
+- **Verified:** At 320px LTR and 390px RTL the media measured 112×112px, the document remained within the viewport, and the generated usage direction matched the selected direction. The vertical media remained 309×174px (16:9) at 390px RTL. Long-copy stress and full layout/direction coverage remain open.

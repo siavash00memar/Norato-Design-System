@@ -16,7 +16,7 @@
 .norato-content-card__description{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height);overflow-wrap:anywhere}
 .norato-content-card__footer{display:flex;align-items:center;gap:var(--norato-space-2);margin-block-start:auto;padding-block-start:var(--norato-space-2);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size)}
 .norato-content-card[data-layout="horizontal"] .norato-content-card__link{flex-direction:row;align-items:stretch}
-.norato-content-card[data-layout="horizontal"] .norato-content-card__media{flex:none;inline-size:min(35%,var(--norato-card-horizontal-media-size));aspect-ratio:1;border-radius:0 var(--norato-radius-card) var(--norato-radius-card) 0}
+.norato-content-card[data-layout="horizontal"] .norato-content-card__media{align-self:flex-start;flex:none;inline-size:min(35%,var(--norato-card-horizontal-media-size));aspect-ratio:1;border-radius:0 var(--norato-radius-card) var(--norato-radius-card) 0}
 .norato-content-card[dir="ltr"][data-layout="horizontal"] .norato-content-card__media{border-radius:var(--norato-radius-card) 0 0 var(--norato-radius-card)}
 .norato-content-card[data-layout="overlay"] .norato-content-card__link{position:relative;justify-content:flex-end;min-block-size:var(--norato-card-overlay-min-block-size);overflow:hidden;border-radius:inherit;background:var(--norato-color-surface-subtle)}
 .norato-content-card[data-layout="overlay"] .norato-content-card__media{position:absolute;inset:0;aspect-ratio:auto;border-radius:inherit}

@@ -1882,6 +1882,13 @@
 - [x] In grouped layout, Tab moved through switch → selectable row → checkbox → selectable row. Enter and Space changed the selected row; switch and checkbox toggled and reported their values in the browser accessibility tree. Fixture values and layout were restored.
 - [ ] 390/320px overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
 
+## Card — mobile media proportion follow-up (2026-11-09)
+
+- [x] At 320×844 and 390×844, the Card page remained within the viewport (document widths 305px and 375px). The preview frame measured 273×288px and 343×288px; its static content cards measured 263×244px and 272×248px. RTL stayed intact.
+- [x] Same-viewport reference review at 390×844 measured the reference stage/card at 327×324px / 270×253px and Norato at 343×288px / 272×248px. Norato keeps the shared 288px frame while the content card remains close to the reference dimensions.
+- [x] Found and fixed the horizontal Content Card thumbnail stretching beside a taller text column. The square media now measures 112×112px at 320px LTR and 390px RTL; vertical media remains 16:9 at 309×174px. The direction control and generated Vue code were checked; the playground was restored to RTL/vertical afterward.
+- [ ] Long Persian copy stress, all layout/direction combinations at narrow widths and independent screen-reader review remain open; see `specs/013-design-system-parity/card-checklist.md`.
+
 ## List — links and disabled state follow-up (2026-11-09)
 
 - [x] Added enabled link, toggleable disabled-link state, and disabled button examples to the interactive Playground and its generated Vue example. Link activation updates the polite status without navigating away from the docs page. Disabled link changes to non-link content and both disabled rows are omitted from sequential Tab navigation.

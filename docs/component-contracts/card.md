@@ -41,7 +41,7 @@
 - NoratoPricingCard: name، price، period، description، featured و dir؛ slots features (فرزندان li) و action.
 - NoratoSelectableCard: id، title، description، control، name، modelValue، disabled و dir؛ رویداد update:modelValue.
 
-تمام جهت‌ها پیش‌فرض RTL هستند. هیچ mediaای با ارتفاع اجباری کش نمی‌آید: کارت تصویر عمودی از نسبت 16:9 و نوع Overlay از قاب با حداقل ارتفاع استفاده می‌کند. محتوای متنی و اعداد اجازهٔ شکست و رشد طبیعی دارند.
+تمام جهت‌ها پیش‌فرض RTL هستند. هیچ mediaای با ارتفاع اجباری کش نمی‌آید: کارت تصویر عمودی از نسبت 16:9، رسانهٔ کارت افقی از نسبت 1:1 مستقل از قد ستون متن، و نوع Overlay از قاب با حداقل ارتفاع استفاده می‌کند. محتوای متنی و اعداد اجازهٔ شکست و رشد طبیعی دارند.
 
 ## Usage
 
