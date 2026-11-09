@@ -2011,3 +2011,9 @@
 - [x] In a matched 1536×703 browser viewport, reference Input frame measured 636×300px; Norato measured 632×300px. Both inner fields are 324px wide.
 - [x] Scoped the spacing correction to the inert Input specimen. Local label top is 102px and 36px field stroke top is 128px relative to the frame; reference is approximately 103px/130px. The title-adjacent email icon, RTL placeholder, and removed sample address/helper remain intact.
 - [ ] This correction covers the Input top specimen only. Other variants, responsive captures after the shared frame change, and independent screen-reader review remain open.
+
+## Select shared-frame follow-up — browser evidence (2026-11-09)
+
+- [x] Matched the 1536×703 browser viewport: reference preview is 636×300px and Norato is 632×300px. The reference field is 302.4px wide; Norato's 300px Select control remains centered, RTL and proportionate.
+- [x] The preview retains the project-wide 36px visual field inside its 48px interactive target. Label/trigger placement remains compact and the chevron points down in the closed state.
+- [ ] This capture verifies desktop geometry only. Select mobile recapture after the shared frame-token update and full state-gallery/assistive-technology review remain open.
