@@ -4,5 +4,7 @@
 - [x] Controlled adapter and tokenized responsive CSS.
 - [x] Button-style playground and copyable snippet.
 - [x] Catalog/export/primitive map/contract and evidence ledger update.
-- [ ] design reference/local visual comparison after final geometry and RTL arrow correction; recheck behavior in browser.
-- [x] Required technical gates passed. [ ] Browser DoD evidence, commit and push remain.
+- [x] Browser visual comparison after specimen geometry and RTL arrow correction; rechecked bounds and behavior in browser.
+- [x] Required technical gates passed.
+- [ ] Same-viewport mobile visual comparison and independent screen-reader review remain open.
+- [ ] Final family DoD and commit/push remain open until all checks pass.

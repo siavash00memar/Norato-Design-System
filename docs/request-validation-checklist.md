@@ -2012,6 +2012,14 @@
 - [x] With 120 pages/current page 60, Numbers mode scrolls internally: the nav's content width is 483px while its visible width is 317px at 390px, and 247px at 320px. Document width stays bounded at both sizes.
 - [ ] Same-viewport mobile comparison, complete large/irregular totals matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/pagination-checklist.md`.
 
+## Pagination — playground bounds follow-up (2026-11-09)
+
+- [x] Live browser reproduced the playground mismatch: reducing total from 13 to 2 left current at 13 while the adapter displayed page 2 as selected.
+- [x] Bounded playground inputs now keep total at an integer ≥1 and current within 1..total; controlled adapter behavior is unchanged.
+- [x] Browser verification: 13→2 synchronized the current field, selected page and Vue snippet at 2; zero normalized to 1; 2.7 normalized to 2; selecting page 2/2 disabled Next; one-page Numbers disabled both Previous and Next. The sample was restored to 3/12.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass after the playground correction; the build retains the existing large-chunk advisory.
+- [ ] Same-viewport mobile comparison and independent screen-reader review remain open.
+
 ## Switch and Checkbox specimen audit — browser follow-up (2026-11-09)
 
 - [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.

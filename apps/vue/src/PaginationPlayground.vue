@@ -11,6 +11,23 @@ const manualType = ref(false)
 const size = ref<'small' | 'medium'>('medium')
 const current = ref(3)
 const total = ref(12)
+const currentInput = computed({
+  get: () => current.value,
+  set: (value: string | number) => {
+    const parsed = Number(value)
+    if (!Number.isFinite(parsed)) return
+    current.value = Math.min(total.value, Math.max(1, Math.floor(parsed) || 1))
+  },
+})
+const totalInput = computed({
+  get: () => total.value,
+  set: (value: string | number) => {
+    const parsed = Number(value)
+    if (!Number.isFinite(parsed)) return
+    total.value = Math.max(1, Math.floor(parsed) || 1)
+    current.value = Math.min(current.value, total.value)
+  },
+})
 const syncResponsiveType = () => { if (!manualType.value) type.value = media.matches ? 'simple' : 'numbers' }
 onMounted(() => media.addEventListener('change', syncResponsiveType))
 onBeforeUnmount(() => media.removeEventListener('change', syncResponsiveType))
@@ -28,8 +45,8 @@ const example = computed(() => usageExamples.pagination
     <div class="pagination-playground__controls">
       <PlaygroundSelect id="paginationplayground-type-1" v-model="type" label="نوع نمایش" :options="[{value:'numbers',label:'شماره‌دار'},{value:'simple',label:'ساده'}]" @update:model-value="manualType = true" />
       <PlaygroundSelect id="paginationplayground-size-2" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'}]" />
-      <label>صفحهٔ جاری<input v-model.number="current" type="number" min="1" :max="total"></label>
-      <label>تعداد صفحه‌ها<input v-model.number="total" type="number" min="1"></label>
+      <label>صفحهٔ جاری<input v-model.number="currentInput" type="number" min="1" :max="total"></label>
+      <label>تعداد صفحه‌ها<input v-model.number="totalInput" type="number" min="1"></label>
     </div>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'pagination-code', example)">{{ props.copiedKey === 'pagination-code' ? 'کپی شد' : 'کپی کد' }}</button></div>
     <pre class="usage-code" dir="ltr"><code>{{ example }}</code></pre>
