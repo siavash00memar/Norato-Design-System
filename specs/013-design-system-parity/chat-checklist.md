@@ -27,3 +27,13 @@
 - [x] Final `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed after edits. Build warns that the JS chunk is above 500KB.
 
 **DoD decision:** Keep checklist open until remaining breakpoint, matrix, interaction and independent assistive-technology reviews pass.
+
+## Follow-up review (2026-11-09)
+
+- [x] Browser review of all 10 sender × message-type combinations (text, reply, image, file, voice): incoming remained on the RTL right and outgoing on the left; image stayed within its media frame; file and audio controls exposed their labels.
+- [x] Header, date divider, typing indicator, composer default/typing/recording and disabled-chat states were inspected in the live preview. Recording remains explicitly display-only and disables text entry.
+- [x] Enter sent the draft and cleared the composer. Shift+Enter retained the draft and did not send it. The send button sent a non-empty draft and returned to disabled when empty.
+- [x] The playground disabled-chat toggle disabled attachment and recording controls; reenabling restored them.
+- [ ] 320px and 390px mobile, matched desktop, and overflow/stretch review.
+- [ ] File chooser/attach event, LTR, a full empty-state review, keyboard focus loop and independent screen-reader verification remain open.
+- [x] Technical checks from the adjacent Carousel change pass: token/catalog checks, Vue typecheck, production build and `git diff --check`.
