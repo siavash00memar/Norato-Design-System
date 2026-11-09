@@ -1686,7 +1686,8 @@
 - [x] Image Playground exposes thumbnail size, Default/Selected/More state and disabled mode. Browser inspected all nine size/state combinations, verified the +12 accessible name, disabled activation block, Space activation and yellow keyboard focus ring. The generated snippet tracks size and selected/more/disabled values.
 - [x] Live Image hover adds a dark shade across Square, Landscape, Wide and Portrait ratios while preserving their aspect ratios. At 16:9, `contain` preserves the complete source with side gutters and `cover` crops to fill without distortion. Snippet output followed the selected ratio and fit.
 - [x] Fresh Lightbox browser pass verified previous/next controls, RTL 1/4↔4/4 positions, focus retention, Tab/Shift+Tab containment and Escape focus return. Exact image bounds were measured at 1920×908, 390×844 and 320×640; the media stays within the modal, retains 4:3, and the document does not overflow horizontally.
-- [ ] Failed-network retry, reduced-motion emulation, responsive review after adding the thumbnail playground, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
+- [x] Post-thumbnail-playground responsive screenshots and geometry checks pass at 390×844 and 320×640: stacked controls, bounded preview/thumbnail/code regions and no document overflow.
+- [ ] Failed-network behavior, reduced-motion emulation, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build pass. Build emits the existing warning that its JavaScript chunk exceeds 500KB; `git diff --check` passes with line-ending normalization warnings only.
 
 ## Carousel — implementation checkpoint (2026-11-08)
