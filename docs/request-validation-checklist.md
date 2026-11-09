@@ -1770,6 +1770,13 @@
 - [x] Matched responsive viewport measurements, all sizes/tones and named `dialog`/`alertdialog` semantics were subsequently verified in the 2026-11-09 Modal browser follow-up below; the earlier snapshot limitation is superseded.
 - [x] Token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` passed at the Modal follow-up checkpoint.
 
+## Cross-page playground input styling — browser follow-up (2026-11-09)
+
+- [x] Updated shared text/number/select demo controls and affected specimen controls to use the 36px visual-height token, pill radius and Norato neutral/yellow strokes. Playground field titles use Estedad Bold and placeholders use the established RTL Vazirmatn Light treatment.
+- [x] Refreshed the live Input page at desktop size. Phone prefix, min/max/step and select controls visibly render as compact capsules; focus on the phone prefix shows one yellow stroke without a dark outline.
+- [x] Token and catalog checks, Vue typecheck/build and `git diff --check` pass.
+- [ ] Other component routes, 390/320px layouts, hover and disabled states remain unverified for this shared styling change.
+
 ## Drawer — desktop visual review (2026-11-09)
 
 - [x] Compared the local and design-reference pages at 1920×900. Frame estimates are 580×300px locally versus 630×324px in the reference; the local content column is narrower. The initial screenshot exposed the local default RTL specimen on the left, contrary to the reference. Updated specimen placement and live side-panel inner-corner radii to use physical left/right edges.

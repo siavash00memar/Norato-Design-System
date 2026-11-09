@@ -1273,6 +1273,13 @@
 - **Correction:** Added the exported `NoratoTooltipProvider` grouping wrapper. Standalone tooltips still receive a local provider; nested tooltips reuse the ancestor provider. The live playground now includes two sibling triggers for the timing check.
 - **Verified:** Browser confirms both sibling triggers are under the shared Norato scope. After the first tooltip opened as `delayed-open`, moving from an outside point to the second trigger opened it immediately as `instant-open`; after waiting beyond the 300ms window, the second trigger used the normal delayed opening. Token/catalog/typecheck/build pass. Independent screen-reader review remains open.
 
+## ERR-162 — Component playground fields used inconsistent shapes and heights (2026-11-09)
+
+- **Observed:** The live Input page showed 48px rounded-rectangle controls for playground settings and number bounds beside the approved 36px capsule field.
+- **Cause:** Shared playground selectors and several component-specific playground fields retained legacy 48px/card-radius styling.
+- **Correction:** Updated shared text/number/select demo controls and affected Divider, Spinner and generic specimen fields to the 36px visual-height token and pill radius. Labels use Estedad Bold; field hover/focus uses the 1px Norato yellow Stroke without a second outline; placeholder text uses the approved RTL Vazirmatn Light treatment.
+- **Verified:** After a fresh desktop render, the Input playground's phone prefix, min/max/step fields, and shared selects visibly use the 36px pill shell; focusing the prefix shows one yellow stroke without a dark outline. Token/catalog/typecheck/build/diff checks pass. Other routes, mobile geometry and hover/disabled combinations remain unverified; do not infer cross-page parity from this focused check.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.

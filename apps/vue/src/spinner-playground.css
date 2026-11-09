@@ -1,7 +1,7 @@
 .spinner-playground__preview { position: relative; min-block-size: var(--norato-space-16); }
 .spinner-playground__controls { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: end; }
 .spinner-playground__label { display: grid; gap: var(--norato-space-1); min-inline-size: 0; font-size: var(--norato-type-doc-caption-size); }
-.spinner-playground__label input { box-sizing: border-box; inline-size: 100%; min-inline-size: 0; min-block-size: var(--norato-control-target-min); padding-inline: var(--norato-space-2); border: var(--norato-border-thin) solid var(--norato-color-border-default); border-radius: var(--norato-radius-card); background: var(--norato-color-surface-default); color: var(--norato-color-text-primary); font: inherit; }
+.spinner-playground__label input { box-sizing: border-box; inline-size: 100%; min-inline-size: 0; block-size: var(--norato-control-visual-height); min-block-size: var(--norato-control-visual-height); padding-inline: var(--norato-space-2); border: var(--norato-border-thin) solid var(--norato-color-border-default); border-radius: var(--norato-radius-pill); background: var(--norato-color-surface-default); color: var(--norato-color-text-primary); font: inherit; }
 .spinner-playground__label input:hover:not(:disabled),.spinner-playground__label input:focus-visible { border-color: var(--norato-color-brand-yellow); }
 .spinner-playground__label input:focus-visible { outline: 0; box-shadow: none; }
 .spinner-playground__active { display: flex; align-items: center; gap: var(--norato-space-2); min-block-size: var(--norato-control-target-min); font-size: var(--norato-type-doc-caption-size); }

@@ -9,8 +9,8 @@
 .divider-playground__preview>small{margin-inline-start:auto;white-space:nowrap}
 .divider-playground__controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:var(--norato-space-3);align-items:end}
 .divider-playground__field{display:grid;gap:var(--norato-space-1);font-family:var(--norato-font-body);font-size:var(--norato-type-body-small-size)}
-.divider-playground__field input{box-sizing:border-box;min-block-size:var(--norato-control-target-min);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-control);padding-inline:var(--norato-space-3);background:var(--norato-color-surface-default);color:var(--norato-color-text-primary);font:inherit}
-.divider-playground__field input:focus-visible{outline:var(--norato-border-medium) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.divider-playground__field input{box-sizing:border-box;block-size:var(--norato-control-visual-height);min-block-size:var(--norato-control-visual-height);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);padding-inline:var(--norato-space-3);background:var(--norato-color-surface-default);color:var(--norato-color-text-primary);font:inherit}
+.divider-playground__field input:hover:not(:disabled),.divider-playground__field input:focus-visible{border-color:var(--norato-color-brand-yellow)}.divider-playground__field input:focus-visible{outline:0;outline-offset:0;box-shadow:none}
 .divider-playground__toggle{display:flex;align-items:center;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);position:relative}
 .divider-playground__toggle input{position:absolute;inset-inline-start:0;inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);opacity:0}
 .divider-playground__toggle>span{inline-size:var(--norato-space-8);block-size:var(--norato-space-4);border-radius:var(--norato-radius-pill);background:var(--norato-color-border-strong);position:relative}
