@@ -1541,3 +1541,11 @@
 - **Correction:** Set the spinner to `animation: none` only within the reduced-motion media query. The static ring and visible/live Loading status remain intact.
 - **Verification:** At 390×844, emulated reduced motion produced a focused RTL dialog within the viewport; `aria-busy="true"`, `role="status"`, and `aria-live="polite"` remained; spinner computed `animation-name: none` and had zero active animations. Escape closed the dialog.
 - **Prevention:** For reduced-motion requirements, verify both the computed animation name and active animation count; a near-zero finite duration still leaves an animation defined.
+
+## ERR-199 — Command Palette mobile specimen geometry diverged (2026-11-10)
+
+- **Observed:** At 390px and 320px, the inert preview frame was 16px wider than the matched reference, rows were 3px shorter, the keyboard hints collapsed to one row, and the narrow search field did not wrap.
+- **Cause:** The preview used desktop frame sizing and ungrouped footer content; narrow search text was forced into one line.
+- **Correction:** Added semantic mobile/narrow preview tokens, grouped keyboard hints, and responsive rules scoped only to the static specimen.
+- **Verification:** At 390×844 and 320×844, frame, panel, search, row and footer measurements are within 4px of matched reference values; local document width equals each viewport and icons remain 18×18px. Live dialog rules and 48px targets are unchanged.
+- **Prevention:** Measure frame and inner specimen geometry separately at each target viewport; do not infer mobile parity from a desktop capture.

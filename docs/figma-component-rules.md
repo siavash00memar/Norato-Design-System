@@ -429,7 +429,8 @@
 - Use Norato glass surfaces, semantic tokens and yellow active/focus strokes. Search and Persian command text flow RTL; shortcut badges and key hints are explicitly LTR. Keep runtime targets at least 48px and let results scroll inside the panel.
 - Center the modal independently of text direction using symmetric inline insets and auto margins; do not position it with a direction-sensitive horizontal transform.
 - **Browser evidence:** same-viewport 1904×950 screenshots initially showed a 630×332px reference frame vs Norato 628×300px. After raising only the semantic frame-height token to 332px, Norato measures about 628×330px. The panel remains about 446×242px vs 452×244px, with its intrinsic rows unchanged. Persian search/selection, focus return, loading/empty, Ctrl+K and disabled-item skipping were exercised.
-- **Remaining:** exact row/footer geometry, 390/320 responsive dimensions, screen-reader review and the full shortcut exclusion matrix remain open; Command Palette DoD remains open.
+- **Mobile browser evidence (2026-11-10):** at 390×844 the local frame/panel/search/rows/footer measure 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they measure 272×341, 260×271, 258×72, 250×43 and 258×72.2px. These are within 4px of the matched reference; document width equals viewport and icons stay 18×18px.
+- **Remaining:** desktop exact inner geometry, independent screen-reader review and the full shortcut exclusion matrix remain open; Command Palette DoD remains open.
 
 ## Tree View — 2026-11-08
 - Follow design reference’s single-select file-navigation model: Guides Off/On, folder open/closed and file rows, 20px logical indentation per depth, plus 16px file-label offset. Closed folders point left in RTL; open folders point down.

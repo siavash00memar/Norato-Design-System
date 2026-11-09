@@ -6,10 +6,10 @@
 - [x] Contract, Figma rules, request checklist, family ledger and error log match the implementation and evidence.
 
 ## Visual and responsive
-- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. Fresh 1904×950 desktop screenshots show the frame aligned at about 628×330px vs 630×331px after the 332px token adjustment; the panel is about 446×242px vs 452×244px. Exact row/footer geometry remains to be measured.
+- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. Fresh 1904×950 desktop screenshots show the frame aligned at about 628×330px vs 630×331px after the 332px token adjustment; the panel is about 446×242px vs 452×244px. At 390×844 the local frame/panel/search/rows/footer are 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they are 272×341, 260×271, 258×72, 250×43 and 258×72.2px. All are within 4px of same-viewport reference measurements.
 - [x] Default/results/empty/loading and item default/active/disabled states have distinct Norato semantics.
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
-- [ ] Desktop, 390px and 320px panels remain bounded with no document overflow or stretched icons/rows.
+- [x] At 390×844 and 320×844 the static preview stays within the viewport with no document overflow; 18×18 icons remain intrinsic and rows remain 43px high without stretch.
 - [x] Overlay layering is checked: the live dialog is centered above a full-page dimmed/blurred scrim.
 - [x] Reduced-motion browser emulation confirms the loading spinner is fully static; visible and live Loading status, `aria-busy`, RTL and viewport bounds remain correct.
 
@@ -28,6 +28,12 @@
 - [x] Same-window screenshots before the change showed the Norato frame 32px shorter than the reference; widths differed by about 2px.
 - [x] Updated only `--norato-command-palette-preview-frame-block-size` from 300px to 332px. The live local frame now measures about 628×330px against the reference's 630×331px; the panel and rows were not enlarged to fill the extra space.
 - [ ] Panel, row and footer geometry need a more exact measurement; 390/320px comparison and independent screen-reader review remain open.
+
+## Mobile preview geometry — 2026-11-10
+- [x] At 390×844, local frame/panel/search/two rows/footer measured 342×318, 338×246, 336×48, 320×43 and 336×72.2px against reference 342×318, 337×246, 335×47, 322×43 and 335×73px.
+- [x] At 320×844, local frame/panel/search/two rows/footer measured 272×341, 260×271, 258×72, 250×43 and 258×72.2px against reference 272×341, 261×271, 259×72, 246×43 and 259×73px. Reference overflow was not copied; local document stays 320px wide.
+- [x] Both viewport DOM checks preserve RTL and 18×18px icons; the inert sample's 43px rows do not change the live dialog's 48px target.
+- [ ] Independent screen-reader review, full shortcut exclusion matrix, and result-cap stress remain open.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

@@ -2400,3 +2400,10 @@
 - [x] Screenshots at desktop, 390px and 320px visually confirm avatar placement and all table columns remain visible.
 - [x] A 1536×703 recheck measures the Table frame at 345px versus 345.25px in the reference; a separate Button recheck remains 300px.
 - [ ] Full state-matrix visual comparison and independent screen-reader output remain open; Table DoD stays open.
+
+# Command Palette mobile specimen parity — 2026-11-10
+
+- [x] At 390×844, local frame/panel/search/rows/footer measured 342×318, 338×246, 336×48, 320×43 and 336×72.2px against reference 342×318, 337×246, 335×47, 322×43 and 335×73px.
+- [x] At 320×844, local frame/panel/search/rows/footer measured 272×341, 260×271, 258×72, 250×43 and 258×72.2px against reference 272×341, 261×271, 259×72, 246×43 and 259×73px.
+- [x] Both local documents match viewport width; RTL sample content and 18×18px icons remain intact. Only the inert sample changes; live command targets remain 48px.
+- [ ] Independent screen-reader review, full shortcut exclusion matrix, and result-cap stress remain open.

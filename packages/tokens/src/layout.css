@@ -124,10 +124,15 @@
   --norato-command-palette-preview-inline-size: 448px;
   --norato-command-palette-preview-panel-block-size: 240px;
   --norato-command-palette-preview-frame-inline-size: 640px;
-  --norato-command-palette-preview-frame-mobile-inline-size: 328px;
+  --norato-command-palette-preview-frame-mobile-inline-size: 342px;
   --norato-command-palette-preview-frame-block-size: 332px;
+  --norato-command-palette-preview-frame-mobile-block-size: 318px;
+  --norato-command-palette-preview-frame-narrow-block-size: 341px;
   --norato-command-palette-preview-frame-radius: 24px;
-  --norato-command-palette-preview-row-block-size: 40px;
+  --norato-command-palette-preview-panel-mobile-block-size: 246px;
+  --norato-command-palette-preview-panel-narrow-block-size: 271px;
+  --norato-command-palette-preview-search-narrow-block-size: 72px;
+  --norato-command-palette-preview-row-block-size: 43px;
   --norato-menu-preview-frame-inline-size: 640px;
   --norato-menu-preview-frame-mobile-inline-size: 328px;
   --norato-menu-preview-frame-block-size: 300px;
