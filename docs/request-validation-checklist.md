@@ -1802,6 +1802,12 @@
 - [ ] Select capsule mobile sizing and same-viewport reference comparison remain open.
 - [x] Combobox: after selecting `پژوهش کاربر`, reopening no longer filters suggestions by the selected label; the two recent choices return and the committed label stays visible. Typing `پژوهش` shows its matching option and create action; selecting the existing option, closing with Escape and reopening all preserve the correct selected label. Multi mode shows the selected chip with an empty search field and no duplicated label.
 - [x] Refreshed the live Input page at desktop size. Phone prefix, min/max/step and select controls visibly render as compact capsules; focus on the phone prefix shows one yellow stroke without a dark outline.
+
+## Input radius — keyboard focus and error state follow-up (2026-11-09)
+
+- [x] On the live Input page, keyboard focus on the name field shows the yellow capsule Stroke with no dark or blue outer ring.
+- [x] With the shared error state enabled, the focused field keeps the yellow Stroke and displays its red error message; the error toggle and fixture were restored afterward.
+- [ ] Mobile viewport and the full combined-state sequence remain open; this browser session did not provide a reliable viewport-resize control.
 - [x] Token and catalog checks, Vue typecheck/build and `git diff --check` pass.
 - [ ] Other component routes, 390/320px layouts, hover and disabled states remain unverified for this shared styling change.
 
