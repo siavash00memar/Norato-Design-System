@@ -1,9 +1,10 @@
 .norato-popover {
   z-index: var(--norato-layer-popover);
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   gap: var(--norato-space-3);
   inline-size: min(var(--norato-popover-max-inline-size), calc(100vw - var(--norato-space-8)));
-  max-block-size: min(70dvh, var(--norato-popover-max-block-size));
+  max-block-size: min(70dvh, var(--norato-popover-max-block-size), var(--reka-popper-available-height, var(--norato-popover-max-block-size)));
   overflow: auto;
   padding: var(--norato-space-4);
   border: var(--norato-border-thin) solid var(--norato-color-glass-line);
@@ -19,13 +20,13 @@
 .norato-popover__header { display: grid; gap: var(--norato-space-1); min-inline-size: 0; }
 .norato-popover__title { margin: 0; color: var(--norato-color-text-primary); font-family: var(--norato-font-heading); font-size: var(--norato-type-body-bold-size); font-weight: var(--norato-type-body-bold-weight); line-height: var(--norato-type-body-regular-line-height); }
 .norato-popover__description { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); }
-.norato-popover__body { display: grid; gap: var(--norato-space-3); min-inline-size: 0; overflow: auto; }
+.norato-popover__body { display: grid; gap: var(--norato-space-3); min-inline-size: 0; min-block-size: 0; overflow: auto; }
 .norato-popover__footer { display: flex; flex-wrap: wrap; gap: var(--norato-space-2); align-items: center; }
 .norato-popover__arrow { fill: var(--norato-color-glass-surface-strong); stroke: var(--norato-color-glass-line); stroke-width: 1px; }
 .norato-popover :focus-visible { outline: var(--norato-border-focus) solid var(--norato-color-focus-ring); outline-offset: calc(-1 * var(--norato-border-focus)); box-shadow: none; }
 
 @media (max-width: 480px) {
-  .norato-popover { inline-size: min(var(--norato-popover-max-inline-size), calc(100vw - var(--norato-space-6))); max-block-size: calc(100dvh - var(--norato-space-8)); padding: var(--norato-space-3); }
+  .norato-popover { inline-size: min(var(--norato-popover-max-inline-size), calc(100vw - var(--norato-space-6))); max-block-size: min(calc(100dvh - var(--norato-space-8)), var(--reka-popper-available-height, var(--norato-popover-max-block-size))); padding: var(--norato-space-3); }
 }
 
 @media (prefers-reduced-motion: reduce) { .norato-popover { scroll-behavior: auto; } }

@@ -8,5 +8,7 @@
 .norato-popover__link { display: block; max-inline-size: 100%; overflow-wrap: anywhere; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); text-align: left; text-decoration-color: var(--norato-color-border-default); text-underline-offset: var(--norato-space-1); }
 .norato-popover__link:hover { color: var(--norato-color-text-primary); text-decoration-color: var(--norato-color-brand-yellow-strong); }
 .popover-playground__feedback { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); }
+.popover-playground__long-content { display: grid; gap: var(--norato-space-3); }
+.popover-playground__long-content p { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); }
 @media (max-width: 800px) { .popover-playground__controls { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 600px) { .popover-playground__controls { grid-template-columns: minmax(0,1fr); } .popover-playground__stage { padding: var(--norato-space-4); } }

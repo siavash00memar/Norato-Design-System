@@ -1637,9 +1637,12 @@
 - [x] Verified Actions content and form content. Form focuses the email field and exposes submit/cancel actions; sample submit announces local feedback. Copy action was not activated, so the user's clipboard was not changed.
 - [x] Fixed the playground stylesheet omission by importing `popover-playground.css`; post-fix screenshot confirms the stage, three aligned controls, checkboxes, form field and action buttons use the intended Norato styling.
 - [x] Rechecked default outside click and Escape dismissal in the browser; both close the panel. Modal Escape behavior was checked in the earlier pass.
-- [ ] Exact 390/320 viewport comparison, long content overflow, modal/non-modal Tab behavior, LTR placement and independent screen-reader review remain open. There is no `dismissible` option in this component contract. See `specs/013-design-system-parity/popover-checklist.md`.
+- [x] At 390×844 and 320×640, the reference frame is 327×300/257×300px and Norato is 343×288/273×288px; Norato's document remains within 375/305px respectively.
+- [x] Fixed the static specimen's inherited minimum-height stretch and capped its panel to the frame. Long live content now respects Popper's computed viewport space and scrolls inside the body. Side placement falls back to bottom on ≤840px screens to avoid covering the trigger.
+- [x] Verified long-content scrolling, LTR, vertical collision, non-modal Tab exit/dismissal and modal focus loop. Accessibility tree reports a named dialog and trigger expanded state.
+- [ ] Independent screen-reader announcement review remains open; see `specs/013-design-system-parity/popover-checklist.md`.
 - [x] Tokens and catalog checks pass; Vue typecheck/build succeeds; forbidden-name scan is clean; `git diff --check` passes with line-ending normalization warnings. Production build retains the known 1,238.40 kB minified JS chunk advisory.
-- [ ] Keep Popover DoD open for the remaining responsive, overflow, keyboard, LTR and independent screen-reader checks.
+- [ ] Keep Popover DoD open for the independent screen-reader review.
 
 ## Accordion — selected row separation follow-up (2026-11-08)
 

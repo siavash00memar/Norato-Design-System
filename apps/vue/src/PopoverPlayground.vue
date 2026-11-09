@@ -12,6 +12,8 @@ const align = ref<NoratoPopoverAlign>('center')
 const open = ref(false)
 const disabled = ref(false)
 const modal = ref(false)
+const direction = ref<'rtl' | 'ltr'>('rtl')
+const longContent = ref(false)
 const copied = ref(false)
 const email = ref('')
 const feedback = ref('')
@@ -19,10 +21,10 @@ const shareLink = 'norato.design/share/8df'
 const snippet = computed(() => {
   const componentImports = variant.value === 'form' ? 'NoratoButton, NoratoPopover, NoratoTextInput' : 'NoratoButton, NoratoPopover'
   const formState = variant.value === 'form' ? "\nconst email = ref('')" : ''
-  const stateProps = `${disabled.value ? ' disabled' : ''}${modal.value ? ' modal' : ''}`
-  const body = variant.value === 'form'
+  const stateProps = `${disabled.value ? ' disabled' : ''}${modal.value ? ' modal' : ''} dir="${direction.value}"`
+  const body = (variant.value === 'form'
     ? '<NoratoTextInput id="invite-email" v-model="email" label="ایمیل" placeholder="نشانی ایمیل را بنویس" />'
-    : `<code class="norato-popover__link" dir="ltr">${shareLink}</code>`
+    : `<code class="norato-popover__link" dir="ltr">${shareLink}</code>`) + (longContent.value ? '\\n    <div class="popover-playground__long-content"><p v-for="paragraph in 14" :key="paragraph">این محتوای نمونه برای بررسی پیمایش درون پنل است.</p></div>' : '')
   const footer = variant.value === 'simple' ? '' : variant.value === 'actions'
     ? '\n    <template #footer><NoratoButton label="کپی پیوند" variant="primary" @click="copyLink" /></template>'
     : '\n    <template #footer><NoratoButton label="ارسال دعوت" variant="primary" @click="submitInvite" /><NoratoButton label="انصراف" variant="secondary" @click="open = false" /></template>'
@@ -50,11 +52,12 @@ function submitEmail(close: () => void) {
 <template>
   <div class="popover-playground" dir="rtl">
     <div class="popover-playground__stage">
-      <NoratoPopover id="playground-popover" v-model:open="open" title="لینک اشتراک" description="این پیوند را با دیگران به اشتراک بگذار." :variant="variant" :placement="placement" :align="align" :disabled="disabled" :modal="modal">
+      <NoratoPopover id="playground-popover" v-model:open="open" title="لینک اشتراک" description="این پیوند را با دیگران به اشتراک بگذار." :variant="variant" :placement="placement" :align="align" :disabled="disabled" :modal="modal" :dir="direction">
         <template #trigger><NoratoButton label="اشتراک‌گذاری" variant="secondary" /></template>
         <template #default="{ close }">
           <code v-if="variant !== 'form'" class="norato-popover__link" dir="ltr">{{ shareLink }}</code>
           <NoratoTextInput v-else id="popover-email" v-model="email" label="ایمیل" placeholder="نشانی ایمیل را بنویس" />
+          <div v-if="longContent" class="popover-playground__long-content"><p v-for="paragraph in 14" :key="paragraph">این محتوای نمونه برای بررسی پیمایش درون پنل است.</p></div>
         </template>
         <template v-if="variant !== 'simple'" #footer="{ close }">
           <template v-if="variant === 'actions'">
@@ -72,10 +75,12 @@ function submitEmail(close: () => void) {
       <PlaygroundSelect id="popover-type" v-model="variant" label="نوع محتوا" :options="[{ value: 'simple', label: 'ساده' }, { value: 'actions', label: 'اقدام‌ها' }, { value: 'form', label: 'فرم' }]" />
       <PlaygroundSelect id="popover-placement" v-model="placement" label="جایگاه" :options="[{ value: 'bottom', label: 'پایین' }, { value: 'top', label: 'بالا' }, { value: 'right', label: 'راست' }, { value: 'left', label: 'چپ' }]" />
       <PlaygroundSelect id="popover-align" v-model="align" label="تراز" :options="[{ value: 'center', label: 'مرکز' }, { value: 'start', label: 'ابتدا' }, { value: 'end', label: 'انتها' }]" />
+      <PlaygroundSelect id="popover-direction" v-model="direction" label="جهت محتوا" :options="[{ value: 'rtl', label: 'راست‌به‌چپ' }, { value: 'ltr', label: 'چپ‌به‌راست' }]" />
     </div>
     <div class="popover-playground__states">
       <label><input v-model="disabled" type="checkbox" /><span>محرک غیرفعال</span></label>
       <label><input v-model="modal" type="checkbox" /><span>رفتار modal</span></label>
+      <label><input v-model="longContent" type="checkbox" /><span>محتوای طولانی</span></label>
     </div>
     <p v-if="feedback" class="popover-playground__feedback" role="status" aria-live="polite">{{ feedback }}</p>
     <div class="code-copy-row">

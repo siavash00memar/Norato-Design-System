@@ -128,6 +128,7 @@ export const productPatternTokens = {
   drawerSpecimenInlineSize: '--norato-drawer-specimen-inline-size',
   popoverMaxInlineSize: '--norato-popover-max-inline-size',
   popoverMaxBlockSize: '--norato-popover-max-block-size',
+  popoverSpecimenPanelInlineSize: '--norato-popover-specimen-panel-inline-size',
   chartStatMinBlockSize: '--norato-chart-stat-min-block-size',
   chartStatSparkInlineSize: '--norato-chart-stat-spark-inline-size',
   chartStatSparkBlockSize: '--norato-chart-stat-spark-block-size',

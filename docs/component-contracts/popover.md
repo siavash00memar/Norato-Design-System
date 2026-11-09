@@ -22,7 +22,7 @@
 - **Simple** — متن کوتاه یا پیوند.
 - **Actions** — متن/پیوند به‌همراه یک یا چند اقدام.
 - **Form** — ورودی کوتاه و اقدام ثبت یا انصراف.
-- **Placement** — `top`، `bottom`، `right` یا `left`؛ مقدار پیش‌فرض `bottom` است. در RTL هم `left` و `right` جایگاه فیزیکی را مشخص می‌کنند.
+- **Placement** — `top`، `bottom`، `right` یا `left`؛ مقدار پیش‌فرض `bottom` است. در RTL هم `left` و `right` جایگاه فیزیکی را مشخص می‌کنند. در viewport حداکثر ۸۴۰px، جایگاه‌های فیزیکی افقی برای جلوگیری از هم‌پوشانی با محرک به `bottom` تبدیل می‌شوند.
 - **Align** — `start`، `center` یا `end`؛ مقدار پیش‌فرض `center` است و از `dir` پیروی می‌کند.
 
 ## Sizes
@@ -97,4 +97,4 @@ const open = ref(false)
 
 ## Tokens
 
-توکن‌های استفاده‌شده: `--norato-color-glass-surface-strong`، `--norato-color-glass-line`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-focus-ring`، `--norato-layer-popover`، `--norato-popover-max-inline-size`، `--norato-popover-max-block-size`، `--norato-radius-modal`، `--norato-elevation-modal` و فاصله‌های عمومی نوراتو.
+توکن‌های استفاده‌شده: `--norato-color-glass-surface-strong`، `--norato-color-glass-line`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-focus-ring`، `--norato-layer-popover`، `--norato-popover-max-inline-size`، `--norato-popover-max-block-size`، `--norato-popover-specimen-panel-inline-size` (فقط قاب نمایشی)، `--norato-radius-modal`، `--norato-elevation-modal` و فاصله‌های عمومی نوراتو.
