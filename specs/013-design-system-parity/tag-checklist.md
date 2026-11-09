@@ -18,6 +18,8 @@
 - [x] Added a short/long label stress control; the rendered Tag and generated snippet stay synchronized. In the long case, text clips with ellipsis inside the bounded capsule without increasing its height; the full label remains in the DOM.
 - [x] At 320×844 and 390×844, document widths stayed at 305px and 375px with no horizontal overflow. The long Tag stays within its available inline width at both sizes.
 - [x] Checked all eight dot/leading-icon/trailing-icon combinations at 320px; decorative icons remain 14×14px, dot 6×6px and Tag height 28px. RTL/LTR order mirrors as intended. Four sizes remain exactly 24/28/32/36px at the 320px viewport.
+- [x] Fresh local browser verification at 390×844 and 320×844: document widths are 375px and 305px, respectively; the static Tag remains 76.1×28px at both widths, with no horizontal overflow.
+- [x] Fresh accessibility-tree review confirms the Button-style detail structure: Preview, Vue playground/snippet and all nine contract sections (Overview through Tokens). The static Tag is exposed as non-interactive text.
 - [ ] Independent screen-reader review.
 
 ## Technical gates

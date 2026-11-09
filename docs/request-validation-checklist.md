@@ -64,7 +64,8 @@
 - [x] Replaced generic blue anatomy/size/state examples with Tag-based previews and yellow Norato accents; corrected the usage example so it renders as one concise rule.
 - [x] Reviewed all 40 rendered tone × appearance × size combinations in the desktop browser; semantic text pairings retain at least 4.51:1 contrast on white.
 - [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Repository scan found no prohibited reference-name matches.
-- [ ] LTR icon ordering, long text/narrow container, 390/320 widths and independent screen-reader review remain open; see `specs/013-design-system-parity/tag-checklist.md`.
+- [x] LTR icon ordering, long text/narrow container, and 390/320 widths are covered by the browser follow-up below; see `specs/013-design-system-parity/tag-checklist.md`.
+- [ ] Independent screen-reader review remains open; Tag DoD stays open.
 
 ## Carousel inert specimen correction — browser review (2026-11-08)
 
@@ -1611,6 +1612,8 @@
 - [x] Added a short/long label control to the interactive playground; generated Vue code reflects label, direction, size and icon/dot settings.
 - [x] At 320×844 and 390×844, document widths were 305px and 375px. Long text clipped with ellipsis inside the available Tag width and did not stretch its 28px medium height.
 - [x] Exercised all eight optional dot/leading/trailing icon combinations at 320px; icons stayed 14×14px, the dot 6×6px, and Tag height stayed fixed. RTL and LTR visual ordering were confirmed. All four size heights matched 24/28/32/36px.
+- [x] Fresh local browser reads at 390×844 and 320×844 confirm document widths of 375px/305px and static specimen geometry of 76.1×28px at both widths; no horizontal overflow.
+- [x] Browser accessibility tree exposes the Tag static preview as text with no interactive role; the live page contains Preview, Vue playground/snippet and nine Button-aligned contract sections.
 - [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/tag-checklist.md`.
 
 ## Avatar direction and keyboard follow-up — 2026-11-08
