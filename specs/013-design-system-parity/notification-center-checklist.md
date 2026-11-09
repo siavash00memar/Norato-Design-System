@@ -21,7 +21,7 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 ## RTL, keyboard and accessibility
 
 - [x] At 430×676, verify RTL and LTR Popover/Panel placement and text direction; RTL Panel bounds x=0..400px, LTR Panel x=29.6..429.6px, and every bell/filter/action/item target is at least 48px. The generated snippet follows the selected `dir`.
-- [ ] Verify keyboard-only open, navigation/activation, close, and focus return for both presentations; Escape close and focus return passed, keyboard-only open is not checked.
+- [x] Keyboard-only Popover check on the live 1536×647 browser: Enter opens from the bell; Tab advances through Mark all → All → Mentions → notification item; Enter selects the item, closes the Popover and returns focus to the bell; Enter reopens and Escape closes with focus returned to the bell. Keyboard navigation for the Panel presentation remains open.
 - [x] Verify visible focus, disabled state, dialog/popover names, grouped list semantics and live unread status via browser accessibility tree.
 - [ ] Record independent screen-reader review; source/DOM inspection alone does not close this item.
 
@@ -44,4 +44,4 @@ Record same-viewport dimensions, tested interactions, viewport sizes, console fi
 - [x] Scoped `.norato-notification-center__content` max block size to the smaller of the Norato 480px cap, Reka Popper's available collision height, and the viewport inset. In the same edge case, the panel now measures 298.2px high at y=8..306.2px; Reka available height is 298.2px and internal scrollHeight exceeds clientHeight.
 - [x] Notification rows remain 70.4px and all bell, filter, header and action controls remain at least 48px; document width is 414px at a 430px viewport with no horizontal overflow.
 - [x] Added a live RTL/LTR playground selector, default RTL, and generated snippet sync. In LTR, Popover stays inside the viewport and panel aligns to inline-end; Escape closes Popover and restores focus to the bell.
-- [ ] Exact 390×844/320×640 comparison, bottom-edge placement review, keyboard-only navigation/activation, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.
+- [ ] Exact 390×844/320×640 comparison, bottom-edge placement, keyboard navigation for Panel, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.

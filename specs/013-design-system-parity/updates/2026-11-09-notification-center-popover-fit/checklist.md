@@ -5,6 +5,7 @@
 - [x] Long content scrolls inside the Popover and all item/action targets remain at least 48px.
 - [x] RTL and LTR placement/reading direction, Escape close, focus return for Popover, and Panel presentation remain correct at 430×676.
 - [x] At 430×676 the document remains 414px wide with no horizontal overflow.
-- [ ] Exact 390×844/320×640 viewports, bottom-edge placement, keyboard-only navigation and independent screen-reader review remain open.
+- [x] Keyboard-only Popover: Enter opens; Tab traverses Mark all → All → Mentions → first notification; Enter activates selection, closes and returns focus to bell; Enter reopens; Escape closes and returns focus to bell.
+- [ ] Exact 390×844/320×640 viewports, bottom-edge placement, Panel keyboard navigation, and independent screen-reader review remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass.
 - [x] Evidence is recorded; changes are pushed and remote parity verified (`779ba38`).
