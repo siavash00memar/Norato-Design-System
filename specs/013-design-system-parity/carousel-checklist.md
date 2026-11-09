@@ -28,3 +28,12 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, build and `git diff --check` pass. Production bundle remains above 500KB advisory threshold.
 
 **DoD decision:** Do not mark the family fully reviewed until all unchecked viewport, variant, interaction and screen-reader items pass.
+
+## Follow-up review (2026-11-09)
+
+- [x] Browser check at the current desktop viewport: Next moved slide 1→2; direct dot selection reached slides 3, 5, then 1; the controlled-index selector tracked each change.
+- [x] Mouse drag in RTL from slide 1 advanced to slide 2 and updated the controlled-index selector.
+- [x] Programmatic slide centering now checks `prefers-reduced-motion` and uses non-animated scrolling when reduced motion is requested. The preference was not emulated in the browser during this review.
+- [ ] 320px overflow test and 390px layout check.
+- [ ] Touch scrolling, direct selection of every middle dot, external `v-model` changes beyond the playground selector, LTR behavior and independent screen-reader review remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass after the follow-up implementation.
