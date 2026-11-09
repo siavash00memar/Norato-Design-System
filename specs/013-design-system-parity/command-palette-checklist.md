@@ -6,7 +6,7 @@
 - [x] Contract, Figma rules, request checklist, family ledger and error log match the implementation and evidence.
 
 ## Visual and responsive
-- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. Fresh 1904×950 desktop screenshots show the frame aligned at about 628×330px vs 630×331px after the 332px token adjustment; the panel is about 446×242px vs 452×244px. At 390×844 the local frame/panel/search/rows/footer are 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they are 272×341, 260×271, 258×72, 250×43 and 258×72.2px. All are within 4px of same-viewport reference measurements.
+- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. At 1904×950 the local frame/panel are 631.98×332 and 452×244px vs reference 630×331 and 452×244px. The panel is exact and the frame differs by 2px; exact desktop row/footer reference comparison remains open. At 390×844 the local frame/panel/search/rows/footer are 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they are 272×341, 260×271, 258×72, 250×43 and 258×72.2px. Mobile measures remain within 4px of same-viewport reference.
 - [x] Default/results/empty/loading and item default/active/disabled states have distinct Norato semantics.
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
 - [x] At 390×844 and 320×844 the static preview stays within the viewport with no document overflow; 18×18 icons remain intrinsic and rows remain 43px high without stretch.
@@ -51,6 +51,12 @@
 - [x] With temporary `shortcut="j"`, Ctrl+K stayed closed and Ctrl+J opened.
 - [x] With temporary `:shortcut="false"`, Ctrl+K and Meta+K stayed closed; clicking the visible trigger opened the dialog.
 - [x] Restored playground to default `shortcut="k"`; no temporary demo changes remain.
+
+## Desktop panel geometry — 2026-11-10
+- [x] At 1904×950 the static panel now measures 452×244px, matching the recorded reference exactly; frame is 631.98×332px vs 630×331px.
+- [x] Search and rows remain 450×48 and 450×43px; both icons remain 18×18px with no vertical stretching.
+- [x] Fresh 390×844 and 320×844 recheck preserves the mobile frame/panel sizes and has no document overflow.
+- [ ] Exact desktop row/footer comparison and independent screen-reader review remain open.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

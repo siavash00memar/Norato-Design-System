@@ -2424,3 +2424,10 @@
 - [x] Default Meta+K opens. With `shortcut="j"`, Ctrl+K stays closed and Ctrl+J opens.
 - [x] With `shortcut=false`, Ctrl+K and Meta+K stay closed while the manual trigger opens the dialog.
 - [x] Restored the playground to its default `shortcut="k"` example; no temporary source fixture remains.
+
+# Command Palette desktop panel geometry — 2026-11-10
+
+- [x] At 1904×950, local frame/panel measure 631.98×332px and 452×244px; the recorded reference is 630×331px and 452×244px.
+- [x] Search and rows remain 450×48px and 450×43px; both icons remain intrinsic at 18×18px.
+- [x] Rechecked 390×844 and 320×844 mobile specimens; dimensions remain within 4px of reference with no horizontal overflow.
+- [ ] Exact desktop row/footer comparison and independent screen-reader output remain open.

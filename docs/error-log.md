@@ -1557,3 +1557,11 @@
 - **Correction:** Check the browser's `HTMLElement.isContentEditable` signal while retaining native form and ARIA textbox exclusions.
 - **Verification:** Browser checks after the correction show normal page Ctrl+K opens; input, textarea, empty/plaintext-only editable regions, role textbox, repeated key, composition and keyCode 229 stay closed.
 - **Prevention:** Use `isContentEditable` for editing context instead of enumerating attribute strings.
+
+## ERR-201 — Command Palette desktop panel was smaller than its reference (2026-11-10)
+
+- **Observed:** At 1904×950 the local static panel measured 448×240px while the recorded matched reference measured 452×244px.
+- **Cause:** The preview width and minimum block-size tokens were each 4px below the measured panel dimensions.
+- **Correction:** Raised only the static preview panel tokens to 452px wide and 244px high; rows, icons, frame, and live dialog rules were not enlarged.
+- **Verification:** The panel now measures 452×244px; rows remain 43px high, icons 18×18px, and 390/320px frame/panel dimensions remain unchanged with no document overflow.
+- **Prevention:** Measure component content separately from the surrounding preview frame and preserve intrinsic row/icon geometry when correcting panel size.
