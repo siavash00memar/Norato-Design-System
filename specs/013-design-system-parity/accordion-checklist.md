@@ -33,4 +33,4 @@
 - [ ] Independent screen-reader review.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.
 
-**DoD decision:** Keep Accordion open until reduced-motion browser emulation and an independent screen-reader review pass. Desktop and mobile checks are evidence of a close structural match, not proof of the complete component DoD.
+**DoD decision:** Keep Accordion open until an independent screen-reader review passes. Reduced-motion behavior is verified in an isolated browser target. Desktop and mobile checks are evidence of a close structural match, not proof of the complete component DoD.
