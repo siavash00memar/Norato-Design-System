@@ -2325,7 +2325,7 @@
 - [x] Activating Next at page 1→2 transferred focus to Previous after Next disabled; Previous at page 2→1 transferred focus to Next. The page indicator uses `aria-live="polite"`.
 - [x] Compact, Default and Comfortable states rendered at their 48px, 56px and 64px row-size tokens.
 - [x] Playground direction defaults to RTL and updates the generated snippet. RTL and LTR browser screenshots show mirrored columns and correctly directed Previous/Next arrows.
-- [ ] Exact same-viewport reference geometry and independent screen-reader output remain open; Table DoD stays open.
+- [ ] Full same-viewport state comparison and independent screen-reader output remain open; Table DoD stays open.
 
 # Table mobile responsive review — 2026-11-10
 
@@ -2336,9 +2336,9 @@
 
 # Table static specimen reference review — 2026-11-10
 
-- [x] At 1536×703, direct browser measurements: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×345px / 560×274.50px after the Table-specific token. The 4.02px frame-width and 16.11px table-height differences remain open for review.
+- [x] At 1536×703, direct browser measurements after the Table-specific tokens: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×345px / 562×258.50px. The frame/table dimensions are within 1px in both axes.
 - [x] The local specimen now includes three decorative 24px Norato avatars beside the sample names.
-- [x] At 390×844, the static table is 322px wide inside a 348px frame; at 320×844 it is 252px inside a 278px frame. Its scroll width equals client width at both sizes; all four rows are 48px high.
+- [x] At 390×844, the static table is 330px wide inside a 348px frame; at 320×844 it is 260px inside a 278px frame. Its scroll width equals client width at both sizes; all four rows are 48px high.
 - [x] Screenshots at desktop, 390px and 320px visually confirm avatar placement and all table columns remain visible.
 - [x] A 1536×703 recheck measures the Table frame at 345px versus 345.25px in the reference; a separate Button recheck remains 300px.
-- [ ] Exact inner-table geometry and independent screen-reader output remain open; Table DoD stays open.
+- [ ] Full state-matrix visual comparison and independent screen-reader output remain open; Table DoD stays open.

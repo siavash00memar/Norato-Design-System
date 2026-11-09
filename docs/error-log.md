@@ -1525,3 +1525,11 @@
 - **Correction:** Added `--norato-table-preview-frame-block-size:345px` and scoped it to the non-compact Table specimen. The local frame now measures 631.98×345px; the Button frame remains 300px.
 - **Verification:** Desktop frame height is within 0.25px of the reference. At 390×844 and 320×844, the static table retains all columns with no horizontal overflow; live adapter cards remain 340px and 270px wide. Inner-table geometry differs by 4.02px in width and 16.11px in height, and independent screen-reader review remains open.
 - **Prevention:** Compare each component's own measured reference frame before reusing a shared specimen size token; page structure may be shared while component preview dimensions remain specific.
+
+## ERR-197 — Static Table sample was too tall and narrow (2026-11-10)
+
+- **Observed:** At 1536×703, reference Table content measured 561.60×258.39px while the local static table measured 560×274.50px.
+- **Cause:** The specimen used a literal 560px width cap and excess vertical padding/gap around the toolbar and table.
+- **Correction:** Added a semantic 562px Table content width token, changed padding to the 8px token and removed the desktop inter-section gap. The mobile 4px gap rule and all 48px rows remain.
+- **Verification:** Local static table now measures 562×258.50px, within 0.4px width and 0.11px height of the reference. At 390×844 and 320×844 it measures 330px and 260px, fills neither frame, has no internal horizontal scrolling, and the document width equals the viewport. Full state matrix and independent screen-reader review remain open.
+- **Prevention:** Measure table content and frame separately; preserve semantic spacing tokens and verify desktop and narrow viewports after geometry changes.
