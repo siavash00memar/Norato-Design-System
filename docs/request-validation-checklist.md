@@ -2086,4 +2086,4 @@
 
 - [x] Same-viewport screenshots after the correction show the local frame visually aligned with the reference width; both remain 300px high.
 - [x] The 2px semantic-token allowance is scoped to the non-compact desktop Input frame; the existing mobile override is unchanged in source.
-- [ ] Fresh 390px/320px browser review, full states, and independent screen-reader review remain open.
+- [ ] Fresh 390px/320px browser review, full states, and independent screen-reader review remain open. The current browser surface does not expose a viewport override, so no post-change mobile result is claimed.

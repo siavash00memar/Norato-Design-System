@@ -1426,4 +1426,4 @@
 - **Observed:** Same-viewport desktop screenshots showed the Input preview frame narrower than the reference while retaining the correct 300px height.
 - **Cause:** The specimen width stopped at its parent content width before reaching its capped frame token.
 - **Correction:** Added a 2px semantic-token allowance only to the non-compact desktop Input specimen; kept the existing responsive width override.
-- **Verification:** Fresh same-viewport browser screenshots show the frame widths visually aligned and both 300px high. Token/typecheck/catalog/build/diff gates and fresh 390px/320px browser validation are still pending at this log entry.
+- **Verification:** Fresh same-viewport browser screenshots show the frame widths visually aligned and both 300px high. Token, catalog, TypeScript, production build and diff gates pass. Fresh 390px/320px browser validation remains open because the current browser surface does not expose a viewport override.
