@@ -33,6 +33,7 @@
 ## Keyboard-focus follow-up — 2026-11-09
 
 - [x] Fresh local browser review: with the disclosure expanded, Shift+Tab focused the Home link; the accessibility tree named the focused link and the screenshot showed the Norato yellow ring with its dark-amber contrast outline. Clicking the inert specimen did not navigate away from Breadcrumbs.
+- [x] A second live sample on Glass/Medium/Chevron/collapsed focused the «کفش دویدن» link; AX named it as a link and the screenshot showed the yellow focus ring. The playground remained on Breadcrumbs.
 - [ ] This single focus sample does not close the full 42-part hover/focus visual matrix or the independent screen-reader review.
 
 ## Preview frame parity — 2026-11-09

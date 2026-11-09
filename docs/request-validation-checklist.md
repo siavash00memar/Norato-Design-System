@@ -1278,6 +1278,7 @@
 ## Breadcrumbs — keyboard-focus follow-up (2026-11-09)
 
 - [x] In the local browser, Shift+Tab from the expanded disclosure moved focus to the Home link. AX identified the focused link; the screenshot showed the Norato yellow focus ring and dark-amber contrast outline. A pointer click on the inert visual specimen kept the route on Breadcrumbs.
+- [x] Follow-up live sample in Glass/Medium/Chevron/collapsed focused «کفش دویدن»; the browser accessibility tree identified the link and its screenshot showed the yellow focus ring. The playground stayed on Breadcrumbs.
 - [ ] This sample does not verify the remaining hover/focus combinations or independent screen-reader announcements.
 
 ## Breadcrumbs — shared preview frame (2026-11-09)
