@@ -1854,3 +1854,9 @@
 - [x] Browser verified confirm disabled behavior, Tab/Shift+Tab wrapping, LTR propagation into the nested field, and invalid-to-valid form recovery.
 - [x] At 320×640, the 288px modal stays in the viewport; the inner body scrolls 758px content within a 396px body box. No horizontal overflow.
 - [ ] Full hover matrix, controlled/uncontrolled `open`, reduced-motion emulation and independent screen-reader review remain open in `specs/013-design-system-parity/modal-checklist.md`.
+
+## List — selection and keyboard follow-up (2026-11-09)
+
+- [x] Selected row changed from `زبان` to `حساب کاربری` and back. Both row titles remained visible, and the active row used a pale-yellow fill distinct from its surrounding list surface in both inset and grouped layouts.
+- [x] In grouped layout, Tab moved through switch → selectable row → checkbox → selectable row. Enter and Space changed the selected row; switch and checkbox toggled and reported their values in the browser accessibility tree. Fixture values and layout were restored.
+- [ ] Links, disabled rows, 390/320px overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.

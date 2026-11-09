@@ -13,17 +13,19 @@ Status: in progress
 - [x] Switch changes controlled state and visible value.
 - [x] Selectable button rows update selected state; grouped variant renders headings and nested rows.
 - [x] Native checkbox can be toggled; keyboard focus is visibly yellow.
-- [ ] Verify links, action events, disabled cases, tab order and keyboard activation across all row actions.
+- [x] Browser follow-up: selecting the alternate row updates the exclusive selected value and polite status. The previously selected row's title remains visible; selected surface is pale yellow and visually distinct from the list surface. The grouped variant preserves both group headings and all row titles.
+- [x] Keyboard Tab order reaches switch, selectable button, checkbox and second selectable button in sequence. Enter and Space activate the selectable rows; switch and checkbox each toggle and expose their updated values in the accessibility tree. Playground values were restored afterward.
+- [ ] Verify link navigation/event behavior and disabled rows; the current playground does not expose those cases yet.
 - [ ] Verify responsive behavior at 390px and 320px, including document overflow.
 - [ ] Independently confirm screen-reader announcements and row-action roles.
 
 ## Technical gates
 
-- [ ] `pnpm check:tokens`
-- [ ] `pnpm check:catalog`
-- [ ] Vue TypeScript validation
-- [ ] Vue production build
-- [ ] `git diff --check`
-- [ ] Scan project files for prohibited external reference name.
+- [x] `pnpm check:tokens`
+- [x] `pnpm check:catalog`
+- [x] Vue TypeScript validation
+- [x] Vue production build
+- [x] `git diff --check`
+- [x] Scan project files for prohibited external reference name.
 
 Close this checklist only after all remaining items pass or are explicitly documented as unavailable with evidence.
