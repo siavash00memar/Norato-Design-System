@@ -39,3 +39,8 @@
 - [x] Fresh browser render shows the static specimen and live Sidebar brand/avatar on pale yellow with dark text. The live collapse control changed from “جمع کردن نوار کناری”/expanded to “باز کردن نوار کناری”/collapsed; expanding restored section headings and child links. Both directions use the new SVG paths.
 - [ ] Mobile trigger/close SVGs are present in source but are not visually exercised under the mobile breakpoint yet; exact 390px/320px, modal dismissal/focus restoration and independent screen-reader review remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, Vue production build, `git diff --check`, and repository scan for the prohibited reference name passed after the icon and palette adjustments.
+
+## Sidebar — mobile child navigation
+
+- [x] Mobile drawer now renders nested child links, carries `aria-current="page"` onto the active child, and presents disabled children without link semantics; activating a child uses the same navigate event and closes the dialog.
+- [ ] Browser test at 390px/320px, Escape/outside click/focus restoration, and screen-reader review remain open.

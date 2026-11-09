@@ -49,7 +49,7 @@ Default, hover, active, disabled and focus for items; default, hover, active and
 `NoratoSidebar` از `id`, `sections`, `activeHref`, `collapsed`, `disabled`, `variant`, `brand`, `dir` پشتیبانی می‌کند. `v-model:collapsed` کنترل‌شده است و `navigate(item)` را منتشر می‌کند. هر section شامل `label` و `items` است؛ item شامل `label`, `href`, `icon`, `count`, `disabled`, `children` است. slotها: `brand`, `workspace`, `footer`. لینک‌ها anchor هستند و به router خاصی وابسته نیستند. عمق زیرمنو حداکثر دو سطح است.
 
 ## Responsive behavior
-در عرض 700px و کمتر، کنترل ۴۸px بازکننده و Reka Dialog modal drawer نمایش داده می‌شود؛ Escape، بستن بیرون و مدیریت focus به Dialog سپرده می‌شود. اندازهٔ پنل با عرض viewport محدود می‌شود.
+در عرض 700px و کمتر، کنترل ۴۸px بازکننده و Reka Dialog modal drawer نمایش داده می‌شود؛ Escape، بستن بیرون و مدیریت focus به Dialog سپرده می‌شود. اندازهٔ پنل با عرض viewport محدود می‌شود. در پنل موبایل پیوندهای فرزند هم با همان عمق و وضعیت جاریِ نسخهٔ دسکتاپ در دسترس هستند.
 
 ## Usage
 ```vue
