@@ -35,6 +35,8 @@
 
 - Browser follow-up (2026-11-09, matched 1265×713 window): a fresh live screenshot reconfirmed the same width discrepancy (Norato frame approximately 580px; reference approximately 630px) while preserving the approved capsule, RTL placeholder and centered placement. Source audit traced the narrower specimen to the shared `.component-doc` two-column layout, whose first column also defines the preview width; it is not an Input-only sizing rule. Keep Input DoD open and address this at the shared component-page layout level so Input remains structurally aligned with Button. No local-only width override was added.
 
+- Browser follow-up (2026-11-09): shared detail-page width and specimen frame were adjusted, then measured in the live app. At a 1280×540 inner viewport, Input and Button detail specimens each measure 632×300px, matching the reference Input frame at approximately 630×300px. At 390×844, document width is 375px and Input frame 328×300px; at 320×844, document width is 305px and frame 273×300px. Document widths remain bounded without horizontal overflow, and the frame width clamps to available content rather than stretching. This verifies shared frame geometry and these two pages only; Input visual-state coverage and independent screen-reader review remain open.
+
 ## Playground field consistency follow-up (2026-11-09)
 
 - [x] Fresh desktop browser render confirms the live Input playground's phone-prefix, min/max/step and select controls now use the 36px pill presentation; focus shows the single yellow stroke without a dark outline.

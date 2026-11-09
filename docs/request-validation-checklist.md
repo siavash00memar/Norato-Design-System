@@ -1998,3 +1998,10 @@
 - [x] The static Select Focus marker now appears dark amber. In the live Select, ArrowDown moved focus from the searchable field to Tehran without changing the controlled selection; the screenshot showed the amber outline and yellow ring. Escape closed the Reka listbox and returned focus to its trigger.
 - [x] Token validation, catalog integrity (49 routes/contracts), Vue TypeScript validation, production build, and `git diff --check` pass.
 - [ ] Full visual state/variant screenshot comparison and independent screen-reader review remain open; Select DoD is not complete.
+
+## Shared component detail frame geometry — browser follow-up (2026-11-09)
+
+- [x] Fixed the shared `.component-doc` width cap that constrained the preview to the old 65ch reading measure. The detail page now allows 65ch + the existing 48px spacing token; preview remains bounded by its 640px semantic token and available column width.
+- [x] Adjusted shared documentation-column proportions/gap and component preview-frame height tokens to align the rendered Input frame with the Button-sized page and the supplied reference.
+- [x] Same-browser measurements: Input and Button frames are both 632×300px at a 1280×540 inner viewport; the Lemon reference Input frame is approximately 630×300px. At 390×844, document/frame widths are 375/328px; at 320×844 they are 305/273px. No horizontal overflow or stretched frame was observed at either mobile width.
+- [ ] Only Input and Button desktop frame geometry was directly compared at this checkpoint. Other families' content geometry, all state variants, responsive behavior, and independent screen-reader review remain open; do not infer all-family DoD from shared frame tokens.
