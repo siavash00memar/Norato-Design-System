@@ -6,4 +6,4 @@
 - [x] Representative affected pages render in the actual browser with correct RTL section navigation at desktop and mobile widths.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass.
 - [x] DoD ledger maturity remains unchanged unless independent component criteria are separately complete.
-- [ ] Changes are pushed to `origin/master` and remote parity is verified.
+- [x] Changes are pushed to `origin/master` and remote parity is verified.
