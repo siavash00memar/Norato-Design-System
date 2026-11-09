@@ -1246,3 +1246,9 @@
 - **Cause:** The Contrast selected selector was more specific than the generic selected-disabled rule, so its yellow surface and elevation won.
 - **Correction:** Added a Contrast-specific selected-disabled rule to both the runtime component stylesheet and the inert item matrix; the disabled surface and text now take priority and elevation is removed.
 - **Verified:** Checked all 64 matrix cases at the 320px CSS viewport with zero failures. The live selected option remained controlled after disabling its group and computed to muted surface/text with no elevation. At 390×844 and 320×640 the Norato document remained 375px/305px wide, with no overflow. Independent screen-reader review remains open.
+
+## ERR-157 — Image specimen media stretched the shared preview frame (2026-11-09)
+
+- **Observed:** The 380px-wide 4:3 static artwork in the Image specimen was taller than the shared 288px Button frame, making that preview appear stretched vertically. The playground also did not expose the Image adapter's `objectFit` choice.
+- **Correction:** Added the semantic `--norato-image-preview-media-inline-size` token at 320px, capped the static specimen art with it, and added a `cover`/`contain` control that updates both the live Image adapter and generated Vue snippet.
+- **Verified:** Previously recorded browser measurements show the Image frame returned to 584×288px on desktop and 343×288px at 390px; media is 320×240px (4:3). At 320px media is 263×197.25px and the Norato document remains 305px wide. The live reference comparison still shows a different outer frame geometry; crop/contain visuals and remaining Image DoD are open in `image-checklist.md`. Browser automation could not be resumed in this checkpoint, so no new visual evidence is claimed.

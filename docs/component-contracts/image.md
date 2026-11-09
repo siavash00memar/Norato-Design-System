@@ -25,6 +25,7 @@
 ## Sizes
 
 - **Image ratio:** Square برابر ۱:۱، Landscape برابر ۴:۳، Wide برابر ۱۶:۹ و Portrait برابر ۳:۴.
+- **Image specimen media:** عرض رسانه در نمونهٔ ثابت تا ۳۲۰ پیکسل محدود است تا نسبت تصویر طبیعی بماند و قاب مشترک Button کش نیاید.
 - **Thumbnail:** Small برابر ۴۸، Medium برابر ۶۴ و Large برابر ۸۰ پیکسل؛ اندازهٔ دکمه حداقل ۴۸×۴۸ می‌ماند.
 - **Lightbox media:** حداکثر ۹۰vw در ۷۸dvh دسکتاپ و ۷۶vw در ۷۲dvh موبایل؛ نسبت ذاتی تصویر حفظ می‌شود.
 
@@ -57,4 +58,4 @@
 
 ## Tokens
 
-از توکن‌های معنایی Norato استفاده کن: `--norato-color-surface-subtle`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-scrim`، توکن‌های `--norato-radius-*`، `--norato-space-*`، `--norato-control-target-min` و `--norato-layer-modal`. قاب رسانه با `aspect-ratio` هندسی تعریف می‌شود و ارتفاع ثابتی ندارد.
+از توکن‌های معنایی Norato استفاده کن: `--norato-color-surface-subtle`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-scrim`، توکن‌های `--norato-radius-*`، `--norato-space-*`، `--norato-control-target-min`، `--norato-layer-modal` و `--norato-image-preview-media-inline-size`. قاب رسانه با `aspect-ratio` هندسی تعریف می‌شود و ارتفاع ثابتی ندارد.
