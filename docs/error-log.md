@@ -1271,7 +1271,7 @@
 - **Observed:** Each `NoratoTooltip` created its own Reka TooltipProvider, so sibling instances could not share the 300ms skip-delay timer.
 - **Cause:** Provider scope was placed inside every single tooltip adapter instead of allowing an ancestor provider scope.
 - **Correction:** Added the exported `NoratoTooltipProvider` grouping wrapper. Standalone tooltips still receive a local provider; nested tooltips reuse the ancestor provider. The live playground now includes two sibling triggers for the timing check.
-- **Verified:** Token/catalog/typecheck/build pass and the browser loads the new two-trigger fixture. Reliable pointer-only timing evidence is still open because the available UI drag action captures the mouse button and cannot move hover between triggers without a click; do not close Tooltip DoD until skip-delay is measured and an independent screen-reader review is complete.
+- **Verified:** Browser confirms both sibling triggers are under the shared Norato scope. After the first tooltip opened as `delayed-open`, moving from an outside point to the second trigger opened it immediately as `instant-open`; after waiting beyond the 300ms window, the second trigger used the normal delayed opening. Token/catalog/typecheck/build pass. Independent screen-reader review remains open.
 
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 

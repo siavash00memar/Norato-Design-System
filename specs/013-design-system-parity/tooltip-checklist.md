@@ -9,10 +9,12 @@
 - [x] Pointer hover opens the Tooltip without keyboard focus, then closes it after pointer exit; keyboard focus opens it, Escape closes it while retaining focus, and the 2px yellow outer ring is verified.
 - [x] At 390px and 320px, no horizontal document overflow; all measured Tooltip bubbles and 48px targets remained in viewport. At 320px, Rich Right collision flips to Left and stays visible.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [ ] Reka skip-delay timing between sibling triggers and independent screen-reader semantics review remain open; keep DoD open while either lacks evidence.
+- [x] Shared Reka skip-delay between sibling triggers verified: first opens delayed; rapid pointer traversal opens the sibling instantly; after the skip window expires, normal delay applies again.
+- [ ] Independent screen-reader semantics review remains open; keep DoD open until evidence is recorded.
 
 ## Follow-up review (2026-11-09)
 
 - [x] Disabled the playground's forced-open switch and verified delayed pointer behavior on the live trigger with no keyboard focus: after 100ms there was no live bubble; after a further 450ms the bubble appeared with `data-state="delayed-open"` at the requested top placement.
 - [x] Moving from the live trigger to the labeled text field closed and removed the live bubble; the keyboard focus moved to the field. The static inert specimen remains separate from the live playground content.
-- [ ] The new shared provider fixture has not yet yielded a reliable pointer-only measurement of the 300ms skip-delay between sibling triggers. Independent screen-reader announcement and reading-order review remains open.
+- [x] The shared fixture is pointer-only. With no trigger focus, first opened as `delayed-open`; after moving from outside to the sibling during the skip interval, second opened as `instant-open`. With the pointer outside beyond the skip interval, second returned to `delayed-open`.
+- [ ] Independent screen-reader announcement and reading-order review remains open.

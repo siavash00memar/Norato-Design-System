@@ -451,7 +451,7 @@
 - For sibling Tooltip instances, wrap them in `NoratoTooltipProvider` so the 300ms skip-delay context is shared. Standalone `NoratoTooltip` keeps its own default provider.
 - Keep Rich's supplemental label noninteractive; actual actions remain in host UI. Use Popover for links/forms/actions.
 - Use Norato inverse/glass and semantic text/elevation/radius tokens; RTL is explicit, and design reference blue is not imported.
-- **Remaining:** sibling skip-delay timing and independent screen-reader review remain open in the current DoD; visual/behavior evidence and technical gates are tracked in `tooltip-checklist.md`.
+- **Remaining:** independent screen-reader review remains open in the current DoD; visual/behavior evidence and technical gates are tracked in `tooltip-checklist.md`.
 
 ## Progress — 2026-11-08
 - Match design reference's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.

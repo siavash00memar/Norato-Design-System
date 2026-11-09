@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { TooltipProvider as RekaTooltipProvider, injectTooltipProviderContext } from 'reka-ui'
+import { inject, provide } from 'vue'
+import { TooltipProvider as RekaTooltipProvider } from 'reka-ui'
+import { noratoTooltipProviderKey } from './tooltip-context'
 
 export type NoratoTooltipProviderProps = {
   delayDuration?: number
@@ -11,8 +13,9 @@ withDefaults(defineProps<NoratoTooltipProviderProps>(), {
   skipDelayDuration: 300,
 })
 
-// Reuse an ancestor provider so sibling NoratoTooltips share the skip-delay window.
-const hasAncestorProvider = injectTooltipProviderContext(null) !== null
+// Reuse this explicit Norato scope so sibling adapters share the Reka skip-delay window.
+const hasAncestorProvider = inject(noratoTooltipProviderKey, false)
+provide(noratoTooltipProviderKey, true)
 </script>
 
 <template>

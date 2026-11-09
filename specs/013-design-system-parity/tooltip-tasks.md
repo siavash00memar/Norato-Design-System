@@ -8,6 +8,7 @@
 - [x] Analyze installed Reka Tooltip API and exact legacy selectors/tokens.
 - [x] Implement Vue adapter, inert specimen, playground, catalog/export, contract and usage sample.
 - [x] Compare full 16-variant matrix against design reference; verify RTL geometry, responsive collision, keyboard focus and Escape. Evidence and remaining comparison delta recorded in checklist/analyze.
-- [ ] Verify shared skip-delay timing between sibling Tooltip triggers and obtain independent screen-reader review; keep DoD open until both have evidence.
+- [x] Verify shared skip-delay timing between sibling Tooltip triggers in the browser.
+- [ ] Obtain independent screen-reader review; keep DoD open until evidence is recorded.
 - [x] Run all engineering gates; record open DoD and checkpoint GitHub.
 
