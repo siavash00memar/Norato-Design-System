@@ -2261,3 +2261,10 @@
 - [x] Tab and Shift+Tab remain on the dialog search control; Escape and outside click close the dialog and restore focus to its trigger.
 - [ ] Reduced-motion emulation and independent screen-reader review remain open.
 - [ ] 390/320 viewport checks remain open: the available browser control does not expose a viewport override, and native Chrome input/screenshot access failed during this review.
+
+# Banner mobile tone matrix — 2026-11-09
+
+- [x] In same-origin browser frames at exact 390px and 320px CSS widths, rendered Info, Success, Warning, Danger, Neutral and Inverse using Mobile layout.
+- [x] Every tone remained RTL. Danger exposed `role=alert`; the other five exposed `role=status`. Banner geometry was 343×105px at 390 and 273×105px at 320; action/close targets were 68×48px and 48×48px; icon remained 18×18px.
+- [x] Document client/scroll widths matched at both viewports (375/375px and 305/305px); no horizontal overflow observed.
+- [ ] Matched-width mobile visual comparison and independent screen-reader review remain open; Banner DoD remains open.

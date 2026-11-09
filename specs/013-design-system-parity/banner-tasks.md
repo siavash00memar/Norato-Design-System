@@ -4,5 +4,5 @@
 - [x] Audit design reference live composition, current contract, tone tokens and legacy selectors.
 - [x] Implement adapter, usage/export/catalog, inert specimen/playground and Button-style docs.
 - [x] Compare default design reference/Norato desktop compositions; inspect all six desktop tones and Mobile Neutral, RTL, action/close behavior and keyboard activation.
-- [ ] Inspect the remaining five mobile tone combinations, verify full 12-case geometry/responsive and AX roles, and obtain independent screen-reader review.
+- [ ] Matched-width visual comparison against the reference, full 12-case visual screenshot review and independent screen-reader review remain before DoD closure; all six Mobile tones at 390px/320px now have browser geometry and AX role evidence.
 - [x] Run gates, record open DoD residuals, and checkpoint GitHub after the implementation update.

@@ -447,7 +447,8 @@
 - Match design reference's global announcement strip: status icon right, message, optional action and close on the left; desktop keeps one row and mobile stacks message/action. Keep the component full-width in its page placement.
 - Use six semantic tones and explicit desktop/mobile options, but apply Norato status containers and yellow as the brand/focus accent. Action dispatches an event; the host owns navigation and visibility persistence.
 - The top specimen is inert, uses the Button-sized dotted frame and Default marker; the lower playground is executable.
-- **Remaining:** browser parity, full keyboard/action/dismiss sequence and 390/320 widths remain open; do not close Banner DoD before these checks.
+- **Verified (2026-11-09):** all six Mobile tones rendered in 390px and 320px same-origin browser frames; RTL, Danger `alert`/other `status` roles, 48px close and action targets, intrinsic 18px icon, and no horizontal document overflow (375/375px and 305/305px client/scroll widths).
+- **Remaining:** matched-width mobile comparison against the reference, complete 12-case visual screenshot review and independent screen-reader review; keep Banner DoD open.
 
 ## Tooltip — 2026-11-09
 - Match design reference's 16 combinations (Dark/Glass × Simple/Rich × Top/Bottom/Right/Left) with a compact default icon trigger and Bubble/Arrow in the Button-sized dotted specimen.
