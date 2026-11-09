@@ -1685,7 +1685,8 @@
 - [x] Same browser viewport compared the refreshed inert specimen with the live image reference. Abstract artwork now uses a warm field, soft sun disc, cooler lower edge and shaded caption; media remains 320×240px and the shared preview frame remains 288px tall.
 - [x] Image Playground exposes thumbnail size, Default/Selected/More state and disabled mode. Browser inspected all nine size/state combinations, verified the +12 accessible name, disabled activation block, Space activation and yellow keyboard focus ring. The generated snippet tracks size and selected/more/disabled values.
 - [x] Live Image hover adds a dark shade and subtle zoom; at 16:9, `contain` preserves the complete source with side gutters and `cover` crops to fill without distortion. Snippet output followed the selected ratio and fit.
-- [ ] Failed-network retry, Hover across all four ratios, reduced-motion emulation, full Lightbox focus containment/bounds, responsive review after adding the thumbnail playground, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
+- [x] Fresh Lightbox browser pass verified previous/next controls, RTL 1/4↔4/4 positions, focus retention, Tab/Shift+Tab containment and Escape focus return. At desktop 1920×908 the image remains visibly bounded and keeps its 4:3 ratio; exact box measurement is still open.
+- [ ] Failed-network retry, Hover across all four ratios, reduced-motion emulation, exact responsive Lightbox bounds, responsive review after adding the thumbnail playground, and independent screen-reader review remain open. See `specs/013-design-system-parity/image-checklist.md`.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build pass. Build emits the existing warning that its JavaScript chunk exceeds 500KB; `git diff --check` passes with line-ending normalization warnings only.
 
 ## Carousel — implementation checkpoint (2026-11-08)
