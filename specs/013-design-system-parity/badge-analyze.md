@@ -6,3 +6,10 @@
 - Root cause of the gap: the current specimen is neither anchored nor tone/size-aware, and the catalog cannot present a live API. Do not layer another `.sample-badge` override; replace the generic rule with scoped Badge styles and a dedicated sample class.
 - Implementation will expose a `NoratoBadge` adapter with a named scoped anchor slot so the host can apply the count-aware accessible name directly to its button/link. Visual marker stays `aria-hidden` and pointer-transparent. The host anchor remains at least 48px and owns its focus/disabled behavior.
 - Residual risk: Badge visual diameters are absent from the source contract. Choose sizes from existing Norato icon/text tokens and record measured local/design reference geometry rather than inventing exact source dimensions. Browser accessibility-tree output does not substitute for an independent screen-reader review.
+
+## Mobile specimen-width follow-up — 2026-11-09
+
+- Matched live measurements before correction: at 390px the local frame was 343×300px while the reference was 327×300px; at 320px local was 273×300px while the reference was 257×300px. The fixed 16px width difference came from the local specimen frame consuming the full padded documentation section.
+- The correction adds a Badge-only class to the inert specimen and, only at widths ≤839px, subtracts the semantic 16px spacing token from its inline size. This adds 8px inset on each side without changing the 300px block size or shared/interactive controls.
+- Matched post-change measurements: 327×300px at 390×844 and 257×300px at 320×844 for both local and reference; Norato document widths are 375px and 305px. The reference document is 326px at 320px and overflows by 6px. At 1265×720, the local frame is 631.98×300px and reference is 636×300px; the mobile-only rule does not affect desktop.
+- Independent screen-reader evidence remains unverified.

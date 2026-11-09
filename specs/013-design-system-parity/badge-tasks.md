@@ -9,3 +9,4 @@
 - [x] Implement adapter, public exports, usage, specimen, playground and contract updates.
 - [x] Review browser render/behavior/accessibility and run repository gates.
 - [x] Record accurate residuals and checkpoint the completed work to GitHub.
+- [x] Mobile preview-width follow-up: scope the 16px width reduction to the Badge specimen, match local/reference frames at 390px and 320px, preserve desktop geometry, and update delivery evidence.

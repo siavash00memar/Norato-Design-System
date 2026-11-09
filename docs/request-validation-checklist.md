@@ -1660,6 +1660,14 @@
 - [x] The available local narrow view (484px screenshot) showed no horizontal page overflow. Exact 390px/320px measurements and independent screen-reader review remain open.
 - [x] Token/catalog checks, Vue typecheck, production build and `git diff --check` pass after final changes. Build retains the existing advisory that the main JavaScript chunk exceeds 500 kB.
 
+## Badge mobile specimen width correction — 2026-11-09
+
+- [x] Matched 390×844 browser comparison: local and selected reference frame both measure 327×300px at x=24px; document widths are both 375px.
+- [x] Matched 320×844 comparison: local and reference frame both measure 257×300px at x=24px. Local document width is 305px without overflow; reference document measures 326px, overflowing the 320px viewport by 6px.
+- [x] Matched 1265×720 desktop comparison: local frame measures 631.98×300px; reference measures 636×300px. The 4.02px width difference remains within the narrower local documentation layout; the mobile inset rule is limited to widths at or below 839px.
+- [x] Norato RTL remains active. The Badge-only inset uses `--norato-space-4` and does not alter other shared specimen frames.
+- [ ] Independent screen-reader review remains open; the browser AX snapshot is not a substitute.
+
 ## Switch matrix checked Stroke — follow-up (2026-11-08)
 
 - [x] Real local Switch adapter on/off checked states confirm Norato-yellow active track, neutral muted off track, white knob with no Stroke/shadow, and 48×48px target. Hover was isolated from focus: an off Switch remains neutral-filled while its 1px border turns yellow.
