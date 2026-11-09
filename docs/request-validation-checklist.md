@@ -2019,7 +2019,7 @@
 
 - [x] Matched the 1536×703 browser viewport: reference preview is 636×300px and Norato is 632×300px. The reference field is 302.4px wide; Norato's 300px Select control remains centered, RTL and proportionate.
 - [x] The preview retains the project-wide 36px visual field inside its 48px interactive target. Label/trigger placement remains compact and the chevron points down in the closed state.
-- [ ] This capture verifies desktop geometry only. Select mobile recapture after the shared frame-token update and full state-gallery/assistive-technology review remain open.
+- [x] Fresh matched mobile recapture after the shared frame update was completed at 390×844 and 320×844; exact geometry is recorded in the follow-up below. Full state-gallery and independent assistive-technology review remain open.
 
 ## Combobox frame and control width — browser evidence (2026-11-09)
 
@@ -2051,3 +2051,11 @@
 - [x] At 390×844, both reference and Norato documents measure 375px wide. Preview frame measures 327.2×300px in the reference and 328×300px in Norato.
 - [x] Norato's top field is a 36px visual capsule in a 48px target. Label computes to Estedad/700; RTL placeholder computes to Vazirmatn/12px/300. User-approved removal of example address/helper remains in effect.
 - [ ] This verifies only the top specimen at mobile width; full Input variants/states and independent screen-reader review remain open.
+
+
+## Select matched mobile frame follow-up — 2026-11-09
+
+- [x] At 390×844, reference frame is 327.2×300px and Norato is 326.4×300px (0.8px narrower). Reference field width is 302.4px; Norato trigger is 300×48px, preserving the 48px interaction target. Both documents measure 375px.
+- [x] At 320×844, reference frame is 256.8×300px and Norato is 256×300px (0.8px narrower). Norato document is 305px wide with no overflow; the reference document is 326px and shows horizontal overflow. The local 48px trigger is 246.4px wide vs reference field 245.4px.
+- [x] Responsive frame cap now uses the available viewport and Norato spacing token, retaining the 300px frame height without narrow-screen stretch.
+- [ ] Full Select state screenshot matrix and independent screen-reader review remain open.

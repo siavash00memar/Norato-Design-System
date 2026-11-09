@@ -13,3 +13,5 @@
 11. [x] Refine the static States gallery to design reference's title/description card hierarchy without changing the Select adapter or generic Button renderer; compare desktop and mobile.
 12. [x] Re-run technical gates; the Select adapter's remaining full visual-state screenshot review is tracked separately and DoD remains open.
 13. [x] Warm the shared focus contrast outline to dark amber while retaining the yellow ring; verify live listbox keyboard focus, Escape dismissal and trigger focus return, and update the Select state gallery evidence. Full state screenshot and screen-reader DoD remain open.
+
+14. [x] Re-capture Select at 390×844 and 320×844 after the shared-frame refinement, correct the narrow mobile frame cap, and record same-viewport geometry/overflow in the checklist and request validation.

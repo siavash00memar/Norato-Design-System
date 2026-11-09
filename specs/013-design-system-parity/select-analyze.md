@@ -28,3 +28,8 @@
 ## Analyze gate
 
 No scope contradiction blocks the bounded correction. The primary outstanding risks are specimen mismatch and unverified interaction cases. Proceed only with the ordered tasks and keep family DoD open until evidence is complete.
+
+
+## Mobile recapture after shared-frame change — 2026-11-09
+
+The prior mobile frame values are superseded by fresh matched browser captures. At 390×844, the reference frame is 327.2×300px and Norato 326.4×300px. At 320×844, the reference is 256.8×300px and Norato 256×300px. The fixed 328px mobile cap previously left the narrow Norato frame 16px too wide; the mobile max now also clamps to `100vw - --norato-space-16`. Norato's local document stays at 375px/305px with no overflow. The reference document is 326px at 320px and overflows; that behavior is not copied. Field widths are within 2.4px at 390 and 1px at 320 while Norato retains its 48px target. Remaining risks are exhaustive state screenshots and independent screen-reader verification.
