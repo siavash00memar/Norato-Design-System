@@ -2227,3 +2227,10 @@
 - [x] Local browser AX state showed the trigger changing to expanded with a named menu; ArrowDown focused the first item.
 - [x] ArrowLeft from the nested-menu trigger opened the submenu in RTL and focused its first item; Escape closed the levels and restored focus to the root trigger.
 - [ ] This desktop keyboard check does not close Menu's 320px viewport or independent screen-reader evidence gaps.
+
+## Command Palette keyboard and search recheck — 2026-11-09
+
+- [x] Local browser: Ctrl+K opens the dialog; focus enters the labelled combobox; Escape closes and restores trigger focus.
+- [x] Persian search filters to the matching command; an unmatched query exposes the no-results message.
+- [x] Home/End and ArrowUp/Down update the active item; disabled Settings is skipped; Enter selects Projects and updates the live status.
+- [ ] Responsive, matched-reference, configurable/editable-target/repeat/IME shortcut, Tab/outside-dismiss, reduced-motion, result-cap stress and independent screen-reader checks remain open.
