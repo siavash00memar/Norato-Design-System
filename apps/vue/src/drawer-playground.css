@@ -3,4 +3,7 @@
 .drawer-playground__controls { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--norato-space-4); align-items: end; }
 .drawer-playground__filters { display: grid; gap: var(--norato-space-3); min-inline-size: 0; margin: 0; padding: 0; border: 0; }
 .drawer-playground__filters legend { margin-block-end: var(--norato-space-2); padding: 0; color: var(--norato-color-text-primary); font-family: var(--norato-font-heading); font-size: var(--norato-type-body-bold-size); font-weight: var(--norato-type-body-bold-weight); }
+.drawer-playground__long-content { display: grid; gap: var(--norato-space-3); }
+.drawer-playground__long-content p { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); }
+.drawer-playground__status { min-block-size: var(--norato-space-4); margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); }
 @media (max-width: 600px) { .drawer-playground__controls { grid-template-columns: minmax(0,1fr); } .drawer-playground__stage { min-block-size: var(--norato-modal-specimen-scene-mobile-block-size); } }

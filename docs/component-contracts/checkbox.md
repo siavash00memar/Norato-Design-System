@@ -49,13 +49,13 @@
 - برای یه تنظیم روشن و خاموش که فوراً اعمال میشه Checkbox نذار؛ Switch بهتره.
 - گزینه‌هایی که فقط یکی‌شون قابل انتخابه رو با Checkbox نساز؛ Radio لازمه.
 
-### جهت RTL
+### جهت نوشتار
 
-چک‌باکس سمت راست برچسب میاد.
+جهت پیش‌فرض RTL است و چک‌باکس سمت راست برچسب میاد. در محیط LTR، مقدار `dir="ltr"` چک‌باکس را به سمت چپ برچسب منتقل می‌کند.
 
 ### API اجرایی
 
-- `NoratoCheckbox` props: `id`، `label`، `modelValue`، `description`، `disabled`، `required`، `size` (`16 | 20`) و `errorText`؛ رویداد `update:modelValue` مقدار boolean یا `indeterminate` را برمی‌گرداند.
+- `NoratoCheckbox` props: `id`، `label`، `modelValue`، `description`، `disabled`، `required`، `size` (`16 | 20`)، `errorText` و `dir` (`rtl | ltr`، پیش‌فرض `rtl`)؛ رویداد `update:modelValue` مقدار boolean یا `indeterminate` را برمی‌گرداند.
 - متن و توضیح داخل label بومی‌اند؛ کلیک روی هر جای ردیف مقدار را عوض می‌کند.
 - `errorText` به‌صورت alert و از طریق `aria-describedby` به ورودی متصل می‌شود؛ Required و Invalid نیز روی ورودی اعلام می‌شوند.
 - انتخاب اندازه فقط مربع را تغییر می‌دهد و هدف تعاملی ۴۸px می‌ماند.

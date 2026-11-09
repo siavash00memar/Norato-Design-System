@@ -1737,8 +1737,11 @@
 - [x] Fresh local screenshot shows the static default panel on the right. Live left-side selection renders at the left edge with opposite inner corners; Bottom Sheet opens from the bottom with its handle. Escape closes and restores focus to the launch trigger. Browser accessibility tree exposes dialog title, description, close action, filter group, checkboxes and footer actions, but the surface is mapped as a generic container by this snapshot and the role still needs explicit confirmation.
 - [x] Found that `drawer-playground.css` was not imported at all; this left the controls unformatted and native fieldset styling visible. Imported it and removed the fieldset border while retaining semantic grouping.
 - [x] Browser reviewed all three side-panel sizes and all three Bottom Sheet detents. Default outside click closes; with dismissible off, Escape and outside click leave it open while the explicit close remains functional. Selecting a filter and applying closes the sheet. Current page settings were restored to right/medium/auto and dismissible on.
-- [ ] Matched mobile widths, long-content scroll, clear-filters outcome, LTR and independent screen-reader review remain open. Snapshot maps the drawer surface as a generic container, so explicit dialog role and screen-reader announcement remain unverified. Drawer DoD stays open.
-- [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.
+- [x] Follow-up browser review at 390×844 and 320×640 confirmed right/left side panels fit, and auto/half/full Bottom Sheets remain in bounds with no document overflow. Long content scrolls inside the panel in all three detents at both mobile widths.
+- [x] Each filter toggles independently. Clear resets both and keeps the drawer open with a polite status announcement; Apply announces and closes.
+- [x] Confirmed runtime `role="dialog"`, `aria-modal`, title/description references, LTR propagation into the Drawer and Checkbox adapters, and Tab focus containment across close, filters and actions.
+- [x] Token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` pass.
+- [ ] Visual hover/focus review, reduced-motion emulation and independent screen-reader review remain open; Drawer is not fully DoD-complete.
 
 ## Card — implementation checkpoint (2026-11-09)
 

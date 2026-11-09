@@ -1227,3 +1227,9 @@
 - **Cause:** A broad `.norato-modal :focus-visible` rule set `box-shadow:none`, overriding the shared NoratoButton's yellow focus-ring shadow.
 - **Correction:** Removed the conflicting rule; component focus treatments now retain their own tokenized styles inside Modal.
 - **Verified:** Browser confirmed `:focus-visible` is true and the confirm action computes a 2px `--norato-color-focus-ring` shadow. Tab and Shift+Tab wrap between Dialog actions. Other control hover states and independent screen-reader review remain open in `modal-checklist.md`.
+
+## ERR-154 — Drawer playground filters were static and clear action only dismissed (2026-11-09)
+
+- **Observation:** Playground checkboxes were not independently bound, and the clear-filters action closed the panel without resetting selected values or announcing an outcome.
+- **Correction:** Added independent checkbox models, a clear action that resets both options and keeps the drawer open, and live status feedback for clear/apply. Added content-direction and long-content controls; generated usage now reflects the selected Drawer settings. Checkbox now accepts explicit RTL/LTR direction so labels mirror correctly in the live drawer.
+- **Verified:** Browser exercised each filter separately and clear/apply outcomes, LTR propagation, dialog role and naming references, Tab containment, and auto/half/full long-content scrolling at 390px and 320px. Hover/focus appearance, reduced-motion emulation and independent screen-reader review remain open in `drawer-checklist.md`.

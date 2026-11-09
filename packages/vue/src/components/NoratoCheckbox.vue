@@ -11,7 +11,8 @@ const props = withDefaults(defineProps<{
   required?: boolean
   size?: 16 | 20
   errorText?: string
-}>(), { modelValue: false, size: 20 })
+  dir?: 'rtl' | 'ltr'
+}>(), { modelValue: false, size: 20, dir: 'rtl' })
 const emit = defineEmits<{ 'update:modelValue': [value: CheckboxValue] }>()
 const input = ref<HTMLInputElement>()
 watchEffect(() => { if (input.value) input.value.indeterminate = props.modelValue === 'indeterminate' })
@@ -20,7 +21,7 @@ const update = (event: Event) => emit('update:modelValue', (event.target as HTML
 </script>
 
 <template>
-  <div class="norato-checkbox" :data-size="size" :data-invalid="errorText ? '' : undefined" :data-disabled="disabled ? '' : undefined" dir="rtl">
+  <div class="norato-checkbox" :data-size="size" :data-invalid="errorText ? '' : undefined" :data-disabled="disabled ? '' : undefined" :dir="dir">
     <label class="norato-checkbox__row" :for="id">
       <input :id="id" ref="input" class="norato-checkbox__input" type="checkbox" :checked="modelValue === true" :disabled="disabled" :required="required" :aria-required="required ? 'true' : undefined" :aria-checked="modelValue === 'indeterminate' ? 'mixed' : undefined" :aria-invalid="errorText ? 'true' : undefined" :aria-describedby="describedBy()" @change="update" />
       <span class="norato-checkbox__copy"><span class="norato-checkbox__label">{{ label }}<span v-if="required" aria-hidden="true"> *</span></span><span v-if="description" :id="`${id}-description`" class="norato-checkbox__description">{{ description }}</span></span>
