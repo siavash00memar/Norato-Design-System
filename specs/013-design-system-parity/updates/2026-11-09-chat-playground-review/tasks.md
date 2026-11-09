@@ -4,4 +4,4 @@
 - [x] T002 Verify RTL/LTR sender positions in the desktop browser; responsive bounds remain open.
 - [x] T003 Review empty message list and keyboard traversal/escape.
 - [x] T004 Update Chat checklist and request-validation evidence.
-- [ ] T005 Run project gates and push the completed change.
+- [x] T005 Run project gates and push the completed change.

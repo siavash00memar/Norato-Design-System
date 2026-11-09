@@ -5,4 +5,4 @@
 - [ ] Mobile playground overflow remains unverified; full empty-timeline visual review remains open.
 - [x] Keyboard Tab traverses the non-modal widget and escapes it without trapping.
 - [x] Reference comparison and remaining gaps are accurately recorded; project gates pass.
-- [ ] Changes are committed and pushed.
+- [x] Changes are committed and pushed.
