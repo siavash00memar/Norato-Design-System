@@ -7,5 +7,5 @@
 - [x] T005 Expose RTL/LTR direction in the playground and generated example.
 - [x] T006 Verify source/query/loading, pager-boundary states and RTL/LTR arrows in the live browser.
 - [x] T007 Record evidence in Table and request-validation checklists.
-- [ ] T008 Run gates, commit and push.
+- [x] T008 Run gates, commit `6db9135` and push to `origin/master`.
 
