@@ -36,7 +36,7 @@ const snippet = computed(() => {
       <span role="status" aria-live="polite">{{ loading ? 'در حال بارگذاری · اجرا غیرفعال است' : disabled ? 'غیرفعال · اجرا ممکن نیست' : activationCount ? `تعداد فعال‌سازی: ${activationCount}` : 'دکمه را برای بررسی رفتار فعال کنید.' }}</span>
     </div>
     <div class="button-playground-controls">
-      <label class="button-playground-field"><span>متن دکمه</span><input v-model="label" type="text" maxlength="64" autocomplete="off" /></label>
+      <label class="button-playground-field playground-text-field"><span>متن دکمه</span><input v-model="label" type="text" maxlength="64" autocomplete="off" /></label>
       <PlaygroundSelect id="button-variant" v-model="variant" label="گونهٔ اجرایی" :options="[{ value: 'primary', label: 'Primary' }, { value: 'secondary', label: 'Secondary' }, { value: 'inverse', label: 'Inverse' }, { value: 'destructive', label: 'Destructive' }]" />
       <PlaygroundSelect id="button-html-type" v-model="buttonType" label="نوع HTML" :options="[{ value: 'button', label: 'button' }, { value: 'submit', label: 'submit' }, { value: 'reset', label: 'reset' }]" />
     </div>

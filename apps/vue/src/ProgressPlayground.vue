@@ -21,8 +21,8 @@ const props = defineProps<{ copiedKey?: string }>()
       <NoratoProgress id="progress-playground" :value="value" :label="label" :variant="variant" :size="size" :tone="tone" :dir="direction" show-value />
     </div>
     <div class="button-playground-controls progress-playground__controls">
-      <label><span>عنوان</span><input v-model="label" type="text" aria-label="عنوان پیشرفت" /></label>
-      <label><span>مقدار</span><input v-model.number="value" type="number" min="0" max="100" aria-label="درصد پیشرفت" /></label>
+      <label class="playground-text-field"><span>عنوان</span><input v-model="label" type="text" aria-label="عنوان پیشرفت" /></label>
+      <label class="playground-text-field"><span>مقدار</span><input v-model.number="value" type="number" min="0" max="100" aria-label="درصد پیشرفت" /></label>
       <PlaygroundSelect id="progress-variant" v-model="variant" label="نوع" :options="[{value:'linear',label:'خطی'},{value:'circular',label:'دایره‌ای'}]" />
       <PlaygroundSelect id="progress-size" v-model="size" label="اندازه" :options="[{value:'small',label:'Small'},{value:'medium',label:'Medium'},{value:'large',label:'Large'}]" />
       <PlaygroundSelect id="progress-tone" v-model="tone" label="رنگ وضعیت" :options="[{value:'default',label:'Default'},{value:'success',label:'Success'},{value:'warning',label:'Warning'},{value:'danger',label:'Danger'}]" />

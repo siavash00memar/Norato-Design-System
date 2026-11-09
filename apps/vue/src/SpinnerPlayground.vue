@@ -34,7 +34,7 @@ const props = defineProps<{ copiedKey?: string }>()
       <template v-if="presentation === 'loader'">
         <PlaygroundSelect id="spinner-loader-type" v-model="loaderType" label="الگوی Loader" :options="[{value:'inline',label:'Inline'},{value:'refresh',label:'Refresh'},{value:'overlay',label:'Overlay'},{value:'page',label:'Page'}]" />
         <PlaygroundSelect id="spinner-direction" v-model="direction" label="جهت" :options="[{value:'rtl',label:'RTL'},{value:'ltr',label:'LTR'}]" />
-        <label class="spinner-playground__label"><span>متن وضعیت</span><input v-model="label" type="text" /></label>
+        <label class="spinner-playground__label playground-text-field"><span>متن وضعیت</span><input v-model="label" type="text" /></label>
         <label class="spinner-playground__active"><input v-model="active" type="checkbox" />فعال</label>
       </template>
     </div>

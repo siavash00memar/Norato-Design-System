@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Shared playground text and number fields (2026-11-10)
+
+- [x] Source audit found 18 native text/number settings across Button, Split Button, Input, Progress, Rating, Spinner, Pagination, Divider, Toast and Tooltip playgrounds; each is opted into `.playground-text-field`.
+- [x] Actual local Tooltip and Pagination pages render these shared fields as capsules. Keyboard Tab from the Tooltip trigger to its text field shows the single yellow focus Stroke; no added outline or shadow is visible.
+- [x] Shared token CSS sets 36px visual height, 48px minimum field-label target, `#E8E8E8` resting stroke, yellow hover/focus stroke, Estedad Bold labels and Vazirmatn 12px content. Explicit phone calling-code direction remains LTR; other fields default RTL.
+- [x] Token validation, Vue typecheck, production build and whitespace diff check pass. Other field types and Input adapter states were not included in this visual correction; Input's broader family DoD remains open.
+
 ## Drawer complete control hover/focus pass (2026-11-10)
 
 - [x] At 390×844, real pointer hovers were checked for close, selected/unselected checkboxes, and Secondary/Primary actions. Neutral/interactive surfaces use yellow as specified; unselected checkbox hover Stroke is yellow.

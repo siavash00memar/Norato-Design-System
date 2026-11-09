@@ -27,7 +27,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-size-1" v-model="size" label="اندازه" :options="[{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'}]" /></div>
       <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-displaysize-2" v-model="displaySize" label="اندازهٔ نمایش" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'},{value:'large',label:'بزرگ'}]" /></div>
       <div class="select-playground-setting"><PlaygroundSelect id="ratingplayground-score-3" v-model="score" label="امتیاز نمایشی" :options="[{value:0,label:'۰ از ۵'},{value:1,label:'۱ از ۵'},{value:2,label:'۲ از ۵'},{value:3,label:'۳ از ۵'},{value:3.5,label:'۳٫۵ از ۵'},{value:4,label:'۴ از ۵'},{value:4.5,label:'۴٫۵ از ۵'},{value:5,label:'۵ از ۵'}]" /></div>
-      <label class="select-playground-setting"><span>تعداد نظرها</span><input v-model.number="count" type="number" min="0" aria-label="تعداد نظرها" /></label>
+      <label class="select-playground-setting playground-text-field"><span>تعداد نظرها</span><input v-model.number="count" type="number" min="0" aria-label="تعداد نظرها" /></label>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
       <button class="copy-section-button" type="button" @click="value = undefined">پاک‌کردن انتخاب</button>
     </div>

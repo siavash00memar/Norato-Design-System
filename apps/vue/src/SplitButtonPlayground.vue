@@ -38,7 +38,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { NoratoSplitBu
       <span role="status" aria-live="polite">{{ loading ? 'در حال بارگذاری' : disabled ? 'غیرفعال' : selectedAction ? `گزینهٔ انتخاب‌شده: ${selectedAction}` : activationCount ? `اجرای اکشن اصلی: ${activationCount}` : 'اکشن اصلی یا یکی از گزینه‌ها را فعال کنید.' }}</span>
     </div>
     <div class="button-playground-controls split-playground-controls">
-      <label class="button-playground-field"><span>متن دکمه</span><input v-model="label" type="text" maxlength="40" autocomplete="off" /></label>
+      <label class="button-playground-field playground-text-field"><span>متن دکمه</span><input v-model="label" type="text" maxlength="40" autocomplete="off" /></label>
       <PlaygroundSelect id="split-mode" v-model="mode" label="ساختار" :options="[{ value: 'split', label: 'Split Button' }, { value: 'dropdown', label: 'Dropdown Button' }]" />
       <PlaygroundSelect id="split-variant" v-model="variant" label="گونه" :options="variantOptions" />
       <PlaygroundSelect id="split-size" v-model="size" label="اندازهٔ ظاهر" :options="[{ value: 'small', label: 'Small · ۳۲px' }, { value: 'medium', label: 'Medium · ۴۰px' }, { value: 'large', label: 'Large · ۴۸px' }, { value: 'xlarge', label: 'XLarge · ۵۶px' }]" />

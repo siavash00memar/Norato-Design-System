@@ -62,10 +62,10 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <PlaygroundSelect id="inputplayground-textarea-direction-4" v-model="textareaDir" label="جهت Textarea" :options="[{value:'rtl',label:'راست‌چین'},{value:'ltr',label:'چپ‌چین'}]" />
       <PlaygroundSelect id="inputplayground-otplength-4" v-model="otpLength" label="طول کد" :options="[{value:4,label:'۴ رقم'},{value:5,label:'۵ رقم'},{value:6,label:'۶ رقم'}]" />
       <PlaygroundSelect id="inputplayground-numberpresentation-5" v-model="numberPresentation" label="چیدمان عدد" :options="[{value:'stepper',label:'کنارهم'},{value:'stacked',label:'روی‌هم'}]" />
-      <label>کمینهٔ عدد<input v-model.number="numberMin" type="number" step="any" /></label>
-      <label>بیشینهٔ عدد<input v-model.number="numberMax" type="number" step="any" /></label>
-      <label>گام عدد<input v-model.number="numberStep" type="number" min="0.00000000000000000001" step="any" /></label>
-      <label>پیش‌شماره<input v-model="callingCode" type="text" dir="ltr" /></label>
+      <label class="playground-text-field">کمینهٔ عدد<input v-model.number="numberMin" type="number" step="any" /></label>
+      <label class="playground-text-field">بیشینهٔ عدد<input v-model.number="numberMax" type="number" step="any" /></label>
+      <label class="playground-text-field">گام عدد<input v-model.number="numberStep" type="number" min="0.00000000000000000001" step="any" /></label>
+      <label class="playground-text-field">پیش‌شماره<input v-model="callingCode" type="text" dir="ltr" /></label>
       <label class="button-playground-switch"><input v-model="shortcut" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>میانبر جست‌وجو</span></label>
     </div>
     <div class="button-playground-code"><div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy', 'input-playground', snippet)">{{ copiedKey === 'input-playground' ? 'کپی شد' : copiedKey === 'input-playground-error' ? 'ناموفق' : 'کپی کد' }}</button></div><pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre></div>

@@ -24,9 +24,9 @@ const props = defineProps<{ copiedKey?: string }>()
       </NoratoTooltip>
     </div>
     <div class="button-playground-controls tooltip-playground__controls">
-      <label><span>متن</span><input v-model="title" type="text" aria-label="متن راهنما" /></label>
-      <label v-if="layout==='rich'"><span>توضیح</span><input v-model="description" type="text" aria-label="توضیح راهنما" /></label>
-      <label v-if="layout==='rich'"><span>متن همراه</span><input v-model="actionLabel" type="text" aria-label="متن همراه راهنما" /></label>
+      <label class="playground-text-field"><span>متن</span><input v-model="title" type="text" aria-label="متن راهنما" /></label>
+      <label v-if="layout==='rich'" class="playground-text-field"><span>توضیح</span><input v-model="description" type="text" aria-label="توضیح راهنما" /></label>
+      <label v-if="layout==='rich'" class="playground-text-field"><span>متن همراه</span><input v-model="actionLabel" type="text" aria-label="متن همراه راهنما" /></label>
       <PlaygroundSelect id="tooltip-surface" v-model="surface" label="سطح" :options="[{value:'dark',label:'Dark'},{value:'glass',label:'Glass'}]" />
       <PlaygroundSelect id="tooltip-layout" v-model="layout" label="چیدمان" :options="[{value:'simple',label:'Simple'},{value:'rich',label:'Rich'}]" />
       <PlaygroundSelect id="tooltip-placement" v-model="placement" label="جایگاه" :options="[{value:'top',label:'بالا'},{value:'bottom',label:'پایین'},{value:'right',label:'راست'},{value:'left',label:'چپ'}]" />

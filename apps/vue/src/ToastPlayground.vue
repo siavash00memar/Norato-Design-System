@@ -90,8 +90,8 @@ function showToast() {
       <span v-if="!open" class="toast-playground__empty">برای دیدن Toast، دکمهٔ نمایش را بزن.</span>
     </div>
     <div class="button-playground-controls toast-playground__controls">
-      <label><span>عنوان</span><input v-model="title" type="text" aria-label="عنوان پیام" /></label>
-      <label v-if="layout==='rich'"><span>توضیح</span><input v-model="description" type="text" aria-label="توضیح پیام" /></label>
+      <label class="playground-text-field"><span>عنوان</span><input v-model="title" type="text" aria-label="عنوان پیام" /></label>
+      <label v-if="layout==='rich'" class="playground-text-field"><span>توضیح</span><input v-model="description" type="text" aria-label="توضیح پیام" /></label>
       <PlaygroundSelect id="toast-tone" v-model="tone" label="لحن" :options="[{value:'neutral',label:'خنثی'},{value:'success',label:'موفقیت'},{value:'warning',label:'هشدار'},{value:'danger',label:'خطا'},{value:'loading',label:'در حال انجام'}]" />
       <PlaygroundSelect id="toast-surface" v-model="surface" label="سطح" :options="[{value:'dark',label:'Dark'},{value:'glass',label:'Glass'}]" />
       <PlaygroundSelect id="toast-layout" v-model="layout" label="چیدمان" :options="[{value:'simple',label:'Simple'},{value:'rich',label:'Rich'}]" />

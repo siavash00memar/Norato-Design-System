@@ -39,7 +39,7 @@ const snippet = computed(() => {
       <PlaygroundSelect id="divider-type" v-model="type" label="نوع" :options="[{value:'line',label:'خط ساده'},{value:'label-center',label:'برچسب وسط'},{value:'label-start',label:'برچسب ابتدا'}]" />
       <PlaygroundSelect id="divider-tone" v-model="tone" label="لحن" :options="[{value:'subtle',label:'ملایم'},{value:'strong',label:'پررنگ'}]" />
       <PlaygroundSelect id="divider-spacing" v-model="spacing" label="فاصله" :options="[{value:0,label:'۰ پیکسل'},{value:4,label:'۴ پیکسل'},{value:8,label:'۸ پیکسل'}]" />
-      <label v-if="type !== 'line'" class="divider-playground__field"><span>برچسب</span><input v-model="label" maxlength="40" /></label>
+      <label v-if="type !== 'line'" class="divider-playground__field playground-text-field"><span>برچسب</span><input v-model="label" type="text" maxlength="40" /></label>
       <label class="divider-playground__toggle"><input v-model="decorative" type="checkbox" /><span aria-hidden="true" />تزئینی</label>
       <PlaygroundSelect id="divider-direction" v-model="direction" label="جهت نوشتار" :options="[{value:'rtl',label:'راست‌به‌چپ'},{value:'ltr',label:'چپ‌به‌راست'}]" />
     </div>

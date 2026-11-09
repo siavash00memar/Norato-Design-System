@@ -1,0 +1,64 @@
+label.playground-text-field {
+  display: grid;
+  gap: var(--norato-space-1);
+  min-inline-size: 0;
+  min-block-size: var(--norato-control-target-min);
+  color: var(--norato-color-text-primary);
+  font-family: var(--norato-font-heading);
+  font-size: var(--norato-type-doc-caption-size);
+  font-weight: var(--norato-type-body-bold-weight);
+}
+
+.playground-text-field > span:first-child {
+  padding-inline: var(--norato-space-1);
+}
+
+.playground-text-field input:is([type="text"], [type="number"]) {
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-inline-size: 0;
+  block-size: var(--norato-control-visual-height);
+  min-block-size: var(--norato-control-visual-height);
+  padding-inline: var(--norato-space-3);
+  border: var(--norato-border-thin) solid var(--norato-color-border-default);
+  border-radius: var(--norato-radius-pill);
+  background: var(--norato-color-surface-default);
+  color: var(--norato-color-text-primary);
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  font-weight: var(--norato-type-body-regular-weight);
+  direction: rtl;
+  text-align: start;
+  transition: border-color var(--norato-motion-duration-press) var(--norato-motion-ease-out);
+}
+
+.playground-text-field input:is([type="text"], [type="number"])[dir="ltr"] {
+  direction: ltr;
+}
+
+.playground-text-field input:is([type="text"], [type="number"]):hover:not(:disabled),
+.playground-text-field input:is([type="text"], [type="number"]):focus-visible {
+  border-color: var(--norato-color-brand-yellow);
+}
+
+.playground-text-field input:is([type="text"], [type="number"]):focus-visible {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.playground-text-field input:is([type="text"], [type="number"])::placeholder {
+  color: var(--norato-color-text-placeholder-subtle);
+  direction: rtl;
+  text-align: end;
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  font-weight: var(--norato-type-body-light-weight);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playground-text-field input:is([type="text"], [type="number"]) {
+    transition: none;
+  }
+}

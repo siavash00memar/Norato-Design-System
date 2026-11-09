@@ -45,8 +45,8 @@ const example = computed(() => usageExamples.pagination
     <div class="pagination-playground__controls">
       <PlaygroundSelect id="paginationplayground-type-1" v-model="type" label="نوع نمایش" :options="[{value:'numbers',label:'شماره‌دار'},{value:'simple',label:'ساده'}]" @update:model-value="manualType = true" />
       <PlaygroundSelect id="paginationplayground-size-2" v-model="size" label="اندازه" :options="[{value:'small',label:'کوچک'},{value:'medium',label:'متوسط'}]" />
-      <label>صفحهٔ جاری<input v-model.number="currentInput" type="number" min="1" :max="total"></label>
-      <label>تعداد صفحه‌ها<input v-model.number="totalInput" type="number" min="1"></label>
+      <label class="playground-text-field">صفحهٔ جاری<input v-model.number="currentInput" type="number" min="1" :max="total"></label>
+      <label class="playground-text-field">تعداد صفحه‌ها<input v-model.number="totalInput" type="number" min="1"></label>
     </div>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy', 'pagination-code', example)">{{ props.copiedKey === 'pagination-code' ? 'کپی شد' : 'کپی کد' }}</button></div>
     <pre class="usage-code" dir="ltr"><code>{{ example }}</code></pre>
