@@ -29,6 +29,12 @@
 - Several families are Proposed, so their visual specimen must stay labeled inert until supported Vue behavior exists.
 - design reference's 32/40px controls conflict with Norato's 48px minimum target for interactive controls; preserve the Norato rule and document the visual difference.
 
+## Tooltip desktop frame width — 2026-11-10
+
+- A matched 1265×720 browser capture showed the shared page shell limited the Tooltip preview to 631.98px while the reference stage measured 636px; height already matched at 300px.
+- A global shell-cap increase was tested and rejected because it regressed recorded Input and Select frame widths by 4px and 2px. Keep the shared shell stable and scope the existing 4px spacing-token allowance to Tooltip's desktop preview section only.
+- Verify the rendered Tooltip geometry, unchanged Button/Input/Select frames, page overflow, and token/catalog/type/build gates before recording the correction.
+
 ## Select refinement analysis
 
 - Use Reka UI Select primitives for the trigger, listbox, groups, item focus, RTL and portal positioning; style through Norato tokens. Use controlled draft state around multiple selection so only Confirm commits and Cancel/Escape restore the previous value.

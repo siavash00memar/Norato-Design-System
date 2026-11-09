@@ -11,4 +11,5 @@
 - [x] Verify shared skip-delay timing between sibling Tooltip triggers in the browser.
 - [ ] Obtain independent screen-reader review; keep DoD open until evidence is recorded.
 - [x] Run all engineering gates; record open DoD and checkpoint GitHub.
+- [ ] Re-measure the Tooltip 1265×720 preview frame after its scoped 4px semantic-token extension; verify Button, Input and Select dimensions remain unchanged.
 

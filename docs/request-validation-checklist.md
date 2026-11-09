@@ -2468,3 +2468,9 @@
 - [x] After HMR the visible placeholder is «یک شهر انتخاب کنید»; DOM reports a 300×48px trigger inside a 633.98×300px RTL frame, with the chevron present.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
 - [ ] Select's full screenshot matrix and independent screen-reader review remain open.
+
+# Tooltip preview width correction — 2026-11-10
+
+- [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its preview section; the shared detail shell remains unchanged.
+- [ ] Re-measure the final scoped Tooltip frame and confirm Button/Input/Select bounds remain unchanged; verify RTL composition and no document overflow.
+- [ ] Exact 390/320px re-capture and independent screen-reader review remain open; mobile is not claimed as rechecked in this change.

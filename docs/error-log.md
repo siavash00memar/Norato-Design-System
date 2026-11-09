@@ -1581,3 +1581,11 @@
 - **Correction:** Set the sample prompt to «یک شهر انتخاب کنید» without changing live adapter behavior or field geometry.
 - **Verification:** After HMR the visible text is «یک شهر انتخاب کنید»; the RTL trigger is 300×48px within the 300px-high frame and its chevron remains present. Token/catalog checks, Vue typecheck, production build and `git diff --check` pass.
 - **Prevention:** Inspect the rendered Persian string in the browser; do not infer visible copy from the playground snippet.
+
+## ERR-204 — Tooltip desktop preview width delta (2026-11-10)
+
+- **Observed:** At a matched 1265×720 viewport the Tooltip stage was 636×300px in the reference and 631.98×300px in Norato; its height and composition already matched.
+- **Cause:** Tooltip's preview needs a 4px wider desktop stage than its containing detail section, while the shared shell width is already aligned for Input and Select.
+- **Correction:** A global shell increase was reverted after it widened recorded Input and Select frames by 4px and 2px. Apply the existing `--norato-space-1` allowance to the Tooltip preview section only.
+- **Verification:** Re-measure Tooltip plus Button/Input/Select at the matched viewport and confirm no horizontal overflow. Exact mobile re-capture remains open; technical gates must be rerun after the scoped correction.
+- **Prevention:** Compare the component frame and surrounding page shell independently, then scope any geometry correction to the measured component when shared consumers have different approved widths.

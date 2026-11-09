@@ -36,5 +36,6 @@ Status: active. Visual reference: design reference (especially each matching com
 - [x] T009g Range: Reka SliderRoot/Track/Range/Thumb; controlled single/range values; semantic tokens, RTL, 48px targets, live value labels, disabled/focus/error; 16 type/size/state combinations at desktop/mobile; design reference visual comparison and all project technical gates pass. Evidence in `range-checklist.md` and `range-analyze.md`.
 - [x] T009h Rating: follow `rating-constitution.md` → `rating-spec.md` → `rating-clarify.md` → `rating-plan.md` → `rating-checklist.md` → `rating-tasks.md` → `rating-analyze.md` → implement; read-only/input/summary, half-star display, controlled Reka RadioGroup input, RTL, 48px targets and desktop/mobile DoD pass.
 - [ ] T010 Final audit: compare all component pages at desktop and mobile widths; run catalog, token, TypeScript, build, and request-validation checks; update error log and handoff evidence.
+- [ ] T009n Tooltip frame: verify the scoped semantic 4px allowance at 1265×720 and confirm Button/Input/Select frame widths remain unchanged.
 
 No item is complete solely because a source file exists. A component is complete only after actual browser validation and its documentation reflects supported behavior.
