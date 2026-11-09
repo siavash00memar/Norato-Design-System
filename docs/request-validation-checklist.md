@@ -1972,6 +1972,13 @@
 - [x] Required shows its label marker and appears in the generated example; Error shows a red control boundary, red description, and associated error alert; Disabled exposes the input as disabled in the Accessibility tree. Playground restored to unchecked, enabled, optional, no-error, 20px.
 - [ ] Independent screen-reader validation remains open; browser Accessibility tree review is not a substitute for hearing the announced result.
 
+## Radio Button live behavior follow-up (2026-11-09)
+
+- [x] In the local RTL playground, ArrowDown changed the selected option from monthly to quarterly and updated the status and generated Vue snippet. The focused radio showed the 2px high-contrast ring with yellow halo.
+- [x] Error on a selected option showed the error styling and alert. With the group disabled, all three radio inputs became disabled; clicking another option did not change the selection. Required + no selection showed its message, and selecting Yearly cleared the empty state.
+- [x] Both 16px and 20px circles rendered proportionally beside RTL labels. Playground restored to monthly, enabled, optional, no-error and 20px.
+- [ ] Full live focus/hover/state cross-product and independent screen-reader review remain open for Radio Button.
+
 # Select warm-focus contrast follow-up — browser evidence (2026-11-09)
 
 - [x] Replaced the blue focus contrast outline with a dark amber Norato focus contrast token (`#805A00`) while keeping the yellow outer focus ring. Measured contrast is 6.21:1 on white and 3.79:1 on the Norato-yellow ring.

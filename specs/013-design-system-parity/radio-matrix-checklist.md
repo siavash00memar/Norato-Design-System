@@ -13,3 +13,5 @@
 - [x] Request checklist, contract and family ledger record the result and remaining DoD.
 - [x] Commit `45d40bc` pushed; local HEAD and remote `master` both equal `45d40bcf68421d4d90355a6edbc10aa1f5906acb`.
 - [x] Yellow accent follow-up `3746d69` pushed to `origin/master`; local HEAD and remote parity were confirmed.
+- [x] 2026-11-09 live follow-up: ArrowDown moved selection from monthly to quarterly and synchronized the status/snippet. Selected + Error displayed the red error treatment and alert; Disabled exposed all options as disabled and resisted an attempted change. Required + no selection displayed the required message; selecting Yearly cleared the empty state. Both 16px/20px sizes rendered with proportional circles and RTL labels; keyboard focus retained the high-contrast yellow-ring treatment. Playground restored to Monthly, enabled, optional, no-error, 20px.
+- [ ] Full live focus/hover/state cross-product and independent screen-reader validation remain open; static 20-cell matrix and this focused runtime pass do not close the family DoD.
