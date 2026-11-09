@@ -11,7 +11,7 @@
 - [x] RTL indentation is 20px per depth; file rows add the 16px alignment offset; arrows face down/open and left/closed; folder/file SVGs keep intrinsic 20px geometry.
 - [x] Default, selected, disabled and keyboard-focus states use semantic Norato colors without blue accent or stretch.
 - [ ] Pointer-only hover review remains open.
-- [ ] Desktop, 390px and 320px have bounded content and no document overflow; interactive rows stay at least 48px.
+- [x] At desktop, 390×844 and 320×844, Tree View and its documentation content stay within the viewport. Document widths are 375px/305px; interactive rows remain 48px high, with intrinsic 18px icons and 16px chevrons. Fixed a narrow-width overflow in the shared accessibility contract cards; Tree View and Input now both measure 305px document width at 320px.
 
 ## Behavior and accessibility
 - [x] Reka TreeRoot/TreeItem produces a named tree and nested treeitem/group semantics; browser AX confirms hierarchy, expanded, selected and disabled states. Reka source supplies `aria-level` and positional metadata.
@@ -23,4 +23,4 @@
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
-- [ ] Browser review at 390/320px, pointer-only hover, reduced-motion emulation and independent screen-reader review remain before closing the family DoD.
+- [ ] Pointer-only hover, reduced-motion emulation and independent screen-reader review remain before closing the family DoD. Responsive measurements are recorded; the shared accessibility card correction is verified on Tree View and Input.

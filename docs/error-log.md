@@ -1342,3 +1342,10 @@
 - **Cause:** The status region laid out the full announcement as an unbounded flex item beside Restore.
 - **Correction:** Kept the complete announcement in a dedicated `role="status"` text element, visually clamped it to two lines, and placed Restore in a separate grid column.
 - **Verified:** At 320px and 390px, the preview is 85px tall, document widths are 305px and 375px, and the status text remains complete in the accessibility tree. Restore stays 78×48px; focus moves to Restore after removal and returns to the remove control after restoration. Independent screen-reader review remains open.
+
+## ERR-171 — Accessibility contract card forced horizontal page overflow at 320px (2026-11-09)
+
+- **Observed:** Tree View's documentation page had a 325px document width at a 320px viewport. A long accessibility detail measured 245px inside a 185px text column and extended beyond the card.
+- **Cause:** The accessibility-card text grid allowed its child text items to retain their intrinsic minimum width, even after its parent track was bounded.
+- **Correction:** Bound the text grid to a `minmax(0, 1fr)` track and let its heading/detail children wrap inside the available inline size.
+- **Verified:** At 390×844 and 320×844, Tree View document widths are 375px/305px and all rows remain 48px high. The same 320px check on Input reports 305px document width with no overflow. Pointer-only hover, reduced-motion emulation and independent screen-reader review remain open.

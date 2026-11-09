@@ -1772,7 +1772,8 @@
 - [x] Keyboard review: Up/Down/Home/End, RTL Left/Right, Enter/Space and typeahead all work. Disabled node is skipped and cannot be selected; global disabled marks every row disabled and blocks expansion/selection. Tab enters the tree at its first item and exits to the next control.
 - [x] Accessibility tree exposes one named tree and nested rows/groups, with selected, expanded, and disabled states. Reka TreeItem supplies level/position metadata. Independent screen-reader announcement remains unverified.
 - [x] Focus screenshot exposed a second browser-default dark outline. Clearing the focused item root fixed the duplicate; the fresh screenshot shows one 2px yellow row ring with the 2px tokenized offset.
-- [ ] Exact 390px/320px document overflow, pointer-only Hover, reduced-motion browser emulation and independent screen-reader review remain open. Desktop screenshot and source tokens confirm 48px interactive row minimum and 20px/16px logical indentation; narrow row geometry still needs measurement.
+- [x] At 390×844 and 320×844, document widths are 375px/305px; the Tree View playground measures 343px/273px and all visible rows are 48px. Icons remain intrinsic at 18px with 16px chevrons. A shared accessibility-card overflow was fixed; Tree View and Input both now remain at 305px document width in 320px mode.
+- [ ] Pointer-only hover, reduced-motion browser emulation and independent screen-reader review remain open.
 
 ## Input — follow-up browser review (2026-11-09)
 
