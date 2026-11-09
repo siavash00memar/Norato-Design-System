@@ -1728,8 +1728,8 @@
 - [x] Local browser shows the static preview, playground, copyable Vue sample and contract sections in the Button page structure. Compared the desktop frame with the reference in the same browser window; the local frame follows the narrower documentation column and is shorter. Form mode opened, accepted Persian text, submitted and returned focus to its trigger. Dialog mode closes with Escape and restores focus. Busy mode disabled its actions and resisted Escape during the busy interval.
 - [x] Default interactive Dialog tone now matches the destructive delete specimen. `NoratoModal` exposes `busy` as `aria-busy`; the public contract now documents it.
 - [x] Browser verified default outside-click dismissal, and with `dismissible=false`, both Escape and outside click leave the dialog open; Cancel closes it. Escape in the default state also closes the dialog and restores focus to its trigger.
-- [ ] Matched responsive 390/320 viewport measurements, all sizes/tones, explicit `dialog`/`alertdialog` role (the snapshot currently maps the surface as a generic container), LTR and independent screen-reader review remain open. Modal DoD stays open.
-- [ ] Run token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` after these changes.
+- [x] Matched responsive viewport measurements, all sizes/tones and named `dialog`/`alertdialog` semantics were subsequently verified in the 2026-11-09 Modal browser follow-up below; the earlier snapshot limitation is superseded.
+- [x] Token/catalog checks, Vue typecheck/build, forbidden-name scan and `git diff --check` passed at the Modal follow-up checkpoint.
 
 ## Drawer — desktop visual review (2026-11-09)
 
@@ -1782,4 +1782,12 @@
 - [x] At 390/320px viewports, the dialog measured 320/288px wide, remained within the viewport and caused no horizontal document overflow.
 - [x] Cancel and confirm outcomes, public close action, focus restoration, dialog/alertdialog roles and title/description references were inspected. Close target measured 48×48px.
 - [x] Busy mode exposed `aria-busy="true"`, disabled both actions and reported completion; busy dismiss behavior remains blocked as intended.
-- [ ] Disabled confirmation, controlled/uncontrolled `open`, complete keyboard-only loop, LTR, long-content scrolling, reduced-motion and independent screen-reader review remain open in `specs/013-design-system-parity/modal-checklist.md`.
+- [ ] Controlled/uncontrolled `open`, reduced-motion and independent screen-reader review remain open in `specs/013-design-system-parity/modal-checklist.md`.
+
+## Modal — focus ring and validation follow-up (2026-11-09)
+
+- [x] Browser found that a broad Modal `:focus-visible` rule removed the NoratoButton focus shadow. Removed the conflicting rule; keyboard focus now renders a 2px yellow ring.
+- [x] Added direction, disabled-confirm, long-content and required-field validation controls to the live Playground; generated Vue examples now include selected direction and relevant form state.
+- [x] Browser verified confirm disabled behavior, Tab/Shift+Tab wrapping, LTR propagation into the nested field, and invalid-to-valid form recovery.
+- [x] At 320×640, the 288px modal stays in the viewport; the inner body scrolls 758px content within a 396px body box. No horizontal overflow.
+- [ ] Full hover matrix, controlled/uncontrolled `open`, reduced-motion emulation and independent screen-reader review remain open in `specs/013-design-system-parity/modal-checklist.md`.

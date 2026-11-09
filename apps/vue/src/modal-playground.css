@@ -7,6 +7,8 @@
 .modal-playground__toggle { display: flex; align-items: center; gap: var(--norato-space-2); min-block-size: var(--norato-control-target-min); color: var(--norato-color-text-primary); font-size: var(--norato-type-body-small-size); cursor: pointer; }
 .modal-playground__toggle input { inline-size: var(--norato-icon-sm); block-size: var(--norato-icon-sm); accent-color: var(--norato-color-brand-yellow); }
 .modal-playground__form { display: grid; gap: var(--norato-space-3); }
+.modal-playground__long-content { display: grid; gap: var(--norato-space-3); }
+.modal-playground__long-content p { margin: 0; color: var(--norato-color-text-secondary); font-size: var(--norato-type-body-small-size); line-height: var(--norato-type-body-small-line-height); }
 .modal-playground__status { min-block-size: var(--norato-space-4); margin: 0; }
 .modal-playground__code { display: grid; gap: var(--norato-space-2); }
 .modal-playground__code>div { display: flex; align-items: center; justify-content: space-between; }

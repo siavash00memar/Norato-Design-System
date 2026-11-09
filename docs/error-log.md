@@ -1220,3 +1220,10 @@
 - **Cause:** The underlying Accordion root consumed its `dir` prop without placing a `dir` attribute on a DOM ancestor, so it inherited RTL from the page.
 - **Correction:** Added a `dir` wrapper around the primitive and `display: contents` so the wrapper sets direction inheritance without adding a layout box. Added explicit direction and collapsibility playground controls and included them in the generated Vue example.
 - **Verified:** Browser computed direction and title/chevron placement now switch in LTR; the 16 layout/style/size combinations were checked expanded and collapsed; collapsible=false remains open and announces disabled; trigger/panel ARIA references resolve. Reduced-motion emulation and independent screen-reader review remain open in `accordion-checklist.md`.
+
+## ERR-153 — Modal suppressed the NoratoButton keyboard focus ring (2026-11-09)
+
+- **Observed:** Keyboard focus reached the Dialog confirm action, but computed styles showed no outline and no focus shadow inside the Modal.
+- **Cause:** A broad `.norato-modal :focus-visible` rule set `box-shadow:none`, overriding the shared NoratoButton's yellow focus-ring shadow.
+- **Correction:** Removed the conflicting rule; component focus treatments now retain their own tokenized styles inside Modal.
+- **Verified:** Browser confirmed `:focus-visible` is true and the confirm action computes a 2px `--norato-color-focus-ring` shadow. Tab and Shift+Tab wrap between Dialog actions. Other control hover states and independent screen-reader review remain open in `modal-checklist.md`.
