@@ -1,16 +1,22 @@
 # Norato Request Validation Checklist
 
+## Drawer complete control hover/focus pass (2026-11-10)
+
+- [x] At 390×844, real pointer hovers were checked for close, selected/unselected checkboxes, and Secondary/Primary actions. Neutral/interactive surfaces use yellow as specified; unselected checkbox hover Stroke is yellow.
+- [x] Keyboard Tab traversed both checkboxes, both actions and close, then wrapped; every focused control exposed `:focus-visible` with a 2px Norato-yellow outline and no extra shadow.
+- [ ] Independent screen-reader review remains open for Drawer.
+
 ## Secondary Button hover accent correction (2026-11-10)
 
 - [x] The shared `Secondary` Button hover no longer uses the blue informational surface; it now uses Norato's yellow warning-container token, yellow brand Stroke and dark text.
 - [x] Actual pointer hover on Drawer’s live Secondary action at the local 5173 route computes to `rgb(255, 248, 224)` background, `rgb(253, 193, 1)` border and `rgb(26, 26, 26)` text.
-- [ ] This confirms the shared action hover treatment only; Drawer’s complete control/focus matrix and independent screen-reader review remain open.
+- [x] This confirms the shared Secondary action hover treatment; full Drawer control/focus coverage is recorded in the section above.
 
 ## Drawer close hover and keyboard focus (2026-11-10)
 
 - [x] At 390×844, a real pointer hover on the open Drawer close control uses the yellow warning-container surface.
 - [x] Keyboard Tab reached the Available checkbox with `:focus-visible` and a 2px Norato-yellow outline (`rgb(253, 193, 1)`); computed shadow was `none`.
-- [ ] Other side/detent combinations, remaining controls and independent screen-reader review remain open; see `specs/013-design-system-parity/drawer-checklist.md`.
+- [x] This check is included in the full Drawer control/focus coverage above. Independent screen-reader review remains open; see `specs/013-design-system-parity/drawer-checklist.md`.
 
 ## Drawer reduced-motion browser check (2026-11-10)
 
