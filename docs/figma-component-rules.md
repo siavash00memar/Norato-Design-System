@@ -542,6 +542,7 @@
 
 ## Chat — sender sides and message grouping
 
+- The inert Chat specimen uses the shared Button dotted frame at 640×300 and shows two opposite message bubbles with timestamp/read metadata; keep the full header and composer in the separate live playground.
 - In RTL, incoming remains right aligned and outgoing remains left aligned. Do not rely on color alone to identify sender.
 - The outgoing bubble uses Norato yellow with primary text; incoming uses a neutral surface. Keep text bubbles below the available conversation width.
 - Reduce vertical spacing only between consecutive messages from the same sender. Preserve the normal gap when the sender changes.

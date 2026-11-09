@@ -23,7 +23,9 @@
 - [ ] Matched screenshot review of all 10 sender × message-type visuals.
 - [x] Live browser and accessibility-tree review of all 10 sender × message-type selections and all six part states.
 - [x] Same-origin browser frames rendered at 320px and 390px. At 320px, the document is 305px wide, the chat shell is 273×513px and RTL is true; at 390px, the document is 375px wide, the shell is 343×478px and RTL is true. Both document scroll widths equal their client widths; no horizontal overflow was measured.
-- [ ] Matched desktop comparison and reference-matched visual review of all ten sender × message-type combinations; investigate vertical geometry/stretch against the reference before closing.
+- [x] Static specimen now uses the shared Button-style dotted frame and Default marker. Matched desktop screenshot review confirms the reference's two-bubble composition; Norato yellow replaces the reference's dark outgoing fill as required by the palette rule. Inner bubbles are intrinsic, not stretched.
+- [x] Static specimen reviewed at 320px and 390px. Frames are 273×300px and 343×300px; inner message composition is 263×127px and 333×127px. Incoming/outgoing bounds confirm right/left placement; computed direction is RTL and document client/scroll widths match.
+- [ ] Matched screenshots of all ten sender × message-type playground combinations remain open, as do full playground vertical geometry comparisons.
 - [ ] Exercise file chooser/attach event, LTR, disabled form, send button, Shift+Enter, empty state and keyboard focus loop.
 - [ ] Independent screen-reader verification.
 - [x] Final `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed after edits. Build warns that the JS chunk is above 500KB.

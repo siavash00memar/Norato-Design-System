@@ -1,3 +1,5 @@
+# Norato Request Validation Checklist
+
 ## Carousel responsive matrix overflow correction (2026-11-09)
 
 - [x] Same-origin browser frames verified exact outer CSS widths 390px and 320px; document client/scroll widths are 375/375px and 305/305px respectively (the difference is the browser's vertical scrollbar).
@@ -9,10 +11,9 @@
 
 - [x] Actual local Chat route rendered in same-origin 320px and 390px browser frames. The diagnostic observed inner viewports of 320px and 390px; document client/scroll widths were 305/305px and 375/375px.
 - [x] Chat shell bounds are 273×513px at 320px and 343×478px at 390px. The chat region retains RTL in both frames; the accessibility tree exposes its named region/log, header controls, message content and composer controls.
-- [x] Visual browser capture confirms the narrow 320px preview remains within its frame; no horizontal document scrollbar appears in either frame.
-- [ ] This does not establish matched-reference vertical proportions, desktop parity, all ten matched screenshots, file selection, LTR, keyboard focus-loop or independent screen-reader completion.
-
-# Norato Request Validation Checklist
+- [x] Static specimen visibly matches the reference composition (two bubbles in the shared dotted frame) while keeping Norato yellow and semantic neutral surfaces; frame remains 300px high.
+- [x] At 320px and 390px, frame measures 273×300px and 343×300px; the bubbles remain natural-size (141/142×56px), RTL incoming-right/outgoing-left, computed RTL and no document overflow.
+- [ ] This does not establish matched screenshots for every live variant, file selection, LTR, keyboard focus-loop or independent screen-reader completion.
 
 ## Carousel live LTR and direct selection follow-up (2026-11-09)
 
