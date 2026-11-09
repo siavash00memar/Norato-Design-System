@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Shared specimen mobile visibility — investigation checkpoint (2026-11-09)
+
+- [x] Narrow in-app-browser screenshots showed the visual specimen missing on both Button and Combobox while their preview heading and source note remained; the same symptom on the reference Button page rules out treating this as a Combobox-only issue.
+- [x] Confirmed the local Vite server on port 5173 is running from this repository.
+- [ ] Recheck in the real Chrome tab with an explicitly measured mobile viewport, identify whether the specimen is actually hidden or only omitted by the in-app-browser capture, then fix the shared cause if reproduced. Do not add a page-specific CSS workaround before that check.
+
 ## Tooltip shared skip-delay provider — implementation checkpoint (2026-11-09)
 
 - [x] Added a public `NoratoTooltipProvider` for sibling tooltips; standalone `NoratoTooltip` retains its default local provider. Shared provider defaults are 500ms open delay and 300ms skip-delay.
