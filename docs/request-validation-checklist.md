@@ -1174,6 +1174,12 @@
 - [ ] 390/320px geometry, full Glass/Bar × expanded/collapsed state matrix, mobile drawer dismissal/focus restoration and independent screen-reader review remain open.
 - [ ] The browser bridge became unavailable during the final rerender attempt (rowser.user is unavailable), so the exact post-adjustment screenshot and remaining keyboard/modal/320px cases are unverified. DoD remains open; no completion claim.
 
+## Sidebar — Bar, disabled and collapsed follow-up (2026-11-09)
+
+- [x] Fresh desktop browser review confirmed Bar style and its pale-yellow active marker. Toggling `غیرفعال` removed links from link semantics and disabled the collapse button; restoring the control brought links back.
+- [x] Collapsing changed the button's accessible name/state while item links retained their accessible names; expanding restored section headings, nested links and footer content.
+- [ ] Exact 390px/320px comparison, mobile dismissal/focus restoration, keyboard activation, complete visual state matrix, and independent screen-reader review remain open in `specs/013-design-system-parity/sidebar-checklist.md`.
+
 ## Tabs — implementation checkpoint (2026-11-02)
 
 - [x] Added exported controlled `NoratoTabs` on the installed Reka Tabs primitive, an inert design reference-mapped preview, a Button-style page/playground, snippet, nine-section contract and semantic API docs.

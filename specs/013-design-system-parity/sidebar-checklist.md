@@ -24,3 +24,10 @@
 - [x] Token checker, component catalog checker, Vue typecheck and production build passed after fixing malformed color token; build has advisory for JS chunk >500KB. `git diff --check` passed.
 - [ ] This continuation's browser bridge returned `browser.user is unavailable`; no fresh post-fix screenshot was possible. Escape, outside click/focus restore, exact narrow viewports, full state matrix and screen-reader review remain open. Sidebar stays Adapted.
 - [x] Fresh browser follow-up at desktop: selecting nested `بایگانی` keeps the Sidebar page open, updates the live selection status, preserves the `پروژه‌ها` parent label, and visibly distinguishes the selected child with the Norato yellow surface. The playground intercepts only anchor navigation; the reusable adapter still emits `navigate(item)` and renders normal href links.
+
+## Sidebar — browser follow-up (2026-11-09)
+
+- [x] Fresh desktop browser review confirmed Bar style renders as a flat sidebar with the active item marked by a pale-yellow surface and yellow edge marker; Glass style had already been reviewed at desktop.
+- [x] Turning the playground's disabled control on removed navigation links from the accessibility tree, rendered labels as disabled content, and disabled the collapse button. Turning it off restored links and the enabled collapse control.
+- [x] Collapsing the sidebar changed the control's accessible name/state and kept the remaining item links exposed with their Persian accessible names; expanding restored section headings, nested links, and footer content.
+- [ ] Exact 390px/320px comparison, Glass/Bar × expanded/collapsed screenshots, keyboard activation of group controls, mobile Escape/outside-click/focus restoration, active `aria-current`, and independent screen-reader review remain open.
