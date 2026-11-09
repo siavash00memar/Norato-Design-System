@@ -4,4 +4,4 @@
 - [x] Implement computed bounded input models.
 - [x] Verify bounds and generated example in the live browser.
 - [x] Run required gates.
-- [ ] Push the checkpoint.
+- [x] Push the checkpoint (`d2b5840`).

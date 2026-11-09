@@ -5,5 +5,5 @@
 - [x] Previous/next disable correctly at page 1/13 and 13/13; one-page total disables both.
 - [x] Current page, selection and copyable snippet remain synchronized; playground restored to 3/12.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
-- [ ] Evidence checkpoint is pushed.
-- [ ] Very large/irregular total coverage and independent screen-reader review remain open unless separately verified.
+- [x] Evidence checkpoint `d2b5840` is pushed.
+- [ ] Independent screen-reader review remains open.
