@@ -18,8 +18,8 @@
 - [x] Checked leading icon and remove placement in RTL and LTR.
 - [x] A 240px semantic maximum-width token caps the Chip. In the browser, a 300+-character Persian label visibly truncates with ellipsis instead of stretching the capsule; confirmed in both Filter and removable Input modes, and generated code reflects the long label.
 - [ ] 390/320px overflow remains unverified.
-- [ ] Independent screen-reader review remains unverified; the browser accessibility tree exposes the filter toggle state and the named remove action.
-- [ ] Independently inspect screen-reader naming and role.
+- [x] Browser accessibility tree exposes the filter's pressed state and the input Chip's group label and named remove action. Removing then restoring an input Chip places focus on Restore and returns it to Remove.
+- [ ] Independent screen-reader review remains unverified.
 
 ## Technical gates
 
