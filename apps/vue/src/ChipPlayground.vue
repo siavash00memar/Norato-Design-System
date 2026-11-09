@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { NoratoChip, type NoratoChipMode, type NoratoChipSize } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 
@@ -9,8 +9,18 @@ const direction = ref<'rtl' | 'ltr'>('rtl')
 const selected = ref(false)
 const disabled = ref(false)
 const removedLabel = ref('')
+const previewRef = ref<HTMLDivElement | null>(null)
+const restoreButtonRef = ref<HTMLButtonElement | null>(null)
 const props = defineProps<{ copiedKey: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
+const handleRemove = (label: string) => {
+  removedLabel.value = label
+  nextTick(() => restoreButtonRef.value?.focus())
+}
+const restoreChip = () => {
+  removedLabel.value = ''
+  nextTick(() => previewRef.value?.querySelector<HTMLButtonElement>('.norato-chip__remove')?.focus())
+}
 const snippet = computed(() => mode.value === 'filter'
   ? `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoChip } from '@norato/vue'\nconst selected = ref(false)\n<\/script>\n\n<template>\n  <NoratoChip label="طراحی" mode="filter" v-model="selected" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" />\n<\/template>`
   : `<script setup lang="ts">\nimport { NoratoChip } from '@norato/vue'\nfunction removeChip(label: string) { /* update application state */ }\n<\/script>\n\n<template>\n  <NoratoChip label="طراحی" mode="input" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" @remove="removeChip" />\n<\/template>`)
@@ -19,11 +29,11 @@ const snippet = computed(() => mode.value === 'filter'
 <template>
   <div class="button-playground chip-playground" dir="rtl">
     <header><strong>آزمایش Chip اجرایی</strong><span>فیلتر انتخاب‌پذیر و برچسب ورودیِ قابل‌حذف را جداگانه بررسی کن.</span></header>
-    <div class="button-playground-preview chip-playground__preview">
+    <div ref="previewRef" class="button-playground-preview chip-playground__preview">
       <NoratoChip v-if="mode === 'filter'" label="طراحی" mode="filter" v-model="selected" :disabled="disabled" :size="size" :dir="direction" />
       <template v-else>
-        <NoratoChip v-if="!removedLabel" label="طراحی" mode="input" :disabled="disabled" :size="size" :dir="direction" @remove="removedLabel = $event" />
-        <div v-else class="chip-playground__removed" role="status">برچسب «{{ removedLabel }}» حذف شد <button type="button" @click="removedLabel = ''">بازگردانی</button></div>
+        <NoratoChip v-if="!removedLabel" label="طراحی" mode="input" :disabled="disabled" :size="size" :dir="direction" @remove="handleRemove" />
+        <div v-else class="chip-playground__removed" role="status">برچسب «{{ removedLabel }}» حذف شد <button ref="restoreButtonRef" type="button" @click="restoreChip">بازگردانی</button></div>
       </template>
     </div>
     <div class="button-playground-controls chip-playground__controls">

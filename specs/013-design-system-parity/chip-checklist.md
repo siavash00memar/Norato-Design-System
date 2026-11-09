@@ -11,18 +11,20 @@
 
 ## Visual and behavior review
 
-- [ ] Compare the Button-style specimen and all 20 size × state cases against the selected component reference in the same desktop viewport.
-- [ ] Filter toggles with Space and Enter; `modelValue`, `aria-pressed`, selected style and generated example stay synchronized.
-- [ ] Input remove fires once with the correct label; disabled prevents removal; focus returns/continues in the expected order.
-- [ ] Verify default, hover, selected, disabled, and focus visually; confirm visible size and 48px hit targets.
-- [ ] Check leading icon and remove placement in RTL and LTR, long-label truncation, and 390/320px overflow.
+- [x] Compared the Button-style specimen and all 20 size × state cases against the selected component reference in the same desktop browser viewport; retained Norato's yellow selected state.
+- [x] Filter toggles with Space and Enter; `modelValue`, `aria-pressed`, selected style and generated example stay synchronized.
+- [x] Input remove emits once with the correct label; disabled prevents removal. Focus moves to Restore after removal and returns to the remove action after restoration.
+- [x] Reviewed default, hover, selected, disabled and keyboard-focus visuals. CSS keeps the visual pill intrinsic and interaction target at the 48px token; removed a duplicate focus halo found in the browser screenshot.
+- [x] Checked leading icon and remove placement in RTL and LTR.
+- [ ] Long-label truncation and 390/320px overflow remain unverified.
+- [ ] Independent screen-reader review remains unverified; the browser accessibility tree exposes the filter toggle state and the named remove action.
 - [ ] Independently inspect screen-reader naming and role.
 
 ## Technical gates
 
-- [ ] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass.
-- [ ] Repository scan contains no prohibited reference-name strings.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass.
+- [x] Repository scan contains no prohibited reference-name strings.
 
 ## Evidence
 
-The adapter, catalog/export/usage integration, live playground, static specimen, contract, 20-case matrix and tokens are implemented. DoD remains open until browser comparison and interactive/responsive/accessibility checks are recorded.
+The adapter, catalog/export/usage integration, live playground, static specimen, contract, 20-case matrix and tokens are implemented. DoD remains open until long-label and narrow viewport checks, plus an independent screen-reader review, are recorded.

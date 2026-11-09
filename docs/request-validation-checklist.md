@@ -4,9 +4,10 @@
 
 - [x] Added `NoratoChip` with controlled filter and removable input modes, RTL/LTR direction, leading icon, size options, disabled state and named removal control.
 - [x] Connected package exports, styles, tokens, catalog, usage examples, static specimen, interactive playground and component contract. The page uses the Button-style documentation structure.
-- [x] Local browser review confirmed the selected filter uses Norato yellow, the removable input keeps its remove icon inside the capsule, generated examples update, and removal clears the value. The gallery renders all 20 size × state combinations.
+- [x] Browser review confirmed Space/Enter activation and synchronized pressed state, correct removal label, disabled removal, and focus progression to Restore and back to Remove. RTL/LTR control screenshots confirm correct icon placement.
+- [x] Browser screenshots exposed and helped remove a duplicate yellow focus halo. The 20-case matrix covers four sizes across five states, including default, hover, selected, disabled and focus.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck, production build and `git diff --check` pass. Repository scan found no prohibited reference-name matches.
-- [ ] Keyboard-only filter activation, disabled removal, long-label truncation, 390/320 overflow, independent screen-reader review, and full same-viewport state comparison remain open; see `specs/013-design-system-parity/chip-checklist.md`. Chip DoD remains open.
+- [ ] Long-label truncation, exact 390/320 overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/chip-checklist.md`. Chip DoD remains open.
 
 ## Tag implementation checkpoint (2026-11-09)
 

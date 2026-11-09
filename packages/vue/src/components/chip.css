@@ -10,7 +10,7 @@
 .norato-chip[data-selected] .norato-chip__surface{border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 .norato-chip[data-selected] .norato-chip__leading-icon{color:var(--norato-color-text-primary)}
 .norato-chip:hover:not(:disabled) .norato-chip__surface{border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
-.norato-chip:focus-visible,.norato-chip__remove:focus-visible{z-index:1;outline:var(--norato-border-focus) solid var(--norato-color-brand-yellow);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring)}
+.norato-chip:focus-visible,.norato-chip__remove:focus-visible{z-index:1;outline:var(--norato-border-focus) solid var(--norato-color-brand-yellow);outline-offset:var(--norato-space-1)}
 .norato-chip:disabled{color:var(--norato-color-text-disabled);cursor:not-allowed}
 .norato-chip:disabled .norato-chip__surface{border-color:var(--norato-color-border-default);background:var(--norato-color-surface-subtle);color:var(--norato-color-text-disabled)}
 .norato-chip--input{isolation:isolate;min-block-size:var(--norato-control-target-min);cursor:default}
