@@ -1446,3 +1446,9 @@
 - **Observed:** At 320×844, the local Radio frame measured 272.8×300px versus 256.8×300px in the reference, despite no document overflow.
 - **Correction:** Bound the non-compact mobile frame by the viewport width minus the shared 64px spacing token plus the 1px border token; retain the 328px cap and 300px height.
 - **Verification:** Matched browser dimensions are 257×300px local vs 256.8×300px reference at 320px, and 327.4×300px vs 327.2×300px at 390px. Documents have no horizontal overflow; existing radio sizes and RTL are preserved. Full interaction and independent screen-reader checks remain open.
+
+## ERR-185 — Radio keyboard focus ring was overridden by app-level input styling (2026-11-09)
+
+- **Observed:** Keyboard-focused Radio used the generic app outline instead of the component's semantic 2px focus ring because `input[type=radio]:focus-visible` had greater specificity.
+- **Correction:** Scope the package focus rule under `.norato-radio-group`, so its ring wins only for Norato Radio controls; keep the component's `outline: 0` and tokenized shadow ring.
+- **Verification:** Live keyboard focus computes `outline: 0`, zero offset and a settled yellow shadow spread of exactly `2px`, matching `--norato-border-focus`. `:focus-visible` and RTL are true, selected value is retained, and the row measures 48.8px. The design reference describes a 2px keyboard ring; Norato's own yellow remains in use. Full live state cross-product and independent screen-reader review remain open. Technical gates and remote push are pending.

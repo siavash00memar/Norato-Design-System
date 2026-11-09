@@ -25,3 +25,11 @@
 - [x] Space on the selected Quarterly option retained selection and produced `:focus-visible=true`; after the transition, the focus outline was yellow. The semantic focus token is 2px; this browser session's computed outline reported 1.6px, so final 2px optical measurement remains open.
 - [x] Restored the playground to Monthly selected, enabled and without error; RTL direction was confirmed.
 - [ ] Remaining: full live state/focus cross-product, final focus-ring visual measurement, and independent screen-reader review. Radio family DoD remains open.
+
+## Browser verification — focus cascade correction (2026-11-09)
+
+- [x] Scoped the package `:focus-visible` rule to `.norato-radio-group` so it outranks the app's generic native radio outline without changing unrelated controls.
+- [x] On the live RTL playground, keyboard focus leaves `:focus-visible=true`, preserves the checked Monthly option and computes `outline: 0`, `outline-offset: 0`, with settled yellow shadow spread exactly `2px` from `--norato-border-focus`.
+- [x] Live RTL row height remains 48.8px. The design reference's Focus state explicitly specifies a visible 2px keyboard ring; Norato uses its own yellow accent.
+- [x] Restored the playground to Monthly/enabled/no-error after the review.
+- [ ] The full live state/focus cross-product and independent screen-reader review remain open; this correction alone does not close Radio DoD.

@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Radio keyboard focus cascade (2026-11-09)
+
+- [x] Live keyboard focus on the Radio option shows `outline: 0`, no offset and a settled yellow shadow ring exactly 2px wide from the semantic focus token; the app-wide native radio outline no longer wins the cascade.
+- [x] Confirmed `:focus-visible`, preserved selected Monthly value, RTL direction and 48.8px row height. Matched reference review specifies a 2px keyboard focus ring; Norato retains its yellow palette.
+- [ ] Full Radio live visual-state/focus cross-product and independent screen-reader review remain open.
+
 ## Active navigation brand-color correction (2026-11-09)
 
 - [x] Fresh local Input page render showed the active component category using a blue-tinted surface despite Norato's yellow accent rule.
