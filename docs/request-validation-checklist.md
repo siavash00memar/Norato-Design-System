@@ -2134,13 +2134,15 @@
 
 - [x] Opened local Input and the supplied visual reference in separate browser tabs at the same 1265×713 viewport; captured both rendered pages.
 - [x] Confirmed the 300px frame height, dotted glass composition, RTL Persian placeholder, title-adjacent icon, capsule field, and the approved omission of the sample email/helper from Norato.
-- [x] Initial local frame was approximately 624px wide versus 628px in the reference; the later correction below supersedes this measurement. The full state matrix, 390/320px matched browser review and independent screen-reader pass remain open.
+- [x] Initial local frame was approximately 624px wide versus 628px in the reference; the later correction below supersedes this measurement. The full state matrix and independent screen-reader pass remain open; matched 390/320px review is recorded below.
 
 ## Input desktop frame width correction — 2026-11-09
 
 - [x] Same-viewport screenshots after the correction show the local frame visually aligned with the reference width; both remain 300px high.
 - [x] The 2px semantic-token allowance is scoped to the non-compact desktop Input frame; the existing mobile override is unchanged in source.
-- [ ] Fresh 390px/320px browser review, full states, and independent screen-reader review remain open. The current browser surface does not expose a viewport override, so no post-change mobile result is claimed.
+- [x] Matched 390×844 browser render: local frame 328×300px, reference 327.2×300px; both document widths 375px with no horizontal overflow.
+- [x] Matched 320×844 browser render: local document width 305px with no horizontal overflow. Reference document width is 326px and frame is 256.8×300px, showing 6px horizontal overflow at this viewport.
+- [ ] Full state matrix across consuming pages, hover/disabled behavior, RTL/LTR and independent screen-reader review remain open.
 
 ## Select desktop frame width correction — 2026-11-09
 
