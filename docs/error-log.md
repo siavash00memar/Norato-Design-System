@@ -1287,6 +1287,13 @@
 - **Correction:** Applied the visual-height token and pill radius, Estedad Bold labels, RTL Vazirmatn Light placeholders, neutral resting Stroke, and single yellow hover/focus Stroke to the affected controls.
 - **Verified:** Local browser review confirms Pagination numeric controls render as capsules and focused `صفحهٔ جاری` has one yellow Stroke without a dark ring. Foundation name and search fields render as capsules; focused `نام` shows the yellow Stroke. The existing interaction wrappers remain intact. Mobile dimensions, disabled-state styling, and matched-reference comparison remain open.
 
+## ERR-164 — Table search face filled its full interaction target (2026-11-09)
+
+- **Observed:** The Table search wrapper was a single 48px-high capsule, inconsistent with the approved 36px visual field inside a minimum 48px target.
+- **Cause:** The search input and its enclosing label both used the target height as their visible surface.
+- **Correction:** Kept the label as the 48px interaction target and moved its neutral/yellow Stroke to a centered 36px pseudo-surface. The input face now uses the 36px visual-height token and its placeholder follows RTL Vazirmatn Light styling.
+- **Verified:** Browser focus review shows the centered capsule with a single yellow Stroke and no outer field ring; the search input remains labeled and usable. Mobile dimensions and matched-reference comparison remain open.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.
