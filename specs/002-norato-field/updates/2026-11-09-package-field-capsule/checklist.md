@@ -7,4 +7,4 @@
 - [ ] Browser confirms default, hover, focus, invalid, disabled/loading, RTL and LTR.
 - [ ] Desktop/mobile geometry and no-stretch behavior are checked.
 - [x] Token/catalog/typecheck/build/diff gates pass.
-- [ ] Request validation and error log record observed results and any unrun checks.
+- [x] Request validation and error log record source/gate results and explicitly list the browser checks that remain unrun.
