@@ -102,3 +102,9 @@
 - [x] At 390×844, both grids are 327.2px wide; Norato height is 442.6px vs 441.4px and card width is 158.6px. At 320×844 Norato's grid is 256.8px and document width 305px with no overflow.
 - [x] Canonical section order now matches Button through Tokens. All 41 family-specific specimens remain in a supplemental input-state matrix after the nine canonical sections; at 320px they are two columns, inert, and within the 305px document.
 - [ ] Full adapter visual/state matrix, playground consistency, all accessibility behavior and independent screen-reader review remain open; Input DoD stays open.
+
+## Live Input page structure and accessibility-tree spot check — 2026-11-09
+
+- [x] Fresh local Chrome accessibility-tree inspection confirms the Input page exposes the eight adapter controls, labeled settings/actions, and all nine canonical contract-section anchors in RTL.
+- [x] The page still keeps implementation playground above Overview, as it does on the Button-style detail page; the eight adapter names and their usage snippet are present.
+- [ ] This browser accessibility-tree spot check is not an independent screen-reader review and does not cover all control states or consuming pages; Input DoD remains open.

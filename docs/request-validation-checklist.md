@@ -2159,3 +2159,9 @@
 - [x] The component detail page keeps Button's canonical order through Tokens: Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens. The 41 family-specific inert state specimens remain after that sequence in the supplementary Input state matrix.
 - [x] At 320×844 the secondary gallery contains all 41 cards in two columns; it is `aria-hidden` and inert and the local document remains 305px wide.
 - [ ] Full Input family visual-state coverage, cross-page playground review, keyboard/state accessibility and independent screen-reader review remain open; the family DoD is not closed.
+
+## Input live structure spot check — 2026-11-09
+
+- [x] Live Chrome accessibility tree lists all eight Input adapters and the Persian playground controls, followed by the nine canonical Button-style contract sections in the side navigation.
+- [x] The current page is RTL and exposes labels for the password visibility action, OTP cells, Number actions, shared state toggles, size/label selectors, and direction/length controls.
+- [ ] This is a browser accessibility-tree inspection, not an independent screen-reader pass. Full Input visual-state and cross-page playground reviews remain open.
