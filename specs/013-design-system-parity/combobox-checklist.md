@@ -30,4 +30,5 @@
 - [x] Replace the generic blue dot/bar in the inert Combobox States gallery with six accurate RTL field samples. State styles use neutral default/disabled Stroke, yellow hover/typing/filled Stroke, semantic error Stroke, and a 36px capsule within a 48px target.
 - [x] Desktop browser DOM review confirms all six inert state cards render at 36px field height, 48px target, RTL direction, with state strokes: Default/Disabled `#e8e8e8`, Hover/Typing/Filled Norato yellow, Error semantic red.
 - [x] Matched 390×844 browser viewport: reference frame 327.2×300px; Norato 326.4×300px; both documents 375px, no horizontal overflow. The six gallery cards remain within the document and preserve RTL.
-- [ ] Matched 320×844 post-change local state-gallery capture and independent screen-reader review remain open.
+- [x] Matched 320×844 browser viewport: reference frame 256.8×300px; Norato 256×300px; local document 305px with no horizontal overflow. Six state cards measure 272.8px wide and remain within the document.
+- [ ] Full live state matrix, independent screen-reader review and cold-load fallback capture remain open.

@@ -2034,13 +2034,15 @@
 - [x] Matched local/reference browser viewport at 1536×703: reference frame is 636×300px and Norato is 635.98×300px.
 - [x] Scoped non-compact frame allowance uses semantic `--norato-space-1`; field sizing and mobile override are unchanged.
 - [x] Matched 390×844 viewport: reference frame 327.2×300px, Norato 326.4×300px, documents 375px with no horizontal overflow; 36px fields/48px targets and all six RTL state strokes remain correct.
-- [ ] Matched 320px local post-change check, full live state matrix and independent screen-reader review remain open.
+- [x] Matched 320×844 viewport: reference frame 256.8×300px, Norato 256×300px; local document is 305px with no horizontal overflow. Six RTL state cards are 272.8px wide and fit within the document.
+- [ ] Full live state matrix and independent screen-reader review remain open.
 
 ## Combobox States gallery — desktop browser follow-up (2026-11-09)
 
 - [x] Desktop DOM review shows six inert cards in RTL, each with a 36px field inside a 48px target; computed strokes are neutral for Default/Disabled, yellow for Hover/Typing/Filled, and semantic error red.
 - [x] At 390×844, six cards stay within the 375px document; the preview frame is 326.4×300px versus 327.2×300px in the reference, with no horizontal overflow.
-- [ ] Matched 320px local state-gallery review, full live state matrix and independent screen-reader review remain open.
+- [x] At 320×844, six cards each measure 272.8px wide and remain inside the 305px document without horizontal overflow.
+- [ ] Full live state matrix and independent screen-reader review remain open.
 ## Checkbox shared-frame comparison — browser evidence (2026-11-09)
 
 - [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
