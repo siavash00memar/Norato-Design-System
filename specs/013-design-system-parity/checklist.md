@@ -60,6 +60,7 @@ Only check a line when the corresponding evidence was observed for that componen
 - [x] The playground exposes a named radio group, accurate selected value, required/error/disabled controls, and synchronized Vue snippet. `ArrowDown` changed monthly to quarterly and `ArrowUp` restored monthly; one non-selected quarterly row visibly entered hover without changing selection.
 - [x] The 12 checked/value/size combinations for Default/Error/Disabled were measured; targets stayed 48px and focus ring was 2px. The page contains Preview, executable Vue playground, and all nine contract sections.
 - [x] After this evidence update, `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed; build retains the >500KB chunk warning.
-- [ ] Full 20-cell focus/hover visual matrix and independent screen-reader review remain open; do not close Radio DoD yet.
+- [x] The full 20-cell visual matrix (checked × size × Default/Hover/Disabled/Focus/Error) was re-opened in the live documentation page at desktop width; all five state cards and twenty cells render without stretched circles, and focus/hover accents follow the Norato yellow/contrast tokens. The static matrix and live playground were reviewed separately.
+- [ ] Independent screen-reader review remains open; Radio DoD is not closed.
 - [x] Radio playground empty simulation, visible status and generated Vue value now share one effective model; selecting from empty clears the simulation. Required-empty and selected-error feedback were browser-verified.
 - [x] After the playground correction, token/catalog/type/build/diff gates passed; production build warns that the 642.00KB chunk exceeds 500KB.
