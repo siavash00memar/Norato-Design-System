@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Carousel live LTR and direct selection follow-up (2026-11-09)
+
+- [x] In the live RTL playground, direct selection of slides 2, 3, 4 and 5 updated the visible card, yellow active dot and controlled-index selector; returning to slide 1 disabled Previous.
+- [x] In LTR, control labels reversed and ArrowRight moved 4→5; ArrowLeft returned to 4 after the smooth scroll settled. Playground was restored to RTL and slide 1.
+- [ ] A narrow browser capture showed a horizontal document scrollbar. The viewport was not an enforced 390px or 320px; exact measurements and the source of overflow remain open in the Carousel DoD.
+
 ## Input variant-axis chip color (2026-11-09)
 
 - [x] Input matrix chip fill is neutral `rgb(245, 245, 245)` with `#e8e8e8` inset 1px Stroke; all 84 cells use the scoped rule.
