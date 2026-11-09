@@ -12,7 +12,7 @@
 - [x] Exercised all five tones × two surfaces × two layouts through the real playground; each combination opened and closed, and the generated Vue usage updated to the selected props. One representative rich combination was inspected visually; full per-combination screenshot measurement remains open.
 - [x] RTL order and Dark/Glass contrast use semantic Norato tokens; yellow remains the brand/focus accent. The screenshot confirms status icon at right and close at left; the playground text field computes to a single yellow border with no outline or shadow.
 - [x] Keyboard Tab navigation visibly focuses Toast action and close. Browser screenshots show yellow focus outlines on the pill action and circular close target; source uses the 2px focus token and 4px spacing token for both. Screenshots confirm the outline follows each control shape without stretching either control.
-- [ ] Desktop and 390/320 CSS-pixel viewports wrap correctly without document overflow. A narrow 484px screenshot is usable and shows no horizontal page overflow; exact 390/320 viewport validation is still pending.
+- [x] Desktop and exact 390/320 CSS-pixel viewports wrap correctly without document overflow. At 390×844, document/body are 375px and the playground is 343px wide; at 320×640, document/body are 305px and the playground is 273px wide. The live dark Loading Toast stays within the viewport: 351px at 390px and 281px at 320px, with no horizontal page overflow.
 
 ## Behavior and accessibility
 - [x] Controlled `v-model` opens the live Toast and the close control removes it; `close` feedback appears in the playground.
@@ -27,5 +27,13 @@
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, `git diff --check` pass.
-- [x] Actual browser evidence and open residuals are recorded; DoD remains open while exact responsive checks, per-variant screenshot review, independent screen-reader review and browser reduced-motion emulation are outstanding.
+- [x] Actual browser evidence and open residuals are recorded; DoD remains open while complete per-variant screenshot review, independent screen-reader review and browser reduced-motion emulation are outstanding.
+
+## Follow-up review (2026-11-09)
+
+- [x] Applied explicit 390×844 and 320×640 browser viewports. `documentElement.scrollWidth` and `body.scrollWidth` stayed 375px and 305px respectively; both pages had no horizontal overflow.
+- [x] At 390px the playground is 343px wide and the active Toast is 351px wide with 12px side insets. At 320px the playground is 273px and Toast is 281px wide with 12px side insets. The dark Loading/simple layout stays contained and the action, close, and spinner remain visible.
+- [x] Inspected neutral, success, warning, danger, and loading tone renderings in the live UI; semantic icons and the Norato yellow action remained legible. Dark Loading and simple layout were also visually inspected at both mobile widths.
+- [ ] Exact mobile screenshots for every tone × surface × layout combination, independent screen-reader review, and reduced-motion emulation remain open.
+- [x] Reset the temporary viewport after review; the browser returned to its default 1920×903 viewport.
 
