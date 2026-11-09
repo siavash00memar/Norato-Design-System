@@ -9,3 +9,10 @@ No blocking question was needed: user has delegated component/API choices to the
 - Make chart renderings static. Pointer-tooltip interaction is offered only by the standalone Tooltip API/consumer composition; no keyboard-inaccessible plot-point focus targets are introduced.
 - Guard empty, mismatched, negative, and zero-total donut data; document supported input constraints and keep table data faithful to accepted input.
 - Consumer action is a slot. The chart family does not assume what a “more” menu should do.
+
+## Direct-value label headroom follow-up (2026-11-09)
+
+- Keep direct value labels inside the SVG plot when the data maximum lands exactly on an axis tick ceiling; reserve one additional nice tick in that case instead of moving labels over the marks.
+- Use only defined typography tokens for chart headings, direct labels and donut totals.
+
+**Acceptance:** an exact-ceiling maximum has one readable tick of headroom, previously padded charts retain their current scale, and all chart text uses registered Norato typography tokens.

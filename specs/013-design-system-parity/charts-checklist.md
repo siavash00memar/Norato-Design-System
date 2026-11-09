@@ -11,6 +11,8 @@
 - [x] RTL/LTR title/legend alignment and LTR numeric axes are correct.
 - [x] 390px/320px narrow layouts stay bounded; SVG responds without distortion.
 - [x] Norato yellow is series 1, eight series colors remain fixed and tokenized.
+- [x] Chart title, direct-value label and donut total now use the registered heading-title typography token.
+- [x] Exact-ceiling maximum values reserve one extra nice tick so the direct-value label remains within the plot; the existing `[34,58,42,72,51,66]` fixture retains its previous 0–80 scale.
 
 ## Data and accessibility
 - [x] All six chart renderings preserve category/series order and values; empty/malformed data does not produce invalid geometry.
@@ -21,6 +23,6 @@
 - [ ] Independent screen-reader review recorded; browser accessibility tree does not substitute for a screen-reader session.
 
 ## Delivery
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after the latest mobile-axis correction.
+- [x] `pnpm test:charts` passes 8/8 including the exact-ceiling regression; token, catalog, typecheck, production build and diff gates pass after the direct-label correction.
 - [x] Browser evidence, error log and remaining limitations recorded.
 - [x] Checkpoint commit `c9b2344` pushed to `origin/master`; `git ls-remote` matched `HEAD` at verification time.

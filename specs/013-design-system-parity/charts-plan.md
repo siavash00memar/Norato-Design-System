@@ -7,3 +7,4 @@
 5. Wire exports, usage, catalog maturity, contract and Figma component rules.
 6. Run required token/catalog/type/build/whitespace gates; inspect design reference and Norato at matched viewport, all variants, RTL/LTR, narrow layout, keyboard and browser AX.
 7. Record evidence and unresolved gates, then commit/push the verified checkpoint.
+8. Follow-up: replace undefined chart typography token references and preserve headroom for direct value labels at an exact axis ceiling; add regression coverage and recheck the live Charts page.

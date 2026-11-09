@@ -2,6 +2,7 @@
 import { computed, useId } from 'vue'
 import NoratoChartLegendItem from './NoratoChartLegendItem.vue'
 import type { NoratoChartDirectLabel, NoratoChartSeries, NoratoChartType } from './chartTypes'
+import { getChartScale } from './chartGeometry'
 import { getChartDataIssue } from './chartValidation'
 
 const props = withDefaults(defineProps<{ title: string; subtitle?: string; categories: readonly string[]; series: readonly NoratoChartSeries[]; type?: NoratoChartType; directLabel?: NoratoChartDirectLabel; dir?: 'rtl' | 'ltr' }>(), { type: 'bar', dir: 'rtl' })
@@ -12,25 +13,8 @@ const tableId = `norato-chart-data-${uid}`
 const plot = { left: 39, top: 13, width: 481, height: 198 }
 const issue = computed(() => getChartDataIssue(props.categories, props.series, props.type))
 const values = computed(() => props.series.flatMap(series => series.values))
-const niceStep = (target: number) => {
-  const safeTarget = Math.max(target, Number.MIN_VALUE)
-  const exponent = Math.floor(Math.log10(safeTarget))
-  const magnitude = 10 ** exponent
-  if (!Number.isFinite(magnitude) || magnitude === 0) return safeTarget
-  const fraction = safeTarget / magnitude
-  const niceFraction = fraction <= 1 ? 1 : fraction <= 2 ? 2 : fraction <= 2.5 ? 2.5 : fraction <= 4 ? 4 : fraction <= 5 ? 5 : 10
-  const step = niceFraction * magnitude
-  return Number.isFinite(step) && step > 0 ? step : safeTarget
-}
 const scale = computed(() => {
-  const rawMin = Math.min(0, ...values.value)
-  const rawMax = Math.max(1, ...values.value)
-  const step = niceStep(Math.max(Math.abs(rawMin), Math.abs(rawMax)) / 2)
-  const roundedMin = Math.floor(rawMin / step) * step
-  const roundedMax = Math.ceil(rawMax / step) * step
-  const minimum = Number.isFinite(roundedMin) ? roundedMin : rawMin
-  const maximum = Number.isFinite(roundedMax) && roundedMax > minimum ? roundedMax : rawMax
-  return { min: minimum, max: maximum }
+  return getChartScale(values.value)
 })
 const minValue = computed(() => scale.value.min)
 const maxValue = computed(() => scale.value.max)

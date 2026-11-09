@@ -9,7 +9,7 @@
 
 ## Overview
 
-قرارداد طراحی Norato: کارت نمودار میله‌ای، میله‌ای گروهی، میله‌ای افقی، خطی، ناحیه‌ای و دونات، با Stat Tile، Legend و Tooltip. رنگ سری‌ها به ترتیب ثابت از `--norato-color-chart-series-1` تا `--norato-color-chart-series-8` است؛ سری نخست زرد Norato است.
+قرارداد طراحی Norato: کارت نمودار میله‌ای، میله‌ای گروهی، میله‌ای افقی، خطی، ناحیه‌ای و دونات، با Stat Tile، Legend و Tooltip. رنگ سری‌ها به ترتیب ثابت از `--norato-color-chart-series-1` تا `--norato-color-chart-series-8` است؛ سری نخست زرد Norato است. اگر مقدار بیشینه دقیقاً روی سقف tick محور قرار بگیرد، مقیاس یک tick فضای بالاسری اضافه می‌کند تا برچسب مستقیم از قاب نمودار بیرون نزند.
 
 ## Anatomy
 

@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { getChartDataIssue } from '../../packages/vue/src/components/chartValidation.ts'
+import { getChartScale } from '../../packages/vue/src/components/chartGeometry.ts'
 
 const categories = ['فروردین', 'اردیبهشت', 'خرداد']
 const oneSeries = [{ id: 'online', label: 'آنلاین', values: [12, 18, 9] }]
@@ -49,4 +50,9 @@ test('simple bar types require one series while grouped bars retain multiple ser
   assert.match(getChartDataIssue(categories, twoSeries, 'bar'), /میله‌ای ساده/)
   assert.match(getChartDataIssue(categories, twoSeries, 'horizontal-bar'), /میله‌ای ساده/)
   assert.equal(getChartDataIssue(categories, twoSeries, 'grouped-bar'), '')
+})
+
+test('adds one readable tick above a maximum value that lands on the axis ceiling', () => {
+  assert.deepEqual(getChartScale([0, 100]), { min: 0, max: 150 })
+  assert.deepEqual(getChartScale([34, 58, 42, 72, 51, 66]), { min: 0, max: 80 })
 })

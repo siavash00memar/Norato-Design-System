@@ -18,6 +18,12 @@
 - Check chart table content for overflow on mobile; allow horizontal scrolling within the table wrapper without widening the page.
 - Mobile chart plots keep their intrinsic ratio and use a dedicated LTR scroll viewport so the numeric axis remains visible in RTL pages. At 320px, excess plot width scrolls inside the chart; the document itself remains bounded.
 
+## Follow-up defect found (2026-11-09)
+
+- `charts.css` referenced `--norato-type-body-large-size`, which is not defined in the token package; the browser therefore discards that `font-size` declaration for the chart title, direct value label and donut total.
+- When a chart maximum equals the rounded axis ceiling (for example `[0, 100]`), the plot has no upper headroom and the default direct-label baseline is placed above the SVG viewport. The current fixture's value 72 already receives a ceiling of 80, so the defect appears only for data that lands exactly on a nice tick.
+- Fix both with the registered heading-title token and a single additional nice tick only when the ceiling exactly matches the data maximum. Preserve the existing sample scale and verify this boundary with a regression test.
+
 ## Browser checkpoint — 2026-11-08
 
 - Same 1280×720 desktop viewport: inner chart and plot proportions are close to the design reference. Sample bars use values `34, 58, 42, 72, 51, 66`, a 0/40/80 scale, Norato yellow, and a single directly labeled final bar.

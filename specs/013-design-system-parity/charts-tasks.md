@@ -7,7 +7,7 @@
 - [x] Checklist: set DoD before implementation.
 - [x] Tasks: track concrete implementation/evidence work below.
 - [x] Analyze: audit tokens, catalog/page wiring, legacy CSS, dependencies, and design reference source.
-- [ ] Implement and verify; close DoD only with recorded evidence.
+- [x] Implement and verify the family; independent screen-reader review remains open, so do not close DoD yet.
 
 ## Implementation tasks
 - [x] Add fixed semantic palette tokens for chart series 1–8 and token schema entries.
@@ -19,3 +19,4 @@
 - [x] Wire index, example, catalog, contract and Figma rules without marking DoD complete prematurely.
 - [x] Run required engineering gates; browser-check design reference parity, all variants, RTL/LTR and responsive widths.
 - [x] Record final results/defects, commit `c9b2344`, push, and verify remote revision against `origin/master`.
+- [x] Follow-up 2026-11-09: replace the undefined chart typography token and reserve axis headroom for exact-ceiling maxima; add the regression check and rerun the browser/engineering gates.

@@ -21,7 +21,7 @@
 .norato-chart-card__marks rect{rx:var(--norato-chart-bar-radius)}
 .norato-chart-card__terminal{r:var(--norato-chart-terminal-marker-radius);stroke:var(--norato-color-surface-default);stroke-width:var(--norato-border-medium)}
 .norato-chart-card__donut circle,.norato-chart-card__donut path{stroke-width:var(--norato-border-medium)}
-.norato-chart-card__direct-label,.norato-chart-card__donut-total{fill:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-type-body-large-size);font-weight:var(--norato-type-body-bold-weight)}
+.norato-chart-card__direct-label,.norato-chart-card__donut-total{fill:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-type-heading-title-size);font-weight:var(--norato-type-body-bold-weight)}
 .norato-chart-card__donut-label{fill:var(--norato-color-text-secondary);font-family:var(--norato-font-body);font-size:var(--norato-type-body-min-size)}
 .norato-chart-card__issue{margin:0;padding:var(--norato-space-3);border-radius:var(--norato-radius-control);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-small-size)}
 .norato-chart-card__data{border-block-start:var(--norato-border-thin) solid var(--norato-color-border-default)}

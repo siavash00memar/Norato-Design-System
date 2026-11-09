@@ -1364,3 +1364,10 @@
 - **Cause:** Legacy specimen rules remained after the preview implementation moved to the component adapters, making source-only color searches misleading.
 - **Correction:** Removed the unused selector group rather than treating it as a visual fix. The rendered Checkbox and Switch adapters keep their own semantic token styling.
 - **Verified:** Local browser shows the Checkbox specimen using the Norato checkbox and the Switch specimen using the Norato switch. The live Switch track measured 40×24px and `#fdc101` when checked; its knob measured 16×16px, white, with zero border width and no shadow. RTL and the 48×48px target were confirmed. The playground was restored to unchecked. Independent screen-reader review, the complete Switch state matrix and matched mobile comparison remain open.
+
+## ERR-174 — Chart labels used a missing type token and could clip at the axis ceiling (2026-11-09)
+
+- **Observed:** `charts.css` referenced undefined `--norato-type-body-large-size` for the chart title, direct-value label and donut total. An exact-ceiling maximum such as 100 with a 0–100 axis also leaves no room for the default label above its point.
+- **Cause:** The typography token name was not part of the registered Norato tokens, and the scale rounded only to the nearest ceiling tick without reserving direct-label clearance.
+- **Correction:** Use the registered `--norato-type-heading-title-size`; when the rounded maximum exactly equals the data maximum, add one nice tick of headroom. Keep already-padded scales unchanged.
+- **Verification:** `pnpm test:charts` covers the exact-ceiling case and the existing fixture scale. Browser recheck and all project gates are recorded in the Charts checklist; independent screen-reader review remains open.
