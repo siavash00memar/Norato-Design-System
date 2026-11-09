@@ -2068,3 +2068,10 @@
 - [x] Source correction: use Norato yellow for the static clock accent and neutral tokens for non-selected Anatomy markers; preserve blue for links and informational semantics.
 - [ ] Browser review of affected generic Variants, Anatomy and Time Picker pages at desktop/mobile sizes remains pending. The local Chrome tab is minimized and tab automation timed out; the in-app browser also timed out. No rendered result is claimed.
 - [ ] Recheck Combobox six-state gallery mappings and 36px/48px geometry at desktop/mobile sizes; the prior visual data predates the final mapper change.
+
+## Published NoratoField capsule parity — 2026-11-09
+
+- [x] The package stylesheet now defines the legacy NoratoField capsule and 48px target; its appearance no longer depends on the docs app.
+- [x] Removed the conflicting generic rounded-card rules and the docs-only `#app .norato-field` shim.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
+- [ ] Actual consuming-app browser review for default/hover/focus/error/disabled/loading, RTL/LTR and desktop/mobile dimensions remains open; browser tab automation timed out.

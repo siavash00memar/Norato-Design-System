@@ -1413,3 +1413,10 @@
 - **علت:** `font: inherit` روی کنترل فرزند، فونت عنوان والد را جایگزین فونت بدنه می‌کرد؛ selector عمومی همچنین checkboxهای سوئیچ را در دامنهٔ input متنی می‌آورد.
 - **اصلاح:** فیلدهای متنی و انتخابی تنظیمات صریحاً از توکن‌های Vazirmatn بدنه، اندازهٔ ۱۲px و وزن عادی استفاده می‌کنند؛ checkbox از selector فیلد متنی کنار گذاشته شد. عنوان همچنان Estedad Bold باقی می‌ماند.
 - **قاعدهٔ پیشگیری:** تایپوگرافی فیلد را مستقل از label تعیین کنید؛ `font: inherit` را در ورودی‌هایی که والدشان عنوان ضخیم است استفاده نکنید.
+
+## ERR-180 — NoratoField capsule styling existed only in the docs app (2026-11-09)
+
+- **Observed:** The exported NoratoField adapter used the 48px rounded-card rule from the package stylesheet, while the approved 36px capsule/48px target treatment was supplied only by the docs application's `#app .norato-field` selector.
+- **Cause:** The presentation correction was applied to the docs shell without moving the legacy public adapter's visual contract into the shipped package stylesheet.
+- **Correction:** Move the capsule geometry, neutral/yellow/error/disabled Stroke precedence and RTL placeholder typography into the package stylesheet; remove the conflicting package base selectors and docs-only field shim.
+- **Verification:** Source inspection confirms the app shim is removed and the package stylesheet now owns the field presentation. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass. Consuming-package browser review remains pending because local browser tab automation timed out.

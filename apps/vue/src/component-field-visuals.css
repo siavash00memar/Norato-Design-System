@@ -5,8 +5,7 @@
 .input-state-heading > strong,
 .norato-input-field__label,
 .norato-input-field__floating-label,
-.norato-textarea__label,
-.norato-field__label {
+.norato-textarea__label {
   font-family: var(--norato-font-heading);
   font-size: var(--norato-type-heading-label-size);
   font-weight: var(--norato-type-heading-title-weight);
@@ -152,39 +151,10 @@
   text-align: left !important;
 }
 
-#app .norato-field {
-  block-size: var(--norato-control-target-min);
-  min-block-size: var(--norato-control-target-min);
-  padding-block: 0;
-  border-color: transparent;
-  border-radius: var(--norato-radius-pill);
-  background: linear-gradient(var(--norato-color-glass-surface-strong), var(--norato-color-glass-surface-strong)) center / 100% var(--norato-control-visual-height) no-repeat;
-  box-shadow: none;
-  outline: var(--norato-border-thin) solid var(--norato-color-border-default);
-  outline-offset: calc((var(--norato-control-visual-height) - var(--norato-control-target-min)) / 2);
-  font-family: var(--norato-font-body);
-}
 
-#app .norato-field:placeholder-shown {
-  direction: rtl !important;
-  text-align: end;
-}
 
-#app .norato-field::placeholder {
-  color: var(--norato-color-text-placeholder-subtle);
-  font-family: var(--norato-font-body);
-  font-size: var(--norato-type-body-small-size);
-  font-weight: var(--norato-type-body-light-weight);
-  opacity: 1;
-}
 
-#app .norato-field:focus {
-  border-color: transparent;
-  outline-color: var(--norato-color-brand-yellow);
-  box-shadow: none;
-}
 
-#app .norato-field:hover:not(:disabled):not(:focus),
 #app .norato-textarea:hover:not(:disabled):not(:focus) {
   outline-color: var(--norato-color-brand-yellow);
 }
@@ -193,14 +163,7 @@
   border-color: var(--norato-color-brand-yellow);
 }
 
-#app .norato-field-group.is-invalid .norato-field:not(:focus) {
-  outline-color: var(--norato-color-status-error);
-}
 
-#app .norato-field:disabled {
-  background-image: linear-gradient(var(--norato-color-surface-muted), var(--norato-color-surface-muted));
-  outline-color: var(--norato-color-border-default);
-}
 
 .norato-input-field[data-label-placement="inside"] .norato-input-field__control {
   padding-block-start: var(--norato-space-1);
