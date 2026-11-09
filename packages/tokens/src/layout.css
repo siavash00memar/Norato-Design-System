@@ -11,6 +11,12 @@
   --norato-card-checkbox-mark-block-size: 10px;
   --norato-card-playground-inline-size: 360px;
   --norato-card-preview-inline-size: 272px;
+  --norato-tag-height-small: 24px;
+  --norato-tag-height-medium: 28px;
+  --norato-tag-height-large: 32px;
+  --norato-tag-height-xlarge: 36px;
+  --norato-tag-icon-size: 14px;
+  --norato-tag-dot-size: 6px;
   --norato-chat-avatar-size: 40px;
   --norato-chat-layout-min-block-size: 360px;
   --norato-chat-layout-max-block-size: 620px;

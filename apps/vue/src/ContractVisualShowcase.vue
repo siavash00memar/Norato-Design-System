@@ -4,6 +4,7 @@ import SplitButtonShowcase from './SplitButtonShowcase.vue'
 import StepperContractShowcase from './StepperContractShowcase.vue'
 import MenuContractShowcase from './MenuContractShowcase.vue'
 import CommandPaletteContractShowcase from './CommandPaletteContractShowcase.vue'
+import { NoratoTag, type NoratoTagAppearance, type NoratoTagSize, type NoratoTagTone } from '@norato/vue'
 
 type Axis = { name: string; values: string[] }
 type Entry = { id: number; group: string; label: string; detail: string; source: string; axes: Axis[]; measurements: number[] }
@@ -143,6 +144,25 @@ const segmentedMatrixGroups = computed(() => segmentedMatrixStyles.flatMap(style
     stateLabel: state.label,
   }))) as SegmentedMatrixVariant[],
 }))))
+const tagVariantTones: { id: NoratoTagTone; label: string }[] = [
+  { id: 'neutral', label: 'خنثی' },
+  { id: 'success', label: 'موفقیت' },
+  { id: 'warning', label: 'هشدار' },
+  { id: 'danger', label: 'خطر' },
+  { id: 'info', label: 'اطلاعات' },
+]
+const tagVariantAppearances: { id: NoratoTagAppearance; label: string }[] = [
+  { id: 'soft', label: 'نرم' },
+  { id: 'outline', label: 'خط‌دار' },
+]
+const tagVariantSizes: { id: NoratoTagSize; label: string }[] = [
+  { id: 'small', label: 'کوچک' },
+  { id: 'medium', label: 'متوسط' },
+  { id: 'large', label: 'بزرگ' },
+  { id: 'xlarge', label: 'خیلی بزرگ' },
+]
+const tagSizeHeights: Record<NoratoTagSize, number> = { small: 24, medium: 28, large: 32, xlarge: 36 }
+const tagVariantCombos = tagVariantAppearances.flatMap(appearance => tagVariantSizes.map(size => ({ appearance, size })))
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
   const item = `${entry.label} ${entry.source}`.toLocaleLowerCase()
@@ -256,7 +276,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 </script>
 
 <template>
-  <div class="contract-visual" :class="`contract-visual--${title}`" :data-component="name" :data-section="section" dir="rtl">
+  <div class="contract-visual" :class="[`contract-visual--${title}`, { 'contract-visual--tag': name === 'Tag' }]" :data-component="name" :data-section="section" dir="rtl">
     <MenuContractShowcase v-if="name === 'Menu' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <CommandPaletteContractShowcase v-if="name === 'Command Palette' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <template v-else-if="section === 'Overview'">
@@ -274,6 +294,22 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 
     <template v-else-if="section === 'Anatomy' || section === 'Parts'">
       <StepperContractShowcase v-if="name === 'Stepper' && section === 'Anatomy'" section="Anatomy" />
+      <div v-else-if="name === 'Tag' && section === 'Anatomy'" class="tag-anatomy" aria-label="ساختار برچسب">
+        <div class="tag-anatomy-preview" aria-hidden="true" inert>
+          <NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">
+            <template #leadingIcon><span class="tag-anatomy-icon">✓</span></template>
+            منتشر شده
+            <template #trailingIcon><span class="tag-anatomy-icon">›</span></template>
+          </NoratoTag>
+        </div>
+        <ol class="tag-anatomy-parts">
+          <li v-for="entry in entries" :key="entry.id">
+            <b class="tag-part-index">{{ String(entry.id + 1).padStart(2, '0') }}</b>
+            <span><strong>{{ entry.label }}</strong><small dir="auto">{{ description(entry) || entry.detail }}</small></span>
+          </li>
+        </ol>
+        <span class="visual-kind">قطعات نمایشی از adapter عمومی NoratoTag ساخته شده‌اند.</span>
+      </div>
       <div v-else-if="name === 'Button' && section === 'Anatomy'" class="button-anatomy-exploded" dir="rtl">
         <div class="button-anatomy-assembled">
           <span class="button-anatomy-caption">ساختار یکپارچه</span>
@@ -311,6 +347,16 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <span class="button-part-status">{{ /Icon/.test(entry.label) ? 'فقط قرارداد بصری' : 'در adapter Vue' }}</span>
         </article>
       </div>
+      <div v-else-if="name === 'Tag' && section === 'Parts'" class="tag-parts-grid">
+        <article v-for="entry in entries" :key="entry.id" class="tag-part-card">
+          <div class="tag-part-sample" aria-hidden="true" inert>
+            <NoratoTag v-if="entry.id === 0" tone="neutral" appearance="outline" size="medium" dir="rtl"><template #leadingIcon><span class="tag-anatomy-icon">✓</span></template>برچسب<template #trailingIcon><span class="tag-anatomy-icon">›</span></template></NoratoTag>
+            <NoratoTag v-else tone="info" appearance="soft" size="medium" dot dir="rtl">اطلاعات</NoratoTag>
+          </div>
+          <span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span>
+          <b class="tag-part-status">در adapter Vue</b>
+        </article>
+      </div>
       <div v-else class="anatomy-visual">
         <div class="anatomy-component-mark" :data-kind="sampleKind(entries[0] || {label:name, source:name} as Entry)">
           <span>{{ name }}</span>
@@ -341,6 +387,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           </div>
         </section>
         <span class="visual-kind">۶۴ ترکیب دیداری · ۲ سبک × ۴ اندازه × ۲ انتخاب × ۴ حالت؛ نمایش ایستا و inert</span>
+      </div>
+      <div v-else-if="name === 'Tag'" class="tag-variant-matrix" aria-label="ماتریس ۴۰ گونهٔ Tag" aria-hidden="true" inert>
+        <section v-for="tone in tagVariantTones" :key="tone.id" class="tag-variant-group">
+          <header><strong>{{ tone.label }}</strong><span>{{ tone.id }}</span></header>
+          <div class="tag-variant-grid">
+            <article v-for="variant in tagVariantCombos" :key="`${variant.appearance.id}-${variant.size.id}`" class="tag-variant-cell">
+              <NoratoTag :tone="tone.id" :appearance="variant.appearance.id" :size="variant.size.id" dir="rtl">برچسب</NoratoTag>
+              <small>{{ variant.appearance.label }} · {{ variant.size.label }}</small>
+            </article>
+          </div>
+        </section>
+        <span class="visual-kind">۴۰ ترکیب از adapter واقعی · ۵ لحن × ۲ سبک × ۴ اندازه؛ نمایش ایستا و inert</span>
       </div>
       <div v-else-if="name === 'Input'" class="input-family-matrix" aria-label="نمونه‌های دیداری هشت زیرنوع Input" aria-hidden="true" inert>
         <article v-for="entry in entries" :key="entry.id" class="input-family-card" :data-family="entry.label.toLowerCase()">
@@ -433,6 +491,14 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'Sizes'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="Sizes" />
+      <div v-else-if="name === 'Tag'" class="tag-size-grid" aria-label="چهار اندازهٔ Tag" aria-hidden="true" inert>
+        <article v-for="item in tagVariantSizes" :key="item.id" class="tag-size-card">
+          <div class="tag-size-stage"><NoratoTag tone="info" appearance="soft" :size="item.id" dir="rtl">برچسب</NoratoTag></div>
+          <strong>{{ item.label }}</strong>
+          <small dir="ltr">{{ tagSizeHeights[item.id] }}px · min-height</small>
+        </article>
+        <span class="visual-kind">ارتفاع‌ها حداقل‌اند؛ عرض و ارتفاع با متن و آیکن کش نمی‌آید.</span>
+      </div>
       <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
@@ -453,6 +519,10 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'States'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="States" />
+      <div v-else-if="name === 'Tag'" class="tag-state-note">
+        <article><NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">منتشر شده</NoratoTag><span><strong>بدون حالت تعاملی</strong><small>{{ entries[0]?.detail }}</small></span></article>
+        <span class="visual-kind">Tag وارد ترتیب Tab نمی‌شود و حالت hover، focus، selected یا disabled نمی‌گیرد.</span>
+      </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
         <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
           <div v-if="name === 'Input'" class="input-state-sample" aria-hidden="true" inert>
@@ -548,3 +618,41 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </div>
   </div>
 </template>
+
+<style scoped>
+.tag-variant-matrix{display:grid;gap:var(--norato-space-3);min-inline-size:0}
+.tag-variant-group{display:grid;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.tag-variant-group>header{display:flex;align-items:center;justify-content:space-between;gap:var(--norato-space-2);padding-block-end:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
+.tag-variant-group>header>span,.tag-variant-cell>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size)}
+.tag-variant-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-2)}
+.tag-variant-cell{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-1);min-inline-size:0;padding-block:var(--norato-space-1);text-align:center}
+.tag-variant-cell>.norato-tag{max-inline-size:100%}
+.tag-anatomy,.tag-parts-grid{display:grid;gap:var(--norato-space-4);min-inline-size:0}
+.tag-anatomy-preview{display:grid;place-items:center;min-block-size:128px;padding:var(--norato-space-5);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:linear-gradient(135deg,var(--norato-color-surface-default),var(--norato-color-surface-subtle))}
+.tag-anatomy-preview .norato-tag{gap:var(--norato-space-2)}
+.tag-anatomy-icon{display:grid;place-items:center;inline-size:1em;block-size:1em;color:var(--norato-color-brand-accent);font:inherit}
+.tag-anatomy-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--norato-space-2);margin:0;padding:0;list-style:none}
+.tag-anatomy-parts>li{display:flex;align-items:flex-start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.tag-anatomy-parts>li>span,.tag-part-card>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.tag-anatomy-parts small,.tag-part-card small{color:var(--norato-color-text-secondary);line-height:1.7}
+.tag-part-index{display:grid;place-items:center;flex:0 0 26px;inline-size:26px;block-size:26px;border-radius:var(--norato-radius-full);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-min-size)}
+.tag-parts-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.tag-part-card{display:grid;gap:var(--norato-space-3);align-content:start;min-inline-size:0;padding:var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.tag-part-sample{display:grid;place-items:center;min-block-size:64px;padding:var(--norato-space-3);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
+.tag-part-status{justify-self:start;padding:var(--norato-space-1) var(--norato-space-2);border-radius:var(--norato-radius-full);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-min-size)}
+.tag-size-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
+.tag-size-card{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);text-align:center}
+.tag-size-stage{display:grid;place-items:center;inline-size:100%;min-block-size:var(--norato-control-target-min);padding:var(--norato-space-2);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
+.tag-size-card>small{color:var(--norato-color-text-secondary)}
+.tag-size-grid>.visual-kind{grid-column:1/-1}
+.tag-state-note{display:grid;gap:var(--norato-space-3);min-inline-size:0}
+.tag-state-note>article{display:flex;align-items:center;gap:var(--norato-space-3);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.tag-state-note>article>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.contract-visual--tag :deep(.usage-indicator){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.contract-visual--tag :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
+.contract-visual--tag :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
+.contract-visual--tag :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
+.contract-visual--tag :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+@media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>

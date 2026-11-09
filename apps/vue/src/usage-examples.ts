@@ -12,6 +12,12 @@ const selectedPlan = ref(false)
   <NoratoStatCard label="کاربران فعال" value="۱۲٬۴۸۰" trend="up" trend-label="۱۲٪ بیشتر از ماه قبل" dir="rtl" />
   <NoratoSelectableCard id="plan-pro" title="پلن حرفه‌ای" description="برای تیم‌های در حال رشد" control="radio" v-model="selectedPlan" dir="rtl" />
 </template>`,
+  tag: `<script setup lang="ts">
+import { NoratoTag } from '@norato/vue'
+</script>
+<template>
+  <NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">منتشر شده</NoratoTag>
+</template>`,
   carousel: `<script setup lang="ts">
 import { ref } from 'vue'
 import { NoratoCarousel, type NoratoCarouselItem } from '@norato/vue'

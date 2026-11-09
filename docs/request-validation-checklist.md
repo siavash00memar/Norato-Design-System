@@ -1,5 +1,18 @@
 # Norato Request Validation Checklist
 
+## Tag implementation checkpoint (2026-11-09)
+
+- [x] Added the public non-interactive `NoratoTag` Vue adapter with semantic tones, soft/outline appearance, four intrinsic sizes, optional icon/status dot, RTL default and explicit LTR support.
+- [x] Connected export, stylesheet, token names, catalog, usage example, contract, static specimen and live Button-style playground.
+- [x] Removed Tag from its old generic specimen selector so the new adapter owns its own visual treatment.
+- [x] Same-window desktop comparison in a 1905×951 browser: Norato frame about 580×288px, reference frame about 630×300px; the local frame remains bounded by its docs column. The local Success pill follows semantic Norato colors.
+- [x] Keyboard changed Success to Warning and the generated code followed. Enabling leading and trailing icons updated both preview and Vue snippet; Outline and Small selections appeared in the generated usage.
+- [x] Accessibility tree exposes noninteractive text only; decorative icon and dot wrappers are hidden from assistive technology.
+- [x] Replaced generic blue anatomy/size/state examples with Tag-based previews and yellow Norato accents; corrected the usage example so it renders as one concise rule.
+- [x] Reviewed all 40 rendered tone × appearance × size combinations in the desktop browser; semantic text pairings retain at least 4.51:1 contrast on white.
+- [x] Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Repository scan found no prohibited reference-name matches.
+- [ ] LTR icon ordering, long text/narrow container, 390/320 widths and independent screen-reader review remain open; see `specs/013-design-system-parity/tag-checklist.md`.
+
 ## Carousel inert specimen correction — browser review (2026-11-08)
 
 - [x] Matched reference/Norato screenshot review at 1265×713. The inert preview has a dotted frame, Default marker, right-aligned title, correctly ordered arrows, three square local illustrations, and a centered yellow active indicator.

@@ -1,63 +1,57 @@
 # Tag — قرارداد کامپوننت نوراتو
 
-**حوزه:** Data Display  
-**وضعیت نوراتو:** Adapted  
-
-## Preview
-
-نمونهٔ بصری و غیرفعال این خانواده در ابتدای صفحهٔ محلی نشان داده می‌شود؛ برچسب بالای صفحه بلوغ Norato را مشخص می‌کند.
-
 ## Overview
 
-قرارداد طراحی Norato: برچسب وضعیت یا دسته‌بندی در ۵ رنگ، به‌صورت Soft یا Outline، با نقطه‌ی وضعیت و آیکن.
+برچسب غیرتعاملی برای نمایش وضعیت یا دسته‌بندی کوتاه. API عمومی Vue آن `NoratoTag` است. Tag هیچ کلیک، focus یا انتخابی ارائه نمی‌کند؛ برای فیلتر قابل‌انتخاب از Chip استفاده می‌شود.
 
 ## Anatomy
 
-- **Container** — پس‌زمینه‌ی رنگی یا شیشه‌ای
-- **Label** — متن کوتاه
-- **Status Dot** — نقطه‌ی وضعیت
-- **Icon** — آیکن اختیاری
+- Container: سطح نرم یا قاب خط‌دار
+- Leading icon: آیکن تزئینی اختیاری در slot به نام `leadingIcon` (slot قدیمی `icon` نیز پشتیبانی می‌شود)
+- Label: متن قابل‌فهم و کوتاه در slot پیش‌فرض
+- Trailing icon: آیکن تزئینی اختیاری در slot به نام `trailingIcon`
+- Status dot: نشانگر تزئینی اختیاری که در RTL پس از متن قرار می‌گیرد
 
 ## Variants
 
-- **Tag (40 variant):** Style: Soft، Outline؛ Size: Small، Medium، Large، XLarge؛ Tone: Neutral، Success، Warning، Danger، Info
+- Appearance: `soft` و `outline`
+- Tone: `neutral`, `success`, `warning`, `danger`, `info`
+- Dot و آیکن‌های ابتدا/انتها اختیاری و مستقل از tone هستند.
+- لحن اطلاعات از سطح خنثی با نقطهٔ زرد استفاده می‌کند تا آبی وارد پالت تعاملی Norato نشود.
 
 ## Sizes
 
-- **Tag:** Small، Medium، Large، XLarge
+| Size | ارتفاع مینیمم |
+| --- | ---: |
+| Small | 24px |
+| Medium | 28px |
+| Large | 32px |
+| XLarge | 36px |
+
+اندازه‌ها حداقل ارتفاع‌اند؛ ارتفاع Tag به‌خاطر متن یا آیکن کش نمی‌آید. چون Tag تعاملی نیست، حداقل هدف لمس برای آن مطرح نیست.
 
 ## States
 
-- در قرارداد فعلی Norato حالت‌های مجزا برای این خانواده مشخص نشده است.
+Tag وضعیت تعاملی ندارد. Hover، focus، selected و disabled به آن اضافه نکن؛ فقط محتوا و tone آن تغییر می‌کند.
 
 ## Parts
 
-- **Tag — 40 variant:** برچسب در ۵ رنگ و ۴ اندازه. ابعاد/حالت‌ها: Style: Soft، Outline؛ Size: Small، Medium، Large، XLarge؛ Tone: Neutral، Success، Warning، Danger، Info
+- `NoratoTag` — props: `tone`, `appearance`, `size`, `dot`, `dir`; متن از slot پیش‌فرض و آیکن از slotهای `leadingIcon` و `trailingIcon` می‌آید. نام قدیمی `icon` به‌عنوان alias برای `leadingIcon` باقی است.
+- نقطه و هر دو آیکن تزئینی‌اند و از درخت دسترس‌پذیری پنهان می‌شوند؛ معنی وضعیت باید در متن هم موجود باشد.
 
 ## Usage
 
-### راهنمای کاربرد Norato
-
-- یکی‌دو کلمه بنویس.
-- برای وضعیت‌های یکسان همیشه یه رنگ استفاده کن.
-
-### محدودیت‌های کاربرد
-
-- Tag رو قابل کلیک نکن؛ برای فیلتر Chip درسته.
-- فقط با رنگ معنی رو نرسون.
-
-### جهت RTL
-
-نقطه‌ی وضعیت بعد از متن میاد.
+- متن را به یک یا دو واژه محدود کن و نوع Tag را قابل کلیک نکن.
+- برای یک مفهوم ثابت همیشه یک tone مشخص به‌کار ببر.
+- رنگ را تنها راه انتقال معنی قرار نده؛ متن کوتاه و روشن بنویس. نمونهٔ Vue: `<NoratoTag tone="success" appearance="soft" size="medium" dot dir="rtl">منتشر شده</NoratoTag>`.
 
 ## Accessibility
 
-متن Tag باید بدون رنگ هم قابل فهم باشه.
-
-### قاعدهٔ عمومی Focus در Norato
-
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+- عنصر خروجی یک `span` غیرتعاملی است؛ در ترتیب Tab قرار نمی‌گیرد.
+- متن slot پیش‌فرض نام قابل‌خواندن Tag را فراهم می‌کند.
+- نقطه و آیکن‌های slot با `aria-hidden` تزئینی می‌شوند.
+- از success/warning/danger به‌عنوان نشانهٔ مکمل متن استفاده کن، نه جایگزین متن.
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-blue`، `--norato-color-focus-contrast`، `--norato-color-focus-ring` و توکن‌های فاصله و شعاع تعریف‌شده برای همان کامپوننت.
+از `--norato-tag-height-small`, `--norato-tag-height-medium`, `--norato-tag-height-large`, `--norato-tag-height-xlarge`, `--norato-tag-icon-size`, `--norato-tag-dot-size` و توکن‌های semantic وضعیت، سطح، متن، فاصله، radius و border استفاده می‌شود. Tone اطلاعات از زرد برند و متن خنثی بهره می‌برد؛ هیچ رنگ آبی برند به عنوان accent به‌کار نمی‌رود.
