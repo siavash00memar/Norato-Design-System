@@ -17,7 +17,8 @@ Status: in progress
 - [x] Mobile browser review at 390×844 and 320×844: document widths are 375px and 305px with no horizontal overflow. Button-style specimen frames measure 343×288px and 273×288px; static content cards measure 272×248px and 263×244px. RTL remains intact.
 - [x] Same-viewport mobile reference comparison at 390×844: reference stage/card measure 327×324px and 270×253px; Norato stage/card measure 343×288px and 272×248px. The Norato frame follows its shared 288px specimen size while the content card remains within 2px width and 5px height of the reference.
 - [x] Horizontal Content Card media no longer stretches with a taller text column. Browser measured the square media at 112×112px in LTR/320px and RTL/390px; vertical media remained 16:9 at 309×174px in RTL/390px. No document overflow.
-- [ ] Long Persian content stress case and the full four-layout LTR/mobile matrix remain open; current playground copy is fixed and no long-copy control is provided.
+- [x] Added a short/long Persian copy control to the Content Card playground; the rendered card and generated Vue snippet stay synchronized.
+- [x] Long-copy browser matrix passed for all four content layouts, both RTL/LTR directions and both 320×844/390×844 viewports (16 combinations). Document widths stayed at 305px/375px with no horizontal overflow. At 320px, vertical media measured 239×134px and horizontal media stayed square at 112×112px; at 390px, vertical media measured 309×174px and horizontal media stayed 112×112px. Text cards grew naturally with the longer Persian content.
 - [ ] Review the accessibility tree and independently confirm screen-reader announcements when available. Browser accessibility tree exposes named links, radio/checkbox controls, checked values and disabled state; no separate screen-reader session was available for this review.
 
 ## Technical gates

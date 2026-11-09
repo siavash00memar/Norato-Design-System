@@ -1887,7 +1887,9 @@
 - [x] At 320×844 and 390×844, the Card page remained within the viewport (document widths 305px and 375px). The preview frame measured 273×288px and 343×288px; its static content cards measured 263×244px and 272×248px. RTL stayed intact.
 - [x] Same-viewport reference review at 390×844 measured the reference stage/card at 327×324px / 270×253px and Norato at 343×288px / 272×248px. Norato keeps the shared 288px frame while the content card remains close to the reference dimensions.
 - [x] Found and fixed the horizontal Content Card thumbnail stretching beside a taller text column. The square media now measures 112×112px at 320px LTR and 390px RTL; vertical media remains 16:9 at 309×174px. The direction control and generated Vue code were checked; the playground was restored to RTL/vertical afterward.
-- [ ] Long Persian copy stress, all layout/direction combinations at narrow widths and independent screen-reader review remain open; see `specs/013-design-system-parity/card-checklist.md`.
+- [x] Added a short/long Persian content control; selected text is reflected in both the rendered Card and generated Vue code.
+- [x] Long-copy matrix passed at 320×844 and 390×844 across vertical, horizontal, overlay and text layouts in RTL and LTR (16 cases). Document widths stayed 305px/375px; horizontal media stayed square at 112×112px; vertical media retained 16:9 proportions (239×134px at 320px, 309×174px at 390px). No horizontal overflow or media stretching.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/card-checklist.md`.
 
 ## Chip — long-label removal and mobile preview follow-up (2026-11-09)
 

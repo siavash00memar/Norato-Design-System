@@ -12,6 +12,13 @@ const layout = ref<NoratoContentCardLayout>('vertical')
 const profileLayout = ref<NoratoProfileCardLayout>('center')
 const statTrend = ref<NoratoStatTrend>('up')
 const direction = ref<'rtl' | 'ltr'>('rtl')
+const copyLength = ref<'short' | 'long'>('short')
+const title = computed(() => copyLength.value === 'short'
+  ? 'ساختن یک دیزاین سیستم فارسی'
+  : 'راهنمای کامل ساخت و نگهداری یک دیزاین سیستم فارسی برای محصولات دیجیتال چندسکویی')
+const description = computed(() => copyLength.value === 'short'
+  ? 'از توکن‌ها تا کامپوننت‌ها، قدم‌به‌قدم.'
+  : 'در این راهنمای جامع، مسیر تعریف توکن‌های رنگ و فاصله، ساخت کامپوننت‌های قابل استفادهٔ مجدد، مستندسازی رفتارها و بررسی دسترس‌پذیری را با مثال‌های روشن دنبال می‌کنیم تا تیم محصول بتواند تجربه‌ای هماهنگ و قابل نگهداری در صفحه‌های مختلف بسازد.')
 const pricingFeatured = ref(false)
 const selectedPlan = ref<string | boolean>('pro')
 const basicChecked = ref(false)
@@ -24,7 +31,7 @@ const snippet = computed(() => {
   const dir = ' dir="' + direction.value + '"'
   const disabled = disabledState.value === 'disabled' ? ' disabled' : ''
   if (kind.value === 'surface') return '<NoratoCard style="' + style.value + '"' + (surfaceSelected.value ? ' selected' : '') + (surfaceDisabled.value ? ' disabled' : '') + dir + '>\n  <h2>عنوان کارت</h2>\n  <p>محتوای مرتبط را اینجا قرار بده.</p>\n</NoratoCard>'
-  if (kind.value === 'content') return '<NoratoContentCard id="article-card" title="ساختن یک دیزاین سیستم فارسی" description="از توکن‌ها تا کامپوننت‌ها، قدم‌به‌قدم." meta="راهنما · ۵ دقیقه" layout="' + layout.value + '" style="' + style.value + '" href="/guide"' + disabled + dir + '>\n  <template #footer>نگار محمدی</template>\n</NoratoContentCard>'
+  if (kind.value === 'content') return '<NoratoContentCard id="article-card" title="' + title.value + '" description="' + description.value + '" meta="راهنما · ۵ دقیقه" layout="' + layout.value + '" style="' + style.value + '" href="/guide"' + disabled + dir + '>\n  <template #footer>نگار محمدی</template>\n</NoratoContentCard>'
   if (kind.value === 'stat') return '<NoratoStatCard label="کاربران فعال" value="۱۲٬۴۸۰" trend="' + statTrend.value + '" trend-label="' + (statTrend.value === 'up' ? '۱۲٪ بیشتر از ماه قبل' : statTrend.value === 'down' ? '۵٪ کمتر از ماه قبل' : 'بدون تغییر نسبت به ماه قبل') + '"' + dir + ' />'
   if (kind.value === 'profile') return '<NoratoProfileCard name="نگار محمدی" role="طراح محصول" layout="' + profileLayout.value + '"' + (profileLayout.value === 'cover' ? ' cover-src="/cover.jpg"' : '') + dir + ' />'
   if (kind.value === 'pricing') return '<NoratoPricingCard name="حرفه‌ای" price="۲۴۹٬۰۰۰ تومان" period="ماهانه" description="برای تیم‌های در حال رشد" :featured="true"' + dir + '>\n  <template #features><li>پروژه‌های نامحدود</li><li>پشتیبانی اولویت‌دار</li></template>\n</NoratoPricingCard>'
@@ -44,7 +51,7 @@ const fullSnippet = computed(() => {
     <header><strong>آزمایش Card اجرایی</strong><span>شش نوع کارت را با قاب، چیدمان و جهت متفاوت بررسی کن.</span></header>
     <div class="button-playground-preview card-playground__preview">
       <NoratoCard v-if="kind === 'surface'" :style="style" :selected="surfaceSelected" :disabled="surfaceDisabled" :dir="direction" class="card-playground__card card-playground__surface"><strong>عنوان کارت</strong><p>محتوای مرتبط را اینجا قرار بده.</p></NoratoCard>
-      <NoratoContentCard v-else-if="kind === 'content'" id="card-playground-content" title="ساختن یک دیزاین سیستم فارسی" description="از توکن‌ها تا کامپوننت‌ها، قدم‌به‌قدم." meta="راهنما · ۵ دقیقه" :layout="layout" :style="style" href="/guide" :disabled="disabledState === 'disabled'" :dir="direction" class="card-playground__card">
+      <NoratoContentCard v-else-if="kind === 'content'" id="card-playground-content" :title="title" :description="description" meta="راهنما · ۵ دقیقه" :layout="layout" :style="style" href="/guide" :disabled="disabledState === 'disabled'" :dir="direction" class="card-playground__card">
         <template #media><div class="card-playground__art" aria-hidden="true"><span>ن</span></div></template>
         <template #footer>نگار محمدی</template>
       </NoratoContentCard>
@@ -72,6 +79,7 @@ const fullSnippet = computed(() => {
       <PlaygroundSelect v-if="kind === 'surface'" id="card-selected" v-model="surfaceSelected" label="انتخاب" :options="[{value:false,label:'عادی'},{value:true,label:'انتخاب‌شده'}]" />
       <PlaygroundSelect v-if="kind === 'surface'" id="card-surface-disabled" v-model="surfaceDisabled" label="دسترس‌پذیری" :options="[{value:false,label:'فعال'},{value:true,label:'غیرفعال'}]" />
       <PlaygroundSelect v-if="kind === 'content'" id="card-layout" v-model="layout" label="چیدمان" :options="[{value:'vertical',label:'عمودی'},{value:'horizontal',label:'افقی'},{value:'overlay',label:'روی تصویر'},{value:'text',label:'متنی'}]" />
+      <PlaygroundSelect v-if="kind === 'content'" id="card-copy-length" v-model="copyLength" label="طول متن" :options="[{value:'short',label:'کوتاه'},{value:'long',label:'بلند'}]" />
       <PlaygroundSelect v-else-if="kind === 'profile'" id="card-profile-layout" v-model="profileLayout" label="چیدمان" :options="[{value:'center',label:'مرکزی'},{value:'cover',label:'کاور'}]" />
       <PlaygroundSelect v-if="kind === 'stat'" id="card-stat-trend" v-model="statTrend" label="روند" :options="[{value:'up',label:'افزایشی'},{value:'down',label:'کاهشی'},{value:'neutral',label:'خنثی'}]" />
       <PlaygroundSelect v-if="kind === 'selectable'" id="card-control" v-model="control" label="نوع کنترل" :options="[{value:'radio',label:'رادیو'},{value:'checkbox',label:'چک‌باکس'}]" />
