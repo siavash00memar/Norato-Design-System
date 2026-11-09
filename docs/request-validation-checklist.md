@@ -2075,3 +2075,9 @@
 - [x] Removed the conflicting generic rounded-card rules and the docs-only `#app .norato-field` shim.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
 - [ ] Actual consuming-app browser review for default/hover/focus/error/disabled/loading, RTL/LTR and desktop/mobile dimensions remains open; browser tab automation timed out.
+
+## Input desktop side-by-side review — 2026-11-09
+
+- [x] Opened local Input and the supplied visual reference in separate browser tabs at the same 1265×713 viewport; captured both rendered pages.
+- [x] Confirmed the 300px frame height, dotted glass composition, RTL Persian placeholder, title-adjacent icon, capsule field, and the approved omission of the sample email/helper from Norato.
+- [ ] Local frame is approximately 624px wide versus 628px in the reference. Keep exact width parity and the complete state matrix open; this screenshot does not replace the outstanding 390/320px matched browser review or independent screen-reader pass.
