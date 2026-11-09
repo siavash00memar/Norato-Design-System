@@ -1827,7 +1827,14 @@
 - [x] Playground size control applied Small, Large and XLarge and synchronized the usage snippet; the XLarge live row grew naturally without filling/stretching the preview.
 - [x] At 390px, document width stays 390px; sample frame is 358.4×288px and live accordion 320×190.4px. At 320px, document width stays 320px; frame is 288×288px, accordion 254.4px wide, trigger 52px high and expanded panel ~252.8×50.4px. RTL text wraps naturally with no vertical stretch or page overflow.
 - [x] Matched 390px reference capture measured 342.4×300px frame and 337.8px inner accordion. At 320px, reference frame measured 272×300px and reference document overflowed to 326px; Norato stayed at 320px. Frame difference follows Norato's shared Button specimen and available docs column.
-- [ ] Complete size/style matrix, `collapsible=false`, LTR direction, reduced-motion rendering and independent screen-reader review remain open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
+- [ ] Independent screen-reader review remains open. See `specs/013-design-system-parity/accordion-checklist.md`; DoD remains open.
+
+## Accordion reduced-motion browser emulation — 2026-11-10
+
+- [x] Opened an isolated temporary Chrome target and applied `Emulation.setEmulatedMedia` with `prefers-reduced-motion: reduce`; `matchMedia` returned `true`.
+- [x] The live trigger and chevron transitions computed to `0s`. Activating a closed row expanded it while preserving RTL and two open rows in multiple mode; the chevron remained at `0s`.
+- [x] Switched the same target back to `no-preference`; `matchMedia` returned `false` and transitions returned to `0.14s`. Closed the temporary target without changing the user's active tab or system preference.
+- [ ] Independent screen-reader review remains open; this browser emulation does not replace it.
 
 ## Image — implementation checkpoint (2026-11-08)
 

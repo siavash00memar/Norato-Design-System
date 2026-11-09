@@ -28,7 +28,7 @@
 - [x] Compared Small, Medium, Large and XLarge trigger geometry: 48, 52, 56 and 64px. Exercised all 16 layout × row-style × size configurations in both expanded and collapsed states (32 combinations); each retained three equal-width rows, expected trigger height and no page/component overflow.
 - [x] Keyboard focus on a live trigger visibly shows the yellow 2px ring; Space activation, ArrowUp and End pass.
 - [x] `collapsible=false` kept the currently open row expanded and exposed its trigger as `aria-disabled=true`; activating it did not close the row. LTR selector now sets the inherited DOM direction, with title/chevron placement mirrored correctly. The playground snippet includes both settings.
-- [ ] Verify reduced-motion rendering in a browser with the preference emulated.
+- [x] Emulated `prefers-reduced-motion: reduce` in an isolated Chrome target. `matchMedia` returned true; trigger and chevron transitions computed to `0s`. Clicking a closed row expanded it while the chevron remained at `0s`, preserving RTL and the expected multiple-open state. Restoring `no-preference` returned the trigger/chevron transitions to `0.14s`.
 - [x] Inspected all three trigger/panel pairs: every `aria-controls` resolves to its panel, each panel's `aria-labelledby` resolves back to its trigger, and closed panels are hidden. Closed custom-content actions are excluded from the accessibility tree and keyboard tab sequence.
 - [ ] Independent screen-reader review.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.
