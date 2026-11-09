@@ -108,7 +108,9 @@
 - [x] Verified Ring and Norato use an SVG arc; Dots use three CSS dots. The browser reports `prefers-reduced-motion: reduce`; Ring and all three Dots compute to `animation:none`, with Dots remaining at full opacity.
 - [x] Exercised Inline, Refresh, Overlay and Page. All use one polite status label, hide the decorative child from the accessibility tree, and preserve the selected RTL/LTR direction. Overlay is host-relative and pointer-transparent; Page spans the current viewport and is pointer-transparent.
 - [x] Loader `active=false` removes its status; reactivating restores one status region. LTR moves the spinner to the inline-start side of the label.
-- [ ] The available browser did not expose an explicit viewport override; 390/320 layout remains unverified. Independent screen-reader review also remains open; do not close Spinner DoD until those checks pass.
+- [x] Responsive verification at 390px/320px is recorded in the later “Spinner responsive verification” entry below (343×288px / 273×288px frames, no document overflow); this older browser-view limitation does not apply to those captured checks.
+- [x] Follow-up browser review: the live reference and local Spinner pages both show the centered ring in the dotted preview stage; Norato retains its yellow arc. Switching the local playground to Loader exposed the inline Persian status and copyable `NoratoLoader` usage; unchecking Active removed the status region and rendered the inactive message. These browser tree observations do not replace the still-open independent screen-reader review.
+- [ ] Independent screen-reader review remains unverified; keep Spinner DoD open until completed.
 
 ## Menu local browser review — 2026-11-08
 

@@ -7,5 +7,5 @@
 - [x] Define DoD before source implementation.
 - [x] Analyze exact token, legacy selector and visual structure evidence.
 - [x] Implement spinner/loader adapters, specimen, playground, exports and docs.
-- [ ] Verify browser behavior and design reference comparison; run required gates.
-- [ ] Push checkpoint to GitHub.
+- [x] Verify browser behavior and design reference comparison; run required gates. The recorded evidence covers all 45 Spinner combinations, all four Loader patterns, active/inactive semantics, RTL/LTR, reduced motion, matched desktop preview and 390/320 responsive geometry. Independent screen-reader review remains a separate open DoD item.
+- [x] Push checkpoint to GitHub; commit `6a7cfc3` is an ancestor of `origin/master` (current remote `master` is `287551f`).
