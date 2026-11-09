@@ -6,4 +6,4 @@
 - [x] Controlled selection is retained and cannot be changed while disabled; RTL and 48px target remain intact.
 - [x] Existing keyboard focus ring remains visible and exactly 2px.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
-- [ ] The verified checkpoint is pushed to `origin/master`.
+- [x] Checkpoint `330dd4f` is pushed to `origin/master`; the remote head matches the local commit and the worktree is clean.
