@@ -1266,6 +1266,13 @@
 - **Correction:** Added empty content to render the token-based translucent scrim, retained the caption above it, and applied the treatment to the default image and keyboard-focused gallery triggers. Reduced-motion mode continues to disable transitions and zoom.
 - **Verified:** Browser inspection after the fix shows the shade on the live Image adapter at Square, Landscape, Wide and Portrait ratios without changing each ratio. The `cover`/`contain` control still updates the standalone adapter and generated example. Reduced-motion review remains open.
 
+## ERR-161 — Tooltip skip-delay context was isolated per instance (2026-11-09)
+
+- **Observed:** Each `NoratoTooltip` created its own Reka TooltipProvider, so sibling instances could not share the 300ms skip-delay timer.
+- **Cause:** Provider scope was placed inside every single tooltip adapter instead of allowing an ancestor provider scope.
+- **Correction:** Added the exported `NoratoTooltipProvider` grouping wrapper. Standalone tooltips still receive a local provider; nested tooltips reuse the ancestor provider. The live playground now includes two sibling triggers for the timing check.
+- **Verified:** Token/catalog/typecheck/build pass and the browser loads the new two-trigger fixture. Reliable pointer-only timing evidence is still open because the available UI drag action captures the mouse button and cannot move hover between triggers without a click; do not close Tooltip DoD until skip-delay is measured and an independent screen-reader review is complete.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.

@@ -117,6 +117,8 @@ export type { NoratoBannerLayout, NoratoBannerTone } from './components/NoratoBa
 
 export { default as NoratoTooltip } from './components/NoratoTooltip.vue'
 export type { NoratoTooltipLayout, NoratoTooltipPlacement, NoratoTooltipSurface } from './components/NoratoTooltip.vue'
+export { default as NoratoTooltipProvider } from './components/NoratoTooltipProvider.vue'
+export type { NoratoTooltipProviderProps } from './components/NoratoTooltipProvider.vue'
 
 export { default as NoratoProgress } from './components/NoratoProgress.vue'
 export type { NoratoProgressSize, NoratoProgressTone, NoratoProgressVariant } from './components/NoratoProgress.vue'

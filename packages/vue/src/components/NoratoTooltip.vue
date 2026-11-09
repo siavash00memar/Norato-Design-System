@@ -3,10 +3,10 @@ import {
   TooltipArrow,
   TooltipContent,
   TooltipPortal,
-  TooltipProvider,
   TooltipRoot,
   TooltipTrigger,
 } from 'reka-ui'
+import NoratoTooltipProvider from './NoratoTooltipProvider.vue'
 
 export type NoratoTooltipSurface = 'dark' | 'glass'
 export type NoratoTooltipLayout = 'simple' | 'rich'
@@ -30,7 +30,7 @@ const props = withDefaults(defineProps<{
   surface: 'dark',
   layout: 'simple',
   placement: 'top',
-  delayDuration: 500,
+  delayDuration: undefined,
   defaultOpen: false,
   disabled: false,
   dir: 'rtl',
@@ -40,8 +40,8 @@ const open = defineModel<boolean>('open')
 </script>
 
 <template>
-  <TooltipProvider :delay-duration="delayDuration" :skip-delay-duration="300" :ignore-non-keyboard-focus="true">
-    <TooltipRoot v-model:open="open" :default-open="defaultOpen" :disabled="disabled" :dir="dir">
+  <NoratoTooltipProvider :delay-duration="delayDuration ?? 500" :skip-delay-duration="300">
+    <TooltipRoot v-model:open="open" :default-open="defaultOpen" :delay-duration="delayDuration" :disabled="disabled" :dir="dir">
       <TooltipTrigger as-child>
         <slot name="trigger" :open="open">
           <button class="norato-tooltip__trigger" type="button" :aria-label="title" :disabled="disabled">
@@ -71,5 +71,5 @@ const open = defineModel<boolean>('open')
         </TooltipContent>
       </TooltipPortal>
     </TooltipRoot>
-  </TooltipProvider>
+  </NoratoTooltipProvider>
 </template>

@@ -444,12 +444,14 @@
 - The top specimen is inert, uses the Button-sized dotted frame and Default marker; the lower playground is executable.
 - **Remaining:** browser parity, full keyboard/action/dismiss sequence and 390/320 widths remain open; do not close Banner DoD before these checks.
 
-## Tooltip — 2026-11-08
+## Tooltip — 2026-11-09
 - Match design reference's 16 combinations (Dark/Glass × Simple/Rich × Top/Bottom/Right/Left) with a compact default icon trigger and Bubble/Arrow in the Button-sized dotted specimen.
 - Use Reka Tooltip Provider/Root/Trigger/Portal/Content/Arrow for keyboard focus, hover delay, Escape and collision handling. Preserve the host's semantic trigger and its yellow 2px focus ring; adapter content itself is noninteractive.
+- For sibling Tooltip instances, wrap them in `NoratoTooltipProvider` so the 300ms skip-delay context is shared. Standalone `NoratoTooltip` keeps its own default provider.
+- For sibling Tooltip instances, wrap them in `NoratoTooltipProvider` so the 300ms skip-delay context is shared. Standalone `NoratoTooltip` keeps its own default provider.
 - Keep Rich's supplemental label noninteractive; actual actions remain in host UI. Use Popover for links/forms/actions.
 - Use Norato inverse/glass and semantic text/elevation/radius tokens; RTL is explicit, and design reference blue is not imported.
-- **Remaining:** matched screenshots, all 16 variants, keyboard/pointer sequences, 390/320 collision, screen-reader review and repository gates are not yet complete.
+- **Remaining:** sibling skip-delay timing and independent screen-reader review remain open in the current DoD; visual/behavior evidence and technical gates are tracked in `tooltip-checklist.md`.
 
 ## Progress — 2026-11-08
 - Match design reference's two presentations and 120 states: Linear/Circular, three sizes, four tones and five values. Linear thicknesses are 4/8/12px; only circular Medium/Large show a centered percentage.

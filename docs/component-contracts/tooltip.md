@@ -38,13 +38,15 @@ Tooltip نام یا توضیح کوتاهِ یک کنترل را هنگام hove
 ## Parts
 
 - `NoratoTooltip`: API عمومی Vue با trigger slot.
-- Reka Tooltip Provider: delay پیش‌فرض ۵۰۰ms، skip-delay برابر ۳۰۰ms، ورود با keyboard focus.
+- `NoratoTooltipProvider`: پوستهٔ اختیاری برای چند Tooltip هم‌سطح؛ delay پیش‌فرض ۵۰۰ms و skip-delay برابر ۳۰۰ms بین triggerها را به اشتراک می‌گذارد. Tooltip مستقل بدون این wrapper هم کار می‌کند.
+- Reka Tooltip Provider: در حالت مستقل به‌صورت خودکار ساخته می‌شود؛ ورود با keyboard focus پشتیبانی می‌شود.
 - Trigger: محتوای دلخواه میزبان یا دکمهٔ راهنمای پیش‌فرض.
 - Content/Arrow: Portal با collision-aware positioning و ارتباط دسترس‌پذیر description.
 
 ## Usage
 
 - Tooltip را برای نام آیکن‌دکمه و توضیح بسیار کوتاه استفاده کن.
+- چند Tooltip هم‌سطح را در `NoratoTooltipProvider` قرار بده تا پس از بازشدن یکی، جابه‌جایی به بعدی از بازهٔ skip-delay مشترک استفاده کند.
 - برای آیتم‌های Sidebar جمع‌شده، سمت چپ را درخواست بده؛ collision ممکن است سمت را تغییر دهد.
 - اطلاعات مهم را در متن صفحه نیز ارائه کن.
 - Tooltip ساده را شامل لینک، فرم، دکمه یا کنش focusable نکن. متن همراه در Rich صرفاً توضیحی و تزئینی است؛ کنش واقعی را در trigger/host قرار بده.
@@ -60,4 +62,4 @@ Tooltip با Reka به trigger توصیف‌شده متصل است؛ hover و ke
 
 ## DoD
 
-در مرورگر با viewport برابر ۱۲۶۵×۷۲۰، ترکیب ۱۶ حالته، RTL، جهت فلش، عدم کشیدگی/برش، focus کیبورد، Escape و نمایش ۳۲۰/۳۹۰ پیکسلی بررسی شد. Rich Top و Rich Right در فضای ناکافی به‌ترتیب به Bottom و Left flip شدند. عرض کارت مرجع مرجع طراحی حدود ۶۲۸ پیکسل و Norato حدود ۵۷۸ پیکسل است و این اختلاف ثبت شده است. هاور پایدار با ابزار مرورگر و بازبینی مستقل صفحه‌خوان هنوز شواهد ندارند؛ DoD تا تکمیل هر دو باز می‌ماند.
+در مرورگر با viewport برابر ۱۲۶۵×۷۲۰، ترکیب ۱۶ حالته، RTL، جهت فلش، عدم کشیدگی/برش، focus کیبورد، Escape و نمایش ۳۲۰/۳۹۰ پیکسلی بررسی شد. Rich Top و Rich Right در فضای ناکافی به‌ترتیب به Bottom و Left flip شدند. عرض کارت مرجع حدود ۶۲۸ پیکسل و Norato حدود ۵۷۸ پیکسل است و این اختلاف ثبت شده است. hover تأخیری روی Tooltip مستقل بررسی شده؛ wrapper گروهی و shared provider پیاده‌سازی و در صفحه بارگذاری شده‌اند، اما زمان skip-delay میان دو trigger هنوز با نشانگر واقعی اندازه‌گیری نشده است. بازبینی مستقل صفحه‌خوان نیز باز است؛ DoD کامل نیست.

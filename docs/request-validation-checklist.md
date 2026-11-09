@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Tooltip shared skip-delay provider — implementation checkpoint (2026-11-09)
+
+- [x] Added a public `NoratoTooltipProvider` for sibling tooltips; standalone `NoratoTooltip` retains its default local provider. Shared provider defaults are 500ms open delay and 300ms skip-delay.
+- [x] Playground renders two tooltip triggers under one shared provider; both labels and controls appear in the browser.
+- [x] Token/catalog/typecheck/build/diff checks pass.
+- [ ] Pointer-only movement timing between sibling triggers and independent screen-reader review remain open. The current UI drag action produces a mouse-down capture and cannot isolate hover-only traversal.
+
 ## Switch responsive Variants gallery — browser review (2026-11-09)
 
 - [x] Matched mobile screenshots and measurements at 390×844 and 320×640. Norato preview frames are 320×288px and 273×288px; reference frames are 327×300px and 257×300px.
