@@ -2272,8 +2272,15 @@
 - [x] Near-bottom review at 390×1034 with actual pointer activation: bell bounds y921..969, fixed mobile navigation begins at y977; Popover opens at x47,y433,w320,h480 and ends at y913, preserving 8px gaps to both. Internal content scrolls 483/478px and document width remains 375px.
 - [x] At 390×1000 and scrollY=0, the fixed mobile navigation starts at y=943 and covers 26px of the bell (y=921.1..969.1). Scrolling the page by 35px reveals the complete 48px bell at y=886.1..934.1, with a 9px clearance above the navigation; document width stays 375px. The interaction is reachable by ordinary scrolling.
 - [x] In the live browser, clicking the page heading outside the open Popover removed the Popover and set the trigger to closed; repeating with Panel removed both Panel and overlay and returned the trigger to closed. Playground reset to Popover, controlled, RTL, empty=false, disabled=false, closed.
-- [x] The Notification Center stylesheet includes a `prefers-reduced-motion: reduce` rule for panel/overlay transitions and scroll behavior. Browser media emulation was not run (`matchMedia` was false), so this is source verification only.
-- [ ] Independent screen-reader review and browser emulation of reduced motion remain open; Notification Center DoD stays open.
+- [x] Notification Center reduced-motion behavior is browser-verified below; this replaces the earlier source-only check (`matchMedia` false).
+- [ ] Independent screen-reader review remains open; Notification Center DoD stays open.
+
+## Notification Center reduced-motion browser emulation — 2026-11-10
+
+- [x] In an isolated Chrome target at 390×844, emulated `prefers-reduced-motion: reduce`; `matchMedia` returned `true`.
+- [x] The open Popover computes `transition: 0s` and `scroll-behavior: auto`. At 320×382.08px, it contains 483px of content in a 380px client area; internal scrolling to 100px works while the document stays 390px wide and RTL is preserved.
+- [x] Restored `no-preference`: `matchMedia` returned `false`; the Popover remains `0s`/`auto` because no base animation or smooth-scroll behavior is defined. The temporary target was closed without changing the user's active tab or system preference.
+- [ ] Independent screen-reader review remains open; Notification Center DoD stays open.
 
 ## Menu keyboard recheck — 2026-11-09
 
