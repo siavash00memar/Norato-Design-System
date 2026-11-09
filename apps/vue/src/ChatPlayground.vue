@@ -18,12 +18,14 @@ const artwork = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www
 const variantMessage = computed<NoratoChatMessageData>(() => ({
   id: 'variant-preview', sender: sender.value, type: type.value, text: type.value === 'reply' ? 'باشه، بررسیش می‌کنم.' : 'این بخش تازه آماده شده.', time: '۱۰:۳۱', dateTime: '2026-11-08T10:31:00+03:30', senderName: sender.value === 'incoming' ? 'سارا' : 'شما', replyTo: { sender: 'شما', text: 'فایل رو دیدی؟' }, imageSrc: type.value === 'image' ? artwork : type.value === 'file' ? undefined : undefined, imageAlt: 'چشم‌انداز کوهستانی', fileName: 'راهنمای نوراتو.pdf', fileSize: 'PDF · ۲٫۴ مگابایت', voiceDuration: '۰۰:۱۲', read: sender.value === 'outgoing',
 }))
-const messages = computed(() => showSampleMessages.value ? [
-  { id: 'incoming-one', sender: 'incoming', type: 'text', text: 'سلام! فایل راهنما رو دیدی؟', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:00+03:30', senderName: 'سارا' },
-  { id: 'outgoing-one', sender: 'outgoing', type: 'text', text: 'بله، ساختارش خیلی روشنه.', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:30+03:30', read: true },
-  variantMessage.value,
+const messages = computed(() => [
+  ...(showSampleMessages.value ? [
+    { id: 'incoming-one', sender: 'incoming', type: 'text', text: 'سلام! فایل راهنما رو دیدی؟', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:00+03:30', senderName: 'سارا' },
+    { id: 'outgoing-one', sender: 'outgoing', type: 'text', text: 'بله، ساختارش خیلی روشنه.', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:30+03:30', read: true },
+    variantMessage.value,
+  ] as NoratoChatMessageData[] : []),
   ...sent.value,
-] as NoratoChatMessageData[] : [])
+])
 function append(text: string) { sent.value.push({ id: `sent-${Date.now()}`, sender: 'outgoing', type: 'text', text, time: 'اکنون', read: false }) }
 function attach(file: File) { sent.value.push({ id: `file-${Date.now()}`, sender: 'outgoing', type: 'file', fileName: file.name, fileSize: `${Math.max(1, Math.round(file.size / 1024))} کیلوبایت`, time: 'اکنون', read: false }) }
 function playVoice() { playNotice.value = 'برای پخش واقعی، منبع صوت را در برنامهٔ میزبان متصل کن.' }

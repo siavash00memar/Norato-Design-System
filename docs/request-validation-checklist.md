@@ -9,6 +9,13 @@
 - [ ] File chooser/attach event was not completed in this browser interaction; do not treat the upload path as verified.
 - [ ] Exact screenshots for every message variant, mobile playground overflow and independent screen-reader review remain open.
 
+## Chat sample-toggle retention (2026-11-09)
+
+- [x] In the local browser, turning sample messages off left the initially empty timeline empty. Sending “پیام آزمایشی برای بررسی” then rendered that user-created message with fixtures still hidden.
+- [x] Turning fixtures back on rendered the three sample messages and preserved the sent message; the composer reset after send.
+- [ ] The browser control surface did not open the native file chooser when the attachment action was activated. File selection and attach-event rendering remain unverified.
+- [ ] Full empty-state visual review, matched screenshots for every message combination and independent screen-reader review remain open.
+
 ## Carousel responsive matrix overflow correction (2026-11-09)
 
 - [x] Same-origin browser frames verified exact outer CSS widths 390px and 320px; document client/scroll widths are 375/375px and 305/305px respectively (the difference is the browser's vertical scrollbar).

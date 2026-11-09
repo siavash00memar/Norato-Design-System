@@ -1509,3 +1509,11 @@
 - **Cause:** The playground replaces the Alert with a status and restore action, but it did not transfer focus after the conditional DOM update.
 - **Correction:** The playground now focuses its “show again” action after dismissal and returns focus to the Alert close control after restoration. The reusable adapter API is unchanged; real hosts remain responsible for their own replacement context.
 - **Verification:** Live browser confirmed Space and Enter each close the Alert and focus the restore button; Enter restores the Alert and returns focus to the close button. Screenshot shows the yellow focus ring. Type/catalog/build gates and independent screen-reader review remain separate checks.
+
+## ERR-195 — Chat sample toggle hid user-created messages (2026-11-09)
+
+- **Observed:** Turning off sample messages also removed messages sent or attached in the Chat playground, so the toggle could mask the result of the playground's own interactions.
+- **Cause:** The computed message list placed sample fixtures and user-created messages inside one conditional branch.
+- **Correction:** Apply the toggle only to sample fixtures and append user-created messages independently. Keep the initial no-fixture/no-user-message state empty.
+- **Verification:** Local browser review showed empty timeline → sent text with fixtures hidden → fixtures and sent text together after toggling fixtures on. Native chooser activation did not surface a file dialog through the current browser control surface; file selection remains explicitly unverified.
+- **Prevention:** Keep demo fixtures separate from runtime/playground-created state; toggles named for fixtures should not discard unrelated state.
