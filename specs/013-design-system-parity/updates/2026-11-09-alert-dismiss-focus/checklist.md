@@ -5,4 +5,4 @@
 - [x] Activating restore returns focus to the Alert's close control; screenshot confirms the yellow keyboard ring.
 - [x] Request validation, Alert checklist and error log record the result.
 - [x] Token/catalog/TypeScript/build/diff checks pass.
-- [ ] Verified change pushed to origin.
+- [x] Implementation checkpoint `861c391` is pushed to `origin/master`.

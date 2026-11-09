@@ -6,4 +6,4 @@
 - [x] Browser-verify Space/Enter dismissal, return focus, and yellow keyboard focus.
 - [x] Update DoD, request validation and error log.
 - [x] Token/catalog/TypeScript/build/diff gates pass.
-- [ ] Commit and push verified change.
+- [x] Implementation checkpoint `861c391` is pushed to `origin/master`.

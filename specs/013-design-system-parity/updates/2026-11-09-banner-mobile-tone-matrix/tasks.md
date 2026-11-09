@@ -5,4 +5,4 @@
 - [x] T003 No responsive overflow or stretch defect reproduced; no CSS change was justified.
 - [x] T004 Updated Banner DoD, request validation, component rule and follow-up evidence; no error-log entry was warranted because this review found no defect.
 - [x] T005 `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass.
-- [ ] T006 Commit and push verified evidence updates.
+- [x] T006 Evidence update `24c3fcc` is pushed to `origin/master`.
