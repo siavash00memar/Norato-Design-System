@@ -1,0 +1,86 @@
+.norato-date-picker__label {
+  font-family: var(--norato-font-heading);
+  font-weight: var(--norato-type-body-bold-weight);
+}
+
+.norato-date-picker__value-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-inline-size: 0;
+  min-block-size: var(--norato-control-target-min);
+}
+
+.norato-date-picker__value-wrap::before {
+  position: absolute;
+  inset-block: calc((var(--norato-control-target-min) - var(--norato-control-visual-height)) / 2);
+  inset-inline: 0;
+  border: var(--norato-border-thin) solid var(--norato-color-border-default);
+  border-radius: var(--norato-radius-pill);
+  background: var(--norato-color-surface-default);
+  content: '';
+  pointer-events: none;
+  transition: border-color var(--norato-motion-duration-press) var(--norato-motion-ease-out);
+}
+
+.norato-date-picker__input,
+.norato-date-picker.is-invalid .norato-date-picker__input {
+  position: relative;
+  inline-size: 100%;
+  block-size: var(--norato-control-target-min);
+  min-block-size: var(--norato-control-target-min);
+  padding-inline: var(--norato-space-3);
+  border: var(--norato-border-thin) solid transparent;
+  border-radius: var(--norato-radius-pill);
+  background: transparent;
+  color: var(--norato-color-text-primary);
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  text-align: start;
+}
+
+.norato-date-picker__value-wrap:hover:not(:has(.norato-date-picker__input:disabled))::before,
+.norato-date-picker__value-wrap:focus-within::before,
+.norato-date-picker.is-open .norato-date-picker__value-wrap::before {
+  border-color: var(--norato-color-brand-yellow);
+}
+
+.norato-date-picker.is-invalid .norato-date-picker__value-wrap::before {
+  border-color: var(--norato-color-status-error);
+}
+
+.norato-date-picker.is-invalid .norato-date-picker__value-wrap:focus-within::before {
+  border-color: var(--norato-color-brand-yellow);
+}
+
+.norato-date-picker.is-disabled .norato-date-picker__value-wrap::before {
+  border-color: var(--norato-color-border-default);
+  background: var(--norato-color-surface-muted);
+}
+
+.norato-date-picker.is-disabled .norato-date-picker__input {
+  color: var(--norato-color-text-disabled);
+  cursor: not-allowed;
+}
+
+.norato-date-picker__input:focus-visible {
+  border-color: transparent;
+  outline: none;
+  box-shadow: none;
+}
+
+.norato-date-picker__input::placeholder {
+  color: var(--norato-color-text-placeholder-subtle);
+  direction: rtl;
+  text-align: end;
+  font-family: var(--norato-font-body);
+  font-size: var(--norato-type-body-small-size);
+  font-weight: var(--norato-type-body-light-weight);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .norato-date-picker__value-wrap::before {
+    transition: none;
+  }
+}

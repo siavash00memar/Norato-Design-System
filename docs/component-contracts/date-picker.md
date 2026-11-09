@@ -30,7 +30,9 @@
 
 ## Sizes
 
-- Date Picker: Small 32px و Medium 40px.
+- Date Picker panel: Small 32px و Medium 40px طبق اندازه‌های ثبت‌شدهٔ کامپوننت.
+- Date Input در Norato از پوستهٔ دیداری ۳۶px داخل هدف تعاملی حداقل ۴۸px استفاده می‌کند؛ عنوان با Estedad Bold و placeholder با Vazirmatn Light و جهت RTL است.
+- دکمهٔ آیکن تقویم، هدف مستقل ۴۸px خود را حفظ می‌کند.
 
 ## States
 
@@ -70,7 +72,7 @@
 
 ### قاعدهٔ عمومی Focus در Norato
 
-برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
+برای دکمهٔ آیکن تقویم و روزهای تعاملی، Focus با حلقهٔ ۲ پیکسلی بیرونی تعریف شده است. پوستهٔ Date Input هنگام hover/focus یک Stroke زرد دارد و حلقهٔ دوم بیرونی رسم نمی‌کند.
 
 ## Tokens
 
