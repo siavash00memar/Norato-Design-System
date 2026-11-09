@@ -43,4 +43,6 @@
 ## Sidebar — mobile child navigation
 
 - [x] Mobile drawer now renders nested child links, carries `aria-current="page"` onto the active child, and presents disabled children without link semantics; activating a child uses the same navigate event and closes the dialog.
+- [x] Disabled top-level entries in the mobile drawer now retain `aria-current="page"` when they are the current route, matching the desktop semantics.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after the mobile navigation changes.
 - [ ] Browser test at 390px/320px, Escape/outside click/focus restoration, and screen-reader review remain open.
