@@ -2028,4 +2028,11 @@
 
 - [x] In the matched 1536×703 viewport, the static frame measures 632×300px locally and 636×300px in the visual reference.
 - [x] Checkbox control is 20×20px locally vs 19.44×19.44px in the reference; its row remains 48px high, with the Persian label, description, and checkbox in the expected RTL order. Frame marker placement is 12.8px from the top in both renders.
-- [ ] This comparison covers the static desktop specimen. It does not add mobile recapture or screen-reader evidence to the existing component record.
+- [ ] The checkbox comparison covers the static desktop specimen only; it does not add checkbox-specific mobile recapture or screen-reader evidence.
+
+## Radio Button inert specimen spacing — browser evidence (2026-11-09)
+
+- [x] Matched the 1536×703 browser viewport: reference frame 636×300px, Norato 632×300px. The reference radio row pitch is 36.72px; the inert Norato preview now measures 36.8px. First/second/third 20px radio centers differ from the reference by less than 2px relative to their frame.
+- [x] Scoped the compact row height and 16px row gap to the inert preview. The live playground remains unchanged; fresh DOM measurement shows three live rows at 48px, 48.8px, and 48px.
+- [x] At 390×844, the local Radio Button specimen frame measures 328×300px and the document remains 375px wide (no horizontal overflow). The specimen renders all three options on mobile.
+- [ ] A same-viewport mobile comparison against the visual reference, the full live visual-state/focus cross-product, and independent screen-reader review remain open.

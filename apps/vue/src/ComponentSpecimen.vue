@@ -93,6 +93,8 @@ onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListe
 <style scoped>
 .sample-input-label{display:inline-flex;align-items:center;gap:var(--norato-space-1);font-family:var(--norato-font-heading);font-size:var(--norato-type-heading-label-size);font-weight:var(--norato-type-heading-title-weight);line-height:var(--norato-type-heading-label-line-height)}
 .sample-input-specimen:not(.sample-select-specimen){transform:translateY(calc(-1 * var(--norato-space-2)))}
+.sample-radio-specimen :deep(.norato-radio-group){gap:var(--norato-space-4)}
+.sample-radio-specimen :deep(.norato-radio){min-block-size:0}
 .sample-input-email-icon{display:block;flex:none;inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);fill:none;stroke:var(--norato-color-text-secondary);stroke-width:var(--norato-border-medium);stroke-linecap:round;stroke-linejoin:round}
 .sample-input-specimen :deep(.norato-input-field__control){box-sizing:border-box;block-size:var(--norato-control-visual-height);min-block-size:var(--norato-control-visual-height)}
 .sample-input-specimen:not(.sample-select-specimen) :deep(.norato-input-field__control){transform:translateY(calc(-1 * var(--norato-space-3)))}
