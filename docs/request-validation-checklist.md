@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Modal reduced-motion browser check (2026-11-10)
+
+- [x] In an isolated Chromium target at 390×844, `prefers-reduced-motion: reduce` was active. Opening the live Dialog rendered an RTL `alertdialog` at 320px wide; document width matched the 390px viewport.
+- [x] Dialog and overlay computed styles both had `transition: none` and `animation-name: none`; Cancel closed the dialog. The temporary target was closed after validation.
+- [ ] This check does not close Modal hover/full-state review, controlled/uncontrolled `open` coverage, or independent screen-reader review; see `specs/013-design-system-parity/modal-checklist.md`.
+
 ## Chat LTR, empty timeline and keyboard review (2026-11-09)
 
 - [x] Actual Chat page screenshot in LTR confirms incoming messages on the left and outgoing on the right; RTL remains the default selector value.

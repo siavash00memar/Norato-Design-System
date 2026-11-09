@@ -17,7 +17,8 @@
 - [x] Cancel and confirm emit their respective outcomes and close; both action buttons become disabled while busy, the dialog exposes `aria-busy="true"`, and the playground reports busy completion. Busy state prevents Escape dismissal.
 - [x] Browser accessibility tree exposes the confirmation as a named `alertdialog` and the form as a named `dialog`, each with its title and description references resolving to live elements.
 - [x] Disabled confirmation remains open and cannot emit confirm. Tab and Shift+Tab wrap between Dialog actions; keyboard focus on the confirm button renders the yellow 2px ring. LTR direction propagates to the form field. At 320×640, the 288px dialog stays inside the viewport and its body scrolls 758px of content within 396px. Empty required form state exposes `aria-invalid=true` and an associated error; valid input clears the error and submits.
-- [ ] Controlled/uncontrolled `open` updates, independent screen-reader review and reduced-motion browser emulation remain open.
+- [ ] Controlled/uncontrolled `open` updates and independent screen-reader review remain open.
+- [x] Reduced-motion browser emulation at 390×844: Chromium reported `prefers-reduced-motion: reduce`; opening the live Dialog produced a 320px-wide RTL `alertdialog` with no horizontal document overflow. Computed dialog and overlay styles both reported `transition: none` and `animation-name: none`; Cancel closed the dialog. The browser's inert animation duration was `1e-05s`, but no animation was active. The temporary browser target was closed after the check.
 ## Technical and delivery gates
 
 - [x] `pnpm check:tokens` and `pnpm check:catalog` pass; catalog reports 49 unique routes/contracts.
