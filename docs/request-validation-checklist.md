@@ -1167,6 +1167,11 @@
 ## Sidebar — DoD browser record (2026-11-02)
 
 - [x] Existing design reference desktop comparison and local desktop/mobile interactions recorded in Sidebar checkpoint above; geometry was corrected after observed vertical stretch.
+
+## Sidebar — selection follow-up (2026-11-09)
+
+- [x] Selecting nested `بایگانی` in the playground updates the active item and status without leaving the Sidebar docs page; the parent `پروژه‌ها` label stays visible and the active child uses a distinct pale-yellow surface.
+- [ ] 390/320px geometry, full Glass/Bar × expanded/collapsed state matrix, mobile drawer dismissal/focus restoration and independent screen-reader review remain open.
 - [ ] The browser bridge became unavailable during the final rerender attempt (rowser.user is unavailable), so the exact post-adjustment screenshot and remaining keyboard/modal/320px cases are unverified. DoD remains open; no completion claim.
 
 ## Tabs — implementation checkpoint (2026-11-02)

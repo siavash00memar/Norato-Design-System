@@ -1315,6 +1315,13 @@
 - **Correction:** Drive the input from the search query in both modes. Opening clears that query; closing restores the committed single label, while multiple mode keeps its chip summary and empty query.
 - **Verified:** Live browser showed two recent options on initial open and after reopening. Typing `پژوهش` exposed the matching `پژوهش کاربر` option and the create action. Clicking the existing match committed and displayed the full `پژوهش کاربر` label; Escape closed the menu without losing the selection. The selected value remained intact on reopen. Multi mode displayed the selected chip with an empty search field, without duplicating the selected label. The exhaustive 96-case matrix and independent screen-reader review remain open.
 
+## ERR-168 — Selecting a Sidebar playground link navigated away from the component page (2026-11-09)
+
+- **Observed:** Clicking a nested Sidebar playground link changed the browser path to the example href and returned the docs app to its overview, hiding the Sidebar component page before the selected state could be reviewed.
+- **Cause:** The reusable adapter correctly renders real anchors and emits `navigate(item)`, but the interactive documentation playground did not intercept the sample links' default navigation.
+- **Correction:** Added a scoped playground click handler that prevents default navigation only for anchors inside the interactive preview. The adapter's real href and `navigate` behavior remain unchanged.
+- **Verified:** On the live Sidebar page, selecting `بایگانی` kept `#component-sidebar` active, updated the polite status to `/projects/archive`, retained the parent `پروژه‌ها` text, and visibly highlighted the selected child with the yellow Norato surface. Narrow viewport, full visual-state matrix and independent screen-reader review remain open.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.
