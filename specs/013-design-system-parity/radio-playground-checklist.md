@@ -33,3 +33,11 @@
 - [x] Live RTL row height remains 48.8px. The design reference's Focus state explicitly specifies a visible 2px keyboard ring; Norato uses its own yellow accent.
 - [x] Restored the playground to Monthly/enabled/no-error after the review.
 - [ ] The full live state/focus cross-product and independent screen-reader review remain open; this correction alone does not close Radio DoD.
+
+## Browser verification — disabled plus error priority (2026-11-09)
+
+- [x] Error-only keeps a semantic red border; Disabled-only keeps a neutral disabled border.
+- [x] With both states active, the settled selected radio border and dot use the neutral disabled token color (`rgb(107, 107, 107)`). All options are natively disabled; `aria-invalid="true"`, the linked error message, and selected Monthly value remain present.
+- [x] RTL and the row's 48px height remain intact. After review, the playground is restored to Monthly/enabled/no-error.
+- [x] Keyboard focus still computes `outline: 0` and a yellow `2px` shadow ring.
+- [ ] Full live visual-state/focus cross-product and independent screen-reader review remain open.

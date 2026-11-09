@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Radio disabled+error state priority (2026-11-09)
+
+- [x] Live Error-only keeps the error stroke; Disabled-only uses the neutral disabled stroke.
+- [x] Settled Error+Disabled uses the neutral disabled stroke and dot while preserving native `disabled`, `aria-invalid="true"`, the linked validation message and the selected value.
+- [x] All options are natively disabled; RTL 48px row and the 2px yellow keyboard focus ring remain intact. Playground was restored to Monthly/enabled/no-error.
+- [ ] The full Radio visual state/focus matrix and independent screen-reader review remain open.
+
 ## Radio keyboard focus cascade (2026-11-09)
 
 - [x] Live keyboard focus on the Radio option shows `outline: 0`, no offset and a settled yellow shadow ring exactly 2px wide from the semantic focus token; the app-wide native radio outline no longer wins the cascade.

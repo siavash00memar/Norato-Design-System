@@ -561,3 +561,7 @@
 - `side="right"` and `side="left"` refer to physical viewport edges in both RTL and LTR; the default RTL side opens on the right.
 - Round only the two corners facing the page content. A right-side panel has rounded left corners; a left-side panel has rounded right corners. Bottom sheets round both top corners.
 - The static preview uses the same right-side geometry as the default interactive drawer. Keep its panel and handle at intrinsic sizes.
+
+## Radio Button — disabled and error priority
+
+- When a Radio group is both invalid and disabled, render the neutral disabled stroke, surface, indicator and text treatment ahead of error color. Preserve `aria-invalid`, the linked validation message and the selected value; native disabled behavior prevents changes until re-enabled.

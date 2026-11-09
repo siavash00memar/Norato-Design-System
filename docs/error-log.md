@@ -1452,3 +1452,9 @@
 - **Observed:** Keyboard-focused Radio used the generic app outline instead of the component's semantic 2px focus ring because `input[type=radio]:focus-visible` had greater specificity.
 - **Correction:** Scope the package focus rule under `.norato-radio-group`, so its ring wins only for Norato Radio controls; keep the component's `outline: 0` and tokenized shadow ring.
 - **Verification:** Live keyboard focus computes `outline: 0`, zero offset and a settled yellow shadow spread of exactly `2px`, matching `--norato-border-focus`. `:focus-visible` and RTL are true, selected value is retained, and the row measures 48.8px. The design reference describes a 2px keyboard ring; Norato's own yellow remains in use. Full live state cross-product and independent screen-reader review remain open. Technical gates and remote push are pending.
+
+## ERR-186 — Radio error stroke overrode disabled visuals (2026-11-09)
+
+- **Observed:** Error-only used the red stroke and Disabled-only used the neutral `rgb(107, 107, 107)` stroke, but Error+Disabled stayed red because the invalid selector had greater specificity than the disabled selector.
+- **Correction:** Added a Radio-scoped invalid+disabled override for the neutral resting stroke and muted checked indicator, using existing Norato disabled tokens. `aria-invalid`, the error description, native disabled state and selected value remain intact.
+- **Verification:** Settled live browser state for Error+Disabled computes the neutral `rgb(107, 107, 107)` border and dot, preserves `aria-invalid="true"`, the linked message, selected Monthly value and RTL 48px row; all options are natively disabled. Error-only remains red, Disabled-only remains neutral, and the keyboard focus ring remains a yellow 2px spread. Engineering gates and GitHub push are pending.
