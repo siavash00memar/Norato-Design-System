@@ -1517,3 +1517,11 @@
 - **Correction:** Apply the toggle only to sample fixtures and append user-created messages independently. Keep the initial no-fixture/no-user-message state empty.
 - **Verification:** Local browser review showed empty timeline → sent text with fixtures hidden → fixtures and sent text together after toggling fixtures on. Native chooser activation did not surface a file dialog through the current browser control surface; file selection remains explicitly unverified.
 - **Prevention:** Keep demo fixtures separate from runtime/playground-created state; toggles named for fixtures should not discard unrelated state.
+
+## ERR-196 — Table preview inherited the wrong frame height (2026-11-10)
+
+- **Observed:** Same-viewport 1536×703 comparison measured the Table reference frame at 636×345.25px and the local frame at 631.98×300.50px.
+- **Cause:** The static Table specimen shared the generic Button frame height even though the Table reference has a taller preview canvas.
+- **Correction:** Added `--norato-table-preview-frame-block-size:345px` and scoped it to the non-compact Table specimen. The local frame now measures 631.98×345px; the Button frame remains 300px.
+- **Verification:** Desktop frame height is within 0.25px of the reference. At 390×844 and 320×844, the static table retains all columns with no horizontal overflow; live adapter cards remain 340px and 270px wide. Inner-table geometry differs by 4.02px in width and 16.11px in height, and independent screen-reader review remains open.
+- **Prevention:** Compare each component's own measured reference frame before reusing a shared specimen size token; page structure may be shared while component preview dimensions remain specific.

@@ -2336,8 +2336,9 @@
 
 # Table static specimen reference review — 2026-11-10
 
-- [x] At 1536×703, direct browser measurements: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×300.50px / 560×274.50px. The local specimen keeps the shared Button-style frame; exact frame-height parity remains an open visual gap.
+- [x] At 1536×703, direct browser measurements: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×345px / 560×274.50px after the Table-specific token. The 4.02px frame-width and 16.11px table-height differences remain open for review.
 - [x] The local specimen now includes three decorative 24px Norato avatars beside the sample names.
 - [x] At 390×844, the static table is 322px wide inside a 348px frame; at 320×844 it is 252px inside a 278px frame. Its scroll width equals client width at both sizes; all four rows are 48px high.
 - [x] Screenshots at desktop, 390px and 320px visually confirm avatar placement and all table columns remain visible.
-- [ ] Exact reference frame-height parity and independent screen-reader output remain open; Table DoD stays open.
+- [x] A 1536×703 recheck measures the Table frame at 345px versus 345.25px in the reference; a separate Button recheck remains 300px.
+- [ ] Exact inner-table geometry and independent screen-reader output remain open; Table DoD stays open.
