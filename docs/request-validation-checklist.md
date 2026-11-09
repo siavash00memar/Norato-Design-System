@@ -2438,3 +2438,10 @@
 - [x] Search and rows remain 450×48px and 450×43px; both icons remain intrinsic at 18×18px.
 - [x] Rechecked 390×844 and 320×844 mobile specimens; dimensions remain within 4px of reference with no horizontal overflow.
 - [ ] Exact desktop row/footer comparison and independent screen-reader output remain open.
+
+# Command Palette desktop composition — 2026-11-10
+
+- [x] At 1904×950, local frame/panel/search/group/rows/footer measure 635.98×334, 454×246, 452×48, 452×31, 440×43 and 452×72.19px; rendered reference values are 636×333.88, 453.6×246.1, 451.44×47.25, 451.44×30.64, 438.48×43.2 and 451.44×73.17px.
+- [x] All dimensions are within 1.52px; 6px row inset, 10px content gap, 26px icon tile and 16px icon match the rendered composition. The RTL search icon is on the right; footer hints occupy two aligned rows.
+- [x] At 390×844 and 320×844, previously measured frame/panel geometry remains 342×318/338×246px and 272×341/260×271px. Search glyphs remain 18×18px, row glyphs 16×16px, and the document remains bounded to the viewport.
+- [ ] Complete live interaction matrix and independent screen-reader review remain open.

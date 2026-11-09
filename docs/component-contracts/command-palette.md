@@ -86,5 +86,11 @@ Command Palette پنجرهٔ جست‌وجوی سریع برای فرمان‌ه
 - `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-text-placeholder-subtle`
 - `--norato-color-border-default`, `--norato-color-warning-container`, `--norato-color-focus-ring`
 - `--norato-command-palette-dialog-width`, `--norato-command-palette-dialog-offset`, `--norato-command-palette-item-block-size`
-- `--norato-command-palette-preview-*`, `--norato-layer-command-palette`, `--norato-elevation-modal`
+- `--norato-command-palette-preview-*`, including desktop frame/panel, group-title height, row inset/gap, 26px icon tile and 16px row glyph; `--norato-layer-command-palette`, `--norato-elevation-modal`
 - توکن‌های معنایی فاصله، تایپوگرافی، radius، آیکن و focus.
+
+## Static preview composition — 2026-11-10
+
+- Match the reference at rendered desktop size: keep the frame/panel bounded, use 6px row insets and a 10px gap, place a 16px row icon inside its 26px tile, and keep search icon at RTL inline-end (the right edge).
+- Render the keyboard hint groups on two RTL-aligned rows. Keep search glyph at 18px and row glyph at 16px; neither may stretch vertically.
+- These rules apply to the inert dotted specimen only. The live modal retains its own 48px interaction targets and is not sized from the preview rows.

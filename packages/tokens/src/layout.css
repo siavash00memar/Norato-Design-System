@@ -121,11 +121,11 @@
   --norato-tree-preview-inline-size: 256px;
   --norato-alert-inline-size: 420px;
   --norato-command-palette-icon-size: 18px;
-  --norato-command-palette-preview-inline-size: 452px;
-  --norato-command-palette-preview-panel-block-size: 244px;
-  --norato-command-palette-preview-frame-inline-size: 640px;
+  --norato-command-palette-preview-inline-size: 454px;
+  --norato-command-palette-preview-panel-block-size: 246px;
+  --norato-command-palette-preview-frame-inline-size: 636px;
   --norato-command-palette-preview-frame-mobile-inline-size: 342px;
-  --norato-command-palette-preview-frame-block-size: 332px;
+  --norato-command-palette-preview-frame-block-size: 334px;
   --norato-command-palette-preview-frame-mobile-block-size: 318px;
   --norato-command-palette-preview-frame-narrow-block-size: 341px;
   --norato-command-palette-preview-frame-radius: 24px;
@@ -133,6 +133,11 @@
   --norato-command-palette-preview-panel-narrow-block-size: 271px;
   --norato-command-palette-preview-search-narrow-block-size: 72px;
   --norato-command-palette-preview-row-block-size: 43px;
+  --norato-command-palette-preview-group-title-block-size: 31px;
+  --norato-command-palette-preview-row-inset: calc(var(--norato-space-1) + var(--norato-border-medium));
+  --norato-command-palette-preview-row-gap: calc(var(--norato-space-2) + var(--norato-border-medium));
+  --norato-command-palette-preview-icon-box-size: calc(var(--norato-space-6) + var(--norato-border-medium));
+  --norato-command-palette-preview-row-icon-size: 16px;
   --norato-menu-preview-frame-inline-size: 640px;
   --norato-menu-preview-frame-mobile-inline-size: 328px;
   --norato-menu-preview-frame-block-size: 300px;

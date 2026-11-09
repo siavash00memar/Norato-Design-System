@@ -1565,3 +1565,11 @@
 - **Correction:** Raised only the static preview panel tokens to 452px wide and 244px high; rows, icons, frame, and live dialog rules were not enlarged.
 - **Verification:** The panel now measures 452×244px; rows remain 43px high, icons 18×18px, and 390/320px frame/panel dimensions remain unchanged with no document overflow.
 - **Prevention:** Measure component content separately from the surrounding preview frame and preserve intrinsic row/icon geometry when correcting panel size.
+
+## ERR-202 — Command Palette desktop composition was misaligned (2026-11-10)
+
+- **Observed:** At 1904×950 the local panel and frame were slightly undersized; rows filled almost the full panel width, the footer collapsed into one line, the RTL search icon appeared after the text, and row glyphs were 18px instead of the reference's roughly 16px rendered size.
+- **Cause:** The static sample did not mirror the reference's 1.08-scaled composition: 6px row insets, 10px row gaps, a two-line RTL footer and a distinct icon tile were absent.
+- **Correction:** Added semantic preview geometry tokens, bounded 26px icon tiles with 16px glyphs, fixed the static DOM order for RTL search, and made footer hints stack into two RTL-aligned rows. Live dialog styles were not changed.
+- **Verification:** At 1904×950, frame/panel/search/group/rows/footer differ from the current rendered reference by at most 1.52px. The live browser shows the corrected icon order and two-row footer. Previously measured 390×844 and 320×844 frame/panel dimensions remain fixed, with no page overflow.
+- **Prevention:** Compare transformed reference geometry in rendered pixels; record search, group, row and footer separately from the outer frame, and scope static-sample corrections away from live dialog styles.

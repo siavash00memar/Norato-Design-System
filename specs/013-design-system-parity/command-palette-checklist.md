@@ -6,7 +6,7 @@
 - [x] Contract, Figma rules, request checklist, family ledger and error log match the implementation and evidence.
 
 ## Visual and responsive
-- [ ] Same-viewport design reference comparison records frame, panel, row and footer geometry. At 1904×950 the local frame/panel are 631.98×332 and 452×244px vs reference 630×331 and 452×244px. The panel is exact and the frame differs by 2px; exact desktop row/footer reference comparison remains open. At 390×844 the local frame/panel/search/rows/footer are 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they are 272×341, 260×271, 258×72, 250×43 and 258×72.2px. Mobile measures remain within 4px of same-viewport reference.
+- [x] Same-viewport design reference comparison records frame, panel, search, group, row and footer geometry. At 1904×950 local frame/panel/search/group/rows/footer measure 635.98×334, 454×246, 452×48, 452×31, 440×43 and 452×72.19px; rendered reference values are 636×333.88, 453.6×246.1, 451.44×47.25, 451.44×30.64, 438.48×43.2 and 451.44×73.17px. Every dimension differs by at most 1.52px. The row has 6px inline insets and 10px internal gaps; its icon tile is 26px with a 16px icon. At 390×844 the local frame/panel/search/rows/footer are 342×318, 338×246, 336×48, 320×43 and 336×72.2px; at 320×844 they are 272×341, 260×271, 258×72, 250×43 and 258×72.2px. Mobile measures remain within 4px of same-viewport reference, the search icon remains 18px, and document width stays within viewport.
 - [x] Default/results/empty/loading and item default/active/disabled states have distinct Norato semantics.
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
 - [x] At 390×844 and 320×844 the static preview stays within the viewport with no document overflow; 18×18 icons remain intrinsic and rows remain 43px high without stretch.
@@ -22,8 +22,8 @@
 - [ ] Independent screen-reader review is recorded; no inaccessible command-only path is introduced.
 
 ## Engineering
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build reports a 898.75KB JS chunk above the 500KB advisory threshold.
-- [x] Local browser review and verification evidence are recorded; responsive, exact matched design reference, full interaction matrix and independent screen-reader items above remain open before calling the component done.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Current build's main JS chunk is 440.40KB, below the 500KB advisory threshold.
+- [x] Local browser review and verification evidence are recorded for responsive geometry and exact matched design reference composition. The complete live interaction matrix and independent screen-reader review remain open before calling the component done.
 
 ## Desktop preview-frame parity — 2026-11-09
 - [x] Same-window screenshots before the change showed the Norato frame 32px shorter than the reference; widths differed by about 2px.
@@ -57,6 +57,12 @@
 - [x] Search and rows remain 450×48 and 450×43px; both icons remain 18×18px with no vertical stretching.
 - [x] Fresh 390×844 and 320×844 recheck preserves the mobile frame/panel sizes and has no document overflow.
 - [ ] Exact desktop row/footer comparison and independent screen-reader review remain open.
+
+## Desktop composition follow-up — 2026-11-10
+- [x] Current reference and local render were compared at 1904×950. Frame, panel, search, group title, rows and footer all differ by at most 1.52px in width or height.
+- [x] RTL search icon is at the right edge; row icon has a 26px tile and 16px glyph; footer hints occupy two RTL-aligned rows.
+- [x] The 390×844/320×844 responsive frame and panel dimensions remain unchanged; static search icons remain 18px and the local document has no horizontal overflow.
+- [ ] Independent screen-reader review and full live interaction matrix remain open.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.
