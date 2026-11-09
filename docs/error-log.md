@@ -1533,3 +1533,11 @@
 - **Correction:** Added a semantic 562px Table content width token, changed padding to the 8px token and removed the desktop inter-section gap. The mobile 4px gap rule and all 48px rows remain.
 - **Verification:** Local static table now measures 562×258.50px, within 0.4px width and 0.11px height of the reference. At 390×844 and 320×844 it measures 330px and 260px, fills neither frame, has no internal horizontal scrolling, and the document width equals the viewport. Full state matrix and independent screen-reader review remain open.
 - **Prevention:** Measure table content and frame separately; preserve semantic spacing tokens and verify desktop and narrow viewports after geometry changes.
+
+## ERR-198 — Command Palette loading spinner retained reduced-motion animation (2026-11-10)
+
+- **Observed:** Under `prefers-reduced-motion: reduce`, the live loading spinner still computed `animation-name: norato-spin` with a near-zero duration and one iteration.
+- **Cause:** The reduced-motion rule shortened the animation instead of removing it.
+- **Correction:** Set the spinner to `animation: none` only within the reduced-motion media query. The static ring and visible/live Loading status remain intact.
+- **Verification:** At 390×844, emulated reduced motion produced a focused RTL dialog within the viewport; `aria-busy="true"`, `role="status"`, and `aria-live="polite"` remained; spinner computed `animation-name: none` and had zero active animations. Escape closed the dialog.
+- **Prevention:** For reduced-motion requirements, verify both the computed animation name and active animation count; a near-zero finite duration still leaves an animation defined.

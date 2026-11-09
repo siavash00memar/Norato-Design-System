@@ -11,7 +11,7 @@
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
 - [ ] Desktop, 390px and 320px panels remain bounded with no document overflow or stretched icons/rows.
 - [x] Overlay layering is checked: the live dialog is centered above a full-page dimmed/blurred scrim.
-- [ ] Reduced-motion behavior is checked.
+- [x] Reduced-motion browser emulation confirms the loading spinner is fully static; visible and live Loading status, `aria-busy`, RTL and viewport bounds remain correct.
 
 ## Behavior and accessibility
 - [ ] Ctrl/⌘+K opens; configurable/false shortcut, editable-target, repeat and IME exclusions work.
@@ -33,11 +33,19 @@
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.
 - [x] End selects the last enabled result; ArrowUp moves to the preceding enabled result; Home selects the first result. With Settings disabled, ArrowDown skips it and selects Projects.
 - [x] Enter emits the selected command and closes the dialog; Persian query «تنظیمات» filters to the matching item, and an unmatched query exposes the no-results message.
-- [ ] This review did not test configurable/false shortcut, editable-target/repeat/IME exclusion, responsive bounds, exact row/footer visual comparison, reduced motion or independent screen-reader output; family DoD remains open.
+- [ ] This review did not test configurable/false shortcut, editable-target/repeat/IME exclusion, responsive bounds, exact row/footer visual comparison or independent screen-reader output; family DoD remains open. Reduced motion was verified in the 2026-11-10 follow-up below.
 
 ## Modal focus and overlay follow-up — 2026-11-09
 - [x] Live screenshot shows the centered 600×375px dialog above a full-page blurred scrim; the page remains visible behind the modal.
 - [x] Tab and Shift+Tab from the search combobox retain focus inside the modal; Escape closes it and restores trigger focus.
 - [x] Clicking outside the open dialog closes it and returns focus to the trigger.
-- [ ] Reduced-motion emulation and independent screen-reader review remain open.
+- [x] Reduced-motion emulation is verified in the 2026-11-10 follow-up below.
+- [ ] Independent screen-reader review remains open.
 - [ ] Fresh 390/320 viewport comparison remains open. The current browser controller has no viewport override; native Chrome screenshot/input attempts failed with access errors, so no mobile claim is made.
+
+## Reduced-motion Loading state — 2026-11-10
+
+- [x] Emulated `prefers-reduced-motion: reduce` in a 390×844 browser target and selected Loading. The live dialog remained RTL, 358px wide, focused, and within the 390px document viewport.
+- [x] Dialog retained `aria-busy="true"`; visible Loading text remained `role="status"` with `aria-live="polite"`.
+- [x] Spinner computed `animation-name: none` and `getAnimations().length` returned zero. Escape closed the dialog.
+- [ ] Exact row/footer geometry, full responsive and shortcut matrices, result-cap stress, and independent screen-reader review remain open.

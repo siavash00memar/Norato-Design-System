@@ -16,5 +16,6 @@ Implement `NoratoCommandPalette`, a controlled Vue 3 command/search dialog and a
 
 - design reference default specimen: 600px panel, approximately 15vh from the top, blurred overlay, search row, suggested group, two compact commands and keyboard-hint footer.
 - Norato uses bounded `min(600px, viewport - 32px)` geometry, semantic glass/elevation, yellow active row/focus, RTL icons right and LTR shortcut badges left; responsive width never overflows.
+- Under `prefers-reduced-motion: reduce`, disable the loading spinner animation entirely while preserving the static yellow spinner ring, visible/live Loading status, and `aria-busy`.
 - Inert preview is not interactive. Playground is separate, runs the global shortcut and can exercise results/loading/empty/disabled.
 - Page sections and ordering match Button; all geometry uses existing semantic tokens or newly named tokens.

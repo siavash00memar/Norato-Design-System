@@ -44,4 +44,4 @@
 .sample-command-palette__footer span{margin-inline-start:auto}
 @media(max-width:700px){.norato-command-palette{inset-block-start:var(--norato-space-3);max-block-size:calc(100dvh - var(--norato-space-6))}.norato-command-palette__footer{gap:var(--norato-space-2)}}
 @media(max-width:380px){.norato-command-palette{inline-size:calc(100vw - var(--norato-space-4));inset-block-start:var(--norato-space-2)}.norato-command-palette__search-row{gap:var(--norato-space-1);padding-inline:var(--norato-space-2)}.norato-command-palette__footer{justify-content:space-between;gap:var(--norato-space-1);padding-inline:var(--norato-space-2)}.norato-command-palette__footer>span{gap:var(--norato-border-thin)}}
-@media(prefers-reduced-motion:reduce){.norato-command-palette__spinner{animation-duration:.01ms;animation-iteration-count:1}}
+@media(prefers-reduced-motion:reduce){.norato-command-palette__spinner{animation:none}}

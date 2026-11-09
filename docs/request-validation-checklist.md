@@ -2323,20 +2323,27 @@
 - [x] Local browser: Ctrl+K opens the dialog; focus enters the labelled combobox; Escape closes and restores trigger focus.
 - [x] Persian search filters to the matching command; an unmatched query exposes the no-results message.
 - [x] Home/End and ArrowUp/Down update the active item; disabled Settings is skipped; Enter selects Projects and updates the live status.
-- [ ] Responsive, matched-reference, configurable/editable-target/repeat/IME shortcut, Tab/outside-dismiss, reduced-motion, result-cap stress and independent screen-reader checks remain open.
+- [ ] Responsive, matched-reference, configurable/editable-target/repeat/IME shortcut, result-cap stress and independent screen-reader checks remain open. Reduced motion is verified in the 2026-11-10 follow-up below.
 
 ## Command Palette preview frame — 2026-11-09
 
 - [x] Same-window 1904×950 screenshots showed about 630×332px reference vs 628×300px local frame; the semantic frame token is now 332px.
 - [x] Follow-up screenshot shows the local frame about 628×330px and panel about 446×242px without increasing row dimensions.
-- [ ] 390/320 responsive comparison, exact row/footer measurements, reduced-motion/overlay review and independent screen-reader review remain open.
+- [ ] 390/320 responsive comparison, exact row/footer measurements and independent screen-reader review remain open. Reduced motion is verified below; overlay behavior is verified in the modal focus-cycle entry above.
 
 ## Command Palette modal focus cycle — 2026-11-09
 
 - [x] At the desktop viewport, the dialog sits above a dimmed and blurred full-page scrim; its AX tree contains the labelled combobox, groups and options.
 - [x] Tab and Shift+Tab remain on the dialog search control; Escape and outside click close the dialog and restore focus to its trigger.
-- [ ] Reduced-motion emulation and independent screen-reader review remain open.
+- [x] Reduced-motion emulation is verified in the 2026-11-10 follow-up below.
+- [ ] Independent screen-reader review remains open.
 - [ ] 390/320 viewport checks remain open: the available browser control does not expose a viewport override, and native Chrome input/screenshot access failed during this review.
+
+## Command Palette reduced-motion Loading — 2026-11-10
+
+- [x] In an isolated 390×844 Chrome target with `prefers-reduced-motion: reduce`, the live RTL palette stayed within the viewport, received focus, and retained `aria-busy="true"` and visible `role="status"`/`aria-live="polite"` Loading text.
+- [x] Spinner computed `animation-name: none`; `getAnimations().length` was zero. A real Escape key closed the dialog.
+- [ ] Responsive bounds, exact row/footer geometry, shortcut exclusions, result-cap stress and independent screen-reader review remain open.
 
 # Banner mobile tone matrix — 2026-11-09
 
