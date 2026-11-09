@@ -6,4 +6,4 @@
 - [x] Desktop change was inspected in the live local browser at the current desktop viewport.
 - [ ] 390px and 320px local renders have no horizontal document overflow and keep the specimen frame at 300px tall.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass.
-- [ ] Checkpoint is pushed to `origin/master`.
+- [x] Checkpoint `d23f7c2` is pushed to `origin/master`.
