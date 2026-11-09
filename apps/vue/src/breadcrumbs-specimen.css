@@ -1,0 +1,2 @@
+.component-sample.sample-breadcrumbs-preview:not(.compact){inline-size:min(calc(100% + var(--norato-space-2)),var(--norato-split-button-preview-frame-inline-size))}
+@media(max-width:599px){.component-sample.sample-breadcrumbs-preview:not(.compact){inline-size:min(100%,var(--norato-split-button-preview-frame-mobile-inline-size));min-inline-size:0}}

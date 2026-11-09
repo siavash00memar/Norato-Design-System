@@ -3,7 +3,7 @@
 ## design reference parity and composition
 
 - [x] design reference inspected at 1280×720 and 390×844; Norato detail page inspected at matched desktop/mobile sizes. Both show an RTL path, left-pointing chevron, raised current item and a home marker; Norato keeps its yellow emphasis, semantic link colors and Button page hierarchy.
-- [x] Desktop Norato specimen frame is 584×136px and the breadcrumb is 212×48px. At 390px, specimen frame is 343×136px and the document width is 375px. At 320px, document width remains 320px; the path scrolls internally to preserve labels and 48px targets.
+- [x] Historical pre-correction measurement: the generic Norato specimen was 584×136px on desktop and 343×136px at 390px; the 320px page had no overflow and the trail scrolled internally. The frame-height mismatch was corrected in the 2026-11-09 follow-up below.
 
 ## Runtime and accessibility
 
@@ -34,3 +34,8 @@
 
 - [x] Fresh local browser review: with the disclosure expanded, Shift+Tab focused the Home link; the accessibility tree named the focused link and the screenshot showed the Norato yellow ring with its dark-amber contrast outline. Clicking the inert specimen did not navigate away from Breadcrumbs.
 - [ ] This single focus sample does not close the full 42-part hover/focus visual matrix or the independent screen-reader review.
+
+## Preview frame parity — 2026-11-09
+
+- [x] Live desktop screenshot confirms a 636×300px dotted shared frame, top-right Default marker, and centered RTL crumb row with intrinsic height.
+- [ ] Matched 390px and 320px browser recapture remains open; the new mobile width rule has not yet been directly rendered at those viewport sizes.

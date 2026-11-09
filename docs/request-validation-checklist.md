@@ -1280,6 +1280,11 @@
 - [x] In the local browser, Shift+Tab from the expanded disclosure moved focus to the Home link. AX identified the focused link; the screenshot showed the Norato yellow focus ring and dark-amber contrast outline. A pointer click on the inert visual specimen kept the route on Breadcrumbs.
 - [ ] This sample does not verify the remaining hover/focus combinations or independent screen-reader announcements.
 
+## Breadcrumbs — shared preview frame (2026-11-09)
+
+- [x] The live desktop render now shows the shared dotted 636×300px frame, Default marker and centered RTL trail; the undersized generic 136px frame is gone.
+- [ ] Fresh 390px/320px responsive captures are still required before closing the frame parity item.
+
 ## Pagination — implementation checkpoint (2026-11-02)
 
 - [x] Added public `NoratoPagination`, Button-style playground, copyable controlled Vue usage and nine-section contract; catalog maturity is Adapted.
