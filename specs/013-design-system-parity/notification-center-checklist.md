@@ -8,7 +8,7 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 - [x] Confirm Button-equivalent dotted specimen frame and page section order: visual specimen, live Vue playground, then contract sections.
 - [x] Reviewed specimen frame, panel, rows and avatar/icon proportions; changed avatars to 32px small-avatar token and aligned specimen panel height with reference. No stretched geometry is visible in desktop captures.
 - [x] Compared Popover, Panel and Empty states; Norato yellow is used for unread/selected cues, with neutral user/system marks.
-- [ ] Review layout at 390px and 320px; verify document and panel have no unintended horizontal overflow.
+- [ ] Review exact 390px and 320px layouts; verify document and panel have no unintended horizontal overflow. Fresh mobile browser work was at 430×676 and does not replace these exact widths.
 
 ## Behavior
 
@@ -20,7 +20,7 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 
 ## RTL, keyboard and accessibility
 
-- [ ] Verify RTL and LTR geometry, badge placement, text flow and 48px interaction targets.
+- [x] At 430×676, verify RTL and LTR Popover/Panel placement and text direction; RTL Panel bounds x=0..400px, LTR Panel x=29.6..429.6px, and every bell/filter/action/item target is at least 48px. The generated snippet follows the selected `dir`.
 - [ ] Verify keyboard-only open, navigation/activation, close, and focus return for both presentations; Escape close and focus return passed, keyboard-only open is not checked.
 - [x] Verify visible focus, disabled state, dialog/popover names, grouped list semantics and live unread status via browser accessibility tree.
 - [ ] Record independent screen-reader review; source/DOM inspection alone does not close this item.
@@ -37,3 +37,11 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 ## Evidence and open findings
 
 Record same-viewport dimensions, tested interactions, viewport sizes, console findings and exact remaining checks in `docs/request-validation-checklist.md` before closing this DoD.
+
+## Popover collision fit and direction playground — 2026-11-09
+
+- [x] Reproduced on the live 430×676 mobile browser: Popover height 480px, top -173.6px, bottom 306.4px while the bell was at y=314.2px; panel was clipped above the viewport.
+- [x] Scoped `.norato-notification-center__content` max block size to the smaller of the Norato 480px cap, Reka Popper's available collision height, and the viewport inset. In the same edge case, the panel now measures 298.2px high at y=8..306.2px; Reka available height is 298.2px and internal scrollHeight exceeds clientHeight.
+- [x] Notification rows remain 70.4px and all bell, filter, header and action controls remain at least 48px; document width is 414px at a 430px viewport with no horizontal overflow.
+- [x] Added a live RTL/LTR playground selector, default RTL, and generated snippet sync. In LTR, Popover stays inside the viewport and panel aligns to inline-end; Escape closes Popover and restores focus to the bell.
+- [ ] Exact 390×844/320×640 comparison, bottom-edge placement review, keyboard-only navigation/activation, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.

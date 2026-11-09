@@ -1482,3 +1482,9 @@
 - **Observed:** Heading audit across 49 component contracts found missing Preview notes, canonical sections out of order, duplicate Sizes headings, and component-specific API/Responsive/DoD material interleaved with canonical sections. Since markdown heading order drives the page and side-navigation order, the rendered detail pages diverged from Button.
 - **Correction:** Normalized every contract to Preview → Overview → Anatomy → Variants → Sizes → States → Parts → Usage → Accessibility → Tokens. Added concise Preview notes where absent, merged duplicate canonical sections, and moved supplemental content after Tokens while preserving the original prose.
 - **Verification:** All 49 contracts pass the heading-order audit and every original prose block remains present. Live desktop Toast and mobile Banner/Toast renders show the expected order, RTL, and no document horizontal overflow. Runtime/component visuals were not changed; family DoD statuses remain as before.
+
+## ERR-191 — Notification Center Popover clipped at mobile viewport edge (2026-11-09)
+
+- **Observed:** On a 430×676 mobile render, Reka flipped the 480px Popover above a bell at y=314.2px, leaving its bounds at y=-173.6..306.4px and clipping the top.
+- **Correction:** Scoped the Popover max block size to Reka's placement-aware available height, Norato's existing 480px maximum and the viewport inset. Added an RTL-default direction selector to the Notification Center playground and synchronized the generated usage snippet.
+- **Verification:** At the same 430×676 edge case, Popover now measures y=8..306.2px within 298.2px available height, long content scrolls internally, rows remain 70.4px and controls/actions remain ≥48px. RTL/LTR Popover and Panel placement, document bounds and Escape focus return were browser-checked. Exact 390/320 widths, bottom-edge placement, keyboard-only navigation, screen reader and reduced-motion checks remain open; DoD is not closed.

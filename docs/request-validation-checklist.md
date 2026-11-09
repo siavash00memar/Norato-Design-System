@@ -2172,3 +2172,11 @@
 - [x] Live desktop Toast render at 1536×703 shows the canonical order in the main content and side navigation, followed by API/RTL/DoD supplements. Main direction is RTL, document width is 1521px, and the Preview section box is 631.98×415.1px including its heading and explanatory copy.
 - [x] Live mobile Banner and Toast renders at 430×676 show Preview → implementation playground → the canonical nine sections; the document width is 414px with no horizontal overflow. Toast custom sections remain after Tokens.
 - [ ] These browser checks validate page structure only; each component's outstanding visual, behavior and accessibility DoD remains independent.
+
+## Notification Center Popover collision fit — 2026-11-09
+
+- [x] Live 430×676 mobile render reproduced the defect: the 480px Popover began at y=-173.6px and was clipped. After the Popper available-height cap, it begins at y=8px, ends at y=306.2px, and measures 298.2px high within the 298.2px collision space.
+- [x] The 320px-wide panel internally scrolls its 483px notification content; rows remain 70.4px, controls/actions are 48px or higher, and the 414px document does not overflow the 430px viewport.
+- [x] Live playground RTL/LTR selector updates both adapter direction and generated snippet. LTR panel occupies x=29.6..429.6px of 430px; RTL panel occupies x=0..400px. Popover Escape closes and restores focus to the bell. Playground restored to RTL/Popover/controlled/open=false.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after this correction.
+- [ ] Exact 390×844/320×640 viewports, bottom-edge placement, screen-reader review and reduced-motion emulation remain open; Notification Center DoD stays open.

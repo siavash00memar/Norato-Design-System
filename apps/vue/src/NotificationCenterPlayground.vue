@@ -8,6 +8,7 @@ const props = defineProps<{ copiedKey: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
 const presentation = ref<NoratoNotificationPresentation>('popover')
 const stateMode = ref<'controlled' | 'uncontrolled'>('controlled')
+const direction = ref<'rtl' | 'ltr'>('rtl')
 const open = ref(false)
 const empty = ref(false)
 const disabled = ref(false)
@@ -24,6 +25,7 @@ function resetSample() {
   notifications.value = initialNotifications()
   presentation.value = 'popover'
   stateMode.value = 'controlled'
+  direction.value = 'rtl'
   open.value = false
   empty.value = false
   disabled.value = false
@@ -41,7 +43,7 @@ function openNotification(notification: NoratoNotification) { console.info(notif
 function syncReadState() { /* persist the updated notification state */ }
 <\/script>
 <template>
-  <NoratoNotificationCenter id="notifications" v-model:open="open" v-model="notifications" presentation="${presentation.value}" label="اعلان‌ها" @select="openNotification" @mark-all-read="syncReadState" />
+  <NoratoNotificationCenter id="notifications" v-model:open="open" v-model="notifications" presentation="${presentation.value}" dir="${direction.value}" label="اعلان‌ها" @select="openNotification" @mark-all-read="syncReadState" />
 </template>`)
 </script>
 
@@ -57,6 +59,7 @@ function syncReadState() { /* persist the updated notification state */ }
         :model-value="visibleNotifications"
         @update:model-value="updateNotifications"
         :presentation="presentation"
+        :dir="direction"
         :disabled="disabled"
         label="اعلان‌ها"
         @select="notification => feedback = `انتخاب شد: ${notification.title}`"
@@ -69,6 +72,7 @@ function syncReadState() { /* persist the updated notification state */ }
         v-model:open="open"
         :default-notifications="visibleNotifications"
         :presentation="presentation"
+        :dir="direction"
         :disabled="disabled"
         label="اعلان‌ها"
         @select="notification => feedback = `انتخاب شد: ${notification.title}`"
@@ -80,6 +84,7 @@ function syncReadState() { /* persist the updated notification state */ }
     <div class="button-playground-controls notification-center-playground__controls">
       <PlaygroundSelect id="notification-presentation" v-model="presentation" label="نمایش" :options="[{value:'popover',label:'Popover'},{value:'panel',label:'Panel'}]" />
       <PlaygroundSelect id="notification-state-mode" v-model="stateMode" label="مدل وضعیت" :options="[{value:'controlled',label:'کنترل‌شده'},{value:'uncontrolled',label:'داخلی'}]" />
+      <PlaygroundSelect id="notification-direction" v-model="direction" label="جهت" :options="[{value:'rtl',label:'راست‌به‌چپ'},{value:'ltr',label:'چپ‌به‌راست'}]" />
       <label class="button-playground-switch"><input v-model="empty" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>نمایش حالت خالی</span></label>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال‌کردن زنگوله</span></label>
       <button class="notification-center-playground__reset" type="button" @click="resetSample">بازنشانی نمونه</button>
