@@ -277,7 +277,9 @@
 
 ## Component documentation rollout — 2026-10-28
 
-- Each component keeps its own route and nine-part contract. Do not group components or reuse Button-specific contract content as a stand-in for other families.
+- Each component keeps its own route and contract. Do not group components or reuse Button-specific contract content as a stand-in for other families.
+- Every component page uses the Button structure: the fixed visual Preview, the live Vue playground when an adapter exists, then Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility and Tokens in that order. Family-specific supplemental sections follow Tokens.
+- Keep the Preview note first in the source contract; the page renderer filters that note from the secondary section cards because the fixed specimen is already rendered at the top.
 - The compact, vertical editorial hierarchy from Button applies to non-Button documentation; keep family-specific specimens intact and use semantic tokens, RTL and accessible focus/target sizes.
 - Every useful contract section has an individually operable copy action with clear success/failure feedback.
 - Only display copyable Vue usage when the named adapter exists and the snippet matches its real props/events/model. Proposal visuals and contract-only axes are visibly labeled and never presented as executable behavior.

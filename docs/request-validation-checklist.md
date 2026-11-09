@@ -2165,3 +2165,10 @@
 - [x] Live Chrome accessibility tree lists all eight Input adapters and the Persian playground controls, followed by the nine canonical Button-style contract sections in the side navigation.
 - [x] The current page is RTL and exposes labels for the password visibility action, OTP cells, Number actions, shared state toggles, size/label selectors, and direction/length controls.
 - [ ] This is a browser accessibility-tree inspection, not an independent screen-reader pass. Full Input visual-state and cross-page playground reviews remain open.
+
+## Button-style contract order audit — 2026-11-09
+
+- [x] Heading audit covers all 49 component contracts. Each now starts with Preview and follows with Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility and Tokens; every original prose block remains present, and supplemental sections follow Tokens.
+- [x] Live desktop Toast render at 1536×703 shows the canonical order in the main content and side navigation, followed by API/RTL/DoD supplements. Main direction is RTL, document width is 1521px, and the Preview section box is 631.98×415.1px including its heading and explanatory copy.
+- [x] Live mobile Banner and Toast renders at 430×676 show Preview → implementation playground → the canonical nine sections; the document width is 414px with no horizontal overflow. Toast custom sections remain after Tokens.
+- [ ] These browser checks validate page structure only; each component's outstanding visual, behavior and accessibility DoD remains independent.

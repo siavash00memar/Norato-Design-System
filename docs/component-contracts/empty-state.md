@@ -46,10 +46,6 @@ Slotهای اختیاری: `visual` برای visual سفارشی تزئینی، 
 - **Visual:** Small 40px، Medium 48px، Large 64px؛ تصویرسازی نسبت ابعاد خود را حفظ می‌کند.
 - همهٔ دکمه‌ها و لینک‌های داخل action slots حداقل 48px ارتفاع تعاملی دارند.
 
-## Responsive
-
-در عرض‌های کمتر از 600px، layout افقی به چیدمان عمودی و وسط‌چین تبدیل می‌شود. در مرورگر Chromium و اندازه‌های 390×844 و 320×844، عرض سند با viewport برابر بود و قاب نمونه به‌ترتیب 358×288px و 288×288px اندازه‌گیری شد؛ overflow افقی مشاهده نشد.
-
 ## States
 
 این کامپوننت وضعیت تعاملی یا داده‌ای مستقل ندارد. حالت خالی، موفقیت، هشدار یا خطا را متن مصرف‌کننده مشخص می‌کند؛ tone فقط ظاهر visual را تنظیم می‌کند.
@@ -103,3 +99,7 @@ import { NoratoButton, NoratoEmptyState } from '@norato/vue'
 ## Tokens
 
 از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-brand-yellow`، `--norato-color-warning-container`، `--norato-color-success-container`، `--norato-color-error-container`، `--norato-color-status-success`، `--norato-color-status-warning`، `--norato-color-status-error`، `--norato-empty-state-visual-*`، `--norato-empty-state-icon-*`، `--norato-empty-state-art-*`، `--norato-empty-state-gap`، `--norato-empty-state-padding` و `--norato-empty-state-content-max` استفاده می‌شود.
+
+## Responsive
+
+در عرض‌های کمتر از 600px، layout افقی به چیدمان عمودی و وسط‌چین تبدیل می‌شود. در مرورگر Chromium و اندازه‌های 390×844 و 320×844، عرض سند با viewport برابر بود و قاب نمونه به‌ترتیب 358×288px و 288×288px اندازه‌گیری شد؛ overflow افقی مشاهده نشد.

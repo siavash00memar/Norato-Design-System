@@ -27,9 +27,9 @@ Playground با انتخاب‌گر «مدل وضعیت» هر دو حالت ک�
 - **Layout:** simple، rich (توضیح فقط در rich)
 - Loading تا زمان بستن دستی پایدار است؛ ابعاد ثابت و کشیده‌سازی آیکن/متن ممنوع است.
 
-## API اجرایی Vue
+## Sizes
 
-`NoratoToast` از Reka Toast استفاده می‌کند و `id` و `title` الزامی دارد. `description`، `tone`، `surface`، `layout`، `actionLabel`، `actionAltText`، `actionCloses`، `dismissible`، `dismissLabel`، `modelValue`، `defaultOpen`، `duration` و `viewportLabel` قابل تنظیم‌اند. مدل می‌تواند controlled یا uncontrolled باشد. رویدادها: `update:modelValue`، `action`، `close`، `pause` و `resume`. پیش‌فرض زمان شش ثانیه است؛ duration صفر پایدار است.
+سایز مستقل در ماتریس مرجع طراحی برای Toast تعریف نشده؛ عرض از `--norato-toast-inline-size` محدود است و در viewport باریک به عرض قابل‌استفاده shrink می‌شود. target اقدام‌ها حداقل ۴۸px است.
 
 ## States
 
@@ -37,29 +37,6 @@ Playground با انتخاب‌گر «مدل وضعیت» هر دو حالت ک�
 - حداکثر یک پیام در playground؛ صف و stacking در قرارداد فعلی نیست.
 - اقدام فقط رویداد می‌فرستد؛ منطق برنامه و بازگردانی بر عهدهٔ مصرف‌کننده است.
 - کاهش حرکت، انیمیشن ورود و spinner را محدود می‌کند.
-
-## RTL و دسترس‌پذیری
-
-ترتیب منطقی RTL: آیکن راست، محتوا در میانه، بستن چپ. Reka Toast تنها کانال live announcement را فراهم می‌کند؛ live region تکراری نساز. خطا foreground و دیگر لحن‌ها background هستند. اقدام و بستن هدف ۴۸ پیکسلی و حلقهٔ فوکوس زرد ۲ پیکسلی دارند. برچسب viewport فارسی است.
-
-## Tokens
-
-از توکن‌های معنایی Norato برای سطح dark/glass، متن، وضعیت، فاصله، شعاع، elevation، زمان و focus استفاده شود؛ آبی مرجع طراحی وارد پالت نشود و زرد، accent تعاملی بماند.
-
-## DoD
-
-در مرورگر هم‌اندازهٔ ۱۲۶۵×۷۲۰، قاب و ترکیب Rich Success با مرجع طراحی مقایسه شد. هر ۲۰ انتخاب tone/surface/layout از playground باز و بسته شدند. Toast شش‌ثانیه‌ای خودکار بسته شد؛ Loading پس از ۷ ثانیه پایدار ماند و با close دستی بسته شد. Action و close با Space فعال شدند. عرض باریک ۴۸۴px نیز بدون سرریز افقی دیده شد.
-
-مرورگر توقف زمان‌سنج در focus و hover و ادامهٔ آن پس از خروج را تأیید کرد؛ ترتیب Tab طبیعی و استروک زرد فیلد بدون outline یا سایهٔ اضافه اندازه‌گیری شد. حالت کنترل‌نشده در playground باز، بسته و دوباره باز شد؛ callback اکشن غیرمسدودکننده نیز بدون بستن Toast اجرا شد و snippet مستقل از `v-model` تولید کرد.
-
-مرور تصویری تازهٔ صفحه‌کلید، فوکوس زرد را روی هر دو کنترل action و close تأیید کرد. حلقه با شکل دکمهٔ کپسولی و هدف close دایره‌ای همراه است؛ کد از stroke دوپیکسلی و offset چهار پیکسلی توکن‌شده استفاده می‌کند. این بازبینی، آزمون مستقل صفحه‌خوان محسوب نمی‌شود.
-
-بازبینی DOM زنده یک `role="alert"` پُرشده نشان داد: Success با `aria-live="polite"` و Danger با `"assertive"`؛ متن اعلان شامل لحن فارسی، عنوان، توضیح و اقدام است. CSS کاهش حرکت، ورود و گذار نوار زمان را خاموش و spinner را به یک چرخهٔ تقریباً بی‌درنگ محدود می‌کند. این شواهد جای اجرای مستقل صفحه‌خوان یا emulation کاهش حرکت در مرورگر را نمی‌گیرند.
-
-موارد باز: بررسی CSS viewport دقیق ۳۹۰/۳۲۰، screenshot و هندسهٔ جداگانهٔ همهٔ ۲۰ حالت، بررسی مستقل screen reader و مرور نهایی کانال announcement/reduced motion. تا تکمیل این موارد، DoD بسته نیست.
-## Sizes
-
-سایز مستقل در ماتریس مرجع طراحی برای Toast تعریف نشده؛ عرض از `--norato-toast-inline-size` محدود است و در viewport باریک به عرض قابل‌استفاده shrink می‌شود. target اقدام‌ها حداقل ۴۸px است.
 
 ## Parts
 
@@ -72,3 +49,27 @@ Toast را پس از اقدام موفق/اطلاع کوتاه نمایش بده
 ## Accessibility
 
 از نام/عنوان گویا، نقش اعلان مدیریت‌شده توسط Reka، ترتیب خواندن RTL، هدف ۴۸px برای کنترل‌ها و focus ring زرد ۲px استفاده کن. پیام Loading را تا پایان کار یا بستن دستی نگه دار. بازبینی screen reader مستقل هنوز انجام نشده است.
+
+## Tokens
+
+از توکن‌های معنایی Norato برای سطح dark/glass، متن، وضعیت، فاصله، شعاع، elevation، زمان و focus استفاده شود؛ آبی مرجع طراحی وارد پالت نشود و زرد، accent تعاملی بماند.
+
+## API اجرایی Vue
+
+`NoratoToast` از Reka Toast استفاده می‌کند و `id` و `title` الزامی دارد. `description`، `tone`، `surface`، `layout`، `actionLabel`، `actionAltText`، `actionCloses`، `dismissible`، `dismissLabel`، `modelValue`، `defaultOpen`، `duration` و `viewportLabel` قابل تنظیم‌اند. مدل می‌تواند controlled یا uncontrolled باشد. رویدادها: `update:modelValue`، `action`، `close`، `pause` و `resume`. پیش‌فرض زمان شش ثانیه است؛ duration صفر پایدار است.
+
+## RTL و دسترس‌پذیری
+
+ترتیب منطقی RTL: آیکن راست، محتوا در میانه، بستن چپ. Reka Toast تنها کانال live announcement را فراهم می‌کند؛ live region تکراری نساز. خطا foreground و دیگر لحن‌ها background هستند. اقدام و بستن هدف ۴۸ پیکسلی و حلقهٔ فوکوس زرد ۲ پیکسلی دارند. برچسب viewport فارسی است.
+
+## DoD
+
+در مرورگر هم‌اندازهٔ ۱۲۶۵×۷۲۰، قاب و ترکیب Rich Success با مرجع طراحی مقایسه شد. هر ۲۰ انتخاب tone/surface/layout از playground باز و بسته شدند. Toast شش‌ثانیه‌ای خودکار بسته شد؛ Loading پس از ۷ ثانیه پایدار ماند و با close دستی بسته شد. Action و close با Space فعال شدند. عرض باریک ۴۸۴px نیز بدون سرریز افقی دیده شد.
+
+مرورگر توقف زمان‌سنج در focus و hover و ادامهٔ آن پس از خروج را تأیید کرد؛ ترتیب Tab طبیعی و استروک زرد فیلد بدون outline یا سایهٔ اضافه اندازه‌گیری شد. حالت کنترل‌نشده در playground باز، بسته و دوباره باز شد؛ callback اکشن غیرمسدودکننده نیز بدون بستن Toast اجرا شد و snippet مستقل از `v-model` تولید کرد.
+
+مرور تصویری تازهٔ صفحه‌کلید، فوکوس زرد را روی هر دو کنترل action و close تأیید کرد. حلقه با شکل دکمهٔ کپسولی و هدف close دایره‌ای همراه است؛ کد از stroke دوپیکسلی و offset چهار پیکسلی توکن‌شده استفاده می‌کند. این بازبینی، آزمون مستقل صفحه‌خوان محسوب نمی‌شود.
+
+بازبینی DOM زنده یک `role="alert"` پُرشده نشان داد: Success با `aria-live="polite"` و Danger با `"assertive"`؛ متن اعلان شامل لحن فارسی، عنوان، توضیح و اقدام است. CSS کاهش حرکت، ورود و گذار نوار زمان را خاموش و spinner را به یک چرخهٔ تقریباً بی‌درنگ محدود می‌کند. این شواهد جای اجرای مستقل صفحه‌خوان یا emulation کاهش حرکت در مرورگر را نمی‌گیرند.
+
+موارد باز: بررسی CSS viewport دقیق ۳۹۰/۳۲۰، screenshot و هندسهٔ جداگانهٔ همهٔ ۲۰ حالت، بررسی مستقل screen reader و مرور نهایی کانال announcement/reduced motion. تا تکمیل این موارد، DoD بسته نیست.

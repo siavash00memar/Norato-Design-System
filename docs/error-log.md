@@ -1476,3 +1476,9 @@
 - **Observed:** At a matched 1536×703 viewport, the reference States section contains ten compact descriptive cards in four columns; Norato's primary States section displayed 41 family-specific field examples in three columns.
 - **Correction:** The canonical States section now presents the ten common statuses with Persian RTL descriptions and Norato semantic colors. The 41 adapter-specific examples are retained in a supplemental section after Tokens.
 - **Verification:** Fresh matched 1536×703 render shows a 635.98×284.6px local grid vs 636×284.6px reference, with 151.5×88.2px cards. At 390×844 grids are both 327.2px wide and the local document is 375px; at 320×844 the local grid is 256.8px and document 305px without overflow. The RTL page has ten primary cards and all 41 adapter examples in a separate `aria-hidden` inert gallery. Token/catalog/typecheck/build gates pass.
+
+## ERR-190 — Component contract section order diverged from Button (2026-11-09)
+
+- **Observed:** Heading audit across 49 component contracts found missing Preview notes, canonical sections out of order, duplicate Sizes headings, and component-specific API/Responsive/DoD material interleaved with canonical sections. Since markdown heading order drives the page and side-navigation order, the rendered detail pages diverged from Button.
+- **Correction:** Normalized every contract to Preview → Overview → Anatomy → Variants → Sizes → States → Parts → Usage → Accessibility → Tokens. Added concise Preview notes where absent, merged duplicate canonical sections, and moved supplemental content after Tokens while preserving the original prose.
+- **Verification:** All 49 contracts pass the heading-order audit and every original prose block remains present. Live desktop Toast and mobile Banner/Toast renders show the expected order, RTL, and no document horizontal overflow. Runtime/component visuals were not changed; family DoD statuses remain as before.
