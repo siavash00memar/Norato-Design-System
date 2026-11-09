@@ -1440,3 +1440,9 @@
 - **Observed:** Existing matched evidence recorded a 632px Norato frame versus 636px in the reference.
 - **Correction:** Set the scoped non-compact Combobox frame allowance to semantic `--norato-space-1` while preserving the 300px height and existing mobile selector.
 - **Verification:** Matched live DOM at 1536×703 measures reference 636×300px and Norato 635.98×300px. Post-change mobile widths, full gallery states and independent screen-reader review remain open; DoD stays open.
+
+## ERR-184 — Radio Button mobile specimen frame exceeded reference width (2026-11-09)
+
+- **Observed:** At 320×844, the local Radio frame measured 272.8×300px versus 256.8×300px in the reference, despite no document overflow.
+- **Correction:** Bound the non-compact mobile frame by the viewport width minus the shared 64px spacing token plus the 1px border token; retain the 328px cap and 300px height.
+- **Verification:** Matched browser dimensions are 257×300px local vs 256.8×300px reference at 320px, and 327.4×300px vs 327.2×300px at 390px. Documents have no horizontal overflow; existing radio sizes and RTL are preserved. Full interaction and independent screen-reader checks remain open.

@@ -2054,6 +2054,13 @@
 - [x] Matched the 1536×703 browser viewport: reference frame 636×300px, Norato 632×300px. The reference radio row pitch is 36.72px; the inert Norato preview now measures 36.8px. First/second/third 20px radio centers differ from the reference by less than 2px relative to their frame.
 - [x] Scoped the compact row height and 16px row gap to the inert preview. The live playground remains unchanged; fresh DOM measurement shows three live rows at 48px, 48.8px, and 48px.
 - [x] At 390×844, the local Radio Button specimen frame measures 328×300px and the document remains 375px wide (no horizontal overflow). The specimen renders all three options on mobile.
+
+## Radio Button mobile frame width — browser follow-up (2026-11-09)
+
+- [x] Matched 320×844: reference frame 256.8×300px; Norato 257×300px. Local document is 305px with no horizontal overflow.
+- [x] Matched 390×844: reference frame 327.2×300px; Norato 327.4×300px. Local document is 375px with no horizontal overflow.
+- [x] The responsive selector is scoped to the non-compact frame and uses existing spacing/border tokens; radio circles remain intrinsic at 20×20px in the specimen and RTL is preserved.
+- [ ] Full live focus/hover/state cross-product and independent screen-reader review remain open.
 - [ ] A same-viewport mobile comparison against the visual reference, the full live visual-state/focus cross-product, and independent screen-reader review remain open.
 
 ## Shared playground input typography — browser follow-up (2026-11-09)

@@ -15,3 +15,5 @@
 - [x] Yellow accent follow-up `3746d69` pushed to `origin/master`; local HEAD and remote parity were confirmed.
 - [x] 2026-11-09 live follow-up: ArrowDown moved selection from monthly to quarterly and synchronized the status/snippet. Selected + Error displayed the red error treatment and alert; Disabled exposed all options as disabled and resisted an attempted change. Required + no selection displayed the required message; selecting Yearly cleared the empty state. Both 16px/20px sizes rendered with proportional circles and RTL labels; keyboard focus retained the high-contrast yellow-ring treatment. Playground restored to Monthly, enabled, optional, no-error, 20px.
 - [ ] Full live focus/hover/state cross-product and independent screen-reader validation remain open; static 20-cell matrix and this focused runtime pass do not close the family DoD.
+
+- [x] 2026-11-09 responsive frame correction: at 320×844 the frame is 257×300px vs 256.8×300px reference, with 305px document width and no overflow; at 390×844 it is 327.4×300px vs 327.2×300px and document width is 375px. The frame selector does not alter 16px/20px radio geometry or RTL.
