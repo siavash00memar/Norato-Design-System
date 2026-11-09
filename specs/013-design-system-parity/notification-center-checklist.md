@@ -12,7 +12,7 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 
 ## Behavior
 
-- [x] Verify bell opens Popover and Panel. Escape closes both and restores focus to the bell. Outside-click not separately exercised.
+- [x] Verify bell opens Popover and Panel. Escape closes both and restores focus to the bell. A live browser click on the page heading outside each surface closed both Popover and Panel; both triggers returned to `data-state="closed"`.
 - [x] Verify controlled and uncontrolled notification models, `open` model, mark one read, mark all read, and event feedback in the playground.
 - [x] Verify All/Mentions filter, removal of non-matching items, and empty result behavior.
 - [x] Verify row selection closes the surface, marks the item read and emits its selection; action buttons emit the selected action without closing the Popover.
@@ -46,4 +46,5 @@ Record same-viewport dimensions, tested interactions, viewport sizes, console fi
 - [x] Notification rows remain 70.4px and all bell, filter, header and action controls remain at least 48px; document width is 414px at a 430px viewport with no horizontal overflow.
 - [x] Added a live RTL/LTR playground selector, default RTL, and generated snippet sync. In LTR, Popover stays inside the viewport and panel aligns to inline-end; Escape closes Popover and restores focus to the bell.
 - [x] Exact 390×844 and 320×640 layout/no-overflow review is recorded above. At 390×1034, real pointer activation with the bell at y=921..969 and navigation starting at y=977 opens Popover at x=47,y=433,w=320,h=480; it ends at y=913, leaving 8px to both bell and navigation. Content scrolls internally (483/478px) and document width remains 375px.
-- [x] At 390×1000 and page scrollY=0, the fixed mobile navigation begins at y=943 and covers the bell's lower 26px (bell y=921.1..969.1). A 35px normal page scroll reveals the full 48px bell at y=886.1..934.1, with the navigation still beginning at y=943; document width is 375px. The bell is not trapped behind the fixed navigation and its full 48px target is reachable by ordinary scrolling. Outside-click dismissal, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.
+- [x] At 390×1000 and page scrollY=0, the fixed mobile navigation begins at y=943 and covers the bell's lower 26px (bell y=921.1..969.1). A 35px normal page scroll reveals the full 48px bell at y=886.1..934.1, with the navigation still beginning at y=943; document width is 375px. The bell is not trapped behind the fixed navigation and its full 48px target is reachable by ordinary scrolling.
+- [ ] Emulate `prefers-reduced-motion: reduce` in the browser and confirm the rendered transitions/scroll behavior. The stylesheet has a reduction rule, but browser emulation has not been exercised.

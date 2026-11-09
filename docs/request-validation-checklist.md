@@ -2184,4 +2184,6 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass after this correction.
 - [x] Near-bottom review at 390×1034 with actual pointer activation: bell bounds y921..969, fixed mobile navigation begins at y977; Popover opens at x47,y433,w320,h480 and ends at y913, preserving 8px gaps to both. Internal content scrolls 483/478px and document width remains 375px.
 - [x] At 390×1000 and scrollY=0, the fixed mobile navigation starts at y=943 and covers 26px of the bell (y=921.1..969.1). Scrolling the page by 35px reveals the complete 48px bell at y=886.1..934.1, with a 9px clearance above the navigation; document width stays 375px. The interaction is reachable by ordinary scrolling.
-- [ ] Outside-click dismissal, independent screen-reader review and reduced-motion emulation remain open; Notification Center DoD stays open.
+- [x] In the live browser, clicking the page heading outside the open Popover removed the Popover and set the trigger to closed; repeating with Panel removed both Panel and overlay and returned the trigger to closed. Playground reset to Popover, controlled, RTL, empty=false, disabled=false, closed.
+- [x] The Notification Center stylesheet includes a `prefers-reduced-motion: reduce` rule for panel/overlay transitions and scroll behavior. Browser media emulation was not run (`matchMedia` was false), so this is source verification only.
+- [ ] Independent screen-reader review and browser emulation of reduced motion remain open; Notification Center DoD stays open.
