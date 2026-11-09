@@ -41,5 +41,6 @@
 
 - [x] In the RTL playground, direct pointer selection of slides 2, 3 and 4 moved the active card/indicator and the controlled-index selector together. Slide 5 selection continued to disable Next; resetting through the controlled-index selector restored slide 1.
 - [x] In LTR, the header controls relabeled Previous/Next; ArrowRight advanced from slide 4 to 5 and ArrowLeft returned to slide 4 after scroll settling. The direction and index selectors then restored to RTL and slide 1.
-- [ ] A narrow live browser capture showed a horizontal document scrollbar while the playground was in view. Exact 390px/320px document/frame measurements and the source of this overflow remain unverified; keep responsive DoD open.
+- [x] Fresh 1265×713 browser screenshot shows the desktop document without a horizontal scrollbar and the intrinsic dotted specimen frame.
+- [ ] A narrow live browser capture (414px-wide browser panel, not an enforced CSS viewport) showed a horizontal document scrollbar while the playground was in view. Exact 390px/320px document/frame measurements and the source of this overflow remain unverified; keep responsive DoD open.
 - [ ] Touch scrolling, independent external `v-model` control outside the playground and independent screen-reader review remain open.

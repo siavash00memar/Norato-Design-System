@@ -4,7 +4,8 @@
 
 - [x] In the live RTL playground, direct selection of slides 2, 3, 4 and 5 updated the visible card, yellow active dot and controlled-index selector; returning to slide 1 disabled Previous.
 - [x] In LTR, control labels reversed and ArrowRight moved 4→5; ArrowLeft returned to 4 after the smooth scroll settled. Playground was restored to RTL and slide 1.
-- [ ] A narrow browser capture showed a horizontal document scrollbar. The viewport was not an enforced 390px or 320px; exact measurements and the source of overflow remain open in the Carousel DoD.
+- [x] A 1265×713 browser screenshot showed no horizontal document scrollbar on desktop.
+- [ ] A 414px-wide browser-panel capture showed a horizontal document scrollbar. This was not an enforced CSS viewport; exact 390px/320px measurements and the source of overflow remain open in the Carousel DoD.
 
 ## Input variant-axis chip color (2026-11-09)
 
