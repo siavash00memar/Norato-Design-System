@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Switch responsive Variants gallery — browser review (2026-11-09)
+
+- [x] Matched mobile screenshots and measurements at 390×844 and 320×640. Norato preview frames are 320×288px and 273×288px; reference frames are 327×300px and 257×300px.
+- [x] Norato document width is 375px/305px with no horizontal overflow; the reference document reaches 326px at the 320px viewport.
+- [x] All 30 Switch and 6 Switch Field gallery states rendered. The 36 targets are 48×48px; tracks remain intrinsic at 32×20, 40×24 and 48×28px. Knobs stay white with no border/shadow and 5px nearest-edge inset; checked, disabled, hover and error treatments use the correct state colors.
+- [ ] Independent screen-reader review remains open for Switch.
+
 ## Segmented disabled-selection priority — browser review (2026-11-09)
 
 - [x] At 390×844 and 320×640, Norato page widths remained within the CSS viewport (375px and 305px); 64 inert cells rendered in eight cards and the matrix did not create horizontal overflow.
