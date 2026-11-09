@@ -45,4 +45,4 @@ Record same-viewport dimensions, tested interactions, viewport sizes, console fi
 - [x] Scoped `.norato-notification-center__content` max block size to the smaller of the Norato 480px cap, Reka Popper's available collision height, and the viewport inset. In the same edge case, the panel now measures 298.2px high at y=8..306.2px; Reka available height is 298.2px and internal scrollHeight exceeds clientHeight.
 - [x] Notification rows remain 70.4px and all bell, filter, header and action controls remain at least 48px; document width is 414px at a 430px viewport with no horizontal overflow.
 - [x] Added a live RTL/LTR playground selector, default RTL, and generated snippet sync. In LTR, Popover stays inside the viewport and panel aligns to inline-end; Escape closes Popover and restores focus to the bell.
-- [ ] Exact 390×844/320×640 comparison, bottom-edge placement, keyboard navigation for Panel, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.
+- [ ] Exact 390×844/320×640 comparison, bottom-edge placement, independent screen-reader review and reduced-motion emulation remain open; family DoD stays open.
