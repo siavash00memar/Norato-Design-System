@@ -2314,7 +2314,14 @@
 - [x] Browser pointer dismissal removed the uncontrolled Alert while preserving a visible status and focused restore button; Enter restored it and focused its close control.
 - [x] Space dismissal produced the same hidden/status/focus state. The code sample omitted `v-model` in independent mode and included it in controlled mode.
 - [x] Switched back to controlled mode; its Alert and generated example restored correctly. Playground remained RTL; the adapter close control uses its existing 48px minimum target token.
-- [ ] Independent assistive-technology review and full 20-state screenshot review remain open; Alert DoD stays open.
+- [ ] Independent assistive-technology review remains open; Alert DoD stays open.
+
+# Alert 20-state visual review — 2026-11-10
+
+- [x] Reviewed the live playground screenshots for all 20 combinations: Info, Success, Warning, Danger, Neutral × Soft/Glass × Inline/Expanded.
+- [x] Confirmed the tone-specific icon/color, tinted Soft versus white Glass surface, RTL icon/close positions, and action/title/description layout; no stretching or clipping was observed in the 420px live preview.
+- [x] Restored the playground to its default Info/Glass/Expanded state after review.
+- [ ] Independent screen-reader review remains open; browser accessibility tree is not a substitute.
 
 # Table empty-state and pagination — 2026-11-09
 
