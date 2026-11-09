@@ -5,4 +5,4 @@
 - [x] Chip height (24px) and RTL order remain unchanged; the live Input gallery contains 84 neutral chips.
 - [x] Matched local/reference Input Variants sections are reviewed at the same 1536×647 viewport.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
-- [ ] Checkpoint is pushed and the remote head is verified.
+- [x] Checkpoint `826ea2b` is pushed to `origin/master`; remote head matches local.
