@@ -18,3 +18,10 @@
 - [x] At both 16px and 20px radio sizes, option rows remain 48/48.8/48px tall. ArrowDown from Quarterly selects Yearly in RTL and updates the status/snippet.
 - [x] Restored playground to enabled, no-error, no-required, Monthly selected, 20px after the review.
 - [ ] This follow-up does not complete the full live visual-state/focus cross-product or independent screen-reader review.
+
+## Browser verification — settled Hover and Focus (2026-11-09)
+
+- [x] With the live, enabled RTL group, clicking Quarterly selected it; after the 600ms visual transition settled, `:hover` remained true and the selected control border resolved to Norato yellow `rgb(253, 193, 1)` (`--norato-color-brand-yellow: #fdc101`). The option row remained 48.8px high.
+- [x] Space on the selected Quarterly option retained selection and produced `:focus-visible=true`; after the transition, the focus outline was yellow. The semantic focus token is 2px; this browser session's computed outline reported 1.6px, so final 2px optical measurement remains open.
+- [x] Restored the playground to Monthly selected, enabled and without error; RTL direction was confirmed.
+- [ ] Remaining: full live state/focus cross-product, final focus-ring visual measurement, and independent screen-reader review. Radio family DoD remains open.

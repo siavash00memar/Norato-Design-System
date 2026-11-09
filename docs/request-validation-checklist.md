@@ -1988,6 +1988,13 @@
 - [x] Both 16px and 20px circles rendered proportionally beside RTL labels. Playground restored to monthly, enabled, optional, no-error and 20px.
 - [ ] Full live focus/hover/state cross-product and independent screen-reader review remain open for Radio Button.
 
+## Radio Button settled Hover/Focus verification (2026-11-09)
+
+- [x] Live enabled RTL playground: clicking Quarterly selected it; after waiting 600ms for the transition, the hovered selected border resolved to Norato yellow `rgb(253, 193, 1)` (`#fdc101`), and its row measured 48.8px.
+- [x] Space kept Quarterly selected and set `:focus-visible=true`; the settled outline was yellow. The semantic focus token is 2px, while computed outline width in this browser session was 1.6px; optical measurement is not claimed.
+- [x] Restored Monthly selected, enabled and error-free.
+- [ ] Full live combined-state/focus cross-product and independent screen-reader review remain outstanding; this evidence does not close Radio DoD.
+
 ## Segmented Control live interaction follow-up (2026-11-09)
 
 - [x] ArrowLeft in RTL moved focus Day → Week without changing the selection; Space selected Week, updated the status and snippet, and Right + Space restored Day.
