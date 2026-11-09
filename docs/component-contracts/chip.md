@@ -30,6 +30,7 @@ Chip برای انتخاب فیلتر یا نمایش برچسب ورودیِ ق
 | XLarge | 36px |
 
 ارتفاع دکمهٔ فیلتر و هدف حذف حداقل ۴۸ پیکسل می‌ماند؛ کپسول دیداری فشرده است.
+عرض Chip به ۲۴۰ پیکسل محدود می‌شود؛ در فضاهای کوچک‌تر تا عرض موجود جمع می‌شود و متن بلند با ellipsis بریده می‌شود.
 
 ## States
 
@@ -42,7 +43,7 @@ Chip برای انتخاب فیلتر یا نمایش برچسب ورودیِ ق
 - `NoratoChip` props: `label` ضروری، `mode`, `modelValue`, `disabled`, `size`, `dir`.
 - Events: `update:modelValue` برای filter؛ `remove(label)` برای input.
 - Slot اختیاری `leadingIcon` تزئینی است و با `aria-hidden` پنهان می‌شود.
-- Size tokens: `--norato-chip-height-small`, `--norato-chip-height-medium`, `--norato-chip-height-large`, `--norato-chip-height-xlarge`.
+- Size tokens: `--norato-chip-height-small`, `--norato-chip-height-medium`, `--norato-chip-height-large`, `--norato-chip-height-xlarge`; maximum width uses `--norato-chip-max-inline-size`.
 
 ## Usage
 

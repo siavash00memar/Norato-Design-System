@@ -16,7 +16,8 @@
 - [x] Input remove emits once with the correct label; disabled prevents removal. Focus moves to Restore after removal and returns to the remove action after restoration.
 - [x] Reviewed default, hover, selected, disabled and keyboard-focus visuals. CSS keeps the visual pill intrinsic and interaction target at the 48px token; removed a duplicate focus halo found in the browser screenshot.
 - [x] Checked leading icon and remove placement in RTL and LTR.
-- [ ] Long-label truncation and 390/320px overflow remain unverified.
+- [x] A 240px semantic maximum-width token caps the Chip. In the browser, a 300+-character Persian label visibly truncates with ellipsis instead of stretching the capsule; confirmed in both Filter and removable Input modes, and generated code reflects the long label.
+- [ ] 390/320px overflow remains unverified.
 - [ ] Independent screen-reader review remains unverified; the browser accessibility tree exposes the filter toggle state and the named remove action.
 - [ ] Independently inspect screen-reader naming and role.
 

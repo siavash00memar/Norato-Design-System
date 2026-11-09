@@ -21,6 +21,7 @@
   --norato-chip-height-medium: 28px;
   --norato-chip-height-large: 32px;
   --norato-chip-height-xlarge: 36px;
+  --norato-chip-max-inline-size: 240px;
   --norato-chat-avatar-size: 40px;
   --norato-chat-layout-min-block-size: 360px;
   --norato-chat-layout-max-block-size: 620px;

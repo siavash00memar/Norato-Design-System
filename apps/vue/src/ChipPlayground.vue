@@ -8,6 +8,8 @@ const size = ref<NoratoChipSize>('medium')
 const direction = ref<'rtl' | 'ltr'>('rtl')
 const selected = ref(false)
 const disabled = ref(false)
+const longLabel = ref(false)
+const label = computed(() => longLabel.value ? 'این برچسب بسیار طولانی برای بررسی برش متن و حفظ اندازهٔ کپسول در صفحه‌های باریک است '.repeat(4).trim() : 'طراحی')
 const removedLabel = ref('')
 const previewRef = ref<HTMLDivElement | null>(null)
 const restoreButtonRef = ref<HTMLButtonElement | null>(null)
@@ -22,17 +24,17 @@ const restoreChip = () => {
   nextTick(() => previewRef.value?.querySelector<HTMLButtonElement>('.norato-chip__remove')?.focus())
 }
 const snippet = computed(() => mode.value === 'filter'
-  ? `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoChip } from '@norato/vue'\nconst selected = ref(false)\n<\/script>\n\n<template>\n  <NoratoChip label="طراحی" mode="filter" v-model="selected" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" />\n<\/template>`
-  : `<script setup lang="ts">\nimport { NoratoChip } from '@norato/vue'\nfunction removeChip(label: string) { /* update application state */ }\n<\/script>\n\n<template>\n  <NoratoChip label="طراحی" mode="input" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" @remove="removeChip" />\n<\/template>`)
+  ? `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoChip } from '@norato/vue'\nconst selected = ref(false)\n<\/script>\n\n<template>\n  <NoratoChip label="${label.value}" mode="filter" v-model="selected" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" />\n<\/template>`
+  : `<script setup lang="ts">\nimport { NoratoChip } from '@norato/vue'\nfunction removeChip(label: string) { /* update application state */ }\n<\/script>\n\n<template>\n  <NoratoChip label="${label.value}" mode="input" size="${size.value}"${disabled.value ? ' disabled' : ''} dir="${direction.value}" @remove="removeChip" />\n<\/template>`)
 </script>
 
 <template>
   <div class="button-playground chip-playground" dir="rtl">
     <header><strong>آزمایش Chip اجرایی</strong><span>فیلتر انتخاب‌پذیر و برچسب ورودیِ قابل‌حذف را جداگانه بررسی کن.</span></header>
     <div ref="previewRef" class="button-playground-preview chip-playground__preview">
-      <NoratoChip v-if="mode === 'filter'" label="طراحی" mode="filter" v-model="selected" :disabled="disabled" :size="size" :dir="direction" />
+      <NoratoChip v-if="mode === 'filter'" :label="label" mode="filter" v-model="selected" :disabled="disabled" :size="size" :dir="direction" />
       <template v-else>
-        <NoratoChip v-if="!removedLabel" label="طراحی" mode="input" :disabled="disabled" :size="size" :dir="direction" @remove="handleRemove" />
+        <NoratoChip v-if="!removedLabel" :label="label" mode="input" :disabled="disabled" :size="size" :dir="direction" @remove="handleRemove" />
         <div v-else class="chip-playground__removed" role="status">برچسب «{{ removedLabel }}» حذف شد <button ref="restoreButtonRef" type="button" @click="restoreChip">بازگردانی</button></div>
       </template>
     </div>
@@ -44,6 +46,7 @@ const snippet = computed(() => mode.value === 'filter'
     <div class="button-playground-toggles">
       <label class="button-playground-switch"><input v-model="selected" type="checkbox" :disabled="mode !== 'filter'" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>انتخاب‌شده</span></label>
       <label class="button-playground-switch"><input v-model="disabled" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>غیرفعال</span></label>
+      <label class="button-playground-switch"><input v-model="longLabel" type="checkbox" /><span class="button-playground-track" aria-hidden="true"><span /></span><span>برچسب بلند</span></label>
     </div>
     <div class="button-playground-code">
       <div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy','chip-playground',snippet)">{{ props.copiedKey === 'chip-playground' ? 'کپی شد' : 'کپی کد' }}</button></div>
