@@ -1350,9 +1350,9 @@
 - **Correction:** Bound the text grid to a `minmax(0, 1fr)` track and let its heading/detail children wrap inside the available inline size.
 - **Verified:** At 390×844 and 320×844, Tree View document widths are 375px/305px and all rows remain 48px high. The same 320px check on Input reports 305px document width with no overflow. Pointer-only hover, reduced-motion emulation and independent screen-reader review remain open.
 
-## ERR-172 — Static choice and switch specimens used the wrong accent (2026-11-09)
+## ERR-172 — Orphaned choice and switch specimen styles implied stale blue accents (2026-11-09)
 
-- **Observed:** A source audit found that the inert Checkbox, Radio, Drawer choice and Switch specimens still used the Norato blue token, despite the approved yellow accent for selected controls.
-- **Cause:** The old shared specimen stylesheet retained legacy blue declarations after the live adapters had moved to the yellow accent.
-- **Correction:** Changed the static choice controls' `accent-color` and the sample Switch track to the semantic yellow token; preserved the existing white Switch thumb and all component geometry.
-- **Verified:** Exact source selectors now resolve to the yellow token. Browser rendering could not be confirmed in this pass because the available browser input/capture calls returned access/capture errors; DoD visual confirmation remains open. Token/catalog, typecheck, production build and diff checks are the required post-change gates.
+- **Observed:** A source search found old `.sample-choice`, `.sample-radio`, `.sample-switch` and `.sample-drawer` CSS selectors. They had no matching template usage; the Checkbox and Switch pages render their public Norato adapters in both specimen and playground.
+- **Cause:** Legacy specimen rules remained after the preview implementation moved to the component adapters, making source-only color searches misleading.
+- **Correction:** Removed the unused selector group rather than treating it as a visual fix. The rendered Checkbox and Switch adapters keep their own semantic token styling.
+- **Verified:** Local browser shows the Checkbox specimen using the Norato checkbox and the Switch specimen using the Norato switch. The live Switch track measured 40×24px and `#fdc101` when checked; its knob measured 16×16px, white, with zero border width and no shadow. RTL and the 48×48px target were confirmed. The playground was restored to unchecked. Independent screen-reader review, the complete Switch state matrix and matched mobile comparison remain open.

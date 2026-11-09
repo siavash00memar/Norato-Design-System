@@ -1944,8 +1944,8 @@
 - [x] With 120 pages/current page 60, Numbers mode scrolls internally: the nav's content width is 483px while its visible width is 317px at 390px, and 247px at 320px. Document width stays bounded at both sizes.
 - [ ] Same-viewport mobile comparison, complete large/irregular totals matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/pagination-checklist.md`.
 
-## Static choice and Switch specimen accent — source correction (2026-11-09)
+## Switch and Checkbox specimen audit — browser follow-up (2026-11-09)
 
-- [x] Source audit found stale blue accents in the static Checkbox, Radio, Drawer choice and Switch specimens; these are now mapped to the Norato yellow token. The white Switch thumb and specimen dimensions are unchanged.
-- [x] Token/catalog, Vue typecheck, production build and `git diff --check` pass after the correction.
-- [ ] Browser visual confirmation of the updated specimens remains open because browser capture/input failed in this pass; do not treat this source correction alone as closing those components' visual DoD.
+- [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.
+- [x] Browser shows the Checkbox specimen uses `NoratoCheckbox`. The live Switch in RTL measured a 48×48px target and a 40×24px track; checked track is Norato yellow, with a 16×16px white knob, zero border and no shadow. The playground was returned to unchecked.
+- [ ] Matched mobile comparison, exhaustive combined-state review and independent screen-reader review remain open for Switch; Checkbox's independent screen-reader review remains open.
