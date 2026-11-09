@@ -10,12 +10,13 @@
 - [x] Default/results/empty/loading and item default/active/disabled states have distinct Norato semantics.
 - [x] RTL search/text/icon placement, LTR keyboard badges and yellow focus treatment match documented contract.
 - [ ] Desktop, 390px and 320px panels remain bounded with no document overflow or stretched icons/rows.
-- [ ] Reduced motion and overlay layering are checked.
+- [x] Overlay layering is checked: the live dialog is centered above a full-page dimmed/blurred scrim.
+- [ ] Reduced-motion behavior is checked.
 
 ## Behavior and accessibility
 - [ ] Ctrl/⌘+K opens; configurable/false shortcut, editable-target, repeat and IME exclusions work.
 - [x] Search normalization/filtering, grouping, suggested/recent, empty and loading work. Eight-results cap is implemented but not stress-checked in browser.
-- [ ] ArrowUp/Down, Home/End, Enter, disabled skip, Escape/outside, selection, focus entry/return and Tab behavior work. Fresh 2026-11-09 live review confirms ArrowUp/Down, Home/End on an empty query, disabled-item skipping, Enter selection, Escape close and focus return; outside-dismiss and Tab behavior remain pending.
+- [x] ArrowUp/Down, Home/End, Enter, disabled skip, Escape/outside, selection, focus entry/return and Tab behavior work. Fresh 2026-11-09 live review confirms ArrowUp/Down, Home/End on an empty query, disabled-item skipping, Enter selection, Escape and outside-click dismissal, trigger focus restoration, and Tab/Shift+Tab remaining within the modal.
 - [x] Dialog, labelled input, listbox/group/option names, selected/disabled state, live loading/results and icon hiding appear in AX tree; dangling aria-controls in empty/loading was fixed and rechecked.
 - [ ] Independent screen-reader review is recorded; no inaccessible command-only path is introduced.
 
@@ -32,4 +33,11 @@
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.
 - [x] End selects the last enabled result; ArrowUp moves to the preceding enabled result; Home selects the first result. With Settings disabled, ArrowDown skips it and selects Projects.
 - [x] Enter emits the selected command and closes the dialog; Persian query «تنظیمات» filters to the matching item, and an unmatched query exposes the no-results message.
-- [ ] This review did not test configurable/false shortcut, editable-target/repeat/IME exclusion, Tab/outside dismissal, responsive bounds, matched visual comparison, reduced motion or independent screen-reader output; family DoD remains open.
+- [ ] This review did not test configurable/false shortcut, editable-target/repeat/IME exclusion, responsive bounds, exact row/footer visual comparison, reduced motion or independent screen-reader output; family DoD remains open.
+
+## Modal focus and overlay follow-up — 2026-11-09
+- [x] Live screenshot shows the centered 600×375px dialog above a full-page blurred scrim; the page remains visible behind the modal.
+- [x] Tab and Shift+Tab from the search combobox retain focus inside the modal; Escape closes it and restores trigger focus.
+- [x] Clicking outside the open dialog closes it and returns focus to the trigger.
+- [ ] Reduced-motion emulation and independent screen-reader review remain open.
+- [ ] Fresh 390/320 viewport comparison remains open. The current browser controller has no viewport override; native Chrome screenshot/input attempts failed with access errors, so no mobile claim is made.

@@ -2240,3 +2240,10 @@
 - [x] Same-window 1904×950 screenshots showed about 630×332px reference vs 628×300px local frame; the semantic frame token is now 332px.
 - [x] Follow-up screenshot shows the local frame about 628×330px and panel about 446×242px without increasing row dimensions.
 - [ ] 390/320 responsive comparison, exact row/footer measurements, reduced-motion/overlay review and independent screen-reader review remain open.
+
+## Command Palette modal focus cycle — 2026-11-09
+
+- [x] At the desktop viewport, the dialog sits above a dimmed and blurred full-page scrim; its AX tree contains the labelled combobox, groups and options.
+- [x] Tab and Shift+Tab remain on the dialog search control; Escape and outside click close the dialog and restore focus to its trigger.
+- [ ] Reduced-motion emulation and independent screen-reader review remain open.
+- [ ] 390/320 viewport checks remain open: the available browser control does not expose a viewport override, and native Chrome input/screenshot access failed during this review.
