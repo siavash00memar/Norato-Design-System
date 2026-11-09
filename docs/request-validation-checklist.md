@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## Chat LTR, empty timeline and keyboard review (2026-11-09)
+
+- [x] Actual Chat page screenshot in LTR confirms incoming messages on the left and outgoing on the right; RTL remains the default selector value.
+- [x] The playground can remove sample messages and typing indicator; the accessibility tree no longer exposes message or typing content in that state. Full visual empty-state review is still open.
+- [x] Browser keyboard navigation from the Chat header traversed to the composer and then into the playground controls; focus was not trapped.
+- [x] Enter sent and cleared a draft; Shift+Enter retained it without submitting.
+- [ ] File chooser/attach event was not completed in this browser interaction; do not treat the upload path as verified.
+- [ ] Exact screenshots for every message variant, mobile playground overflow and independent screen-reader review remain open.
+
 ## Carousel responsive matrix overflow correction (2026-11-09)
 
 - [x] Same-origin browser frames verified exact outer CSS widths 390px and 320px; document client/scroll widths are 375/375px and 305/305px respectively (the difference is the browser's vertical scrollbar).

@@ -22,11 +22,15 @@
 - [x] Message type selector changed the active specimen to image and announced its alt text.
 - [ ] Matched screenshot review of all 10 sender × message-type visuals.
 - [x] Live browser and accessibility-tree review of all 10 sender × message-type selections and all six part states.
+- [x] Browser screenshot confirms the LTR selector reverses sender placement: incoming left, outgoing right. RTL is the default selector value.
+- [x] Keyboard Tab from the chat header reaches the composer and then the playground direction control; focus leaves the non-modal widget without a trap.
+- [x] Enter sends and clears a draft; Shift+Enter keeps the draft without sending.
+- [x] Playground can hide sample messages and the typing indicator for empty-timeline review; full visual empty-state review remains open.
 - [x] Same-origin browser frames rendered at 320px and 390px. At 320px, the document is 305px wide, the chat shell is 273×513px and RTL is true; at 390px, the document is 375px wide, the shell is 343×478px and RTL is true. Both document scroll widths equal their client widths; no horizontal overflow was measured.
 - [x] Static specimen now uses the shared Button-style dotted frame and Default marker. Matched desktop screenshot review confirms the reference's two-bubble composition; Norato yellow replaces the reference's dark outgoing fill as required by the palette rule. Inner bubbles are intrinsic, not stretched.
 - [x] Static specimen reviewed at 320px and 390px. Frames are 273×300px and 343×300px; inner message composition is 263×127px and 333×127px. Incoming/outgoing bounds confirm right/left placement; computed direction is RTL and document client/scroll widths match.
 - [ ] Matched screenshots of all ten sender × message-type playground combinations remain open, as do full playground vertical geometry comparisons.
-- [ ] Exercise file chooser/attach event, LTR, disabled form, send button, Shift+Enter, empty state and keyboard focus loop.
+- [ ] Exercise the actual file chooser/attach event and complete independent screen-reader verification.
 - [ ] Independent screen-reader verification.
 - [x] Final `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, `git diff --check`, and repository no-reference-text scan passed after edits. Build warns that the JS chunk is above 500KB.
 
@@ -40,5 +44,5 @@
 - [x] The playground disabled-chat toggle disabled attachment and recording controls; reenabling restored them.
 - [x] Same-origin browser frames rendered at 320px and 390px. At 320px, the document is 305px wide, the chat shell is 273×513px and RTL is true; at 390px, the document is 375px wide, the shell is 343×478px and RTL is true. Both document scroll widths equal their client widths; no horizontal overflow was measured.
 - [ ] Matched desktop comparison and reference-matched visual review of all ten sender × message-type combinations; investigate vertical geometry/stretch against the reference before closing.
-- [ ] Matched screenshots for every message combination; file chooser/attach event, LTR, a full empty-state review, keyboard focus loop and independent screen-reader verification remain open.
+- [ ] Matched screenshots for every message combination, mobile playground bounds, actual file chooser/attach event, full empty-state visual review and independent screen-reader verification remain open.
 - [x] Technical checks from the adjacent Carousel change pass: token/catalog checks, Vue typecheck, production build and `git diff --check`.

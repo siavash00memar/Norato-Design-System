@@ -7,8 +7,10 @@ const emit = defineEmits<{ copy: [key: string, value: string] }>()
 const sender = ref<NoratoChatSender>('incoming')
 const type = ref<NoratoChatMessageType>('text')
 const composerState = ref<NoratoChatComposerState>('default')
+const direction = ref<'rtl' | 'ltr'>('rtl')
 const draft = ref('')
 const showTyping = ref(true)
+const showSampleMessages = ref(true)
 const disabled = ref(false)
 const sent = ref<NoratoChatMessageData[]>([])
 const playNotice = ref('')
@@ -16,12 +18,12 @@ const artwork = `data:image/svg+xml,${encodeURIComponent('<svg xmlns="http://www
 const variantMessage = computed<NoratoChatMessageData>(() => ({
   id: 'variant-preview', sender: sender.value, type: type.value, text: type.value === 'reply' ? 'باشه، بررسیش می‌کنم.' : 'این بخش تازه آماده شده.', time: '۱۰:۳۱', dateTime: '2026-11-08T10:31:00+03:30', senderName: sender.value === 'incoming' ? 'سارا' : 'شما', replyTo: { sender: 'شما', text: 'فایل رو دیدی؟' }, imageSrc: type.value === 'image' ? artwork : type.value === 'file' ? undefined : undefined, imageAlt: 'چشم‌انداز کوهستانی', fileName: 'راهنمای نوراتو.pdf', fileSize: 'PDF · ۲٫۴ مگابایت', voiceDuration: '۰۰:۱۲', read: sender.value === 'outgoing',
 }))
-const messages = computed(() => [
+const messages = computed(() => showSampleMessages.value ? [
   { id: 'incoming-one', sender: 'incoming', type: 'text', text: 'سلام! فایل راهنما رو دیدی؟', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:00+03:30', senderName: 'سارا' },
   { id: 'outgoing-one', sender: 'outgoing', type: 'text', text: 'بله، ساختارش خیلی روشنه.', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:30+03:30', read: true },
   variantMessage.value,
   ...sent.value,
-] as NoratoChatMessageData[])
+] as NoratoChatMessageData[] : [])
 function append(text: string) { sent.value.push({ id: `sent-${Date.now()}`, sender: 'outgoing', type: 'text', text, time: 'اکنون', read: false }) }
 function attach(file: File) { sent.value.push({ id: `file-${Date.now()}`, sender: 'outgoing', type: 'file', fileName: file.name, fileSize: `${Math.max(1, Math.round(file.size / 1024))} کیلوبایت`, time: 'اکنون', read: false }) }
 function playVoice() { playNotice.value = 'برای پخش واقعی، منبع صوت را در برنامهٔ میزبان متصل کن.' }
@@ -29,8 +31,8 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { NoratoChat, t
 </script>
 <template>
   <div class="chat-playground" dir="rtl">
-    <div class="chat-playground__stage"><NoratoChat id="chat-playground" v-model="draft" v-model:composer-state="composerState" label="گفتگو با سارا" title="سارا محمدی" initials="سم" subtitle="پشتیبانی نوراتو" :online="true" date-label="امروز" date-time="2026-11-08" :messages="messages" :show-typing="showTyping" :disabled="disabled" @send="append" @attach="attach" @play="playVoice" /></div>
-    <div class="chat-playground__controls"><PlaygroundSelect id="chat-sender" v-model="sender" label="فرستندهٔ نمونه" :options="[{value:'incoming',label:'دریافتی'},{value:'outgoing',label:'ارسالی'}]" /><PlaygroundSelect id="chat-type" v-model="type" label="نوع پیام" :options="[{value:'text',label:'متن'},{value:'reply',label:'پاسخ'},{value:'image',label:'تصویر'},{value:'file',label:'فایل'},{value:'voice',label:'صوتی'}]" /><PlaygroundSelect id="chat-composer-state" v-model="composerState" label="حالت کادر نوشتن" :options="[{value:'default',label:'عادی'},{value:'typing',label:'نوشتن'},{value:'recording',label:'ضبط نمایشی'}]" /><label class="chat-playground__switch"><input v-model="showTyping" type="checkbox" /> نمایش نشانگر نوشتن</label><label class="chat-playground__switch"><input v-model="disabled" type="checkbox" /> غیرفعال کردن گفتگو</label></div>
+    <div class="chat-playground__stage"><NoratoChat id="chat-playground" v-model="draft" v-model:composer-state="composerState" label="گفتگو با سارا" title="سارا محمدی" initials="سم" subtitle="پشتیبانی نوراتو" :online="true" :date-label="showSampleMessages ? 'امروز' : ''" date-time="2026-11-08" :messages="messages" :show-typing="showSampleMessages && showTyping" :disabled="disabled" :dir="direction" @send="append" @attach="attach" @play="playVoice" /></div>
+    <div class="chat-playground__controls"><PlaygroundSelect id="chat-direction" v-model="direction" label="جهت گفتگو" :options="[{value:'rtl',label:'راست‌چین (RTL)'},{value:'ltr',label:'چپ‌چین (LTR)'}]" /><PlaygroundSelect id="chat-sender" v-model="sender" label="فرستندهٔ نمونه" :options="[{value:'incoming',label:'دریافتی'},{value:'outgoing',label:'ارسالی'}]" /><PlaygroundSelect id="chat-type" v-model="type" label="نوع پیام" :options="[{value:'text',label:'متن'},{value:'reply',label:'پاسخ'},{value:'image',label:'تصویر'},{value:'file',label:'فایل'},{value:'voice',label:'صوتی'}]" /><PlaygroundSelect id="chat-composer-state" v-model="composerState" label="حالت کادر نوشتن" :options="[{value:'default',label:'عادی'},{value:'typing',label:'نوشتن'},{value:'recording',label:'ضبط نمایشی'}]" /><label class="chat-playground__switch"><input v-model="showSampleMessages" type="checkbox" /> نمایش پیام‌های نمونه</label><label class="chat-playground__switch"><input v-model="showTyping" type="checkbox" /> نمایش نشانگر نوشتن</label><label class="chat-playground__switch"><input v-model="disabled" type="checkbox" /> غیرفعال کردن گفتگو</label></div>
     <p v-if="playNotice" class="chat-playground__note" role="status">{{ playNotice }}</p>
     <p v-if="composerState === 'recording'" class="chat-playground__note" role="status">این حالت فقط پیش‌نمایش رابط ضبط است؛ برای ضبط واقعی باید سرویس صوتی برنامه متصل شود.</p>
     <div class="code-copy-row"><button class="copy-section-button" type="button" @click="emit('copy','chat',snippet)">{{ props.copiedKey === 'chat' ? 'کپی شد' : 'کپی کد' }}</button></div><pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre>
