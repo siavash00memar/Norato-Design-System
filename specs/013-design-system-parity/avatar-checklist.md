@@ -29,4 +29,4 @@
 
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after this checkpoint.
 - [ ] Evidence and unresolved gates are recorded in the request checklist; exact mobile-width and independent screen-reader checks remain open.
-- [ ] Verified checkpoint is pushed and remote sync is confirmed.
+- [x] Verified checkpoint `99f8b3f` is pushed and matches `origin/master`.

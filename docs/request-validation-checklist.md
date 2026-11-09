@@ -1537,7 +1537,7 @@
 - [x] Added the missing Default marker to the inert specimen; tuned Avatar playground focus from the generic dark/halo treatment to one yellow outline.
 - [ ] Exact 390/320 viewport overflow and independent screen-reader review remain open; see `specs/013-design-system-parity/avatar-checklist.md`.
 - [x] Token/catalog checks, Vue typecheck/build, repository scan and `git diff --check` pass after this checkpoint.
-- [ ] Push this verified checkpoint and confirm remote sync.
+- [x] Checkpoint `99f8b3f` pushed to `origin/master`; remote hash matched.
 
 ## Avatar direction and keyboard follow-up — 2026-11-08
 
