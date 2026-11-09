@@ -1378,3 +1378,10 @@
 - **Cause:** The shared focus-contrast semantic token still pointed to the legacy brand-blue value even though the ring itself is Norato yellow.
 - **Correction:** Set the contrast outline to dark amber `#805A00`; retain the yellow focus ring and the separate blue tokens used for links and information. The amber outline has a 6.21:1 ratio on white and 3.79:1 on Norato yellow.
 - **Verification:** Local Select now renders its static Focus marker in dark amber. In the live Reka listbox, ArrowDown moved focus from search to the selected Tehran option; its focused outline is dark amber with the yellow ring, and the selected value stayed unchanged. Escape closed the menu and returned focus to the trigger. Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Select's full state screenshot matrix and independent screen-reader review remain open.
+
+## ERR-176 — Disabled Switch retained error border only while unchecked (2026-11-09)
+
+- **Observed:** In the live playground, Error + Disabled showed a neutral track while checked but a red border while unchecked. The switch itself was disabled and its error message/`aria-invalid` remained active.
+- **Cause:** `.norato-switch-field[data-invalid] .norato-switch__track` and the disabled base rule had equal selector specificity; the disabled rule changed only the background, so the error border continued to win for the unchecked value. The checked-disabled selector separately neutralized its border.
+- **Correction:** The base disabled-track rule now sets both `border-color` and `background` to the disabled neutral surface. Error message and accessibility semantics remain unchanged.
+- **Verification:** In the local browser after Vite hot reload, Error + Disabled was tested in both checked and unchecked values. Both tracks rendered the same neutral disabled surface/border; AX exposed the switch as disabled, and the error alert remained present. Exhaustive live combined-state coverage and independent screen-reader review remain open.

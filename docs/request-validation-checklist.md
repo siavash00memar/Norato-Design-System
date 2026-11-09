@@ -1275,7 +1275,7 @@
 - [x] Screenshot issue traced to Switch focus contrast and found stale blue on-state/hover styles in the static matrix; Norato Switch accent is yellow.
 - [x] Updated live adapter focus to dark outline with yellow halo, interactive preview checked knob to dark, and static Switch/Switch Field matrix checked/hover/focus styles to yellow/dark.
 - [x] After the live rerender, browser-computed styles confirm the active adapter is yellow with a dark knob and keyboard focus shows a 2px dark outline with a 2px yellow halo. The checked static matrix cell also computes to yellow with a dark knob; the live adapter was restored to off. RTL remains in effect.
-- [ ] Switch family DoD remains open for the separately tracked mobile matrix comparison and independent screen-reader review.
+- [ ] Switch family DoD remains open for exhaustive live combined-state coverage and independent screen-reader review; mobile matrix comparison was completed in the 2026-11-09 follow-up.
 
 ## Checkbox focus color correction — 2026-11-02
 
@@ -1629,7 +1629,7 @@
 
 - [x] Real local Switch adapter on/off checked states confirm Norato-yellow active track, neutral muted off track, white knob with no Stroke/shadow, and 48×48px target. Hover was isolated from focus: an off Switch remains neutral-filled while its 1px border turns yellow.
 - [x] Static matrix had a legacy `border-strong` token on checked Default and Focus cells. The existing selector now uses Norato yellow; all 30 Switch and 6 Switch Field cells were audited across state, size and value. Checked Default/Focus are yellow, Hover yellow, Disabled neutral, Error red; all knobs remain white and stroke-free.
-- [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. Matrix-specific viewport and same-viewport design reference comparison, plus independent screen-reader review, remain open.
+- [x] Browser screenshots reviewed all five static Switch state groups at the available 499×932 local view; document width 484px, no horizontal overflow. At that checkpoint, exact mobile matrix comparison and independent screen-reader review remained open; the mobile comparison was completed at 390×844 and 320×640 in the 2026-11-09 follow-up. Independent screen-reader review remains open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass for this correction; build retains the existing >500kB main bundle warning.
 
 ## Segmented Control Contrast hover — follow-up (2026-11-08)
@@ -1959,7 +1959,9 @@
 
 - [x] Source audit found legacy choice/Switch styles with no matching templates; removed them instead of recording an ineffective visual correction.
 - [x] Browser shows the Checkbox specimen uses `NoratoCheckbox`. The live Switch in RTL measured a 48×48px target and a 40×24px track; checked track is Norato yellow, with a 16×16px white knob, zero border and no shadow. The playground was returned to unchecked.
-- [ ] Matched mobile comparison, exhaustive combined-state review and independent screen-reader review remain open for Switch; Checkbox's independent screen-reader review remains open.
+- [x] Live Switch Error + Disabled was exercised with On=false and On=true. In the off state, the error selector previously overrode the disabled border and left a red stroke; disabled CSS now applies the same neutral track border for both values. AX continued to expose a disabled switch and the error alert remained visible.
+- [x] After the Switch correction, token/catalog checks, Vue TypeScript validation, production build and `git diff --check` passed; the 428.44KB production entry chunk emitted no large-chunk warning.
+- [ ] Matched mobile comparison is complete (2026-11-09); exhaustive live combined-state coverage and independent screen-reader review remain open for Switch. Checkbox's independent screen-reader review remains open.
 
 # Select warm-focus contrast follow-up — browser evidence (2026-11-09)
 
