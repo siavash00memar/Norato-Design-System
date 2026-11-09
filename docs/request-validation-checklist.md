@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Active navigation brand-color correction (2026-11-09)
+
+- [x] Fresh local Input page render showed the active component category using a blue-tinted surface despite Norato's yellow accent rule.
+- [x] Desktop and mobile active-navigation selectors now use the semantic yellow warning container; current desktop screenshot confirms the selected category is pale yellow and readable.
+- [ ] Mobile screenshot validation remains open because the current browser viewport was desktop-sized.
+
 ## Shared component specimen cold-load — implementation checkpoint (2026-11-09)
 
 - [x] On a fresh direct load of Combobox, the first narrow-browser capture showed the preview title and note but no specimen; the next capture of the unchanged page showed the full frame and field.
