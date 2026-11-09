@@ -1965,6 +1965,13 @@
 - [x] After the Switch correction, token/catalog checks, Vue TypeScript validation, production build and `git diff --check` passed; the 428.44KB production entry chunk emitted no large-chunk warning.
 - [ ] Matched mobile comparison is complete (2026-11-09); exhaustive live combined-state coverage and independent screen-reader review remain open for Switch. Checkbox's independent screen-reader review remains open.
 
+## Checkbox live behavior follow-up (2026-11-09)
+
+- [x] Local RTL page shows the Checkbox preview, separate live playground, and nine documentation sections. Both 16px and 20px visual sizes rendered without stretching; the row retains its full target.
+- [x] Live 16px/20px examples rendered unchecked, checked, and indeterminate. Accessibility tree reported `Value: 2` for indeterminate and `Value: 1` for checked; Space changed mixed to checked, and clicking the visible label changed the value.
+- [x] Required shows its label marker and appears in the generated example; Error shows a red control boundary, red description, and associated error alert; Disabled exposes the input as disabled in the Accessibility tree. Playground restored to unchecked, enabled, optional, no-error, 20px.
+- [ ] Independent screen-reader validation remains open; browser Accessibility tree review is not a substitute for hearing the announced result.
+
 # Select warm-focus contrast follow-up — browser evidence (2026-11-09)
 
 - [x] Replaced the blue focus contrast outline with a dark amber Norato focus contrast token (`#805A00`) while keeping the yellow outer focus ring. Measured contrast is 6.21:1 on white and 3.79:1 on the Norato-yellow ring.
