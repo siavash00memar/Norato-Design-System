@@ -21,7 +21,8 @@ Status: implementation checkpoint; DoD remains open until all required browser a
 ## RTL, keyboard and accessibility
 
 - [x] At 430×676, verify RTL and LTR Popover/Panel placement and text direction; RTL Panel bounds x=0..400px, LTR Panel x=29.6..429.6px, and every bell/filter/action/item target is at least 48px. The generated snippet follows the selected `dir`.
-- [x] Keyboard-only Popover check on the live 1536×647 browser: Enter opens from the bell; Tab advances through Mark all → All → Mentions → notification item; Enter selects the item, closes the Popover and returns focus to the bell; Enter reopens and Escape closes with focus returned to the bell. Keyboard navigation for the Panel presentation remains open.
+- [x] Keyboard-only Popover check on the live 1536×647 browser: Enter opens from the bell; Tab advances through Mark all → All → Mentions → notification item; Enter selects the item, closes the Popover and returns focus to the bell; Enter reopens and Escape closes with focus returned to the bell.
+- [x] Keyboard-only Panel check on the live 1280×720 browser: Enter opens the panel and focuses its close button; Tab advances inside the dialog through Mark all → All → Mentions → notification item; Enter selects and closes with focus returned to the bell; reopening and Escape also closes and restores focus. Panel bounds are 400×720px at x=0 in RTL; document width remains 1280px.
 - [x] Verify visible focus, disabled state, dialog/popover names, grouped list semantics and live unread status via browser accessibility tree.
 - [ ] Record independent screen-reader review; source/DOM inspection alone does not close this item.
 
