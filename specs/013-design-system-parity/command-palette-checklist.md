@@ -16,7 +16,7 @@
 ## Behavior and accessibility
 - [x] Default Ctrl+K opens. Browser checks confirm it is ignored in input, textarea, empty and plaintext-only contenteditable regions, ARIA textbox roles, repeated events, active composition and keyCode 229.
 - [ ] Meta+K behavior and configurable/false shortcut values remain to be verified.
-- [x] Search normalization/filtering, grouping, suggested/recent, empty and loading work. Eight-results cap is implemented but not stress-checked in browser.
+- [x] Search normalization/filtering, grouping, suggested/recent, empty and loading work. Browser stress check with more than eight matching items confirmed the first group renders exactly eight; a separate one-item group still renders one.
 - [x] ArrowUp/Down, Home/End, Enter, disabled skip, Escape/outside, selection, focus entry/return and Tab behavior work. Fresh 2026-11-09 live review confirms ArrowUp/Down, Home/End on an empty query, disabled-item skipping, Enter selection, Escape and outside-click dismissal, trigger focus restoration, and Tab/Shift+Tab remaining within the modal.
 - [x] Dialog, labelled input, listbox/group/option names, selected/disabled state, live loading/results and icon hiding appear in AX tree; dangling aria-controls in empty/loading was fixed and rechecked.
 - [ ] Independent screen-reader review is recorded; no inaccessible command-only path is introduced.
@@ -41,6 +41,10 @@
 - [x] After using `isContentEditable`, Ctrl+K still opens from the page and stays closed for input, textarea, both editable modes, and an ARIA textbox.
 - [x] Repeat, `isComposing`, and keyCode 229 events remain excluded.
 - [ ] Meta+K/configurable false shortcut behavior and independent screen-reader review remain open.
+
+## Result cap — 2026-11-10
+- [x] With temporary data exceeding the limit, the live browser rendered exactly eight options in the first group and retained one option in the separate Recent group.
+- [x] Temporary test data was removed from the playground; implementation continues to cap each group independently.
 
 ## Keyboard and search follow-up — 2026-11-09
 - [x] Ctrl+K opens the dialog with focus in its labelled combobox; Escape closes it and restores focus to the trigger.

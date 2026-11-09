@@ -2413,3 +2413,8 @@
 - [x] Ctrl+K opens from the page. It stays closed for input, textarea, empty/contenteditable plaintext-only regions, and an ARIA textbox.
 - [x] Repeat, active composition, and keyCode 229 events stay closed.
 - [ ] Meta+K and configurable/false shortcut props remain unverified; independent screen-reader review remains open.
+
+# Command Palette result cap — 2026-11-10
+
+- [x] A live browser render with more than eight matching entries showed exactly eight rows in that group; the independent Recent group retained its one row.
+- [x] Temporary overflow fixture entries were removed from the playground after verification.
