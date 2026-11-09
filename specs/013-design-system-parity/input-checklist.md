@@ -80,14 +80,14 @@
 
 - Browser follow-up (2026-11-09, matched 390×844 viewport): visual reference document width 375px and preview frame 327.2×300px; Norato document width 375px and frame 328×300px. Width differs by 0.8px, height matches. Norato top specimen's field is a 36px capsule inside its 48px target, with 1px token stroke (browser's CSS zoom reports 0.8px), Estedad 700 label, and Vazirmatn Light 12px RTL placeholder. It intentionally omits the reference's sample address and helper per the user's approved Norato rule. This comparison verifies the top mobile specimen only; full state/size matrices and independent screen-reader review remain open.
 - Browser follow-up (2026-11-09, before frame correction): reopened local Input and reference Input in separate browser tabs at the same 1265×713 viewport. Both render the dotted, rounded preview frame at 300px height and the centered field specimen. The local specimen preserves the approved RTL Persian placeholder, title-adjacent envelope icon, 36px capsule inside a 48px target, and omits the sample email/helper. The frame initially appeared about 624px wide locally versus 628px in the reference; the next browser follow-up records the alignment correction. This capture does not close the full visual state matrix, mobile recapture, or independent screen-reader review.
-- Browser follow-up (2026-11-09): after changing the desktop-only allowance to the existing 2px token, a fresh same-viewport capture shows the local frame aligned in width and still 300px high next to the reference. The 4px allowance had visibly overshot. The 390px/320px recheck, complete visual-state matrix, and independent screen-reader review remain open.
+- Browser follow-up (2026-11-09): the 4px desktop spacing token expands the local frame to 635.98×300px, aligning with the 636×300px reference; the earlier 2px border allowance was 2px narrow. The 390px/320px frame recheck is recorded in the matched mobile section below; full visual-state matrix and independent screen-reader review remain open.
 
 ## Matched desktop preview frame follow-up — 2026-11-09
 
 - [x] At the matched 1536×647 CSS-pixel browser viewport, the local non-compact Input frame now measures 635.98×300px; the reference is 636×300px.
 - [x] The desktop-only allowance now uses the semantic 4px spacing token. The mobile cap remains an independent unchanged rule.
 - [x] The visual field remains a 36px capsule inset in its 48px target; computed radius is 50px, neutral stroke token is 1px `#e8e8e8`, label is Estedad 700, and placeholder is Vazirmatn Light 12px, RTL, `#a1a1a1`.
-- [ ] Post-correction 390px/320px recapture, full state-by-state visual matching, component-page playground consistency and independent screen-reader review remain open. Input family DoD stays open.
+- [ ] Full state-by-state visual matching, component-page playground consistency and independent screen-reader review remain open. Input family DoD stays open.
 
 ## Variant-axis accent correction — 2026-11-09
 
@@ -95,3 +95,10 @@
 - [x] Scoped the Input axis chips to a neutral surface with a 1px inset neutral Stroke; the shared `.variant-axis` rule used by other families is unchanged.
 - [x] Live render confirms all 84 chips use `rgb(245, 245, 245)`, 24px height, RTL axes, and the OTP selected cell retains `rgb(253, 193, 1)` yellow.
 - [ ] Full screenshot matching of all Input variants and independent screen-reader review remain open; Input DoD stays open.
+
+## Input canonical States gallery parity — 2026-11-09
+
+- [x] Matched 1536×703 browser evidence showed ten reference cards at 636×284.6px in four columns. Norato now measures 635.98×284.6px with ten 151.5×88.2px cards.
+- [x] At 390×844, both grids are 327.2px wide; Norato height is 442.6px vs 441.4px and card width is 158.6px. At 320×844 Norato's grid is 256.8px and document width 305px with no overflow.
+- [x] Canonical section order now matches Button through Tokens. All 41 family-specific specimens remain in a supplemental input-state matrix after the nine canonical sections; at 320px they are two columns, inert, and within the 305px document.
+- [ ] Full adapter visual/state matrix, playground consistency, all accessibility behavior and independent screen-reader review remain open; Input DoD stays open.

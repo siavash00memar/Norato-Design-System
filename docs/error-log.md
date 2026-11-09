@@ -1425,8 +1425,8 @@
 
 - **Observed:** Same-viewport desktop screenshots showed the Input preview frame narrower than the reference while retaining the correct 300px height.
 - **Cause:** The specimen width stopped at its parent content width before reaching its capped frame token.
-- **Correction:** Added a 2px semantic-token allowance only to the non-compact desktop Input specimen; kept the existing responsive width override.
-- **Verification:** Fresh same-viewport browser screenshots show the frame widths visually aligned and both 300px high. Token, catalog, TypeScript, production build and diff gates pass. Fresh 390px/320px browser validation remains open because the current browser surface does not expose a viewport override.
+- **Correction:** Added the 4px semantic spacing-token allowance only to the non-compact desktop Input specimen; kept the existing responsive width override.
+- **Verification:** Matched desktop render is 635.98×300px vs 636×300px reference. At 390×844 and 320×844 the local frame stays bounded without horizontal overflow. Current token, catalog, TypeScript, production build and diff gates pass.
 
 ## ERR-182 — Select desktop preview frame was narrower than the reference (2026-11-09)
 
@@ -1463,10 +1463,16 @@
 
 - **Observed:** At a matched 1536×647 viewport the local Input specimen frame measured 634×300px while the design reference measured 636×300px.
 - **Correction:** Changed only the non-compact desktop Input frame allowance from the 2px border token to the semantic 4px spacing token; the mobile cap and other component frames are unchanged.
-- **Verification:** After HMR, local frame measures 635.98×300px against the reference's 636×300px. The inset specimen remains a 36px visual capsule inside its 48px target; label is Estedad 700 and placeholder is Vazirmatn Light 12px, RTL and `#a1a1a1`. Wider/narrower post-change viewport recapture remains open because this browser surface does not expose viewport resizing. Technical gates and GitHub push are pending.
+- **Verification:** After HMR, local frame measures 635.98×300px against the reference's 636×300px. The inset specimen remains a 36px visual capsule inside its 48px target; label is Estedad 700 and placeholder is Vazirmatn Light 12px, RTL and `#a1a1a1`. Matched 390×844/320×844 checks show bounded local frames without horizontal overflow. Current token/catalog/typecheck/build gates pass.
 
 ## ERR-188 — Input variant-axis chips used an informational blue fill (2026-11-09)
 
 - **Observed:** All 84 inert size/state/label-axis chips in the Input gallery used the informational blue surface despite representing neutral descriptive values.
 - **Correction:** Scoped a neutral surface, secondary text, and inset neutral Stroke to `.input-family-matrix .variant-axis > span`. The shared axis styling and other component galleries remain unchanged.
-- **Verification:** Live Input Variants gallery shows one neutral `rgb(245, 245, 245)` chip fill, 24px chip height, RTL axes, and the OTP example retains its Norato-yellow `rgb(253, 193, 1)` active Stroke. Matched visual review, technical gates and GitHub push are pending.
+- **Verification:** Live Input Variants gallery shows one neutral `rgb(245, 245, 245)` chip fill, 24px chip height, RTL axes, and the OTP example retains its Norato-yellow `rgb(253, 193, 1)` active Stroke. The matched visual review and current token/catalog/typecheck/build gates pass.
+
+## ERR-189 — Input States section showed an oversized family matrix (2026-11-09)
+
+- **Observed:** At a matched 1536×703 viewport, the reference States section contains ten compact descriptive cards in four columns; Norato's primary States section displayed 41 family-specific field examples in three columns.
+- **Correction:** The canonical States section now presents the ten common statuses with Persian RTL descriptions and Norato semantic colors. The 41 adapter-specific examples are retained in a supplemental section after Tokens.
+- **Verification:** Fresh matched 1536×703 render shows a 635.98×284.6px local grid vs 636×284.6px reference, with 151.5×88.2px cards. At 390×844 grids are both 327.2px wide and the local document is 375px; at 320×844 the local grid is 256.8px and document 305px without overflow. The RTL page has ten primary cards and all 41 adapter examples in a separate `aria-hidden` inert gallery. Token/catalog/typecheck/build gates pass.

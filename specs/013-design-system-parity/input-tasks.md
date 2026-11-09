@@ -12,7 +12,7 @@
 10. [x] Exact-integer Amount refinement `93f2507` is pushed to `origin/master`; local and remote refs were checked equal.
 11. [x] Translate the accepted minimum target and no-stretch rules into measured sizes; remove native Number spinners that duplicated Norato actions, preserving ArrowUp bounds.
 12. [x] Preserve exact Amount digit grouping above JavaScript's safe integer range with `BigInt`; suppress misleading spelled-out text when the value is unsafe.
-13. [x] Rebuild the 41 inert Input States cards with family-specific bounded mini-controls, distinct state styling/copy and design reference-aligned responsive two-column mobile rhythm; correct Success/Typing state mapping.
+13. [x] Rebuild the 41 inert adapter-specific state samples with bounded family controls, distinct state styling/copy and responsive two-column mobile rhythm; correct Success/Typing state mapping. The 2026-11-09 gallery refinement keeps these in a secondary section and restores the ten common state cards to the canonical States section.
 14. [x] Same-viewport 390×844 design reference/Norato, inertness, 41 cards, state treatments, no overflow, empty error console and technical gates were verified; checkpoint `ee5f809` pushed to `origin/master` and remote hash matched.
 15. [x] Expose Number min/max/step in the real playground and synchronized example; normalize decimal step arithmetic; verify buttons, keyboard and configured bounds in the browser.
 16. [x] Re-run token/catalog/typecheck/build/diff gates after Number refinement; review the live desktop rendering and record remaining evidence.

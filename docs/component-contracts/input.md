@@ -56,13 +56,16 @@
 
 ## States
 
-- **Text Input:** Default، Hover، Active، Error، Disabled، Loading، Success، Read-only
-- **Phone Input:** Default، Hover، Active، Success، Error، Disabled
-- **OTP Input:** Default، Active، Error، Success، Disabled
-- **Text Area:** Default، Hover، Active، Filled، Error، Disabled، Read-only
-- **Number Input:** Default، Hover، Active، Error، Disabled
-- **Amount Input:** Default، Hover، Active، Error، Disabled
-- **Search Input:** Default، Hover، Typing، Loading، Disabled
+- **Default:** حالت عادی برای دریافت مقدار.
+- **Hover:** نشانگر روی فیلد قرار دارد.
+- **Active:** فیلد در حال ویرایش است.
+- **Error:** مقدار نامعتبر است؛ اصلاح لازم است.
+- **Disabled:** غیرفعال و غیرقابل استفاده.
+- **Loading:** در حال پردازش.
+- **Success:** مقدار معتبر و تأیید شده است.
+- **Read-only:** قابل مشاهده است اما ویرایش نمی‌شود.
+- **Filled:** مقدار وارد شده.
+- **Typing:** در حال تایپ است.
 
 ## Parts
 
@@ -108,6 +111,10 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 
 برچسب باید به فیلد وصل باشه و پیام خطا با رنگ و متن هر دو نشون داده بشه، نه فقط با رنگ قرمز.
 
+## Tokens
+
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
+
 ## گالری Variantها
 
 چیپ‌های خنثی محورهای size/state/label-placement در گالری Input صرفاً مقدارهای توصیفی‌اند؛ سطح آن‌ها خنثی است و نقش انتخاب یا تعامل ندارند. Stroke زرد فقط روی نمونهٔ واقعاً فعال/متمرکز نمایش داده می‌شود.
@@ -116,9 +123,15 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 
 Stroke خود فیلد در Focus زرد است و حلقه یا هالهٔ بیرونی ندارد. اکشن‌های مستقل داخل فیلد، مثل دکمهٔ نمایش رمز، همچنان نشانگر فوکوس صفحه‌کلیدی ۲ پیکسلی خودشان را دارند.
 
-## Tokens
+## ماتریس حالت‌های ورودی
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
+- **Text Input:** Default، Hover، Active، Error، Disabled، Loading، Success، Read-only
+- **Phone Input:** Default، Hover، Active، Success، Error، Disabled
+- **OTP Input:** Default، Active، Error، Success، Disabled
+- **Text Area:** Default، Hover، Active، Filled، Error، Disabled، Read-only
+- **Number Input:** Default، Hover، Active، Error، Disabled
+- **Amount Input:** Default، Hover، Active، Error، Disabled
+- **Search Input:** Default، Hover، Typing، Loading، Disabled
 
 ## Number step playground decision (2026-11-01)
 

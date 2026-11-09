@@ -2139,7 +2139,7 @@
 ## Input desktop frame width correction — 2026-11-09
 
 - [x] Same-viewport screenshots after the correction show the local frame visually aligned with the reference width; both remain 300px high.
-- [x] The 2px semantic-token allowance is scoped to the non-compact desktop Input frame; the existing mobile override is unchanged in source.
+- [x] The 4px semantic spacing-token allowance is scoped to the non-compact desktop Input frame; the existing mobile override is unchanged in source.
 - [x] Matched 390×844 browser render: local frame 328×300px, reference 327.2×300px; both document widths 375px with no horizontal overflow.
 - [x] Matched 320×844 browser render: local document width 305px with no horizontal overflow. Reference document width is 326px and frame is 256.8×300px, showing 6px horizontal overflow at this viewport.
 - [ ] Full state matrix across consuming pages, hover/disabled behavior, RTL/LTR and independent screen-reader review remain open.
@@ -2150,3 +2150,12 @@
 - [x] Applied the 2px Norato token allowance only to the non-compact desktop Select frame; existing mobile override and interactive trigger remain unchanged in source.
 - [x] Current browser interaction opened the grouped, searchable custom menu; ArrowDown + Enter changed the selected value from Tehran to Isfahan, then the playground was restored to Tehran. No native browser select menu was rendered.
 - [ ] Fresh 390px/320px browser review, complete Select state screenshot matrix, and independent screen-reader review remain open.
+
+## Input canonical States gallery parity — 2026-11-09
+
+- [x] Matched 1536×703 browser review: the reference States grid is 636×284.6px with ten cards in four columns; Norato is 635.98×284.6px with ten 151.5×88.2px cards in RTL.
+- [x] Matched 390×844 browser review: both grids are 327.2px wide; Norato is 442.6px high vs 441.4px in the reference. Card width is 158.6px in both. Norato document remains 375px wide without horizontal overflow.
+- [x] At 320×844 the Norato States grid is 256.8px wide with two 123.4px columns, and the document is 305px wide without overflow. The reference grid is 256.8px; its document measures 326px, overflowing by 6px.
+- [x] The component detail page keeps Button's canonical order through Tokens: Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens. The 41 family-specific inert state specimens remain after that sequence in the supplementary Input state matrix.
+- [x] At 320×844 the secondary gallery contains all 41 cards in two columns; it is `aria-hidden` and inert and the local document remains 305px wide.
+- [ ] Full Input family visual-state coverage, cross-page playground review, keyboard/state accessibility and independent screen-reader review remain open; the family DoD is not closed.

@@ -267,6 +267,19 @@ const inputStateDescription = (entry: Entry) => {
   return `${entry.detail} · آمادهٔ دریافت مقدار.`
 }
 
+const inputDocumentStates = [
+  { id: 'default', label: 'Default', description: 'حالت عادی برای دریافت مقدار.' },
+  { id: 'hover', label: 'Hover', description: 'نشانگر روی فیلد قرار دارد.' },
+  { id: 'active', label: 'Active', description: 'فیلد در حال ویرایش است.' },
+  { id: 'error', label: 'Error', description: 'مقدار نامعتبر است؛ اصلاح لازم است.' },
+  { id: 'disabled', label: 'Disabled', description: 'غیرفعال و غیرقابل استفاده.' },
+  { id: 'loading', label: 'Loading', description: 'در حال پردازش.' },
+  { id: 'success', label: 'Success', description: 'مقدار معتبر و تأیید شده است.' },
+  { id: 'readonly', label: 'Read-only', description: 'قابل مشاهده است اما ویرایش نمی‌شود.' },
+  { id: 'filled', label: 'Filled', description: 'مقدار وارد شده.' },
+  { id: 'typing', label: 'Typing', description: 'در حال تایپ است.' },
+]
+
 const isInputFamily = (entry: Entry, family: string) => entry.detail.toLocaleLowerCase().includes(family)
 
 const selectStateDescription = (entry: Entry) => {
@@ -611,26 +624,15 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <small dir="auto">{{ entry.detail }}</small>
         </article>
       </div>
-      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch', 'state-visual-grid--input': name === 'Input' }">
-        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${name === 'Input' ? inputStateKind(entry) : stateKind(entry)}`">
-          <div v-if="name === 'Input'" class="input-state-sample" aria-hidden="true" inert>
-            <header class="input-state-heading"><strong>{{ entry.label }}</strong><small>{{ entry.detail }}</small></header>
-            <div class="input-state-field" :data-state="inputStateKind(entry)" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'otp') ? 'ltr' : 'rtl'">
-              <span v-if="isInputFamily(entry, 'phone')" class="input-state-prefix" dir="ltr">+۹۸</span>
-              <span v-if="isInputFamily(entry, 'otp')" class="input-state-otp" aria-hidden="true"><i>۴</i><i>۸</i><i /><i /></span>
-              <span v-else-if="isInputFamily(entry, 'number')" class="input-state-stepper" aria-hidden="true"><i>−</i><i>+</i></span>
-              <span v-else-if="isInputFamily(entry, 'text area')" class="input-state-textarea" :data-state="inputStateKind(entry)">{{ inputStateValue(entry) }}</span>
-              <b v-else class="input-state-value" :class="{ 'is-placeholder': inputStateKind(entry) === 'default' && !isInputFamily(entry, 'amount') }" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'amount') ? 'ltr' : 'auto'">{{ inputStateValue(entry) }}</b>
-              <span v-if="isInputFamily(entry, 'amount')" class="input-state-currency">تومان</span>
-              <span v-if="isInputFamily(entry, 'password')" class="input-state-action" aria-hidden="true">◉</span>
-              <span v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) === 'typing'" class="input-state-action" aria-hidden="true">×</span>
-              <kbd v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) !== 'loading'" class="input-state-shortcut" dir="ltr">Ctrl K</kbd>
-              <span v-if="inputStateKind(entry) === 'loading'" class="input-state-spinner" aria-hidden="true" />
-              <span v-else-if="inputStateKind(entry) === 'invalid'" class="input-state-status" aria-hidden="true">!</span>
-              <span v-else-if="inputStateKind(entry) === 'success'" class="input-state-status" aria-hidden="true">✓</span>
-            </div>
-          </div>
-          <div v-else-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
+      <div v-else-if="name === 'Input'" class="input-core-states-grid" aria-label="ده حالت عمومی ورودی" aria-hidden="true" inert>
+        <article v-for="state in inputDocumentStates" :key="state.id" class="input-core-state-card" :data-state="state.id">
+          <header><strong dir="ltr">{{ state.label }}</strong><i aria-hidden="true" /></header>
+          <small>{{ state.description }}</small>
+        </article>
+      </div>
+      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
+        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
+          <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
           <template v-if="name === 'Select'">
@@ -641,14 +643,36 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
             <div class="field-state-heading"><strong>{{ entry.label }}</strong><small class="field-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
             <small class="field-state-description">{{ fieldStateDescription(entry, name) }}</small>
           </template>
-          <template v-else-if="name === 'Input'">
-            <small class="input-state-description">{{ inputStateDescription(entry) }}</small>
-          </template>
           <template v-else>
             <strong>{{ entry.label }}</strong>
             <small dir="auto">{{ entry.detail }}</small>
             <span class="visual-kind">{{ isEmptyStatement(entry) ? 'در قرارداد ثبت نشده' : 'حالت مرجع' }}</span>
           </template>
+        </article>
+      </div>
+    </template>
+
+    <template v-else-if="section === 'ماتریس حالت‌های ورودی' && name === 'Input'">
+      <div class="state-visual-grid state-visual-grid--input" aria-label="نمونه‌های وضعیت هشت زیرنوع ورودی" aria-hidden="true" inert>
+        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${inputStateKind(entry)}`">
+          <div class="input-state-sample" aria-hidden="true" inert>
+            <header class="input-state-heading"><strong>{{ entry.label }}</strong><small>{{ entry.detail }}</small></header>
+            <div class="input-state-field" :data-state="inputStateKind(entry)" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'otp') ? 'ltr' : 'rtl'">
+              <span v-if="isInputFamily(entry, 'phone')" class="input-state-prefix" dir="ltr">+۹۸</span>
+              <span v-if="isInputFamily(entry, 'otp')" class="input-state-otp"><i>۴</i><i>۸</i><i /><i /></span>
+              <span v-else-if="isInputFamily(entry, 'number')" class="input-state-stepper"><i>−</i><i>+</i></span>
+              <span v-else-if="isInputFamily(entry, 'text area')" class="input-state-textarea" :data-state="inputStateKind(entry)">{{ inputStateValue(entry) }}</span>
+              <b v-else class="input-state-value" :class="{ 'is-placeholder': inputStateKind(entry) === 'default' && !isInputFamily(entry, 'amount') }" :dir="isInputFamily(entry, 'phone') || isInputFamily(entry, 'amount') ? 'ltr' : 'auto'">{{ inputStateValue(entry) }}</b>
+              <span v-if="isInputFamily(entry, 'amount')" class="input-state-currency">تومان</span>
+              <span v-if="isInputFamily(entry, 'password')" class="input-state-action">◉</span>
+              <span v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) === 'typing'" class="input-state-action">×</span>
+              <kbd v-else-if="isInputFamily(entry, 'search') && inputStateKind(entry) !== 'loading'" class="input-state-shortcut" dir="ltr">Ctrl K</kbd>
+              <span v-if="inputStateKind(entry) === 'loading'" class="input-state-spinner" />
+              <span v-else-if="inputStateKind(entry) === 'invalid'" class="input-state-status">!</span>
+              <span v-else-if="inputStateKind(entry) === 'success'" class="input-state-status">✓</span>
+            </div>
+          </div>
+          <small class="input-state-description">{{ inputStateDescription(entry) }}</small>
         </article>
       </div>
     </template>
@@ -790,4 +814,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 @media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.chip-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chip-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.input-core-states-grid{display:grid;inline-size:calc(100% + var(--norato-space-1));grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:calc(var(--norato-space-2) + var(--norato-border-medium));min-inline-size:0;margin-inline:calc(-1 * var(--norato-border-medium))}
+.input-core-state-card{display:grid;align-content:start;gap:calc(var(--norato-space-1) + var(--norato-border-thin));min-inline-size:0;padding:var(--norato-space-3) calc(var(--norato-space-3) + var(--norato-border-medium));border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
+.input-core-state-card>header{display:flex;align-items:center;gap:var(--norato-space-1);min-inline-size:0}
+.input-core-state-card>header>strong{font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-body-bold-weight)}
+.input-core-state-card>header>i{flex:none;inline-size:var(--norato-space-2);block-size:var(--norato-space-2);border-radius:var(--norato-radius-pill);background:var(--norato-color-border-default)}
+.input-core-state-card>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
+.input-core-state-card[data-state="default"],.input-core-state-card[data-state="active"],.input-core-state-card[data-state="filled"],.input-core-state-card[data-state="typing"]{background:var(--norato-color-warning-container)}
+.input-core-state-card[data-state="error"]{background:var(--norato-color-error-container)}
+.input-core-state-card[data-state="success"]{background:var(--norato-color-success-container)}
+.input-core-state-card[data-state="disabled"],.input-core-state-card[data-state="readonly"]{background:var(--norato-color-surface-subtle)}
+.input-core-state-card[data-state="default"]>header>i,.input-core-state-card[data-state="active"]>header>i,.input-core-state-card[data-state="filled"]>header>i,.input-core-state-card[data-state="typing"]>header>i{background:var(--norato-color-brand-yellow)}
+.input-core-state-card[data-state="error"]>header>i{background:var(--norato-color-status-error)}
+.input-core-state-card[data-state="success"]>header>i{background:var(--norato-color-status-success)}
+@media(max-width:839px){.input-core-states-grid{inline-size:calc(100% - var(--norato-space-4));grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:calc(var(--norato-space-2) + var(--norato-border-medium));margin-inline:auto}}
 </style>
