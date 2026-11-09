@@ -1891,3 +1891,9 @@
 - [x] Compared local and reference previews in the same 1920×1080 browser viewport. Local specimen now has the centered 288px Norato dotted-glass frame and a yellow current page; its previous/next arrows have no browser-default outline circles. The local frame is about 580px wide due to the documentation column versus about 630px in the reference; no visible distortion.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck and production build passed after the change.
 - [ ] Mobile viewport comparison, complete visual state/size/edge matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/pagination-checklist.md`.
+
+## Pagination interaction follow-up (2026-11-09)
+
+- [x] Live browser exercised all four type/size combinations and page totals 1, 7, 8 and 12. Boundary buttons disabled at both ends; Simple summary and generated snippet tracked the selected values.
+- [x] Found and fixed the boundary accessible name that previously announced page 0/13; browser AX now reports stable Previous/Next names, including disabled boundaries.
+- [ ] Very large/irregular totals, mobile viewport comparison and independent screen-reader review remain open.

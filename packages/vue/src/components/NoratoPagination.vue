@@ -21,19 +21,19 @@ const go = (page: number) => emit('update:modelValue', Math.min(total.value, Mat
 <template>
   <nav :id="id" class="norato-pagination" :data-type="type" :data-size="size" :dir="dir" :aria-label="label">
     <template v-if="type === 'simple'">
-      <button class="norato-pagination__control" type="button" :disabled="current <= 1" :aria-label="`رفتن به ${pageLabel(current - 1)}`" @click="go(current - 1)"><span aria-hidden="true">{{ dir === 'rtl' ? '›' : '‹' }}</span><span>قبلی</span></button>
+      <button class="norato-pagination__control" type="button" :disabled="current <= 1" aria-label="رفتن به صفحهٔ قبلی" @click="go(current - 1)"><span aria-hidden="true">{{ dir === 'rtl' ? '›' : '‹' }}</span><span>قبلی</span></button>
       <span class="norato-pagination__summary" aria-live="polite">صفحهٔ {{ number.format(current) }} از {{ number.format(total) }}</span>
-      <button class="norato-pagination__control" type="button" :disabled="current >= total" :aria-label="`رفتن به ${pageLabel(current + 1)}`" @click="go(current + 1)"><span>بعدی</span><span aria-hidden="true">{{ dir === 'rtl' ? '‹' : '›' }}</span></button>
+      <button class="norato-pagination__control" type="button" :disabled="current >= total" aria-label="رفتن به صفحهٔ بعدی" @click="go(current + 1)"><span>بعدی</span><span aria-hidden="true">{{ dir === 'rtl' ? '‹' : '›' }}</span></button>
     </template>
     <template v-else>
-      <button class="norato-pagination__control" type="button" :disabled="current <= 1" :aria-label="`رفتن به ${pageLabel(current - 1)}`" @click="go(current - 1)"><span aria-hidden="true">{{ dir === 'rtl' ? '›' : '‹' }}</span><span>قبلی</span></button>
+      <button class="norato-pagination__control" type="button" :disabled="current <= 1" aria-label="رفتن به صفحهٔ قبلی" @click="go(current - 1)"><span aria-hidden="true">{{ dir === 'rtl' ? '›' : '‹' }}</span><span>قبلی</span></button>
       <ol class="norato-pagination__pages">
         <li v-for="entry in pages" :key="entry">
           <span v-if="typeof entry !== 'number'" class="norato-pagination__ellipsis" aria-hidden="true">…</span>
           <button v-else class="norato-pagination__page" type="button" :aria-label="pageLabel(entry)" :aria-current="entry === current ? 'page' : undefined" :data-current="entry === current || undefined" @click="go(entry)">{{ number.format(entry) }}</button>
         </li>
       </ol>
-      <button class="norato-pagination__control" type="button" :disabled="current >= total" :aria-label="`رفتن به ${pageLabel(current + 1)}`" @click="go(current + 1)"><span>بعدی</span><span aria-hidden="true">{{ dir === 'rtl' ? '‹' : '›' }}</span></button>
+      <button class="norato-pagination__control" type="button" :disabled="current >= total" aria-label="رفتن به صفحهٔ بعدی" @click="go(current + 1)"><span>بعدی</span><span aria-hidden="true">{{ dir === 'rtl' ? '‹' : '›' }}</span></button>
     </template>
   </nav>
 </template>
