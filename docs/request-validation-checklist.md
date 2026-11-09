@@ -2221,3 +2221,9 @@
 - [x] In the live browser, clicking the page heading outside the open Popover removed the Popover and set the trigger to closed; repeating with Panel removed both Panel and overlay and returned the trigger to closed. Playground reset to Popover, controlled, RTL, empty=false, disabled=false, closed.
 - [x] The Notification Center stylesheet includes a `prefers-reduced-motion: reduce` rule for panel/overlay transitions and scroll behavior. Browser media emulation was not run (`matchMedia` was false), so this is source verification only.
 - [ ] Independent screen-reader review and browser emulation of reduced motion remain open; Notification Center DoD stays open.
+
+## Menu keyboard recheck — 2026-11-09
+
+- [x] Local browser AX state showed the trigger changing to expanded with a named menu; ArrowDown focused the first item.
+- [x] ArrowLeft from the nested-menu trigger opened the submenu in RTL and focused its first item; Escape closed the levels and restored focus to the root trigger.
+- [ ] This desktop keyboard check does not close Menu's 320px viewport or independent screen-reader evidence gaps.

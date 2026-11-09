@@ -26,3 +26,9 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the final edits. Build retains the existing 877.63KB JS chunk-size advisory.
 - [x] Actual local browser render and interactions are checked; independent screen-reader review is recorded separately.
 - [x] No completion claim exceeds the evidence; 320px and independent screen-reader review remain open.
+
+## Live keyboard follow-up — 2026-11-09
+- [x] Fresh Chrome review: trigger exposes expanded state and the menu's accessible name; ArrowDown focuses Edit.
+- [x] Four ArrowDown presses reach the Transfer submenu trigger; ArrowLeft opens it in RTL and focuses Projects.
+- [x] Escape closes root and nested menus and returns focus to the More actions trigger.
+- [ ] This review does not cover 320px rendering or independent screen-reader output; both remain open and the family DoD remains open.
