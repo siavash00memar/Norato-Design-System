@@ -2120,6 +2120,13 @@
 - [x] After the Switch correction, token/catalog checks, Vue TypeScript validation, production build and `git diff --check` passed; the 428.44KB production entry chunk emitted no large-chunk warning.
 - [ ] Matched mobile comparison is complete (2026-11-09); exhaustive live combined-state coverage and independent screen-reader review remain open for Switch. Checkbox's independent screen-reader review remains open.
 
+## Switch live combined-state matrix — 2026-11-10
+
+- [x] All 24 size × value × error × disabled combinations were inspected in the live adapter. Every state retained a 48×48px target, RTL, the correct 32×20/40×24/48×28px track, and 12/16/20px white knobs without stroke.
+- [x] `aria-checked`, native disabled state, `aria-invalid`, and linked error content matched each combination. Clicking disabled controls never changed their value.
+- [x] Error+Disabled was neutral in both values and all sizes while retaining invalid semantics. Playground browser target closed after the matrix; no temporary source fixtures were added.
+- [ ] Independent screen-reader review remains open for Switch and Checkbox.
+
 ## Checkbox live behavior follow-up (2026-11-09)
 
 - [x] Local RTL page shows the Checkbox preview, separate live playground, and nine documentation sections. Both 16px and 20px visual sizes rendered without stretching; the row retains its full target.
