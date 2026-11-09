@@ -1206,3 +1206,10 @@
 - **Observed:** The local Glass + Small + Slash state rendered the current-page pill in the blue information-container color. The selected reference uses a raised neutral surface, and Norato's accent is yellow.
 - **Correction:** Changed the Glass current item to the semantic strong-glass surface and restored Norato elevation; the ellipsis keeps its yellow status surface.
 - **Verified:** Fresh local browser screenshot shows a neutral raised current item, yellow disclosure, and RTL separators. Full 42-case visual matrix and independent screen-reader review remain open.
+
+## ERR-151 — Timeline mobile text collided with its marker (2026-11-09)
+
+- **Observed:** At 390px and 320px viewports, the Timeline item text shared the marker's horizontal area.
+- **Cause:** The mobile media rule used `--norato-space-10`, which is not a defined token; the invalid padding declaration computed to zero.
+- **Correction:** Removed the undefined override and retained the existing 48px semantic spacing token at narrow widths.
+- **Verified:** Browser bounding boxes at 390px and 320px show a minimum 16px marker/title clearance across all nine item cases, all 26 variants present, and no horizontal overflow. RTL and LTR rail/content positions were checked at 320px. Independent screen-reader review remains unverified.

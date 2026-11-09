@@ -33,5 +33,5 @@ const toneLabels = { neutral: 'خنثی', active: 'فعال', success: 'موفق
 .norato-timeline-item[data-layout="compact"]{padding-block-end:var(--norato-space-3)}
 .norato-timeline-item[data-layout="compact"] .norato-timeline-item__content{padding-block-start:var(--norato-space-1)}
 .norato-timeline-item[data-layout="compact"] .norato-timeline-item__content p{display:none}
-@media(max-width:420px){.norato-timeline-item{padding-inline-start:var(--norato-space-10)}.norato-timeline-item__heading time{font-size:var(--norato-type-body-min-size)}}
+@media(max-width:420px){.norato-timeline-item__heading time{font-size:var(--norato-type-body-min-size)}}
 </style>

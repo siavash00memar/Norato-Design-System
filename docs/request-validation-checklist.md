@@ -1748,3 +1748,11 @@
 - [x] Token/catalog checks, Vue typecheck, production build, `git diff --check` and project scan for prohibited reference-brand text passed.
 - [x] Browser confirmed article navigation to `/guide`, radio ArrowDown/Space selection, yellow keyboard focus, checkbox toggling and disabled radio exposure.
 - [ ] 390/320 overflow, long text and independent screen-reader review remain open in `specs/013-design-system-parity/card-checklist.md`.
+
+## Timeline — responsive collision fix (2026-11-09)
+
+- [x] Browser review at 390px and 320px found and fixed a mobile collision: an undefined spacing token had removed the Timeline item's reserved marker gutter.
+- [x] Rechecked all 26 cases (9 item, 15 marker, 2 feed); no horizontal document overflow or matrix-cell overflow. Closest marker/title separation is 16px at both widths.
+- [x] RTL and LTR positions switch correctly at 320px. Playground restored to RTL/default before review ended.
+- [x] Compared the desktop static specimen with the selected reference at 1907×907; Norato's shared Button-style frame remains about 580×288px versus 630×326px in the reference because the documentation content column is narrower.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Independent screen-reader review remains open; remote sync is pending.
