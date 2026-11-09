@@ -1259,8 +1259,9 @@
 - **Correction:** Replaced the inert specimen's landscape bands and small accent sun with a CSS-only warm gradient, cropped circular glow, cool lower gradient and the existing shaded caption. Updated the accessible name to describe the abstract sunset artwork.
 - **Verified:** Refreshed browser screenshot shows the warm field, circular glow, cooler lower edge and caption against the dotted frame; the media remains 320×240px and 4:3. The full DoD remains open in `image-checklist.md`.
 
-## ERR-159 — Image hover state lacked a dark shade (2026-11-09)
+## ERR-159 — Image hover shade pseudo-element was not rendered (2026-11-09)
 
-- **Observed:** The adapter zoomed its media on hover, but did not add the dark shade required by the reference state.
-- **Correction:** Added a token-based translucent scrim and opacity transition, kept the caption above the scrim, and applied the same affordance when gallery triggers receive keyboard focus. Reduced-motion mode disables both transition and zoom.
-- **Verified:** Browser screenshot at the live wide Image adapter shows the hovered treatment without changing its aspect ratio. The `cover`/`contain` control updates the standalone adapter and generated example; `contain` shows the full source with side gutters while `cover` fills the frame. Hover selectors apply only to the default image state; full cross-ratio hover and reduced-motion review remain open.
+- **Observed:** The adapter zoomed its media on hover, but did not show the dark shade required by the reference state.
+- **Cause:** The `::after` scrim had no `content` declaration, so the pseudo-element did not generate a box.
+- **Correction:** Added empty content to render the token-based translucent scrim, retained the caption above it, and applied the treatment to the default image and keyboard-focused gallery triggers. Reduced-motion mode continues to disable transitions and zoom.
+- **Verified:** Browser inspection after the fix shows the shade on the live Image adapter at Square, Landscape, Wide and Portrait ratios without changing each ratio. The `cover`/`contain` control still updates the standalone adapter and generated example. Reduced-motion review remains open.

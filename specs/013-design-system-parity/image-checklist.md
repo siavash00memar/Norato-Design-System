@@ -20,7 +20,8 @@
 - [x] Lightbox opened with its close button focused; Escape dismissed it and returned focus to the opener. ArrowRight from index 0 wrapped to item 4 in RTL, with image alt, title and live position 4/4 exposed.
 - [x] Fresh browser pass: Previous and Next buttons changed the live position 1/4 ↔ 4/4 in RTL and retained the invoking button focus. Tab and Shift+Tab cycled through close, Previous and Next without escaping the modal; Escape returned focus to the “نمایش تمام‌صفحه” opener. At a 1920×908 viewport the 4:3 image stayed within the visible modal area and preserved its intrinsic ratio. Exact CSS box measurement and responsive modal bounds remain open.
 - [x] Browser accessibility tree exposed image names, thumbnail labels/pressed state, the disabled state, dialog title and live position. Independent screen-reader review remains open.
-- [ ] Measure exact Lightbox media bounds at desktop and mobile sizes; review reduced-motion emulation and Hover across all four ratios; run an independent screen-reader review.
+- [x] After fixing the hover scrim pseudo-element, inspected the live Image adapter at Square, Landscape, Wide and Portrait ratios. The dark shade is visible in each ratio and the image geometry retains its selected aspect ratio.
+- [ ] Measure exact Lightbox media bounds at desktop and mobile sizes; review reduced-motion emulation; run an independent screen-reader review.
 
 ## Repository gates
 
