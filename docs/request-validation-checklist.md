@@ -2017,3 +2017,9 @@
 - [x] Matched the 1536×703 browser viewport: reference preview is 636×300px and Norato is 632×300px. The reference field is 302.4px wide; Norato's 300px Select control remains centered, RTL and proportionate.
 - [x] The preview retains the project-wide 36px visual field inside its 48px interactive target. Label/trigger placement remains compact and the chevron points down in the closed state.
 - [ ] This capture verifies desktop geometry only. Select mobile recapture after the shared frame-token update and full state-gallery/assistive-technology review remain open.
+
+## Combobox frame and control width — browser evidence (2026-11-09)
+
+- [x] Matched 1536×703 viewport: frame measures 632×300px locally and 636×300px in the visual reference. The inert Combobox control width is 324px in both renders after setting its semantic preview token to 324px.
+- [x] The local control preserves RTL text and both chevrons/search icon placement; its 36px visual capsule remains inside the 48px target.
+- [ ] Mobile recapture after the shared frame-token refinement, full screenshot matrix, and independent screen-reader review remain open for Combobox.
