@@ -6,6 +6,12 @@
 - [x] Actual pointer hover on Drawer’s live Secondary action at the local 5173 route computes to `rgb(255, 248, 224)` background, `rgb(253, 193, 1)` border and `rgb(26, 26, 26)` text.
 - [ ] This confirms the shared action hover treatment only; Drawer’s complete control/focus matrix and independent screen-reader review remain open.
 
+## Drawer close hover and keyboard focus (2026-11-10)
+
+- [x] At 390×844, a real pointer hover on the open Drawer close control uses the yellow warning-container surface.
+- [x] Keyboard Tab reached the Available checkbox with `:focus-visible` and a 2px Norato-yellow outline (`rgb(253, 193, 1)`); computed shadow was `none`.
+- [ ] Other side/detent combinations, remaining controls and independent screen-reader review remain open; see `specs/013-design-system-parity/drawer-checklist.md`.
+
 ## Drawer reduced-motion browser check (2026-11-10)
 
 - [x] In an isolated Chromium target at 390×844, `prefers-reduced-motion: reduce` was active. The RTL right-side Drawer opened at 374px wide, flush to the viewport edge, with `role="dialog"`, `aria-modal="true"`, focus inside, and no horizontal document overflow.
