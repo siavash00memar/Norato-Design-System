@@ -1308,6 +1308,13 @@
 - **Correction:** Added a centered 36px capsule surface to the Select trigger and search target, neutralized the legacy trigger border/background, and removed the internal search input border while preserving its full-size interaction target.
 - **Verified:** Fresh local browser review shows one 36px yellow capsule stroke on the open trigger and focused search field; option grouping, selected marker and menu remain visible. Mobile sizing and same-viewport visual reference comparison remain open.
 
+## ERR-167 — Reopening a selected Combobox kept the prior selection as its search filter (2026-11-09)
+
+- **Observed:** Opening the single-value playground after a selection showed only the selected item because the closed display value was still acting as the open search value.
+- **Cause:** The input stayed uncontrolled in single mode, so Reka UI retained the display label as filter text instead of switching to an empty search query.
+- **Correction:** Drive the input from the search query in both modes. Opening clears that query; closing restores the committed single label, while multiple mode keeps its chip summary and empty query.
+- **Verified:** Live browser showed two recent options on initial open and after reopening. Typing `پژوهش` exposed the matching `پژوهش کاربر` option and the create action. Clicking the existing match committed and displayed the full `پژوهش کاربر` label; Escape closed the menu without losing the selection. The selected value remained intact on reopen. Multi mode displayed the selected chip with an empty search field, without duplicating the selected label. The exhaustive 96-case matrix and independent screen-reader review remain open.
+
 ## ERR-160 — Segmented Playground discarded a controlled disabled selection (2026-11-09)
 
 - **Observed:** Selecting Month then disabling that item automatically changed the playground model to Day, preventing live review of the documented Selected + Disabled state.

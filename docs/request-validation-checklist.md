@@ -1781,6 +1781,7 @@
 - [ ] Date Picker field mobile sizing and same-viewport reference comparison remain open.
 - [x] Select trigger and internal search now use 36px capsule surfaces inside their minimum 48px interaction targets. Desktop browser review confirms one yellow Stroke on the open trigger and focused search field, with no duplicate outer border.
 - [ ] Select capsule mobile sizing and same-viewport reference comparison remain open.
+- [x] Combobox: after selecting `پژوهش کاربر`, reopening no longer filters suggestions by the selected label; the two recent choices return and the committed label stays visible. Typing `پژوهش` shows its matching option and create action; selecting the existing option, closing with Escape and reopening all preserve the correct selected label. Multi mode shows the selected chip with an empty search field and no duplicated label.
 - [x] Refreshed the live Input page at desktop size. Phone prefix, min/max/step and select controls visibly render as compact capsules; focus on the phone prefix shows one yellow stroke without a dark outline.
 - [x] Token and catalog checks, Vue typecheck/build and `git diff --check` pass.
 - [ ] Other component routes, 390/320px layouts, hover and disabled states remain unverified for this shared styling change.

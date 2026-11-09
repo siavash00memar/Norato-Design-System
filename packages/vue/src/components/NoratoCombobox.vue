@@ -80,8 +80,10 @@ const clear = () => {
   open.value = false
 }
 watch(open, async (value) => {
-  if (value) return
   query.value = ''
+  await nextTick()
+  if (value) return
+  if (!props.multiple) query.value = singleDisplayValue.value
   await nextTick()
   if (typeof document !== 'undefined') document.getElementById(`${props.id}-input`)?.removeAttribute('aria-activedescendant')
 })
@@ -100,7 +102,7 @@ watch(() => props.multiple, () => { query.value = ''; open.value = false })
           <div class="norato-combobox__control-row">
             <div v-if="multiple && selectedLabels.length" class="norato-combobox__chips" aria-hidden="true"><span class="norato-combobox__chip">{{ selectedLabels[0] }}</span><span v-if="selectedLabels.length > 1" class="norato-combobox__chip">+{{ (selectedLabels.length - 1).toLocaleString('fa-IR') }}</span></div>
             <span v-if="!query && !selectedValues.length" class="norato-combobox__search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.5" /><path d="m16 16 4 4" /></svg></span>
-            <ComboboxInput :id="`${id}-input`" class="norato-combobox__input" :model-value="multiple ? query : undefined" :display-value="() => open ? query : singleDisplayValue" :placeholder="placeholder" :aria-describedby="describedBy" :aria-invalid="errorText ? 'true' : undefined" :aria-required="required ? 'true' : undefined" :required="required" :aria-busy="loading ? 'true' : undefined" @update:model-value="query = $event" />
+            <ComboboxInput :id="`${id}-input`" class="norato-combobox__input" :model-value="query" :display-value="() => open || multiple ? query : singleDisplayValue" :placeholder="placeholder" :aria-describedby="describedBy" :aria-invalid="errorText ? 'true' : undefined" :aria-required="required ? 'true' : undefined" :required="required" :aria-busy="loading ? 'true' : undefined" @update:model-value="query = $event" />
             <button v-if="query || selectedValues.length" class="norato-combobox__clear" type="button" aria-label="پاک کردن انتخاب و جست‌وجو" :disabled="disabled" @pointerdown.prevent @click="clear"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17" /></svg></button>
             <ComboboxTrigger class="norato-combobox__trigger" :aria-label="`${label}، نمایش پیشنهادها`"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10 12 15 17 10" /></svg></ComboboxTrigger>
           </div>
