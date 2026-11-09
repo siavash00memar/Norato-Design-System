@@ -1879,3 +1879,9 @@
 
 - [x] Added enabled link, toggleable disabled-link state, and disabled button examples to the interactive Playground and its generated Vue example. Link activation updates the polite status without navigating away from the docs page. Disabled link changes to non-link content and both disabled rows are omitted from sequential Tab navigation.
 - [ ] 390/320px layout and independent screen-reader review remain open; see `specs/013-design-system-parity/list-checklist.md`.
+
+## Custom dropdown source audit (2026-11-09)
+
+- [x] Source search found no native `<select>` or `<option>` tags in `apps/vue/src` or `packages/vue/src`. Shared `PlaygroundSelect` uses a button plus `role="listbox"`/`role="option"`, with ArrowUp/ArrowDown, Home/End, Enter, Space and Escape handling in source.
+- [x] Live browser verification on Select: its searchable grouped list opened, exposed a disabled option, Escape closed and returned focus to its trigger, ArrowDown/ArrowUp moved option focus and Enter committed a selection. Fixture was restored to Tehran and both field and status summary showed the baseline value.
+- [ ] Fresh rendered and keyboard verification across the other dropdown-consuming component pages remains open; source audit and this Select pass do not cover every page.
