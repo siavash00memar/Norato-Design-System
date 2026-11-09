@@ -565,3 +565,7 @@
 ## Radio Button — disabled and error priority
 
 - When a Radio group is both invalid and disabled, render the neutral disabled stroke, surface, indicator and text treatment ahead of error color. Preserve `aria-invalid`, the linked validation message and the selected value; native disabled behavior prevents changes until re-enabled.
+
+## Input — variant-axis chips
+
+- Input variant-axis values are descriptive, inert labels; keep their fill and outline neutral. Use the Norato-yellow Stroke only on the actual focused/active example, not on every axis chip or a noninteractive state label.

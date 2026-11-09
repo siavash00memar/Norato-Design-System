@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Input variant-axis chip color (2026-11-09)
+
+- [x] Input matrix chip fill is neutral `rgb(245, 245, 245)` with `#e8e8e8` inset 1px Stroke; all 84 cells use the scoped rule.
+- [x] RTL axis order remains intact; the OTP example's active border remains Norato yellow `rgb(253, 193, 1)`.
+- [x] Same-viewport reference and local Variants sections were visually compared; the Input labels no longer carry an unrelated blue accent.
+- [ ] Input family's full visual variant matrix and independent screen-reader review remain open.
+
 ## Input preview frame width (2026-11-09)
 
 - [x] Matched browser viewport is 1536×647 CSS px; local frame now measures 635.98×300px against the reference's 636×300px.

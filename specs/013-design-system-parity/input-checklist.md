@@ -88,3 +88,10 @@
 - [x] The desktop-only allowance now uses the semantic 4px spacing token. The mobile cap remains an independent unchanged rule.
 - [x] The visual field remains a 36px capsule inset in its 48px target; computed radius is 50px, neutral stroke token is 1px `#e8e8e8`, label is Estedad 700, and placeholder is Vazirmatn Light 12px, RTL, `#a1a1a1`.
 - [ ] Post-correction 390px/320px recapture, full state-by-state visual matching, component-page playground consistency and independent screen-reader review remain open. Input family DoD stays open.
+
+## Variant-axis accent correction — 2026-11-09
+
+- [x] Same-browser comparison of the Input Variants section showed all local axis chips were blue while the actual examples used neutral/yellow Norato styling.
+- [x] Scoped the Input axis chips to a neutral surface with a 1px inset neutral Stroke; the shared `.variant-axis` rule used by other families is unchanged.
+- [x] Live render confirms all 84 chips use `rgb(245, 245, 245)`, 24px height, RTL axes, and the OTP selected cell retains `rgb(253, 193, 1)` yellow.
+- [ ] Full screenshot matching of all Input variants and independent screen-reader review remain open; Input DoD stays open.
