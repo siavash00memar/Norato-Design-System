@@ -91,15 +91,23 @@
 - [x] The playground can remove sample messages and typing indicator; the accessibility tree no longer exposes message or typing content in that state. Full visual empty-state review is still open.
 - [x] Browser keyboard navigation from the Chat header traversed to the composer and then into the playground controls; focus was not trapped.
 - [x] Enter sent and cleared a draft; Shift+Enter retained it without submitting.
-- [ ] File chooser/attach event was not completed in this browser interaction; do not treat the upload path as verified.
-- [ ] Exact screenshots for every message variant, mobile playground overflow and independent screen-reader review remain open.
+- [x] Historical 2026-11-09 attempt did not expose the file chooser; superseded by the intercepted chooser/selection review recorded below on 2026-11-10.
+- [x] Historical 2026-11-09 screenshot and mobile-playground checks were incomplete; superseded by the 2026-11-10 visual matrix and mobile measurements below. Independent screen-reader review remains open.
 
 ## Chat sample-toggle retention (2026-11-09)
 
 - [x] In the local browser, turning sample messages off left the initially empty timeline empty. Sending “پیام آزمایشی برای بررسی” then rendered that user-created message with fixtures still hidden.
 - [x] Turning fixtures back on rendered the three sample messages and preserved the sent message; the composer reset after send.
-- [ ] The browser control surface did not open the native file chooser when the attachment action was activated. File selection and attach-event rendering remain unverified.
-- [ ] Full empty-state visual review, matched screenshots for every message combination and independent screen-reader review remain open.
+- [x] Historical 2026-11-09 control surface did not expose the native chooser; superseded by the 2026-11-10 intercepted chooser event and attachment test below.
+- [x] Empty-state visual and local message-variant screenshot review were completed in the 2026-11-10 follow-up below. Independent screen-reader review remains open.
+
+## Chat 10-state visuals, mobile playground and attachment (2026-11-10)
+
+- [x] Same-viewport screenshot contact sheet covers all 10 local incoming/outgoing × text/reply/image/file/voice bubbles; saved at `specs/013-design-system-parity/evidence/chat-10-variants-2026-11-10.png`. The source reference exposes only four static samples, so six combinations cannot be matched directly.
+- [x] Same-origin mobile browser: at 390×844 the document is 390/390px and stage is 358×478.34px; at 320×844 the document is 320/320px and stage is 288×495.13px. RTL is preserved and no horizontal overflow is present.
+- [x] Empty timeline screenshot reviewed at 390px after hiding fixtures and typing indicator; stage 358×360px, composer 356×65px, RTL, zero messages and no horizontal document overflow. Evidence: `specs/013-design-system-parity/evidence/chat-empty-mobile-390-2026-11-10.png`.
+- [x] Browser-intercepted file chooser emitted `selectSingle`; file selection appended an outgoing file message, exposed filename/size and reset the input. Native OS dialog visuals were not reviewed.
+- [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/chat-checklist.md`.
 
 ## Carousel responsive matrix overflow correction (2026-11-09)
 
