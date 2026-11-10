@@ -1784,3 +1784,11 @@
 - **Correction:** Wrap each input in a shell that owns the target and single visible capsule Stroke; remove all legacy OTP square/outline/background rules and draw the visual at 36px. Static OTP specimens now use the same ratio.
 - **Verification:** Live Chrome shows neutral capsule, red error, yellow focused cell over error, and muted neutral Error+Disabled states. The 4/5/6 selector, sequential input, paste, Backspace and ArrowLeft path work. Token/catalog/type/build/diff gates pass. Exact 390/320px bounds, all four computed sizes, hover/success/loading/readonly, static gallery recapture and independent screen-reader review remain open.
 - **Prevention:** Before editing a visual component, remove legacy selectors across package and consuming app stylesheets, then inspect the rendered focus/error/disabled composition for duplicate borders.
+
+## ERR-230 — Mobile Select options overlapped the fixed bottom navigation (2026-11-10)
+
+- **Observed:** At 320×844, the open Select popup extended to y=834 while the fixed mobile navigation began at y=787, covering the last options.
+- **Cause:** The portaled Reka popover bounded itself to viewport space but did not account for the app's reserved mobile navigation area.
+- **Correction:** Constrain the mobile popover by the existing navigation/content clearance tokens and make its option viewport the flexible, scrollable grid row.
+- **Verification:** At 320×844 the menu bottom is y=762 and nav starts at y=788; scrolling reveals the final disabled option. ArrowDown reaches the last enabled group option, Escape closes and returns focus; token/catalog/typecheck/build/diff gates pass. Exact 390×844 and desktop browser comparison remain unverified; Select DoD remains open.
+- **Prevention:** For portaled overlays in the responsive app shell, validate the overlay against fixed navigation bounds, not only viewport edges.

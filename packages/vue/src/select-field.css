@@ -128,3 +128,21 @@
     transition: none;
   }
 }
+@media (max-width: 839px) {
+  .norato-select__content {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    max-block-size: max(
+      0px,
+      calc(
+        var(--reka-select-content-available-height, calc(100dvh - var(--norato-space-5) * 2))
+          - var(--norato-control-target-min)
+          - var(--norato-space-6)
+      )
+    );
+  }
+
+  .norato-select__viewport {
+    min-block-size: 0;
+  }
+}

@@ -43,3 +43,12 @@
 - [x] Actual Vue Select route has zero native `<select>` elements; its runtime trigger is a custom combobox/listbox. The shared `PlaygroundSelect` also renders a custom listbox. This confirms the user-facing Vue dropdowns do not invoke the browser's native select UI.
 - [x] Follow-up source audit found an unexported, unused `core-html` Select helper that emitted native `<select>` markup. The helper and its orphaned HTML/CSS styles were removed; Vue Select and its custom playground listbox remain unchanged.
 - [ ] Full pixel-level screenshots for every visual state combination and independent screen-reader verification remain open.
+
+## Mobile bottom-navigation clearance — 2026-11-10
+
+- [x] Fresh 320×844 screenshot shows the expanded single Select listbox reaching y=834 while the fixed mobile navigation begins at y=787; the final options are covered by the navigation.
+- [x] Source audit confirms the popover is portaled and its max height uses Reka's available viewport height without reserving the app's mobile bottom area.
+- [x] Limit the mobile popover to available height minus the existing 48px target + 24px content reservation; the option viewport remains internally scrollable.
+- [x] At 320×844, the menu bottom is y=762 and the fixed navigation starts at y=788. Manual scroll brought the final disabled option into view above navigation; keyboard ArrowDown reached «رشت», and Escape closed the menu and returned focus to the Tehran trigger. AX still exposes all grouped/selected/disabled options and RTL remains intact.
+- [ ] Exact 390×844 visual check and desktop geometry regression remain unverified in the current browser viewport; broader state screenshot-matrix and independent screen-reader review also remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. The focused repair does not close Select's broader DoD.

@@ -2839,6 +2839,13 @@
 - [x] At exact 320×844, reference/local frames measure 257×300px; local document/body widths are 305/305px with no horizontal overflow.
 - [x] After the mobile-only 16px token inset, RTL content remains centered and within its frame (317×216.89px at 390px; 247×237.28px at 320px). Desktop reset confirms the prior 635.98×300px frame still matches the 636×300px reference.
 - [ ] Independent screen-reader review, custom slot cases, and exhaustive behavior cross-product remain open per `specs/013-design-system-parity/empty-state-checklist.md`.
+
+# Select mobile menu clearance — 2026-11-10
+
+- [x] At exact 320×844, the open listbox bottom is y=762 and fixed navigation starts at y=788; internal scrolling shows the final disabled option without horizontal overflow.
+- [x] Accessibility tree retains grouped, selected and disabled options; keyboard ArrowDown reaches «رشت» and Escape closes the menu and restores focus to the Tehran trigger. RTL is retained.
+- [ ] Exact 390×844 capture and desktop geometry comparison were unavailable in this viewport; responsive CSS is scoped to the app's existing <=839px breakpoint. Keep this limitation recorded.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Select's full state screenshot matrix and independent screen-reader review remain open.
 ## Navbar — گالری ۴۱ نمونهٔ Variants — 2026-11-10
 
 - [x] مرور زندهٔ دسکتاپ: شش گروه و ۴۱ نمونه، RTL، حالت‌های Active/Hover/Disabled/Focus و برچسب هر نمونه دیده شدند؛ گالری تکراری حذف شد.

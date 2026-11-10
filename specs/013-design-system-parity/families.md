@@ -54,6 +54,12 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 | [ ] | Chat | chat | Implemented | Six Vue exports, RTL chat shell, five message types × two senders, six chat-part states, yellow outgoing message, responsive intrinsic media, and Button-style page/playground are implemented. Matched 385px review confirms the reference structure; live browser/AX review covered all 10 sender/type selections and Header, date, typing, composer default/typing/recording, and disabled-chat states. Static specimen matches the reference's two-bubble composition in the shared dotted frame; at 320/390px frames measure 273×300px and 343×300px, with intrinsic message bubbles and no document overflow. LTR sender reversal and natural Tab exit from the non-modal chat were reviewed; Enter and send-button submission clear the draft, while Shift+Enter does not send. Sample visibility now hides fixtures without hiding user-created messages; browser verified empty → sent-only → fixtures plus sent states. Fresh evidence reviews all 10 local message screenshots; directly comparable reference states are limited to its four static samples. Mobile playground bounds, visual empty state and intercepted file chooser/attachment now pass. Independent screen-reader review remains open in `chat-checklist.md`. |
 
 Count excluding Button: 48.
+
+## Select mobile navigation clearance — 2026-11-10
+
+- At 320×844, the open Select menu now ends at y=762 above the fixed navigation at y=788; internal scrolling reveals the final disabled option.
+- Keyboard ArrowDown reaches «رشت», Escape returns focus to the trigger, and the accessibility tree retains grouped/selected/disabled options.
+- Token/catalog/typecheck/build/diff gates pass. Exact 390×844 and desktop browser comparison, full state screenshot matrix, and independent screen-reader review remain open; Select stays unchecked.
 # Input field radius — 2026-11-02
 
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.
