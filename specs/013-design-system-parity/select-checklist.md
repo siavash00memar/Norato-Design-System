@@ -34,3 +34,10 @@
 - [x] Fresh browser render exposed the inert top specimen's placeholder as the incomplete phrase «به شهر انتخاب کن».
 - [x] Corrected the specimen to «یک شهر انتخاب کنید»; the field remains 300×48px, RTL, unselected, and includes the left-side chevron inside the 300×300px dotted frame.
 - [ ] Full state screenshot comparison and independent screen-reader review remain open; Select DoD stays open.
+
+## Fresh Select browser review (2026-11-10)
+
+- [x] Matched 390×844 and 320×844 reference/local static specimens in the browser. At 390, frames are 327×300px and 326×300px with document widths 375/375px; at 320, frames are 257×300px and 256×300px. The reference document reaches 326px at 320 while the local page remains 305/305px without horizontal overflow.
+- [x] Local 390px open-menu capture shows a custom Reka listbox measuring 343×384.5px, search input and grouped options; browser accessibility tree exposes the list and selected/disabled options. Escape/focus return and the full six-row menu were previously verified.
+- [x] Actual Vue Select route has zero native `<select>` elements; its runtime trigger is a custom combobox/listbox. The shared `PlaygroundSelect` also renders a custom listbox. This confirms the user-facing Vue dropdowns do not invoke the browser's native select UI.
+- [ ] Full pixel-level screenshots for every visual state combination and independent screen-reader verification remain open. The separate framework-neutral `core-html` helper still emits a native `<select>`; its use is outside the Vue page reviewed here and must not be mistaken for the Vue adapter.

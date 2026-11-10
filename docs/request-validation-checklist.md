@@ -110,6 +110,12 @@
 - [x] Browser-intercepted file chooser emitted `selectSingle`; file selection appended an outgoing file message, exposed filename/size and reset the input. Native OS dialog visuals were not reviewed.
 - [ ] Independent screen-reader review remains open; see `specs/013-design-system-parity/chat-checklist.md`.
 
+## Select mobile frames and custom menu (2026-11-10)
+
+- [x] Matched 390×844 and 320×844 static specimens: reference/local frames are 327/326px and 257/256px wide, both 300px high. At 320, reference document width is 326px while local is 305/305px without overflow.
+- [x] At 390px, the local open menu is a custom Reka listbox (343×384.5px) with search, grouped options, a selected item and a disabled item. Browser tree exposes the listbox and its items; no native `<select>` exists in the Vue Select route.
+- [ ] Full pixel-level screenshots for the complete state matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/select-checklist.md`.
+
 ## Carousel responsive matrix overflow correction (2026-11-09)
 
 - [x] Same-origin browser frames verified exact outer CSS widths 390px and 320px; document client/scroll widths are 375/375px and 305/305px respectively (the difference is the browser's vertical scrollbar).
