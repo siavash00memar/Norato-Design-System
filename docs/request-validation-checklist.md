@@ -1318,7 +1318,7 @@
 
 - [x] Fresh desktop browser review confirmed Bar style and its pale-yellow active marker. Toggling `غیرفعال` removed links from link semantics and disabled the collapse button; restoring the control brought links back.
 - [x] Collapsing changed the button's accessible name/state while item links retained their accessible names; expanding restored section headings, nested links and footer content.
-- [ ] Exact 390px/320px comparison, mobile dismissal/focus restoration, keyboard activation, complete visual state matrix, and independent screen-reader review remain open in `specs/013-design-system-parity/sidebar-checklist.md`.
+- [ ] Same-size visual comparison, keyboard activation, complete visual state matrix, active `aria-current`, and independent screen-reader review remain open in `specs/013-design-system-parity/sidebar-checklist.md`; mobile dismissal/focus restoration were subsequently checked at 390px/320px.
 
 ## Sidebar — icon and palette follow-up (2026-11-09)
 
@@ -1326,7 +1326,13 @@
 - [x] Changed the Sidebar brand and user marks to Norato pale yellow with primary text; the contrast-focused keyboard outline continues using its dedicated contrast token.
 - [x] Fresh browser screenshot confirms the inert specimen and live Sidebar brand/avatar use the pale-yellow token with primary text. Toggling collapse changed the accessible name and collapsed state; expanding restored section headings and nested links.
 - [x] Post-change token/catalog checks, Vue TypeScript validation, production build, `git diff --check`, and repository scan for the prohibited reference name passed.
-- [ ] Mobile menu/close icons, exact 390px/320px layout, modal dismissal/focus restoration and screen-reader review remain unverified; see `specs/013-design-system-parity/sidebar-checklist.md`.
+- [ ] Mobile menu/close icon appearance, same-size visual comparison and screen-reader review remain unverified; modal dismissal/focus restoration were subsequently checked at 390px and 320px in `specs/013-design-system-parity/sidebar-checklist.md`.
+
+## Sidebar — isolated mobile Dialog behavior (2026-11-10)
+
+- [x] At 390×844, the live mobile trigger measures 48×48px; activating it opens the “نوراتو” dialog. Escape closes it and restores focus to the trigger; document client/scroll widths remain 390/390px.
+- [x] At 320×844, the 48×48px trigger opens the 202×844px dialog panel. Clicking outside closes it and restores focus to the trigger; document client/scroll widths remain 320/320px.
+- [ ] Mobile icon visual comparison, matched reference layout, expanded/collapsed visual states, and independent screen-reader review remain open.
 
 ## Tabs — implementation checkpoint (2026-11-02)
 
