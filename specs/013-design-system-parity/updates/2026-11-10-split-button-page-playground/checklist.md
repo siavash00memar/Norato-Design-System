@@ -5,4 +5,4 @@
 - [x] Existing playground appears inside the single `استفاده در Vue` section.
 - [x] Mode, variant, size, label, disabled, loading, primary action, and menu selection work in the rendered page.
 - [x] RTL, keyboard/Escape/focus restoration, desktop/mobile overflow, and shared field geometry pass.
-- [ ] Token/catalog/typecheck/build/diff gates pass, records are updated, and change is pushed.
+- [x] Token/catalog/typecheck/build/diff gates pass; records are updated; commit `0d0faa1` is pushed to `origin/master`.

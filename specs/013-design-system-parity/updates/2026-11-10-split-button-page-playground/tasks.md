@@ -4,4 +4,4 @@
 - [x] T002 Record the acceptance contract and required workflow stages.
 - [x] T003 Connect `SplitButtonPlayground` to the usage-section branch and delete the dead fallback.
 - [x] T004 Browser-verify structure, behavior, RTL, focus, and responsive overflow.
-- [ ] T005 Run engineering gates, update component DoD/evidence, and push.
+- [x] T005 Token/catalog/TypeScript/build/diff gates pass; component evidence is updated; `0d0faa1` is pushed.
