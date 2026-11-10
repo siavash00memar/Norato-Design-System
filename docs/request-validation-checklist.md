@@ -2474,3 +2474,10 @@
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.
 - [ ] Re-measure the final scoped Tooltip frame and confirm Button/Input/Select bounds remain unchanged; verify RTL composition and no document overflow.
 - [ ] Exact 390/320px re-capture and independent screen-reader review remain open; mobile is not claimed as rechecked in this change.
+
+# Notification Center live state confirmation — 2026-11-10
+
+- [x] Fresh local browser tab confirms the bell's accessible unread name, Popover rows/groups/filters/actions, and live unread status.
+- [x] Mark All updates the live status and unread count 2→0, then disables itself; the Mentions filter selects and removes nonmatching items from the accessibility tree.
+- [x] Panel mode closes the Popover, exposes its close action, and Escape closes the Panel with focus returned to the bell. Disabled bell is exposed as disabled; Reset restores the default sample.
+- [ ] This was a behavior/AX-tree spot check at the current desktop viewport; exact 390/320/430 matched layout retest and an independent screen-reader review remain open per `specs/013-design-system-parity/notification-center-checklist.md`.
