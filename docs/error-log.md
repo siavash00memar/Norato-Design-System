@@ -1621,3 +1621,11 @@
 - **Correction:** Centralized shared trigger treatment in `playground-select-targets.css`. The capsule remains 36px tall, a transparent pseudo-element provides the 48px target, and keyboard focus uses the 2px yellow ring with the amber contrast edge. Removed conflicting focus resets and page-specific duplicates.
 - **Verification:** Browser audit covered 165 triggers on 48 of 49 routes; all were 36px high, had 48px targets, neutral `#e8e8e8` resting borders and RTL. Real clicks 3px above the visible fields opened controls in Input, Select, Avatar and Stepper. Settled keyboard focus on Select shows the yellow border/ring and amber outline. Stepper retains 390/320 no-overflow and bounded vertical-layout evidence.
 - **Prevention:** Keep playground trigger hit geometry and focus in one shared stylesheet; validate its consumers after changing the shared rule.
+
+## ERR-209 — Select mobile state gallery did not match reference inset or narrow reflow (2026-11-10)
+
+- **Observed:** At 390px, the Select state gallery used a 343px-wide column at x=16 with 167.5px cards, while the reference gallery was 327px at x=24 with 158.5px cards. At 320px, the reference reflowed to one column but Norato's mobile rule forced two.
+- **Cause:** The Select gallery inherited the full documentation column and shared mobile state galleries were hard-coded to two columns through 599px.
+- **Correction:** Scoped a token-based 16px inset and auto-fit minimum based on the 48px target token to Select's existing mobile rule. Other field-state galleries and the shared documentation shell are unchanged.
+- **Verification:** At 390px, Norato measures 327px at x=24 with 159.5px cards in two columns. At 320px, it measures 257px at x=24 with a single column; document scroll width equals its 305px client width and HTML direction is RTL.
+- **Prevention:** Compare nested state-gallery bounds and their responsive column count, not only the page frame or viewport width.

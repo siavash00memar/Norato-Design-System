@@ -2598,3 +2598,10 @@
 - [x] Mark All updates the live status and unread count 2→0, then disables itself; the Mentions filter selects and removes nonmatching items from the accessibility tree.
 - [x] Panel mode closes the Popover, exposes its close action, and Escape closes the Panel with focus returned to the bell. Disabled bell is exposed as disabled; Reset restores the default sample.
 - [ ] This was a behavior/AX-tree spot check at the current desktop viewport; exact 390/320/430 matched layout retest and an independent screen-reader review remain open per `specs/013-design-system-parity/notification-center-checklist.md`.
+
+# Select state gallery mobile parity — 2026-11-10
+
+- [x] At matched 390×844 browser viewport, the reference gallery measured 327px wide at x=24 with 158.5px cards; Norato now measures 327px at x=24 with 159.5px cards in two columns.
+- [x] At matched 320×844 browser viewport, reference and Norato galleries measure 257px at x=24 and use one column; Norato document width is 305px with no horizontal overflow, and the document direction is RTL.
+- [x] The change is confined to the Select-specific mobile media rule. The 48px target token sets the minimum auto-fit column width; the 16px inset uses the semantic space-4 token.
+- [ ] Desktop full-cell comparison and independent screen-reader review remain open; this mobile correction does not close Select DoD.
