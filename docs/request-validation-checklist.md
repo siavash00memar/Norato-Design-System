@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## File Upload native form FileList sync — 2026-11-10
+
+- [x] Source audit confirmed `onChange` previously emptied the native file input after each selection, leaving the controlled queue and native `required`/`name` state inconsistent.
+- [x] The input now mirrors actual queued `File` objects and restores them on picker cancel; rejected selections resync to the prior controlled queue.
+- [ ] Native chooser selection/cancel, required validity after success, `FormData` contents, removal sync, and real OS drop still need a browser check. The current browser automation did not open a file chooser.
+
 ## File Upload File Item icon color parity — 2026-11-10
 
 - [x] Compared the same File Item section in 1265×713 browser views. The reference icon tile is neutral; the local File Item now renders with Norato's neutral surface and secondary-text styling.

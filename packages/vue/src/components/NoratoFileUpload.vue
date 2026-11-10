@@ -34,6 +34,21 @@ watch(() => props.modelValue.map(item => item.id), async ids => {
   const target = actions[Math.min(pending.index, actions.length - 1)] || (dropzone.value?.disabled ? undefined : dropzone.value)
   target?.focus({ preventScroll: true })
 }, { flush: 'post' })
+function syncNativeFiles() {
+  const nativeInput = input.value
+  if (!nativeInput || typeof DataTransfer === 'undefined') return
+  const transfer = new DataTransfer()
+  props.modelValue.forEach(item => { if (item.file) transfer.items.add(item.file) })
+  nativeInput.files = transfer.files
+}
+watch([input, () => props.modelValue.map(item => item.file)], syncNativeFiles, { deep: true, flush: 'post', immediate: true })
+function restoreNativeFiles() { syncNativeFiles() }
+function openPicker() {
+  if (!input.value || props.disabled) return
+  // Clearing only before opening lets the same file fire `change` again.
+  input.value.value = ''
+  input.value.click()
+}
 function process(files: File[]) {
   if (props.disabled || !files.length) return
   const { accepted, rejected } = validateNoratoFiles(files, {
@@ -50,7 +65,10 @@ function process(files: File[]) {
   if (items.length) { emit('update:modelValue', props.multiple ? [...props.modelValue, ...items] : items); emit('files-selected', accepted); rejections.value = [] }
   if (rejected.length) { rejections.value = rejected; emit('rejected', rejected) }
 }
-function onChange(event: Event) { process(Array.from((event.target as HTMLInputElement).files || [])); if (input.value) input.value.value = '' }
+function onChange(event: Event) {
+  process(Array.from((event.target as HTMLInputElement).files || []))
+  syncNativeFiles()
+}
 function onDrop(event: DragEvent) { dragging.value = false; dragDepth.value = 0; if (!props.disabled) process(Array.from(event.dataTransfer?.files || [])) }
 function onDragEnter() { if (!props.disabled) { dragDepth.value += 1; dragging.value = true } }
 function onDragLeave() { dragDepth.value = Math.max(0, dragDepth.value - 1); dragging.value = dragDepth.value > 0 }
@@ -72,8 +90,8 @@ function itemAction(item: NoratoUploadItem, action: 'remove' | 'cancel' | 'retry
   <section class="norato-file-upload" :class="[`is-${size}`, { 'is-disabled': disabled, 'is-dragging': dragging, 'is-invalid': !!effectiveError }]" :dir="dir">
     <span class="norato-file-upload__label" :id="`${id}-label`">{{ label }}<b v-if="required" aria-hidden="true">*</b></span>
     <span v-if="required" :id="`${id}-required`" class="sr-only">الزامی</span>
-    <input :id="id" ref="input" class="norato-file-upload__input" type="file" :accept="accept" :multiple="multiple" :disabled="disabled" :required="required" :name="name" :aria-labelledby="required ? `${id}-label ${id}-required` : `${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @change="onChange" />
-    <button ref="dropzone" class="norato-file-upload__dropzone" type="button" :disabled="disabled" :aria-labelledby="required ? `${id}-label ${id}-required` : `${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @click="input?.click()" @dragenter.prevent="onDragEnter" @dragover.prevent="dragging = !disabled" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop" @keydown.enter.prevent="input?.click()" @keydown.space.prevent="input?.click()">
+    <input :id="id" ref="input" class="norato-file-upload__input" type="file" :accept="accept" :multiple="multiple" :disabled="disabled" :required="required" :name="name" :aria-labelledby="required ? `${id}-label ${id}-required` : `${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @change="onChange" @cancel="restoreNativeFiles" />
+    <button ref="dropzone" class="norato-file-upload__dropzone" type="button" :disabled="disabled" :aria-labelledby="required ? `${id}-label ${id}-required` : `${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @click="openPicker" @dragenter.prevent="onDragEnter" @dragover.prevent="dragging = !disabled" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop" @keydown.enter.prevent="openPicker" @keydown.space.prevent="openPicker">
       <span class="norato-file-upload__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4L8 8M4 16v4h16v-4" /></svg></span>
       <strong>برای انتخاب فایل کلیک کنید یا فایل را اینجا رها کنید</strong>
       <small>{{ accept.split(',').filter(item => item.startsWith('.')).join('، ').toUpperCase() || 'فایل' }} · حداکثر {{ (maxSize / 1_000_000).toLocaleString('fa-IR') }} مگابایت</small>

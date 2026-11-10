@@ -1760,3 +1760,11 @@
 - **Cause:** `.norato-file-item__icon` reused `info-container` and `brand-blue` instead of the established neutral File Item treatment.
 - **Correction:** Changed the existing selector to `surface-muted` and `text-secondary`; no override was added and no action/progress/error colors changed.
 - **Verified:** Same-size 1265×713 browser captures show neutral icon tiles in the reference and local render. Dropzone remains yellow with dark text; RTL rows and page geometry remain intact. Full File Upload DoD remains open for OS drag/drop, form submission, reduced motion, keyboard matrix and independent screen-reader review.
+
+## ERR-227 — File Upload cleared native form state after selection (2026-11-10)
+
+- **Observed:** Source audit found the `change` handler unconditionally reset the native file input while accepted `File` objects remained in the controlled queue. This made native `required` validity and `name`-based form data disagree with component state.
+- **Cause:** The input was cleared to permit reselecting the same file, without restoring the controlled queue to its native `FileList`.
+- **Correction:** Mirror actual queued `File` objects into the native input with `DataTransfer`, clear only before opening the chooser, restore on native picker cancellation, and resync after processing a selection so rejected files cannot remain submitted.
+- **Verification:** Vue typecheck and pure file-validation tests pass. Required validity after successful selection, native `FormData`, picker cancellation/reselection, and OS drop remain unverified because this browser automation session did not expose its file chooser.
+- **Prevention:** Include selected/removed files, rejected files, picker cancellation, and native form data in File Upload browser checks; do not treat the controlled queue and native input as separate sources of truth.
