@@ -4,4 +4,4 @@
 - [x] Verify the desktop reference match and ensure the content does not stretch.
 - [x] Verify the media rule leaves narrow viewport geometry untouched; exact fresh mobile recapture is unavailable.
 - [x] Record the rendered evidence and update the component/request ledgers.
-- [ ] Push the verified follow-up to the project remote.
+- [x] Push the verified follow-up to the project remote (`0d394a0`, `origin/master`).
