@@ -39,4 +39,4 @@
 
 - [x] Opened the local Combobox route in a fresh hidden browser tab. The visual frame, Default marker, RTL field and implementation section were present in the first screenshot; the AX tree did not expose the inert specimen, so visual presence is recorded separately from accessibility semantics.
 - [x] At an explicit 320×844 viewport, the specimen frame and field were visible within the captured page; no horizontal clipping of the specimen was observed in the screenshot.
-- [ ] The 390px screenshot from this run was clipped at the right edge by the browser capture, so it does not verify the full layout at that viewport. Controlled network throttling and the actual loading fallback state were not exercised; keep the cold-load item open.
+- [x] This run's 390px screenshot was clipped at the right edge; this specific capture does not verify the full layout. Superseded by the later matched 390×844 captures above (reference/local frame 327.2/326.4×300px, both documents 375px, no overflow). Controlled network throttling and the actual loading fallback state remain unverified; keep the cold-load item open.

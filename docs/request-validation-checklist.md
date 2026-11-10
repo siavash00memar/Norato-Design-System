@@ -2416,6 +2416,11 @@
 - [x] Combobox States gallery was replaced with six state-accurate RTL fields; desktop geometry/strokes and 390px mobile layout were checked in browser.
 - [ ] Exhaustive combined-state screenshot matrix, cold-load fallback capture, and independent screen-reader review remain open for Combobox.
 
+## Combobox 390px evidence chronology — 2026-11-10
+
+- [x] A later matched 390×844 browser capture already verifies the previously clipped direct-load layout: reference/local frames are 327.2/326.4×300px, both documents are 375px, and the six state cards remain bounded in RTL. The stale note is marked superseded in `combobox-checklist.md`.
+- [ ] This reconciliation does not cover throttled cold loading, the final per-cell screenshot archive, or independent screen-reader review.
+
 ## Combobox desktop frame width tuning — browser follow-up (2026-11-09)
 
 - [x] Matched local/reference browser viewport at 1536×703: reference frame is 636×300px and Norato is 635.98×300px.
