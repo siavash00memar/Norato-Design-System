@@ -96,3 +96,7 @@ const rows: NoratoTableRow[] = [{ id: 'sara', name: { name: 'سارا محمدی
 ## Tokens
 
 **توکن‌های معنایی Norato:** `--norato-color-surface-default`, `--norato-color-surface-subtle`, `--norato-color-text-primary`, `--norato-color-text-secondary`, `--norato-color-brand-yellow`, `--norato-color-border-default`, `--norato-color-focus-ring` و توکن‌های فاصله، اندازه و شعاع مشترک. آبی به‌عنوان accent تعاملی در Table استفاده نمی‌شود.
+
+## Mobile specimen frame
+
+The inert Table frame is inset by the semantic `--norato-space-4` token at mobile widths and centered. This rule applies only to `.sample-table-preview`; desktop geometry and the live `NoratoTable` adapter are unchanged. Exact 390/320 post-change browser confirmation is still open in `specs/013-design-system-parity/updates/2026-11-10-table-mobile-frame-width/checklist.md`.

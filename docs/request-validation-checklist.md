@@ -2646,3 +2646,10 @@
 - [x] Fresh local browser render: the live Switch playground target is 48×48px with a 40×24px medium track and starts unchecked.
 - [x] Pointer activation changed `aria-checked` false→true; Space changed it true→false. Enabled/default state and generated example were restored.
 - [ ] This focused path does not close Switch DoD; independent screen-reader review remains open.
+
+# Table mobile specimen frame inset — 2026-11-10
+
+- [x] Live local desktop browser confirms RTL and a 635.984×345px Table preview frame / 562×258.5px inner table at a 1920×903 viewport; document client/scroll widths are both 1905px.
+- [x] The CSS rule is restricted to `.component-doc>#doc-preview:has(.sample-table-preview) .component-sample.sample-table-preview:not(.compact)` at `max-width:600px`, subtracting the semantic 16px token and centering only the inert preview.
+- [ ] Exact post-change 390×844 and 320×844 CSS viewport renders remain unverified in this browser session; no viewport override capability was exposed, so the prior measurement cannot prove the new result.
+- [ ] Table visual state matrix and independent screen-reader DoD remain open.

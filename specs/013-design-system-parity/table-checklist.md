@@ -14,7 +14,7 @@ Status: in progress. Last reviewed: 2026-11-09.
 - [x] Expanding a row reveals its detail content and changes the control's expanded state.
 - [x] Sort and row detail are real buttons; table uses native table semantics and named checkboxes.
 - [x] Token audit, catalog audit, Vue typecheck and production build pass.
-- [ ] Re-measure the post-correction desktop frame and compare component states; prior exact comparison at 1536×703 measured reference 636×345.25px vs local 631.98×345px. Inner table geometry was within 1px; see `updates/2026-11-10-table-desktop-frame-width/`.
+- [x] Re-measured the corrected desktop frame in the live local browser at 1920×903: frame 635.98×345px and inner table 562×258.5px. This matches the prior 1536×703 reference frame 636×345.25px within 0.25px in height and 0.02px in width; the prior inner reference table was 561.60×258.39px.
 - [x] Verify responsive behavior at 390px and 320px viewport widths; confirm no horizontal document overflow and review stacked row content.
 - [x] Keyboard-only review: search focus shows one yellow stroke; Tab reaches bulk clear, sort controls and row selection; Space sorts/selects; row detail opens from Space with a yellow ring; pagination boundaries move focus to the available opposite control. LTR and RTL page arrows point in the expected directions. The page indicator exposes `aria-live="polite"`; screen-reader speech remains unverified.
 - [x] Browser review: loading displays status and disables select-all/sort; empty source shows the no-data message even while a query remains; populated source with unmatched query shows no-results, and matching data returns. Selection persists through sort and page changes; previous/next are disabled at their bounds; Compact/Default/Comfortable row treatments render at the specified 48/56/64px tokens.
@@ -43,4 +43,11 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 - [x] Browser review at 1536×703, 390×844 and 320×844 confirms 48px row height and no static-table/page horizontal overflow.
 - [x] A Table-specific 345px token now matches the measured 345.25px reference frame within 0.25px; the Button specimen remains 300px.
 - [x] The static table now measures 562×258.50px, within 0.4px width and 0.11px height of the measured reference; frame remains within 0.25px in height.
+- [ ] Full visual state matrix and independent screen-reader behavior remain open.
+
+
+## Table mobile preview frame inset — 2026-11-10
+
+- [ ] Confirm exact 390×844 and 320×844 post-change browser measurements. The scoped rule subtracts the 16px space-4 token from the centered inert frame only; exact viewport recheck remains open because the current browser control exposes no viewport override in this run.
+- [x] Desktop live render remains 635.98×345px at 1920×903, RTL is active, and document client/scroll width both measure 1905px.
 - [ ] Full visual state matrix and independent screen-reader behavior remain open.

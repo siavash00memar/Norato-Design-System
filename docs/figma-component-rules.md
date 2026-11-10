@@ -590,5 +590,10 @@
 ## Table — desktop specimen bounds
 
 - Keep the Table's inert specimen frame at the measured 636px desktop reference width when the documentation column is slightly narrower; use a semantic spacing token for the scoped extension.
-- Preserve the existing 390px/320px frame widths, the inner table geometry, 48px rows and live adapter.
-- **Validation:** post-correction browser measurement is still pending; see the Table desktop frame-width follow-up.
+- Preserve the inner table geometry, 48px rows and live adapter. At mobile widths, inset the inert frame by 16px and center it to match the reference composition.
+- **Validation:** live local browser measures 635.984×345px at 1920×903, matching the 636px desktop width cap; exact 390/320 post-change measurements remain open in the mobile inset follow-up.
+
+## Table — mobile specimen frame inset
+
+- At mobile widths, center the inert Table specimen at 16px less than its parent width using the semantic `space-4` token. Do not apply the inset to the live table or desktop frame.
+- Exact 390/320 post-change browser measurements remain an open validation item until captured.

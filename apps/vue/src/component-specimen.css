@@ -17,3 +17,4 @@
 
 .component-sample.sample-table-preview:not(.compact){min-block-size:var(--norato-table-preview-frame-block-size)}
 @media(min-width:601px){.component-sample.sample-button-specimen:not(.compact).sample-table-preview{inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-split-button-preview-frame-inline-size))}}
+@media(max-width:600px){.component-doc>#doc-preview:has(.sample-table-preview) .component-sample.sample-table-preview:not(.compact){box-sizing:border-box;inline-size:calc(100% - var(--norato-space-4));margin-inline:auto}}

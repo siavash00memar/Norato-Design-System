@@ -1676,3 +1676,10 @@
 - **Verification:** Current family ledger and canonical checklist both show the open review; no new browser or screen-reader result is claimed.
 - **Remaining:** Run and document an independent screen-reader review before closing Rating DoD.
 - **Prevention:** Check each family completion mark against every explicit requirement in its canonical checklist and contract, including manual assistive-technology evidence.
+
+## ERR-216 — Table mobile frame filled its parent (2026-11-10)
+- **Observed:** At 390×844 and 320×844, prior live measurements showed local inert frames 343px/273px wide at x=16px against 327px/257px reference frames at x=24px.
+- **Cause:** The shared specimen rule filled the mobile documentation column, while the reference left an 8px inset on both sides.
+- **Correction:** Added a Table-only mobile width rule using the semantic 16px spacing token and auto centering. Desktop and live adapter selectors are excluded.
+- **Verification:** Current live desktop render retains 635.984×345px frame and 562×258.5px table at 1920×903, with no document overflow. Post-change exact 390/320 measurements are still open because no viewport override was available in this browser session.
+- **Prevention:** Capture both mobile breakpoints after any frame sizing change; do not mark the mobile parity item complete from a desktop screenshot.
