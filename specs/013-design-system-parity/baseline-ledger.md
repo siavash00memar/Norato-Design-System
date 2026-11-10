@@ -7,15 +7,15 @@ Status meanings:
 
 | Family | Evidence status | Baseline note |
 | --- | --- | --- |
-| Split Button | Evidence recorded; audit open | Existing desktop/mobile, interaction and keyboard evidence. |
+| Split Button | Baseline passed | Strict DoD is complete; desktop/mobile comparison, RTL, ≥48px targets and pointer/keyboard paths are verified. |
 | Input | Evidence recorded; audit open | Existing desktop/mobile, layout and adapter behavior evidence. |
 | Select | Evidence recorded; audit open | Existing desktop/mobile and single/multi-select evidence; axis labels visually rechecked. |
 | Combobox | Evidence recorded; audit open | Existing desktop/mobile, keyboard and selection evidence. |
-| Checkbox | Evidence recorded; audit open | Existing responsive, keyboard and state evidence. |
+| Checkbox | Baseline passed | Strict DoD is complete; matched desktop/mobile visual review, RTL, ≥48px targets and pointer/keyboard paths are verified. |
 | Radio Button | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
 | Switch | Evidence recorded; audit open | Existing responsive and interaction evidence. |
 | Segmented Control | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
-| Range | Evidence recorded; audit open | Existing responsive, pointer and keyboard evidence. |
+| Range | Baseline passed | Strict DoD is complete; desktop/mobile comparison, RTL, ≥48px targets and pointer/keyboard paths are verified. |
 | Rating | Evidence recorded; audit open | Component checklist contains desktop/mobile and keyboard evidence. |
 | Date Picker | Evidence recorded; audit open | Existing responsive and keyboard/range-selection evidence. |
 | Time Picker | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
@@ -24,8 +24,8 @@ Status meanings:
 | Sidebar | Evidence recorded; audit open | Existing desktop/mobile and interaction evidence. |
 | Tabs | Evidence recorded; audit open | Existing desktop/mobile and keyboard evidence. |
 | Breadcrumbs | Evidence recorded; audit open | Existing desktop/mobile and RTL navigation evidence. |
-| Pagination | Evidence recorded; audit open | Same-viewport mobile comparison completed; frame fits without visible clipping/stretch; local frame is slightly wider and keeps Norato's yellow selected state. |
-| Stepper | Evidence recorded; audit open | Existing responsive and interaction evidence. |
+| Pagination | Baseline passed | Matched desktop/mobile comparisons, bounded layout, RTL, ≥48px controls and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
+| Stepper | Baseline passed | Desktop and mobile comparison recorded. At mobile, Norato switches to Compact per the reference's mobile usage guidance; frame stays bounded, RTL and Norato palette remain intact, and the primary keyboard path works. Full matrix remains Final DoD. |
 | Menu | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
 | Command Palette | Evidence recorded; audit open | Existing responsive and keyboard/search evidence. |
 | Tree View | Evidence recorded; audit open | Existing responsive and keyboard/navigation evidence. |
@@ -40,8 +40,8 @@ Status meanings:
 | Notification Center | Evidence recorded; audit open | Existing responsive and interaction evidence. |
 | Badge | Evidence recorded; audit open | Existing responsive and interaction evidence. |
 | Table | Evidence recorded; audit open | Existing responsive and selection evidence. |
-| List | Evidence recorded; audit open | Existing responsive and selection evidence. |
-| Card | Evidence recorded; audit open | Component checklist contains desktop/mobile and selected-card evidence. |
+| List | Baseline passed | Matched desktop and 414px mobile comparison, bounded three-row RTL specimen, ≥48px targets and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
+| Card | Baseline passed | Matched desktop and mobile comparisons, six adapter coverage, bounded media/text without stretch, RTL, ≥48px interactive controls and pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Tag | Evidence recorded; audit open | Existing responsive and interaction evidence. |
 | Chip | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
 | Avatar | Evidence recorded; audit open | Existing responsive and focus evidence. |
@@ -58,8 +58,8 @@ Status meanings:
 
 ## Summary
 
-- **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison. Baseline pass count is currently **unverified** while family-by-family evidence is re-audited; do not use 48/48 as a progress percentage.
-- Newly confirmed in the current re-audit: List has a same-viewport 414px visual comparison; Pagination has a matched mobile comparison; Stepper's mobile compact treatment is supported by the reference's mobile usage guidance. These checks do not establish the complete Baseline rate by themselves.
+- **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
+- Baseline DoD verified: **7/48 families (14.6%)** — Split Button, Checkbox, Range, Pagination, Stepper, List and Card. The remaining 41 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.

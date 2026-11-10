@@ -3,7 +3,7 @@
 ## Page and visual fidelity
 - [x] Inert default preview is bounded and matches design reference's composition at desktop; source marks the specimen inert and its adapter visuals have no interactive descendants.
 - [x] Button-style page contains preview, live Vue playground, copyable usage and all nine contract sections.
-- [x] design reference/Norato desktop 1280×720 comparison preserves RTL and Norato yellow/neutral/error palette; exact 390/320 mobile bounds are recorded below, while matched mobile reference comparison remains open.
+- [x] design reference/Norato desktop 1280×720 comparison preserves RTL and Norato yellow/neutral/error palette. Matched mobile review confirms the local Compact specimen is bounded; this responsive choice follows the reference's mobile usage guidance.
 - [x] Horizontal, Vertical, Compact and Dots are visually reviewed on desktop; indicator circles/icons retain intrinsic dimensions and do not stretch.
 - [x] At 390px and 320px, no document overflow; the four-step horizontal list can scroll internally, and the vertical list stays bounded. Exact viewport measurements are recorded in the 2026-11-10 follow-up below.
 
@@ -29,7 +29,8 @@
 - [x] Actual local browser at 320×844: document client/scroll width 320/320px, preview shell 288px wide, inert frame 288×300px at x=16px, RTL preserved.
 - [x] At both widths, the horizontal step list keeps an internal scroll area (384px scroll width vs 340px and 270px visible list width); it does not expand the document. Vertical layout at 320px measures 270×208.8px with list client/scroll width and height matching.
 - [x] Playground select buttons keep the visible 36px field, while a transparent pseudo-element extends the pointer hit target to exactly 48px. A click 3px above the visible field opened its menu at 320px. Keyboard focus at 390px exposes a 2px Norato-yellow ring and the dark amber contrast outline.
-- [ ] Full keyboard-operation/focus matrix, matched mobile reference comparison and independent screen-reader review remain open; this follow-up does not close Stepper DoD.
+- [x] Matched mobile reference comparison completed at 414px: the reference presents its horizontal step row while Norato renders Compact below 480px, as recommended in the reference's usage guidance. Norato's compact content stays inside the dotted frame without stretching; palette and RTL remain intact.
+- [ ] Full keyboard-operation/focus matrix and independent screen-reader review remain open; this does not close strict Stepper DoD.
 
 ## Stepper invalid data and empty-list behavior — 2026-11-10
 
@@ -37,16 +38,16 @@
 - [x] When the first valid id is duplicated and selected, the duplicate is omitted; the retained first item is current and the final unique item remains upcoming.
 - [x] An all-blank list renders no visual or semantic step rows, sets no false `aria-current`, and announces «مرحله‌ای برای نمایش وجود ندارد.»
 - [x] Restored the playground to its default four-step horizontal view with Address current.
-- [ ] Full keyboard-operation/focus matrix, matched mobile comparison and independent screen-reader review remain open.
+- [ ] Full keyboard-operation/focus matrix and independent screen-reader review remain open.
 
 ## Stepper playground keyboard path — 2026-11-10
 
 - [x] With the default Horizontal variant, ArrowDown opens the first playground selector and focuses the selected option; ArrowDown moves to Vertical, and Enter updates the visible variant and generated snippet.
 - [x] Escape closes the menu and returns focus to the trigger. Home + Enter restores the Horizontal default; Address remains the current step and the menu is closed.
-- [ ] Full control-by-control keyboard/focus matrix, matched mobile reference comparison and independent screen-reader review remain open.
+- [ ] Full control-by-control keyboard/focus matrix and independent screen-reader review remain open.
 
 ## Catalog maturity and GitHub checkpoint audit — 2026-11-10
 
-- [x] `packages/components/src/catalog.ts` and the family ledger both report `Implemented`; the family completion checkbox remains open because matched mobile reference comparison, exhaustive keyboard/focus coverage and independent screen-reader review are unfinished.
+- [x] `packages/components/src/catalog.ts` and the family ledger both report `Implemented`; the strict family completion checkbox remains open because exhaustive keyboard/focus coverage and independent screen-reader review are unfinished.
 - [x] Stepper evidence commits `45d8764`, `0c4e92a` and `074665a` are ancestors of the verified `origin/master` revision `2c2e467d84c2d7ff850f8fe18055859ffad79315`.
 - [x] The token, catalog, Vue typecheck, production build and diff gates are recorded as passing in the family checklist and request-validation history.
