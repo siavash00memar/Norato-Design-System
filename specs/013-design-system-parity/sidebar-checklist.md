@@ -68,7 +68,7 @@
 - [x] Space toggles collapse and expansion; focus remains visible with a 2px ring. All visible item/subitem rows are 48px.
 - [x] With the current child route and the Sidebar globally disabled, the collapsed parent span remains the only `location` item; anchors are absent and collapse is disabled.
 - [x] Mobile dialog child selection updates status, closes the dialog, and stays on `#component-sidebar`; Escape restores trigger focus. At 390/320px, frames are 327/257×300px, triggers 48×48px, and the document does not overflow.
-- [ ] Full 42-part visual state gallery and independent screen-reader review remain open.
+- [ ] Exact reference comparison, full live state/keyboard matrix, and independent screen-reader review remain open; the static 42-state gallery is recorded in the 2026-11-10 gallery follow-up below.
 
 ## Sidebar — technical recheck (2026-11-10)
 

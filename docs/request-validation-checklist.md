@@ -20,14 +20,14 @@
 - [x] Globally disabled nested route exposes the parent as a disabled, non-link `location` item; all four collapsed rows are 48px and collapse is disabled.
 - [x] In the mobile dialog, child selection updates the status and closes the dialog without leaving `#component-sidebar`; reopening exposes the child as `page`; Escape closes and restores focus to the 48×48px trigger.
 - [x] At 390×844, document is 375/375px and frame 327×300px; at 320×844, open-dialog document is 320/320px, closed document 305/305px, frame 257×300px and trigger 48×48px.
-- [ ] Full 42-part visual state gallery and independent screen-reader review remain open in the canonical Sidebar checklist.
+- [ ] Exact reference comparison, full live state/keyboard matrix, and independent screen-reader review remain open in the canonical Sidebar checklist. The inert 42-state gallery is now implemented.
 
 ## Sidebar current browser and technical recheck (2026-11-10)
 
 - [x] The actual local `#component-sidebar` page was re-read in Chrome. The Button-style section layout is present and the live Sidebar preview renders RTL, with Norato-yellow current-page treatment and compact proportions.
-- [x] Variants are currently exposed as six text descriptions totaling 42 combinations; there is no rendered 42-state visual gallery. The current sidebar checklist records this as open rather than claiming parity.
+- [x] At the previous recheck Variants were six text descriptions; the later 2026-11-10 follow-up adds a rendered inert gallery for the 42 contract combinations.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed in this recheck.
-- [ ] Exact reference screenshot comparison, the full visual state gallery, a compiled consumer usage example, and independent screen-reader review remain open. Browser inspection did not test all group keyboard combinations.
+- [ ] Exact reference screenshot comparison, a compiled consumer usage example, and independent screen-reader review remain open. Browser inspection did not test all group keyboard combinations.
 
 ## Sidebar 42-state gallery (2026-11-10)
 
