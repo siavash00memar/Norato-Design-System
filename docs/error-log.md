@@ -1629,3 +1629,11 @@
 - **Correction:** Scoped a token-based 16px inset and auto-fit minimum based on the 48px target token to Select's existing mobile rule. Other field-state galleries and the shared documentation shell are unchanged.
 - **Verification:** At 390px, Norato measures 327px at x=24 with 159.5px cards in two columns. At 320px, it measures 257px at x=24 with a single column; document scroll width equals its 305px client width and HTML direction is RTL.
 - **Prevention:** Compare nested state-gallery bounds and their responsive column count, not only the page frame or viewport width.
+
+## ERR-210 — Tabs preview inherited a short generic frame and showed a mobile vertical scrollbar (2026-11-10)
+
+- **Observed:** Tabs preview frame measured 136px high at mobile widths; the reference uses a 300px dotted stage. At 320px the 49px tab row had a 48px client box, exposing native vertical scroll arrows and reducing usable row width by 15px.
+- **Cause:** The inert Tabs specimen lacked the shared Button-aligned frame class; its narrow horizontal scroller left vertical overflow at `auto`.
+- **Correction:** Added the shared frame class with the existing Tabs 300px token, an isolated semantic width extension at desktop and the measured mobile inset. The existing scroller now hides vertical overflow while retaining horizontal scroll behavior.
+- **Verification:** Frame measures 636×300px at desktop, 327×300px at 390px and 257×300px at 320px; all three are matched to the reference. RTL and 48px row targets remain; both mobile documents have no overflow. At 320px, row client/scroll widths match and the vertical scrollbar is absent.
+- **Prevention:** For each inert preview, check the frame class and both overflow axes at narrow widths; do not infer frame sizing from the inner control.

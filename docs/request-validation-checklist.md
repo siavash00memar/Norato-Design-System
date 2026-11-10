@@ -2612,3 +2612,10 @@
 - [x] The sidebar exposes a labelled native `<nav>` with 49 native buttons in catalog order (Button first, Chat last); the selected Chat item is visibly/semantically active after opening its route.
 - [x] At 390×844 and 320×844, the active Chat route remains selected, HTML direction is RTL, and the document stays within its client width (375px and 305px respectively).
 - [x] Mobile page preview bounds were observed at 390px; component details remain available in the responsive layout. This route/structure audit does not replace individual component visual, behavior, or independent screen-reader DoDs.
+
+# Tabs preview frame and narrow overflow — 2026-11-10
+
+- [x] At 1920×959, the matched reference/local top frame is 636×300px. Local specimen is centered in its available column and uses the shared dotted Button-aligned composition.
+- [x] At 390×844, reference and local frames measure 327×300px at x=24; at 320×844, both measure 257×300px at x=24. The document stays within its client width at both sizes and retains RTL.
+- [x] Inert tab labels remain 48px high. The mobile row has `overflow-y:hidden`; browser layout confirms no scrollbar gutter and no horizontal content overflow. The page-level preview does not stretch the row to fill its 300px frame.
+- [ ] Live keyboard/interaction and hover/focus matrix evidence remains from the existing Tabs checklist; independent screen-reader review remains open, so Tabs DoD is not closed.

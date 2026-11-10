@@ -1,0 +1,22 @@
+.component-sample.sample-button-specimen.sample-tabs-preview:not(.compact) {
+  min-block-size: var(--norato-tabs-preview-frame-block-size);
+}
+
+@media (min-width: 840px) {
+  .component-sample.sample-button-specimen.sample-tabs-preview:not(.compact) {
+    inline-size: min(
+      calc(100% + var(--norato-space-1)),
+      var(--norato-split-button-preview-frame-inline-size)
+    );
+  }
+}
+
+@media (max-width: 599px) {
+  .component-sample.sample-button-specimen.sample-tabs-preview:not(.compact) {
+    inline-size: min(
+      calc(100% - var(--norato-space-4)),
+      var(--norato-split-button-preview-frame-mobile-inline-size)
+    );
+    min-inline-size: 0;
+  }
+}

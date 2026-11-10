@@ -389,9 +389,10 @@
 ## Tabs — 2026-11-02
 
 - Map design reference's four parts and 39 variants to the Button-structured page: inert bounded preview, live playground, copyable Vue usage and nine contract sections.
-- Keep Norato's blue/yellow palette. Line uses a 2px blue underline; Soft uses the semantic info surface.
+- Use Norato yellow for the active Line indicator and Soft selected surface; reserve brand blue for informational and link semantics.
 - Support horizontal/vertical orientation and Small/Medium/Large while preserving 48px interaction targets; in vertical RTL, the list stays at inline-end.
 - Keep icons intrinsic, order icon → label → count in RTL, and allow horizontal tab scrolling at narrow widths rather than squeezing or stretching labels.
+- The inert top specimen uses the shared dotted Button-aligned 300px frame; mobile bounds are 327×300px at 390px and 257×300px at 320px. Keep its row 48px high and suppress vertical overflow while retaining horizontal scroll only when needed.
 - Use Reka Tabs for tab/tabpanel relationships, controlled selection and keyboard focus.
 
 ## Breadcrumbs — 2026-11-02
