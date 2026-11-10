@@ -22,6 +22,13 @@
 - [x] At 390×844, document is 375/375px and frame 327×300px; at 320×844, open-dialog document is 320/320px, closed document 305/305px, frame 257×300px and trigger 48×48px.
 - [ ] Full 42-part visual state gallery and independent screen-reader review remain open in the canonical Sidebar checklist.
 
+## Sidebar current browser and technical recheck (2026-11-10)
+
+- [x] The actual local `#component-sidebar` page was re-read in Chrome. The Button-style section layout is present and the live Sidebar preview renders RTL, with Norato-yellow current-page treatment and compact proportions.
+- [x] Variants are currently exposed as six text descriptions totaling 42 combinations; there is no rendered 42-state visual gallery. The current sidebar checklist records this as open rather than claiming parity.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed in this recheck.
+- [ ] Exact reference screenshot comparison, the full visual state gallery, a compiled consumer usage example, and independent screen-reader review remain open. Browser inspection did not test all group keyboard combinations.
+
 ## Stepper catalog and checkpoint reconciliation (2026-11-10)
 
 - [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.

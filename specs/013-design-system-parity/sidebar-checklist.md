@@ -7,7 +7,7 @@
 - [x] Mobile modal drawer trigger, Escape/focus restoration, outside dismissal, child selection and no-overflow checks verified at 390px/320px.
 - [x] All sampled interactive targets are at least 48px; icons and marks retain intrinsic geometry.
 - [ ] Usage snippet compiles against exports.
-- [ ] Tokens, catalog, typecheck, build and diff checks pass.
+- [x] Tokens, catalog, typecheck, build and diff checks pass (fresh recheck 2026-11-10; see technical recheck below).
 - [ ] Independent screen-reader review documented if available.
 
 ## Sidebar — implementation checkpoint (2026-11-02)
@@ -69,3 +69,13 @@
 - [x] With the current child route and the Sidebar globally disabled, the collapsed parent span remains the only `location` item; anchors are absent and collapse is disabled.
 - [x] Mobile dialog child selection updates status, closes the dialog, and stays on `#component-sidebar`; Escape restores trigger focus. At 390/320px, frames are 327/257×300px, triggers 48×48px, and the document does not overflow.
 - [ ] Full 42-part visual state gallery and independent screen-reader review remain open.
+
+## Sidebar — technical recheck (2026-11-10)
+
+- [x] `pnpm check:tokens` passed (3 token files present).
+- [x] `pnpm check:catalog` passed (49 unique routes, contracts, readiness records and Vue exports).
+- [x] `pnpm --filter @norato/vue-app typecheck` passed.
+- [x] `pnpm --filter @norato/vue-app build` passed (Vite production build completed).
+- [x] `git diff --check` passed before this checklist update.
+- [ ] The usage example is visible in the browser and matches the public export names; compiling the rendered documentation snippet as a standalone consumer project is not yet verified.
+- [ ] The 42 combinations are currently described as text in the Variants section; an actual state gallery is not rendered. Exact reference comparison, complete group-keyboard matrix, and independent screen-reader review remain open.
