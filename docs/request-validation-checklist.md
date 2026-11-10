@@ -3,9 +3,10 @@
 ## Date Picker shared specimen frame (2026-11-10)
 
 - [x] Date Picker's inert preview opts into the shared Button specimen frame; the Date Picker-specific inner gradient was removed so the shared dotted Norato background remains visible.
-- [x] Same-window browser screenshot after HMR shows the local desktop composition centered and visually aligned with the reference stage; its Norato yellow selected date remains unchanged.
+- [x] Matched browser measurements: local/reference stages are 628/628×300px at 1280×720, 327/327×300px at 390×844, and 257/256.8×300px at 320×844. Mobile local x inset is 24px and document client/scroll widths are 375/375px and 305/305px.
+- [x] The shared dotted warm-to-cool background shows through; the centered calendar retains RTL and its Norato-yellow selected day.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the CSS change.
-- [ ] Exact desktop geometry, responsive 390px/320px bounds and page overflow are not yet remeasured after this change. Interactive behavior and the public adapter were not modified.
+- [x] The change is limited to the inert specimen and its frame tokens/styles; the public `NoratoDatePicker` adapter and seven-mode interaction code are unchanged.
 
 ## Matched Input States gallery review (2026-11-10)
 

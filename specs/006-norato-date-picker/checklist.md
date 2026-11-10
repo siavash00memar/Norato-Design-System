@@ -17,4 +17,4 @@
 ## Shared preview stage follow-up — 2026-11-10
 
 - [x] Inert specimen now uses the shared Button preview frame and transparent inner calendar backdrop; local desktop render visually checked against the same-window reference.
-- [ ] Re-measure exact desktop and 390px/320px stage geometry, RTL placement, and document overflow after the CSS change. The family DoD remains open until this passes.
+- [x] Measured 628×300px at 1280×720, 327×300px at 390×844, and 257×300px at 320×844 vs reference 628×300, 327×300, and 256.8×300. RTL, 24px mobile inset, and zero horizontal document overflow verified.
