@@ -36,3 +36,10 @@
 Production build succeeds; Vite reports the pre-existing JavaScript chunk size advisory (1,238.40 kB minified).
 
 Popover remains in progress until the independent screen-reader review is complete.
+
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop renders confirm the panel remains bounded, its arrow is intrinsic, and its simple content keeps natural proportions without stretch or clipping.
+- [x] Existing 390×844 and 320×640 local/reference measurements, RTL arrow-to-trigger behavior, collision fallback, 48px trigger, and primary pointer/keyboard dismissal paths cover Baseline.
+- [ ] The local static preview visibly includes its trigger below the panel; the reference static preview omits the trigger. Keep this composition difference for Final visual review.
+- [ ] Independent screen-reader announcement review remains open for Final DoD.
