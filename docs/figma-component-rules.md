@@ -453,8 +453,8 @@
 - Use six semantic tones and explicit desktop/mobile options, but apply Norato status containers and yellow as the brand/focus accent. Action dispatches an event; the host owns navigation and visibility persistence.
 - The top specimen is inert, uses the Button-sized dotted frame and Default marker; the lower playground is executable.
 - **Verified (2026-11-09):** all six Mobile tones rendered in 390px and 320px same-origin browser frames; RTL, Danger `alert`/other `status` roles, 48px close and action targets, intrinsic 18px icon, and no horizontal document overflow (375/375px and 305/305px client/scroll widths).
-- **Verified (2026-11-10):** the inert mobile preview frame now uses a 342px semantic maximum and 16px tokenized width reduction, centered at a 24px inline inset. Matched 390px/320px captures measure 342×300px / 272×300px, matching the selected reference frame while keeping the Norato document within viewport.
-- **Remaining:** complete 12-case visual screenshot review and independent screen-reader review; keep Banner DoD open.
+- **Verified (2026-11-10):** matched 1265×720 desktop frames measure 636×300px in the reference and 631.98×300px in Norato. The banner measures 583.2×52.9px and 584×49px respectively after a desktop-only tokenized max width on the inert specimen. All six tones × both local layouts were captured; the reference provides only static Info and Inverse samples, and those two were compared. Browser AX confirms the six Persian tone labels and Danger `alert`/other `status` roles. At 390px/320px the inert frames measure 342×300px / 272×300px and local documents have no overflow.
+- **Remaining:** independent screen-reader review; keep Banner DoD open until it is complete.
 
 ## Tooltip — 2026-11-09
 - Match design reference's 16 combinations (Dark/Glass × Simple/Rich × Top/Bottom/Right/Left) with a compact default icon trigger and Bubble/Arrow in the Button-sized dotted specimen.

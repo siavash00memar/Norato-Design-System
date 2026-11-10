@@ -6,6 +6,13 @@
 - [x] The document measures 320/320px client/scroll width while the nested menu is open; no horizontal page overflow is present.
 - [ ] Independent screen-reader review remains open in `specs/013-design-system-parity/menu-checklist.md`.
 
+## Banner 12-variant browser review (2026-11-10)
+
+- [x] Captured all six tones in Desktop and Mobile layouts at 1265×720. Every render preserves RTL, an 18×18px icon and 48px action/close targets; no text or icon stretching appeared.
+- [x] Matched the local Info and Inverse specimens against the same-viewport reference page. Reference displays only these two static tone examples; its Tone/Layout chips are not interactive.
+- [x] Reference banner measured 583.2×52.9px inside a 636×300px frame; local measured 622×49px inside a 631.98×300px frame before correction. After the scoped desktop specimen width correction, local width is 584px.
+- [ ] Independent screen-reader review remains open in `specs/013-design-system-parity/banner-checklist.md`.
+
 ## Split Button detail-page playground (2026-11-10)
 
 - [x] Before the fix, the rendered `#component-split-button` page exposed the adapter source and generic snippet but had no `.button-playground`; the sibling Split Button `v-else-if` was unreachable.

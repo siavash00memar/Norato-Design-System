@@ -23,7 +23,7 @@
 - [x] At 390px, no horizontal overflow is visible; open root/submenu fit within the viewport. Fresh live 320×844 browser review: document width is 320/320px; the open root panel measures 236×306.3px at (8,454), and its open submenu measures 236×107px at (76,656), both fully within the viewport.
 
 ## Engineering
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the final edits. Build retains the existing latest build output has a 442.34KB JS entry with no chunk-size advisory.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass; the latest build output has a 442.34KB JS entry and no chunk-size advisory.
 - [x] Actual local browser render and interactions are checked; independent screen-reader review is recorded separately.
 - [x] No completion claim exceeds the evidence; 320px and independent screen-reader review remain open.
 
