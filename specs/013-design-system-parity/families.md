@@ -1,5 +1,7 @@
 # Component delivery ledger
 
+**Baseline DoD:** family-level evidence is mapped in [baseline-ledger.md](baseline-ledger.md); current family evidence coverage is 48/48. This does not alter the strict completion statuses below, which remain governed by [checklist.md](checklist.md).
+
 Each family is complete only when its own DoD in checklist.md passes. Order follows the current catalog.
 
 | Done | Family | Slug | Current maturity | Evidence |

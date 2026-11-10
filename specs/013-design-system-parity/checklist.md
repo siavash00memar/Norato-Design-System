@@ -1,4 +1,6 @@
-# Definition of Done per component
+# Final Definition of Done per component
+
+The checks below remain the final quality bar for every family. Passing the Baseline DoD in `delivery-dod.md` is an early delivery checkpoint only; it does not close a family or the project.
 
 - [ ] Matching design reference page and current Norato page inspected at desktop and mobile widths.
 - [ ] Preview composition, hierarchy, spacing, radius, icon order, and proportions compared; intentional Norato color/type/target deviations documented.
@@ -10,6 +12,12 @@
 - [ ] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, and `pnpm --dir apps/vue build` pass after the change.
 
 Only check a line when the corresponding evidence was observed for that component. Record unavailable checks explicitly; do not mark the family complete while a required check is open.
+
+## Baseline DoD — first delivery stage
+
+The Baseline stage is tracked separately in `delivery-dod.md` and the family evidence ledger below. Keep strict Final DoD checkboxes unchanged. Existing evidence coverage is not itself a pass: each family must have its evidence mapped to the Baseline gates before its status can be marked passed.
+
+Current evidence inventory (2026-11-10): the main ledger and component-specific checklists document responsive visual and interaction/RTL evidence for 48/48 families. Pagination's missing mobile comparison is now recorded. This is not a Final DoD pass rate. See `baseline-ledger.md` for Baseline status; strict completion remains open wherever a Final DoD item is unchecked.
 
 ## Tooltip desktop frame width follow-up — 2026-11-10
 

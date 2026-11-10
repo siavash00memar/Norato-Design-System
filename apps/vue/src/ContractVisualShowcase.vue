@@ -603,7 +603,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         </section>
         <span class="visual-kind">۳۶ ترکیب دیداری · نمایش ایستا؛ تعامل واقعی در playground</span>
       </div>
-      <div v-else class="variant-visual-grid">
+      <div v-else class="variant-visual-grid" :class="{ 'variant-visual-grid--select': name === 'Select' }">
         <article v-for="entry in entries" :key="entry.id" class="contract-variant-card" :class="{ 'is-empty': isEmptyStatement(entry) }">
           <div class="variant-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span v-if="sampleKind(entry) === 'calendar'" class="preview-calendar" aria-hidden="true"><i v-for="day in 14" :key="day" :class="{ 'is-selected': day === 6 }" /></span>
@@ -884,4 +884,5 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .input-core-state-card[data-state="success"]>header>i{background:var(--norato-color-status-success)}
 @media(max-width:839px){.input-core-states-grid{inline-size:calc(100% - var(--norato-space-4));grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:calc(var(--norato-space-2) + var(--norato-border-medium));margin-inline:auto}}
 .input-family-matrix :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
+.variant-visual-grid--select :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 </style>

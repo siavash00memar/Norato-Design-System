@@ -1816,3 +1816,11 @@
 - **Correction:** Render the tokenized Default marker with its success dot in the full-size inert fallback. Scope Combobox's frame width, mobile width, radius and wash to its existing preview tokens. Keep the placeholder neutral, lazy loading enabled, and compact-card fallback behavior intact.
 - **Verification:** Fresh desktop and mobile captures show the marker in the initial fallback and the real Combobox specimen in the subsequent capture; the mobile frame's position/height remain visually stable. Initial inventory capture still showed compact skeletons. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Independent screen-reader review and exhaustive Combobox screenshot evidence remain open.
 - **Prevention:** Compare the shared loading shell against the actual component specimen on both cold route and compact-card renders; do not rely only on a warmed browser session.
+
+## ERR-234 — برچسب‌های توصیفی Select با سطح اطلاعاتی نمایش داده می‌شدند (2026-11-10)
+
+- **مشاهده:** مقادیر محورهای Variants در Select آبی کم‌رنگ بودند، درحالی‌که برچسب توصیفی هستند و وضعیت اطلاعاتی را نشان نمی‌دهند.
+- **علت:** قانون مشترک `.variant-axis > span` سطح آبی را برای همهٔ خانواده‌ها اعمال می‌کند.
+- **اصلاح:** کلاس محدود به گالری Select اضافه شد و سطح، متن و Stroke خنثی از توکن‌ها گرفت؛ قانون مشترک و وضعیت کنترل واقعی تغییر نکرد.
+- **تأیید:** تصویر مرورگر موبایل، برچسب‌های خاکستری در Variants و حفظ رنگ مستقل کنترل Select را نشان می‌دهد. گیت‌های توکن، کاتالوگ، TypeScript، build و diff نیز موفق شدند.
+- **پیشگیری:** برچسب فراداده را از رنگ وضعیت کنترل جدا نگه‌دار و قانون محدودشده را در رندر واقعی بررسی کن.

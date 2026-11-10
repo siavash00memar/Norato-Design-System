@@ -2897,3 +2897,13 @@
 - [x] نمونه‌ها inert هستند و مسیر Playground اجرایی جدا مانده است.
 - [x] `pnpm check:tokens`، `pnpm check:catalog`، TypeScript/Vite build و `git diff --check` موفق شدند.
 - [ ] بررسی viewport باریک در این نشست ممکن نشد؛ DoD کامل Navbar باز می‌ماند.
+
+## تحویل DoD پایه و بررسی Select — 2026-11-10
+
+- [x] طبق خواستهٔ کاربر، DoD دو مرحله شد: Baseline برای تحویل زودتر و Final با همان معیار سخت‌گیرانهٔ قبلی.
+- [x] هر ۴۸ خانواده در `specs/013-design-system-parity/baseline-ledger.md` شواهد ریسپانسیو، RTL و مسیر اصلی تعامل/کیبورد دارند؛ Baseline این مرحله ۴۸/۴۸ ثبت شد.
+- [x] ساختار مشترک صفحه در `App.vue` و یک صفحهٔ زنده بررسی شد: Preview، استفاده در Vue، و ۹ بخش قرارداد.
+- [x] صفحهٔ Select در موبایل بازبینی شد؛ برچسب‌های محور در Variants خاکستری خنثی هستند و رنگ واقعی کنترل‌ها جدا مانده است.
+- [x] Pagination در نمای موبایل با مرجع مقایسه شد؛ قاب کمی عریض‌تر است اما در صفحه جا می‌شود و کشیدگی عمودی یا برش واضح ندارد.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، `pnpm --dir apps/vue typecheck`، `pnpm --dir apps/vue build` و `git diff --check` همگی موفق شدند.
+- [ ] DoD عمیق Final همچنان باز است: ماتریس‌های کامل حالت/ترکیب و بازبینی مستقل صفحه‌خوان.
