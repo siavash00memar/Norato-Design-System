@@ -1700,3 +1700,19 @@
 - **Correction:** Reused the shared Button specimen frame, removed the nested stage sizing, aligned the semantic panel tokens to 216×222px, and reduced static contents to brand, section title and four icon links. Live component styles and API were not changed.
 - **Verification:** Local frame/panel measure 635.98×300px / 216×222px desktop, 327×300px at 390px, and 257×300px at 320px. The 320px document remains 305/305px and RTL is preserved. Token, catalog, typecheck, build and diff gates are recorded in the Sidebar follow-up.
 - **Prevention:** Measure the actual dotted stage separately from its wrapper and inner component; compare the specimen's visible composition as well as its bounding box.
+
+## ERR-219 — Collapsed Sidebar hid the active descendant state (2026-11-10)
+
+- **Observed:** With `activeHref` on a nested child, expanded navigation correctly marked the child as `page`, but collapsed navigation hid it and exposed no current item.
+- **Cause:** The adapter compared only the current item's own `href` and had no ancestor state when descendants were hidden.
+- **Correction:** Added recursive descendant detection. In collapsed mode, the visible parent receives a Norato-yellow current-ancestor treatment and `aria-current="location"`; expanded mode keeps `aria-current="page"` on the exact child. The same state is retained on disabled rows without turning them into links.
+- **Verification:** Browser confirms exactly one current item, correct `location`/`page` transitions, Space collapse/expand, 48px rows, 2px focus ring, and direct routes across Glass/Bar × expanded/collapsed. Mobile drawer continues to expose the exact child as `page`.
+- **Prevention:** Check current routes whose destination is hidden by a collapsed navigation hierarchy, not only direct links.
+
+## ERR-220 — Portaled mobile Sidebar demo navigated away on link selection (2026-11-10)
+
+- **Observed:** Clicking a child in the mobile playground Dialog navigated the browser to `/projects/active`, even though the desktop playground kept the user on the documentation page.
+- **Cause:** Dialog content is portaled outside the playground wrapper whose click handler prevents demo anchor navigation.
+- **Correction:** Added a capture-phase listener scoped to links within the Sidebar mobile Dialog in the playground. The reusable Sidebar adapter keeps native `href` navigation and its `navigate(item)` event.
+- **Verification:** At 390px and 320px, mobile child selection updates the status, closes the Dialog, and leaves `#component-sidebar` unchanged. Reopening marks the child as `page`; Escape restores trigger focus and document width stays within the viewport.
+- **Prevention:** Verify playground event handling for portaled overlays separately from inline desktop controls.

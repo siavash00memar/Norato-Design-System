@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { NoratoSidebar, type NoratoSidebarSection } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 const props = defineProps<{ copiedKey: string }>()
@@ -9,6 +9,11 @@ const sections = computed<NoratoSidebarSection[]>(() => [{ label: 'فضای کا
 function keepPreviewInPlace(event: MouseEvent) {
   if ((event.target as HTMLElement).closest('a[href]')) event.preventDefault()
 }
+function keepMobileDialogInPlace(event: MouseEvent) {
+  if (event.target instanceof Element && event.target.closest('.norato-sidebar__mobile-panel a[href]')) event.preventDefault()
+}
+onMounted(() => document.addEventListener('click', keepMobileDialogInPlace, true))
+onBeforeUnmount(() => document.removeEventListener('click', keepMobileDialogInPlace, true))
 const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoSidebar, type NoratoSidebarSection } from '@norato/vue'\nconst collapsed = ref(false)\nconst activeHref = ref('/overview')\nconst sections: NoratoSidebarSection[] = ${JSON.stringify([{label:'فضای کاری',items:[{label:'نمای کلی',href:'/overview',icon:'⌂'},{label:'پروژه‌ها',href:'/projects',icon:'▦',count:3},{label:'تنظیمات',href:'/settings',icon:'⚙'}]}],null,2)}\n<\\/script>\n<template><NoratoSidebar id="workspace-nav" v-model:collapsed="collapsed" :sections="sections" :active-href="activeHref" @navigate="item => activeHref = item.href || activeHref" /></template>`)
 </script>
 <template><div class="button-playground sidebar-playground" dir="rtl"><header><strong>آزمایش Sidebar اجرایی</strong><span>گروه، پیوند، جمع‌شدن، حالت موبایل و غیرفعال را بررسی کن.</span></header><div class="button-playground-preview sidebar-playground-preview" @click="keepPreviewInPlace"><NoratoSidebar id="sidebar-playground" v-model:collapsed="collapsed" :sections="sections" :active-href="activeHref" :disabled="disabled" :variant="variant" @navigate="item => { activeHref = item.href || activeHref; activations++ }"/><p role="status" aria-live="polite">{{ activations ? `انتخاب: ${activeHref}` : 'وضعیت تعامل اینجا نمایش داده می‌شود.' }}</p></div><div class="button-playground-controls"><PlaygroundSelect id="sidebar-variant" v-model="variant" label="سبک" :options="[{value:'glass',label:'Glass'},{value:'bar',label:'Bar'}]"/><label class="button-playground-switch"><input v-model="collapsed" type="checkbox"/><span class="button-playground-track" aria-hidden="true"><span/></span><span>جمع‌شده</span></label><label class="button-playground-switch"><input v-model="disabled" type="checkbox"/><span class="button-playground-track" aria-hidden="true"><span/></span><span>غیرفعال</span></label></div><div class="button-playground-code"><div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy','sidebar-playground',snippet)">{{ props.copiedKey==='sidebar-playground'?'کپی شد':'کپی کد' }}</button></div><pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre></div></div></template>

@@ -13,6 +13,15 @@
 - [x] The static preview is RTL, uses intrinsic 20px SVG icons and Norato-yellow selection, and now shares the Button dotted background without nested frame padding.
 - [ ] Live Sidebar state-matrix, group keyboard behavior and independent screen-reader DoD remain open in `specs/013-design-system-parity/sidebar-checklist.md`.
 
+## Sidebar collapsed current location and mobile demo (2026-11-10)
+
+- [x] Desktop browser verified direct `/overview` as the sole `page` current across Glass/Bar × expanded/collapsed; Space collapses/expands and the 2px focus ring remains visible.
+- [x] With `/projects/active`, expanded navigation marks only the exact child as `page`. Collapsing hides children and marks only the visible parent as `location` with Norato yellow surface/indicator. Expanding restores `page` to the child.
+- [x] Globally disabled nested route exposes the parent as a disabled, non-link `location` item; all four collapsed rows are 48px and collapse is disabled.
+- [x] In the mobile dialog, child selection updates the status and closes the dialog without leaving `#component-sidebar`; reopening exposes the child as `page`; Escape closes and restores focus to the 48×48px trigger.
+- [x] At 390×844, document is 375/375px and frame 327×300px; at 320×844, open-dialog document is 320/320px, closed document 305/305px, frame 257×300px and trigger 48×48px.
+- [ ] Full 42-part visual state gallery and independent screen-reader review remain open in the canonical Sidebar checklist.
+
 ## Stepper catalog and checkpoint reconciliation (2026-11-10)
 
 - [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.

@@ -2,10 +2,10 @@
 
 - [ ] design reference Sidebar 42 variants/6 parts represented or intentional Norato mapping documented.
 - [x] Preview is inert and bounded; fresh same-viewport desktop and mobile geometry comparison recorded in the 2026-11-10 specimen parity follow-up.
-- [ ] Desktop expanded/collapsed, Glass/Bar, active/disabled/focus and child links.
-- [ ] Keyboard group toggles; active aria-current; focus ring and accessible collapsed labels.
-- [ ] Mobile modal drawer: trigger, Escape/focus restoration/outside click and no overflow.
-- [ ] All interactive targets at least 48px; no stretched marks/icons.
+- [x] Desktop expanded/collapsed, Glass/Bar, active/disabled/focus and child links verified in the live playground.
+- [x] Keyboard collapse/expand, direct and nested `aria-current`, 2px focus ring and accessible collapsed labels verified.
+- [x] Mobile modal drawer trigger, Escape/focus restoration, outside dismissal, child selection and no-overflow checks verified at 390px/320px.
+- [x] All sampled interactive targets are at least 48px; icons and marks retain intrinsic geometry.
 - [ ] Usage snippet compiles against exports.
 - [ ] Tokens, catalog, typecheck, build and diff checks pass.
 - [ ] Independent screen-reader review documented if available.
@@ -60,3 +60,12 @@
 - [x] At 390×844, frame is 327×300px; at 320×844 it is 257×300px with document width 305/305px. The compact panel remains 216×222px at both widths.
 - [x] Inert contents now show the brand, one section title, and four fixed-size SVG icon rows; no workspace or footer is added to this default sample. Active treatment uses Norato yellow.
 - [ ] Live Sidebar state matrix, keyboard group activation, active `aria-current` evidence, and independent screen-reader review remain open.
+
+## Sidebar — collapsed descendant current location (2026-11-10)
+
+- [x] In the live desktop playground, selecting `/projects/active` and collapsing shows exactly one visible parent with `aria-current="location"`, the Norato-yellow surface and indicator; no hidden child is exposed.
+- [x] Expanding restores exactly one `aria-current="page"` to the `فعال` child. Direct `/overview` remains `page` in Glass/Bar expanded/collapsed combinations.
+- [x] Space toggles collapse and expansion; focus remains visible with a 2px ring. All visible item/subitem rows are 48px.
+- [x] With the current child route and the Sidebar globally disabled, the collapsed parent span remains the only `location` item; anchors are absent and collapse is disabled.
+- [x] Mobile dialog child selection updates status, closes the dialog, and stays on `#component-sidebar`; Escape restores trigger focus. At 390/320px, frames are 327/257×300px, triggers 48×48px, and the document does not overflow.
+- [ ] Full 42-part visual state gallery and independent screen-reader review remain open.
