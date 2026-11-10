@@ -6,4 +6,4 @@
 - [x] T004 Plan the smallest semantic text-reference change and evidence updates.
 - [x] T005 Define the browser and technical checklist before editing.
 - [x] T006 Implement the conditional accessible required wording and synchronize docs.
-- [ ] T007 Verify both prop states in the live browser, run required gates, commit/push and verify remote parity.
+- [x] T007 Verified both prop states and native constraint values in the live browser; token/catalog/typecheck/build/diff gates passed; commit `15336a9c9b648891806fb460d54952891abdcc01` is pushed with local/remote parity confirmed.
