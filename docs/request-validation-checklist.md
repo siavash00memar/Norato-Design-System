@@ -2175,7 +2175,7 @@
 ## Custom dropdown source audit (2026-11-09)
 
 - [x] Source search found no native `<select>` or `<option>` tags in `apps/vue/src` or `packages/vue/src`. Shared `PlaygroundSelect` uses a button plus `role="listbox"`/`role="option"`, with ArrowUp/ArrowDown, Home/End, Enter, Space and Escape handling in source.
-- [x] Live browser verification on Select: its searchable grouped list opened, exposed a disabled option, Escape closed and returned focus to its trigger, ArrowDown/ArrowUp moved option focus and Enter committed a selection. Fixture was restored to Tehran and both field and status summary showed the baseline value.
+- [x] Live browser verification on Select: its searchable grouped list opened as a custom Reka listbox, exposed a disabled option, Escape closed and returned focus to its trigger, ArrowDown focused the selected item, the next ArrowDown moved to Isfahan, and Enter committed it. Reopening with ArrowDown/Enter restored Tehran; trigger and status both show the baseline value. No native browser select UI is used by the Vue route.
 - [ ] Fresh rendered and keyboard verification across the other dropdown-consuming component pages remains open; source audit and this Select pass do not cover every page.
 
 ## Pagination specimen comparison (2026-11-09)

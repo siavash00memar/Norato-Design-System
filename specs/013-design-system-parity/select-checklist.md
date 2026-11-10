@@ -37,6 +37,7 @@
 
 ## Fresh Select browser review (2026-11-10)
 
+- [x] Rechecked the live route in Chrome: the open control exposes a custom Reka listbox/search/grouped options, not native browser select UI. ArrowDown focused the selected option, ArrowDown moved to Isfahan, Enter committed it and updated trigger/status; reopening and using ArrowDown/Enter restored Tehran; Escape closed the list and returned focus to the trigger. The fixture is left at Tehran.
 - [x] Matched 390×844 and 320×844 reference/local static specimens in the browser. At 390, frames are 327×300px and 326×300px with document widths 375/375px; at 320, frames are 257×300px and 256×300px. The reference document reaches 326px at 320 while the local page remains 305/305px without horizontal overflow.
 - [x] Local 390px open-menu capture shows a custom Reka listbox measuring 343×384.5px, search input and grouped options; browser accessibility tree exposes the list and selected/disabled options. Escape/focus return and the full six-row menu were previously verified.
 - [x] Actual Vue Select route has zero native `<select>` elements; its runtime trigger is a custom combobox/listbox. The shared `PlaygroundSelect` also renders a custom listbox. This confirms the user-facing Vue dropdowns do not invoke the browser's native select UI.
