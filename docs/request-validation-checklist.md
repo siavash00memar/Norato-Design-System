@@ -3080,5 +3080,7 @@
 
 - [x] Fresh local browser measurement at 390px: sample frame 327.2×300px at x=24px; document client and scroll widths both 375px.
 - [x] Matches the recorded reference frame at 327.2×300px. Spinner remains an intrinsic 48px square and desktop/executable playground layout is unchanged by the mobile-scoped rule.
-- [ ] Exact post-edit 320px capture and independent screen-reader review remain open; this does not close Spinner Final DoD.
+- [x] Fresh local browser measurement at 320px: sample frame 256.8×300px at x=24px; document client/scroll widths both 305px. The recorded reference frame at 320px is also 256.8×300px.
+- [x] The four 36px visible select capsules retain a 50px pointer hit area via the existing transparent pseudo-element; computed direction is RTL. Pointer and keyboard option-selection flows both work, and the Ring default is restored.
+- [ ] Independent screen-reader review remains open for Final DoD.
 - [x] pnpm check:tokens, pnpm check:catalog, Vue typecheck, Vue build and git diff --check pass.

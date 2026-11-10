@@ -1838,5 +1838,5 @@
 - **Observed:** At a 390px browser viewport, the local Button-style Spinner specimen rendered 343.2px wide while the matched reference frame was 327.2px wide.
 - **Cause:** The generic Button-style frame filled its available column without the mobile inset used by the matched reference.
 - **Correction:** Added an explicit Spinner specimen class and a mobile-only width rule using existing Norato spacing and preview-size tokens. Desktop and live playground dimensions remain untouched.
-- **Verification:** Fresh local browser measurement is 327.2×300px at x=24px; document client/scroll widths are both 375px. Token, catalog, Vue typecheck/build and diff gates pass. Exact post-edit 320px capture and independent screen-reader review remain open.
+- **Verification:** Fresh local browser measurement is 327.2×300px at x=24px; document client/scroll widths are both 375px. Token, catalog, Vue typecheck/build and diff gates pass. The exact 320px browser measurement now also matches the reference at 256.8×300px, x=24px, with document client/scroll widths both 305px. Independent screen-reader review remains open.
 - **Prevention:** Compare specimen frame dimensions at matched viewport sizes after shared preview frame styles change.
