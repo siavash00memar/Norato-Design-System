@@ -1,1 +1,3 @@
 .sample-banner-preview .sample-checkbox-state{position:absolute;inset-block-start:var(--norato-space-3);inset-inline-start:var(--norato-space-3);display:flex;align-items:center;gap:var(--norato-space-1);color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size)}.sample-banner-preview .sample-checkbox-state i{inline-size:8px;block-size:8px;border-radius:50%;background:var(--norato-color-status-success)}
+
+@media(max-width:599px){.component-sample.sample-button-specimen:not(.compact).sample-banner-preview{inline-size:min(calc(100% - var(--norato-space-4)),var(--norato-banner-preview-frame-mobile-inline-size));min-inline-size:0}}

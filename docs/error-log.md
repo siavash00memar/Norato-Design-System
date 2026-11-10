@@ -1589,3 +1589,11 @@
 - **Correction:** A global shell increase was reverted after it widened recorded Input and Select frames by 4px and 2px. An initial `:has()`-based section rule did not produce an observable width change in the local browser; the allowance now targets the Tooltip page's specimen frame through an explicit page class.
 - **Verification:** At an unmatched desktop viewport the page and specimen render, but the required matched-viewport measurement of Tooltip plus Button/Input/Select is still open. Confirm no horizontal overflow. Exact mobile re-capture remains open; technical gates must be rerun after the scoped correction.
 - **Prevention:** Compare the component frame and surrounding page shell independently, then scope any geometry correction to the measured component when shared consumers have different approved widths.
+
+## ERR-205 — Banner mobile preview width mismatch (2026-11-10)
+
+- **Observed:** At 390×844 and 320×844, the inert Banner frame was 358×300px and 288×300px at x=16px; the matched reference frame was 342×300px and 272×300px at x=24px.
+- **Cause:** The Banner specimen inherited the generic desktop frame and had no responsive, component-scoped width rule.
+- **Correction:** Added the semantic `--norato-banner-preview-frame-mobile-inline-size` cap and a mobile-only 16px tokenized reduction on the inert Banner specimen. The public `NoratoBanner` adapter remains full-width.
+- **Verification:** The local frame now matches at 342×300px (390px viewport) and 272×300px (320px viewport), both x=24px. Document client/scroll widths remain equal; desktop 1265×720 stays 631.984×300px. The external reference page itself scrolls 6px beyond its 320px viewport; that overflow was not reproduced.
+- **Prevention:** Measure the preview frame separately from the live component and compare the same CSS viewport before modifying shared frame rules.
