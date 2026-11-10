@@ -14,6 +14,10 @@
 - [x] Fresh gates on 2026-11-07: `pnpm test:file-upload` (5/5), `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` pass. Build bundle is 817.78KB and Vite emits its >500KB advisory; independent screen-reader review remains open.
 - [ ] Browser DoD remains open for actual OS file drag/drop, independent screen-reader review, reduced-motion verification and complete state-specific keyboard/focus coverage; chooser, validation and both selection modes are verified. Latest GitHub push `7ac56ca` is confirmed on `origin/master`.
 - [x] Pure validator unit tests cover extension/MIME/wildcard/empty accept, exact size boundary, partial batches, type/size/count reasons, remaining capacity, single mode, and invalid numeric limits. This proves decision logic only; native picker and drag/drop browser evidence remain open.
+- [x] Upload Tile's displayed progress indicator has an accessible name derived from the selected filename; its numeric `aria-valuenow` remains clamped to 0–100.
+- [x] Browser accessibility tree reports the Upload Tile progress indicator as “پیشرفت بارگذاری افزودن فایل” with value 42; the generated name includes the current filename and its numeric value is retained.
+- [x] Follow-up gates: `pnpm check:tokens`, `pnpm check:catalog`, TypeScript/Vite build and `git diff --check` pass.
+- [ ] Native OS drop payload, independent screen-reader review, reduced motion and complete combined keyboard/focus cases remain open.
 
 ## Browser recheck — 2026-11-07
 

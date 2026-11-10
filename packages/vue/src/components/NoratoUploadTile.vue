@@ -12,7 +12,7 @@ function change(event: Event) { const file = (event.target as HTMLInputElement).
     <button type="button" class="norato-upload-tile__button" :disabled="disabled" :aria-label="filename" :aria-describedby="errorText ? `${id}-error` : undefined" @click="state==='error' ? emit('retry') : state==='uploading' ? emit('cancel') : input?.click()">
       <img v-if="previewUrl" :src="previewUrl" alt="" />
       <span v-else aria-hidden="true">{{ state==='error' ? '↻' : state==='uploading' ? '…' : state==='complete' ? '✓' : '+' }}</span>
-      <small v-if="state==='uploading' && progress!==undefined" role="progressbar" :aria-valuemin="0" :aria-valuemax="100" :aria-valuenow="Math.min(100,Math.max(0,progress))">{{ Math.round(Math.min(100,Math.max(0,progress))) }}٪</small>
+      <small v-if="state==='uploading' && progress!==undefined" role="progressbar" :aria-label="`پیشرفت بارگذاری ${filename}`" :aria-valuemin="0" :aria-valuemax="100" :aria-valuenow="Math.min(100,Math.max(0,progress))">{{ Math.round(Math.min(100,Math.max(0,progress))) }}٪</small>
     </button>
     <span class="norato-upload-tile__name" dir="ltr">{{ filename }}</span>
     <span v-if="errorText" :id="`${id}-error`" class="norato-upload-tile__error" role="alert">{{ errorText }}</span>

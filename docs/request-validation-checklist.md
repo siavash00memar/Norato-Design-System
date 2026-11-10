@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## File Upload — نام‌گذاری progressbar در Upload Tile — 2026-11-10
+
+- [x] وقتی Upload Tile در حالت uploading مقدار progress دارد، progressbar یک نام دسترس‌پذیر مشتق از نام فایل می‌گیرد؛ مقدار ۰ تا ۱۰۰ همچنان clamp می‌شود.
+- [x] قرارداد، قاعدهٔ بصری/دسترس‌پذیری و DoD برای پیگیری مرورگری به‌روز شدند.
+- [x] در درخت دسترس‌پذیری مرورگر، حالت uploading نام «پیشرفت بارگذاری افزودن فایل» و مقدار ۴۲ را نشان داد.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، TypeScript/Vite build و `git diff --check` موفق شدند.
+- [ ] بررسی مستقل با صفحه‌خوان هنوز انجام نشده است.
+
 ## Rating DoD ledger reconciliation (2026-11-10)
 
 - [x] The Rating family ledger had been checked despite the contract explicitly stating that independent screen-reader software was not used.

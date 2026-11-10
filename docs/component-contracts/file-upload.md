@@ -42,7 +42,7 @@
 - **`NoratoFileUpload`:** `id`, `label`, `modelValue: NoratoUploadItem[]`, `accept`, `maxSize` (byte، پیش‌فرض 10,000,000)، `maxFiles` (پیش‌فرض 5)، `multiple`, `size`, `disabled`, `required`, `helperText`, `errorText`, `name`, `dir`. پیش‌فرض accept برابر PNG/JPEG/PDF است. رویدادها: `update:modelValue`, `files-selected`, `rejected`, `remove`, `cancel`, `retry`.
 - **`NoratoUploadItem`:** `id`, `file?`, `name`, `size`, `type`, `status`, `progress?`, `errorText?`. Progress بین ۰ تا ۱۰۰ clamp می‌شود.
 - **`NoratoFileItem`:** `item` و `disabled`; action مناسب به وضعیت emit می‌شود.
-- **`NoratoUploadTile`:** `id`, `modelValue: File|null`, `previewUrl`, `state`, `progress`, `errorText`, `accept`, `disabled`, `label`; رویدادهای model update، `file-selected`, `cancel`, `retry`.
+- **`NoratoUploadTile`:** `id`, `modelValue: File|null`, `previewUrl`, `state`, `progress`, `errorText`, `accept`, `disabled`, `label`; رویدادهای model update، `file-selected`, `cancel`, `retry`. در حالت uploading و با progress تعریف‌شده، progressbar نام «پیشرفت بارگذاری {نام فایل}» دارد.
 - **`NoratoAvatarUpload`:** `id`, `modelValue: File|null`, `previewUrl`, `label`, `disabled`, `required`; فقط تصویر را می‌پذیرد.
 - تطبیق type بر اساس MIME یا پسوند فایل است. ردهای type، size و count در `rejected` با علت منتشر و روی صفحه فهرست می‌شوند؛ فایل‌های معتبر همان انتخاب حفظ می‌شوند.
 

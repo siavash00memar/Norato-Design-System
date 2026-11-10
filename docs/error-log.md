@@ -1723,3 +1723,9 @@
 - **Verification:** Desktop browser shows the 41-specimen gallery with distinct active, hover, disabled and focus treatments, followed by Parts with no duplicated generic cards. Token/catalog/typecheck/build/diff checks pass.
 - **Remaining:** Narrow viewport review was unavailable in this session; Navbar DoD remains open.
 - **Prevention:** Keep state values and selector keys in one documented mapping and verify conditional rendering at both the start and end of a gallery in the browser.
+## ERR-222 — Upload Tile progressbar lacked an accessible name (2026-11-10)
+- **Observed:** `NoratoUploadTile` exposed a `progressbar` role and numeric range/value but no accessible name.
+- **Cause:** The visible percentage was rendered inside a small element without a label tied to the file being uploaded.
+- **Correction:** Added an `aria-label` identifying progress for the computed filename; progress remains host-controlled and clamped to 0–100.
+- **Verification:** Browser accessibility tree reports the Upload Tile's progress indicator as “پیشرفت بارگذاری افزودن فایل” with value 42. Token/catalog/TypeScript/build and diff gates pass. Independent screen-reader review remains open.
+- **Prevention:** Every progressbar must expose an accessible name as well as value and range; verify computed accessible names in the browser tree.
