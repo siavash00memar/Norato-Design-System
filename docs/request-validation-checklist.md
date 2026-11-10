@@ -221,6 +221,12 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts), Vue typecheck/build, and `git diff --check` pass. Build reports a 1,032.62KB JavaScript chunk advisory.
 - [ ] Browser preference prevented visual confirmation of normal-motion shimmer travel. Exact 390/320 overflow measurements and independent screen-reader review also remain open; Skeleton DoD stays open.
 
+## Skeleton mobile and normal-motion follow-up — 2026-11-10
+
+- [x] Emulated CSS viewports 390×844 and 320×844 after loading the live component page. Document client/scroll widths match (390/390px and 320/320px); preview frame heights remain 300px and Avatar + text circles are 40×40px.
+- [x] Emulated `prefers-reduced-motion: no-preference`; selected Shimmer uses `norato-skeleton-shimmer-rtl` in RTL, with background position moving from about −99.6% to −84.0% over 250ms. Changing the live direction control to LTR selects `norato-skeleton-shimmer-ltr`.
+- [ ] Independent screen-reader review remains open; Skeleton DoD stays open.
+
 ## Banner desktop/mobile and keyboard follow-up — 2026-11-08
 
 - [x] design reference/Norato same-viewport desktop review at 1265×720. Norato's inert default now uses a one-line announcement and no extra vertical padding; the action keeps its minimum 48px target.
