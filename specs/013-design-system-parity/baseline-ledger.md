@@ -38,7 +38,7 @@ Status meanings:
 | Skeleton | Evidence recorded; audit open | Existing responsive and configuration evidence. |
 | Empty State | Evidence recorded; audit open | Existing responsive and action evidence. |
 | Notification Center | Evidence recorded; audit open | Existing responsive and interaction evidence. |
-| Badge | Evidence recorded; audit open | Existing responsive and interaction evidence. |
+| Badge | Baseline passed | Fresh desktop render matches the reference composition and overlay placement; recorded 390/320px matched frame checks show bounded RTL layout, ≥48px host target, correct count/dot behavior and primary keyboard/focus semantics. Independent screen-reader review remains Final DoD. |
 | Table | Evidence recorded; audit open | Existing responsive and selection evidence. |
 | List | Baseline passed | Matched desktop and 414px mobile comparison, bounded three-row RTL specimen, ≥48px targets and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Card | Baseline passed | Matched desktop and mobile comparisons, six adapter coverage, bounded media/text without stretch, RTL, ≥48px interactive controls and pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **28/48 families (58.3%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, List and Card. The remaining 20 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **29/48 families (60.4%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, Badge, List and Card. The remaining 19 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.

@@ -24,3 +24,9 @@
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
 - [x] Request-validation checklist, contract, Figma component rules and error log reflect observed results and residuals.
+
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop browser renders show the Badge marker anchored at the same corner of the icon button in local and reference specimens; the glyph remains intrinsic and the specimen has no visible stretch.
+- [x] Existing exact 390×844 and 320×844 local/reference geometry, RTL, no-overflow observations, 48×48px host target, count boundaries, and keyboard/focus/disabled evidence cover the remaining Baseline gates.
+- [ ] Independent screen-reader review remains open for Final DoD.
