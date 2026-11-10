@@ -9,8 +9,8 @@
 ## Tree View pointer hover follow-up (2026-11-10)
 
 - [x] Source correction scopes the existing neutral hover surface to `hover: hover` and `pointer: fine`; selected, disabled and keyboard-focus rules are untouched.
-- [x] Fresh Chrome screenshot review places the pointer over an unselected inert Tree View row; selection/expansion and the AX tree remain unchanged.
-- [ ] Full pointer-only hover color/state comparison and coarse-pointer/touch rendering remain unverified; do not count the partial screenshot as a passed visual validation. See `specs/013-design-system-parity/updates/2026-11-10-tree-view-pointer-hover/checklist.md`.
+- [x] Same-page Chrome screenshots compare the inert Tree View row before/after fine-pointer hover; a subtle neutral surface appears, and the accessibility tree remains unchanged.
+- [ ] Selected/disabled/focused hover priority and coarse-pointer/touch rendering remain unverified. See `specs/013-design-system-parity/updates/2026-11-10-tree-view-pointer-hover/checklist.md`.
 
 ## Menu narrow viewport recheck (2026-11-10)
 
