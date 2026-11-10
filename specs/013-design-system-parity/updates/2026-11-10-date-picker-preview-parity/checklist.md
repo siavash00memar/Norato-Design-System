@@ -8,4 +8,4 @@
 - [x] Exact desktop/mobile geometry is measured; document client/scroll widths are equal at 1265px, 375px and 305px.
 - [x] Change is scoped to the inert specimen/CSS; the interactive adapter and seven-mode behavior code are unchanged.
 - [x] Token/catalog/typecheck/build/diff gates pass.
-- [ ] Push the verified checkpoint.
+- [x] Commit `2d67c15` pushed to `origin/master`.
