@@ -43,7 +43,8 @@
 
 - [x] Fresh desktop browser render confirms the live Input playground's phone-prefix, min/max/step and select controls now use the 36px pill presentation; focus shows the single yellow stroke without a dark outline.
 - [x] Shared controls use semantic height/radius/stroke tokens and Estedad Bold field labels; placeholder text uses RTL Vazirmatn Light and the approved subtle placeholder color.
-- [ ] Exact mobile geometry, other component-page playgrounds, full hover/disabled review and independent screen-reader review remain open.
+- [x] Fresh 390px/320px browser audit confirms the Input page and its shared text/number fields stay within the local document width.
+- [ ] Other component-page playgrounds, full hover/disabled review and independent screen-reader review remain open.
 
 - Browser follow-up (2026-11-09, live Textarea direction): selected LTR in the playground, entered a Persian sample and visually confirmed the text aligns to the left edge. The generated snippet synchronized to `textareaDir = ref('ltr')` and `dir="ltr"`. Cleared the value and restored RTL in the control and snippet. The earlier LTR alignment browser-check item is now closed; full visual-state parity and independent screen-reader review remain open.
 
@@ -114,3 +115,10 @@
 - [x] Fresh local Chrome accessibility-tree inspection confirms the Input page exposes the eight adapter controls, labeled settings/actions, and all nine canonical contract-section anchors in RTL.
 - [x] The page still keeps implementation playground above Overview, as it does on the Button-style detail page; the eight adapter names and their usage snippet are present.
 - [ ] This browser accessibility-tree spot check is not an independent screen-reader review and does not cover all control states or consuming pages; Input DoD remains open.
+
+## Shared playground fields at mobile widths — 2026-11-10
+
+- [x] At 390×844 and 320×844, twelve visible text/number controls across Input, Rating, Pagination, Toast, Tooltip, and Progress were inspected in the rendered pages.
+- [x] Each inspected field measured 36px high with a 50px capsule radius, 1px `#e8e8e8` resting stroke, Vazirmatn 12px content, and RTL direction except the explicit LTR phone prefix.
+- [x] Where the playground exposed a field-title span, it computed to Estedad 700. Local document client/scroll widths stayed equal at 375px and 305px, with no horizontal overflow.
+- [ ] This covers a subset of shared consuming playgrounds; remaining fields, full state-by-state visual parity, and independent screen-reader review remain open.

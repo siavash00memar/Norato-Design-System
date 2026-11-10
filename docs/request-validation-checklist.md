@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Shared text/number inputs in consuming playgrounds (2026-11-10)
+
+- [x] At 390×844 and 320×844, twelve visible text/number controls across Input, Rating, Pagination, Toast, Tooltip, and Progress were inspected in the browser.
+- [x] All twelve compute to 36px height, 50px radius, 1px `#e8e8e8` resting stroke and Vazirmatn 12px; direction is RTL except the explicit LTR phone prefix. Present field titles compute to Estedad 700.
+- [x] Document client/scroll widths are 375/375px and 305/305px at the respective viewports; no horizontal overflow appeared.
+- [ ] Other input-bearing pages, full hover/disabled matrix and independent screen-reader review remain open; see `specs/013-design-system-parity/input-checklist.md`.
+
 ## Date Picker shared specimen frame (2026-11-10)
 
 - [x] Date Picker's inert preview opts into the shared Button specimen frame; the Date Picker-specific inner gradient was removed so the shared dotted Norato background remains visible.
