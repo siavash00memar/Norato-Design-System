@@ -2660,3 +2660,10 @@
 - [x] Form field remains 36px high, capsule-shaped, with a 1px `#e8e8e8` resting Stroke and single yellow 1px hover/focus Stroke. Hover does not activate controls.
 - [x] The reference only shows the static confirmation specimen; interactive Form hover states have no equivalent reference state for direct comparison.
 - [ ] Controlled/uncontrolled `open` and independent screen-reader review remain open in `modal-checklist.md`; token/catalog/typecheck/build/diff gates passed for this follow-up.
+
+# Select mobile frame final recheck — 2026-11-10
+
+- [x] At exact 390×844, matched reference/local inert frames are 327/326×300px at x=24/24.5px; local document width is 375/375px.
+- [x] At exact 320×844, frames are 257/256×300px at x=24/24.5px; local document width is 305/305px. The reference scrolls to 326px, while Norato remains bounded.
+- [x] The RTL 48px trigger remains in the frame; the live listbox opens within 320px viewport bounds at 273×384.1px and Escape restores focus and the Tehran value.
+- [ ] Full Select visual-state screenshot matrix and independent screen-reader review remain open in `select-checklist.md`.

@@ -27,7 +27,7 @@
 
 - [x] Same-viewport 1265×713 screenshots after applying a 2px semantic token allowance show the local Select preview frame visually aligned in width with the reference and both remain 300px high.
 - [x] Trigger/menu geometry and the mobile frame selector were not modified.
-- [ ] The 390px/320px browser review after this source change, complete state screenshot matrix, and independent screen-reader review remain open; Select DoD stays open.
+- [x] The 390×844/320×844 browser review after this desktop source change passes within 1px of the reference frame. Local document widths are 375px/305px without overflow; the live 320px listbox is bounded and Escape restores focus. The full state screenshot matrix and independent screen-reader review remain open; Select DoD stays open.
 
 ## Placeholder copy correction — 2026-11-10
 
