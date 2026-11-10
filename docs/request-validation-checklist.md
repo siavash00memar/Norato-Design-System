@@ -2539,6 +2539,12 @@
 - [x] Legacy focus resets and page-specific duplicate rules were removed; the shared treatment now lives in `playground-select-targets.css`.
 - [ ] This shared playground audit does not complete each component's visual-state, behavior or independent screen-reader DoD.
 
+# Stepper data edge cases — 2026-11-10
+
+- [x] Browser runtime filtered empty/whitespace ids and duplicate ids; invalid `modelValue` selected the first remaining step and announced «مرحلهٔ ۱ از ۲».
+- [x] An empty effective list rendered no visual or semantic items and announced «مرحله‌ای برای نمایش وجود ندارد.» with no `aria-current` entry.
+- [x] Playground was restored to the default four-step horizontal state with Address current. Keyboard/focus matrix and independent screen-reader review remain open in `stepper-checklist.md`.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.
