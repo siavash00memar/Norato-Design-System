@@ -21,7 +21,7 @@
 - [x] Token and catalog checks pass (catalog: 49 routes/contracts/exports).
 - [x] Vue typecheck and production build pass; initial JavaScript is 442.34KB with no chunk-size advisory.
 - [x] `git diff --check` passes; shared playground-trigger CSS and evidence-document changes were reviewed.
-- [ ] Catalog maturity/status, family ledger, checklist and GitHub checkpoint match actual evidence.
+- [x] Catalog status (`Implemented`), family maturity (`Implemented`), open family DoD (`[ ]`), checklist evidence and pushed GitHub checkpoint match. Remaining DoD items stay explicit below.
 
 ## Stepper responsive bounds and playground targets — 2026-11-10
 
@@ -44,3 +44,9 @@
 - [x] With the default Horizontal variant, ArrowDown opens the first playground selector and focuses the selected option; ArrowDown moves to Vertical, and Enter updates the visible variant and generated snippet.
 - [x] Escape closes the menu and returns focus to the trigger. Home + Enter restores the Horizontal default; Address remains the current step and the menu is closed.
 - [ ] Full control-by-control keyboard/focus matrix, matched mobile reference comparison and independent screen-reader review remain open.
+
+## Catalog maturity and GitHub checkpoint audit — 2026-11-10
+
+- [x] `packages/components/src/catalog.ts` and the family ledger both report `Implemented`; the family completion checkbox remains open because matched mobile reference comparison, exhaustive keyboard/focus coverage and independent screen-reader review are unfinished.
+- [x] Stepper evidence commits `45d8764`, `0c4e92a` and `074665a` are ancestors of the verified `origin/master` revision `2c2e467d84c2d7ff850f8fe18055859ffad79315`.
+- [x] The token, catalog, Vue typecheck, production build and diff gates are recorded as passing in the family checklist and request-validation history.

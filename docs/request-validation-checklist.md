@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Stepper catalog and checkpoint reconciliation (2026-11-10)
+
+- [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.
+- [x] Stepper commits `45d8764`, `0c4e92a` and `074665a` are ancestors of verified remote `origin/master` revision `2c2e467d84c2d7ff850f8fe18055859ffad79315`.
+- [x] Current Stepper checklist records passing token/catalog/typecheck/build/diff gates; this status reconciliation does not claim new browser or screen-reader evidence.
+
 ## Tree View pointer hover follow-up (2026-11-10)
 
 - [x] Source correction scopes the existing neutral hover surface to `hover: hover` and `pointer: fine`; selected, disabled and keyboard-focus rules are untouched.

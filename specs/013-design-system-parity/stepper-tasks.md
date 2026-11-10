@@ -7,6 +7,6 @@
 - [x] T005 Add Button-style live playground, controlled sample, code copy and usage snippet.
 - [x] T006 Align inert specimen, full contract, catalog and approved Figma rules.
 - [ ] T007 Finish browser review: desktop variants and Dots sizes are checked; mobile 390/320 overflow, full state/focus cross-product and matched mobile comparison remain open.
-- [ ] T008 Finalize the evidence checkpoint and push; token/catalog/typecheck/build and current diff check pass.
+- [x] T008 Evidence checkpoint is pushed; token/catalog/typecheck/build and diff gates pass. Remote ancestry is verified in `stepper-checklist.md`.
 - [ ] T009 Independent screen-reader review.
 - [x] T010 Desktop browser review: four variants, Dots sizes, controlled step change, LTR ordering and Error message were checked; follow-up confirms Payment selection updates the ordered state, live announcement and snippet, Error explanation is visible/announced, and the direction control has a visible yellow keyboard focus ring. Playground restored to Address/No error.
