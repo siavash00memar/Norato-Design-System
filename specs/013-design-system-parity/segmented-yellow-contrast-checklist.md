@@ -11,3 +11,4 @@
 - [ ] Independent screen-reader review remains open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build completed with a 1,024.79KB JavaScript bundle; no separate warning was printed in this run.
 - [x] Component contract, Figma rule, error log and request-validation record agree with the implementation.
+- [x] 2026-11-10 Baseline visual audit: at a narrow mobile viewport, the local page and reference both show a bounded RTL segmented control, a distinct selected segment and no obvious stretch or clipping. Existing 390/320px measures and ≥48px targets are linked in the family evidence. Independent screen-reader review and the full live runtime matrix remain open for Final DoD.
