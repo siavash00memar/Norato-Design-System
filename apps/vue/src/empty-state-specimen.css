@@ -3,3 +3,11 @@
     inline-size: min(calc(100% + var(--norato-space-1)), var(--norato-split-button-preview-frame-inline-size));
   }
 }
+
+@media (max-width: 600px) {
+  .component-sample.sample-button-specimen:not(.compact):has(.norato-empty-state) {
+    box-sizing: border-box;
+    inline-size: calc(100% - var(--norato-space-4));
+    margin-inline: auto;
+  }
+}

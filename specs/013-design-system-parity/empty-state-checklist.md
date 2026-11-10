@@ -14,7 +14,7 @@
 - [x] All 12 Empty State layout × size × container combinations and 24 Visual type × size × tone combinations render.
 - [x] Horizontal layout puts visual at RTL inline-start and mirrors in LTR; vertical layout stays centered.
 - [x] All 24 icon/illustration size-tone samples remain within their visual container; actions remain ≥48px.
-- [x] At 390×844 and 320×844 Chromium mobile viewports, document/body widths equal the viewport with no overflowing elements. The inert specimen frame measured 358×288px and 288×288px; horizontal mode stacks at the 599px breakpoint.
+- [x] At 390×844 and 320×844 Chromium mobile viewports, document widths remain bounded at 375px and 305px. After the mobile frame alignment, the inert specimen matches the reference at 327×300px and 257×300px; horizontal mode stacks at the 599px breakpoint.
 
 ## Behavior and accessibility
 
@@ -36,5 +36,13 @@
 
 - [x] Same-window 1920×903 browser comparison measured the local frame at 632×300px and the reference frame at 636×300px.
 - [x] Added a desktop-only 4px allowance with `--norato-space-1`, capped by the shared frame token. After HMR, the local frame measures 635.98×300px; RTL content remains centered at 625.98×216.89px and the document has no horizontal overflow.
-- [x] The rule applies only above 600px; prior 390px/320px mobile frame evidence remains applicable because this selector is inactive at those widths. A fresh post-change narrow capture was unavailable.
+- [x] The desktop rule applies only above 600px. A fresh mobile follow-up separately records the 390px/320px frame correction below.
 - [ ] Independent screen-reader review and exhaustive behavior cross-product remain open. This follow-up does not close Empty State DoD.
+
+## Matched mobile frame width follow-up — 2026-11-10
+
+- [x] At exact 390×844, reference and local frames both measure 327×300px at x=24px; local document/body widths are 375/375px.
+- [x] At exact 320×844, reference and local frames both measure 257×300px at x=24px; local document/body widths are 305/305px with no horizontal overflow.
+- [x] The mobile frame uses a 16px total inset from the existing `--norato-space-4` token. Local RTL content remains within the frame at 317×216.89px at 390px and 247×237.28px at 320px; it does not stretch.
+- [x] After resetting the temporary viewport, desktop frame remains 635.98×300px and document client/scroll widths remain 1905/1905px.
+- [ ] Independent screen-reader review, custom slot cases and exhaustive behavior cross-product remain open; Empty State DoD is not closed.

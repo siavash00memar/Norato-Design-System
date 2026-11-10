@@ -2688,3 +2688,10 @@
 - [x] The desktop-only `--norato-space-1` allowance now gives the local stage a 635.98×300px frame. The RTL specimen remains centered and intrinsically sized at 625.98×216.89px; document width remains 1905px with no horizontal overflow.
 - [x] The new rule is restricted to viewports above 600px; existing narrow viewport rules are unaffected. No fresh post-change 390px/320px capture was available in this session.
 - [ ] Independent screen-reader review and exhaustive Empty State behavior coverage remain open in `specs/013-design-system-parity/empty-state-checklist.md`.
+
+# Empty State mobile frame alignment — 2026-11-10
+
+- [x] At exact 390×844, same-browser reference/local frames measure 327×300px; local document/body widths are 375/375px.
+- [x] At exact 320×844, reference/local frames measure 257×300px; local document/body widths are 305/305px with no horizontal overflow.
+- [x] After the mobile-only 16px token inset, RTL content remains centered and within its frame (317×216.89px at 390px; 247×237.28px at 320px). Desktop reset confirms the prior 635.98×300px frame still matches the 636×300px reference.
+- [ ] Independent screen-reader review, custom slot cases, and exhaustive behavior cross-product remain open per `specs/013-design-system-parity/empty-state-checklist.md`.
