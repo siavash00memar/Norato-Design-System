@@ -5,4 +5,4 @@
 - [x] T003 Replace the mobile grid rule with token-based width inset and auto-fit column threshold.
 - [x] T004 Verify local browser geometry at 390px/320px, RTL, overflow, responsive reflow, and desktop selector scope.
 - [x] T005 Update component/request evidence and run token, catalog, typecheck, build, and diff gates.
-- [ ] T006 Commit and push; confirm origin matches local HEAD.
+- [x] T006 Commit and push as `f6ac875`; origin advanced to the pushed revision.
