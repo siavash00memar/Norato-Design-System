@@ -42,3 +42,9 @@
 - [x] Browser viewport evidence and checklist status recorded in `docs/request-validation-checklist.md` and `specs/013-design-system-parity/families.md`.
 
 Do not mark the family DoD complete until every required evidence item is observed or the unavailable check is explicitly reported.
+
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop renders confirm the same 4:3 media ratio and bottom caption over a shade. The image remains intrinsic; local/reference frame size and vertical placement differ slightly with the documentation layout, as recorded above.
+- [x] Existing matched 390×844 and 320×844 comparisons show proportional media, bounded RTL layouts and no horizontal overflow; gallery, thumbnail, Lightbox and primary keyboard paths cover the Baseline interaction gate.
+- [ ] Reduced-motion emulation, real network failure/recovery and independent screen-reader review remain open for Final DoD.
