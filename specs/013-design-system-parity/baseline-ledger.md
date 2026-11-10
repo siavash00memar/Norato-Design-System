@@ -37,7 +37,6 @@ Status meanings:
 | Progress | Evidence recorded; audit open | Existing responsive, RTL and control evidence. |
 | Spinner | Evidence recorded; audit open | Existing responsive and configuration evidence. |
 | Skeleton | Evidence recorded; audit open | Existing responsive and configuration evidence. |
-| Empty State | Evidence recorded; audit open | Existing responsive and action evidence. |
 | Notification Center | Evidence recorded; audit open | Existing responsive and interaction evidence. |
 | Badge | Baseline passed | Fresh desktop render matches the reference composition and overlay placement; recorded 390/320px matched frame checks show bounded RTL layout, ≥48px host target, correct count/dot behavior and primary keyboard/focus semantics. Independent screen-reader review remains Final DoD. |
 | Table | Evidence recorded; audit open | Existing responsive and selection evidence. |
