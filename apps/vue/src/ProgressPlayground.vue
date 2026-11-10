@@ -6,7 +6,7 @@ import PlaygroundSelect from './PlaygroundSelect.vue'
 const variant = ref<NoratoProgressVariant>('linear')
 const size = ref<NoratoProgressSize>('medium')
 const tone = ref<NoratoProgressTone>('default')
-const value = ref(50)
+const value = ref(60)
 const label = ref('در حال آپلود')
 const direction = ref<'rtl' | 'ltr'>('rtl')
 const snippet = computed(() => `<script setup lang="ts">\nimport { NoratoProgress } from '@norato/vue'\n<\/script>\n<template>\n  <NoratoProgress id="upload-progress" :value="${value.value}" label="${label.value}" variant="${variant.value}" size="${size.value}" tone="${tone.value}" dir="${direction.value}" show-value />\n</template>`)

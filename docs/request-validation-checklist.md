@@ -3084,3 +3084,10 @@
 - [x] The four 36px visible select capsules retain a 50px pointer hit area via the existing transparent pseudo-element; computed direction is RTL. Pointer and keyboard option-selection flows both work, and the Ring default is restored.
 - [ ] Independent screen-reader review remains open for Final DoD.
 - [x] pnpm check:tokens, pnpm check:catalog, Vue typecheck, Vue build and git diff --check pass.
+
+## Progress mobile frame and current reference value — 2026-11-11
+
+- [x] Fresh browser comparison: at 390px, local/reference sample frames are 327.2×300px at x=24px; at 320px both are 256.8×300px at x=24px. The local document has no overflow at either width. The reference document overflows at 320px due to surrounding page content; its specimen itself remains bounded.
+- [x] Current reference shows 60% and «در حال آپلود». Updated inert and live Norato defaults to 60%; browser DOM reports aria-valuenow=60, RTL order and Norato yellow.
+- [x] Mobile playground passed keyboard and pointer tone selection; final state was restored to Default/RTL/60.
+- [ ] Independent screen-reader review remains open for Progress Final DoD.

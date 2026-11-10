@@ -12,3 +12,6 @@ One Vue adapter with Linear and Circular variants. Each form has Small/Medium/La
 - Display `role=progressbar`, `aria-valuenow`, `aria-valuemin/max`, and localized value text. Static previews are inert.
 - Page follows Button structure: dotted 576×288 frame, inert visual specimen, executable playground, API sample, contract sections.
 - DoD covers matched design reference/Norato screenshots, 120 configurations, RTL, accessible values, non-stretch geometry, 390/320 and technical gates.
+
+## Current specimen baseline — 2026-11-11
+The current visual specimen and playground default use 60% with label «در حال آپلود», matching the current reference render. Keep the Norato yellow semantic tone. Matched mobile frame targets are 327.2×300px at 390px and 256.8×300px at 320px.

@@ -1840,3 +1840,11 @@
 - **Correction:** Added an explicit Spinner specimen class and a mobile-only width rule using existing Norato spacing and preview-size tokens. Desktop and live playground dimensions remain untouched.
 - **Verification:** Fresh local browser measurement is 327.2×300px at x=24px; document client/scroll widths are both 375px. Token, catalog, Vue typecheck/build and diff gates pass. The exact 320px browser measurement now also matches the reference at 256.8×300px, x=24px, with document client/scroll widths both 305px. Independent screen-reader review remains open.
 - **Prevention:** Compare specimen frame dimensions at matched viewport sizes after shared preview frame styles change.
+
+## ERR-236 — Progress mobile frame and specimen value diverged from current reference (2026-11-11)
+
+- **Observed:** At 390px the local Progress preview frame was 343×300px against a 327×300px reference frame. At 320px its frame was 273×300px against 257×300px. A fresh reference render showed 60%, while the local specimen/playground default was 50%.
+- **Cause:** The shared Button-style sample filled the mobile documentation column; the local default value came from an earlier desktop comparison and no same-viewport mobile comparison had been recorded.
+- **Correction:** Added a Progress-only mobile frame rule using existing Norato tokens. Updated both static specimen and live playground default to 60%, preserving Norato yellow and the public API.
+- **Verification:** At 390px, local/reference frames are 327.2×300px at x=24px and document widths are both 375px. At 320px, frames are 256.8×300px at x=24px; local document width is 305px without overflow (reference document 326px due surrounding layout). RTL, current ARIA value, pointer and keyboard selection paths passed.
+- **Prevention:** Compare fresh local/reference mobile samples before treating earlier screenshots as the current default contract.

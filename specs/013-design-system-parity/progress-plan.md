@@ -7,3 +7,6 @@
 5. Register package export, catalog usage, contract, primitive map, and Figma component rules.
 6. Match design reference's metadata-above-full-width-track composition; compare matched desktop design reference/Norato renders; verify 120 matrix combinations in RTL and LTR, circular start/shape, value boundaries, AX and 390/320 overflow.
 7. Run token/catalog/typecheck/build/diff gates; leave DoD open for unverified evidence; checkpoint GitHub after gates pass.
+
+## Current mobile parity follow-up — 2026-11-11
+Scope the frame adjustment to the static Progress sample only, compare at 390/320px, reconcile the live reference value against both sample and playground, then verify RTL, value semantics, primary pointer/keyboard paths, and technical gates. Keep Final DoD open for independent screen-reader review.

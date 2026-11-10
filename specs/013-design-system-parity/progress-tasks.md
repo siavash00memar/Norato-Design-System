@@ -12,3 +12,6 @@
 - [x] Checkpoint `15ff7c4` pushed to `origin/master`; local worktree was clean after source delivery.
 
 
+
+- [x] Match mobile specimen frame to the current reference at 390px and 320px; update current 60% reference default in inert specimen and playground; verify pointer/keyboard, RTL, ARIA value and responsive overflow.
+- [x] Run token/catalog checks, Vue typecheck/build and diff validation; record Final DoD screen-reader gap.
