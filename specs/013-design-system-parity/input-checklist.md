@@ -122,3 +122,9 @@
 - [x] Each inspected field measured 36px high with a 50px capsule radius, 1px `#e8e8e8` resting stroke, Vazirmatn 12px content, and RTL direction except the explicit LTR phone prefix.
 - [x] Where the playground exposed a field-title span, it computed to Estedad 700. Local document client/scroll widths stayed equal at 375px and 305px, with no horizontal overflow.
 - [ ] This covers a subset of shared consuming playgrounds; remaining fields, full state-by-state visual parity, and independent screen-reader review remain open.
+
+## Mobile preview frame after desktop correction — 2026-11-10
+
+- [x] Exact matched browser review after the desktop adjustment found 390×844 reference/local frames of 327/326×300px and 320×844 frames of 257/256×300px; local documents remain 375/305px without overflow.
+- [x] At both widths the 48px target centers the 36px visual capsule; email title/icon adjacency and RTL placeholder are preserved.
+- [ ] Full adapter-state screenshots, playground consistency and independent screen-reader review remain open.

@@ -176,7 +176,7 @@
 
 - [x] Matched browser viewport is 1536×647 CSS px; local frame now measures 635.98×300px against the reference's 636×300px.
 - [x] Verified the static Input anatomy remains intact: 36px visual capsule inside a 48px target, 50px radius, 1px neutral token stroke, Estedad 700 title and Vazirmatn Light 12px RTL placeholder in `#a1a1a1`.
-- [ ] Post-change 390px/320px recapture and full Input state visual matrix remain open; mobile width rule is unchanged in the scoped CSS diff.
+- [x] Post-change 390×844/320×844 recapture is recorded in the final mobile recheck below; the full Input state visual matrix remains open.
 
 ## Radio disabled+error state priority (2026-11-09)
 
@@ -2378,6 +2378,13 @@
 - [x] Matched 390×844 browser render: local frame 328×300px, reference 327.2×300px; both document widths 375px with no horizontal overflow.
 - [x] Matched 320×844 browser render: local document width 305px with no horizontal overflow. Reference document width is 326px and frame is 256.8×300px, showing 6px horizontal overflow at this viewport.
 - [ ] Full state matrix across consuming pages, hover/disabled behavior, RTL/LTR and independent screen-reader review remain open.
+
+## Input mobile frame final recheck — 2026-11-10
+
+- [x] At 390×844, local frame is 326×300px at x=24.5px vs 327×300px at x=24px in the reference; both documents are 375/375px wide.
+- [x] At 320×844, local frame is 256×300px at x=24.5px vs 257×300px at x=24px; local document is 305/305px while reference scroll width reaches 326px.
+- [x] The one-token mobile cap keeps the 48px interaction target and centered 36px capsule intact. Email title/icon remain adjacent and RTL; placeholder remains Vazirmatn Light 12px in `#a1a1a1`.
+- [ ] This frame correction does not complete Input's full adapter-state visuals, consuming-playground consistency or independent screen-reader review.
 
 ## Select desktop frame width correction — 2026-11-09
 
