@@ -12,6 +12,13 @@
 - [x] The generated Vue example adds `required`; turning the playground option off restores the default and removes the prop from the example.
 - [ ] Form submission/error presentation, native OS file drag/drop, reduced-motion behavior, independent screen-reader speech, and the remaining keyboard/state combinations are not covered here; File Upload DoD remains open.
 
+## File Upload required announcement — 2026-11-10
+
+- [x] Before the correction, the browser accessibility tree omitted the clipped native file input and exposed the Dropzone only as «پیوست‌ها», despite native `required=true`.
+- [x] After correction, required=true includes «الزامی» in the exposed Dropzone name and preserves `required=true`/`valueMissing=true`; required=false returns the name to «پیوست‌ها» and both native values become false.
+- [x] The generated Vue snippet toggles the `required` prop in sync; existing helper description remains referenced from the Dropzone.
+- [ ] This AX-tree check does not replace independent screen-reader review or native form submission testing.
+
 ## Image browser follow-up — 2026-11-10
 
 - [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.

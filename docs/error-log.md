@@ -1737,3 +1737,11 @@
 - **Correction:** `NoratoFileItem` now restores focus to its new enabled action only when that button replaces the previously focused action. `NoratoFileUpload` waits for its controlled queue to remove a focused row, then focuses the same-index surviving action, the previous last-row action, or the enabled Dropzone when the list is empty.
 - **Verification:** Browser confirmed Retry → Cancel focus and named 42% progress; canceling the only row returns focus to Dropzone; deleting the first of two rows focuses the remaining row; deleting the last row returns focus to Dropzone. Independent screen-reader and full state/keyboard reviews remain open.
 - **Prevention:** For conditional action changes and row removal, inspect browser focus after both pointer and keyboard activation; ensure a stable logical destination without stealing focus on updates that keep the same action node.
+
+## ERR-224 — File Upload required state was hidden from the actionable AX control (2026-11-10)
+
+- **Observed:** The clipped native file input received `required=true` and `validity.valueMissing=true`, but the browser AX tree omitted that input. The keyboard Dropzone button exposed only the field label, so the required state was not announced on the actionable control.
+- **Cause:** The visible asterisk is `aria-hidden`, and native constraint state belongs to the clipped input rather than the button that opens the picker.
+- **Correction:** Add a conditional visually-hidden «الزامی» text node and include it in the accessible names of both the native input and Dropzone only while `required` is true. Keep native constraint validation and the visible star unchanged.
+- **Verification:** Live browser AX reports «پیوست‌ها الزامی» with `required=true`, and «پیوست‌ها» with `required=false`. The native input retains its label reference; its empty `validity.valueMissing` is true/false in the corresponding states. The generated usage snippet toggles with the prop. Independent screen-reader and actual form-submission checks remain open.
+- **Prevention:** For visually-hidden native controls with a visible proxy action, verify that status properties not exposed by the proxy are still conveyed in the proxy's accessible name or description.

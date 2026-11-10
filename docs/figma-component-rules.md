@@ -371,6 +371,7 @@
 - Give each Upload Tile progressbar an accessible name that identifies the file; keep its numeric progress controlled by the host.
 - Use fixed square/circular tile geometry and 48px minimum action targets; do not stretch preview parts to fill the available column.
 - Use a purpose-drawn upload SVG in the inert and live Dropzone; treat it as the primary action with Norato yellow and dark text. Keep the dotted frame wash warm/neutral rather than using blue as an action accent.
+- When required, include the word «الزامی» in the accessible name of the Dropzone. The decorative visible star alone does not communicate the requirement to assistive technology.
 - Preserve keyboard focus when a File Item action is replaced by a controlled status transition. When an action removes its row from the upload queue, continue at the next/previous surviving action, or return focus to the Dropzone when no file rows remain.
 
 ## Navbar — 2026-11-01
@@ -602,3 +603,4 @@
 
 - At mobile widths, center the inert Table specimen at 16px less than its parent width using the semantic `space-4` token. Do not apply the inset to the live table or desktop frame.
 - Exact 390/320 post-change browser measurements remain an open validation item until captured.
+File Upload — وقتی انتخاب فایل الزامی است، واژهٔ «الزامی» در نام دسترس‌پذیر Dropzone قرار می‌گیرد؛ ستارهٔ کنار عنوان فقط نشان بصری است و به‌تنهایی جایگزین اعلام دسترس‌پذیر نمی‌شود.
