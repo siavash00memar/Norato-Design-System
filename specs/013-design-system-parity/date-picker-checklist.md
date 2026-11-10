@@ -26,6 +26,6 @@
 
 - [x] Token, catalog, TypeScript, production-build and diff checks passed in the documented implementation and preview-frame follow-ups.
 - [x] After the documentation/status correction, `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. The build's main JS chunk is 443.80KB (120.37KB gzip).
-- [ ] Push this follow-up and record its revision.
+- [x] Follow-up pushed to `origin/master`; checkpoint `4308ad9be45ed7307689fa8b960f14ee8358682d` is recorded.
 
 **DoD decision:** Do not mark this family complete until the independent screen-reader review passes. Full prior evidence is in `specs/006-norato-date-picker/tasks.md`, the request-validation record, and the linked preview-frame follow-up.

@@ -5,5 +5,5 @@
 - [x] Found the family ledger marked complete while its evidence explicitly says independent screen-reader software was not run.
 - [x] Canonical family checklist added and ledger status corrected without changing component code.
 - [x] Token/catalog/TypeScript/build/diff gates pass after the ledger correction.
-- [ ] Commit, push, and remote parity remain.
+- [x] Follow-up checkpoint `4308ad9be45ed7307689fa8b960f14ee8358682d` is on `origin/master`; remote parity confirmed.
 - [ ] Independent screen-reader review remains open; Date Picker DoD is not closed.
