@@ -19,6 +19,11 @@
 - [x] The generated Vue snippet toggles the `required` prop in sync; existing helper description remains referenced from the Dropzone.
 - [ ] This AX-tree check does not replace independent screen-reader review or native form submission testing.
 
+## File Upload Tile progress slider accent — 2026-11-10
+
+- [x] The playground slider previously rendered a browser-default blue active track and thumb.
+- [x] After correction, computed accent is `rgb(253, 193, 1)`, target measures 133×48px, and keyboard changes update 42→41→42 while restoring the default.
+
 ## Image browser follow-up — 2026-11-10
 
 - [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.

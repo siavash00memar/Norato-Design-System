@@ -42,3 +42,12 @@ function addExampleItem() { const limit = allowsMultiple.value ? Number(maxFiles
     <div class="button-playground-code"><div class="button-playground-codebar"><strong>کد Vue</strong><button class="copy-section-button" type="button" @click="emit('copy', 'file-upload-playground', snippet)">{{ copiedKey === 'file-upload-playground' ? 'کپی شد' : copiedKey === 'file-upload-playground-error' ? 'ناموفق' : 'کپی کد' }}</button></div><pre class="usage-code" dir="ltr"><code>{{ snippet }}</code></pre></div>
   </div>
 </template>
+
+<style scoped>
+.file-upload-playground-toggles input[type="range"] {
+  inline-size: 100%;
+  min-inline-size: var(--norato-control-target-min);
+  block-size: var(--norato-control-target-min);
+  accent-color: var(--norato-color-brand-yellow);
+}
+</style>

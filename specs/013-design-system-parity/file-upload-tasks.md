@@ -14,3 +14,4 @@
 - [x] T012 Updated the component contract, request/error logs and DoD; validation tests and repository gates pass. Commit `7ac56ca` is pushed to `origin/master` and the full remote hash matches. Keep maturity Adapted while drag/drop and accessibility gates remain open.
 - [x] T013 Preserve focus across File Item retry/cancel/delete transitions. Browser verified replacement-action focus and next/previous/Dropzone targets; native OS drag/drop, reduced motion and independent screen-reader review remain open.
 - [x] T014 Expose required status on the accessible Dropzone name because the clipped native file input is omitted from the browser AX tree; preserve its native required constraint and verify both enabled/disabled prop states.
+- [x] T015 Scope the File Upload playground Tile progress slider to the semantic Norato-yellow accent and a 48px target after live review found the blue default and 16px hit area; keyboard behavior remains intact.

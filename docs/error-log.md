@@ -1745,3 +1745,11 @@
 - **Correction:** Add a conditional visually-hidden «الزامی» text node and include it in the accessible names of both the native input and Dropzone only while `required` is true. Keep native constraint validation and the visible star unchanged.
 - **Verification:** Live browser AX reports «پیوست‌ها الزامی» with `required=true`, and «پیوست‌ها» with `required=false`. The native input retains its label reference; its empty `validity.valueMissing` is true/false in the corresponding states. The generated usage snippet toggles with the prop. Independent screen-reader and actual form-submission checks remain open.
 - **Prevention:** For visually-hidden native controls with a visible proxy action, verify that status properties not exposed by the proxy are still conveyed in the proxy's accessible name or description.
+
+## ERR-225 — File Upload playground progress slider used browser-blue accent (2026-11-10)
+
+- **Observed:** The Tile progress slider in the File Upload playground rendered a blue active track/thumb, inconsistent with Norato's yellow accent.
+- **Cause:** The native `input[type=range]` had no scoped accent declaration and inherited the browser default.
+- **Correction:** Scope semantic yellow `accent-color` and the shared 48px target height to the File Upload playground progress control only.
+- **Verification:** Live browser computes `accent-color: rgb(253, 193, 1)` and a 133×48px range box. The native track/thumb remain centered in the target; keyboard ArrowRight/ArrowLeft updates the value 42→41→42. Other range controls remain out of scope.
+- **Prevention:** Inspect native demo controls in screenshots and explicitly apply semantic accent tokens when they represent a component's progress or selected state.
