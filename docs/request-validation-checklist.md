@@ -2653,3 +2653,10 @@
 - [x] The CSS rule is restricted to `.component-doc>#doc-preview:has(.sample-table-preview) .component-sample.sample-table-preview:not(.compact)` at `max-width:600px`, subtracting the semantic 16px token and centering only the inert preview.
 - [ ] Exact post-change 390×844 and 320×844 CSS viewport renders remain unverified in this browser session; no viewport override capability was exposed, so the prior measurement cannot prove the new result.
 - [ ] Table visual state matrix and independent screen-reader DoD remain open.
+
+# Modal hover visual matrix — 2026-11-10
+
+- [x] Matched 1280×720 browser review covered Dialog and Form action hovers, close controls, and the nested project-name field's hover/focus state; no visual defect or layout shift was observed.
+- [x] Form field remains 36px high, capsule-shaped, with a 1px `#e8e8e8` resting Stroke and single yellow 1px hover/focus Stroke. Hover does not activate controls.
+- [x] The reference only shows the static confirmation specimen; interactive Form hover states have no equivalent reference state for direct comparison.
+- [ ] Controlled/uncontrolled `open` and independent screen-reader review remain open in `modal-checklist.md`; token/catalog/typecheck/build/diff gates passed for this follow-up.
