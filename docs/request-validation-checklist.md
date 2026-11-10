@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## File Upload native FileList helper — 2026-11-10
+
+- [x] Extracted controlled-queue to native FileList mapping into a private helper without changing the public Vue API.
+- [x] Dependency-free tests confirm File identity/order, omission of queue-only sample rows, empty-queue clearing, and safe behavior when the input or `DataTransfer` factory is unavailable.
+- [ ] Native browser `ValidityState`, named `FormData`, picker cancel/reselection and file removal remain unverified; helper-level tests do not replace browser evidence.
+
 ## File Upload native form FileList sync — 2026-11-10
 
 - [x] Source audit confirmed `onChange` previously emptied the native file input after each selection, leaving the controlled queue and native `required`/`name` state inconsistent.

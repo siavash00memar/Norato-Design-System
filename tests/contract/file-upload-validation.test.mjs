@@ -1,6 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { validateNoratoFiles } from '../../packages/vue/src/components/fileUploadValidation.ts'
+import { syncNativeFileList } from '../../packages/vue/src/components/fileUploadNativeFiles.ts'
 
 const file = (name, type, size = 1024) => ({ name, type, size })
 const options = overrides => ({
@@ -65,4 +66,44 @@ test('supports MIME wildcards and prioritizes type rejection over size rejection
 
   assert.deepEqual(result.accepted, [])
   assert.deepEqual(result.rejected.map(entry => entry.reason), ['size', 'type'])
+})
+
+test('mirrors only real queued File objects into the native FileList in order', () => {
+  const first = { name: 'first.pdf' }
+  const sample = { name: 'sample.pdf' }
+  const second = { name: 'second.png' }
+  const input = { files: null }
+  class Transfer {
+    accepted = []
+    items = { add: value => this.accepted.push(value) }
+    get files() { return this.accepted }
+  }
+
+  const synced = syncNativeFileList(input, [first, undefined, second], () => new Transfer())
+
+  assert.equal(synced, true)
+  assert.deepEqual(input.files, [first, second])
+  assert.equal(input.files.includes(sample), false)
+  assert.equal(input.files[0], first)
+  assert.equal(input.files[1], second)
+})
+
+test('clears the native FileList for an empty controlled queue', () => {
+  const input = { files: [{ name: 'removed.pdf' }] }
+  class Transfer {
+    items = { add() {} }
+    files = []
+  }
+
+  assert.equal(syncNativeFileList(input, [], () => new Transfer()), true)
+  assert.deepEqual(input.files, [])
+})
+
+test('leaves the native input unchanged when it or DataTransfer is unavailable', () => {
+  const existing = [{ name: 'existing.pdf' }]
+  const input = { files: existing }
+
+  assert.equal(syncNativeFileList(undefined, [], () => undefined), false)
+  assert.equal(syncNativeFileList(input, [], () => undefined), false)
+  assert.equal(input.files, existing)
 })

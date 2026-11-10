@@ -1,5 +1,6 @@
 <script lang="ts">
 import NoratoFileItem from './NoratoFileItem.vue'
+import { syncNativeFileList } from './fileUploadNativeFiles'
 export default { components: { NoratoFileItem } }
 </script>
 <script setup lang="ts">
@@ -35,11 +36,7 @@ watch(() => props.modelValue.map(item => item.id), async ids => {
   target?.focus({ preventScroll: true })
 }, { flush: 'post' })
 function syncNativeFiles() {
-  const nativeInput = input.value
-  if (!nativeInput || typeof DataTransfer === 'undefined') return
-  const transfer = new DataTransfer()
-  props.modelValue.forEach(item => { if (item.file) transfer.items.add(item.file) })
-  nativeInput.files = transfer.files
+  syncNativeFileList(input.value, props.modelValue.map(item => item.file))
 }
 watch([input, () => props.modelValue.map(item => item.file)], syncNativeFiles, { deep: true, flush: 'post', immediate: true })
 function restoreNativeFiles() { syncNativeFiles() }
