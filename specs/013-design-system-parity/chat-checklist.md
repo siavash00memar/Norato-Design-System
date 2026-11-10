@@ -66,3 +66,9 @@
 - [ ] Independent screen-reader verification remains open; no screen-reader result is inferred from the browser accessibility tree.
 
 **DoD decision:** Keep Chat open until independent screen-reader verification and any available direct reference comparison are complete. The reference does not provide six of the ten live states, so those cannot receive an exact reference screenshot match.
+
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop renders reconfirm the two-bubble RTL hierarchy: incoming is on the right, outgoing on the left, captions and times stay inside their bubbles, and neither bubble is stretched. Norato yellow remains the outgoing accent.
+- [x] Existing matched narrow-viewport reference review, exact 390×320 responsive bounds, no document overflow, 48px targets and primary send/keyboard behavior cover the Baseline gates.
+- [ ] Full mobile playground vertical comparison and independent screen-reader review remain open for Final DoD.
