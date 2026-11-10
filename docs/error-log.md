@@ -1753,3 +1753,10 @@
 - **Correction:** Scope semantic yellow `accent-color` and the shared 48px target height to the File Upload playground progress control only.
 - **Verification:** Live browser computes `accent-color: rgb(253, 193, 1)` and a 133×48px range box. The native track/thumb remain centered in the target; keyboard ArrowRight/ArrowLeft updates the value 42→41→42. Other range controls remain out of scope.
 - **Prevention:** Inspect native demo controls in screenshots and explicitly apply semantic accent tokens when they represent a component's progress or selected state.
+
+## ERR-226 — Decorative File Item icons used the blue information palette (2026-11-10)
+
+- **Observed:** In the live File Upload playground, the decorative file-type icon tiles were blue while the matching reference anatomy used neutral tiles. The blue conveyed no link or informational status.
+- **Cause:** `.norato-file-item__icon` reused `info-container` and `brand-blue` instead of the established neutral File Item treatment.
+- **Correction:** Changed the existing selector to `surface-muted` and `text-secondary`; no override was added and no action/progress/error colors changed.
+- **Verified:** Same-size 1265×713 browser captures show neutral icon tiles in the reference and local render. Dropzone remains yellow with dark text; RTL rows and page geometry remain intact. Full File Upload DoD remains open for OS drag/drop, form submission, reduced motion, keyboard matrix and independent screen-reader review.

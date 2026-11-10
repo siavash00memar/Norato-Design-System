@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## File Upload File Item icon color parity — 2026-11-10
+
+- [x] Compared the same File Item section in 1265×713 browser views. The reference icon tile is neutral; the local File Item now renders with Norato's neutral surface and secondary-text styling.
+- [x] The existing Dropzone remains yellow with dark text; progress and error styling were not changed.
+- [ ] This color correction does not close File Upload's remaining native OS drop, reduced-motion, form, keyboard-matrix, or independent screen-reader checks.
+
 ## File Upload disabled state browser check — 2026-11-10
 
 - [x] In the live page, turning on «غیرفعال» exposed both Dropzone buttons as disabled and synchronized the generated usage example with the `disabled` prop.
