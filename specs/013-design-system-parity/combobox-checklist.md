@@ -40,3 +40,10 @@
 - [x] Opened the local Combobox route in a fresh hidden browser tab. The visual frame, Default marker, RTL field and implementation section were present in the first screenshot; the AX tree did not expose the inert specimen, so visual presence is recorded separately from accessibility semantics.
 - [x] At an explicit 320×844 viewport, the specimen frame and field were visible within the captured page; no horizontal clipping of the specimen was observed in the screenshot.
 - [x] This run's 390px screenshot was clipped at the right edge; this specific capture does not verify the full layout. Superseded by the later matched 390×844 captures above (reference/local frame 327.2/326.4×300px, both documents 375px, no overflow). Controlled network throttling and the actual loading fallback state remain unverified; keep the cold-load item open.
+
+## Fresh State gallery visual review — 2026-11-10
+
+- [x] Fresh 320×844 local browser screenshots reviewed across scroll positions show exactly six inert Combobox states: Default, Hover, Typing, Filled, Error and Disabled.
+- [x] The gallery preserves RTL and 36px capsule/48px target geometry; Default/Disabled use neutral stroke, Hover/Typing/Filled use yellow, and Error uses red. No generic blue mark or vertically stretched sample is visible.
+- [x] Existing matched 1536×703, 390×844 and 320×844 gallery geometry comparisons remain the broader responsive/reference evidence; this fresh pass verifies the visible state colors/layout only.
+- [ ] Exhaustive live combined-state screenshot archive, throttled cold-load fallback capture, and independent screen-reader review remain open; Combobox DoD stays open.

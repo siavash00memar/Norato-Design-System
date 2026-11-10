@@ -2502,6 +2502,12 @@
 - [x] 2026-11-10 post-mapper Combobox review: Default/Hover/Typing/Filled/Error/Disabled each render once with their expected Persian value/placeholder; matched 1536×703 render confirms RTL, 36px capsule/48px target, neutral/yellow/error strokes and the two-column local gallery. Fresh local 390×844/320×844 DOM measurements confirm 343px/273px cards within 375px/305px documents, no horizontal overflow, 36px fields and 48px targets. The visual reference lists the same six states; this does not close the exhaustive live matrix, cold-load fallback capture or independent screen-reader review.
 - [x] 2026-11-10 live Combobox DoD pass: measured all 96 live state cells across 16 Type/Size/Label configurations; verified six state colors/values, 36px capsule, 48px/56px target rows, RTL, independent hover, active-descendant, selected Multi chip/description, Disabled+Error priority, keyboard selection/escape/clear and no document overflow at 390px/320px. At 320px the open menu is bounded within the document. Per-cell screenshots, independent screen-reader check and cold-load capture remain open.
 
+## Combobox States gallery — fresh 320px browser review (2026-11-10)
+
+- [x] Scrolled through the live RTL documentation page and visually reviewed all six inert Combobox samples: Default, Hover, Typing, Filled, Error and Disabled.
+- [x] State treatments are distinct and correct: neutral, yellow, yellow, yellow, red, neutral; fields remain 36px within 48px targets and no generic blue mark appears.
+- [ ] Exhaustive saved screenshot matrix, throttled cold-load fallback and independent screen-reader review remain open per `combobox-checklist.md`.
+
 ## Published NoratoField capsule parity — 2026-11-09
 
 - [x] The package stylesheet now defines the legacy NoratoField capsule and 48px target; its appearance no longer depends on the docs app.

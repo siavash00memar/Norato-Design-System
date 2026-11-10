@@ -45,3 +45,7 @@ No product/API ambiguity blocks this audit. The only permitted implementation ch
 
 - Follow-up audit found the first mapper also read only label/source, although the state axis may be stored in detail; the mapper now normalizes all three and emits one card per required kind. The browser verification of this final mapper is still pending because the active local tab repeatedly timed out.
 - A source review of the same patch found a misplaced Combobox-only label binding in the generic Variants section. Restore the generic `entry.label`; Combobox state labels remain scoped to the Combobox gallery. This correction is recorded as a regression found during audit.
+
+## Superseding browser evidence — 2026-11-10
+
+The pending mapper note above is superseded by the later browser review in `combobox-checklist.md`: the corrected gallery was verified at 1536×703, 390×844 and 320×844, and a fresh 320×844 screenshot review confirms all six RTL state samples and their neutral/yellow/error treatments. Full live matrix, cold-load fallback and independent screen-reader evidence remain open.

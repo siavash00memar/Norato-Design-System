@@ -60,6 +60,11 @@ Count excluding Button: 48.
 - At 320×844, the open Select menu now ends at y=762 above the fixed navigation at y=788; internal scrolling reveals the final disabled option.
 - Keyboard ArrowDown reaches «رشت», Escape returns focus to the trigger, and the accessibility tree retains grouped/selected/disabled options.
 - Token/catalog/typecheck/build/diff gates pass. Exact 390×844 and desktop browser comparison, full state screenshot matrix, and independent screen-reader review remain open; Select stays unchecked.
+
+## Combobox States gallery review — 2026-11-10
+
+- Fresh 320×844 browser screenshots confirm six RTL field states with 36px capsules/48px targets: neutral Default/Disabled, yellow Hover/Typing/Filled, and semantic red Error. No generic blue mark or vertical stretch appears.
+- Prior matched desktop/390/320 checks and required technical gates are recorded in `combobox-checklist.md`; only the remaining exhaustive live capture, cold-load fallback and independent screen-reader items keep Combobox unchecked.
 # Input field radius — 2026-11-02
 
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.

@@ -1391,14 +1391,14 @@
 - **Observed:** At 390×844, all Combobox state cards showed the same generic blue dot/bar and yellow capsule, including Default, Typing and Disabled. The gallery did not depict the actual Combobox input or its state-specific Stroke.
 - **Cause:** The shared generic `state-visual-grid` fallback rendered for Combobox, and its generic state mapper did not recognize Typing.
 - **Correction:** Add a scoped, inert Combobox state gallery with six RTL field samples. Use 36px capsule/48px target, neutral default/disabled Stroke, yellow hover/typing/filled Stroke and semantic error Stroke; use Norato typography/color tokens.
-- **Verification:** Token/catalog checks, Vue typecheck and production build pass. Pending matched browser review at desktop and mobile widths after implementation; the local browser tabs timed out during follow-up, so the broader state matrix and independent screen-reader review remain open.
+- **Verification:** Superseded pending note: matched 1536×703, 390×844 and 320×844 reviews verify the six RTL states and no overflow; fresh 320×844 screenshots confirm neutral Default/Disabled, yellow Hover/Typing/Filled, and red Error strokes with 36px fields/48px targets. Token/catalog/typecheck/build/diff gates pass. Exhaustive live-state screenshot archive, cold-load fallback capture and independent screen-reader review remain open.
 
 ## ERR-178 — Generic Variants cards inherited Combobox state labels (2026-11-09)
 
 - **Observed:** A source audit found the prior Combobox gallery patch had replaced the heading binding in the shared Variants gallery, which would show inferred Combobox state names for unrelated component variants.
 - **Cause:** The template edit targeted the first matching generic `<strong>{{ entry.label }}</strong>` rather than the Combobox-specific card heading.
 - **Correction:** Restore `entry.label` in the shared Variants gallery. Keep state normalization scoped to Combobox.
-- **Verification:** Source diff confirms the shared Variants heading uses the entry label again; production build and browser verification are pending.
+- **Verification:** Source diff confirms the shared Variants heading uses the entry label again; production build passes, and the page renders the expected component labels and state samples in the fresh browser review above.
 
 ## ERR-179 — Decorative component marks used blue accent (2026-11-09)
 
