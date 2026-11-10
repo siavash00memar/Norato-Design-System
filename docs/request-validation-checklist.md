@@ -2508,7 +2508,8 @@
 
 # Table static specimen reference review — 2026-11-10
 
-- [x] At 1536×703, direct browser measurements after the Table-specific tokens: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×345px / 562×258.50px. The frame/table dimensions are within 1px in both axes.
+- [x] At 1536×703, direct browser measurements after the Table-specific tokens: reference stage/table 636×345.25px / 561.60×258.39px; Norato frame/table 631.98×345px / 562×258.50px. The table is within 1px; the frame is 4.02px narrower and 0.25px shorter.
+- [ ] A desktop-only 4px token width extension is recorded in `specs/013-design-system-parity/updates/2026-11-10-table-desktop-frame-width/`; its post-change browser remeasure remains open.
 - [x] The local specimen now includes three decorative 24px Norato avatars beside the sample names.
 - [x] At 390×844, the static table is 330px wide inside a 348px frame; at 320×844 it is 260px inside a 278px frame. Its scroll width equals client width at both sizes; all four rows are 48px high.
 - [x] Screenshots at desktop, 390px and 320px visually confirm avatar placement and all table columns remain visible.

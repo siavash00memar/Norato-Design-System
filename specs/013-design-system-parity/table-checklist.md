@@ -14,7 +14,7 @@ Status: in progress. Last reviewed: 2026-11-09.
 - [x] Expanding a row reveals its detail content and changes the control's expanded state.
 - [x] Sort and row detail are real buttons; table uses native table semantics and named checkboxes.
 - [x] Token audit, catalog audit, Vue typecheck and production build pass.
-- [ ] Compare exact desktop geometry and component states against the supplied reference; record viewport and frame/row dimensions.
+- [ ] Re-measure the post-correction desktop frame and compare component states; prior exact comparison at 1536×703 measured reference 636×345.25px vs local 631.98×345px. Inner table geometry was within 1px; see `updates/2026-11-10-table-desktop-frame-width/`.
 - [x] Verify responsive behavior at 390px and 320px viewport widths; confirm no horizontal document overflow and review stacked row content.
 - [x] Keyboard-only review: search focus shows one yellow stroke; Tab reaches bulk clear, sort controls and row selection; Space sorts/selects; row detail opens from Space with a yellow ring; pagination boundaries move focus to the available opposite control. LTR and RTL page arrows point in the expected directions. The page indicator exposes `aria-live="polite"`; screen-reader speech remains unverified.
 - [x] Browser review: loading displays status and disables select-all/sort; empty source shows the no-data message even while a query remains; populated source with unmatched query shows no-results, and matching data returns. Selection persists through sort and page changes; previous/next are disabled at their bounds; Compact/Default/Comfortable row treatments render at the specified 48/56/64px tokens.
@@ -22,7 +22,7 @@ Status: in progress. Last reviewed: 2026-11-09.
 
 ## Current evidence and limits
 
-The live browser was reviewed at the desktop viewport and at real 390×844 and 320×844 emulated viewports. Numeric sorting, search through nested user data, group selection, row expansion, loading, empty/no-results priority, selection persistence, page bounds and all three row sizes were exercised. Keyboard review covered search, sorting, row selection, expansion and pagination; focus stays in the pager at both boundaries. RTL/LTR screenshot review confirmed table direction and mirrored page arrows. At 390px the document width is 390px and the live stacked row cards are 340px wide; at 320px the document width is 320px and live row cards are 270px wide. The static specimen shows three 24px decorative avatars and fits all columns: its table is 330px at 390×844 and 260px at 320×844; scroll width equals client width, rows stay 48px high and the page has no horizontal overflow. At 1536×703, reference stage/table measure 636×345.25px and 561.60×258.39px; Norato measures 631.98×345px and 562×258.50px. Frame and table dimensions are now within 1px of the reference. The full visual state matrix and independent screen-reader output remain open, so the family DoD is not complete.
+The live browser was reviewed at the desktop viewport and at real 390×844 and 320×844 emulated viewports. Numeric sorting, search through nested user data, group selection, row expansion, loading, empty/no-results priority, selection persistence, page bounds and all three row sizes were exercised. Keyboard review covered search, sorting, row selection, expansion and pagination; focus stays in the pager at both boundaries. RTL/LTR screenshot review confirmed table direction and mirrored page arrows. At 390px the document width is 390px and the live stacked row cards are 340px wide; at 320px the document width is 320px and live row cards are 270px wide. The static specimen shows three 24px decorative avatars and fits all columns: its table is 330px at 390×844 and 260px at 320×844; scroll width equals client width, rows stay 48px high and the page has no horizontal overflow. Before the current desktop frame-width correction, at 1536×703 the reference stage/table measured 636×345.25px and 561.60×258.39px; Norato measured 631.98×345px and 562×258.50px. The table itself was within 1px; the frame was 4.02px narrower and 0.25px shorter. The full visual state matrix and independent screen-reader output remain open, so the family DoD is not complete.
 
 ## Empty-state and pagination follow-up (2026-11-09)
 
@@ -32,7 +32,8 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 - [x] Keyboard activation of Next at page 1→2 previously lost focus because Next became disabled. Focus now transfers to Previous; moving 2→1 transfers to Next. The page indicator has a polite live-region attribute.
 - [x] RTL/LTR selector defaults to RTL and updates the generated example; RTL Previous/Next point right/left and LTR Previous/Next point left/right.
 - [x] Verified numeric sort order, selected row persistence across sort/page changes, 2/2 and 1/2 pager bounds, keyboard activation, and 48/56/64px density variants.
-- [ ] Exact same-viewport reference geometry and independent screen-reader behavior remain open.
+- [x] Exact same-viewport geometry was captured and recorded below. The local frame width discrepancy is handled by `updates/2026-11-10-table-desktop-frame-width/`; post-change browser confirmation remains open there.
+- [ ] Independent screen-reader behavior remains open.
 
 ## Static specimen parity follow-up (2026-11-10)
 

@@ -1652,3 +1652,11 @@
 - **Correction:** Scoped the existing rule to `@media (hover: hover) and (pointer: fine)`. Selected, disabled and focus rules remain unchanged.
 - **Verification:** Source diff confirms only the hover gate changed. Browser verification for mouse hover and coarse-pointer touch remains open, as do the Tree View family DoD items.
 - **Prevention:** Treat hover as a pointer capability and verify it separately from focus and selection states.
+
+## ERR-213 — Table frame-width parity was overstated (2026-11-10)
+
+- **Observed:** The 1536×703 record described frame and table as within 1px, but measured the reference frame at 636px and Norato at 631.98px. The static table itself was within 0.4px.
+- **Cause:** The documentation-column width constraint was conflated with exact frame parity.
+- **Correction:** Added a Table-only 4px token-based desktop width extension, capped by the shared specimen limit; mobile and live adapter styles are untouched.
+- **Verification:** Source review confirms the correction is desktop-scoped. Post-change browser measurement and mobile no-overflow recheck remain open because the local browser connection timed out.
+- **Prevention:** Record frame and inner-content geometry separately, and compare each measured axis before marking visual parity complete.

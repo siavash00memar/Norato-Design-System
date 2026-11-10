@@ -583,3 +583,9 @@
 ## Input — variant-axis chips
 
 - Input variant-axis values are descriptive, inert labels; keep their fill and outline neutral. Use the Norato-yellow Stroke only on the actual focused/active example, not on every axis chip or a noninteractive state label.
+
+## Table — desktop specimen bounds
+
+- Keep the Table's inert specimen frame at the measured 636px desktop reference width when the documentation column is slightly narrower; use a semantic spacing token for the scoped extension.
+- Preserve the existing 390px/320px frame widths, the inner table geometry, 48px rows and live adapter.
+- **Validation:** post-correction browser measurement is still pending; see the Table desktop frame-width follow-up.
