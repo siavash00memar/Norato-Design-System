@@ -68,7 +68,7 @@
 
 - [x] T041 Remove category clusters from component navigation; expose all 49 component links as a flat, independently scrollable list.
 - [x] T042 Remove category emphasis from inventory cards and detail headers while retaining standalone links, documents and specimens.
-- [ ] T043 Verify all 49 direct navigation links open the matching unique route/document/specimen; verify flat list accessibility and record desktop/mobile evidence.
+- [x] T043 Verify all 49 direct navigation links open the matching unique route/document/specimen; verify flat list accessibility and record desktop/mobile evidence in `docs/request-validation-checklist.md` (2026-11-10).
 
 ## Phase 10 — Norato-only team-facing presentation
 

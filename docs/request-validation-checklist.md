@@ -2605,3 +2605,10 @@
 - [x] At matched 320×844 browser viewport, reference and Norato galleries measure 257px at x=24 and use one column; Norato document width is 305px with no horizontal overflow, and the document direction is RTL.
 - [x] The change is confined to the Select-specific mobile media rule. The 48px target token sets the minimum auto-fit column width; the 16px inset uses the semantic space-4 token.
 - [ ] Desktop full-cell comparison and independent screen-reader review remain open; this mobile correction does not close Select DoD.
+
+# Component direct navigation and page structure — 2026-11-10
+
+- [x] Clicked each of the 49 component buttons from the rendered flat sidebar list at 1920×959. Every click produced its unique `#component-{slug}` route, the matching page `h1`, a preview, a Vue implementation section, all nine Button-aligned contract sections, and a component specimen (49/49 passed).
+- [x] The sidebar exposes a labelled native `<nav>` with 49 native buttons in catalog order (Button first, Chat last); the selected Chat item is visibly/semantically active after opening its route.
+- [x] At 390×844 and 320×844, the active Chat route remains selected, HTML direction is RTL, and the document stays within its client width (375px and 305px respectively).
+- [x] Mobile page preview bounds were observed at 390px; component details remain available in the responsive layout. This route/structure audit does not replace individual component visual, behavior, or independent screen-reader DoDs.
