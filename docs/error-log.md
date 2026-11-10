@@ -1605,3 +1605,11 @@
 - **Correction:** The inert Date Picker specimen now uses the shared Button specimen class; its frame keeps tokenized Date Picker bounds, and the static calendar backdrop is transparent. The interactive adapter is unchanged.
 - **Verification:** Browser measurement after correction: 628×300px at 1280×720, 327×300px at 390×844, and 257×300px at 320×844. The recorded reference is 628×300, 327×300, and 256.8×300 respectively. Mobile frames start at x=24px; document client/scroll widths match (375px and 305px). The shared dot pattern and gradient show through behind the centered, RTL calendar. Token/catalog/TypeScript/build/diff gates pass.
 - **Prevention:** When adding component-specific specimen classes, compare against the shared Button stage and remove any inner background that hides the shared frame composition.
+
+## ERR-207 — Split Button detail page omitted its live playground (2026-11-10)
+
+- **Observed:** The rendered Split Button page showed the adapter source and usage snippet but no live playground or playground controls.
+- **Cause:** `implementationSnippet` was truthy, so the main usage section rendered; a sibling `v-else-if` intended to render `SplitButtonPlayground` could never run.
+- **Correction:** Added Split Button to the internal playground branch of the usage section and removed the unreachable sibling section. The existing playground, adapter and API remain unchanged.
+- **Verification:** The page now has one usage section and one playground. Browser checks cover mode, variant, size, action/menu selection, disabled/loading, keyboard dismissal/focus restoration, RTL and desktop/390px/320px no-overflow behavior.
+- **Prevention:** When adding component playground branches, verify the actual rendered route; template presence alone does not prove a conditional branch is reachable.

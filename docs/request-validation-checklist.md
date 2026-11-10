@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Split Button detail-page playground (2026-11-10)
+
+- [x] Before the fix, the rendered `#component-split-button` page exposed the adapter source and generic snippet but had no `.button-playground`; the sibling Split Button `v-else-if` was unreachable.
+- [x] After the fix, the page contains exactly one `#doc-implementation` and one `SplitButtonPlayground` under «استفاده در Vue».
+- [x] At 1280×720, 390×844, and 320×844 the page remains RTL, the preview control is 48px high, and document client/scroll widths match (1265px, 375px, 305px).
+- [x] Browser interaction confirms primary feedback, menu selection, variant/size/mode changes, disabled/loading, ArrowDown, Escape and focus restoration. The playground text field is 36px high with 50px radius, 1px `#e8e8e8` stroke, Vazirmatn 12px content and Estedad 700 title.
+
 ## Shared text/number inputs in consuming playgrounds (2026-11-10)
 
 - [x] At 390×844 and 320×844, twelve visible text/number controls across Input, Rating, Pagination, Toast, Tooltip, and Progress were inspected in the browser.

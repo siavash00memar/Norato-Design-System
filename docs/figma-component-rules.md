@@ -63,6 +63,7 @@
 - Both runtime segments must be separate 48px-or-larger Tab targets. The menu opens below the toggle with its left edge aligned to the toggle's left edge; ArrowDown/ArrowUp, Home/End, Escape and outside-click behavior follow the documented Vue contract.
 - Split Button size API implements Small/Medium/Large/XLarge with 32/40/48/56px visual capsules; Small/Medium keep 48px native button targets. Verify both visual size and target geometry in the browser.
 - Keep the standalone inert Split Button preview frame 288px high (max width 640px; mobile cap 320px) with the design reference Default marker and Norato glass tokens. Center the control without stretching it. Render the actual adapter in the 6-variant, 4-size and 5-state galleries; use inert only for those visual specimens.
+- Place the runnable Split Button playground inside the single «استفاده در Vue» section after the adapter source, with its controls and generated snippet. Do not place it in an unreachable sibling conditional or create a second implementation section.
 
 ## Input — design reference visual parity and Norato runtime, 2026-11-01
 
