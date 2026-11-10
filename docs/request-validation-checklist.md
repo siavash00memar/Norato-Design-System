@@ -2508,6 +2508,12 @@
 - [x] State treatments are distinct and correct: neutral, yellow, yellow, yellow, red, neutral; fields remain 36px within 48px targets and no generic blue mark appears.
 - [ ] Exhaustive saved screenshot matrix, throttled cold-load fallback and independent screen-reader review remain open per `combobox-checklist.md`.
 
+## Radio Required empty recovery — fresh browser review (2026-11-10)
+
+- [x] At the 320px live Radio playground, Required + empty exposes «انتخاب یک دوره الزامی است.»; selected-value status says no selection and the generated Vue ref is `undefined` with `required` present.
+- [x] Selecting Yearly clears the empty simulation/error and synchronizes the radio, status and Vue example; the playground was restored to Monthly, optional, enabled, no-error.
+- [x] RTL and 48px row target remain intact. Full focus/state cross-product and independent screen-reader review remain open per `radio-playground-checklist.md`.
+
 ## Published NoratoField capsule parity — 2026-11-09
 
 - [x] The package stylesheet now defines the legacy NoratoField capsule and 48px target; its appearance no longer depends on the docs app.

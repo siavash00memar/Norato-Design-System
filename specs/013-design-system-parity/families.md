@@ -65,6 +65,11 @@ Count excluding Button: 48.
 
 - Fresh 320×844 browser screenshots confirm six RTL field states with 36px capsules/48px targets: neutral Default/Disabled, yellow Hover/Typing/Filled, and semantic red Error. No generic blue mark or vertical stretch appears.
 - Prior matched desktop/390/320 checks and required technical gates are recorded in `combobox-checklist.md`; only the remaining exhaustive live capture, cold-load fallback and independent screen-reader items keep Combobox unchecked.
+
+## Radio Required empty recovery — 2026-11-10
+
+- At a fresh 320px browser view, Required+empty shows the validation message; selecting Yearly clears it and synchronizes the native radio, selected status and generated example.
+- Playground restored to Monthly/optional/enabled/no-error. Radio remains unchecked until its full focus/state cross-product and independent screen-reader review pass.
 # Input field radius — 2026-11-02
 
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.

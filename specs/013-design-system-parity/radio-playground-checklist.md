@@ -41,3 +41,10 @@
 - [x] RTL and the row's 48px height remain intact. After review, the playground is restored to Monthly/enabled/no-error.
 - [x] Keyboard focus still computes `outline: 0` and a yellow `2px` shadow ring.
 - [ ] Full live visual-state/focus cross-product and independent screen-reader review remain open.
+
+## Required empty recovery — fresh 320px browser review (2026-11-10)
+
+- [x] Required + no selection rendered the Persian validation message and marked the required group in the generated Vue example; the selected-value status reported «بدون انتخاب».
+- [x] Selecting Yearly cleared the no-selection simulation and validation message and synchronized the radio value, status and Vue snippet.
+- [x] Restored Monthly, optional, enabled, no-error state. RTL and 48px target remain intact in the live page.
+- [ ] Full live visual/focus cross-product and independent screen-reader review remain open; this check does not close Radio DoD.
