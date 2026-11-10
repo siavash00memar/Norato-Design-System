@@ -13,7 +13,7 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
     aria-hidden="true"
     inert
   >
-    <span class="specimen-loading-label"></span>
+    <span class="specimen-loading-state" dir="ltr">Default<i aria-hidden="true" /></span>
     <span class="specimen-loading-control"></span>
   </div>
 </template>
@@ -43,7 +43,17 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
   min-block-size: var(--norato-split-button-preview-frame-block-size);
 }
 
-.specimen-loading-label,
+.component-specimen-loading[data-component="Combobox"] {
+  inline-size: min(calc(100% + var(--norato-space-1)), var(--norato-combobox-preview-frame-inline-size));
+  min-block-size: var(--norato-combobox-preview-frame-min-block-size);
+  border-radius: var(--norato-radius-card);
+  background-image:
+    radial-gradient(ellipse at 20% 15%, color-mix(in srgb, var(--norato-color-brand-yellow) 12%, transparent), transparent 56%),
+    radial-gradient(ellipse at 82% 80%, color-mix(in srgb, var(--norato-color-brand-blue) 9%, transparent), transparent 58%),
+    radial-gradient(color-mix(in srgb, var(--norato-color-brand-blue) 14%, transparent) var(--norato-border-thin), transparent var(--norato-border-thin));
+  background-size: auto, auto, var(--norato-space-3) var(--norato-space-3);
+}
+
 .specimen-loading-control {
   position: absolute;
   border-radius: var(--norato-radius-pill);
@@ -51,11 +61,28 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
   animation: specimen-loading-pulse 1.2s ease-in-out infinite alternate;
 }
 
-.specimen-loading-label {
+.specimen-loading-state {
+  position: absolute;
   inset-block-start: var(--norato-space-5);
   inset-inline-end: var(--norato-space-5);
-  inline-size: var(--norato-space-8);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--norato-space-1);
+  inline-size: auto;
+  block-size: auto;
+  background: transparent;
+  color: var(--norato-color-text-secondary);
+  font-size: var(--norato-type-body-small-size);
+  line-height: var(--norato-type-body-small-line-height);
+  animation: none;
+}
+
+.specimen-loading-state i {
+  inline-size: var(--norato-space-2);
   block-size: var(--norato-space-2);
+  border-radius: var(--norato-radius-pill);
+  background: var(--norato-color-status-success);
+  box-shadow: 0 0 0 var(--norato-border-medium) color-mix(in srgb, var(--norato-color-status-success) 18%, transparent);
 }
 
 .specimen-loading-control {
@@ -75,7 +102,7 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
   box-shadow: none;
 }
 
-.component-specimen-loading.compact .specimen-loading-label {
+.component-specimen-loading.compact .specimen-loading-state {
   display: none;
 }
 
@@ -90,7 +117,7 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .specimen-loading-label,
+  .specimen-loading-state,
   .specimen-loading-control {
     animation: none;
   }
@@ -101,6 +128,10 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
     inline-size: min(100%, var(--norato-split-button-preview-frame-mobile-inline-size));
     min-inline-size: 0;
     padding-inline: var(--norato-space-2);
+  }
+
+  .component-specimen-loading[data-component="Combobox"]:not(.compact) {
+    inline-size: min(100%, calc(100vw - var(--norato-space-16)), var(--norato-combobox-preview-frame-mobile-inline-size));
   }
 }
 </style>

@@ -1808,3 +1808,11 @@
 - **Correction:** Removed the ineffective global duplicate and placed the neutral surface, text and border rule in `ContractVisualShowcase.vue`, scoped beneath `.input-family-matrix`.
 - **Verification:** The live mobile Input page shows neutral gray descriptive cards while its adjacent Default, Hover, Active and Error fields retain their own states. `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Input DoD remains open for the complete adapter matrix and independent screen-reader review.
 - **Prevention:** Keep family-only cascade corrections in the owning scoped component and verify the rendered result, not merely the presence of a CSS declaration.
+
+## ERR-233 — Lazy specimen first paint omitted the Default marker (2026-11-10)
+
+- **Observed:** On a fresh Combobox route, the lazy-loading fallback showed the dotted frame and a gray placeholder bar but omitted the visible Default label/status dot; its frame wash and width also differed slightly from the ready specimen.
+- **Cause:** The shared fallback used a generic bar for the status label and a frame approximation based on the split-button tokens for every family.
+- **Correction:** Render the tokenized Default marker with its success dot in the full-size inert fallback. Scope Combobox's frame width, mobile width, radius and wash to its existing preview tokens. Keep the placeholder neutral, lazy loading enabled, and compact-card fallback behavior intact.
+- **Verification:** Fresh desktop and mobile captures show the marker in the initial fallback and the real Combobox specimen in the subsequent capture; the mobile frame's position/height remain visually stable. Initial inventory capture still showed compact skeletons. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. Independent screen-reader review and exhaustive Combobox screenshot evidence remain open.
+- **Prevention:** Compare the shared loading shell against the actual component specimen on both cold route and compact-card renders; do not rely only on a warmed browser session.

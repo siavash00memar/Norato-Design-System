@@ -6,6 +6,13 @@
 - [x] CSS selector is limited to the Input family matrix; the shared axis rule was not changed.
 - [ ] Input family DoD remains open for its full adapter state matrix and independent screen-reader review.
 
+## Shared specimen first-paint fallback — 2026-11-10
+
+- [x] A fresh desktop Combobox page first showed the shared inert skeleton; after the correction, the fallback included the canonical `Default` label and green status dot. The loaded Combobox replaced it in the same preview frame.
+- [x] At mobile width, reload showed the Default marker in the initial fallback and the actual search field in the follow-up capture; frame position and height were visually stable. The Combobox-specific width and warm/cool wash now follow its actual preview rules.
+- [x] The first inventory render still displayed compact skeletons in cards; compact mode hides the full-size marker. Reduced-motion CSS continues to disable animation.
+- [ ] Combobox's exhaustive screenshot archive and independent screen-reader review remain open; this shared loading-shell correction does not close family DoD.
+
 ## Input OTP visual capsule — 2026-11-10
 
 - [x] Inspected the actual local Chrome Input page and live OTP row. The 36px visual capsule is drawn inside the larger transparent input hit target; all six inputs keep digit-specific accessible names.
