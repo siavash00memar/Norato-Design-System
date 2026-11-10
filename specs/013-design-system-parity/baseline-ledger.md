@@ -19,7 +19,7 @@ Status meanings:
 | Rating | Baseline passed | Matched desktop/mobile specimen, RTL star/value/count order, ≥48px input targets and primary keyboard/pointer paths are recorded; fresh mobile visual comparison confirms the bounded layout and star direction. Independent screen-reader review remains Final DoD. |
 | Date Picker | Baseline passed | Matched mobile specimen and prior desktop/mobile frame comparisons confirm bounded calendar layout, RTL weekday order and no obvious clipping/stretch; 48px targets and primary selection/keyboard paths are recorded. Full field-state review and independent screen-reader review remain Final DoD. |
 | Time Picker | Baseline passed | Matched desktop/mobile specimens show bounded compact columns without stretch; live mobile comparison confirms Norato-yellow selection, LTR time digits within the RTL page, and no obvious clipping. 48px targets and primary pointer/keyboard paths are recorded. Independent screen-reader review remains Final DoD. |
-| File Upload | Evidence recorded; audit open | Existing responsive and keyboard evidence; OS drag/drop remains Final DoD. |
+| File Upload | Baseline passed | Matched desktop/mobile dropzone comparisons show a bounded specimen without obvious stretch; fresh mobile render retains RTL copy and Norato-yellow action. 48px targets and pointer/keyboard file-picker paths are recorded. Native OS drag/drop, independent screen-reader and combined-state checks remain Final DoD. |
 | Navbar | Evidence recorded; audit open | Existing desktop/mobile variant and interaction evidence. |
 | Sidebar | Evidence recorded; audit open | Existing desktop/mobile and interaction evidence. |
 | Tabs | Evidence recorded; audit open | Existing desktop/mobile and keyboard evidence. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **16/48 families (33.3%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, Pagination, Stepper, List and Card. The remaining 32 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **17/48 families (35.4%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Pagination, Stepper, List and Card. The remaining 31 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.
