@@ -26,4 +26,5 @@
 - [x] Fresh isolated Chrome DOM measurement after the async specimen settles: at a 1249×569 CSS viewport, Tooltip is 635.984×300px. Button, Input and Select captured in the same viewport measure 631.984×300px, 635.984×300px and 633.984×300px respectively; only Tooltip gets the 4px scoped extension. The 1265px window's initial screenshot showed the loading fallback (~632px), which explains the earlier inconclusive capture.
 - [x] Re-measured final Tooltip frame geometry and confirmed the Tooltip-only scope leaves Button/Input/Select on their own frame rules in the same viewport.
 - [x] The frame remains centered, with the same rounded dotted glass surface, RTL content, and centered tooltip/trigger composition.
-- [ ] Mobile viewport re-capture and independent screen-reader review remain open; Tooltip DoD stays open.
+- [x] Fresh mobile DOM captures after async settlement: at 390×844 the preview is 358×431.09px and the sample frame is 358×300px; at 320×844 they are 288×431.09px and 288×300px. Both document client/scroll widths equal the viewport (390/390 and 320/320), so there is no horizontal overflow and the stage retains its 300px height.
+- [ ] Independent screen-reader review remains open; Tooltip DoD stays open.

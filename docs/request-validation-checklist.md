@@ -142,7 +142,8 @@
 
 - [x] Fresh Chrome DOM measurement after async specimen settlement at 1249×569 CSS pixels: Tooltip 635.984×300px; Button 631.984×300px; Input 635.984×300px; Select 633.984×300px.
 - [x] The scoped Tooltip selector reaches the reference 636px frame without changing the other three components' independent specimen rules. A first screenshot taken during async loading showed the 632px fallback, not the settled specimen.
-- [ ] Exact 390px/320px re-capture and independent screen-reader review remain open; Tooltip DoD is not complete.
+- [x] Fresh 390×844 and 320×844 CSS viewport captures: Tooltip frames measure 358×300px and 288×300px; document client/scroll widths are 390/390px and 320/320px, with no horizontal overflow.
+- [ ] Independent screen-reader review remains open; Tooltip DoD is not complete.
 
 ## Switch responsive Variants gallery — browser review (2026-11-09)
 
