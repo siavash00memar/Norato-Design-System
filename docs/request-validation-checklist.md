@@ -24,6 +24,13 @@
 - [x] The playground slider previously rendered a browser-default blue active track and thumb.
 - [x] After correction, computed accent is `rgb(253, 193, 1)`, target measures 133×48px, and keyboard changes update 42→41→42 while restoring the default.
 
+## File Upload real Tile and Avatar image selection — 2026-11-10
+
+- [x] The local single-file chooser supplied a real PNG to Upload Tile; the playground rendered a loaded blob preview in a 112×112px square and named the action with the selected filename.
+- [x] Avatar Upload rendered the same local PNG in a loaded 96×96px circular preview with a 50px radius.
+- [x] Clear actions revoked the preview URLs and restored both playground examples to their empty/default states.
+- [ ] This does not verify external OS drag/drop, all image formats, screen-reader speech, or reduced-motion behavior; File Upload DoD stays open.
+
 ## Image browser follow-up — 2026-11-10
 
 - [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.
