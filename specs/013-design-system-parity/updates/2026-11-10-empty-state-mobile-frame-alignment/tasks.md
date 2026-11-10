@@ -4,4 +4,4 @@
 - [x] Compare exact 390px and 320px frame/document geometry against the reference.
 - [x] Confirm no stretch, overflow, or desktop regression.
 - [x] Run technical gates and update DoD evidence.
-- [ ] Push the verified change to origin/master.
+- [x] Push the verified change to origin/master (`996ea10`).
