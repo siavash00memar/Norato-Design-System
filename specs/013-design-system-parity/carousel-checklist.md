@@ -28,6 +28,12 @@
 
 **DoD decision:** Do not mark the family fully reviewed until all unchecked viewport, variant, interaction and screen-reader items pass.
 
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop renders reconfirm the right-aligned RTL title, arrow controls on the left, bounded square slide cards and centered active indicator. Local artwork and yellow active accent preserve Norato's palette without visible stretching.
+- [x] Existing same-viewport mobile reference comparison and exact 390px/320px no-overflow checks, 48px controls and primary keyboard/index behavior cover the Baseline gates.
+- [ ] Real-device touch scrolling and independent screen-reader review remain open for Final DoD.
+
 ## Follow-up review (2026-11-09)
 
 - [x] Browser check at the current desktop viewport: Next moved slide 1→2; direct dot selection reached slides 3, 5, then 1; the controlled-index selector tracked each change.
