@@ -1692,3 +1692,11 @@
 - **Verification:** Live browser confirms Error-only remains red; Disabled-only and Error+Disabled are neutral `#e8e8e8` at 1px. Combined state retains native disabled, `aria-invalid=true`, RTL, the visible linked error message and 108px geometry. Playground toggles were restored.
 - **Remaining:** Full Input visual-state parity and independent screen-reader review remain open.
 - **Prevention:** Check specificity across shared and legacy Textarea rules for combined disabled/invalid states; verify message references as individual IDs.
+
+## ERR-218 — Sidebar specimen nested frame reduced the visual area (2026-11-10)
+
+- **Observed:** At 1280×720, the local dotted Sidebar stage measured 605.98×300px within a 632px padded shell; the reference stage measured 636px wide. The local static panel was 220×216px and included extra workspace/footer rows.
+- **Cause:** Sidebar kept an independent padded preview shell inside the specimen and used a footer/workspace composition that did not match the selected default preview.
+- **Correction:** Reused the shared Button specimen frame, removed the nested stage sizing, aligned the semantic panel tokens to 216×222px, and reduced static contents to brand, section title and four icon links. Live component styles and API were not changed.
+- **Verification:** Local frame/panel measure 635.98×300px / 216×222px desktop, 327×300px at 390px, and 257×300px at 320px. The 320px document remains 305/305px and RTL is preserved. Token, catalog, typecheck, build and diff gates are recorded in the Sidebar follow-up.
+- **Prevention:** Measure the actual dotted stage separately from its wrapper and inner component; compare the specimen's visible composition as well as its bounding box.

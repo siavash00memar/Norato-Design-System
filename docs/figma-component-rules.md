@@ -382,8 +382,8 @@
 
 ## Sidebar — 2026-11-02
 
-- Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than design reference's visual rows.
-- Preserve design reference's brand/workspace header, section title, icon/count items, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
+- Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than compact visual rows.
+- The default inert specimen uses the shared Button frame and shows a brand header, one section title and four icon links. The live component retains its workspace slot, counters, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
 - Use Norato semantic blue/yellow tokens and Persian typography. Collapsed labels remain accessible; mobile uses a modal drawer.
 
 

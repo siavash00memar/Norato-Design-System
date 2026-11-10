@@ -47,11 +47,8 @@
   --norato-sidebar-width: 256px;
   --norato-tabs-preview-inline-size: 430px;
   --norato-tabs-preview-frame-block-size: 300px;
-  --norato-sidebar-preview-frame-inline-size: 640px;
-  --norato-sidebar-preview-frame-mobile-inline-size: 328px;
-  --norato-sidebar-preview-frame-block-size: 300px;
-  --norato-sidebar-preview-panel-inline-size: 220px;
-  --norato-sidebar-preview-panel-block-size: 216px;
+  --norato-sidebar-preview-panel-inline-size: 216px;
+  --norato-sidebar-preview-panel-block-size: 222px;
   --norato-sidebar-preview-row-size: 28px;
   --norato-sidebar-preview-avatar-size: 28px;
   --norato-sidebar-preview-icon-size: 20px;

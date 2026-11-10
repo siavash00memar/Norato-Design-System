@@ -5,7 +5,7 @@
 
 ## Preview
 
-نمونهٔ بصری inert و محدود به قاب مستقل در ابتدای صفحه؛ playground اجرایی و مثال Vue جدا هستند.
+نمونهٔ بصری inert در قاب نقطه‌ای مشترک با Button در ابتدای صفحه است. نمونهٔ پیش‌فرض برند، یک عنوان گروه و چهار پیوند آیکن‌دار را نشان می‌دهد؛ accent انتخاب‌شده زرد Norato است. Playground اجرایی و مثال Vue جدا هستند.
 
 ## Overview
 
@@ -33,7 +33,7 @@
 
 ## Sizes
 
-Items and subitems use visually compact typography while preserving a 48px minimum hit target; the desktop rail is 72px and panel width 256px.
+The inert specimen panel is 216×222px to preserve the measured reference proportion. Live items and subitems use compact typography with a 48px minimum hit target; the desktop rail is 72px and live panel width is 256px. The specimen frame follows Button at 636×300px desktop and 327×300/257×300px at 390/320px viewports.
 
 ## States
 

@@ -1,7 +1,7 @@
 # Sidebar Checklist
 
 - [ ] design reference Sidebar 42 variants/6 parts represented or intentional Norato mapping documented.
-- [ ] Preview inert, bounded, visually proportional and same viewport compare performed.
+- [x] Preview is inert and bounded; fresh same-viewport desktop and mobile geometry comparison recorded in the 2026-11-10 specimen parity follow-up.
 - [ ] Desktop expanded/collapsed, Glass/Bar, active/disabled/focus and child links.
 - [ ] Keyboard group toggles; active aria-current; focus ring and accessible collapsed labels.
 - [ ] Mobile modal drawer: trigger, Escape/focus restoration/outside click and no overflow.
@@ -30,7 +30,7 @@
 - [x] Fresh desktop browser review confirmed Bar style renders as a flat sidebar with the active item marked by a pale-yellow surface and yellow edge marker; Glass style had already been reviewed at desktop.
 - [x] Turning the playground's disabled control on removed navigation links from the accessibility tree, rendered labels as disabled content, and disabled the collapse button. Turning it off restored links and the enabled collapse control.
 - [x] Collapsing the sidebar changed the control's accessible name/state and kept the remaining item links exposed with their Persian accessible names; expanding restored section headings, nested links, and footer content.
-- [ ] Same-size visual comparison against the selected design reference, Glass/Bar × expanded/collapsed screenshots, keyboard activation of group controls, active `aria-current`, and independent screen-reader review remain open.
+- [ ] The static preview frame and composition are now matched and recorded; Glass/Bar × expanded/collapsed live screenshots, keyboard activation of group controls, active `aria-current`, and independent screen-reader review remain open.
 
 ## Sidebar — icon and palette refinement
 
@@ -52,3 +52,11 @@
 - [x] Disabled top-level entries in the mobile drawer now retain `aria-current="page"` when they are the current route, matching the desktop semantics.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass after the mobile navigation changes.
 - [ ] Browser test at 390px/320px, Escape/outside click/focus restoration, and screen-reader review remain open.
+
+## Sidebar — static specimen parity (2026-11-10)
+
+- [x] The inert specimen now shares the Button frame class and dotted Norato background; the duplicate inset stage was removed.
+- [x] At 1280×720, local frame is 635.98×300px and panel is 216×222px; the reference frame is 636×311.5px and panel is 216×221.94px. Frame height follows the project's Button 300px standard.
+- [x] At 390×844, frame is 327×300px; at 320×844 it is 257×300px with document width 305/305px. The compact panel remains 216×222px at both widths.
+- [x] Inert contents now show the brand, one section title, and four fixed-size SVG icon rows; no workspace or footer is added to this default sample. Active treatment uses Norato yellow.
+- [ ] Live Sidebar state matrix, keyboard group activation, active `aria-current` evidence, and independent screen-reader review remain open.

@@ -6,6 +6,13 @@
 - [x] Rating implementation maturity remains `Implemented`; family DoD is now open in `specs/013-design-system-parity/families.md` and `specs/013-design-system-parity/rating-checklist.md`.
 - [ ] Independent screen-reader review remains unperformed. Existing browser AX and keyboard checks are preserved but do not count as that review.
 
+## Sidebar inert specimen parity (2026-11-10)
+
+- [x] Same-viewport 1280×720 visual comparison recorded: frame 635.98×300px locally vs 636×311.5px in the reference; local 300px height intentionally follows the Button specimen standard. Panel is 216×222px locally vs 216×221.94px in the reference.
+- [x] At 390×844 and 320×844, local frame widths are 327px and 257px at 300px height; the 320px document is 305/305px with no horizontal overflow.
+- [x] The static preview is RTL, uses intrinsic 20px SVG icons and Norato-yellow selection, and now shares the Button dotted background without nested frame padding.
+- [ ] Live Sidebar state-matrix, group keyboard behavior and independent screen-reader DoD remain open in `specs/013-design-system-parity/sidebar-checklist.md`.
+
 ## Stepper catalog and checkpoint reconciliation (2026-11-10)
 
 - [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.
