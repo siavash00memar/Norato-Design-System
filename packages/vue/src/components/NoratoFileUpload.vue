@@ -3,7 +3,7 @@ import NoratoFileItem from './NoratoFileItem.vue'
 export default { components: { NoratoFileItem } }
 </script>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { validateNoratoFiles } from './fileUploadValidation'
 
 export type NoratoUploadStatus = 'selected' | 'uploading' | 'complete' | 'error'
@@ -15,12 +15,25 @@ const props = withDefaults(defineProps<{ id: string; label: string; modelValue?:
 })
 const emit = defineEmits<{ 'update:modelValue': [value: NoratoUploadItem[]]; 'files-selected': [files: File[]]; rejected: [files: NoratoRejectedFile[]]; remove: [item: NoratoUploadItem]; cancel: [item: NoratoUploadItem]; retry: [item: NoratoUploadItem] }>()
 const input = ref<HTMLInputElement>()
+const dropzone = ref<HTMLButtonElement>()
+const fileList = ref<HTMLUListElement>()
 const dragging = ref(false)
 const dragDepth = ref(0)
 const rejections = ref<NoratoRejectedFile[]>([])
 const effectiveError = computed(() => props.errorText || (rejections.value.length ? rejections.value.map(item => item.reason === 'type' ? 'نوع فایل پشتیبانی نمی‌شود.' : item.reason === 'size' ? 'حجم فایل از حد مجاز بیشتر است.' : 'تعداد فایل‌ها از حد مجاز بیشتر است.').join(' ') : ''))
 const helpId = computed(() => `${props.id}-help`)
 const errorId = computed(() => `${props.id}-error`)
+let pendingRemovalFocus: { id: string; index: number } | null = null
+watch(() => props.modelValue.map(item => item.id), async ids => {
+  const pending = pendingRemovalFocus
+  if (!pending) return
+  if (ids.includes(pending.id)) { pendingRemovalFocus = null; return }
+  pendingRemovalFocus = null
+  await nextTick()
+  const actions = Array.from(fileList.value?.querySelectorAll<HTMLButtonElement>('.norato-file-item__action:not(:disabled)') || [])
+  const target = actions[Math.min(pending.index, actions.length - 1)] || (dropzone.value?.disabled ? undefined : dropzone.value)
+  target?.focus({ preventScroll: true })
+}, { flush: 'post' })
 function process(files: File[]) {
   if (props.disabled || !files.length) return
   const { accepted, rejected } = validateNoratoFiles(files, {
@@ -42,9 +55,15 @@ function onDrop(event: DragEvent) { dragging.value = false; dragDepth.value = 0;
 function onDragEnter() { if (!props.disabled) { dragDepth.value += 1; dragging.value = true } }
 function onDragLeave() { dragDepth.value = Math.max(0, dragDepth.value - 1); dragging.value = dragDepth.value > 0 }
 function itemAction(item: NoratoUploadItem, action: 'remove' | 'cancel' | 'retry') {
-  if (action === 'remove') emit('remove', item)
-  else if (action === 'cancel') emit('cancel', item)
-  else emit('retry', item)
+  if (action === 'remove' || action === 'cancel') {
+    const index = props.modelValue.findIndex(entry => entry.id === item.id)
+    const focusedAction = document.activeElement?.closest('.norato-file-item__action')
+    const focusedRow = focusedAction?.closest('.norato-file-item')
+    const itemRow = index >= 0 ? fileList.value?.children[index]?.querySelector('.norato-file-item') : null
+    if (focusedAction && focusedRow === itemRow) pendingRemovalFocus = { id: item.id, index }
+    if (action === 'remove') emit('remove', item)
+    else emit('cancel', item)
+  } else emit('retry', item)
   if (action !== 'retry') emit('update:modelValue', props.modelValue.filter(entry => entry.id !== item.id))
 }
 </script>
@@ -53,14 +72,14 @@ function itemAction(item: NoratoUploadItem, action: 'remove' | 'cancel' | 'retry
   <section class="norato-file-upload" :class="[`is-${size}`, { 'is-disabled': disabled, 'is-dragging': dragging, 'is-invalid': !!effectiveError }]" :dir="dir">
     <span class="norato-file-upload__label" :id="`${id}-label`">{{ label }}<b v-if="required" aria-hidden="true">*</b></span>
     <input :id="id" ref="input" class="norato-file-upload__input" type="file" :accept="accept" :multiple="multiple" :disabled="disabled" :required="required" :name="name" :aria-labelledby="`${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @change="onChange" />
-    <button class="norato-file-upload__dropzone" type="button" :disabled="disabled" :aria-labelledby="`${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @click="input?.click()" @dragenter.prevent="onDragEnter" @dragover.prevent="dragging = !disabled" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop" @keydown.enter.prevent="input?.click()" @keydown.space.prevent="input?.click()">
+    <button ref="dropzone" class="norato-file-upload__dropzone" type="button" :disabled="disabled" :aria-labelledby="`${id}-label`" :aria-describedby="[helperText ? helpId : '', effectiveError ? errorId : ''].filter(Boolean).join(' ') || undefined" :aria-invalid="!!effectiveError" @click="input?.click()" @dragenter.prevent="onDragEnter" @dragover.prevent="dragging = !disabled" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop" @keydown.enter.prevent="input?.click()" @keydown.space.prevent="input?.click()">
       <span class="norato-file-upload__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0 4 4m-4-4L8 8M4 16v4h16v-4" /></svg></span>
       <strong>برای انتخاب فایل کلیک کنید یا فایل را اینجا رها کنید</strong>
       <small>{{ accept.split(',').filter(item => item.startsWith('.')).join('، ').toUpperCase() || 'فایل' }} · حداکثر {{ (maxSize / 1_000_000).toLocaleString('fa-IR') }} مگابایت</small>
     </button>
     <p v-if="helperText" :id="helpId" class="norato-file-upload__message">{{ helperText }}</p>
     <p v-if="effectiveError" :id="errorId" class="norato-file-upload__message is-error" role="alert">{{ effectiveError }}</p>
-    <ul v-if="modelValue.length" class="norato-file-upload__list" aria-label="فایل‌های انتخاب‌شده"><li v-for="item in modelValue" :key="item.id"><NoratoFileItem :item="item" :disabled="disabled" @remove="itemAction(item, 'remove')" @cancel="itemAction(item, 'cancel')" @retry="itemAction(item, 'retry')" /></li></ul>
+    <ul v-if="modelValue.length" ref="fileList" class="norato-file-upload__list" aria-label="فایل‌های انتخاب‌شده"><li v-for="item in modelValue" :key="item.id"><NoratoFileItem :item="item" :disabled="disabled" @remove="itemAction(item, 'remove')" @cancel="itemAction(item, 'cancel')" @retry="itemAction(item, 'retry')" /></li></ul>
     <ul v-if="rejections.length" class="norato-file-upload__rejected" aria-label="فایل‌های ردشده" aria-live="polite"><li v-for="entry in rejections" :key="`${entry.file.name}-${entry.reason}`" dir="ltr">{{ entry.file.name }} — {{ entry.reason === 'type' ? 'نوع فایل نامعتبر' : entry.reason === 'size' ? 'حجم بیش از حد' : 'تعداد بیش از حد' }}</li></ul>
   </section>
 </template>

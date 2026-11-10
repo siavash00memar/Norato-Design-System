@@ -65,7 +65,7 @@
 
 ## Accessibility
 
-Dropzone با pointer، Enter و Space فایل‌انتخاب‌کن بومی را باز می‌کند؛ drag راه جایگزین است. input مخفی برچسب دارد، خطا با `role=alert` اعلام می‌شود و نوار پیشرفت درصد کنترل‌شده را به `progressbar` می‌دهد. دکمه‌ها target حداقل ۴۸px و focus ring دوپیکسلی دارند. حرکت تزئینی با prefers-reduced-motion حذف می‌شود.
+Dropzone با pointer، Enter و Space فایل‌انتخاب‌کن بومی را باز می‌کند؛ drag راه جایگزین است. input مخفی برچسب دارد، خطا با `role=alert` اعلام می‌شود و نوار پیشرفت درصد کنترل‌شده را به `progressbar` می‌دهد. دکمه‌ها target حداقل ۴۸px و focus ring دوپیکسلی دارند. با جایگزینی action در تغییر status کنترل‌شده، فوکوس به action فعال همان ردیف منتقل می‌شود. با حذف ردیف از صف، فوکوس به action ردیف بعدی، ردیف قبلی یا Dropzone خالی برمی‌گردد. میزبان‌هایی که `NoratoFileItem` را جداگانه استفاده می‌کنند مقصد حذف ردیف را مدیریت می‌کنند. حرکت تزئینی با prefers-reduced-motion حذف می‌شود.
 
 ## Tokens
 

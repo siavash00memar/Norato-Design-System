@@ -371,6 +371,7 @@
 - Give each Upload Tile progressbar an accessible name that identifies the file; keep its numeric progress controlled by the host.
 - Use fixed square/circular tile geometry and 48px minimum action targets; do not stretch preview parts to fill the available column.
 - Use a purpose-drawn upload SVG in the inert and live Dropzone; treat it as the primary action with Norato yellow and dark text. Keep the dotted frame wash warm/neutral rather than using blue as an action accent.
+- Preserve keyboard focus when a File Item action is replaced by a controlled status transition. When an action removes its row from the upload queue, continue at the next/previous surviving action, or return focus to the Dropzone when no file rows remain.
 
 ## Navbar — 2026-11-01
 

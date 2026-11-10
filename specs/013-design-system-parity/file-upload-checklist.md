@@ -19,6 +19,14 @@
 - [x] Follow-up gates: `pnpm check:tokens`, `pnpm check:catalog`, TypeScript/Vite build and `git diff --check` pass.
 - [ ] Native OS drop payload, independent screen-reader review, reduced motion and complete combined keyboard/focus cases remain open.
 
+## File Item action focus continuity — 2026-11-10
+
+- [x] Browser reproduced lost focus after retry changed Error → Uploading and replaced the action with Cancel; implementation now restores focus to the enabled replacement button in that same row.
+- [x] Browser verified retry focus on “لغو بارگذاری sample-۱.pdf”; the progressbar remained named and exposed value 42.
+- [x] Browser verified removing a focused Cancel action returns focus to the Dropzone when the queue empties.
+- [x] With two queued rows, browser verified removing the first focused Delete action moves focus to the remaining row's Delete action; removing the final row returns focus to the Dropzone.
+- [ ] Native OS drop payload, independent screen-reader review, reduced-motion verification and other combined keyboard/focus state paths remain open; this scoped correction does not close File Upload DoD.
+
 ## Browser recheck — 2026-11-07
 
 - [x] Removed the early flat-text `v-else-if` branch that shadowed the styled preview. design reference/Norato matched viewport review verifies the Default marker, inner dropzone, frame size and no mobile overflow.

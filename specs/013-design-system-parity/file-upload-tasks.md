@@ -12,3 +12,4 @@
 - [x] T010 Fix the shadowed inert File Upload specimen branch so its Default marker and centered inner Dropzone render; verify bounded desktop/mobile geometry and design reference comparison.
 - [x] T011 Expose the existing `multiple` prop in the playground/snippet; real chooser evidence covers click and Enter/Space selection, accepted/rejected behavior, limits, replacement and input reset. Native OS drag/drop remains open under T007.
 - [x] T012 Updated the component contract, request/error logs and DoD; validation tests and repository gates pass. Commit `7ac56ca` is pushed to `origin/master` and the full remote hash matches. Keep maturity Adapted while drag/drop and accessibility gates remain open.
+- [x] T013 Preserve focus across File Item retry/cancel/delete transitions. Browser verified replacement-action focus and next/previous/Dropzone targets; native OS drag/drop, reduced motion and independent screen-reader review remain open.

@@ -1729,3 +1729,11 @@
 - **Correction:** Added an `aria-label` identifying progress for the computed filename; progress remains host-controlled and clamped to 0–100.
 - **Verification:** Browser accessibility tree reports the Upload Tile's progress indicator as “پیشرفت بارگذاری افزودن فایل” with value 42. Token/catalog/TypeScript/build and diff gates pass. Independent screen-reader review remains open.
 - **Prevention:** Every progressbar must expose an accessible name as well as value and range; verify computed accessible names in the browser tree.
+
+## ERR-223 — File Item actions lost keyboard focus on status change/removal (2026-11-10)
+
+- **Observed:** In the live File Upload playground, activating Retry changed Error → Uploading but focus fell to the document root. Cancel/Delete removal likewise removed the focused row and left focus on the root.
+- **Cause:** The focused action button was conditionally replaced or its row was removed without a follow-up focus destination.
+- **Correction:** `NoratoFileItem` now restores focus to its new enabled action only when that button replaces the previously focused action. `NoratoFileUpload` waits for its controlled queue to remove a focused row, then focuses the same-index surviving action, the previous last-row action, or the enabled Dropzone when the list is empty.
+- **Verification:** Browser confirmed Retry → Cancel focus and named 42% progress; canceling the only row returns focus to Dropzone; deleting the first of two rows focuses the remaining row; deleting the last row returns focus to Dropzone. Independent screen-reader and full state/keyboard reviews remain open.
+- **Prevention:** For conditional action changes and row removal, inspect browser focus after both pointer and keyboard activation; ensure a stable logical destination without stealing focus on updates that keep the same action node.

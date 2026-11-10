@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## File Item action focus continuity — 2026-11-10
+
+- [x] Browser confirmed Error → retry → Uploading keeps focus on the replacement Cancel action and retains the named 42% progressbar.
+- [x] Browser confirmed focused row removal returns focus to the same-index surviving row, the prior row when deleting the last one, and the enabled Dropzone when the queue becomes empty.
+- [ ] This pass does not cover native OS file drag/drop, reduced-motion behavior, independent screen-reader speech, or all keyboard/state combinations; File Upload DoD remains open.
+
 ## Image browser follow-up — 2026-11-10
 
 - [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.
