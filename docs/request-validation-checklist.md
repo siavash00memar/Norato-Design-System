@@ -2675,3 +2675,9 @@
 - [x] At exact 320×844, frames are 257/256×300px at x=24/24.5px; local document width is 305/305px. The reference scrolls to 326px, while Norato remains bounded.
 - [x] The RTL 48px trigger remains in the frame; the live listbox opens within 320px viewport bounds at 273×384.1px and Escape restores focus and the Tehran value.
 - [ ] Full Select visual-state screenshot matrix and independent screen-reader review remain open in `select-checklist.md`.
+
+# Input Textarea disabled+error Stroke — 2026-11-10
+
+- [x] In the live Input Vue playground, Error-only Textarea renders a 1px semantic red Stroke; disabled-only renders the neutral `#e8e8e8` Stroke.
+- [x] Combined Error+Disabled now renders a 1px `#e8e8e8` Stroke at 108px medium size. Native disabled, `aria-invalid=true`, RTL, the visible error message and the counter references in `aria-describedby` are retained and resolve to existing elements.
+- [x] The Playground was returned to error-off/disabled-off. Full Input state visuals and independent screen-reader review remain open.

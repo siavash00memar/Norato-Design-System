@@ -1683,3 +1683,12 @@
 - **Correction:** Added a Table-only mobile width rule using the semantic 16px spacing token and auto centering. Desktop and live adapter selectors are excluded.
 - **Verification:** Current live desktop render retains 635.984×345px frame and 562×258.5px table at 1920×903, with no document overflow. Post-change exact 390/320 measurements are still open because no viewport override was available in this browser session.
 - **Prevention:** Capture both mobile breakpoints after any frame sizing change; do not mark the mobile parity item complete from a desktop screenshot.
+
+## ERR-217 — Textarea invalid state overrode disabled neutral Stroke (2026-11-10)
+
+- **Observed:** In the live Input playground, Error+Disabled left Textarea with a red 1px Stroke while its sibling adapter controls used neutral disabled strokes. Native disabled, `aria-invalid=true`, and the visible error message remained present.
+- **Cause:** `.norato-textarea-group.is-invalid .norato-textarea` was more specific than the generic `.norato-textarea:disabled` neutral rule.
+- **Correction:** Added one scoped `.norato-textarea-group.is-invalid .norato-textarea:disabled` selector after the invalid rule, using the existing neutral border token.
+- **Verification:** Live browser confirms Error-only remains red; Disabled-only and Error+Disabled are neutral `#e8e8e8` at 1px. Combined state retains native disabled, `aria-invalid=true`, RTL, the visible linked error message and 108px geometry. Playground toggles were restored.
+- **Remaining:** Full Input visual-state parity and independent screen-reader review remain open.
+- **Prevention:** Check specificity across shared and legacy Textarea rules for combined disabled/invalid states; verify message references as individual IDs.

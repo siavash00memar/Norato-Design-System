@@ -19,7 +19,7 @@
 
 ### Stroke and focus
 
-حاشیهٔ خنثی همهٔ فیلدها و سلول‌های OTP یک پیکسل با `--norato-color-border-default` (`#e8e8e8`) است. در hover و فوکوس، Stroke دیداری به زرد `--norato-color-brand-yellow` تغییر می‌کند؛ فوکوس outline، هاله یا stroke مشکی/آبی ندارد. خط دوری که می‌بینی خود Stroke capsule است؛ پوستهٔ layout فیلد شفاف می‌ماند تا Stroke دوم ایجاد نشود. Hover روی فیلد فعال حتی در حالت خطا، همان Stroke را زرد می‌کند و پس از خروج نشانگر، رنگ خطا بازمی‌گردد. فیلد disabled Stroke خنثی دارد و hover رنگ آن را تغییر نمی‌دهد.
+حاشیهٔ خنثی همهٔ فیلدها و سلول‌های OTP یک پیکسل با `--norato-color-border-default` (`#e8e8e8`) است. در hover و فوکوس، Stroke دیداری به زرد `--norato-color-brand-yellow` تغییر می‌کند؛ فوکوس outline، هاله یا stroke مشکی/آبی ندارد. خط دوری که می‌بینی خود Stroke capsule است؛ پوستهٔ layout فیلد شفاف می‌ماند تا Stroke دوم ایجاد نشود. Hover روی فیلد فعال حتی در حالت خطا، همان Stroke را زرد می‌کند و پس از خروج نشانگر، رنگ خطا بازمی‌گردد. فیلد disabled Stroke خنثی دارد و hover رنگ آن را تغییر نمی‌دهد. در ترکیب Error و Disabled نیز Stroke خنثی اولویت دارد؛ aria-invalid و پیام خطا حفظ می‌شوند.
 
 ### اولویت وضعیت‌های هم‌زمان
 

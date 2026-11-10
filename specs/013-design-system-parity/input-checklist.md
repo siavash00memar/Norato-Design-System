@@ -128,3 +128,10 @@
 - [x] Exact matched browser review after the desktop adjustment found 390×844 reference/local frames of 327/326×300px and 320×844 frames of 257/256×300px; local documents remain 375/305px without overflow.
 - [x] At both widths the 48px target centers the 36px visual capsule; email title/icon adjacency and RTL placeholder are preserved.
 - [ ] Full adapter-state screenshots, playground consistency and independent screen-reader review remain open.
+
+## Textarea disabled+error Stroke precedence — 2026-11-10
+
+- [x] Live error-only Textarea computes a 1px semantic error Stroke, `aria-invalid=true`, RTL direction, and the linked visible error message.
+- [x] Disabled-only Textarea computes a 1px `#e8e8e8` Stroke, native `disabled=true`, RTL direction and retains its 108px medium three-row geometry.
+- [x] Combined error+disabled Textarea computes the 1px neutral `#e8e8e8` Stroke while retaining `aria-invalid=true`, native disabled and visible message/count IDs in `aria-describedby`; both referenced messages resolve.
+- [x] Playground defaults restored. This narrow correction does not close the full Input visual-state matrix or independent screen-reader review.
