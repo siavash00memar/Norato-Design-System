@@ -45,5 +45,6 @@
 
 - [x] Fresh 320×844 local browser screenshots reviewed across scroll positions show exactly six inert Combobox states: Default, Hover, Typing, Filled, Error and Disabled.
 - [x] The gallery preserves RTL and 36px capsule/48px target geometry; Default/Disabled use neutral stroke, Hover/Typing/Filled use yellow, and Error uses red. No generic blue mark or vertically stretched sample is visible.
+- [x] Fresh matched mobile browser visual review confirms the label, capsule field, search icon and chevron remain within the dotted preview frame beside the reference's corresponding field composition. Existing exact 390/320 frame measurements remain within 1px of the reference and show no local overflow.
 - [x] Existing matched 1536×703, 390×844 and 320×844 gallery geometry comparisons remain the broader responsive/reference evidence; this fresh pass verifies the visible state colors/layout only.
 - [ ] Exhaustive live combined-state screenshot archive, throttled cold-load fallback capture, and independent screen-reader review remain open; Combobox DoD stays open.
