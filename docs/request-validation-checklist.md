@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Image browser follow-up — 2026-11-10
+
+- [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.
+- [x] Selecting the documented Error state exposed the named fallback in the browser tree; returning to Default restored the image.
+- [x] Lightbox exposed its named dialog and controls; Escape closed it and returned focus to its opener.
+- [ ] This pass did not emulate reduced motion, induce a real network failure, or use independent screen-reader software. Those Image DoD items remain open.
+
 ## Combobox direct-load browser recheck — 2026-11-10
 
 - [x] A fresh local route screenshot showed the specimen frame, Default marker, RTL field and implementation section on initial observation.

@@ -25,6 +25,13 @@
 - [x] After fixing the hover scrim pseudo-element, inspected the live Image adapter at Square, Landscape, Wide and Portrait ratios. The dark shade is visible in each ratio and the image geometry retains its selected aspect ratio.
 - [ ] Review reduced-motion emulation and run an independent screen-reader review.
 
+## Browser follow-up — 2026-11-10
+
+- [x] Fresh direct Image route rendered the shared preview frame, 4:3 image, Button-style implementation section, Vue playground and nine contract sections. The image stayed proportional within its frame.
+- [x] In the live playground, selecting Error exposed the fallback as «غروب خورشید بر فراز تپه‌ها؛ تصویر در دسترس نیست» in the browser accessibility tree; returning to Default restored the named image. This verifies the documented state prop, not a real failed-network request or retry.
+- [x] Opening Lightbox exposed its titled dialog, close/previous/next controls, image name and 1/4 position. Escape closed it and restored focus to «نمایش تمام‌صفحه».
+- [ ] Reduced-motion browser emulation, real network failure/recovery, and independent screen-reader review remain open; this follow-up does not close Image DoD.
+
 ## Repository gates
 
 - [x] `pnpm check:tokens`
