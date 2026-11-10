@@ -1650,7 +1650,7 @@
 - **Observed:** Tree View applied its neutral hover surface with an unconditional `:hover` selector, without restricting the affordance to hover-capable pointers.
 - **Cause:** The row hover style did not distinguish fine-pointer hover from coarse touch input; some touch browsers can retain `:hover` after tapping.
 - **Correction:** Scoped the existing rule to `@media (hover: hover) and (pointer: fine)`. Selected, disabled and focus rules remain unchanged.
-- **Verification:** Source diff confirms only the hover gate changed. Browser verification for mouse hover and coarse-pointer touch remains open, as do the Tree View family DoD items.
+- **Verification:** Source diff confirms only the hover gate changed. A fresh Chrome screenshot shows the pointer over an unselected inert row without selection/expansion or AX-tree changes; exact hover-color comparison, selected/disabled/focused hover cases and coarse-pointer touch remain open, as do the Tree View family DoD items.
 - **Prevention:** Treat hover as a pointer capability and verify it separately from focus and selection states.
 
 ## ERR-213 — Table frame-width parity was overstated (2026-11-10)

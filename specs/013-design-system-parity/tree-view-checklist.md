@@ -10,7 +10,7 @@
 - [x] Guides Off is the default, On renders the only tree-level variant, and toggling guides does not alter selection or expansion.
 - [x] RTL indentation is 20px per depth; file rows add the 16px alignment offset; arrows face down/open and left/closed; folder/file SVGs keep intrinsic 20px geometry.
 - [x] Default, selected, disabled and keyboard-focus states use semantic Norato colors without blue accent or stretch.
-- [ ] Pointer-only hover visual review remains open; the selector is now scoped to hover-capable fine pointers in `updates/2026-11-10-tree-view-pointer-hover/`.
+- [ ] Hover-capable Chrome was visually checked with the pointer over an unselected static row; selection/expansion and the accessibility tree did not change. Exact hover-surface comparison against the non-hover baseline, selected/disabled/focused hover combinations and coarse-pointer behavior remain open; see `updates/2026-11-10-tree-view-pointer-hover/`.
 - [x] At desktop, 390×844 and 320×844, Tree View and its documentation content stay within the viewport. Document widths are 375px/305px; interactive rows remain 48px high, with intrinsic 18px icons and 16px chevrons. Fixed a narrow-width overflow in the shared accessibility contract cards; Tree View and Input now both measure 305px document width at 320px.
 
 ## Behavior and accessibility
