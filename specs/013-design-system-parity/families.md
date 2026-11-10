@@ -1,6 +1,6 @@
 # Component delivery ledger
 
-**Baseline DoD:** 18/48 families have verified passes; see [baseline-ledger.md](baseline-ledger.md). This does not alter the strict completion statuses below, which remain governed by [checklist.md](checklist.md).
+**Baseline DoD:** 19/48 families have verified passes; see [baseline-ledger.md](baseline-ledger.md). This does not alter the strict completion statuses below, which remain governed by [checklist.md](checklist.md).
 
 Each family is complete only when its own DoD in checklist.md passes. Order follows the current catalog.
 
