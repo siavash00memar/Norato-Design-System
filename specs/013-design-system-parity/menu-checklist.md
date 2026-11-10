@@ -20,10 +20,10 @@
 - [x] Leaf selection emits once and closes; selected submenu leaf was observed. Disabled item is exposed disabled and not in roving focus.
 - [x] Decorative icons are hidden from assistive technology; no browser-native menu fallback appears.
 - [x] No menu-specific animation or transition is added, so reduced-motion preference has no motion to suppress.
-- [x] At 390px, no horizontal overflow is visible; open root/submenu fit within the viewport. 320px remains unverified.
+- [x] At 390px, no horizontal overflow is visible; open root/submenu fit within the viewport. Fresh live 320×844 browser review: document width is 320/320px; the open root panel measures 236×306.3px at (8,454), and its open submenu measures 236×107px at (76,656), both fully within the viewport.
 
 ## Engineering
-- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the final edits. Build retains the existing 877.63KB JS chunk-size advisory.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the final edits. Build retains the existing latest build output has a 442.34KB JS entry with no chunk-size advisory.
 - [x] Actual local browser render and interactions are checked; independent screen-reader review is recorded separately.
 - [x] No completion claim exceeds the evidence; 320px and independent screen-reader review remain open.
 
@@ -31,4 +31,5 @@
 - [x] Fresh Chrome review: trigger exposes expanded state and the menu's accessible name; ArrowDown focuses Edit.
 - [x] Four ArrowDown presses reach the Transfer submenu trigger; ArrowLeft opens it in RTL and focuses Projects.
 - [x] Escape closes root and nested menus and returns focus to the More actions trigger.
-- [ ] This review does not cover 320px rendering or independent screen-reader output; both remain open and the family DoD remains open.
+- [x] Fresh live 320×844 recheck covers the playground root menu and nested submenu; both stay within the viewport and the document has no horizontal overflow.
+- [ ] Independent screen-reader output remains unreviewed; the family DoD remains open.

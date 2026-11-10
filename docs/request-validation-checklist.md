@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Menu narrow viewport recheck (2026-11-10)
+
+- [x] In a 320×844 local browser viewport, the live Menu playground opens its root panel and nested submenu; root is 236×306.3px at (8,454), submenu is 236×107px at (76,656), and both remain within the viewport.
+- [x] The document measures 320/320px client/scroll width while the nested menu is open; no horizontal page overflow is present.
+- [ ] Independent screen-reader review remains open in `specs/013-design-system-parity/menu-checklist.md`.
+
 ## Split Button detail-page playground (2026-11-10)
 
 - [x] Before the fix, the rendered `#component-split-button` page exposed the adapter source and generic snippet but had no `.button-playground`; the sibling Split Button `v-else-if` was unreachable.
