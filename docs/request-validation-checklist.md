@@ -5,8 +5,16 @@
 - [x] Inspected the actual local Chrome Input page and live OTP row. The 36px visual capsule is drawn inside the larger transparent input hit target; all six inputs keep digit-specific accessible names.
 - [x] Removed stale app-level OTP outline/background selectors after the browser exposed the extra cell outline. Default, Error, focused Error, and Error+Disabled states were observed: one neutral Stroke, error red, focused capsule yellow, and disabled muted neutral respectively.
 - [x] Live keyboard/paste checks: length selection produced 4/5/6 cells; sequential digits filled in order; pasting six digits populated all cells; Backspace clear/previous-cell behavior and ArrowLeft navigation worked. Playground reset to its default state.
-- [ ] The available browser could not set exact 390px/320px viewport overrides or expose computed CSS metrics. Hover, Success, Loading, Read-only, all four target sizes, inert gallery re-capture, independent screen-reader review and the full Input family DoD remain open.
+- [x] The browser now supports explicit 390px/320px viewports; responsive OTP observations are recorded in the follow-up section below.
+- [ ] The browser's read-only page inspection did not expose computed CSS metrics. Hover, Loading, Read-only, the Large 320px arrangement, exact rendered dimensions for every target size, inert gallery recapture, independent screen-reader review and the full Input family DoD remain open. Success was observed in the follow-up section below.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` passed.
+
+## Input OTP responsive follow-up — 2026-11-10
+
+- [x] Local Input page rendered at explicit 390×844 and 320×844 browser viewports. Six medium capsules fit on one row at 390px; at 320px the group wraps within the viewport and retains RTL order.
+- [x] At 320px, Small rendered 5+1 and XLarge 4+2; Medium rendered 4+2. The Success screenshot showed green cells while the focused cell remained yellow.
+- [x] Opened the reference Input page at 390px: its contract confirms 4/5/6 cells, four sizes and five states, while the Parts section contains no live OTP specimen. Therefore this pass confirms responsive layout and contract alignment, not pixel-exact OTP state parity.
+- [ ] Computed CSS dimensions, document scroll-width measurements, Large at 320px, matched live OTP reference screenshot, hover/loading/read-only states, static OTP gallery recapture and independent screen-reader review remain open.
 
 ## Select — legacy native HTML helper removal — 2026-11-10
 
