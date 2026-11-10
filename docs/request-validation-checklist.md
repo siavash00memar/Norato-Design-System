@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## File Upload disabled state browser check — 2026-11-10
+
+- [x] In the live page, turning on «غیرفعال» exposed both Dropzone buttons as disabled and synchronized the generated usage example with the `disabled` prop.
+- [x] Turning the option off restored both controls and the snippet to the default state.
+- [ ] This confirms disabled semantics only; actual tab-order and independent screen-reader review remain open in `specs/013-design-system-parity/file-upload-checklist.md`.
+
 ## File Item action focus continuity — 2026-11-10
 
 - [x] Browser confirmed Error → retry → Uploading keeps focus on the replacement Cancel action and retains the named 42% progressbar.
