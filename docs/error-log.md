@@ -1637,3 +1637,11 @@
 - **Correction:** Added the shared frame class with the existing Tabs 300px token, an isolated semantic width extension at desktop and the measured mobile inset. The existing scroller now hides vertical overflow while retaining horizontal scroll behavior.
 - **Verification:** Frame measures 636×300px at desktop, 327×300px at 390px and 257×300px at 320px; all three are matched to the reference. RTL and 48px row targets remain; both mobile documents have no overflow. At 320px, row client/scroll widths match and the vertical scrollbar is absent.
 - **Prevention:** For each inert preview, check the frame class and both overflow axes at narrow widths; do not infer frame sizing from the inner control.
+
+## ERR-211 — Date Picker was marked DoD-complete without an independent screen-reader review (2026-11-10)
+
+- **Observed:** The family delivery ledger marked Date Picker `[x]` although its own evidence said independent screen-reader software had not been run; no canonical family-level checklist existed.
+- **Cause:** The ledger completion mark represented implementation/browser evidence, while its documented rule requires the full family DoD, including unresolved accessibility evidence.
+- **Correction:** Added `specs/013-design-system-parity/date-picker-checklist.md` and changed the Date Picker ledger completion mark to `[ ]`; maturity remains `Implemented` because the adapter and prior browser evidence exist.
+- **Verification:** Reconciled the seven-mode tasks, detailed request-validation record, and 2026-11-10 preview-frame checklist. No browser or screen-reader result is invented; the independent review remains open.
+- **Prevention:** Reconcile every family ledger mark against all unchecked items in its canonical family checklist before delivery.
