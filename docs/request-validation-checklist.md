@@ -2524,6 +2524,13 @@
 - [x] The horizontal list scrolls internally (384px content) without widening the document. Playground fields remain visibly 36px high; the transparent pointer target is 48px and was activated 3px above the visible field. Keyboard focus displays the 2px yellow ring with its amber contrast edge.
 - [ ] Full keyboard/focus cross-product, empty/duplicate data cases and independent screen-reader review remain open in `stepper-checklist.md`.
 
+# Catalog detail-page structure audit — 2026-11-10
+
+- [x] Visited all 49 component routes in the local browser using slugs and names from the canonical component catalog.
+- [x] Every page has the expected exact title, one visual preview, one «استفاده در Vue» section, and the nine Button-aligned contract sections in order: Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility and Tokens.
+- [x] No duplicate DOM IDs were found. Family-specific additional sections are allowed; DoD remains in the family checklist rather than the page contract.
+- [x] This establishes shared page structure only; it does not replace each component's visual, interaction, RTL or accessibility DoD.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.
