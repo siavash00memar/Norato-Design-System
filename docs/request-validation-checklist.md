@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Date Picker shared specimen frame (2026-11-10)
+
+- [x] Date Picker's inert preview opts into the shared Button specimen frame; the Date Picker-specific inner gradient was removed so the shared dotted Norato background remains visible.
+- [x] Same-window browser screenshot after HMR shows the local desktop composition centered and visually aligned with the reference stage; its Norato yellow selected date remains unchanged.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass after the CSS change.
+- [ ] Exact desktop geometry, responsive 390px/320px bounds and page overflow are not yet remeasured after this change. Interactive behavior and the public adapter were not modified.
+
 ## Matched Input States gallery review (2026-11-10)
 
 - [x] Local and reference galleries were reviewed in same-size 1265×713 browser viewports. Both show ten cards in four RTL columns with matching 4/4/2 rows and matching state order.

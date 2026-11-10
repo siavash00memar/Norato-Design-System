@@ -1597,3 +1597,11 @@
 - **Correction:** Added the semantic `--norato-banner-preview-frame-mobile-inline-size` cap and a mobile-only 16px tokenized reduction on the inert Banner specimen. The public `NoratoBanner` adapter remains full-width.
 - **Verification:** The local frame now matches at 342×300px (390px viewport) and 272×300px (320px viewport), both x=24px. Document client/scroll widths remain equal; desktop 1265×720 stays 631.984×300px. The external reference page itself scrolls 6px beyond its 320px viewport; that overflow was not reproduced.
 - **Prevention:** Measure the preview frame separately from the live component and compare the same CSS viewport before modifying shared frame rules.
+
+## ERR-206 — Date Picker inert preview used a separate narrow frame (2026-11-10)
+
+- **Observed:** Same-window browser comparison showed the local Date Picker preview smaller than the reference frame, with a separate blue-tinted inner backdrop instead of the shared dotted stage.
+- **Cause:** The Date Picker specimen did not opt into `.sample-button-specimen`; its legacy frame width stayed bounded to its inner content box, and `.sample-calendar` painted its own gradient over the frame.
+- **Correction:** The inert Date Picker specimen now uses the shared Button specimen class; its frame keeps tokenized Date Picker bounds, and the static calendar backdrop is transparent. The interactive adapter is unchanged.
+- **Verification:** Local desktop screenshot after HMR shows the shared dot pattern and warm-to-cool background, with the calendar centered and legible. Exact CSS frame measurements at desktop and after the 390px/320px responsive edits remain unverified; keep the DoD open.
+- **Prevention:** When adding component-specific specimen classes, compare against the shared Button stage and remove any inner background that hides the shared frame composition.
