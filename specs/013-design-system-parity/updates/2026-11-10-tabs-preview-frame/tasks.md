@@ -5,4 +5,4 @@
 - [x] T003 Apply Button-aligned frame class, scoped desktop alignment, Tabs-specific tokenized mobile geometry, and vertical overflow correction.
 - [x] T004 Recheck matched local/reference frame bounds at 1920/390/320px, Tabs visual geometry, RTL, scrollbar, and overflow.
 - [x] T005 Update component/contract/request/error evidence and run token, catalog, typecheck, build, and diff gates.
-- [ ] T006 Commit and push; confirm remote/local revision parity.
+- [x] T006 Commit `b0ad04a`, push to `origin/master`, and confirm remote/local revision parity.
