@@ -1792,3 +1792,11 @@
 - **Correction:** Constrain the mobile popover by the existing navigation/content clearance tokens and make its option viewport the flexible, scrollable grid row.
 - **Verification:** At 320×844 the menu bottom is y=762 and nav starts at y=788; scrolling reveals the final disabled option. ArrowDown reaches the last enabled group option, Escape closes and returns focus; token/catalog/typecheck/build/diff gates pass. Exact 390×844 and desktop browser comparison remain unverified; Select DoD remains open.
 - **Prevention:** For portaled overlays in the responsive app shell, validate the overlay against fixed navigation bounds, not only viewport edges.
+
+## ERR-231 — Date Picker range selection used informational blue (2026-11-10)
+
+- **Observed:** The live range calendar used a pale-blue band between yellow endpoints, although the band represents selected dates rather than information.
+- **Cause:** The range-interior selector used `--norato-color-info-container` without a semantic reason.
+- **Correction:** Reuse the existing pale-yellow `--norato-color-warning-container` surface only for interior selected days; keep yellow endpoints and all unrelated information colors unchanged.
+- **Verification:** The live mobile range render shows pale-yellow interior with both brand-yellow endpoints, preserves RTL weekday order and the seeded Jalali range, and keeps the disabled-day state. Token/catalog/typecheck/build/diff gates pass. Date Picker DoD remains open because independent screen-reader review is not recorded.
+- **Prevention:** Map color tokens to the meaning of each component state; selected-range surfaces use Norato's yellow selection palette, while blue remains for informational content.

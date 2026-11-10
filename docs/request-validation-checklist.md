@@ -2871,6 +2871,13 @@
 - [x] Accessibility tree retains grouped, selected and disabled options; keyboard ArrowDown reaches «رشت» and Escape closes the menu and restores focus to the Tehran trigger. RTL is retained.
 - [ ] Exact 390×844 capture and desktop geometry comparison were unavailable in this viewport; responsive CSS is scoped to the app's existing <=839px breakpoint. Keep this limitation recorded.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass. Select's full state screenshot matrix and independent screen-reader review remain open.
+
+# Date Picker range palette correction — 2026-11-10
+
+- [x] Before correction, live mobile Range mode showed a pale-blue interior between two brand-yellow endpoints. The interior is a selected state, not informational content.
+- [x] Replaced only the calendar's `.is-in-range:not(.is-selected)` surface with the existing semantic pale-yellow `--norato-color-warning-container`; selected endpoints remain `--norato-color-brand-yellow`.
+- [x] After correction, the live mobile render shows yellow endpoints and pale-yellow interior, keeps RTL weekday order (شنبه at the right through جمعه at the left), the seeded Jalali range `۱ آبان تا ۷ آبان ۱۴۰۵`, and a disabled selected day. No layout or horizontal overflow regression was visible.
+- [ ] Independent screen-reader review and full family DoD remain open; this color correction does not close Date Picker.
 ## Navbar — گالری ۴۱ نمونهٔ Variants — 2026-11-10
 
 - [x] مرور زندهٔ دسکتاپ: شش گروه و ۴۱ نمونه، RTL، حالت‌های Active/Hover/Disabled/Focus و برچسب هر نمونه دیده شدند؛ گالری تکراری حذف شد.
