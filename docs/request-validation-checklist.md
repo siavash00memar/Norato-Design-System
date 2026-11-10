@@ -2520,6 +2520,13 @@
 - [x] Accessibility state exposed Quarterly as checked/focused. Restored Monthly and Error off; generated example and selected status returned to the default.
 - [ ] The complete focus × error/disabled/required × size cross-product and independent screen-reader review remain open.
 
+## Radio 16px interactive state pairs — fresh browser review (2026-11-10)
+
+- [x] Required+empty at 16px displays its linked message; selecting Yearly clears the empty simulation and synchronizes runtime value/status/snippet.
+- [x] Error+focus at 16px keeps the red error message and shows the yellow ring on the keyboard-active radio; ArrowDown selects Quarterly.
+- [x] Error+disabled at 16px disables all radios, keeps invalid/error semantics, applies the neutral disabled control styling and reports disabled priority.
+- [x] Playground restored to Monthly/20px/optional/enabled/no-error. Full cross-product and independent screen-reader review remain open.
+
 ## Published NoratoField capsule parity — 2026-11-09
 
 - [x] The package stylesheet now defines the legacy NoratoField capsule and 48px target; its appearance no longer depends on the docs app.

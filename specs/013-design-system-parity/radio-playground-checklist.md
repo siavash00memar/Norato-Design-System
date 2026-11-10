@@ -54,3 +54,11 @@
 - [x] Error state keeps the group title and message red while ArrowDown moves selection from Monthly to Quarterly; the focused option shows the visible Norato-yellow keyboard ring around its error-stroked radio.
 - [x] Accessibility state reports Quarterly selected and focused; selecting Monthly and disabling Error restores the initial selection/status and generated Vue example.
 - [ ] Full focus × error/disabled/required × size cross-product and independent screen-reader review remain open.
+
+## Small-size state interaction follow-up — 320px browser (2026-11-10)
+
+- [x] At 16px, Required + no selection displayed the linked required message and generated `required` example; selecting Yearly cleared the empty simulation and synchronized status/snippet.
+- [x] At 16px, Error + keyboard focus kept the red group/message and showed the yellow ring around the smaller radio. ArrowDown selected Quarterly and updated the Vue example.
+- [x] At 16px, Error + Disabled natively disabled all radios, prioritized the neutral disabled control treatment, retained the error message/invalid semantics, and reported disabled status.
+- [x] Restored Monthly, 20px, optional, enabled, no-error; fresh screenshot confirms the playground reset.
+- [ ] These focused pairs do not prove the complete checked × size × hover/focus × error/disabled/required cross-product or independent screen-reader behavior.

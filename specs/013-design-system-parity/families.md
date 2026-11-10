@@ -75,6 +75,11 @@ Count excluding Button: 48.
 
 - At a fresh 320px browser view, ArrowDown in Error state selects Quarterly, keeps the red error message, and displays the yellow keyboard focus ring without obscuring the error stroke.
 - Restored Monthly/optional/enabled/no-error. Full focus/state cross-product and independent screen-reader review remain open; Radio stays unchecked.
+
+## Radio 16px state pairs — 2026-11-10
+
+- Fresh browser checks cover Required+empty, Error+Focus and Error+Disabled at 16px, including recovery and generated Vue state synchronization. The playground returned to Monthly/20px/default.
+- These added checks narrow the remaining live matrix; they do not cover every checked/size/state combination or the independent screen-reader review, so Radio remains unchecked.
 # Input field radius — 2026-11-02
 
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.
