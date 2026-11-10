@@ -7,4 +7,4 @@
 - [x] Verify disabled rows remain muted without hover surface; restore default selection/expanded state.
 - [x] Update canonical contract, family DoD, Figma rule, request-validation evidence and error log.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass.
-- [ ] Push and verify remote parity.
+- [x] Commit `b9b7bc658dffaadf4d22e6fb512618cf1f26eae8` is present on `origin/master`; worktree was clean after push.
