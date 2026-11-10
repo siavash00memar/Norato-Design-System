@@ -12,8 +12,8 @@ Status meanings:
 | Select | Baseline passed | Matched desktop/mobile specimen and open-menu checks, bounded RTL layout, 48px+ targets, primary selection and keyboard paths are recorded. Full state screenshots and screen-reader review remain Final DoD. |
 | Combobox | Baseline passed | Matched desktop/mobile specimen, bounded field/menu, RTL, 48px+ targets, primary search/selection and keyboard paths are recorded. Cold-load, exhaustive matrix and screen-reader review remain Final DoD. |
 | Checkbox | Baseline passed | Strict DoD is complete; matched desktop/mobile visual review, RTL, ≥48px targets and pointer/keyboard paths are verified. |
-| Radio Button | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
-| Switch | Evidence recorded; audit open | Existing responsive and interaction evidence. |
+| Radio Button | Baseline passed | Matched desktop/mobile gallery and frame comparisons, intrinsic radio circles, RTL, 48px rows and primary pointer/keyboard paths are recorded. Exhaustive live cross-product and screen-reader review remain Final DoD. |
+| Switch | Baseline passed | Matched desktop/mobile comparisons, bounded track geometry, RTL, 48px targets and primary pointer/keyboard paths are recorded; Norato yellow/on and neutral/off states are retained. Exhaustive live cross-product and screen-reader review remain Final DoD. |
 | Segmented Control | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
 | Range | Baseline passed | Strict DoD is complete; desktop/mobile comparison, RTL, ≥48px targets and pointer/keyboard paths are verified. |
 | Rating | Evidence recorded; audit open | Component checklist contains desktop/mobile and keyboard evidence. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **10/48 families (20.8%)** — Split Button, Input, Select, Combobox, Checkbox, Range, Pagination, Stepper, List and Card. The remaining 38 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **12/48 families (25%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Range, Pagination, Stepper, List and Card. The remaining 36 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.
