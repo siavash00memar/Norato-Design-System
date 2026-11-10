@@ -6,6 +6,12 @@
 - [x] Browser confirmed focused row removal returns focus to the same-index surviving row, the prior row when deleting the last one, and the enabled Dropzone when the queue becomes empty.
 - [ ] This pass does not cover native OS file drag/drop, reduced-motion behavior, independent screen-reader speech, or all keyboard/state combinations; File Upload DoD remains open.
 
+## File Upload required semantics — 2026-11-10
+
+- [x] In the live playground, enabling «اجباری» sets `required=true` on the labeled native file input; its empty state reports `validity.valueMissing=true`.
+- [x] The generated Vue example adds `required`; turning the playground option off restores the default and removes the prop from the example.
+- [ ] Form submission/error presentation, native OS file drag/drop, reduced-motion behavior, independent screen-reader speech, and the remaining keyboard/state combinations are not covered here; File Upload DoD remains open.
+
 ## Image browser follow-up — 2026-11-10
 
 - [x] Fresh local Image render showed the proportional 4:3 specimen and the Button-style component page structure.

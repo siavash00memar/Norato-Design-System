@@ -7,7 +7,8 @@
 - [x] Playground and generated usage snippet expose the existing single/multiple mode consistently; single mode uses a non-multiple picker and replaces an existing selection, while multiple mode enforces the count ceiling.
 - [x] Selected is explicitly separate from transfer completion; transport/status/progress are host-controlled. No fake network progress is used.
 - [x] Controlled queue actions for error, retry to uploading, cancel/removal and LTR file name within RTL surroundings were verified with an in-page fixture.
-- [x] Focus-visible state, disabled input/button semantics and 48px action target were observed. Required validation, real drag-over, live screen-reader announcement and reduced-motion behavior remain to verify.
+- [x] Focus-visible state, disabled input/button semantics and 48px action target were observed. The Required playground option sets the native file input's `required` property; on the empty input the browser reports `validity.valueMissing=true`, the input retains its associated label, and the generated usage snippet gains/removes `required` as the option is toggled.
+- [ ] Form submission/error presentation, real drag-over, native OS file drop payload, live screen-reader announcement and reduced-motion behavior remain to verify.
 - [x] Upload Tile is 112×112px and Avatar Upload 96×96px; the small viewport has no horizontal overflow.
 - [x] Button-style component page has inert preview, runnable playground, synchronized copyable Vue example and all nine contract sections.
 - [x] Contract, catalog, package exports, usage example, primitive map, Figma rules, task log, request checklist and error log are synchronized.
