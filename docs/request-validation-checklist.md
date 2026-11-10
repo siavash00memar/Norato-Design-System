@@ -29,6 +29,13 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` passed in this recheck.
 - [ ] Exact reference screenshot comparison, the full visual state gallery, a compiled consumer usage example, and independent screen-reader review remain open. Browser inspection did not test all group keyboard combinations.
 
+## Sidebar 42-state gallery (2026-11-10)
+
+- [x] Added six inert Variants groups totaling 42 combinations from the contract axes; active, hover, disabled, and focus visual treatments are represented without making miniature samples interactive.
+- [x] Chrome desktop screenshot review confirms the Sidebar group, Item state matrix, Sub Item matrix, Section Title, Header, and Footer render in the existing Button-style Variants section with RTL and intrinsic icon proportions.
+- [x] Build and typecheck passed after implementation; full gates are recorded in the matching feature checklist.
+- [ ] Exact reference comparison, 390px/320px browser view, full keyboard interaction matrix, and independent screen-reader review remain unverified.
+
 ## Stepper catalog and checkpoint reconciliation (2026-11-10)
 
 - [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.

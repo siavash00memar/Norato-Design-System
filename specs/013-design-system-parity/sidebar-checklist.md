@@ -78,4 +78,5 @@
 - [x] `pnpm --filter @norato/vue-app build` passed (Vite production build completed).
 - [x] `git diff --check` passed before this checklist update.
 - [ ] The usage example is visible in the browser and matches the public export names; compiling the rendered documentation snippet as a standalone consumer project is not yet verified.
-- [ ] The 42 combinations are currently described as text in the Variants section; an actual state gallery is not rendered. Exact reference comparison, complete group-keyboard matrix, and independent screen-reader review remain open.
+- [x] Six static gallery groups render the contract axes for Sidebar (4), Item (20), Sub Item (8), Section Title (2), Header (4), and Footer (4), totaling 42; samples are inert and do not add undersized interactive targets.
+- [ ] Exact desktop and 390px/320px visual comparison, complete group-keyboard matrix, standalone consumer compilation, and independent screen-reader review remain open.

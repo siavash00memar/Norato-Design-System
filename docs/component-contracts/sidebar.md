@@ -1,7 +1,7 @@
 # Sidebar — قرارداد کامپوننت نوراتو
 
 **حوزه:** Navigation  
-**وضعیت نوراتو:** Adapted (adapter موجود است؛ DoD موبایل/مرورگر باز است)
+**وضعیت نوراتو:** Adapted (adapter و گالری ایستای ۴۲ حالت وجود دارند؛ DoD جامع مرورگر و screen reader باز است)
 
 ## Preview
 
@@ -29,7 +29,7 @@
 - Section Title: Collapsed false/true (۲)
 - Header: Type Brand/Workspace × Collapsed false/true (۴)
 - Footer: Type User/Card × Collapsed false/true (۴)
-- مرجع مرجع طراحی مجموعاً ۴۲ حالت را در ۶ جزء ثبت می‌کند. Adapter فعلی زیرمجموعهٔ اجرایی اصلی را پوشش می‌دهد؛ ماتریس کامل هنوز DoD باز است.
+- گالری ایستا در همین بخش، ۴۲ ترکیب این شش خانواده را با نمونه‌های inert نمایش می‌دهد. Mobile Trigger/Drawer و Active Indicator در Anatomy ثبت می‌شوند، اما در شمارش ۴۲ گونه نیستند.
 
 ## Sizes
 
@@ -37,7 +37,7 @@ The inert specimen panel is 216×222px to preserve the measured reference propor
 
 ## States
 
-Default, hover, active, disabled and focus for items; default, hover, active and focus for subitems. Adapter's state matrix is still under browser verification.
+Default, hover, active, disabled and focus for items; default, hover, active and focus for subitems. The Variants gallery shows the visual states; exhaustive live behavior, mobile geometry, and independent screen-reader review remain under verification.
 
 ## Parts
 

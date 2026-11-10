@@ -11,6 +11,13 @@ type Entry = { id: number; group: string; label: string; detail: string; source:
 type RadioMatrixState = { id: string; label: string; kind: string }
 type SwitchMatrixState = { id: string; label: string; kind: string }
 type SegmentedMatrixVariant = { id: string; selected: boolean; state: string; stateLabel: string }
+type SidebarVisualVariant = { id: string; state: string; collapsed: boolean; label: string; style?: string; size?: string; kind?: string }
+const sidebarStyleVariants: SidebarVisualVariant[] = ['Glass', 'Bar'].flatMap(style => [false, true].map(collapsed => ({ id: `sidebar-${style}-${collapsed}`, state: 'default', collapsed, label: `${style} · ${collapsed ? 'جمع‌شده' : 'باز'}`, style })))
+const sidebarItemVariants: SidebarVisualVariant[] = [false, true].flatMap(collapsed => ['Small', 'Medium'].flatMap(size => ['default', 'hover', 'active', 'disabled', 'focus'].map(state => ({ id: `item-${collapsed}-${size}-${state}`, state, collapsed, size, label: `${collapsed ? 'جمع‌شده' : 'باز'} · ${size} · ${state}` }))))
+const sidebarSubItemVariants: SidebarVisualVariant[] = ['Small', 'Medium'].flatMap(size => ['default', 'hover', 'active', 'focus'].map(state => ({ id: `sub-${size}-${state}`, state, collapsed: false, size, label: `${size} · ${state}` })))
+const sidebarSectionVariants: SidebarVisualVariant[] = [false, true].map(collapsed => ({ id: `section-${collapsed}`, state: 'default', collapsed, label: collapsed ? 'جمع‌شده' : 'باز' }))
+const sidebarHeaderVariants: SidebarVisualVariant[] = ['Brand', 'Workspace'].flatMap(kind => [false, true].map(collapsed => ({ id: `header-${kind}-${collapsed}`, state: 'default', collapsed, kind, label: `${kind === 'Brand' ? 'برند' : 'فضای کاری'} · ${collapsed ? 'جمع‌شده' : 'باز'}` })))
+const sidebarFooterVariants: SidebarVisualVariant[] = ['User', 'Card'].flatMap(kind => [false, true].map(collapsed => ({ id: `footer-${kind}-${collapsed}`, state: 'default', collapsed, kind, label: `${kind === 'User' ? 'کاربر' : 'کارت'} · ${collapsed ? 'جمع‌شده' : 'باز'}` })))
 
 const props = defineProps<{ name: string; section: string; body: string; copiedKey?: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()
@@ -445,6 +452,52 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'Variants'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="Variants" />
+      <div v-else-if="name === 'Sidebar'" class="sidebar-variant-gallery" aria-hidden="true" inert>
+        <section class="sidebar-variant-family" aria-label="چهار حالت Sidebar">
+          <header><strong>Sidebar</strong><span>۲ سبک × باز/جمع‌شده · ۴</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-sidebar">
+            <article v-for="variant in sidebarStyleVariants" :key="variant.id" class="sidebar-variant-sample" :data-style="variant.style" :data-collapsed="variant.collapsed" :data-state="variant.state">
+              <div class="sidebar-mini" :class="{ 'is-collapsed': variant.collapsed }"><b class="sidebar-mini-brand"><i>ن</i><span v-if="!variant.collapsed">نوراتو</span></b><small v-if="!variant.collapsed">فضای کاری</small><span class="sidebar-mini-row is-active"><i>⌂</i><span v-if="!variant.collapsed">نمای کلی</span></span><span class="sidebar-mini-row"><i>▦</i><span v-if="!variant.collapsed">پروژه‌ها</span></span></div>
+              <small class="sidebar-variant-label">{{ variant.label }}</small>
+            </article>
+          </div>
+        </section>
+        <section class="sidebar-variant-family" aria-label="بیست حالت Item">
+          <header><strong>Item</strong><span>باز/جمع‌شده × Small/Medium × ۵ حالت · ۲۰</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-items">
+            <article v-for="variant in sidebarItemVariants" :key="variant.id" class="sidebar-variant-sample" :data-size="variant.size" :data-state="variant.state" :data-collapsed="variant.collapsed">
+              <span class="sidebar-mini-row"><i>▦</i><span v-if="!variant.collapsed">پروژه‌ها</span></span><small class="sidebar-variant-label">{{ variant.label }}</small>
+            </article>
+          </div>
+        </section>
+        <section class="sidebar-variant-family" aria-label="هشت حالت Sub Item">
+          <header><strong>Sub Item</strong><span>۲ اندازه × ۴ حالت · ۸</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-subitems">
+            <article v-for="variant in sidebarSubItemVariants" :key="variant.id" class="sidebar-variant-sample" :data-size="variant.size" :data-state="variant.state">
+              <span class="sidebar-mini-row sidebar-mini-subitem"><i>•</i><span>فعال</span></span><small class="sidebar-variant-label">{{ variant.label }}</small>
+            </article>
+          </div>
+        </section>
+        <section class="sidebar-variant-family" aria-label="دو حالت Section Title">
+          <header><strong>Section Title</strong><span>باز/جمع‌شده · ۲</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-parts">
+            <article v-for="variant in sidebarSectionVariants" :key="variant.id" class="sidebar-variant-sample" :data-collapsed="variant.collapsed"><small v-if="!variant.collapsed" class="sidebar-mini-section">فضای کاری</small><span v-else class="sidebar-mini-row"><i>⋯</i></span><small class="sidebar-variant-label">{{ variant.label }}</small></article>
+          </div>
+        </section>
+        <section class="sidebar-variant-family" aria-label="چهار حالت Header">
+          <header><strong>Header</strong><span>برند/فضای کاری × باز/جمع‌شده · ۴</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-parts">
+            <article v-for="variant in sidebarHeaderVariants" :key="variant.id" class="sidebar-variant-sample" :data-collapsed="variant.collapsed" :data-kind="variant.kind"><span class="sidebar-mini-row"><i>ن</i><span v-if="!variant.collapsed">{{ variant.kind === 'Brand' ? 'نوراتو' : 'فضای کاری' }}</span></span><small class="sidebar-variant-label">{{ variant.label }}</small></article>
+          </div>
+        </section>
+        <section class="sidebar-variant-family" aria-label="چهار حالت Footer">
+          <header><strong>Footer</strong><span>کاربر/کارت × باز/جمع‌شده · ۴</span></header>
+          <div class="sidebar-variant-grid sidebar-variant-grid-parts">
+            <article v-for="variant in sidebarFooterVariants" :key="variant.id" class="sidebar-variant-sample" :data-collapsed="variant.collapsed" :data-kind="variant.kind"><span class="sidebar-mini-row"><i>{{ variant.kind === 'User' ? 'ن' : '⋯' }}</i><span v-if="!variant.collapsed">{{ variant.kind === 'User' ? 'نگار احمدی' : 'فضای کاری' }}</span></span><small class="sidebar-variant-label">{{ variant.label }}</small></article>
+          </div>
+        </section>
+        <span class="visual-kind">۴۲ حالت از قرارداد Sidebar · نمایش ایستا و غیرتعاملی</span>
+      </div>
       <div v-else-if="name === 'Segmented Control'" class="segmented-item-matrix" aria-label="ماتریس ۶۴ حالت Segment Item" aria-hidden="true" inert>
         <section v-for="group in segmentedMatrixGroups" :key="group.id" class="segmented-item-matrix-card" :data-style="group.style.id" :data-size="group.size.id">
           <header><strong>{{ group.style.label }}</strong><span>Segment Item · {{ group.size.label }}</span></header>
