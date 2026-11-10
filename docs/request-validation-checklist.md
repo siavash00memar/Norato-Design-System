@@ -2545,6 +2545,12 @@
 - [x] An empty effective list rendered no visual or semantic items and announced «مرحله‌ای برای نمایش وجود ندارد.» with no `aria-current` entry.
 - [x] Playground was restored to the default four-step horizontal state with Address current. Keyboard/focus matrix and independent screen-reader review remain open in `stepper-checklist.md`.
 
+# Stepper playground keyboard path — 2026-11-10
+
+- [x] ArrowDown opens the variant selector and focuses the selected option; ArrowDown + Enter selects Vertical and updates the generated Vue snippet.
+- [x] Escape closes and restores focus. Home + Enter returns to Horizontal; Address and the default code sample are restored.
+- [ ] Exhaustive keyboard/focus combinations and independent screen-reader review remain open in `stepper-checklist.md`.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.

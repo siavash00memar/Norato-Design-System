@@ -14,7 +14,7 @@
 - [x] Optional descriptions and three Step Indicator sizes are represented; Dots Small/Medium/Large scaling and circular ring geometry were reviewed in the live playground.
 - [x] Runtime handling for blank/duplicate ids, invalid current id and empty lists was exercised in the 2026-11-10 follow-up below.
 - [x] Stepper has no false buttons/links; one current step in the named ordered list and polite “step N of M” status observed in the browser accessibility tree.
-- [ ] Host playground fields preserve a 36px visual height with a 48px pointer target and visible yellow keyboard ring. The exact target and ring were rechecked on mobile; full keyboard-operation and focus/target matrix remains open. Loading/disabled do not apply to this read-only adapter.
+- [x] Host playground fields preserve a 36px visual height with a 48px pointer target and visible yellow keyboard ring. ArrowDown opens the selector; ArrowDown + Enter updates the selection and snippet; Escape closes and restores focus. Loading/disabled do not apply; exhaustive focus/target matrix remains open.
 - [ ] Independent screen-reader review recorded or explicitly remains open.
 
 ## Technical gates
@@ -38,3 +38,9 @@
 - [x] An all-blank list renders no visual or semantic step rows, sets no false `aria-current`, and announces «مرحله‌ای برای نمایش وجود ندارد.»
 - [x] Restored the playground to its default four-step horizontal view with Address current.
 - [ ] Full keyboard-operation/focus matrix, matched mobile comparison and independent screen-reader review remain open.
+
+## Stepper playground keyboard path — 2026-11-10
+
+- [x] With the default Horizontal variant, ArrowDown opens the first playground selector and focuses the selected option; ArrowDown moves to Vertical, and Enter updates the visible variant and generated snippet.
+- [x] Escape closes the menu and returns focus to the trigger. Home + Enter restores the Horizontal default; Address remains the current step and the menu is closed.
+- [ ] Full control-by-control keyboard/focus matrix, matched mobile reference comparison and independent screen-reader review remain open.
