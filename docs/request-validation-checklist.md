@@ -3064,3 +3064,8 @@
 - [x] رندر تازهٔ دسکتاپ محلی و مرجع مقایسه شد: حباب ورودی در راست و خروجی در چپ است؛ متن، زمان و نشان خوانده‌شدن بدون کشیدگی در حباب‌ها می‌مانند. زرد Norato برای پیام خروجی حفظ شده است.
 - [x] checklist خانواده مقایسهٔ viewport باریک، اندازه‌های 390/320 بدون overflow، هدف‌های 48px و مسیرهای اصلی ارسال/صفحه‌کلید را ثبت می‌کند؛ مقایسهٔ عمودی کامل playground و صفحه‌خوان مستقل برای DoD نهایی بازند.
 - [x] Baseline مستند پس از این ممیزی: 34/48 خانواده (70.8%).
+## Progress desktop specimen alignment — 2026-11-10
+
+- [x] Fresh local/reference browser renders showed the visual specimen value differed (local 62%, reference 50%). Updated both the visual specimen and live playground default to 50% and label “در حال آپلود”; the post-edit browser accessibility tree confirms the live playground exposes value 50.
+- [x] Post-edit desktop browser screenshot confirms the visual specimen shows 50%, the expected Persian label, RTL placement, and Norato yellow fill.
+- [ ] Matched mobile comparison against the reference is not available in this browser session; Progress remains open in the Baseline ledger until that evidence is recorded.
