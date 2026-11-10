@@ -2491,6 +2491,7 @@
 - [x] At 390×844, local frame is 326×300px at x=24.5px vs 327×300px at x=24px in the reference; both documents are 375/375px wide.
 - [x] At 320×844, local frame is 256×300px at x=24.5px vs 257×300px at x=24px; local document is 305/305px while reference scroll width reaches 326px.
 - [x] The one-token mobile cap keeps the 48px interaction target and centered 36px capsule intact. Email title/icon remain adjacent and RTL; placeholder remains Vazirmatn Light 12px in `#a1a1a1`.
+- [x] Input Radius DoD reconciliation: this closes mobile geometry for the top email specimen only; it does not claim the full adapter/state mobile matrix or a computed radius measurement at those two widths.
 - [ ] This frame correction does not complete Input's full adapter-state visuals, consuming-playground consistency or independent screen-reader review.
 
 ## Select desktop frame width correction — 2026-11-09
