@@ -31,3 +31,10 @@
 - [x] design reference and Norato mobile renders were captured at 390px and 320px; the Norato screenshots and exact viewport geometry were reviewed. design reference's own navigation includes offscreen links in its DOM, so element bounds outside the viewport are not treated as document overflow when its root document width remains at the viewport width.
 - [ ] Independent screen-reader review and full exhaustive behavior cross-product remain open; DoD is not closed until these are complete.
 - [x] Verified checkpoint `580ba73` is pushed to `origin/master`; remote synchronization is confirmed.
+
+## Matched preview-frame width follow-up — 2026-11-10
+
+- [x] Same-window 1920×903 browser comparison measured the local frame at 632×300px and the reference frame at 636×300px.
+- [x] Added a desktop-only 4px allowance with `--norato-space-1`, capped by the shared frame token. After HMR, the local frame measures 635.98×300px; RTL content remains centered at 625.98×216.89px and the document has no horizontal overflow.
+- [x] The rule applies only above 600px; prior 390px/320px mobile frame evidence remains applicable because this selector is inactive at those widths. A fresh post-change narrow capture was unavailable.
+- [ ] Independent screen-reader review and exhaustive behavior cross-product remain open. This follow-up does not close Empty State DoD.

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import './component-specimen.css'
+import './empty-state-specimen.css'
 import './tabs-specimen.css'
 import './breadcrumbs-specimen.css'
 import './carousel-specimen.css'

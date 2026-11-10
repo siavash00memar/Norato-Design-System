@@ -1,0 +1,5 @@
+@media (min-width: 601px) {
+  .component-sample.sample-button-specimen:not(.compact):has(.norato-empty-state) {
+    inline-size: min(calc(100% + var(--norato-space-1)), var(--norato-split-button-preview-frame-inline-size));
+  }
+}

@@ -2681,3 +2681,10 @@
 - [x] In the live Input Vue playground, Error-only Textarea renders a 1px semantic red Stroke; disabled-only renders the neutral `#e8e8e8` Stroke.
 - [x] Combined Error+Disabled now renders a 1px `#e8e8e8` Stroke at 108px medium size. Native disabled, `aria-invalid=true`, RTL, the visible error message and the counter references in `aria-describedby` are retained and resolve to existing elements.
 - [x] The Playground was returned to error-off/disabled-off. Full Input state visuals and independent screen-reader review remain open.
+
+# Empty State preview frame width — 2026-11-10
+
+- [x] At the matched 1920×903 browser window, the reference stage measured 636×300px; the local stage measured 632×300px before correction.
+- [x] The desktop-only `--norato-space-1` allowance now gives the local stage a 635.98×300px frame. The RTL specimen remains centered and intrinsically sized at 625.98×216.89px; document width remains 1905px with no horizontal overflow.
+- [x] The new rule is restricted to viewports above 600px; existing narrow viewport rules are unaffected. No fresh post-change 390px/320px capture was available in this session.
+- [ ] Independent screen-reader review and exhaustive Empty State behavior coverage remain open in `specs/013-design-system-parity/empty-state-checklist.md`.
