@@ -10,7 +10,8 @@
 - [x] Guides Off is the default, On renders the only tree-level variant, and toggling guides does not alter selection or expansion.
 - [x] RTL indentation is 20px per depth; file rows add the 16px alignment offset; arrows face down/open and left/closed; folder/file SVGs keep intrinsic 20px geometry.
 - [x] Default, selected, disabled and keyboard-focus states use semantic Norato colors without blue accent or stretch.
-- [ ] Fine-pointer Chrome screenshots compared the unselected inert row before/after pointer hover; a subtle neutral row surface appears on hover while tree content and the page accessibility tree stay unchanged. Selected/disabled/focused hover combinations and coarse-pointer behavior remain open; see `updates/2026-11-10-tree-view-pointer-hover/`.
+- [x] Fine-pointer Chrome review confirms neutral hover only on enabled, unselected rows; selected rows keep the yellow selection surface, disabled rows do not gain hover, and the keyboard focus outline remains distinct. See `updates/2026-11-10-tree-view-pointer-hover/` and `updates/2026-11-10-tree-view-selected-hover-priority/`.
+- [ ] Coarse-pointer/touch hover behavior remains open; reduced-motion and independent screen-reader review remain open below.
 - [x] At desktop, 390×844 and 320×844, Tree View and its documentation content stay within the viewport. Document widths are 375px/305px; interactive rows remain 48px high, with intrinsic 18px icons and 16px chevrons. Fixed a narrow-width overflow in the shared accessibility contract cards; Tree View and Input now both measure 305px document width at 320px.
 
 ## Behavior and accessibility
@@ -23,4 +24,4 @@
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
-- [ ] Pointer-only hover visual review, reduced-motion emulation and independent screen-reader review remain before closing the family DoD. Responsive measurements are recorded; the shared accessibility card correction is verified on Tree View and Input.
+- [ ] Coarse-pointer hover, reduced-motion emulation and independent screen-reader review remain before closing the family DoD. Fine-pointer hover is verified; responsive measurements are recorded, and the shared accessibility card correction is verified on Tree View and Input.

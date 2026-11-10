@@ -1660,3 +1660,11 @@
 - **Correction:** Added a Table-only 4px token-based desktop width extension, capped by the shared specimen limit; mobile and live adapter styles are untouched.
 - **Verification:** Source review confirms the correction is desktop-scoped. Post-change browser measurement and mobile no-overflow recheck remain open because the local browser connection timed out.
 - **Prevention:** Record frame and inner-content geometry separately, and compare each measured axis before marking visual parity complete.
+
+## ERR-214 — Tree View hover overrode selected yellow (2026-11-10)
+- **Observed:** In live Chrome, selected README stayed `aria-selected` but changed to the neutral surface when hovered.
+- **Cause:** The enabled-row hover selector had greater specificity than the selected-row selector.
+- **Correction:** Fine-pointer neutral hover now excludes both disabled and selected rows; selected yellow and the keyboard focus outline remain separate.
+- **Verification:** Live browser screenshots show selected yellow under hover and focus, while a globally disabled unselected row gains no hover surface and cannot be selected. Playground defaults were restored. Token/catalog/typecheck/build/diff gates are recorded in the follow-up checklist.
+- **Remaining:** Coarse-pointer/touch behavior, reduced-motion emulation and independent screen-reader review remain open; this fix does not close Tree View DoD.
+- **Prevention:** Verify cascade priority for selected, disabled, hover and focus combinations in the rendered browser, not only from AX state.

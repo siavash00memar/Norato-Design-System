@@ -441,7 +441,9 @@
 - Use the five design reference row states: Default, Hover, Selected, Disabled and Focus. Norato’s selected surface and 2px focus outline use its yellow palette; the disabled row stays muted. Do not carry over the retired checkbox-tree model in ERR-016–023.
 - Keep the inert sample in the Button-sized dotted 288px frame, with a compact centered glass panel and Default marker. Runtime rows retain the 48px hit target. Reka TreeRoot/TreeItem owns tree roles, roving focus, direction-aware navigation and typeahead.
 - Reset the focused TreeItem root outline so the only keyboard indicator is the 2px Norato-yellow row ring with the 2px offset; do not let the primitive's browser-default ring appear alongside it.
-- **Remaining:** exact 390px/320px viewport, selected/disabled/focused hover priority, coarse-pointer/touch rendering, reduced-motion emulation and independent screen-reader review are not verified; Tree View DoD remains open.
+- Fine-pointer neutral hover applies only to enabled, unselected rows; selected rows keep the yellow surface, disabled rows get no hover surface, and keyboard focus retains a separate yellow outline.
+- **Verified (2026-11-10):** live Chrome confirmed selected README remains yellow while hovered, keyboard focus remains distinct, and a globally disabled unselected row does not gain hover or selection. Playground returned to enabled, README-selected and the default expanded folders.
+- **Remaining:** exact 390px/320px viewport, coarse-pointer/touch rendering, reduced-motion emulation and independent screen-reader review are not verified; Tree View DoD remains open.
 
 ## Alert — 2026-11-08
 - Use design reference's 20 combinations: five status tones, Soft/Glass surface and Inline/Expanded composition. Preserve the status icon right and optional close action left in RTL.

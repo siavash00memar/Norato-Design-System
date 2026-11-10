@@ -8,9 +8,10 @@
 
 ## Tree View pointer hover follow-up (2026-11-10)
 
-- [x] Source correction scopes the existing neutral hover surface to `hover: hover` and `pointer: fine`; selected, disabled and keyboard-focus rules are untouched.
+- [x] Source correction scopes the existing neutral hover surface to `hover: hover` and `pointer: fine`, and excludes selected rows so their yellow surface wins.
 - [x] Same-page Chrome screenshots compare the inert Tree View row before/after fine-pointer hover; a subtle neutral surface appears, and the accessibility tree remains unchanged.
-- [ ] Selected/disabled/focused hover priority and coarse-pointer/touch rendering remain unverified. See `specs/013-design-system-parity/updates/2026-11-10-tree-view-pointer-hover/checklist.md`.
+- [x] Follow-up live Chrome review confirms selected hover remains yellow, keyboard focus outline stays separate, and a globally disabled row remains muted and unselectable under the pointer.
+- [ ] Coarse-pointer/touch rendering remains unverified. See `specs/013-design-system-parity/updates/2026-11-10-tree-view-selected-hover-priority/checklist.md`.
 
 ## Menu narrow viewport recheck (2026-11-10)
 

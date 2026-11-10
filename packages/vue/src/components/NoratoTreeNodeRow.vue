@@ -64,7 +64,7 @@ const rowIndent = (node: NoratoTreeNode, level: number) => {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .norato-tree-item__row:hover:not([data-disabled]) { background: var(--norato-color-surface-subtle); }
+  .norato-tree-item__row:hover:not([data-disabled]):not([data-selected="true"]) { background: var(--norato-color-surface-subtle); }
 }
 .norato-tree-item__row[data-selected="true"] { background: var(--norato-color-warning-container); }
 .norato-tree-item:focus-visible > .norato-tree-item__row { outline: var(--norato-border-focus) solid var(--norato-color-brand-yellow); outline-offset: var(--norato-tree-focus-offset); }
