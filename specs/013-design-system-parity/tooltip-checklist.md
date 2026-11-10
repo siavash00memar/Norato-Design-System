@@ -28,3 +28,10 @@
 - [x] The frame remains centered, with the same rounded dotted glass surface, RTL content, and centered tooltip/trigger composition.
 - [x] Fresh mobile DOM captures after async settlement: at 390×844 the preview is 358×431.09px and the sample frame is 358×300px; at 320×844 they are 288×431.09px and 288×300px. Both document client/scroll widths equal the viewport (390/390 and 320/320), so there is no horizontal overflow and the stage retains its 300px height.
 - [ ] Independent screen-reader review remains open; Tooltip DoD stays open.
+
+## Tooltip mobile frame alignment — 2026-11-11
+
+- [x] At the matched 390 CSS-pixel mobile viewport, the reference stage measures 327.2×300px; the local stage now uses the shared 328px mobile cap and remains 300px tall.
+- [x] At the 320px narrow viewport, the local stage shrinks to available width (about 273×300px) without document overflow; the component-specific rule does not alter other preview frames.
+- [x] Re-rendered reference and local pages confirm centered, intrinsic Tooltip trigger/bubble and RTL placement; the reference uses a dark bubble while local Norato retains its semantic palette.
+- [ ] Independent screen-reader review remains Final DoD.

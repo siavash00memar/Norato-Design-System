@@ -11,5 +11,6 @@
 - [x] Verify shared skip-delay timing between sibling Tooltip triggers in the browser.
 - [ ] Obtain independent screen-reader review; keep DoD open until evidence is recorded.
 - [x] Run all engineering gates; record open DoD and checkpoint GitHub.
-- [ ] Re-measure the Tooltip 1265×720 specimen frame after its scoped 4px semantic-token extension; verify Button, Input and Select dimensions remain unchanged.
+- [x] Re-measure the Tooltip specimen after its scoped 4px desktop extension: at a 1249×569 CSS viewport it is 635.984×300px against the 636×300px reference; Button/Input/Select remain 631.984/635.984/633.984px.
+- [x] Match the mobile Tooltip specimen width to the reference using the existing shared mobile-frame token; keep the change page-scoped and verify narrow-width containment.
 

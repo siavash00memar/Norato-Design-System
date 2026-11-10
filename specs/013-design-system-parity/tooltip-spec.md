@@ -10,5 +10,6 @@ One reusable Vue adapter with 16 combinations: Dark/Glass × Simple/Rich × Top/
 - Standalone `NoratoTooltip` supplies a default provider; sibling instances can share 500ms delay and 300ms skip-delay through `NoratoTooltipProvider`.
 - Use Reka Tooltip primitive, Norato tokens, Estedad title, Vazirmatn body; brand accent/focus is yellow, no design reference blue.
 - Never stretch arrow/icon or clip text; responsive viewport collision and reduced motion are respected.
+- On mobile, cap the inert sample frame at the shared 328px mobile preview width and center it; at narrower widths it must shrink to available space without overflow.
 - Page structure mirrors Button: preview, executable Vue API/playground, nine contract sections, usage snippet, source metadata.
 - DoD includes browser comparison with design reference, RTL, all variants, keyboard/accessibility, 390/320 and required repository gates.

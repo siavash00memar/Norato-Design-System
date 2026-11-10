@@ -3069,3 +3069,9 @@
 - [x] Fresh local/reference browser renders showed the visual specimen value differed (local 62%, reference 50%). Updated both the visual specimen and live playground default to 50% and label “در حال آپلود”; the post-edit browser accessibility tree confirms the live playground exposes value 50.
 - [x] Post-edit desktop browser screenshot confirms the visual specimen shows 50%, the expected Persian label, RTL placement, and Norato yellow fill.
 - [ ] Matched mobile comparison against the reference is not available in this browser session; Progress remains open in the Baseline ledger until that evidence is recorded.
+## Tooltip mobile frame correction — 2026-11-11
+
+- [x] Same-width browser comparison found the 390px local Tooltip frame was 343.2×300px against 327.2×300px in the reference. Scoped the correction to the Tooltip specimen with the existing 328px mobile preview token.
+- [x] Existing 320px local rendering remains within available width; no global frame or live Tooltip control sizing was changed.
+- [x] Post-edit browser measurement confirms the local stage is 328×300px at 390px browser width (375px effective content width), within 1px of the reference's 327.2×300px stage; document client and scroll widths match.
+- [x] The 320px local capture from the pre-correction pass measured 272.8×300px without overflow; the added 328px maximum does not constrain that narrower frame. Token/catalog/typecheck/build/diff gates pass after the change.

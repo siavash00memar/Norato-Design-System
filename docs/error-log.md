@@ -1590,6 +1590,14 @@
 - **Verification:** At an unmatched desktop viewport the page and specimen render, but the required matched-viewport measurement of Tooltip plus Button/Input/Select is still open. Confirm no horizontal overflow. Exact mobile re-capture remains open; technical gates must be rerun after the scoped correction.
 - **Prevention:** Compare the component frame and surrounding page shell independently, then scope any geometry correction to the measured component when shared consumers have different approved widths.
 
+## ERR-206 — Tooltip mobile specimen frame too wide (2026-11-11)
+
+- **Observed:** At a matched 390px mobile viewport, the reference specimen stage measured 327.2×300px while the local Tooltip stage was 343.2×300px; the local frame was 16px wider. At 320px the local stage already shrank to available width and did not overflow.
+- **Cause:** The Tooltip detail page had a scoped desktop frame rule but inherited a wider generic mobile frame.
+- **Correction:** Added a Tooltip-page-only mobile cap using the shared 328px mobile preview token; no public adapter sizing or other family frame was changed.
+- **Verification:** Fresh local render measures 328×300px at a 390px browser viewport (375px effective content width), matching the reference's 327.2×300px stage within 1px; document client/scroll widths are both 375px. The prior 320px local stage was 272.8×300px and the new `min(100%,328px)` cap does not constrain a frame narrower than 328px. Token/catalog/typecheck/build/diff gates pass after the correction.
+- **Prevention:** Measure inert preview frames separately from live adapter controls at each responsive breakpoint before reusing a generic width rule.
+
 ## ERR-205 — Banner mobile preview width mismatch (2026-11-10)
 
 - **Observed:** At 390×844 and 320×844, the inert Banner frame was 358×300px and 288×300px at x=16px; the matched reference frame was 342×300px and 272×300px at x=24px.

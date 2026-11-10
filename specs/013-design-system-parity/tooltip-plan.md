@@ -7,3 +7,4 @@
 5. Register package export, catalog readiness, usage example and full contract.
 6. Verify actual browser render against design reference; exercise keyboard and pointer dismissal, placement and RTL; test responsive overflow at 390/320.
 7. Run token/catalog/typecheck/build/diff gates and record any remaining DoD items; checkpoint GitHub after coherent gates.
+8. For the 2026-11-11 mobile frame correction, keep the width rule scoped to Tooltip and reuse the semantic mobile preview cap; recheck 390px against reference and confirm 320px remains bounded.
