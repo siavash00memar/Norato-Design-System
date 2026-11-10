@@ -4,4 +4,4 @@
 - [x] T002 Reconcile the family `Done` mark against the actual open DoD items.
 - [x] T003 Add a canonical Date Picker family checklist with accurate completion boundaries.
 - [x] T004 Record the status-tracking defect and its correction in the family ledger and error log.
-- [ ] T005 Run required gates, commit/push, and confirm remote parity.
+- [x] T005 Token/catalog/TypeScript/build/diff gates pass; commit `c12a7fc` is pushed to `origin/master`.
