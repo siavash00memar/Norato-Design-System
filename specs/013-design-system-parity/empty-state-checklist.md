@@ -46,3 +46,9 @@
 - [x] The mobile frame uses a 16px total inset from the existing `--norato-space-4` token. Local RTL content remains within the frame at 317×216.89px at 390px and 247×237.28px at 320px; it does not stretch.
 - [x] After resetting the temporary viewport, desktop frame remains 635.98×300px and document client/scroll widths remain 1905/1905px.
 - [ ] Independent screen-reader review, custom slot cases and exhaustive behavior cross-product remain open; Empty State DoD is not closed.
+
+## Baseline visual re-audit — 2026-11-10
+
+- [x] Fresh matched desktop browser renders show the same centered RTL hierarchy: visual, title, description, then secondary and primary actions. The local preview uses Norato yellow for the primary action and a soft visual halo; no stretch or clipping is visible.
+- [x] Existing exact 390×844 and 320×844 matched local/reference frame measurements, bounded RTL content, ≥48px action targets and primary keyboard path cover the remaining Baseline gates.
+- [ ] Independent screen-reader review, custom slot cases and exhaustive behavior combinations remain open for Final DoD.
