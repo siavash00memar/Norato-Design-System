@@ -58,6 +58,7 @@
 
 ## Fresh visual and attachment evidence (2026-11-10)
 
+- [x] Same-viewport reference/local desktop comparison at 1265×713: reference static frame is 636×300px; Norato's shared Button specimen frame is 632×300px. Height and two-bubble composition align; local frame is 4px narrower (about 0.6%). It uses the shared specimen class, so the width delta comes from the page content constraint, not a Chat-only legacy override.
 - [x] Captured and visually reviewed all ten local sender × type bubbles at the same 1265×713 viewport. The saved contact sheet is `evidence/chat-10-variants-2026-11-10.png`; incoming/outgoing alignment, intrinsic bubble geometry, image ratio, file/voice layout and Norato yellow were inspected. The source reference displays only four static samples, so no direct reference captures exist for its other six combinations.
 - [x] Mobile playground measured in same-origin browser frames: at 390×844, document 390/390px, stage 358×478.34px, RTL; at 320×844, document 320/320px, stage 288×495.13px, RTL. No horizontal page overflow.
 - [x] Empty timeline reviewed at 390×844 after hiding fixture messages and typing indicator: zero message nodes, no date divider or typing indicator, RTL remains, stage is 358×360px and composer is 356×65px. Screenshot: `evidence/chat-empty-mobile-390-2026-11-10.png`.

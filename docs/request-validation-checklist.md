@@ -103,6 +103,7 @@
 
 ## Chat 10-state visuals, mobile playground and attachment (2026-11-10)
 
+- [x] Same-viewport 1265×713 reference/local specimen comparison: reference frame 636×300px, Norato shared Button specimen frame 632×300px; matching height and composition, with a 4px local width difference caused by the page content constraint.
 - [x] Same-viewport screenshot contact sheet covers all 10 local incoming/outgoing × text/reply/image/file/voice bubbles; saved at `specs/013-design-system-parity/evidence/chat-10-variants-2026-11-10.png`. The source reference exposes only four static samples, so six combinations cannot be matched directly.
 - [x] Same-origin mobile browser: at 390×844 the document is 390/390px and stage is 358×478.34px; at 320×844 the document is 320/320px and stage is 288×495.13px. RTL is preserved and no horizontal overflow is present.
 - [x] Empty timeline screenshot reviewed at 390px after hiding fixtures and typing indicator; stage 358×360px, composer 356×65px, RTL, zero messages and no horizontal document overflow. Evidence: `specs/013-design-system-parity/evidence/chat-empty-mobile-390-2026-11-10.png`.
