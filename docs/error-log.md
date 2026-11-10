@@ -1614,10 +1614,10 @@
 - **Verification:** The page now has one usage section and one playground. Browser checks cover mode, variant, size, action/menu selection, disabled/loading, keyboard dismissal/focus restoration, RTL and desktop/390px/320px no-overflow behavior.
 - **Prevention:** When adding component playground branches, verify the actual rendered route; template presence alone does not prove a conditional branch is reachable.
 
-## ERR-208 — Stepper playground fields had undersized targets and invisible keyboard focus (2026-11-10)
+## ERR-208 — Shared playground selects had undersized targets and invisible focus (2026-11-10)
 
-- **Observed:** Stepper's visible 36px playground fields had only a 36px pointer target, and the shared trigger focus rule removed the outline and shadow.
-- **Cause:** The shared playground field height is optimized for the user's 36px input appearance, but the Stepper page did not extend the hit area or restore the documented outer focus ring.
-- **Correction:** Added a transparent pseudo-element that extends only Stepper playground select hit areas to 48px. Restored a 2px yellow Norato focus ring with the amber contrast edge; the visible field remains 36px.
-- **Verification:** At 320px, the transparent target computes to 48px and an actual browser click 3px above the visible field opened the menu. At 390px, keyboard focus exposes the 2px yellow ring. Both mobile documents have no horizontal overflow; the four-step horizontal list scrolls internally and the 320px vertical list remains bounded at 270×208.8px.
-- **Prevention:** Keep the visible field height separate from its interaction target and verify both hit geometry and keyboard focus in the rendered browser.
+- **Observed:** Shared 36px playground select fields had no larger pointer target, while legacy focus rules removed their visible ring across component pages.
+- **Cause:** The shared field CSS treated its visible height as the full interaction target; multiple page and global selectors suppressed the focus indicator.
+- **Correction:** Centralized shared trigger treatment in `playground-select-targets.css`. The capsule remains 36px tall, a transparent pseudo-element provides the 48px target, and keyboard focus uses the 2px yellow ring with the amber contrast edge. Removed conflicting focus resets and page-specific duplicates.
+- **Verification:** Browser audit covered 165 triggers on 48 of 49 routes; all were 36px high, had 48px targets, neutral `#e8e8e8` resting borders and RTL. Real clicks 3px above the visible fields opened controls in Input, Select, Avatar and Stepper. Settled keyboard focus on Select shows the yellow border/ring and amber outline. Stepper retains 390/320 no-overflow and bounded vertical-layout evidence.
+- **Prevention:** Keep playground trigger hit geometry and focus in one shared stylesheet; validate its consumers after changing the shared rule.

@@ -153,7 +153,7 @@ const team = [
 .avatar-playground__group-maxes{display:flex;justify-content:center;gap:var(--norato-space-1);max-inline-size:100%;flex-wrap:wrap}
 .avatar-playground__group-cell{display:grid;justify-items:center;gap:var(--norato-space-1);padding:var(--norato-space-1)}
 .avatar-playground__label-list{display:flex;align-items:center;gap:var(--norato-space-4);flex-wrap:wrap}
-.avatar-playground .button-playground-trigger:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-brand-yellow);outline-offset:var(--norato-space-1);box-shadow:none}
+
 .avatar-playground .button-playground-options>li:focus-visible{background:var(--norato-color-warning-container);outline:var(--norato-border-focus) solid var(--norato-color-brand-yellow);outline-offset:calc(-1 * var(--norato-border-focus))}
 @media(max-width:599px){.avatar-playground__live,.avatar-playground__group-grid{grid-template-columns:minmax(0,1fr)}.avatar-playground__label-list{align-items:flex-start;flex-direction:column}}
 </style>

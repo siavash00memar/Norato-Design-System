@@ -2531,6 +2531,14 @@
 - [x] No duplicate DOM IDs were found. Family-specific additional sections are allowed; DoD remains in the family checklist rather than the page contract.
 - [x] This establishes shared page structure only; it does not replace each component's visual, interaction, RTL or accessibility DoD.
 
+# Shared playground select targets — 2026-11-10
+
+- [x] Browser audit visited all 49 component routes; 48 pages render at least one shared playground select, for 165 triggers total.
+- [x] All 165 fields remain 36px high with 48px pointer targets, `#e8e8e8` resting Stroke and RTL. No outliers were found.
+- [x] Actual pointer hits 3px above the field opened controls on Input, Select, Avatar and Stepper. Settled keyboard focus on Select shows the yellow Stroke, 2px yellow ring and amber contrast outline.
+- [x] Legacy focus resets and page-specific duplicate rules were removed; the shared treatment now lives in `playground-select-targets.css`.
+- [ ] This shared playground audit does not complete each component's visual-state, behavior or independent screen-reader DoD.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.

@@ -1,0 +1,17 @@
+.button-playground-trigger {
+  position: relative;
+}
+
+.button-playground-trigger::after {
+  position: absolute;
+  inset-block: calc((var(--norato-control-target-min) - var(--norato-control-visual-height)) / -2 - var(--norato-border-thin));
+  inset-inline: 0;
+  content: "";
+}
+
+.button-playground-trigger:focus-visible {
+  border-color: var(--norato-color-brand-yellow);
+  outline: var(--norato-border-focus) solid var(--norato-color-focus-contrast);
+  outline-offset: var(--norato-space-1);
+  box-shadow: 0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring);
+}
