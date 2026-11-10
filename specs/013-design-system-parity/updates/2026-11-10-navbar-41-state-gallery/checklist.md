@@ -7,4 +7,4 @@
 - [x] Live Playground code path remains separate and unchanged.
 - [x] Component contract and Figma rule record the gallery; request-validation notes the remaining viewport check.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
-- [ ] Commit is pushed and origin/master matches local HEAD.
+- [x] Commit `79466c9` is pushed; `origin/master` matched local HEAD at verification.
