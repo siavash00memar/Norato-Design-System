@@ -1800,3 +1800,11 @@
 - **Correction:** Reuse the existing pale-yellow `--norato-color-warning-container` surface only for interior selected days; keep yellow endpoints and all unrelated information colors unchanged.
 - **Verification:** The live mobile range render shows pale-yellow interior with both brand-yellow endpoints, preserves RTL weekday order and the seeded Jalali range, and keeps the disabled-day state. Token/catalog/typecheck/build/diff gates pass. Date Picker DoD remains open because independent screen-reader review is not recorded.
 - **Prevention:** Map color tokens to the meaning of each component state; selected-range surfaces use Norato's yellow selection palette, while blue remains for informational content.
+
+## ERR-232 — Input descriptive axis chips retained the shared blue surface (2026-11-10)
+
+- **Observed:** Input's non-interactive size/state/label-placement notes appeared pale blue even though the family contract defines them as neutral descriptive labels.
+- **Cause:** An Input-specific override in the global app stylesheet did not win in the live scoped showcase.
+- **Correction:** Removed the ineffective global duplicate and placed the neutral surface, text and border rule in `ContractVisualShowcase.vue`, scoped beneath `.input-family-matrix`.
+- **Verification:** The live mobile Input page shows neutral gray descriptive cards while its adjacent Default, Hover, Active and Error fields retain their own states. `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Input DoD remains open for the complete adapter matrix and independent screen-reader review.
+- **Prevention:** Keep family-only cascade corrections in the owning scoped component and verify the rendered result, not merely the presence of a CSS declaration.

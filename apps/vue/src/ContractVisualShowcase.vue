@@ -883,4 +883,5 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .input-core-state-card[data-state="error"]>header>i{background:var(--norato-color-status-error)}
 .input-core-state-card[data-state="success"]>header>i{background:var(--norato-color-status-success)}
 @media(max-width:839px){.input-core-states-grid{inline-size:calc(100% - var(--norato-space-4));grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:calc(var(--norato-space-2) + var(--norato-border-medium));margin-inline:auto}}
+.input-family-matrix :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 </style>

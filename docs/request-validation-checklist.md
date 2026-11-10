@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Input descriptive axis chip palette — 2026-11-10
+
+- [x] Current local browser page `#component-input` was reviewed at the mobile viewport; descriptive axis notes render neutral gray while neighboring state specimens retain neutral, yellow and error styling.
+- [x] CSS selector is limited to the Input family matrix; the shared axis rule was not changed.
+- [ ] Input family DoD remains open for its full adapter state matrix and independent screen-reader review.
+
 ## Input OTP visual capsule — 2026-11-10
 
 - [x] Inspected the actual local Chrome Input page and live OTP row. The 36px visual capsule is drawn inside the larger transparent input hit target; all six inputs keep digit-specific accessible names.

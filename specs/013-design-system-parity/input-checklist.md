@@ -143,3 +143,9 @@
 - [x] Live selector rendered 4, 5 and 6 cells. Sequential six-digit input and six-digit paste filled cells in order; Backspace cleared the current digit and moved to the previous cell when empty; ArrowLeft moved to the previous cell.
 - [x] Restored the playground through reload to the default enabled, empty, six-cell, medium state.
 - [ ] Exact computed dimensions at all four sizes, matched 390/320px overflow review, hover/success/loading/readonly states, static-gallery re-capture and independent screen-reader review remain open. Input family DoD stays open.
+
+## Input descriptive axis chip palette — 2026-11-10
+
+- [x] Live mobile Input detail shows descriptive size/state/label-placement axis notes on a neutral gray surface; their scoped selector is limited to `.input-family-matrix`.
+- [x] The adjacent live state matrix still distinguishes Default, Hover, Active and Error field strokes; these descriptive chips do not use the informational blue token.
+- [ ] This CSS cascade correction does not close Input DoD; complete adapter state coverage and independent screen-reader review remain open.
