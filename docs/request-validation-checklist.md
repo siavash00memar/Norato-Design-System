@@ -13,6 +13,13 @@
 - [x] Reference banner measured 583.2×52.9px inside a 636×300px frame; local measured 622×49px inside a 631.98×300px frame before correction. After the scoped desktop specimen width correction, local width is 584px.
 - [ ] Independent screen-reader review remains open in `specs/013-design-system-parity/banner-checklist.md`.
 
+## Carousel host control and reduced-motion review (2026-11-10)
+
+- [x] At 390×844 and 320×844, the RTL host-control panel measures 358×98.4px and 288×98.4px; its button remains 48px high, and document client/scroll widths match the viewport.
+- [x] With reduced motion emulated at both widths, the host action advances the model to slide 2 and centers it within 0.23px / 0.04px after 40ms. The track's computed scroll behavior is `auto`.
+- [ ] Synthetic touch events reached the track but did not cause native horizontal scrolling in this automation session; real-device touch behavior remains unverified.
+- [ ] Independent screen-reader review remains open in `specs/013-design-system-parity/carousel-checklist.md`.
+
 ## Split Button detail-page playground (2026-11-10)
 
 - [x] Before the fix, the rendered `#component-split-button` page exposed the adapter source and generic snippet but had no `.button-playground`; the sibling Split Button `v-else-if` was unreachable.

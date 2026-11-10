@@ -34,7 +34,7 @@
 - [x] Mouse drag in RTL from slide 1 advanced to slide 2 and updated the controlled-index selector.
 - [x] Programmatic slide centering now checks `prefers-reduced-motion` and uses non-animated scrolling when reduced motion is requested. The preference was not emulated in the browser during this review.
 - [x] At exact 390px and 320px same-origin CSS viewport widths, document scroll width equals document client width (375/375 and 305/305 respectively); the preview frame and full page stay bounded.
-- [ ] Touch scrolling, external `v-model` changes beyond the playground selector, and independent screen-reader review remain open.
+- [ ] Touch scrolling and independent screen-reader review remain open; parent-owned `v-model` updates beyond the index selector are verified in the follow-up below.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass after the follow-up implementation.
 
 ## Live playground follow-up (2026-11-09)
@@ -44,7 +44,7 @@
 - [x] Fresh 1265×713 browser screenshot shows the desktop document without a horizontal scrollbar and the intrinsic dotted specimen frame.
 - [x] A same-origin test frame set the embedded page to exactly 390px and 320px CSS widths. Before the correction, the 390px frame had 375px client width and 472px document scroll width; the Carousel specimen itself stayed bounded.
 - [x] Root cause was the two-column mobile variant matrix: five-item indicators overflowed 155px cards and expanded the page to 472px at a 375px content viewport. Mobile variant examples now use one column, inset token spacing, and dot variants stack; repeated measurements show no page overflow at 390px or 320px.
-- [ ] Touch scrolling, independent external `v-model` control outside the playground and independent screen-reader review remain open.
+- [ ] Touch scrolling and independent screen-reader review remain open; the parent-owned model control now has a separate pointer/keyboard check below.
 
 ## Responsive matrix overflow correction (2026-11-09)
 
@@ -59,4 +59,11 @@
 - [x] Mouse activation moved the carousel from slide 1 to slide 2; the selected card and yellow active dot moved with it, the controlled-index selector read slide 2, and Previous became enabled.
 - [x] Keyboard Enter on the same control moved the parent model to slide 3; selector and visible status read slide 3, with focus remaining on the control.
 - [x] The control uses the shared `.copy-section-button` style and the 48px `--norato-control-target-min` token.
-- [ ] 390px/320px visual review of the added playground control, touch scrolling, reduced-motion emulation and independent screen-reader review remain open.
+- [x] 390px/320px visual review of the added playground control and reduced-motion emulation pass; touch scrolling and independent screen-reader review remain open, with new evidence below.
+
+## Responsive host-control and reduced-motion recheck (2026-11-10)
+
+- [x] At 390×844 and 320×844, the host-owned model control stays RTL with no document overflow. Its panel measures 358×98.4px / 288×98.4px; the full-width buttons are 332×48px / 262×48px.
+- [x] With `prefers-reduced-motion: reduce` emulated at both widths, `matchMedia` is true and track `scroll-behavior` is `auto`. Advancing from slide 1 to 2 through the host control leaves slide 2 centered within 0.23px at 390px and 0.04px at 320px; document widths remain 390/390 and 320/320.
+- [ ] CDP touch input delivered pointer/touch start, move and end events to the track but did not produce native horizontal scroll; synthesized touch scroll also did not move it. This automation result does not verify real-device touch scrolling, so keep touch review open.
+- [ ] Independent screen-reader review remains open.
