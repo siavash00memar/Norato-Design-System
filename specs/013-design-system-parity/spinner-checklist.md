@@ -17,3 +17,10 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
 - [x] `docs/request-validation-checklist.md` contains actual browser evidence and remaining gaps.
 - [x] GitHub checkpoint `6a7cfc3` pushed to `origin/master`; local worktree was clean after push.
+
+## Spinner mobile specimen width follow-up — 2026-11-11
+
+- [x] Fresh local browser render at 390px viewport measured the Button-style inert sample at 327.2×300px, x=24px; document client/scroll widths are both 375px.
+- [x] The matched reference measurement recorded earlier is 327.2×300px at the same viewport; sample width and left position now align, with the 48px spinner remaining intrinsically square.
+- [x] Scoped a mobile-only 16px inset to the Spinner sample using the existing shared frame token; desktop and executable playground geometry are unaffected.
+- [ ] Independent screen-reader review remains open for Final DoD; the 320px post-edit exact browser capture is not yet recorded.

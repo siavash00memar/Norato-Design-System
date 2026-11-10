@@ -3075,3 +3075,10 @@
 - [x] Existing 320px local rendering remains within available width; no global frame or live Tooltip control sizing was changed.
 - [x] Post-edit browser measurement confirms the local stage is 328×300px at 390px browser width (375px effective content width), within 1px of the reference's 327.2×300px stage; document client and scroll widths match.
 - [x] The 320px local capture from the pre-correction pass measured 272.8×300px without overflow; the added 328px maximum does not constrain that narrower frame. Token/catalog/typecheck/build/diff gates pass after the change.
+
+## Spinner specimen mobile width — 2026-11-11
+
+- [x] Fresh local browser measurement at 390px: sample frame 327.2×300px at x=24px; document client and scroll widths both 375px.
+- [x] Matches the recorded reference frame at 327.2×300px. Spinner remains an intrinsic 48px square and desktop/executable playground layout is unchanged by the mobile-scoped rule.
+- [ ] Exact post-edit 320px capture and independent screen-reader review remain open; this does not close Spinner Final DoD.
+- [x] pnpm check:tokens, pnpm check:catalog, Vue typecheck, Vue build and git diff --check pass.

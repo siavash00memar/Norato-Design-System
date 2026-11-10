@@ -1832,3 +1832,11 @@
 - **اصلاح:** کلاس محدود به گالری Select اضافه شد و سطح، متن و Stroke خنثی از توکن‌ها گرفت؛ قانون مشترک و وضعیت کنترل واقعی تغییر نکرد.
 - **تأیید:** تصویر مرورگر موبایل، برچسب‌های خاکستری در Variants و حفظ رنگ مستقل کنترل Select را نشان می‌دهد. گیت‌های توکن، کاتالوگ، TypeScript، build و diff نیز موفق شدند.
 - **پیشگیری:** برچسب فراداده را از رنگ وضعیت کنترل جدا نگه‌دار و قانون محدودشده را در رندر واقعی بررسی کن.
+
+## ERR-235 — Spinner specimen exceeded the matched mobile frame width (2026-11-11)
+
+- **Observed:** At a 390px browser viewport, the local Button-style Spinner specimen rendered 343.2px wide while the matched reference frame was 327.2px wide.
+- **Cause:** The generic Button-style frame filled its available column without the mobile inset used by the matched reference.
+- **Correction:** Added an explicit Spinner specimen class and a mobile-only width rule using existing Norato spacing and preview-size tokens. Desktop and live playground dimensions remain untouched.
+- **Verification:** Fresh local browser measurement is 327.2×300px at x=24px; document client/scroll widths are both 375px. Token, catalog, Vue typecheck/build and diff gates pass. Exact post-edit 320px capture and independent screen-reader review remain open.
+- **Prevention:** Compare specimen frame dimensions at matched viewport sizes after shared preview frame styles change.

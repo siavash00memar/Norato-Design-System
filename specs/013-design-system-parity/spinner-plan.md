@@ -8,3 +8,6 @@
 6. Update catalog status/API, usage example, component contract, Figma rules and recurring error log. Remove legacy `.sample-spinner` selectors.
 7. Verify matched design reference/Norato desktop screenshots, all 49 Spinner combinations, status semantics, host-relative overlay, fixed page loader, reduced motion, RTL/LTR and 390/320 overflow.
 8. Run request checklist and token/catalog/typecheck/build/diff gates. Record any unrun DoD item accurately and push a clean GitHub checkpoint.
+
+## Mobile frame follow-up — 2026-11-11
+Scope the frame-width adjustment to the inert Spinner specimen only. Recheck the 390px matched viewport, keep desktop/playground unchanged, and leave the family open until exact 320px recapture and its remaining DoD evidence are reconciled.
