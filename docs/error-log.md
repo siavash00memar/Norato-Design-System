@@ -1586,6 +1586,6 @@
 
 - **Observed:** At a matched 1265×720 viewport the Tooltip stage was 636×300px in the reference and 631.98×300px in Norato; its height and composition already matched.
 - **Cause:** Tooltip's preview needs a 4px wider desktop stage than its containing detail section, while the shared shell width is already aligned for Input and Select.
-- **Correction:** A global shell increase was reverted after it widened recorded Input and Select frames by 4px and 2px. Apply the existing `--norato-space-1` allowance directly to the Tooltip specimen frame only.
-- **Verification:** Re-measure Tooltip plus Button/Input/Select at the matched viewport and confirm no horizontal overflow. Exact mobile re-capture remains open; technical gates must be rerun after the scoped correction.
+- **Correction:** A global shell increase was reverted after it widened recorded Input and Select frames by 4px and 2px. An initial `:has()`-based section rule did not produce an observable width change in the local browser; the allowance now targets the Tooltip page's specimen frame through an explicit page class.
+- **Verification:** At an unmatched desktop viewport the page and specimen render, but the required matched-viewport measurement of Tooltip plus Button/Input/Select is still open. Confirm no horizontal overflow. Exact mobile re-capture remains open; technical gates must be rerun after the scoped correction.
 - **Prevention:** Compare the component frame and surrounding page shell independently, then scope any geometry correction to the measured component when shared consumers have different approved widths.
