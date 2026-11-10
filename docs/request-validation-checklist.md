@@ -14,7 +14,8 @@
 - [x] Local Input page rendered at explicit 390×844 and 320×844 browser viewports. Six medium capsules fit on one row at 390px; at 320px they wrap. OTP digits are LTR with digit 1 at the physical left; the field label and page remain RTL.
 - [x] At 320px, Small rendered 5+1; Medium, Large and XLarge rendered 4+2. At 390px XLarge rendered 5+1. The Success screenshot showed green cells while the focused cell remained yellow.
 - [x] DOM measured Small/Medium/Large/XLarge targets at 48×48/52×52/56×56/60×60px with a fixed 36px visual capsule. Document `scrollWidth` was 305px at a 320px viewport and 375px at 390px; no horizontal page overflow.
-- [ ] Live browser reports 0.8px computed cell Stroke although the token resolves to 1px. The default viewport reported device-pixel ratio 1.25; verify the browser's CSS-to-device scaling before marking the 1px Stroke requirement complete.
+- [x] CSSOM confirms the OTP, preview frame and Button playground use the shared 1px token; their computed border width is 0.8px across the page at DPR 1.25 (0.8×1.25=1 device pixel). No OTP-specific override was found, so no per-component change was made.
+- [ ] Direct pixel sampling of the rendered Stroke and independent screen-reader review remain open.
 - [x] Opened the reference Input page at 390px: its contract confirms 4/5/6 cells, four sizes and five states, while the Parts section contains no live OTP specimen. Therefore this pass confirms responsive layout and contract alignment, not pixel-exact OTP state parity.
 - [ ] Hover/loading/read-only states, static OTP gallery recapture, pixel-matched OTP reference evidence and independent screen-reader review remain open.
 
