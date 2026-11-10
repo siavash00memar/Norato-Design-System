@@ -6,4 +6,4 @@
 - [x] Browser verifies enabled error, disabled-only and disabled+error rendering; error semantics/message remain linked.
 - [x] RTL, 108px medium multiline dimensions, and Playground defaults are preserved; keyboard/focus behavior was not changed by this scoped CSS rule.
 - [x] Token/catalog/typecheck/build/diff checks pass.
-- [x] Input DoD, request validation, component rule and error log are updated. Commit/push parity remains open.
+- [x] Input DoD, request validation, component rule and error log are updated. Commit `ea2f26d` is pushed to `origin/master`; remote SHA matches and the worktree is clean.

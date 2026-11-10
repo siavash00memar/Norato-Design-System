@@ -19,3 +19,8 @@ RTL and existing height were retained. Both playground switches were returned to
 - `pnpm --dir apps/vue typecheck` — pass.
 - `pnpm --dir apps/vue build` — pass; JS entry bundle 444.56KB.
 - `git diff --check` — pass (line-ending normalization warnings only).
+
+## Delivery
+
+- Commit `ea2f26d` pushed to `origin/master`.
+- `git ls-remote origin refs/heads/master` returned `ea2f26dff95539d9711add655772f761f8e8dc81`, matching local HEAD; worktree was clean after push.
