@@ -10,3 +10,4 @@
 - [x] Page has the Button structure, runnable playground, nine contract sections and copy controls.
 - [x] Contract, Figma rules, catalog, usage, tasks, request checklist and error log reflect the reviewed implementation.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue build and `git diff --check` pass after final edits.
+- [ ] Independent screen-reader review is not recorded; browser AX inspection is not a substitute. Keep the family DoD open until that review is completed and documented.

@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Rating DoD ledger reconciliation (2026-11-10)
+
+- [x] The Rating family ledger had been checked despite the contract explicitly stating that independent screen-reader software was not used.
+- [x] Rating implementation maturity remains `Implemented`; family DoD is now open in `specs/013-design-system-parity/families.md` and `specs/013-design-system-parity/rating-checklist.md`.
+- [ ] Independent screen-reader review remains unperformed. Existing browser AX and keyboard checks are preserved but do not count as that review.
+
 ## Stepper catalog and checkpoint reconciliation (2026-11-10)
 
 - [x] Catalog and family maturity both say `Implemented`; family completion stays unchecked because matched mobile reference review, exhaustive keyboard/focus coverage and an independent screen-reader pass are still open.

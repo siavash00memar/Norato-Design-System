@@ -1668,3 +1668,11 @@
 - **Verification:** Live browser screenshots show selected yellow under hover and focus, while a globally disabled unselected row gains no hover surface and cannot be selected. Playground defaults were restored. Token/catalog/typecheck/build/diff gates are recorded in the follow-up checklist.
 - **Remaining:** Coarse-pointer/touch behavior, reduced-motion emulation and independent screen-reader review remain open; this fix does not close Tree View DoD.
 - **Prevention:** Verify cascade priority for selected, disabled, hover and focus combinations in the rendered browser, not only from AX state.
+
+## ERR-215 — Rating family DoD was marked complete without screen-reader evidence (2026-11-10)
+- **Observed:** The family ledger marked Rating `[x]`, while the component contract states that independent screen-reader software was not used; its checklist had no explicit open screen-reader item.
+- **Cause:** Browser accessibility-tree and keyboard evidence was treated as sufficient for a family DoD that separately requires a screen-reader review.
+- **Correction:** Reopened the Rating family DoD, added the missing checklist item, and aligned the Figma rule and request-validation record. Implementation maturity remains `Implemented`.
+- **Verification:** Current family ledger and canonical checklist both show the open review; no new browser or screen-reader result is claimed.
+- **Remaining:** Run and document an independent screen-reader review before closing Rating DoD.
+- **Prevention:** Check each family completion mark against every explicit requirement in its canonical checklist and contract, including manual assistive-technology evidence.

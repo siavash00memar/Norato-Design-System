@@ -352,6 +352,7 @@
 - Half stars use a physical right-side fill in RTL. Rating Input accepts whole-star values only; half values remain read-only.
 - Summary presents mean, review count, and five-to-one distribution bars. The sample stays inert; the live Reka RadioGroup and summary controls belong in the page playground.
 - Use Norato semantic yellow, text, border, glass and focus tokens inside a dotted-glass 640×288 desktop / 320×288 mobile frame.
+- **Remaining:** independent screen-reader review is not recorded; Rating maturity remains `Implemented`, but its family DoD stays open.
 
 ## Time Picker — 2026-11-01
 
