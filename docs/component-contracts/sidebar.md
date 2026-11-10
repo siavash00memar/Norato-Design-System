@@ -61,7 +61,7 @@ const sections: NoratoSidebarSection[] = [{ label: 'فضای کاری', items: [
 
 ## Accessibility
 
-Navigation از `nav` با نام دسترس‌پذیر استفاده می‌کند؛ مقصد دقیق جاری `aria-current="page"` دارد. وقتی Sidebar جمع است و مقصد جاری زیرلینک پنهان‌شده باشد، ردیف والد با accent زرد و `aria-current="location"` محل جاری را نشان می‌دهد؛ تنها یک مورد در مجموعه جاری است. با بازشدن Sidebar، `page` دوباره روی همان زیرلینک قرار می‌گیرد. دکمهٔ جمع‌کردن نام و `aria-expanded` دارد. Dialog موبایل focus trap/restore و Escape را مدیریت می‌کند. Focus ring بیرونی ۲px و targets حداقل ۴۸px هستند.
+Navigation از `nav` با نام دسترس‌پذیر استفاده می‌کند؛ مقصد دقیق جاری `aria-current="page"` دارد. وقتی Sidebar جمع است و مقصد جاری زیرلینک پنهان‌شده باشد، ردیف والد با accent زرد و `aria-current="location"` محل جاری را نشان می‌دهد؛ تنها یک مورد در مجموعه جاری است. با بازشدن Sidebar، `page` دوباره روی همان زیرلینک قرار می‌گیرد. عنوان گروه یک heading ایستا است و کنترل expand/collapse نیست؛ پیوندهای والد و فرزند با ترتیب طبیعی Tab پیمایش می‌شوند. دکمهٔ جمع‌کردن نام و `aria-expanded` دارد. Dialog موبایل focus trap/restore و Escape را مدیریت می‌کند. Focus ring بیرونی ۲px و targets حداقل ۴۸px هستند.
 
 ## Tokens
 

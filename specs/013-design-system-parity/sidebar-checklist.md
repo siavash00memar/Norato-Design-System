@@ -30,7 +30,7 @@
 - [x] Fresh desktop browser review confirmed Bar style renders as a flat sidebar with the active item marked by a pale-yellow surface and yellow edge marker; Glass style had already been reviewed at desktop.
 - [x] Turning the playground's disabled control on removed navigation links from the accessibility tree, rendered labels as disabled content, and disabled the collapse button. Turning it off restored links and the enabled collapse control.
 - [x] Collapsing the sidebar changed the control's accessible name/state and kept the remaining item links exposed with their Persian accessible names; expanding restored section headings, nested links, and footer content.
-- [ ] The static preview frame and composition are now matched and recorded; Glass/Bar × expanded/collapsed live screenshots, keyboard activation of group controls, active `aria-current`, and independent screen-reader review remain open.
+- [ ] The static preview frame and composition are now matched and recorded; Glass/Bar × expanded/collapsed live screenshots and independent screen-reader review remain open. Section titles are static headings, not keyboard controls.
 
 ## Sidebar — icon and palette refinement
 
@@ -43,7 +43,7 @@
 
 - [x] At CSS viewport 390×844, the live mobile trigger is visible and measures 48×48px. Activating it opens the Reka Dialog named “نوراتو”; the page remains 390/390px wide. Escape closes the dialog and restores focus to the trigger (“باز کردن ناوبری”).
 - [x] At CSS viewport 320×844, the trigger remains 48×48px and the named dialog opens with a 202×844px panel. Clicking outside the panel closes it and restores focus to the trigger; the document remains 320/320px wide.
-- [ ] Same-size visual comparison against the selected design reference, Glass/Bar × expanded/collapsed screenshot matrix, keyboard activation of group controls, active `aria-current`, and independent screen-reader review remain open.
+- [ ] Same-size visual comparison against the selected design reference, Glass/Bar × expanded/collapsed screenshot matrix, native link Tab order, active `aria-current`, and independent screen-reader review remain open. Section titles are not disclosure controls.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue TypeScript validation, Vue production build, `git diff --check`, and repository scan for the prohibited reference name passed after the icon and palette adjustments.
 
 ## Sidebar — mobile child navigation
@@ -59,7 +59,7 @@
 - [x] At 1280×720, local frame is 635.98×300px and panel is 216×222px; the reference frame is 636×311.5px and panel is 216×221.94px. Frame height follows the project's Button 300px standard.
 - [x] At 390×844, frame is 327×300px; at 320×844 it is 257×300px with document width 305/305px. The compact panel remains 216×222px at both widths.
 - [x] Inert contents now show the brand, one section title, and four fixed-size SVG icon rows; no workspace or footer is added to this default sample. Active treatment uses Norato yellow.
-- [ ] Live Sidebar state matrix, keyboard group activation, active `aria-current` evidence, and independent screen-reader review remain open.
+- [ ] Live Sidebar state matrix, native link Tab order, active `aria-current` evidence, and independent screen-reader review remain open. Section titles are static headings, not keyboard controls.
 
 ## Sidebar — collapsed descendant current location (2026-11-10)
 
@@ -79,4 +79,4 @@
 - [x] `git diff --check` passed before this checklist update.
 - [ ] The usage example is visible in the browser and matches the public export names; compiling the rendered documentation snippet as a standalone consumer project is not yet verified.
 - [x] Six static gallery groups render the contract axes for Sidebar (4), Item (20), Sub Item (8), Section Title (2), Header (4), and Footer (4), totaling 42; samples are inert and do not add undersized interactive targets.
-- [ ] Exact desktop and 390px/320px visual comparison, complete group-keyboard matrix, standalone consumer compilation, and independent screen-reader review remain open.
+- [ ] Exact desktop and 390px/320px visual comparison, native link Tab-order verification, standalone consumer compilation, and independent screen-reader review remain open.

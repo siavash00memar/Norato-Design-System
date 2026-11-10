@@ -385,6 +385,7 @@
 - Keep the panel at inline-end in RTL; place the 3px active indicator at the right edge. The 48px interaction target may be roomier than compact visual rows.
 - The default inert specimen uses the shared Button frame and shows a brand header, one section title and four icon links. The live component retains its workspace slot, counters, nested links and user/card footer. Keep icon geometry intrinsic and bound the panel width.
 - The Variants section renders six inert galleries totaling 42 samples: Sidebar (4), Item (20), Sub Item (8), Section Title (2), Header (4), Footer (4). Mobile Trigger/Drawer and Active Indicator are anatomy/behavior parts and are excluded from this total. Keep the live accessible behavior in Playground.
+- Section titles are static headings, not disclosure controls. Parent/child destinations are native links in Tab order; only the Sidebar rail has an expand/collapse control.
 - Use Norato semantic blue/yellow tokens and Persian typography. Collapsed labels remain accessible; mobile uses a modal drawer.
 
 
