@@ -31,3 +31,9 @@
 - [x] Post-fix gates (2026-11-09): `pnpm run check:tokens`, `pnpm run check:catalog`, `pnpm --dir apps/vue run typecheck`, `pnpm --dir apps/vue run build` and `git diff --check` pass. The production entry chunk is 428.44KB and this build emits no large-chunk warning.
 - [x] Exhaustive live combined-state cross-product: all 24 Size × Value × Error × Disabled states were inspected in the actual playground. Every target was 48×48px; track sizes were 32×20/40×24/48×28px; knob sizes were 12/16/20px, white and stroke-free; RTL and `aria-checked` matched the controlled value. Error exposed `aria-invalid` and a linked message. All disabled states were native-disabled and ignored clicks; Error+Disabled retained invalid semantics with a neutral track in both values and all sizes.
 - [ ] Independent screen-reader review remains open.
+
+## Live toggle recheck — 2026-11-10
+
+- [x] Fresh local browser: the separate playground adapter measures 48×48px with a 40×24px medium track and begins at `aria-checked=false`.
+- [x] Pointer activation changes the control to `aria-checked=true`; Space changes it back to false. It remains enabled and has no invalid state. Playground default is restored.
+- [ ] This confirms one live path only. Independent screen-reader review remains open; Switch DoD is not closed.

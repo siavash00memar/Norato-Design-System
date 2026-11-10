@@ -2619,3 +2619,9 @@
 - [x] At 390×844, reference and local frames measure 327×300px at x=24; at 320×844, both measure 257×300px at x=24. The document stays within its client width at both sizes and retains RTL.
 - [x] Inert tab labels remain 48px high. The mobile row has `overflow-y:hidden`; browser layout confirms no scrollbar gutter and no horizontal content overflow. The page-level preview does not stretch the row to fill its 300px frame.
 - [ ] Live keyboard/interaction and hover/focus matrix evidence remains from the existing Tabs checklist; independent screen-reader review remains open, so Tabs DoD is not closed.
+
+# Switch live toggle recheck — 2026-11-10
+
+- [x] Fresh local browser render: the live Switch playground target is 48×48px with a 40×24px medium track and starts unchecked.
+- [x] Pointer activation changed `aria-checked` false→true; Space changed it true→false. Enabled/default state and generated example were restored.
+- [ ] This focused path does not close Switch DoD; independent screen-reader review remains open.

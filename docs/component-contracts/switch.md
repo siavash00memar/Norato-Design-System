@@ -77,6 +77,10 @@
 
 از primitive `SwitchRoot`/`SwitchThumb` در Reka UI استفاده می‌کند؛ `role="switch"`، `aria-checked` و نام متصل به label دارد. Space و Enter وضعیت را عوض می‌کنند و حالت روشن/خاموش در accessibility tree اعلام می‌شود. توضیح و خطا با `aria-describedby` وصل‌اند. track، رنگ روشن، اندازه و حرکت knob با contract و tokenهای Norato سفارشی می‌شوند.
 
+### شواهد اجرای مرورگر — 2026-11-10
+
+در playground زنده، هدف کنترل 48×48px و track متوسط 40×24px بود. کلیک مقدار `aria-checked` را از false به true و کلید Space آن را به false برگرداند. این آزمون مستقل از ماتریس حالت‌هاست؛ بررسی screen reader و DoD کامل خانواده هنوز باز است.
+
 ### قاعدهٔ عمومی Focus در Norato
 
 برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
