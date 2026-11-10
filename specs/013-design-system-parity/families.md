@@ -70,6 +70,11 @@ Count excluding Button: 48.
 
 - At a fresh 320px browser view, Required+empty shows the validation message; selecting Yearly clears it and synchronizes the native radio, selected status and generated example.
 - Playground restored to Monthly/optional/enabled/no-error. Radio remains unchecked until its full focus/state cross-product and independent screen-reader review pass.
+
+## Radio Error plus Focus — 2026-11-10
+
+- At a fresh 320px browser view, ArrowDown in Error state selects Quarterly, keeps the red error message, and displays the yellow keyboard focus ring without obscuring the error stroke.
+- Restored Monthly/optional/enabled/no-error. Full focus/state cross-product and independent screen-reader review remain open; Radio stays unchecked.
 # Input field radius — 2026-11-02
 
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.

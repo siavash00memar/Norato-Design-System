@@ -48,3 +48,9 @@
 - [x] Selecting Yearly cleared the no-selection simulation and validation message and synchronized the radio value, status and Vue snippet.
 - [x] Restored Monthly, optional, enabled, no-error state. RTL and 48px target remain intact in the live page.
 - [ ] Full live visual/focus cross-product and independent screen-reader review remain open; this check does not close Radio DoD.
+
+## Error plus keyboard focus — fresh 320px browser review (2026-11-10)
+
+- [x] Error state keeps the group title and message red while ArrowDown moves selection from Monthly to Quarterly; the focused option shows the visible Norato-yellow keyboard ring around its error-stroked radio.
+- [x] Accessibility state reports Quarterly selected and focused; selecting Monthly and disabling Error restores the initial selection/status and generated Vue example.
+- [ ] Full focus × error/disabled/required × size cross-product and independent screen-reader review remain open.

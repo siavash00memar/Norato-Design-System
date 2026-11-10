@@ -2514,6 +2514,12 @@
 - [x] Selecting Yearly clears the empty simulation/error and synchronizes the radio, status and Vue example; the playground was restored to Monthly, optional, enabled, no-error.
 - [x] RTL and 48px row target remain intact. Full focus/state cross-product and independent screen-reader review remain open per `radio-playground-checklist.md`.
 
+## Radio Error plus keyboard focus — fresh browser review (2026-11-10)
+
+- [x] With Error enabled, keyboard ArrowDown moved selection from Monthly to Quarterly. The red group/message remained visible and the focused radio showed the yellow focus ring without obscuring the error stroke.
+- [x] Accessibility state exposed Quarterly as checked/focused. Restored Monthly and Error off; generated example and selected status returned to the default.
+- [ ] The complete focus × error/disabled/required × size cross-product and independent screen-reader review remain open.
+
 ## Published NoratoField capsule parity — 2026-11-09
 
 - [x] The package stylesheet now defines the legacy NoratoField capsule and 48px target; its appearance no longer depends on the docs app.
