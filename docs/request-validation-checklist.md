@@ -2725,3 +2725,9 @@
 - [x] At exact 320×844, reference/local frames measure 257×300px; local document/body widths are 305/305px with no horizontal overflow.
 - [x] After the mobile-only 16px token inset, RTL content remains centered and within its frame (317×216.89px at 390px; 247×237.28px at 320px). Desktop reset confirms the prior 635.98×300px frame still matches the 636×300px reference.
 - [ ] Independent screen-reader review, custom slot cases, and exhaustive behavior cross-product remain open per `specs/013-design-system-parity/empty-state-checklist.md`.
+## Navbar — گالری ۴۱ نمونهٔ Variants — 2026-11-10
+
+- [x] مرور زندهٔ دسکتاپ: شش گروه و ۴۱ نمونه، RTL، حالت‌های Active/Hover/Disabled/Focus و برچسب هر نمونه دیده شدند؛ گالری تکراری حذف شد.
+- [x] نمونه‌ها inert هستند و مسیر Playground اجرایی جدا مانده است.
+- [x] `pnpm check:tokens`، `pnpm check:catalog`، TypeScript/Vite build و `git diff --check` موفق شدند.
+- [ ] بررسی viewport باریک در این نشست ممکن نشد؛ DoD کامل Navbar باز می‌ماند.

@@ -1716,3 +1716,10 @@
 - **Correction:** Added a capture-phase listener scoped to links within the Sidebar mobile Dialog in the playground. The reusable Sidebar adapter keeps native `href` navigation and its `navigate(item)` event.
 - **Verification:** At 390px and 320px, mobile child selection updates the status, closes the Dialog, and leaves `#component-sidebar` unchanged. Reopening marks the child as `page`; Escape restores trigger focus and document width stays within the viewport.
 - **Prevention:** Verify playground event handling for portaled overlays separately from inline desktop controls.
+## ERR-221 — Navbar state gallery rendered an empty state and duplicate generic cards (2026-11-10)
+- **Observed:** Initial browser review did not show Nav Link state treatments because specimen state keys used title case while CSS selectors expected lowercase. Scrolling also revealed generic cards duplicated below the new gallery.
+- **Cause:** Data/CSS state naming drift and Navbar's gallery branch was not joined to the existing Variants conditional chain.
+- **Correction:** Normalized state keys to lowercase and made Navbar the first branch in the `v-if`/`v-else-if` chain.
+- **Verification:** Desktop browser shows the 41-specimen gallery with distinct active, hover, disabled and focus treatments, followed by Parts with no duplicated generic cards. Token/catalog/typecheck/build/diff checks pass.
+- **Remaining:** Narrow viewport review was unavailable in this session; Navbar DoD remains open.
+- **Prevention:** Keep state values and selector keys in one documented mapping and verify conditional rendering at both the start and end of a gallery in the browser.

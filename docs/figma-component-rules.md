@@ -379,6 +379,7 @@
 - Keep every link/action target at least 48px while nav text and logo stay intrinsic; the inert sample row may compress to its 48px control height plus stroke. Bound drawer/menu/frame widths to the viewport so neither items nor icons stretch.
 - Use Reka NavigationMenu for website link/disclosure semantics and Reka Dialog for the modal mobile drawer. Do not use a desktop `menubar` role for site navigation.
 - Transparent headers require a host background with readable contrast; do not assume or invent an image layer.
+- The Variants section contains six inert galleries totaling 41 examples: Navbar (9), Mobile Header (8), Nav Link (20), Brand (2), Mega Menu (1), Mobile Menu (1). Keep state samples static; behavior stays in Playground.
 
 ## Sidebar — 2026-11-02
 

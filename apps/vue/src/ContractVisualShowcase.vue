@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import SplitButtonShowcase from './SplitButtonShowcase.vue'
 import StepperContractShowcase from './StepperContractShowcase.vue'
+import NavbarVariantGallery from './NavbarVariantGallery.vue'
 import MenuContractShowcase from './MenuContractShowcase.vue'
 import CommandPaletteContractShowcase from './CommandPaletteContractShowcase.vue'
 import { NoratoChip, NoratoTag, type NoratoChipSize, type NoratoTagAppearance, type NoratoTagSize, type NoratoTagTone } from '@norato/vue'
@@ -450,7 +451,8 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     </template>
 
     <template v-else-if="section === 'Variants'">
-      <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
+      <NavbarVariantGallery v-if="name === 'Navbar'" />
+      <SplitButtonShowcase v-else-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="Variants" />
       <div v-else-if="name === 'Sidebar'" class="sidebar-variant-gallery" aria-hidden="true" inert>
         <section class="sidebar-variant-family" aria-label="چهار حالت Sidebar">

@@ -1,5 +1,13 @@
 # Navbar — Definition of Done
 
+## Follow-up: 41-state Variants gallery (2026-11-10)
+
+- [x] Render six static groups totaling 41 examples: Navbar 9, Mobile Header 8, Nav Link 20, Brand 2, Mega Menu 1 and Mobile Menu 1.
+- [x] Browser review at desktop confirms RTL, visible state names, active/hover/disabled/focus distinction, and no duplicate generic Variants gallery.
+- [x] Keep examples inert and preserve the separate live Playground; token/catalog/TypeScript/build/diff checks pass.
+- [ ] Verify wrapping and overflow at narrow widths; the current browser session did not allow setting a viewport.
+- [ ] Keep Navbar family DoD open until remaining responsive and assistive-technology checks pass.
+
 - [x] design reference composition and exact visible behavior recorded; Norato's own palette preserved.
 - [x] All nine desktop layout/style combinations are represented and measured without overlap or viewport overflow; mobile type/style combinations are implemented but await narrow-viewport verification.
 - [x] Public adapter and browser tree confirm RTL/navigation semantics, nested links, current-page semantics, disabled behavior and consumer slots.
