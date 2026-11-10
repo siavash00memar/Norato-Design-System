@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Combobox direct-load browser recheck — 2026-11-10
+
+- [x] A fresh local route screenshot showed the specimen frame, Default marker, RTL field and implementation section on initial observation.
+- [x] At an explicit 320×844 viewport, the specimen frame and field remained visible in the captured page.
+- [ ] The 390px screenshot was clipped at the right edge in this run; it is not a pass. Controlled throttled loading and the fallback's exact appearance remain unverified.
+
 ## File Upload — نام‌گذاری progressbar در Upload Tile — 2026-11-10
 
 - [x] وقتی Upload Tile در حالت uploading مقدار progress دارد، progressbar یک نام دسترس‌پذیر مشتق از نام فایل می‌گیرد؛ مقدار ۰ تا ۱۰۰ همچنان clamp می‌شود.

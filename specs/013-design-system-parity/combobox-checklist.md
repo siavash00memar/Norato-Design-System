@@ -34,3 +34,9 @@
 - [x] Matched 390×844 browser viewport: reference frame 327.2×300px; Norato 326.4×300px; both documents 375px, no horizontal overflow. The six gallery cards remain within the document and preserve RTL.
 - [x] Matched 320×844 browser viewport: reference frame 256.8×300px; Norato 256×300px; local document 305px with no horizontal overflow. Six state cards measure 272.8px wide and remain within the document.
 - [ ] Independent screen-reader review and cold-load fallback capture remain open; final per-cell screenshot archive and matched live-state screenshot comparison are not captured.
+
+## Direct-load browser recheck — 2026-11-10
+
+- [x] Opened the local Combobox route in a fresh hidden browser tab. The visual frame, Default marker, RTL field and implementation section were present in the first screenshot; the AX tree did not expose the inert specimen, so visual presence is recorded separately from accessibility semantics.
+- [x] At an explicit 320×844 viewport, the specimen frame and field were visible within the captured page; no horizontal clipping of the specimen was observed in the screenshot.
+- [ ] The 390px screenshot from this run was clipped at the right edge by the browser capture, so it does not verify the full layout at that viewport. Controlled network throttling and the actual loading fallback state were not exercised; keep the cold-load item open.
