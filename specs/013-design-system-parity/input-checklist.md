@@ -135,3 +135,11 @@
 - [x] Disabled-only Textarea computes a 1px `#e8e8e8` Stroke, native `disabled=true`, RTL direction and retains its 108px medium three-row geometry.
 - [x] Combined error+disabled Textarea computes the 1px neutral `#e8e8e8` Stroke while retaining `aria-invalid=true`, native disabled and visible message/count IDs in `aria-describedby`; both referenced messages resolve.
 - [x] Playground defaults restored. This narrow correction does not close the full Input visual-state matrix or independent screen-reader review.
+
+## OTP capsule and legacy outline correction — 2026-11-10
+
+- [x] Fresh local Chrome render shows the OTP cells as one capsule Stroke each; the former circular outline is gone. The live OTP group remains keyboard-operable and labeled by digit.
+- [x] Error renders red capsules; focusing a cell makes only that capsule yellow. With Error+Disabled, all OTP inputs expose native disabled state and the cells use muted neutral presentation.
+- [x] Live selector rendered 4, 5 and 6 cells. Sequential six-digit input and six-digit paste filled cells in order; Backspace cleared the current digit and moved to the previous cell when empty; ArrowLeft moved to the previous cell.
+- [x] Restored the playground through reload to the default enabled, empty, six-cell, medium state.
+- [ ] Exact computed dimensions at all four sizes, matched 390/320px overflow review, hover/success/loading/readonly states, static-gallery re-capture and independent screen-reader review remain open. Input family DoD stays open.

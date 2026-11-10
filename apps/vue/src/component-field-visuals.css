@@ -43,16 +43,6 @@
   color: var(--norato-color-text-placeholder-subtle);
 }
 
-.input-family-otp i,
-.input-state-otp i {
-  inline-size: var(--norato-control-visual-height);
-  block-size: var(--norato-control-visual-height);
-}
-
-.input-state-otp i {
-  box-sizing: border-box;
-}
-
 #app .norato-input-field__control {
   position: relative;
   isolation: isolate;
@@ -169,39 +159,6 @@
   padding-block-start: var(--norato-space-1);
 }
 
-.norato-input-field[data-size] .norato-otp__cell {
-  inline-size: var(--norato-control-target-min);
-  block-size: var(--norato-control-target-min);
-  border-color: transparent;
-  border-radius: var(--norato-radius-pill);
-  background: linear-gradient(var(--norato-color-glass-surface-strong), var(--norato-color-glass-surface-strong)) center / 100% var(--norato-control-visual-height) no-repeat;
-  outline: var(--norato-border-thin) solid var(--norato-color-border-default);
-  outline-offset: calc((var(--norato-control-visual-height) - var(--norato-control-target-min)) / 2);
-}
-
-.norato-input-field[data-invalid] .norato-otp__cell {
-  outline-color: var(--norato-color-status-error);
-}
-
-.norato-input-field[data-success]:not([data-invalid])[data-size] .norato-otp__cell {
-  outline-color: var(--norato-color-status-success);
-}
-
-#app .norato-input-field[data-disabled] .norato-otp__cell {
-  outline-color: var(--norato-color-border-default);
-}
-
-#app .norato-input-field:not([data-disabled])[data-size] .norato-otp__cell:focus-visible {
-  outline-color: var(--norato-color-brand-yellow);
-}
-
-#app .norato-input-field:not([data-disabled]):not([data-invalid])[data-size] .norato-otp__cell:hover:not(:disabled) {
-  outline-color: var(--norato-color-brand-yellow);
-}
-
-.norato-input-field[data-disabled][data-size] .norato-otp__cell {
-  background: linear-gradient(var(--norato-color-surface-muted), var(--norato-color-surface-muted)) center / 100% var(--norato-control-visual-height) no-repeat;
-}
 
 .norato-textarea-group .norato-textarea__label {
   color: var(--norato-color-text-primary);

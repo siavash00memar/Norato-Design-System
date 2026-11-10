@@ -1776,3 +1776,11 @@
 - **Correction:** Removed the dead helper, its private option/config types, and orphaned HTML Select styles. Vue Select, its shared playground control, and public exports are unchanged.
 - **Verification:** Static source search confirms the helper and native markup are absent. At `http://127.0.0.1:5173/#component-select`, the 1280px browser viewport had a 1265px document width, no native `<select>`, RTL 48px combobox triggers, and a custom listbox on open. Escape closed it and restored focus to the trigger. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` passed.
 - **Prevention:** Keep unsupported framework-neutral markup stubs out of the component catalog; inspect public exports and usages before maintaining legacy markup.
+
+## ERR-229 — OTP cells rendered circular and acquired a duplicate outline (2026-11-10)
+
+- **Observed:** The published OTP inputs occupied a square 48/52/56/60px box while the Input contract requires a 36px capsule inside a larger target. A higher-specificity app selector added an outline to the input, so drawing a capsule alone left a second circular Stroke visible.
+- **Cause:** OTP visual geometry and states were split between old package selectors and app-level overrides targeting the native input itself.
+- **Correction:** Wrap each input in a shell that owns the target and single visible capsule Stroke; remove all legacy OTP square/outline/background rules and draw the visual at 36px. Static OTP specimens now use the same ratio.
+- **Verification:** Live Chrome shows neutral capsule, red error, yellow focused cell over error, and muted neutral Error+Disabled states. The 4/5/6 selector, sequential input, paste, Backspace and ArrowLeft path work. Token/catalog/type/build/diff gates pass. Exact 390/320px bounds, all four computed sizes, hover/success/loading/readonly, static gallery recapture and independent screen-reader review remain open.
+- **Prevention:** Before editing a visual component, remove legacy selectors across package and consuming app stylesheets, then inspect the rendered focus/error/disabled composition for duplicate borders.

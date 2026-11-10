@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Input OTP visual capsule — 2026-11-10
+
+- [x] Inspected the actual local Chrome Input page and live OTP row. The 36px visual capsule is drawn inside the larger transparent input hit target; all six inputs keep digit-specific accessible names.
+- [x] Removed stale app-level OTP outline/background selectors after the browser exposed the extra cell outline. Default, Error, focused Error, and Error+Disabled states were observed: one neutral Stroke, error red, focused capsule yellow, and disabled muted neutral respectively.
+- [x] Live keyboard/paste checks: length selection produced 4/5/6 cells; sequential digits filled in order; pasting six digits populated all cells; Backspace clear/previous-cell behavior and ArrowLeft navigation worked. Playground reset to its default state.
+- [ ] The available browser could not set exact 390px/320px viewport overrides or expose computed CSS metrics. Hover, Success, Loading, Read-only, all four target sizes, inert gallery re-capture, independent screen-reader review and the full Input family DoD remain open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` passed.
+
 ## Select — legacy native HTML helper removal — 2026-11-10
 
 - [x] Source audit found that Vue Select and its playground use custom listboxes, while an unexported helper in `core-html` still emitted browser-native `<select>` markup.
