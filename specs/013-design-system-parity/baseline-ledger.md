@@ -26,7 +26,7 @@ Status meanings:
 | Breadcrumbs | Baseline passed | Matched desktop/mobile specimen and 390/320px bounded layout are recorded; fresh mobile comparison confirms RTL order, left-pointing separators, non-link current page and raised neutral surface with Norato accents. Primary disclosure/keyboard paths and 48px targets are verified. Full hover/focus matrix and independent screen-reader review remain Final DoD. |
 | Pagination | Baseline passed | Matched desktop/mobile comparisons, bounded layout, RTL, ≥48px controls and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Stepper | Baseline passed | Desktop and mobile comparison recorded. At mobile, Norato switches to Compact per the reference's mobile usage guidance; frame stays bounded, RTL and Norato palette remain intact, and the primary keyboard path works. Full matrix remains Final DoD. |
-| Menu | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
+| Menu | Baseline passed | Matched desktop/mobile review is recorded; fresh mobile render confirms the static action panel is bounded, RTL icons/shortcuts are in their logical positions, and the red danger action is separated at the end. Existing browser evidence covers pointer/keyboard opening, nested-menu traversal, Escape/focus return and 48px targets. Independent screen-reader review remains Final DoD. |
 | Command Palette | Evidence recorded; audit open | Existing responsive and keyboard/search evidence. |
 | Tree View | Evidence recorded; audit open | Existing responsive and keyboard/navigation evidence. |
 | Alert | Evidence recorded; audit open | Existing responsive and interaction evidence. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **21/48 families (43.8%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, List and Card. The remaining 27 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **22/48 families (45.8%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, List and Card. The remaining 26 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.
