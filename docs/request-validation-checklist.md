@@ -1,5 +1,10 @@
 # Norato Request Validation Checklist
 
+## Tree View pointer hover follow-up (2026-11-10)
+
+- [x] Source correction scopes the existing neutral hover surface to `hover: hover` and `pointer: fine`; selected, disabled and keyboard-focus rules are untouched.
+- [ ] Actual browser pointer/touch rendering has not been verified yet. Do not count this as a passed visual validation; see `specs/013-design-system-parity/updates/2026-11-10-tree-view-pointer-hover/checklist.md`.
+
 ## Menu narrow viewport recheck (2026-11-10)
 
 - [x] In a 320×844 local browser viewport, the live Menu playground opens its root panel and nested submenu; root is 236×306.3px at (8,454), submenu is 236×107px at (76,656), and both remain within the viewport.

@@ -1645,3 +1645,10 @@
 - **Correction:** Added `specs/013-design-system-parity/date-picker-checklist.md` and changed the Date Picker ledger completion mark to `[ ]`; maturity remains `Implemented` because the adapter and prior browser evidence exist.
 - **Verification:** Reconciled the seven-mode tasks, detailed request-validation record, and 2026-11-10 preview-frame checklist. No browser or screen-reader result is invented; the independent review remains open.
 - **Prevention:** Reconcile every family ledger mark against all unchecked items in its canonical family checklist before delivery.
+## ERR-212 — Tree View hover could persist after touch (2026-11-10)
+
+- **Observed:** Tree View applied its neutral hover surface with an unconditional `:hover` selector, without restricting the affordance to hover-capable pointers.
+- **Cause:** The row hover style did not distinguish fine-pointer hover from coarse touch input; some touch browsers can retain `:hover` after tapping.
+- **Correction:** Scoped the existing rule to `@media (hover: hover) and (pointer: fine)`. Selected, disabled and focus rules remain unchanged.
+- **Verification:** Source diff confirms only the hover gate changed. Browser verification for mouse hover and coarse-pointer touch remains open, as do the Tree View family DoD items.
+- **Prevention:** Treat hover as a pointer capability and verify it separately from focus and selection states.
