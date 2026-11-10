@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Select — legacy native HTML helper removal — 2026-11-10
+
+- [x] Source audit found that Vue Select and its playground use custom listboxes, while an unexported helper in `core-html` still emitted browser-native `<select>` markup.
+- [x] Removed the unused helper, private option/config types, and orphaned HTML-only Select styles; public HTML exports and Vue runtime are unchanged.
+- [ ] Fresh local browser render and technical gates are pending. Select's full visual-state screenshot matrix and independent screen-reader review remain open in `select-checklist.md`.
+
 ## File Upload native FileList helper — 2026-11-10
 
 - [x] Extracted controlled-queue to native FileList mapping into a private helper without changing the public Vue API.
@@ -2290,6 +2296,13 @@
 - [x] Source search found no native `<select>` or `<option>` tags in `apps/vue/src` or `packages/vue/src`. Shared `PlaygroundSelect` uses a button plus `role="listbox"`/`role="option"`, with ArrowUp/ArrowDown, Home/End, Enter, Space and Escape handling in source.
 - [x] Live browser verification on Select: its searchable grouped list opened as a custom Reka listbox, exposed a disabled option, Escape closed and returned focus to its trigger, ArrowDown focused the selected item, the next ArrowDown moved to Isfahan, and Enter committed it. Reopening with ArrowDown/Enter restored Tehran; trigger and status both show the baseline value. No native browser select UI is used by the Vue route.
 - [ ] Fresh rendered and keyboard verification across the other dropdown-consuming component pages remains open; source audit and this Select pass do not cover every page.
+
+## Legacy core-html Select removal — 2026-11-10
+
+- [x] Removed the unexported, unused HTML helper that emitted native `<select>` markup and its orphaned CSS; the Vue Select implementation and public APIs are unchanged.
+- [x] Live Select at 1280px: document width 1265px, no native select, RTL combobox triggers at 48px high. Opening exposes a custom listbox; Escape closes it and restores focus to the trigger.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` passed.
+- [ ] Full Select visual-state screenshots and independent screen-reader review remain open; see `specs/013-design-system-parity/select-checklist.md`.
 
 ## Pagination specimen comparison (2026-11-09)
 

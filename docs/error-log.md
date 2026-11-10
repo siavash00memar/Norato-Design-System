@@ -1768,3 +1768,11 @@
 - **Correction:** Mirror actual queued `File` objects into the native input with `DataTransfer`, clear only before opening the chooser, restore on native picker cancellation, and resync after processing a selection so rejected files cannot remain submitted.
 - **Verification:** Vue typecheck and pure file-validation tests pass. Required validity after successful selection, native `FormData`, picker cancellation/reselection, and OS drop remain unverified because this browser automation session did not expose its file chooser.
 - **Prevention:** Include selected/removed files, rejected files, picker cancellation, and native form data in File Upload browser checks; do not treat the controlled queue and native input as separate sources of truth.
+
+## ERR-228 — Unexported HTML Select helper emitted browser-native UI (2026-11-10)
+
+- **Observed:** The supported Vue Select used a custom listbox, but an unused, unexported HTML helper could still generate a native `<select>` with browser-default presentation.
+- **Cause:** Legacy helper code and CSS remained after the HTML component index stopped exporting it.
+- **Correction:** Removed the dead helper, its private option/config types, and orphaned HTML Select styles. Vue Select, its shared playground control, and public exports are unchanged.
+- **Verification:** Static source search confirms the helper and native markup are absent. At `http://127.0.0.1:5173/#component-select`, the 1280px browser viewport had a 1265px document width, no native `<select>`, RTL 48px combobox triggers, and a custom listbox on open. Escape closed it and restored focus to the trigger. `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` passed.
+- **Prevention:** Keep unsupported framework-neutral markup stubs out of the component catalog; inspect public exports and usages before maintaining legacy markup.
