@@ -3,9 +3,9 @@
 ## Page and visual fidelity
 - [x] Inert default preview is bounded and matches design reference's composition at desktop; source marks the specimen inert and its adapter visuals have no interactive descendants.
 - [x] Button-style page contains preview, live Vue playground, copyable usage and all nine contract sections.
-- [x] design reference/Norato desktop 1280×720 comparison preserves RTL and Norato yellow/neutral/error palette. Mobile 390×844 comparison remains open.
+- [x] design reference/Norato desktop 1280×720 comparison preserves RTL and Norato yellow/neutral/error palette; exact 390/320 mobile bounds are recorded below, while matched mobile reference comparison remains open.
 - [x] Horizontal, Vertical, Compact and Dots are visually reviewed on desktop; indicator circles/icons retain intrinsic dimensions and do not stretch.
-- [ ] At 390px and 320px, no document overflow; long horizontal trails scroll internally and vertical remains bounded (mobile viewport check still open).
+- [x] At 390px and 320px, no document overflow; the four-step horizontal list can scroll internally, and the vertical list stays bounded. Exact viewport measurements are recorded in the 2026-11-10 follow-up below.
 
 ## Runtime, semantics and accessibility
 - [x] Controlled current step, derived states, error override and live announcement tested in the desktop browser.
@@ -14,11 +14,19 @@
 - [x] Optional descriptions and three Step Indicator sizes are represented; Dots Small/Medium/Large scaling and circular ring geometry were reviewed in the live playground.
 - [ ] Invalid/duplicate ids and empty lists are not exhaustively runtime-tested; behavior is documented and typechecked.
 - [x] Stepper has no false buttons/links; one current step in the named ordered list and polite “step N of M” status observed in the browser accessibility tree.
-- [ ] Host playground controls have 48px minimum targets, keyboard operation and visible focus; error tested. Loading/disabled do not apply to this read-only adapter; exhaustive focus/target matrix remains open.
+- [ ] Host playground fields preserve a 36px visual height with a 48px pointer target and visible yellow keyboard ring. The exact target and ring were rechecked on mobile; full keyboard-operation and focus/target matrix remains open. Loading/disabled do not apply to this read-only adapter.
 - [ ] Independent screen-reader review recorded or explicitly remains open.
 
 ## Technical gates
 - [x] Token and catalog checks pass (catalog: 49 routes/contracts/exports).
-- [x] Vue typecheck and production build pass; build emits the existing >500KB chunk advisory.
-- [x] `git diff --check` passes; only docs changed in this follow-up and the diff was reviewed.
+- [x] Vue typecheck and production build pass; initial JavaScript is 442.34KB with no chunk-size advisory.
+- [x] `git diff --check` passes; the scoped Stepper playground CSS and evidence-document changes were reviewed.
 - [ ] Catalog maturity/status, family ledger, checklist and GitHub checkpoint match actual evidence.
+
+## Stepper responsive bounds and playground targets — 2026-11-10
+
+- [x] Actual local browser at 390×844: document client/scroll width 390/390px, preview shell 358×431.1px, inert frame 328×300px, RTL preserved.
+- [x] Actual local browser at 320×844: document client/scroll width 320/320px, preview shell 288px wide, inert frame 288×300px at x=16px, RTL preserved.
+- [x] At both widths, the horizontal step list keeps an internal scroll area (384px scroll width vs 340px and 270px visible list width); it does not expand the document. Vertical layout at 320px measures 270×208.8px with list client/scroll width and height matching.
+- [x] Playground select buttons keep the visible 36px field, while a transparent pseudo-element extends the pointer hit target to exactly 48px. A click 3px above the visible field opened its menu at 320px. Keyboard focus at 390px exposes a 2px Norato-yellow ring and the dark amber contrast outline.
+- [ ] Full keyboard-operation/focus matrix, invalid/duplicate-id and empty-list cases, and independent screen-reader review remain open; this follow-up does not close Stepper DoD.

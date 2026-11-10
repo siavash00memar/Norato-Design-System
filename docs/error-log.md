@@ -1613,3 +1613,11 @@
 - **Correction:** Added Split Button to the internal playground branch of the usage section and removed the unreachable sibling section. The existing playground, adapter and API remain unchanged.
 - **Verification:** The page now has one usage section and one playground. Browser checks cover mode, variant, size, action/menu selection, disabled/loading, keyboard dismissal/focus restoration, RTL and desktop/390px/320px no-overflow behavior.
 - **Prevention:** When adding component playground branches, verify the actual rendered route; template presence alone does not prove a conditional branch is reachable.
+
+## ERR-208 — Stepper playground fields had undersized targets and invisible keyboard focus (2026-11-10)
+
+- **Observed:** Stepper's visible 36px playground fields had only a 36px pointer target, and the shared trigger focus rule removed the outline and shadow.
+- **Cause:** The shared playground field height is optimized for the user's 36px input appearance, but the Stepper page did not extend the hit area or restore the documented outer focus ring.
+- **Correction:** Added a transparent pseudo-element that extends only Stepper playground select hit areas to 48px. Restored a 2px yellow Norato focus ring with the amber contrast edge; the visible field remains 36px.
+- **Verification:** At 320px, the transparent target computes to 48px and an actual browser click 3px above the visible field opened the menu. At 390px, keyboard focus exposes the 2px yellow ring. Both mobile documents have no horizontal overflow; the four-step horizontal list scrolls internally and the 320px vertical list remains bounded at 270×208.8px.
+- **Prevention:** Keep the visible field height separate from its interaction target and verify both hit geometry and keyboard focus in the rendered browser.

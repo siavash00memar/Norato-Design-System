@@ -2517,6 +2517,13 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build and `git diff --check` pass.
 - [ ] Select's full screenshot matrix and independent screen-reader review remain open.
 
+# Stepper mobile bounds and playground target — 2026-11-10
+
+- [x] At exact 390×844 and 320×844 CSS viewports, the Stepper document client/scroll widths are 390/390px and 320/320px. RTL is retained.
+- [x] Inert frames measure 328×300px and 288×300px; the 320px vertical live list measures 270×208.8px, with matching client/scroll dimensions.
+- [x] The horizontal list scrolls internally (384px content) without widening the document. Playground fields remain visibly 36px high; the transparent pointer target is 48px and was activated 3px above the visible field. Keyboard focus displays the 2px yellow ring with its amber contrast edge.
+- [ ] Full keyboard/focus cross-product, empty/duplicate data cases and independent screen-reader review remain open in `stepper-checklist.md`.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.

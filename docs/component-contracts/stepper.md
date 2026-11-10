@@ -71,6 +71,8 @@ Stepper پیشرفت یک جریان مرحله‌ای را نشان می‌ده
 
 برای اجزای تعاملی، حالت Focus با حلقهٔ ۲ پیکسلی بیرون کنترل تعریف شده است.
 
+کنترل‌های playground ارتفاع دیداری ۳۶px دارند و ناحیهٔ کلیک نامرئی آن‌ها تا هدف ۴۸px گسترش می‌یابد. Focus صفحه‌کلید حلقهٔ زرد Norato و لبهٔ کنتراست کهربایی دارد.
+
 ## Tokens
 
 **توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-color-text-secondary`، `--norato-color-status-error`، `--norato-stepper-dot-size`، `--norato-stepper-dot-current-size`، `--norato-stepper-preview-frame-inline-size`، `--norato-stepper-preview-frame-mobile-inline-size`، `--norato-stepper-preview-frame-block-size`، `--norato-stepper-preview-radius`، `--norato-stepper-preview-content-inline-size` و توکن‌های فاصله، تایپوگرافی و شعاع.
