@@ -23,7 +23,7 @@
 
 - [x] Fresh matched 1265×720 browser render measured the reference Tooltip stage at 636×300px and Norato at 631.98×300px before correction.
 - [x] A global shell-width increase was rejected after it made Input 4px and Select 2px wider than their recorded references. That change was reverted; the 4px semantic-token extension is now scoped directly to the Tooltip specimen frame.
-- [x] Fresh isolated Chrome capture at 1265×720 confirms the scoped CSS and tooltip class are present in the served page. The screenshot is still showing the async specimen's loading fallback; its visible frame is about 632px wide, so this capture does not prove the settled Tooltip frame reached 636px.
-- [ ] Re-measure final Tooltip frame geometry and confirm Button/Input/Select retain their prior dimensions in the matched browser viewport.
+- [x] Fresh isolated Chrome DOM measurement after the async specimen settles: at a 1249×569 CSS viewport, Tooltip is 635.984×300px. Button, Input and Select captured in the same viewport measure 631.984×300px, 635.984×300px and 633.984×300px respectively; only Tooltip gets the 4px scoped extension. The 1265px window's initial screenshot showed the loading fallback (~632px), which explains the earlier inconclusive capture.
+- [x] Re-measured final Tooltip frame geometry and confirmed the Tooltip-only scope leaves Button/Input/Select on their own frame rules in the same viewport.
 - [x] The frame remains centered, with the same rounded dotted glass surface, RTL content, and centered tooltip/trigger composition.
 - [ ] Mobile viewport re-capture and independent screen-reader review remain open; Tooltip DoD stays open.

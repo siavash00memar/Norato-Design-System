@@ -138,6 +138,12 @@
 - [x] Pointer-only timing: first trigger entered `delayed-open`; immediately moving from outside to the sibling trigger showed `instant-open`. After the skip window elapsed, the second trigger returned to delayed opening.
 - [ ] Independent screen-reader review remains open for Tooltip.
 
+## Tooltip settled frame measurement — 2026-11-10
+
+- [x] Fresh Chrome DOM measurement after async specimen settlement at 1249×569 CSS pixels: Tooltip 635.984×300px; Button 631.984×300px; Input 635.984×300px; Select 633.984×300px.
+- [x] The scoped Tooltip selector reaches the reference 636px frame without changing the other three components' independent specimen rules. A first screenshot taken during async loading showed the 632px fallback, not the settled specimen.
+- [ ] Exact 390px/320px re-capture and independent screen-reader review remain open; Tooltip DoD is not complete.
+
 ## Switch responsive Variants gallery — browser review (2026-11-09)
 
 - [x] Matched mobile screenshots and measurements at 390×844 and 320×640. Norato preview frames are 320×288px and 273×288px; reference frames are 327×300px and 257×300px.
