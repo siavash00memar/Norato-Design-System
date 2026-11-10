@@ -2356,7 +2356,7 @@
 - [x] Source correction: restore `entry.label` for the shared Variants card heading; keep Combobox state normalization scoped to Combobox cards.
 - [x] Source correction: use Norato yellow for the static clock accent and neutral tokens for non-selected Anatomy markers; preserve blue for links and informational semantics.
 - [ ] Browser review of affected generic Variants, Anatomy and Time Picker pages at desktop/mobile sizes remains pending. The local Chrome tab is minimized and tab automation timed out; the in-app browser also timed out. No rendered result is claimed.
-- [ ] Recheck Combobox six-state gallery mappings and 36px/48px geometry at desktop/mobile sizes; the prior visual data predates the final mapper change.
+- [x] 2026-11-10 post-mapper Combobox review: Default/Hover/Typing/Filled/Error/Disabled each render once with their expected Persian value/placeholder; matched 1536×703 render confirms RTL, 36px capsule/48px target, neutral/yellow/error strokes and the two-column local gallery. Fresh local 390×844/320×844 DOM measurements confirm 343px/273px cards within 375px/305px documents, no horizontal overflow, 36px fields and 48px targets. The visual reference lists the same six states; this does not close the exhaustive live matrix, cold-load fallback capture or independent screen-reader review.
 
 ## Published NoratoField capsule parity — 2026-11-09
 
