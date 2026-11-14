@@ -7,5 +7,5 @@
 - [x] ArrowDown from search focused an option and Enter selected Isfahan; reopening and Enter on Tehran restored the trigger, summary and fixture to Tehran.
 - [x] Update the component contract's stale placeholder and 288px frame description.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
-- [ ] Push the verified documentation update and confirm `origin/master`; do not deploy.
+- [x] Pushed commit `fbe348b` to `origin/master` and confirmed the remote hash; no deployment was made.
 - [ ] Full Select state-by-state screenshot comparison and independent screen-reader review remain open.
