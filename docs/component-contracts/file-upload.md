@@ -30,7 +30,7 @@
 
 ## Sizes
 
-- **Dropzone:** Large با سطح انتخاب ۱۶۰px و Compact با حداقل ۴۸px.
+- **Dropzone:** Large با سطح انتخاب ۱۵۲px و Compact با حداقل ۴۸px.
 - **Upload Tile:** قاب مربعی ۱۱۲px؛ **Avatar Upload:** قاب دایره‌ای ۹۶px.
 - actionها حداقل ۴۸×۴۸px باقی می‌مانند.
 

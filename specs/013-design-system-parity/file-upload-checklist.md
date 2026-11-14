@@ -47,3 +47,8 @@
 - [x] CSS-only specimen change uses existing semantic spacing/surface/radius tokens; executable Dropzone behavior is unchanged.
 - [ ] Exact matched-viewport reference recheck, mobile review for this correction and complete File Upload Final DoD remain open.
 - [x] Fresh browser state check: toggling Required on exposes «پیوست‌ها الزامی» for both Dropzone controls and adds `required` to generated Vue usage; toggling it off restores the default names and snippet. This does not verify native form submission or actual file transfer.
+
+## Matched desktop geometry — 2026-11-14
+
+- [x] Fresh local/reference browser screenshots at the same 1265×713 viewport showed the local inner Dropzone visibly wider and taller. Shared size tokens now use 364×152px; the refreshed render brings the inner panel close to the reference while preserving the outer frame, yellow Norato glyph, neutral tile and RTL text.
+- [ ] Narrow viewport remeasurement remains open; existing max-width containment rule is unchanged. File Upload Final DoD remains open.

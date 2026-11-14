@@ -1,0 +1,5 @@
+- [x] Adjust shared Large Dropzone inner-size tokens to 364×152px.
+- [x] Update component contract size.
+- [x] Compare matched desktop screenshots after change.
+- [x] Run token/catalog, Vue typecheck/build and diff gates.
+- [ ] Recheck narrow viewport containment in browser.

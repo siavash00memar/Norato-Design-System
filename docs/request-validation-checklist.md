@@ -3169,3 +3169,7 @@
 - [ ] Exact matched-viewport reference recheck and mobile review remain open; this does not close File Upload Final DoD.
 ## File Upload required-state recheck — 2026-11-14
 - [x] Browser accessibility tree exposes «پیوست‌ها الزامی» on both Dropzone controls and generated Vue example includes `required`; resetting the option restores both. Native form submission/file validity remain unverified.
+
+## File Upload inner Dropzone geometry — 2026-11-14
+- [x] Same-viewport local/reference screenshots showed the local inner panel oversize; shared token correction to 364×152px visibly aligns the panel proportions while preserving Norato yellow and RTL content.
+- [ ] Narrow viewport remeasurement and remaining File Upload Final DoD are open.

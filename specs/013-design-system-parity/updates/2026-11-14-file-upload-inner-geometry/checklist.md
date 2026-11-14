@@ -1,0 +1,4 @@
+- [x] Shared tokens updated to target dimensions (364×152px).
+- [x] Same-viewport local screenshot compared after the change; the inner Dropzone now aligns closely with the reference and keeps the neutral tile/yellow glyph.
+- [x] Existing mobile `min(100%, token)` containment rule and compact-size override remain unchanged; no narrow-viewport measurement was made in this pass.
+- [x] Token/catalog, Vue typecheck/build and diff gates pass.
