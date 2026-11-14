@@ -3228,3 +3228,9 @@
 - [x] Added an Input-only Parts marker and neutral surface/text/Stroke tokens. Fresh local screenshots across all eight rows show neutral gray chips with RTL label wrapping; the yellow accent remains on active/focused field samples.
 - [x] The generic `.variant-axis > span` rule and the separate family-neutral styles were left unchanged, so this correction is confined to Input Parts.
 - [ ] Full Input size/state visual cross-product and independent screen-reader review remain open.
+
+## Select contract and runtime parity — 2026-11-14
+- [x] Matched 1265×713 screenshots show local and reference Select specimens share a 300px-high dotted stage, centered 300×48px field, RTL label and left-side chevron. Local copy intentionally remains `یک شهر انتخاب کنید`, and the live playground default remains Tehran.
+- [x] Playground browser tree exposes grouped options, selected Tehran, and disabled `به‌زودی`. ArrowDown from search focused an option; Enter selected Isfahan, then Enter restored Tehran. Value summary and trigger agree.
+- [x] Updated the Select component contract to remove stale placeholder copy and stale 288px frame height; runtime source was unchanged.
+- [ ] Full visual-state screenshot matrix and independent screen-reader review remain open.

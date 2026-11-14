@@ -24,6 +24,14 @@
 - [x] Follow-up 2026-11-09 after shared-frame update: matched 390×844 and 320×844 reference/Norato browser captures. At 390, frame widths are 327.2/326.4px; at 320 they are 256.8/256px; heights match at 300px. Local document widths are 375/305px with no overflow. At 320, the reference document is 326px and overflows horizontally; Norato preserves the bounded page. Responsive cap uses the viewport and semantic spacing token. Full state screenshot matrix and independent screen-reader review remain open.
 - [x] Fresh mobile comparison in the same browser session confirms the unselected Persian placeholder, RTL label, and left-side chevron remain legible and contained. Exact 390/320 geometry and no-overflow evidence remains the source of measurement; exhaustive visual states remain open.
 
+## Select contract copy and frame parity — 2026-11-14
+
+- [x] Matched 1265×713 local/reference screenshots show a 300px-high dotted frame, 300×48px visual field, RTL label and left-side chevron. The local frame remains bounded to its page column.
+- [x] Preserved the local, user-approved placeholder `یک شهر انتخاب کنید`; the reference phrase is different. The unselected specimen is distinct from the live playground, which defaults to Tehran.
+- [x] Fresh browser AX/keyboard pass exposed option groups, selected and disabled choices; ArrowDown and Enter selected Isfahan, then Tehran was restored through the same keyboard path.
+- [x] Reconciled the component contract's stale placeholder and frame-height description.
+- [ ] Full Select state-by-state screenshot comparison and independent screen-reader review remain open; Select DoD stays open.
+
 ## Desktop frame width follow-up — 2026-11-09
 
 - [x] Same-viewport 1265×713 screenshots after applying a 2px semantic token allowance show the local Select preview frame visually aligned in width with the reference and both remain 300px high.

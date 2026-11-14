@@ -1896,3 +1896,11 @@
 - **Correction:** Added an Input-only `part-axes--input` marker and reused the approved neutral surface, text, and inset Stroke tokens. The shared axis rule and other families are unchanged.
 - **Verification:** Fresh local browser screenshots at the matched viewport show neutral axis chips across all eight Input rows with readable RTL wrapping. Token/catalog/TypeScript/build/diff checks are recorded in the linked update.
 - **Prevention:** Audit every rendered use of a shared visual primitive within a component, including Parts metadata, instead of assuming a fix to its secondary gallery covers the whole page.
+
+## ERR-243 — Select component contract described stale preview copy and height (2026-11-14)
+
+- **Observed:** The live unselected Select preview showed `یک شهر انتخاب کنید` in a 300px-high frame, while its component contract documented `به شهر انتخاب کن` and 288px.
+- **Cause:** The 2026-11-10 visual correction updated the specimen and checklist but left the canonical component contract unchanged.
+- **Correction:** Updated the contract to the current approved local copy and 300px stage height; no runtime behavior or reference text was changed.
+- **Verification:** Matched 1265×713 browser screenshots confirm the local stage/field/RTL-chevron composition; AX and keyboard checks verify grouped options, disabled state, selection and restore. Full state-by-state parity and independent screen-reader review remain open.
+- **Prevention:** After specimen copy or geometry changes, reconcile the component contract in the same update and search for old values.
