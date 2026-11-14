@@ -1936,3 +1936,11 @@
 - **Correction:** Use four desktop columns, two medium columns, and one narrow-mobile column. Add state-specific Persian descriptions while retaining the RTL samples, 36px capsule/48px target, and neutral/yellow/error Stroke semantics.
 - **Verification:** Matched desktop screenshots show the 4/2 layout and unique descriptions. Narrow mobile screenshot shows a single column without clipping. The change is isolated to the Combobox documentation gallery; live adapter logic is unchanged. Full state screenshot archive, throttled cold-load fallback capture, and independent screen-reader review remain open.
 - **Prevention:** Validate card content as well as state count and grid dimensions against the reference composition.
+
+## ERR-248 — Skeleton implementation stage was asserted but not recorded (2026-11-14)
+
+- **Observed:** The Skeleton checklist said all workflow stages were recorded, but the required Implement-stage artifact was absent. Its task list also combined already verified browser and technical evidence with the still-open independent screen-reader review in one unchecked line.
+- **Cause:** Implementation evidence was distributed across the family checklist and historical updates, while the workflow artifact was never added and the task status was not split by evidence state.
+- **Correction:** Added `skeleton-implement.md` with the delivered API/page integration, source-backed behavior, existing verification references, and the open DoD item. Split completed verification from the independent screen-reader review in `skeleton-tasks.md`.
+- **Verification:** Source and workflow-file review confirms the two Vue components/styles exist, the required stage sequence now has all eight artifacts, verified evidence remains linked to the checklist, and independent screen-reader review remains unchecked. This documentation-only correction does not change rendered UI or close the family DoD.
+- **Prevention:** Check that each required workflow stage has its own artifact and keep completed evidence separate from open DoD items.
