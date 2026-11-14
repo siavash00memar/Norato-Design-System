@@ -9,8 +9,8 @@
 - [x] Implement `NoratoAvatar`, `NoratoAvatarGroup`, `NoratoAvatarLabel`, and `NoratoAvatarStatus`.
 - [x] Export component/type APIs and token CSS; add catalog and Button-style page preview/playground.
 - [x] Update component contract and Figma rules; add usage snippet and error log notes.
-- [ ] Exercise all 55 variants' rendered geometry, image fallback, group overflow/RTL, accessible names, and responsive widths in a real browser; compare with design reference.
-- [ ] Run required engineering gates, record remaining screen-reader limits and push.
+- [x] Exercise all 55 variants' rendered geometry, image fallback, group overflow/RTL, accessible names, and responsive widths in a real browser; compare with design reference.
+- [x] Run required engineering gates, record remaining screen-reader limits and push the specimen-alignment checkpoint.
 
 ## Browser evidence — 2026-11-08
 
@@ -20,3 +20,4 @@
 - [x] Playground direction and size menus open/close; no native browser dropdown presentation is used.
 - [x] Keyboard opened the direction menu, Home + Enter selected RTL, and the generated Vue snippet updated from LTR to RTL. Screenshots at the available narrow browser view show status dots at physical bottom-left in both directions.
 - [ ] Do not close Avatar DoD yet: exact 390px/320px overflow, measured geometry for all 55 variants, matched responsive screenshot comparison, full playground focus audit, independent screen-reader review, and final gates remain.
+- [x] Follow-up 2026-11-14: matched 390/320 frame and exact 55-variant geometry are measured; 320px descendant overflow is clear. Remaining Final DoD items are independent screen-reader review and exhaustive visual-state/focus evidence; Baseline has separate evidence in `avatar-checklist.md`.
