@@ -3,12 +3,13 @@
 ## Visual parity
 
 - [x] Button-style documentation page includes an inert specimen, live playground, copyable Vue sample and component contract.
-- [x] Compared the desktop specimen to the design reference at the same 1920×900 browser viewport. Local frame is about 580×300px and the reference is about 630×324px because the documentation column is narrower. The initial local specimen incorrectly placed the default RTL panel on the left; corrected it to the physical right edge with only the inner left corners rounded.
+- [x] Same-window 1265×713 comparison: outer frames are 628×324px locally and 629×322px in the reference; the right-side panels are 234×234px and 234×232px. The default RTL panel stays on the physical right edge with only the inner left corners rounded. The static specimen's frame and panel now closely match in desktop proportions.
 - [x] Live left-side panel renders on the physical left with only its inner right corners rounded. Bottom Sheet occupies the bottom edge and shows its decorative handle.
 - [x] Wired the playground stylesheet into the page; it had not been imported, leaving the controls unformatted and the fieldset in browser-default styling. Removed the fieldset border treatment while keeping semantic field grouping.
 - [x] Compared the responsive experience at 390px and 320px. Side panels and all three bottom detents stayed within the viewport; document width matched the viewport.
 - [x] Reviewed all three side sizes at desktop and auto/half/full Bottom Sheet detents. The panels stay within their expected width/height and content does not stretch to fill unused space.
 - [x] Complete visual focus/hover review at 390×844 for the close button, checked and unchecked checkboxes, and Secondary/Primary actions. Real pointer hover confirms: close and Secondary use the yellow warning container; both checkbox states receive the brand-yellow Stroke; Primary retains its yellow surface. Keyboard Tab reaches every dialog control; each exposes `:focus-visible` with a 2px brand-yellow outline and no extra shadow. Focus wraps back to the first filter control.
+- [ ] Fresh 390/320px visual measurement after the static panel width/bottom inset refinement remains open; prior responsive behavior and viewport-fit checks are retained.
 - [x] Side/detent geometry was checked separately at desktop and 390/320px; the shared visual interaction rules remain consistent across the panel placements.
 - [x] Long content scrolls inside the panel at all Bottom Sheet detents at 390px and 320px without clipping or horizontal overflow.
 

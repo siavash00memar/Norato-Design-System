@@ -7,6 +7,12 @@
 - [x] Changed only static specimen styling and Modal layout tokens; live overlay token and adapter CSS are untouched. Existing 390/320px Modal layout evidence remains in the canonical checklist; this refinement has desktop-only fresh visual capture.
 - [ ] Controlled/uncontrolled `open` and independent screen-reader review remain open in Modal Final DoD.
 
+## Drawer specimen panel geometry — 2026-11-14
+
+- [x] Same-window 1265×713 comparison: local/reference outer frames 628×324px / 629×322px and panels 234×234px / 234×232px.
+- [x] Right-side RTL panel, top inset and rounded inner corners remain aligned; filter rows and yellow action are visible without clipping. Live Drawer API/styles are unchanged.
+- [ ] Fresh 390/320px geometry and independent screen-reader review remain open for Drawer Final DoD.
+
 ## Charts preview geometry and mobile fit — 2026-11-14
 
 - [x] Same-viewport desktop review at 1265×713: frame is 635.98×332px vs 636×331.69px; inner card 368×244px vs 367.2×243.74px; SVG 336×157.66px vs 334.8×156.94px. Relative card placement within the frame matches within 0.1px.
