@@ -56,7 +56,8 @@
 ## Static responsive rule audit — 2026-11-14
 
 - [x] Narrow-breakpoint CSS caps the specimen frame with min(100%, mobile token), sets the inner specimen Dropzone to 100%, and sets the live playground Dropzone to 100%; this provides code-level evidence against width overflow.
-- [ ] Rendered 390px and 320px checks after the token change are still open; this audit does not claim measured mobile DoD.
+- [x] Captured the local File Upload preview at explicit 390px and 320px browser widths. The outer frame and inner Dropzone remain fully visible in both captures; no visible horizontal clipping or stretched inner panel was observed.
+- [ ] Numeric frame/document measurements and a matched-width reference comparison remain open because this browser surface did not expose reliable geometry for both tabs. The screenshots are visual containment evidence only, not a mobile DoD pass.
 
 ## File Upload queued-row disabled state — 2026-11-14
 

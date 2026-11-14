@@ -3176,7 +3176,8 @@
 
 ## File Upload responsive rule audit — 2026-11-14
 - [x] Reviewed narrow-breakpoint CSS: the preview frame is max-width bounded and both static and live Dropzones use 100% of the available inline space.
-- [ ] Rendered 390px/320px comparison remains unverified because the available browser viewport could not be changed in this session.
+- [x] Local screenshots at explicit 390px and 320px browser widths show the File Upload outer frame and inner Dropzone fully visible, with no obvious horizontal clipping or vertical stretching.
+- [ ] Reliable numeric geometry and matched-width comparison remain open; this browser surface did not expose measurements for both tabs. Do not treat the screenshots as a full responsive parity pass.
 
 ## File Upload queued-row disabled browser check — 2026-11-14
 - [x] With a queued sample File Item, toggling disabled exposed both Dropzone controls and that row's delete action as disabled, and added `disabled` to generated Vue usage.
