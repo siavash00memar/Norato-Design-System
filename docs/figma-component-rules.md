@@ -100,6 +100,11 @@
 - Multi Select در نمای Chips یک مقدار به‌همراه شمارندهٔ بقیه را نشان می‌دهد؛ همهٔ انتخاب‌ها در منوی باز و Summary در دسترس می‌مانند و خود فیلد با افزایش انتخاب‌ها قد نمی‌کشد.
 - بخش States صفحهٔ مستندات Select از ۹ کارت یکتا با عنوان+توضیح مانند مرجع طراحی استفاده می‌کند: Default، Hover، Open، Filled، Error، Disabled، Read-only، Selected، Focus. نام خانوادهٔ تکراری روی کارت‌ها نمی‌آید؛ حالت‌های Select Option و Multi Select در Parts و playground باقی می‌مانند. accent هر حالت از semantic token نوراتو می‌آید. گالری static/inert است، کارت‌ها حداقل ارتفاع یکسان و عرض خودکار tokenized دارند؛ desktop چهار ستون و viewport باریک یک ستون دارد.
 
+## Combobox
+
+- The static States gallery has six RTL field samples: Default, Hover, Typing, Filled, Error, Disabled. Use four columns on desktop, two at medium widths, and one on narrow mobile; each card has a Persian explanation specific to its state and does not repeat the generic family name.
+- Each sample keeps the 36px capsule inside the 48px interaction target. Default/Disabled use neutral Stroke, Hover/Typing/Filled use Norato yellow, and Error uses the semantic error color. The actual live Combobox stays in the Vue playground.
+
 ## Date Picker
 
 - قاب inert از همان stage نقطه‌ای ۳۰۰px و پس‌زمینهٔ shared نمونهٔ Button استفاده می‌کند؛ زمینهٔ داخلی تقویم شفاف است تا گرادیان Norato قاب دیده شود. قاب در عرض‌های کم از bounds responsive خودش پیروی می‌کند.

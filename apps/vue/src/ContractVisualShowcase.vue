@@ -254,6 +254,15 @@ const comboboxStateValue = (entry: Entry) => {
   if (kind === 'invalid') return 'مهارت نامعتبر'
   return 'جست‌وجو یا انتخاب کنید…'
 }
+const comboboxStateDescription = (entry: Entry) => {
+  const kind = comboboxStateKind(entry)
+  if (kind === 'hover') return 'نشانگر روی فیلد قرار دارد.'
+  if (kind === 'typing') return 'در حال تایپ برای پالایش پیشنهادها.'
+  if (kind === 'filled') return 'یک مقدار در فیلد ثبت شده است.'
+  if (kind === 'invalid') return 'مقدار واردشده نیاز به اصلاح دارد.'
+  if (kind === 'disabled') return 'فیلد غیرفعال و غیرقابل تغییر است.'
+  return 'آمادهٔ جست‌وجو و انتخاب از فهرست.'
+}
 
 const inputStateKind = (entry: Entry) => {
   const state = `${entry.label} ${entry.detail}`.toLocaleLowerCase()
@@ -689,7 +698,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
             </div>
           </div>
           <strong>{{ entry.label }}</strong>
-          <small dir="auto">{{ entry.detail }}</small>
+          <small dir="auto">{{ comboboxStateDescription(entry) }}</small>
         </article>
       </div>
       <div v-else-if="name === 'Input'" class="input-core-states-grid" aria-label="ده حالت عمومی ورودی" aria-hidden="true" inert>
@@ -866,7 +875,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .contract-visual--chip :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
 .contract-visual--chip :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
 .contract-visual--chip :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
-.combobox-state-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
+.combobox-state-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
 .combobox-state-card{display:grid;gap:var(--norato-space-1);min-inline-size:0;padding-block:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
 .combobox-state-target{display:flex;align-items:center;min-block-size:var(--norato-control-target-min);min-inline-size:0}
 .combobox-state-field{display:flex;align-items:center;gap:var(--norato-space-1);box-sizing:border-box;inline-size:min(100%,var(--norato-combobox-preview-inline-size));block-size:var(--norato-control-visual-height);min-inline-size:0;padding-inline:var(--norato-space-2);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-glass-surface-strong);color:var(--norato-color-text-primary)}
@@ -879,6 +888,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .combobox-state-card>strong{font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-heading-title-weight)}
 .combobox-state-card>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
 @media(max-width:599px){.combobox-state-grid{grid-template-columns:minmax(0,1fr)}}
+@media(min-width:600px) and (max-width:899px){.combobox-state-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.chip-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chip-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

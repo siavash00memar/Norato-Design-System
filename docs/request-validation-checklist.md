@@ -3241,3 +3241,9 @@
 - [x] Narrow local browser render shows a single-column gallery with no horizontal clipping; Select, Multi Select and Select Option remain available in Parts and in the live playground (value remains Tehran).
 - [x] Source review confirms the correction is scoped to Select; other component state galleries and live Select behavior are unchanged.
 - [ ] Full per-state screenshot matrix and independent screen-reader review remain open.
+
+## Combobox States gallery parity — 2026-11-14
+- [x] At matched 1265×713, the reference shows six description cards in a 4/2 arrangement; local Combobox now shows its six field-state samples in the same four-column desktop layout, with a Persian explanation per state and no repeated generic family caption.
+- [x] Screenshot confirms RTL, 36px capsule within 48px target, neutral Default/Disabled, Norato-yellow Hover/Typing/Filled and semantic Error strokes; no stretched field controls.
+- [x] Narrow local render places states in one column without horizontal clipping; medium-width rule is two columns. Existing playground value and component galleries remain unchanged.
+- [ ] Exhaustive per-cell screenshot archive, controlled cold-load fallback capture, and independent screen-reader review remain open.

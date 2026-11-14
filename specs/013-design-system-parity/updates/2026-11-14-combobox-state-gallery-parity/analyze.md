@@ -1,0 +1,3 @@
+# Analyze — Combobox state gallery parity
+
+At the matched 1265×713 browser viewport, the reference shows six state-description cards in a 4/2 grid. Norato's Combobox-specific preview correctly depicts six RTL fields and state strokes, but it used a two-column desktop grid and every caption said only “Combobox.” This doubled the vertical depth and hid the purpose of each state. The fix is scoped to `.combobox-state-grid` and its template; no shared gallery or live component selector changed. Four desktop columns bring cards near the reference's 150px width; two columns at medium widths and one on narrow mobile avoid compressed controls.

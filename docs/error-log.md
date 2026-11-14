@@ -1912,3 +1912,11 @@
 - **Correction:** Added a Select-only nine-state projection, removed the repeated family caption, and set a token-derived equal minimum card height. Parts/playground coverage remains unchanged; the stale placeholder in the component-rule record was reconciled.
 - **Verification:** Matched 1265×713 browser screenshots show the nine cards in 4/4/1 order with equal card rhythm. Narrow mobile render uses one column without horizontal clipping. AX exposes all nine names; Parts retains the three family contracts and playground defaults to Tehran. Full per-state screenshot matrix and independent screen-reader review remain open.
 - **Prevention:** Compare the page section's count, grouping, and repeated labels to the live reference, not only the page title and generic card styling.
+
+## ERR-245 — Combobox States cards used a two-column layout and repeated the family name (2026-11-14)
+
+- **Observed:** At 1265×713, the reference displays six descriptive cards in a 4/2 grid. Norato displayed six state-field samples in two columns and repeated only “Combobox” beneath each state.
+- **Cause:** The inert field-sample gallery used a two-column layout and bound the description slot to the parsed family name.
+- **Correction:** Use four desktop columns, two medium columns, and one narrow-mobile column. Add state-specific Persian descriptions while retaining the RTL samples, 36px capsule/48px target, and neutral/yellow/error Stroke semantics.
+- **Verification:** Matched desktop screenshots show the 4/2 layout and unique descriptions. Narrow mobile screenshot shows a single column without clipping. The change is isolated to the Combobox documentation gallery; live adapter logic is unchanged. Full state screenshot archive, throttled cold-load fallback capture, and independent screen-reader review remain open.
+- **Prevention:** Validate card content as well as state count and grid dimensions against the reference composition.
