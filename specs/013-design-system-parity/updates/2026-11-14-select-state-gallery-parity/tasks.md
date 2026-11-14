@@ -6,4 +6,4 @@
 - [x] T004 Remove repeated family caption from Select-only cards and align minimum card height with the reference.
 - [x] T005 Verify desktop/mobile render and preserve the live playground.
 - [x] T006 Run required gates and update the DoD evidence.
-- [ ] T007 Commit/push and verify `origin/master`; do not deploy.
+- [x] T007 Push verified on `origin/master`; no deployment.

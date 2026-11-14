@@ -7,4 +7,4 @@
 - [x] Browser screenshot confirms desktop 4/4/1 composition, RTL, and equal card minimum height; narrow mobile layout is one column with no horizontal clipping.
 - [x] Token, catalog, Vue TypeScript, production build, and diff gates pass.
 - [x] Update Select DoD and request-validation records; independent screen-reader and exhaustive visual-matrix gaps remain explicitly open.
-- [ ] Commit and push to GitHub; do not deploy.
+- [x] Commit `f431dc4` pushed to `origin/master`; remote hash verified. No deployment made.
