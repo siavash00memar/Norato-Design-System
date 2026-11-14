@@ -1944,3 +1944,11 @@
 - **Correction:** Added `skeleton-implement.md` with the delivered API/page integration, source-backed behavior, existing verification references, and the open DoD item. Split completed verification from the independent screen-reader review in `skeleton-tasks.md`.
 - **Verification:** Source and workflow-file review confirms the two Vue components/styles exist, the required stage sequence now has all eight artifacts, verified evidence remains linked to the checklist, and independent screen-reader review remains unchecked. This documentation-only correction does not change rendered UI or close the family DoD.
 - **Prevention:** Check that each required workflow stage has its own artifact and keep completed evidence separate from open DoD items.
+
+## ERR-249 — Empty State analysis was mistaken for current repository status (2026-11-14)
+
+- **Observed:** `empty-state-analyze.md` retained pre-implementation statements as present-tense repository facts, while the workflow's Implement-stage artifact was missing. This made the current adapter/page status hard to distinguish from the original source inventory.
+- **Cause:** The analysis captured a valid initial state but was not marked historical after the implementation, and implementation evidence lived only in the family checklist and updates.
+- **Correction:** Marked the initial inventory as historical and added `empty-state-implement.md` to record the delivered APIs, page integration, validation evidence, and still-open DoD. Linked the new artifact from the task ledger.
+- **Verification:** Current Vue component/export/page evidence and the existing family checklist were inspected; all eight required workflow artifacts now exist. Independent screen-reader review and exhaustive behavior coverage remain open; no UI or runtime behavior changed.
+- **Prevention:** Preserve the original analysis as a dated snapshot and record delivered state in a dedicated Implement artifact.

@@ -1,5 +1,7 @@
 # Empty State — Analyze
 
+> **Historical pre-implementation inspection.** The repository-state statements below describe the initial analysis before the adapter was built; they are not current implementation status. See `empty-state-implement.md` and `empty-state-checklist.md` for delivered state and remaining DoD.
+
 ## Repository evidence
 
 - `packages/components/src/catalog.ts` currently records Empty State as Adapted with no adapter or usage key.
