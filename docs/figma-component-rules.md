@@ -490,6 +490,7 @@
 - Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
 - Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
 - Match design reference's Linear composition: label and localized percentage share a metadata row above a full-width track. Keep RTL/LTR fill anchored to logical inline-start and circular geometry fixed.
+- Progress Sizes/States gallery uses token-sized 4/8/12px linear bars and 24/32/40px rings, yellow Determinate/Default fill and semantic status tones. Do not use the shared blue pill/dot sample; Indeterminate is not part of this API.
 - **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.
 
 ## Spinner — 2026-11-08

@@ -70,6 +70,11 @@ Reconciled the component contract with the current approved preview phrase and 3
 - Replaced the shared blue dot/line pill with a dedicated RTL track/fill/thumb sample. The fresh 305px local browser screenshot shows yellow fill, muted Disabled, yellow Focus, and a centered compact knob; the live adapter is unchanged.
 - Token/catalog/typecheck/build/diff gates pass. Matched desktop recapture and exact overflow metrics remain open; this correction does not close broader final DoD gaps.
 
+### Progress Sizes/States gallery — 2026-11-14
+
+- Replaced generic ruler and blue pill/dot imagery with intrinsic token-sized linear/ring samples and dedicated RTL determinate/tone bars. Indeterminate remains explanatory because the adapter does not implement it.
+- Current 305px browser screenshot confirms intrinsic tokenized bars/rings, RTL yellow fill, semantic Success/Warning/Danger, and no fake Indeterminate sample; no visible mobile clipping/stretch. Token/catalog/typecheck/build/diff gates pass. Desktop recapture, exact overflow metrics, full 120-state matrix and independent screen-reader review remain open.
+
 ## Select mobile navigation clearance — 2026-11-10
 
 - At 320×844, the open Select menu now ends at y=762 above the fixed navigation at y=788; internal scrolling reveals the final disabled option.

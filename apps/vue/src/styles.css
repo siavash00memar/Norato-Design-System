@@ -46,6 +46,37 @@
 @media(min-width:840px){.component-doc>#doc-preview.doc-preview-tooltip .component-sample{inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-split-button-preview-frame-inline-size))}}
 @media(max-width:599px){.component-doc>#doc-preview.doc-preview-tooltip .component-sample{box-sizing:border-box;inline-size:min(100%,var(--norato-split-button-preview-frame-mobile-inline-size));min-inline-size:0;margin-inline:auto}}
 
+/* Progress Sizes and States: intrinsic component geometry, separate from generic samples. */
+.progress-size-list{display:grid;gap:var(--norato-space-2);min-inline-size:0}
+.progress-size-item{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:var(--norato-space-3);min-inline-size:0;padding-block:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
+.progress-size-item>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.progress-size-item>span>strong{font-family:var(--norato-font-heading)}
+.progress-size-item p{margin:0;overflow-wrap:anywhere;color:var(--norato-color-text-secondary)}
+.progress-size-lines{display:flex;align-items:center;justify-content:space-around;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);direction:rtl}
+.progress-size-line{display:grid;justify-items:center;gap:var(--norato-space-1);min-inline-size:0}
+.progress-size-line>i{display:block;inline-size:var(--norato-space-12);border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow)}
+.progress-size-line[data-size="small"]>i{block-size:var(--norato-progress-linear-small)}
+.progress-size-line[data-size="medium"]>i{block-size:var(--norato-progress-linear-medium)}
+.progress-size-line[data-size="large"]>i{block-size:var(--norato-progress-linear-large)}
+.progress-size-line>b,.progress-size-circle>b{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-min-size);font-weight:var(--norato-type-body-regular-weight)}
+.progress-size-circles{display:flex;align-items:center;justify-content:space-around;gap:var(--norato-space-2);min-block-size:var(--norato-control-target-min);direction:rtl}
+.progress-size-circle{display:grid;justify-items:center;gap:var(--norato-space-1)}
+.progress-size-circle>i{display:block;box-sizing:border-box;border-style:solid;border-color:var(--norato-color-surface-muted);border-block-start-color:var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill)}
+.progress-size-circle[data-size="small"]>i{inline-size:var(--norato-progress-circle-small);block-size:var(--norato-progress-circle-small);border-width:var(--norato-progress-circle-stroke-small)}
+.progress-size-circle[data-size="medium"]>i{inline-size:var(--norato-progress-circle-medium);block-size:var(--norato-progress-circle-medium);border-width:var(--norato-progress-circle-stroke-medium)}
+.progress-size-circle[data-size="large"]>i{inline-size:var(--norato-progress-circle-large);block-size:var(--norato-progress-circle-large);border-width:var(--norato-progress-circle-stroke-large)}
+.state-visual-grid--progress .contract-state-card{min-inline-size:0}
+.state-visual-grid--progress .state-preview--progress{inline-size:100%;min-block-size:var(--norato-control-target-min)}
+.progress-state-track,.progress-tone-track{position:relative;display:block;overflow:hidden;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted)}
+.progress-state-track{inline-size:min(100%,calc(var(--norato-control-target-min) * 2));block-size:var(--norato-progress-linear-medium);direction:rtl}
+.progress-state-track>i,.progress-tone-track>i{position:absolute;inset-block:0;inset-inline-start:0;inline-size:60%;border-radius:inherit;background:var(--norato-color-brand-yellow)}
+.progress-tone-samples{display:grid;grid-template-columns:repeat(2,minmax(0,var(--norato-space-12)));gap:var(--norato-space-2);direction:rtl}
+.progress-tone-track{inline-size:100%;block-size:var(--norato-progress-linear-small);direction:rtl}
+.progress-tone-track[data-tone="success"]>i{background:var(--norato-color-status-success)}
+.progress-tone-track[data-tone="warning"]>i{background:var(--norato-color-status-warning)}
+.progress-tone-track[data-tone="danger"]>i{background:var(--norato-color-status-error)}
+@media(max-width:599px){.progress-size-item{grid-template-columns:minmax(0,1fr)}.progress-size-lines,.progress-size-circles{justify-content:flex-start;padding-inline-start:var(--norato-space-3)}}
+
 /* Range state gallery: compact slider anatomy, isolated from shared generic samples. */
 .state-visual-grid--range .state-preview--range{inline-size:100%;min-block-size:var(--norato-control-target-min)}
 .range-state-sample{position:relative;display:block;inline-size:min(100%,calc(var(--norato-control-target-min) * 2));block-size:var(--norato-control-target-min);direction:rtl}

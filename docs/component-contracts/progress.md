@@ -29,13 +29,13 @@ Progress میزان کار انجام‌شده را زمانی نمایش می�
 
 - Linear: ضخامت 4، 8، 12px؛ عنوان و درصد در ردیف metadata بالا و Track تمام‌عرض در زیر آن قرار می‌گیرد، مطابق مرجع طراحی.
 - Circular: قطر توکنی 24، 32، 40px؛ Small مقدار مرکزی ندارد، Medium و Large مقدار را نشان می‌دهند.
-- تمام نوارها و حلقه‌ها هندسهٔ intrinsic دارند و نباید با محتوا stretch شوند.
+- تمام نوارها و حلقه‌ها هندسهٔ intrinsic دارند و نباید با محتوا stretch شوند؛ گالری Sizes فقط ضخامت خط و قطر حلقه را با توکن‌های خود Progress نمایش می‌دهد.
 
 ## States
 
 - Determinate از 0 تا 100؛ صفر مسیر خالی و 100 مسیر کامل.
 - Tone Default با yellow برند Norato، Success/Warning/Danger با توکن‌های semantic.
-- در این API حالت Indeterminate تعریف نشده؛ کار نامعلوم با Spinner نمایش داده می‌شود.
+- در این API حالت Indeterminate تعریف نشده؛ کار نامعلوم با Spinner نمایش داده می‌شود. گالری States مسیر زرد و Toneهای معنایی را نشان می‌دهد و برای Indeterminate نمونهٔ جعلی نمی‌سازد.
 
 ## Parts
 

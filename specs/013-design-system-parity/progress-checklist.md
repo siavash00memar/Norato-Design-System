@@ -14,6 +14,13 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build and `git diff --check` pass.
 - [ ] Screen-reader review is independent; do not close DoD without all required browser evidence.
 
+## Sizes and States gallery — 2026-11-14
+
+- [x] Sizes renders only Progress-specific intrinsic samples: semantic 4/8/12px linear thickness and 24/32/40px ring diameters; generic multicolor rulers are absent.
+- [x] States renders yellow RTL Determinate and Default, tokenized Success/Warning/Danger, and explanatory unsupported Indeterminate; generic blue pill/dot is absent.
+- [x] Current 305px local browser screenshot shows no visible narrow clipping/stretch. Matched desktop recapture and exact overflow metrics remain open; independent screen-reader and full 120-state evidence remain open.
+- [x] Token integrity, 49-route catalog, Vue typecheck/build and `git diff --check` pass for this gallery change; production build completes with its existing bundle-size advisory.
+
 ## Current matched mobile comparison — 2026-11-11
 
 - [x] At 390px, the local/reference specimen frames both measure 327.2×300px at x=24px, with 375px document widths. Local linear track is 304×8px against reference 302.4×8.64px; the sub-2px difference preserves the Norato 8px semantic token and is not visibly stretched.

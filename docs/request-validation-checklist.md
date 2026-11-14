@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Progress Sizes/States use component geometry — 2026-11-14
+
+- [x] At the current 305px local viewport, Sizes shows intrinsic tokenized 4/8/12px bars and 24/32/40px rings; States shows RTL yellow Determinate, four semantic tone bars, and explanatory unsupported Indeterminate without a fake control.
+- [x] Generic blue pill/dot/ruler samples are absent from the reviewed Progress sections; no visible vertical stretch or mobile clipping appears.
+- [ ] Matched desktop recapture and exact document scroll-width measurement remain pending.
+- [ ] Live adapter behavior is unchanged; the full 120-case/RTL/LTR Progress DoD and independent screen-reader review remain open.
+
 ## Range state gallery palette and geometry — 2026-11-14
 
 - [ ] Desktop and mobile browser screenshots show the dedicated RTL rail/fill/thumb sample in Default, Hover, Pressed, Disabled and Focus; Norato yellow is the accent and no blue dot/line remains. Current local 305px browser screenshot confirms the five-state visual and RTL yellow fill; matched desktop recapture is pending.

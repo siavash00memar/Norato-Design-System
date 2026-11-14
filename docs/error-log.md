@@ -731,6 +731,14 @@
 - **Prevention:** Keep family-specific controls out of generic sample styles; review the rendered state gallery for palette and target geometry.
 - **Verification:** Fresh local browser screenshot at a 305px viewport shows the yellow RTL fill, centered compact thumb, muted Disabled, and yellow Focus; the prior generic blue marker is absent. Token/catalog/typecheck/build/diff gates pass. Matched desktop recapture, exact overflow measurement and independent screen-reader review remain open.
 
+## ERR-247 — Progress Sizes/States used generic blue samples (2026-11-14)
+
+- **Observed:** The Progress Sizes section used generic colored ruler marks and its States section used a blue pill/dot instead of Progress geometry.
+- **Cause:** Shared documentation galleries did not provide a Progress-specific visual branch.
+- **Correction:** Add dedicated token-sized linear/ring samples and RTL determinate/tone bars; explain unsupported Indeterminate without drawing a false component state.
+- **Prevention:** Review component-specific Sizes/States specimens separately from shared generic diagrams.
+- **Verification:** Fresh local 305px browser screenshots show token-sized 4/8/12px bars, 24/32/40px rings, yellow RTL Determinate, all four semantic tones, and explanatory unsupported Indeterminate. The prior generic blue samples are absent and no visible mobile clipping/stretch appears. Token/catalog/typecheck/build/diff gates pass. Matched desktop recapture and exact overflow metrics remain open.
+
 - The user screenshot reports an apparent offset between the Range fill and thumb.
 - Cause: legacy thumb `::before` painted a second yellow track segment across half of the 48px target; duplicate unconditional `::after` styles also made enabled thumbs gray.
 - Remove the stale pseudo-track and consolidate the Range CSS into one rule per part/state. Use Reka's fill only and constrain disabled colors to disabled state.

@@ -197,6 +197,17 @@ const chipStates = [
   { id: 'disabled', label: 'غیرفعال' },
   { id: 'focus', label: 'فوکوس' },
 ]
+const progressSizeSamples = [
+  { id: 'small', label: 'Small', linear: '۴px', circle: '۲۴px' },
+  { id: 'medium', label: 'Medium', linear: '۸px', circle: '۳۲px' },
+  { id: 'large', label: 'Large', linear: '۱۲px', circle: '۴۰px' },
+]
+const progressToneSamples = [
+  { id: 'default', label: 'پیش‌فرض' },
+  { id: 'success', label: 'موفق' },
+  { id: 'warning', label: 'هشدار' },
+  { id: 'danger', label: 'خطر' },
+]
 
 const sampleKind = (entry: Pick<Entry, 'label' | 'source'>) => {
   const item = `${entry.label} ${entry.source}`.toLocaleLowerCase()
@@ -661,6 +672,18 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         <article v-for="item in chipSizes" :key="item.id" class="chip-size-card"><div><NoratoChip label="فیلتر" mode="filter" :model-value="true" :size="item.id" dir="rtl" /></div><strong>{{ item.label }}</strong><small dir="ltr">{{ item.height }}px · min-height</small></article>
         <span class="visual-kind">ارتفاع دیداری بر اساس اندازه تغییر می‌کند؛ هدف تعاملی همچنان ۴۸ پیکسل است.</span>
       </div>
+      <div v-else-if="name === 'Progress'" class="progress-size-list" aria-label="اندازه‌های خطی و دایره‌ای Progress" aria-hidden="true" inert>
+        <article v-for="entry in entries" :key="entry.id" class="progress-size-item">
+          <div v-if="entry.detail.includes('Linear')" class="progress-size-lines">
+            <span v-for="size in progressSizeSamples" :key="size.id" class="progress-size-line" :data-size="size.id"><i /><b dir="ltr">{{ size.linear }}</b></span>
+          </div>
+          <div v-else-if="entry.detail.includes('Circular')" class="progress-size-circles">
+            <span v-for="size in progressSizeSamples" :key="size.id" class="progress-size-circle" :data-size="size.id"><i /><b dir="ltr">{{ size.circle }}</b></span>
+          </div>
+          <span v-else class="progress-size-note-mark" aria-hidden="true" />
+          <span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span>
+        </article>
+      </div>
       <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
@@ -705,6 +728,19 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         <article v-for="state in inputDocumentStates" :key="state.id" class="input-core-state-card" :data-state="state.id">
           <header><strong dir="ltr">{{ state.label }}</strong><i aria-hidden="true" /></header>
           <small>{{ state.description }}</small>
+        </article>
+      </div>
+      <div v-else-if="name === 'Progress'" class="state-visual-grid state-visual-grid--progress" aria-label="حالت‌های Progress" aria-hidden="true" inert>
+        <article v-for="entry in entries" :key="entry.id" class="contract-state-card">
+          <div v-if="!entry.detail.includes('Indeterminate')" class="state-preview state-preview--progress">
+            <div v-if="entry.detail.includes('Tone')" class="progress-tone-samples">
+              <span v-for="tone in progressToneSamples" :key="tone.id" class="progress-tone-track" :data-tone="tone.id"><i /></span>
+            </div>
+            <span v-else class="progress-state-track"><i /></span>
+          </div>
+          <strong>{{ entry.label }}</strong>
+          <small dir="auto">{{ entry.detail }}</small>
+          <span class="visual-kind">{{ entry.detail.includes('Indeterminate') ? 'برای مدت نامعلوم از Spinner استفاده کن' : 'نمونهٔ Progress با هندسهٔ ذاتی' }}</span>
         </article>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--range': name === 'Range', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
