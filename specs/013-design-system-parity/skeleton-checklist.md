@@ -17,3 +17,10 @@
 - [x] CSS viewports 390×844 and 320×844 both have no horizontal document overflow (390/390 and 320/320px); preview frame is 358×300px and 288×300px respectively. Avatar geometry remains square at 40×40px.
 - [x] Emulated `prefers-reduced-motion: no-preference`: live Shimmer uses the RTL keyframe at direction `rtl`; its background position advances from about −99.6% to −84.0% over 250ms. Switching the live direction selector to `LTR` changes the animation name to `norato-skeleton-shimmer-ltr`.
 - [ ] Independent screen-reader review remains open; keep Skeleton DoD open.
+
+## Skeleton — mobile comparison and contract labels (2026-11-14)
+
+- [x] At a matched 390×844 browser viewport, the Norato and design-reference specimens keep the same bounded card silhouette and near-matching frame height; the Norato page document is 375px wide with no horizontal overflow. No vertical stretch was visible.
+- [x] Replaced generic generated section titles with named Skeleton-specific contract labels in Variants, Sizes, States, Parts, Usage, Accessibility, Tokens and DoD.
+- [ ] Re-capture after the contract edit and re-check the primary playground pointer/keyboard path; Baseline remains open until this and global evidence reconciliation are complete.
+- [ ] Independent screen-reader review remains open for Final DoD.

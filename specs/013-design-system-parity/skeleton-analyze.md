@@ -11,6 +11,8 @@
 - `apps/vue/src/App.vue` has a dedicated playground branch for each richer adapter; `apps/vue/src/usage-examples.ts` holds generated examples; `packages/components/src/catalog.ts` defines the route contract. Skeleton currently has neither a playground nor a usage example.
 
 ## Decisions
+- **2026-11-14 acceptance correction:** section cards must use authored, component-specific labels; generated counters such as «نمونهٔ گونه ۳»، «بخش ۳» and «حالت ۳» are not acceptable content. Every unlabeled Variants/Sizes/States/Parts/Usage/Accessibility/Tokens/DoD entry in the Skeleton contract will receive a meaningful title without changing the API or visual reference composition.
+- Fresh same-viewport browser review at 390×844 shows the Norato specimen and reference both retain bounded preview frames of near-matching height and a natural avatar/text silhouette. The local document measures 375px client/scroll width. No visible vertical stretch or horizontal overflow was observed. The independent playground pointer/keyboard path was not re-run in this pass, so Baseline remains open.
 - Shared components: a single shape and a single preset. Each is a labelled `role="region"` busy container; all repeated visual blocks are `aria-hidden`.
 - Tokens: neutral default surface for the base and elevated surface for the moving highlight; motion comes only from the chosen effect and is disabled for reduced motion.
 - Pattern dimensions use CSS Grid/Flex with `min-inline-size:0`; circle uses equal inline/block size, text bars use fixed max widths and preserve layout under constrained containers.

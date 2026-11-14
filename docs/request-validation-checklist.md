@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Skeleton mobile comparison and section-label cleanup — 2026-11-14
+
+- [x] At matched 390×844 viewport, the local and reference Skeleton previews retain the same bounded card silhouette and near-matching frame height; local document client/scroll widths are both 375px. No visible avatar or text-block stretch was observed.
+- [x] The Skeleton contract now gives its previously auto-numbered Variants, Sizes, States, Parts, Usage, Accessibility, Tokens and DoD entries meaningful family-specific headings.
+- [ ] Refresh the local browser after the documentation edit and verify the displayed headings and primary pointer/keyboard playground flow. Do not close Skeleton Baseline until verified.
+
 ## Input descriptive axis chip palette — 2026-11-10
 
 - [x] Current local browser page `#component-input` was reviewed at the mobile viewport; descriptive axis notes render neutral gray while neighboring state specimens retain neutral, yellow and error styling.
