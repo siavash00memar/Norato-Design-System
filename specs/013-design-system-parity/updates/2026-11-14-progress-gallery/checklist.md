@@ -5,4 +5,4 @@
 - [x] At 305px, narrow browser review confirms yellow/status palette, RTL, intrinsic geometry and no visible clipping.
 - [ ] Matched desktop render and exact document overflow metric remain open.
 - [x] Token/catalog/typecheck/build/diff gates pass.
-- [ ] Changes are pushed to GitHub; Vercel remains untouched.
+- [x] Implementation commit `657a622` is pushed to GitHub; Vercel was not deployed.

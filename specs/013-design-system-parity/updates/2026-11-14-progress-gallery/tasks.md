@@ -5,4 +5,4 @@
 - [x] T003 Add a dedicated Progress States gallery for determinate, semantic tones and unsupported indeterminate.
 - [x] T004 Review the actual local render at 305px: intrinsic bars/rings, RTL yellow fill, all four tones, unsupported Indeterminate note, no visible clipping/stretch; record desktop/overflow evidence gaps.
 - [x] T005 Run required technical gates and update canonical docs.
-- [ ] T006 Commit/push to GitHub without a Vercel deployment.
+- [x] T006 Implementation commit `657a622` pushed to GitHub; no Vercel deployment.
