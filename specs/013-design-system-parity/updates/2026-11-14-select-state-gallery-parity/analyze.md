@@ -1,0 +1,3 @@
+# Analyze — Select state gallery parity
+
+At a 1265×713 browser viewport, the reference States section displays nine cards in a four-column desktop grid. Norato displayed 18 cards because its generic parser combined Select (7 states), Multi Select (6 states), and Select Option (5 states) in one section. This duplicated state names and departed from the reference's state-name/description card hierarchy. Variable content wrapping also made short rows shorter than the reference. The Select live playground and Parts contracts already describe the additional families, so the static States gallery can represent the nine distinct state concepts without removing their API or visual interaction coverage. A token-derived 88px minimum preserves the reference's even card rhythm.

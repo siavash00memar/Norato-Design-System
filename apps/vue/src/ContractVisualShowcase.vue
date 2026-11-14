@@ -91,6 +91,19 @@ const stateEntries = computed(() => entries.value.flatMap(entry => {
   if (values.length < 2 || values.some(value => value.length > 42)) return [entry]
   return values.map((value, index) => ({ ...entry, id: entry.id * 100 + index, label: value, detail: entry.label, source: value }))
 }))
+const selectStateEntries = computed(() => {
+  const preferred = new Map<string, Entry>()
+  for (const entry of stateEntries.value) {
+    const family = entry.detail.toLocaleLowerCase()
+    const kind = stateKind(entry)
+    const isSelectState = family === 'select'
+    const isDistinctOptionState = family === 'select option' && (kind === 'selected' || kind === 'focus')
+    if ((isSelectState || isDistinctOptionState) && !preferred.has(kind)) preferred.set(kind, entry)
+  }
+
+  return ['default', 'hover', 'open', 'filled', 'invalid', 'disabled', 'readonly', 'selected', 'focus']
+    .flatMap(kind => preferred.has(kind) ? [preferred.get(kind)!] : [])
+})
 const radioMatrixStates: RadioMatrixState[] = [
   { id: 'default', label: 'Default', kind: 'default' },
   { id: 'hover', label: 'Hover', kind: 'hover' },
@@ -686,12 +699,12 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         </article>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
-        <article v-for="entry in stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
+        <article v-for="entry in name === 'Select' ? selectStateEntries : stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
           <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span class="state-shape"><i /><i /></span>
           </div>
           <template v-if="name === 'Select'">
-            <div class="select-state-heading"><strong>{{ entry.label }}</strong><small class="select-state-family">{{ entry.detail }}</small><i aria-hidden="true" /></div>
+            <div class="select-state-heading"><strong>{{ entry.label }}</strong><i aria-hidden="true" /></div>
             <small class="select-state-description">{{ selectStateDescription(entry) }}</small>
           </template>
           <template v-else-if="name === 'Radio Button' || name === 'Switch'">

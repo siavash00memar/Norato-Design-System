@@ -1904,3 +1904,11 @@
 - **Correction:** Updated the contract to the current approved local copy and 300px stage height; no runtime behavior or reference text was changed.
 - **Verification:** Matched 1265×713 browser screenshots confirm the local stage/field/RTL-chevron composition; AX and keyboard checks verify grouped options, disabled state, selection and restore. Full state-by-state parity and independent screen-reader review remain open.
 - **Prevention:** After specimen copy or geometry changes, reconcile the component contract in the same update and search for old values.
+
+## ERR-244 — Select States gallery duplicated subcomponent states and varied card height (2026-11-14)
+
+- **Observed:** The current design reference shows nine States cards in a four-column 4/4/1 layout. Norato showed 18 entries by combining Select, Multi Select, and Select Option states; short-description rows also produced visibly shorter cards.
+- **Cause:** The shared documentation renderer expanded every contract family into the one Select States section and let card height depend on wrapping.
+- **Correction:** Added a Select-only nine-state projection, removed the repeated family caption, and set a token-derived equal minimum card height. Parts/playground coverage remains unchanged; the stale placeholder in the component-rule record was reconciled.
+- **Verification:** Matched 1265×713 browser screenshots show the nine cards in 4/4/1 order with equal card rhythm. Narrow mobile render uses one column without horizontal clipping. AX exposes all nine names; Parts retains the three family contracts and playground defaults to Tehran. Full per-state screenshot matrix and independent screen-reader review remain open.
+- **Prevention:** Compare the page section's count, grouping, and repeated labels to the live reference, not only the page title and generic card styling.

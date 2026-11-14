@@ -15,7 +15,7 @@
 - [x] `docs/request-validation-checklist.md` reports the actual render, interaction evidence, limitations and DoD status.
 - [x] Open-menu mobile geometry re-captured at an enforced 390×844 viewport: menu bounds x=16..359, y=10..394.5px, 343×384.5px; document width 390px; six option rows remain 48px high. Escape closed the menu and returned focus to the trigger.
 - [x] Combined state/size/label/display matrix was exercised in the live playground: 96 cases (single/chips/summary × label inside/outside × four sizes × required+error/error+disabled/error+read-only/error+loading). No issues in RTL, minimum 48px target, document overflow, error association, state ARIA, disabled behavior or loading status/busy semantics.
-- [x] Static States gallery now follows design reference's title+description card structure; all 18 Select/Multi Select/Select Option states retain family names and Persian descriptions. Norato state accents, RTL, desktop 3-column and mobile 2-column geometry were verified at the same 1195×765 and 390×844 viewports; no overflow or shape distortion.
+- [x] Earlier gallery pass (superseded 2026-11-14): the 18 Select/Multi Select/Select Option entries and family labels used a 3-column desktop and 2-column mobile layout at 1195×765 and 390×844. That presentation is superseded by the nine-state gallery below; family coverage remains in Parts and the playground.
 - [ ] Select adapter's full pixel-level comparison of every visual state/variant and independent screen-reader software remain open; the 96-case matrix validates live geometry/semantics but is not a screenshot diff of every cell.
 - [x] Follow-up browser pass (2026-11-09): opened the searchable Select, verified the listbox exposes grouped options plus a disabled option, Escape closed it and returned to the trigger, ArrowDown moved from search to the selected option and through the list, and Enter committed Isfahan. Reopened and used ArrowDown/ArrowUp/Enter to restore the fixture to Tehran. The visible control and live selection summary both reported Tehran afterward.
 - [x] Follow-up 2026-11-09: changed the shared focus-contrast outline to dark amber while retaining the yellow focus ring. The live Reka listbox showed the focused selected option with amber+yellow focus styling; ArrowDown left the controlled value unchanged, and Escape closed the listbox and returned focus to the trigger. The static Focus card uses the new amber token. Token/catalog/type/build/diff gates pass. The complete state screenshot matrix and independent screen-reader review stay open.
@@ -31,6 +31,14 @@
 - [x] Fresh browser AX/keyboard pass exposed option groups, selected and disabled choices; ArrowDown and Enter selected Isfahan, then Tehran was restored through the same keyboard path.
 - [x] Reconciled the component contract's stale placeholder and frame-height description.
 - [ ] Full Select state-by-state screenshot comparison and independent screen-reader review remain open; Select DoD stays open.
+
+## Select States gallery parity — 2026-11-14
+
+- [x] Same 1265×713 browser viewport confirms the design reference shows nine States cards; the previous Norato gallery duplicated three families into 18 entries.
+- [x] Select now renders nine unique cards in the reference's 4/4/1 desktop arrangement, with state title and description only; selected/focus cards draw from the Select Option contract.
+- [x] Screenshot review confirms equal minimum card height matching the reference rhythm, Norato semantic state colors, and preserved RTL.
+- [x] Narrow viewport shows one card per row with no horizontal clipping; Parts still lists Select, Multi Select, and Select Option, and the live playground remains intact with Tehran selected.
+- [ ] Full per-state screenshot matrix and independent screen-reader review remain open; Select DoD stays open.
 
 ## Desktop frame width follow-up — 2026-11-09
 

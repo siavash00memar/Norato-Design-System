@@ -40,6 +40,7 @@
 - **Select:** Default، Hover، Open، Filled، Error، Disabled، Read-only
 - **Multi Select:** Default، Hover، Open، Filled، Error، Disabled
 - **Select Option:** Default، Hover، Selected، Disabled، Focus
+- **گالری States:** دقیقاً ۹ کارت یکتا برای Default، Hover، Open، Filled، Error، Disabled، Read-only، Selected و Focus؛ Selected و Focus از قرارداد Select Option می‌آیند تا حالت‌های مشترک تکرار نشوند. کارت‌ها هم‌قد و responsive هستند. جزئیات Multi Select و Select Option در Parts و playground باقی می‌ماند.
 
 ## Parts
 

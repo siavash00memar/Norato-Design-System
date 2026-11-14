@@ -3234,3 +3234,10 @@
 - [x] Playground browser tree exposes grouped options, selected Tehran, and disabled `به‌زودی`. ArrowDown from search focused an option; Enter selected Isfahan, then Enter restored Tehran. Value summary and trigger agree.
 - [x] Updated the Select component contract to remove stale placeholder copy and stale 288px frame height; runtime source was unchanged.
 - [ ] Full visual-state screenshot matrix and independent screen-reader review remain open.
+
+## Select States gallery parity — 2026-11-14
+- [x] At matched 1265×713, the reference exposes nine state cards; the local gallery now has the same nine unique states with state name and Persian description, arranged 4/4/1 in RTL.
+- [x] Equal card minimum height uses existing Norato control/spacing tokens; desktop screenshot confirms even rows and no card content stretch. State indicators retain semantic Norato colors.
+- [x] Narrow local browser render shows a single-column gallery with no horizontal clipping; Select, Multi Select and Select Option remain available in Parts and in the live playground (value remains Tehran).
+- [x] Source review confirms the correction is scoped to Select; other component state galleries and live Select behavior are unchanged.
+- [ ] Full per-state screenshot matrix and independent screen-reader review remain open.
