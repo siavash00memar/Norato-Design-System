@@ -570,6 +570,7 @@
 - First slide and first pagination dot belong on the right in RTL. The next action advances left; ArrowLeft advances and ArrowRight goes back.
 - In LTR, the first slide belongs on the left; ArrowRight advances and ArrowLeft goes back. Previous/next button names follow the selected direction.
 - Show a portion of the adjacent slide. Keep slide media at an intrinsic aspect ratio; never force a shared fixed height that stretches images.
+- **Carousel specimen composition:** Keep its inert heading, arrows, slide row, and pagination as a centered compact group capped at the medium slide maximum plus one gap token; use min(100%, …) so narrower frames contract without stretching the header across the full specimen.
 - Norato's active pagination uses the yellow brand accent. The control remains keyboard reachable with at least a 48px hit target.
 - **Observation:** at 385px, arrow navigation initially scrolled the page vertically and immediate scroll events could reset the active dot.
 - **Correction:** scroll the carousel track to the target slide center and debounce active-index synchronization until scrolling settles.

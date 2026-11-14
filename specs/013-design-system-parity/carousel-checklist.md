@@ -111,3 +111,11 @@
 - [x] ArrowRight advanced the controlled index/status from slide 1 to slide 2; ArrowLeft restored slide 1 and disabled Next.
 - [x] Restored RTL and slide 1 after the check.
 - [ ] This confirms the keyboard direction mapping only; screen-reader review and real-device touch review remain open.
+
+## Matched desktop specimen width — 2026-11-15
+
+- [x] At a 1280×720 CSS viewport, the Norato dotted specimen frame measures 631.984×300px; the reference frame measures 636×300px.
+- [x] The complete local inert composition now measures 368px, compared with 367.2px in the reference. The title and arrow controls no longer span the full 622px inner frame.
+- [x] Three local square slides remain 114.66px each; RTL order, left-side arrow controls and centered yellow active indicator remain visible. The live Vue adapter is unchanged.
+- [x] Fresh local renders after the CSS change at 390×844 and 320×740 show document client/scroll widths 375/375px and 305/305px. The specimen contracts to 333px and 263px within the viewport; no horizontal overflow was observed.
+- [ ] Real-device touch scrolling and independent screen-reader review remain open; Carousel DoD remains open.

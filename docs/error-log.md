@@ -2073,3 +2073,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Apply the existing `required` prop to every configured native cell; keep all cells optional when the prop is false.
 - **Verification:** Live browser checks cover incomplete and complete 4/5/6-cell values and an empty optional value; full code and paste behavior are retained. Project validation outcomes are recorded in the OTP required-completion update.
 - **Prevention:** For segmented values, validate group completeness against native form semantics, not only the first cell or visible required marker.
+
+## ERR-265 — Inert Carousel header stretched across the preview (2026-11-15)
+
+- **Observed:** The slide track was compact and centered, but its title and arrow controls sat at opposite edges of the full-width preview, making the specimen feel horizontally stretched.
+- **Cause:** `.sample-carousel` used `width:100%` while only the nested track had a token-based maximum width.
+- **Correction:** Cap the inert specimen wrapper with the existing medium slide maximum plus one spacing token, using `min(100%, …)` so narrower parents can still constrain it. The live adapter is untouched.
+- **Verification:** At the same 1280×720 viewport, the local compact composition measures 368px vs the reference's 367.2px; the local frame is 631.984×300px vs 636×300px. Three square cards measure about 114.66px each, and the RTL title, arrows and centered indicator visually align. A fresh 390/320 browser render after the change remains open; existing pre-change mobile evidence showed no overflow.
+- **Prevention:** Measure the complete specimen composition, not only the slide track, so sibling header elements cannot escape the track's intrinsic width.
