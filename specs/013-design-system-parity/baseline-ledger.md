@@ -42,7 +42,7 @@ Status meanings:
 | Table | Baseline passed | Fresh same-viewport desktop (1265×713) and mobile (375×844) comparisons confirm matching table anatomy and bounded specimen frames. RTL columns, selected-row treatment, Norato yellow, primary sort behavior, keyboard paths and ≥48px targets are recorded; no obvious stretch or clipping appears. Exact 390/320 post-inset measurements, full matrix and independent screen-reader review remain open for follow-up/Final DoD in `table-checklist.md`. |
 | List | Baseline passed | Matched desktop and 414px mobile comparison, bounded three-row RTL specimen, ≥48px targets and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Card | Baseline passed | Matched desktop and mobile comparisons, six adapter coverage, bounded media/text without stretch, RTL, ≥48px interactive controls and pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
-| Tag | Evidence recorded; audit open | Existing responsive and interaction evidence. |
+| Tag | Evidence recorded; audit open | Fresh desktop default now matches the reference's neutral, soft, small «برچسب» sample; local 390px geometry and no-overflow are recorded. Direct post-edit same-viewport mobile reference comparison remains open. |
 | Chip | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
 | Avatar | Evidence recorded; audit open | Existing responsive and focus evidence. |
 | Timeline | Evidence recorded; audit open | Existing responsive and direction/layout evidence. |

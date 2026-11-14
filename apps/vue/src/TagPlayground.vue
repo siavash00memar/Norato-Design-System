@@ -3,16 +3,16 @@ import { computed, ref } from 'vue'
 import { NoratoTag, type NoratoTagAppearance, type NoratoTagSize, type NoratoTagTone } from '@norato/vue'
 import PlaygroundSelect from './PlaygroundSelect.vue'
 
-const tone = ref<NoratoTagTone>('success')
+const tone = ref<NoratoTagTone>('neutral')
 const appearance = ref<NoratoTagAppearance>('soft')
-const size = ref<NoratoTagSize>('medium')
+const size = ref<NoratoTagSize>('small')
 const dot = ref(true)
 const leadingIcon = ref(false)
 const trailingIcon = ref(false)
 const dir = ref<'rtl' | 'ltr'>('rtl')
 const textLength = ref<'short' | 'long'>('short')
 const labelText = computed(() => textLength.value === 'short'
-  ? 'منتشر شده'
+  ? 'برچسب'
   : 'نسخهٔ تازهٔ سیستم طراحی نوراتو منتشر شد؛ شامل بهبود دسترس‌پذیری و اصلاح جزئیات رابط کاربری')
 const props = defineProps<{ copiedKey: string }>()
 const emit = defineEmits<{ copy: [key: string, value: string] }>()

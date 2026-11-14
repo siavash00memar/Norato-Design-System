@@ -6,9 +6,13 @@
 - Norato semantic palette, with yellow retained as the brand accent and no blue accent introduced.
 - Soft/outline appearance, neutral/success/warning/danger/info tones, four intrinsic sizes, optional decorative leading/trailing icons and dot.
 - RTL by default; LTR can be set explicitly. No vertical or horizontal stretching for ordinary labels.
-- Static preview uses the shared Button specimen frame; the executable playground follows the Button page structure.
+- Static preview uses the shared Button specimen frame and follows the reference's neutral, soft, small «برچسب» sample with a status dot; the executable playground follows the Button page structure and opens in the same sample state.
 
 ## Visual and behavior review
+
+- [x] 2026-11-14 same-viewport desktop review at 1265×713 found near-matching specimen frames (reference ≈630×297px; Norato ≈626×298px), but the Tag itself differed: Norato showed a longer green Success/Medium sample while the reference showed a compact neutral sample. The static specimen and executable playground defaults now use a neutral, soft, small Tag with dot and the concise label «برچسب»; semantic colors remain available as variants.
+- [x] Post-edit mobile Norato render at 390×844 confirms a centered 57.75×24px RTL Tag inside a 343×300px specimen; the document remains 375px wide with no horizontal overflow. The dot is decorative (`aria-hidden`) and the span has no role or tab stop.
+- [ ] A same-viewport reference mobile capture after the default correction is still needed: the browser viewport override resized the local tab but the reference tab stayed at desktop width. Existing 390/320 local geometry and earlier mobile states do not replace this direct comparison.
 
 - [x] Compared Norato and reference pages in the same 1905×951 browser window. The local dotted Button specimen is about 580×288px while the reference frame is about 630×300px; the different frame width follows the documentation column. Local Tag uses the same compact pill/label/dot hierarchy, with success tone adjusted to Norato's semantic palette.
 - [x] Browser accessibility tree exposes the Tag as text with no interactive role or tab stop; the optional icon wrappers and status dot use `aria-hidden`.
@@ -31,4 +35,4 @@
 
 ## Evidence
 
-Tag DoD remains open for independent screen-reader review; the cross-combination visual pixel review was previously completed, but the new long-copy stress case does not replace that assistive-technology check.
+Tag's desktop default correction and local mobile geometry are verified. Baseline remains open pending a same-viewport mobile reference comparison; required technical gates pass on the current working revision. Strict Final DoD also remains open for independent screen-reader review.

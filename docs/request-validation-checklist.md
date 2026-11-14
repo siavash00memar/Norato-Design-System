@@ -3105,3 +3105,11 @@
 - [x] Current reference shows 60% and «در حال آپلود». Updated inert and live Norato defaults to 60%; browser DOM reports aria-valuenow=60, RTL order and Norato yellow.
 - [x] Mobile playground passed keyboard and pointer tone selection; final state was restored to Default/RTL/60.
 - [ ] Independent screen-reader review remains open for Progress Final DoD.
+
+## Tag default sample and responsive review — 2026-11-14
+
+- [x] Same-viewport desktop (1265×713) review identified and corrected the specimen mismatch: the reference shows a neutral compact «برچسب» Tag with dot; Norato had shown a longer green success label. The fresh local desktop render now matches the label, tone, dot placement and compact scale inside near-equal frames (reference about 630×297px; Norato about 626×298px).
+- [x] Fresh local 390×844 render measures a 343×300px specimen and a centered 57.75×24px Tag. Document client and scroll widths are both 375px; direction is RTL; decorative dot is hidden from accessibility; Tag itself has no interactive role or tabindex.
+- [x] Playground begins in neutral/soft/small/RTL/short-text with dot enabled. Selecting Success updates the preview and generated Vue snippet; restoring Neutral returns the new default.
+- [ ] Same-viewport reference mobile capture after the correction remains open because the available browser viewport override did not resize the reference tab. Earlier local responsive checks and old reference comparison do not substitute for this exact post-edit mobile review.
+- [ ] Independent screen-reader review remains open for strict Final DoD.
