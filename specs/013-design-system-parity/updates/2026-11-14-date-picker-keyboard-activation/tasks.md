@@ -4,4 +4,4 @@
 - [x] T002 Verify trigger, calendar semantics, RTL month-boundary navigation, and Enter selection.
 - [x] T003 Confirm value/example synchronization and restore the playground default.
 - [x] T004 Run required repository gates; all five passed.
-- [ ] T005 Commit and push the evidence update; confirm remote parity.
+- [x] T005 Commit `c4188a0` and push to `origin/master`; verify the pushed branch.

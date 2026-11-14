@@ -8,3 +8,4 @@
 - [x] Reset restored field and snippet to 1 Aban 1405 / `1405-08-01`.
 - [ ] Independent screen-reader announcement and reading-order review remains open; this browser AX check does not satisfy it.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed.
+- [x] Evidence update pushed to `origin/master` in commit `c4188a0`.
