@@ -93,3 +93,9 @@
 - [x] Reloading `#component-charts` reconstructed the Charts detail and kept Charts highlighted in yellow, so the current component is recoverable from the URL.
 - [x] The published Sidebar Usage SFC was copied verbatim into a temporary Vue SFC and passed `pnpm --dir apps/vue typecheck` against the real package exports. The temporary validation file was removed; a separate consumer-project build is still unverified.
 - [ ] Native link Tab order, full Glass/Bar × expanded/collapsed screenshot matrix, and independent screen-reader review remain open.
+
+## Sidebar — native link Tab order — 2026-11-15
+
+- [x] In the live desktop Sidebar playground, keyboard Tab from the Overview link advances through Projects, its Active and Archive children, Reports, then the Glass style control and the next form control in visual/semantic order.
+- [x] Each visible sidebar row measures 230×48px. The Overview link is a native anchor with `aria-current="page"`; child and sibling items remain anchors.
+- [ ] This desktop pass does not cover collapsed/mobile order, the full Glass/Bar × expanded/collapsed state screenshots, or independent screen-reader review; Sidebar DoD remains open.
