@@ -12,7 +12,7 @@
 
 - [x] 2026-11-14 same-viewport desktop review at 1265×713 found near-matching specimen frames (reference ≈630×297px; Norato ≈626×298px), but the Tag itself differed: Norato showed a longer green Success/Medium sample while the reference showed a compact neutral sample. The static specimen and executable playground defaults now use a neutral, soft, small Tag with dot and the concise label «برچسب»; semantic colors remain available as variants.
 - [x] Post-edit mobile Norato render at 390×844 confirms a centered 57.75×24px RTL Tag inside a 343×300px specimen; the document remains 375px wide with no horizontal overflow. The dot is decorative (`aria-hidden`) and the span has no role or tab stop.
-- [ ] A same-viewport reference mobile capture after the default correction is still needed: the browser viewport override resized the local tab but the reference tab stayed at desktop width. Existing 390/320 local geometry and earlier mobile states do not replace this direct comparison.
+- [x] Post-edit matched mobile captures: at 390×844, reference and Norato specimen frames are both 327×300px; at 320×640, both are 257×300px. The Tag remains 57.75×24px, centered, RTL, and un-stretched. Norato document client/scroll widths match at 375px and 305px; the reference page has 326px scroll width at 320px from surrounding documentation content, while its specimen remains bounded.
 
 - [x] Compared Norato and reference pages in the same 1905×951 browser window. The local dotted Button specimen is about 580×288px while the reference frame is about 630×300px; the different frame width follows the documentation column. Local Tag uses the same compact pill/label/dot hierarchy, with success tone adjusted to Norato's semantic palette.
 - [x] Browser accessibility tree exposes the Tag as text with no interactive role or tab stop; the optional icon wrappers and status dot use `aria-hidden`.
@@ -35,4 +35,4 @@
 
 ## Evidence
 
-Tag's desktop default correction and local mobile geometry are verified. Baseline remains open pending a same-viewport mobile reference comparison; required technical gates pass on the current working revision. Strict Final DoD also remains open for independent screen-reader review.
+Tag Baseline passed after matched desktop and mobile comparison, responsive geometry, RTL, interaction, and current-revision technical gates. Strict Final DoD remains open for independent screen-reader review.
