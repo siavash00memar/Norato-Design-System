@@ -1872,3 +1872,11 @@
 - **Correction:** Added scoped frame/content tokens, matched the default four-event composition and semantic dot sizes, preserved equal row cadence through the last event, and adjusted the narrow RTL marker/rail offset together below 360px.
 - **Verification:** Matched desktop frame is 635.98×328px vs 636×327.5px; matched 390/320 frames are 327/257×311.5px. Marker offsets differ by under 0.5px at mobile widths; local documents measure 375px/305px without overflow. Token/catalog checks, Vue typecheck/build and diff check pass.
 - **Prevention:** Compare both the outer specimen and inner event rail at desktop and mobile widths; measure first/middle/last rows rather than inferring spacing from the frame alone.
+
+## ERR-240 — Charts preview was oversized on mobile and too short on desktop (2026-11-14)
+
+- **Observed:** The desktop frame/card were about 32px/10px short; mobile frames were 16px too wide. At 320px the local card and plot were 263×222px and 280×131px, introducing an inner horizontal scrollbar versus a 245×187px card and 213×100px reference plot.
+- **Cause:** The generic 300px sample shell, a 360px card cap with 12px padding, and a 280px minimum plot width were reused for the static documentation specimen.
+- **Correction:** Added family-scoped frame and card geometry, increased static card padding, and disabled the live-chart minimum width only in the inert preview. The live adapter's scrolling behavior and Norato yellow series palette are unchanged.
+- **Verification:** Desktop frame/card are 635.98×332px and 368×244px versus 636×331.69px and 367.2×243.74px. At 390/320px, frame widths match 327/257px; card/plot geometry is within 4px, no inert inner scrollbar appears, and local documents have no overflow. Token/catalog/type/build/diff and prohibited-name gates pass; browser console has no errors.
+- **Prevention:** Compare frame, card and actual SVG bounds separately at desktop and narrow viewports; don't infer plot fit from document overflow alone.

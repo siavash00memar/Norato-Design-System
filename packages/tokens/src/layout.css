@@ -36,7 +36,13 @@
   --norato-carousel-slide-small-max-inline-size: 280px;
   --norato-carousel-slide-medium-max-inline-size: 360px;
   --norato-carousel-slide-large-max-inline-size: 440px;
-  --norato-chart-preview-card-inline-size: 360px;
+  --norato-chart-preview-card-inline-size: 368px;
+  --norato-chart-preview-frame-inline-size: 636px;
+  --norato-chart-preview-frame-mobile-inline-size: 328px;
+  --norato-chart-preview-frame-block-size: 332px;
+  --norato-chart-preview-frame-mobile-block-size: 300px;
+  --norato-chart-preview-card-block-size: 244px;
+  --norato-chart-preview-card-mobile-block-size: 222px;
   --norato-image-preview-media-inline-size: 320px;
   --norato-chart-stat-min-block-size: 88px;
   --norato-chart-stat-spark-inline-size: 72px;

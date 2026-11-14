@@ -1,5 +1,12 @@
 # Charts — Checklist / Definition of Done
 
+## Default preview geometry — 2026-11-14
+
+- [x] Matched desktop frame, card and plot are within 1.2px of reference bounds; 390/320 mobile frame, card and plot are within 4px and no longer stretch or internally scroll.
+- [x] Mobile frame is centered at x=24px; local document width remains 375px/305px without overflow.
+- [x] Yellow series 1, Persian RTL title and LTR numeric plot are preserved; live chart keyboard selection and generated-code sync pass and are restored to Bar/RTL.
+- [ ] Independent screen-reader review and exhaustive visual/state audit remain open for strict Final DoD.
+
 ## Source and structure
 - [x] Eight workflow stages appear in order.
 - [x] Four Vue adapters, types, exports, usage, catalog, contract and Figma rule agree.
@@ -26,3 +33,4 @@
 - [x] `pnpm test:charts` passes 8/8 including the exact-ceiling regression; token, catalog, typecheck, production build and diff gates pass after the direct-label correction.
 - [x] Browser evidence, error log and remaining limitations recorded.
 - [x] Checkpoint commit `c9b2344` pushed to `origin/master`; `git ls-remote` matched `HEAD` at verification time.
+- [x] 2026-11-14 preview follow-up gates: `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. The prohibited-name scan returns no matches.

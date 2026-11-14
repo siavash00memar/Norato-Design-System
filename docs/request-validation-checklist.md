@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Charts preview geometry and mobile fit — 2026-11-14
+
+- [x] Same-viewport desktop review at 1265×713: frame is 635.98×332px vs 636×331.69px; inner card 368×244px vs 367.2×243.74px; SVG 336×157.66px vs 334.8×156.94px. Relative card placement within the frame matches within 0.1px.
+- [x] At 390×844, local/reference frames are both 327×300px at x=24px; cards are 321×222px vs 320.76×221.97px, and plots are 289×135.59px vs 288.36×135.17px. At 320×844, frames are both 257×300px; cards 246×184.41px vs 245.16×186.54px, plots 214×100.41px vs 212.76×99.73px. No internal specimen scrollbar or local page overflow; documents measure 375px and 305px.
+- [x] Norato yellow series 1, RTL header and LTR SVG axes remain; all six chart types, three Stat Tile trends, four Legend items and Tooltip remain available. Keyboard ArrowDown → End → Enter selects Donut, Home → Enter restores Bar, and the generated snippet follows the selection.
+- [x] The inert preview has zero focusable descendants. Browser console reports no errors.
+- [ ] Independent screen-reader review and exhaustive final visual/state review remain open for Charts Final DoD.
+
 ## Timeline specimen geometry and mobile rail alignment — 2026-11-14
 
 - [x] Same-viewport desktop render (1265×713): local/reference frames measure 635.98×328px and 636×327.5px. Event rows are 59.797px and 59.805px; marker relative position differs by less than 1px. The overall local frame sits 17.5px left because its documentation columns differ.
