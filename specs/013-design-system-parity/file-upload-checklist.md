@@ -70,5 +70,8 @@
 
 - [x] `NoratoAvatarUpload` now mirrors its controlled `modelValue` through the shared native FileList helper, binds an optional `name`, clears the picker value only before opening, and restores the controlled value on cancel.
 - [x] Fresh local File Upload render after the change preserves the existing RTL layout and the existing circular Avatar Upload specimen; no style selectors changed.
+- [x] In the local browser, the Avatar picker accepted a repository PNG and the native input retained its selected `value`; the image preview rendered from a blob URL. Clearing the playground removed the preview and emptied the input value.
+- [x] Reopened the picker after the clear and selected that same PNG again; the input value and preview returned, confirming the same-file selection path after a cleared value. This used the browser file-chooser automation, not an operating-system chooser.
+- [x] The runnable playground now provides a native form, named `attachments`/`avatar` inputs and shared Required/Disabled settings. Browser verified form ownership, selected-vs-empty required validity, and the disabled property on both fields.
+- [ ] The browser's read-only inspection surface does not expose a constructible `FormData` global or native `FileList` object. Named payload inspection and native chooser-cancel restoration therefore remain open.
 - [x] `pnpm test:file-upload` passed 8/8; `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck, Vue build and `git diff --check` passed.
-- [ ] Browser selection/cancel/reselection, native `ValidityState`, and named `FormData` remain unverified. Clicking the Dropzone in the current in-app browser does not surface the OS chooser; source and helper checks do not substitute for those browser results.

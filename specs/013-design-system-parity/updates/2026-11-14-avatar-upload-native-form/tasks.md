@@ -5,4 +5,4 @@
 - [x] T003 Preserve native picker reselection and cancel restoration behavior.
 - [x] T004 Update the File Upload contract, checklist, task log, request checklist and error log.
 - [x] T005 Inspect the local browser render and run the File Upload, token, catalog, Vue typecheck and build gates.
-- [ ] T006 Verify real browser required validity/FormData/cancel/reselection; leave open if chooser support is unavailable.
+- [ ] T006 Browser verified Avatar selection, required validity, controlled clear and same-file re-selection after clear. Named FormData inspection and chooser-cancel restoration remain open.

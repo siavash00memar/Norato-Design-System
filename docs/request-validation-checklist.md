@@ -1,5 +1,14 @@
 # Norato Request Validation Checklist
 
+## Avatar Upload native form and validity browser follow-up — 2026-11-14
+
+- [x] The runnable preview now uses a native form with no submit button or action. It keeps the same class and contents; the matched 320px render shows no visual change, preserves RTL, and measures 305/305px document width.
+- [x] Both File Upload and Avatar are named fields (`attachments`, `avatar`) owned by that form; selecting a repository PNG preserves the input value and renders the Avatar blob preview.
+- [x] With Required enabled, empty Avatar reports `valueMissing=true` and `valid=false`; selecting the image reports `valid=true`; clearing empties the value/removes the preview and restores invalid/`valueMissing=true`.
+- [x] Selecting the same PNG after the picker value was cleared restores its value and preview. The shared Disabled control disables both named file inputs and re-enables them when turned off.
+- [ ] `FormData` contents remain unverified: this browser's read-only inspection API does not provide a constructible `FormData` global. The chooser-cancel event is also unavailable through file chooser automation.
+- [x] `pnpm test:file-upload` (8/8), `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` pass.
+
 ## Modal controlled open and focus return — 2026-11-14
 
 - [x] In the live playground, activating the opener displayed the named confirmation `alertdialog`; activating Cancel closed it, changed the live status to «درخواست لغو شد.» and restored focus to the opener.
