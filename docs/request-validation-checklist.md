@@ -3216,3 +3216,9 @@
 - [x] Fresh local browser render after the source change preserves the File Upload RTL composition and existing circular Avatar Upload specimen; no styling changed.
 - [x] File Upload tests passed 8/8; token/catalog checks, Vue typecheck and build passed.
 - [ ] Real chooser selection/cancel/reselection, required `ValidityState`, and named `FormData` remain unverified because the in-app browser did not surface its native file chooser.
+
+## Date Picker RTL keyboard activation — 2026-11-14
+- [x] Local browser: opening the labeled trigger exposes the Jalali November 1405 calendar with weekday columns ordered RTL (`ش ی د س چ پ ج`), selected day 1, and a disabled day.
+- [x] Right Arrow moved focus from 1 Aban to 30 Mehr across the month boundary; Enter committed 30 Mehr 1405 and closed the calendar. The field and generated Vue snippet both changed to `1405-07-30`.
+- [x] Reset restored the field and generated snippet to 1 Aban 1405 / `1405-08-01`.
+- [ ] Browser AX evidence is not an independent screen-reader review. Announcement quality and reading order remain open in the Date Picker DoD.

@@ -19,6 +19,7 @@
 
 - [x] Single-day and range endpoints, reverse-order range selection, range presets, date-time, month, year and wheel updates are recorded in prior browser checks.
 - [x] RTL weekday order, keyboard day movement, PageUp/PageDown, Home/End, Enter, Escape, focus return, 2px focus ring, invalid, disabled, loading, holiday and min/max/disabled-date semantics are recorded in prior browser checks.
+- [x] Fresh 2026-11-14 browser check: RTL Right Arrow moved focus from 1 Aban to 30 Mehr across the month boundary; Enter selected it and synchronized the field/example (`1405-07-30`). Reset restored the original value (`1405-08-01`).
 - [x] AX tree exposes calendar/day semantics, labels, selected/today/holiday/disabled states, described errors and busy status as documented in the original validation record.
 - [ ] Independent screen-reader announcement and reading-order review remains open. Browser AX inspection and keyboard tests do not close this item.
 
@@ -26,6 +27,7 @@
 
 - [x] Token, catalog, TypeScript, production-build and diff checks passed in the documented implementation and preview-frame follow-ups.
 - [x] After the documentation/status correction, `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. The build's main JS chunk is 443.80KB (120.37KB gzip).
+- [x] Fresh 2026-11-14 keyboard-activation evidence update: `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
 - [x] Follow-up pushed to `origin/master`; checkpoint `4308ad9be45ed7307689fa8b960f14ee8358682d` is recorded.
 
 **DoD decision:** Do not mark this family complete until the independent screen-reader review passes. Full prior evidence is in `specs/006-norato-date-picker/tasks.md`, the request-validation record, and the linked preview-frame follow-up.
