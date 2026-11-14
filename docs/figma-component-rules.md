@@ -595,7 +595,7 @@
 
 ## Input — variant-axis chips
 
-- Input variant-axis values are descriptive, inert labels; keep their fill and outline neutral. Use the Norato-yellow Stroke only on the actual focused/active example, not on every axis chip or a noninteractive state label.
+- Input variant-axis values in both the Variant gallery and Parts section are descriptive, inert labels; keep their fill and outline neutral. Use the Norato-yellow Stroke only on the actual focused/active example, not on every axis chip or a noninteractive state label.
 
 ## Table — desktop specimen bounds
 

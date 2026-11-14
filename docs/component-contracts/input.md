@@ -115,7 +115,7 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 
 ## گالری Variantها
 
-چیپ‌های خنثی محورهای size/state/label-placement در گالری Input صرفاً مقدارهای توصیفی‌اند؛ سطح آن‌ها خنثی است و نقش انتخاب یا تعامل ندارند. Stroke زرد فقط روی نمونهٔ واقعاً فعال/متمرکز نمایش داده می‌شود.
+چیپ‌های خنثی محورهای size/state/label-placement در گالری Variant و بخش Parts صفحهٔ Input صرفاً مقدارهای توصیفی‌اند؛ سطح و Stroke آن‌ها خنثی است و نقش انتخاب یا تعامل ندارند. Stroke زرد فقط روی نمونهٔ واقعاً فعال/متمرکز نمایش داده می‌شود.
 
 ### قاعدهٔ عمومی Focus در Norato
 

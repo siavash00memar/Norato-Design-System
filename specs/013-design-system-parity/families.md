@@ -57,6 +57,10 @@ Each family is complete only when its own DoD in checklist.md passes. Order foll
 
 Count excluding Button: 48.
 
+### Input targeted follow-up — 2026-11-14
+
+The Parts-section size/state/type metadata had escaped the earlier Input-only neutral styling and inherited the shared informational fill. It now uses the same neutral treatment as the Input Variant gallery; current DoD remains open for the full visual state matrix and independent screen-reader review. See `input-checklist.md` and ERR-242 in `docs/error-log.md`.
+
 ## Select mobile navigation clearance — 2026-11-10
 
 - At 320×844, the open Select menu now ends at y=762 above the fixed navigation at y=788; internal scrolling reveals the final disabled option.

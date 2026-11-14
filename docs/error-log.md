@@ -1888,3 +1888,11 @@
 - **Correction:** Reuse `syncNativeFileList` to mirror the controlled File and clear, expose optional `name`, clear only before opening the chooser, and restore the controlled File on chooser cancel.
 - **Verification:** Source review confirms the native control, controlled model and name binding now share the intended contract. Local browser automation did not surface the native file chooser, so required validity, FormData, cancellation and reselection remain explicitly unverified; see `specs/013-design-system-parity/updates/2026-11-14-avatar-upload-native-form/checklist.md`.
 - **Prevention:** For native file inputs, verify `ValidityState` and `FormData` after changes and clears; do not clear the successful FileList solely to reset picker change detection.
+
+## ERR-242 — Input Parts metadata chips inherited informational blue (2026-11-14)
+
+- **Observed:** In the matched Input Parts section, descriptive size/state/type values appeared as pale-blue chips, while the reference presents them as unboxed neutral metadata and the Input contract requires neutral axis labels.
+- **Cause:** The global `.variant-axis > span` base rule uses `--norato-color-info-container`; the prior Input-only correction covered `.input-family-matrix` but not the separate `.part-axes` markup.
+- **Correction:** Added an Input-only `part-axes--input` marker and reused the approved neutral surface, text, and inset Stroke tokens. The shared axis rule and other families are unchanged.
+- **Verification:** Fresh local browser screenshots at the matched viewport show neutral axis chips across all eight Input rows with readable RTL wrapping. Token/catalog/TypeScript/build/diff checks are recorded in the linked update.
+- **Prevention:** Audit every rendered use of a shared visual primitive within a component, including Parts metadata, instead of assuming a fix to its secondary gallery covers the whole page.

@@ -3222,3 +3222,9 @@
 - [x] Right Arrow moved focus from 1 Aban to 30 Mehr across the month boundary; Enter committed 30 Mehr 1405 and closed the calendar. The field and generated Vue snippet both changed to `1405-07-30`.
 - [x] Reset restored the field and generated snippet to 1 Aban 1405 / `1405-08-01`.
 - [ ] Browser AX evidence is not an independent screen-reader review. Announcement quality and reading order remain open in the Date Picker DoD.
+
+## Input Parts axis chip palette — 2026-11-14
+- [x] Matched 1265×713 browser screenshots show the reference uses neutral, unboxed metadata in Parts while local Input's axis chips inherited the shared pale-blue informational fill.
+- [x] Added an Input-only Parts marker and neutral surface/text/Stroke tokens. Fresh local screenshots across all eight rows show neutral gray chips with RTL label wrapping; the yellow accent remains on active/focused field samples.
+- [x] The generic `.variant-axis > span` rule and the separate family-neutral styles were left unchanged, so this correction is confined to Input Parts.
+- [ ] Full Input size/state visual cross-product and independent screen-reader review remain open.

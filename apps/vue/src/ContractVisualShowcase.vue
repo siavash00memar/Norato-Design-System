@@ -443,7 +443,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <li v-for="entry in entries" :key="entry.id" :class="{ 'is-empty': isEmptyStatement(entry) }">
             <b class="part-index">{{ String(entry.id + 1).padStart(2, '0') }}</b>
             <span><strong>{{ entry.label }}</strong><small v-if="description(entry)" dir="auto">{{ description(entry) }}</small></span>
-            <div v-if="entry.axes.length" class="variant-axes part-axes"><div v-for="axis in entry.axes" :key="axis.name" class="variant-axis"><b dir="ltr">{{ axis.name }}</b><span v-for="value in axis.values" :key="value" dir="auto">{{ value }}</span></div></div>
+            <div v-if="entry.axes.length" class="variant-axes part-axes" :class="{ 'part-axes--input': name === 'Input' }"><div v-for="axis in entry.axes" :key="axis.name" class="variant-axis"><b dir="ltr">{{ axis.name }}</b><span v-for="value in axis.values" :key="value" dir="auto">{{ value }}</span></div></div>
             <i class="part-connector" aria-hidden="true" />
           </li>
         </ol>
@@ -884,5 +884,6 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .input-core-state-card[data-state="success"]>header>i{background:var(--norato-color-status-success)}
 @media(max-width:839px){.input-core-states-grid{inline-size:calc(100% - var(--norato-space-4));grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:auto;gap:calc(var(--norato-space-2) + var(--norato-border-medium));margin-inline:auto}}
 .input-family-matrix :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
+.part-axes--input :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 .variant-visual-grid--select :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 </style>

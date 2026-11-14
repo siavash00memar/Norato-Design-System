@@ -150,3 +150,10 @@
 - [x] Live mobile Input detail shows descriptive size/state/label-placement axis notes on a neutral gray surface; their scoped selector is limited to `.input-family-matrix`.
 - [x] The adjacent live state matrix still distinguishes Default, Hover, Active and Error field strokes; these descriptive chips do not use the informational blue token.
 - [ ] This CSS cascade correction does not close Input DoD; complete adapter state coverage and independent screen-reader review remain open.
+
+## Input Parts axis chips — 2026-11-14
+
+- [x] Fresh same-viewport review of the Parts section found that the Input gallery's axis values were still inheriting the shared informational-blue fill. The reference presents these values as plain, neutral metadata.
+- [x] Scoped the existing approved neutral fill/text/Stroke treatment to Input's Parts axis group only; the shared `.variant-axis` base and other family rules remain unchanged.
+- [x] Fresh local screenshots show all eight Input adapter rows with neutral axis chips; the labels remain legible and wrap within the RTL content column. Norato yellow remains reserved for actual active/focused examples.
+- [ ] Full Input visual variant cross-product and independent screen-reader review remain open; Input DoD stays open.
