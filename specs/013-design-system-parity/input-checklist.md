@@ -195,3 +195,10 @@
 - [x] After the fix, 4/5/6-cell runs each expose native `required` on every configured cell; partial values leave respectively 3/4/5 positions missing and only one cell valid, while complete values make all configured cells valid.
 - [x] With Required disabled and an empty 4-cell code, all cells are optional and valid. Six-digit paste filled all positions and focused the last cell; ArrowLeft moved to the prior cell and Backspace from an empty cell moved backward.
 - [x] Playground reloaded to its default state after the review. This fix changes constraint validation only; independent screen-reader review and the broader Input visual matrix remain open.
+
+## Input — بازبینی هندسهٔ موبایل — 2026-11-15
+
+- [x] در viewport واقعی ۳۲۰×۸۴۴، عرض client/scroll سند ۳۰۵/۳۰۵ پیکسل است.
+- [x] هر هفت پوستهٔ استاندارد ورودیِ قابل‌مشاهده ۴۸px هدف تعاملی و ۳۶px قاب دیداری pseudo-border دارند؛ Stroke برابر ۱px `#e8e8e8` است. OTP و textarea عمداً اندازهٔ مخصوص خود را دارند.
+- [x] عنوان نمونه Estedad 700 و placeholder برابر Vazir 300 با رنگ `#a1a1a1` و جهت RTL محاسبه شد.
+- [ ] این بازبینی موبایل یک viewport و حالت پایه را پوشش می‌دهد؛ ماتریس کامل حالت/اندازه، مقایسهٔ کامل دیداری و صفحه‌خوان مستقل همچنان باز است.
