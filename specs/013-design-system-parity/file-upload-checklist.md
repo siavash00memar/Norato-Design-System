@@ -57,3 +57,9 @@
 
 - [x] Narrow-breakpoint CSS caps the specimen frame with min(100%, mobile token), sets the inner specimen Dropzone to 100%, and sets the live playground Dropzone to 100%; this provides code-level evidence against width overflow.
 - [ ] Rendered 390px and 320px checks after the token change are still open; this audit does not claim measured mobile DoD.
+
+## File Upload queued-row disabled state — 2026-11-14
+
+- [x] Added a sample row, enabled the playground disabled option, and confirmed the Dropzone trigger and queued File Item removal action were both exposed disabled in the browser accessibility tree; generated Vue usage added `disabled`.
+- [x] Disabled state was turned off and the sample queue cleared; the idle Dropzone and usage snippet returned to default.
+- [ ] This does not verify native file input selection/validity, OS drag/drop, reduced motion, or independent screen-reader output.
