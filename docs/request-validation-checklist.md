@@ -3183,3 +3183,9 @@
 - [x] With a queued sample File Item, toggling disabled exposed both Dropzone controls and that row's delete action as disabled, and added `disabled` to generated Vue usage.
 - [x] Restored enabled state and cleared the sample row afterward.
 - [ ] Native file-selection/validity and screen-reader/OS drag-drop checks remain open.
+
+## Avatar Upload native form sync — 2026-11-14
+- [x] Source diff now keeps the selected File in the native input, mirrors controlled clear/selection through the shared FileList helper, and binds optional `name` for native form submission.
+- [x] Fresh local browser render after the source change preserves the File Upload RTL composition and existing circular Avatar Upload specimen; no styling changed.
+- [x] File Upload tests passed 8/8; token/catalog checks, Vue typecheck and build passed.
+- [ ] Real chooser selection/cancel/reselection, required `ValidityState`, and named `FormData` remain unverified because the in-app browser did not surface its native file chooser.

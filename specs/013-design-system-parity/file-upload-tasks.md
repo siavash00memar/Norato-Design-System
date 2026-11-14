@@ -15,3 +15,5 @@
 - [x] T013 Preserve focus across File Item retry/cancel/delete transitions. Browser verified replacement-action focus and next/previous/Dropzone targets; native OS drag/drop, reduced motion and independent screen-reader review remain open.
 - [x] T014 Expose required status on the accessible Dropzone name because the clipped native file input is omitted from the browser AX tree; preserve its native required constraint and verify both enabled/disabled prop states.
 - [x] T015 Scope the File Upload playground Tile progress slider to the semantic Norato-yellow accent and a 48px target after live review found the blue default and 16px hit area; keyboard behavior remains intact.
+- [x] T016 Keep Avatar Upload's native FileList synchronized with controlled selection, expose optional `name` for host FormData, and preserve required validity, same-file reselection and cancel restoration in source.
+- [ ] T017 Verify native selection, required validity, named FormData, controlled clear, same-file reselection and cancel restoration in the browser; this is blocked by the current in-app chooser surface but remains required for T007.

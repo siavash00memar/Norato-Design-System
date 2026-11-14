@@ -44,7 +44,7 @@
 - **`NoratoUploadItem`:** `id`, `file?`, `name`, `size`, `type`, `status`, `progress?`, `errorText?`. Progress بین ۰ تا ۱۰۰ clamp می‌شود.
 - **`NoratoFileItem`:** `item` و `disabled`; action مناسب به وضعیت emit می‌شود.
 - **`NoratoUploadTile`:** `id`, `modelValue: File|null`, `previewUrl`, `state`, `progress`, `errorText`, `accept`, `disabled`, `label`; رویدادهای model update، `file-selected`, `cancel`, `retry`. در حالت uploading و با progress تعریف‌شده، progressbar نام «پیشرفت بارگذاری {نام فایل}» دارد.
-- **`NoratoAvatarUpload`:** `id`, `modelValue: File|null`, `previewUrl`, `label`, `disabled`, `required`; فقط تصویر را می‌پذیرد.
+- **`NoratoAvatarUpload`:** `id`, `modelValue: File|null`, `previewUrl`, `label`, `disabled`, `required`, `name?`; فقط تصویر را می‌پذیرد. فایل واقعی انتخاب‌شده تا وقتی `modelValue` پر است در FileList بومی می‌ماند تا `required` و `FormData` نام‌دار با وضعیت کنترل‌شده سازگار باشند. خالی‌شدن `modelValue`، FileList را خالی می‌کند.
 - تطبیق type بر اساس MIME یا پسوند فایل است. ردهای type، size و count در `rejected` با علت منتشر و روی صفحه فهرست می‌شوند؛ فایل‌های معتبر همان انتخاب حفظ می‌شوند.
 
 ## Usage
@@ -66,7 +66,7 @@
 
 ## Accessibility
 
-Dropzone با pointer، Enter و Space فایل‌انتخاب‌کن بومی را باز می‌کند؛ drag راه جایگزین است. input مخفی برچسب دارد و هنگام `required` بودن، نام دسترس‌پذیر ورودی و دکمهٔ Dropzone واژهٔ «الزامی» را هم شامل می‌شود؛ FileList ورودی با فایل‌های واقعی صف کنترل‌شده همگام می‌ماند تا اعتبارسنجی و ارسال native فرم انتخاب را ببینند. خطا با `role=alert` اعلام می‌شود و نوار پیشرفت درصد کنترل‌شده را به `progressbar` می‌دهد. دکمه‌ها target حداقل ۴۸px و focus ring دوپیکسلی دارند. با جایگزینی action در تغییر status کنترل‌شده، فوکوس به action فعال همان ردیف منتقل می‌شود. با حذف ردیف از صف، فوکوس به action ردیف بعدی، ردیف قبلی یا Dropzone خالی برمی‌گردد. میزبان‌هایی که `NoratoFileItem` را جداگانه استفاده می‌کنند مقصد حذف ردیف را مدیریت می‌کنند. حرکت تزئینی با prefers-reduced-motion حذف می‌شود.
+Dropzone با pointer، Enter و Space فایل‌انتخاب‌کن بومی را باز می‌کند؛ drag راه جایگزین است. input مخفی برچسب دارد و هنگام `required` بودن، نام دسترس‌پذیر ورودی و دکمهٔ Dropzone واژهٔ «الزامی» را هم شامل می‌شود؛ FileList ورودی با فایل‌های واقعی صف کنترل‌شده همگام می‌ماند تا اعتبارسنجی و ارسال native فرم انتخاب را ببینند. Avatar Upload نیز FileList را با `modelValue` کنترل‌شده همگام می‌کند؛ `name` اختیاری، فایل را در `FormData` میزبان قرار می‌دهد و `required` از انتخاب native پیروی می‌کند. خطا با `role=alert` اعلام می‌شود و نوار پیشرفت درصد کنترل‌شده را به `progressbar` می‌دهد. دکمه‌ها target حداقل ۴۸px و focus ring دوپیکسلی دارند. با جایگزینی action در تغییر status کنترل‌شده، فوکوس به action فعال همان ردیف منتقل می‌شود. با حذف ردیف از صف، فوکوس به action ردیف بعدی، ردیف قبلی یا Dropzone خالی برمی‌گردد. میزبان‌هایی که `NoratoFileItem` را جداگانه استفاده می‌کنند مقصد حذف ردیف را مدیریت می‌کنند. حرکت تزئینی با prefers-reduced-motion حذف می‌شود.
 
 ## Tokens
 

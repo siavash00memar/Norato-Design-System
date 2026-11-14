@@ -5,6 +5,7 @@
 - [x] Same-size 1265×713 browser comparison on 2026-11-10: design reference File Item uses a neutral icon tile; local File Item icons render on Norato neutral surface with secondary text after replacing the decorative `info-container`/brand-blue treatment. Dropzone action stays yellow; no error or progress colors changed.
 - [x] Four public adapters are exported. File Item's selected/uploading/complete/error presentation, real supplied progress semantics, failure text, retry, cancel and removal were checked in the runnable controlled queue. Upload Tile and Avatar Upload both accepted a real local PNG through their native chooser and rendered the supplied image preview.
 - [ ] Native input now mirrors actual `File` objects in the controlled queue, restoring required validity and named form data after selection; same-file picker reset/cancel path was added. Browser verification is pending.
+- [ ] Avatar Upload now mirrors its controlled `modelValue` File into the native FileList, exposes optional `name`, clears only before opening the picker, and restores the controlled file on cancel. Required validity, named FormData, controlled clear and same-file reselection still need browser verification.
 - [x] Native picker opens by pointer and by Enter/Space; real chooser accepted a PNG; unsupported extension, 10,000,001-byte size and over-count batches were rejected with visible reason while valid queue entries remained. Input value resets after every selection. Native OS drag payload remains unverified.
 - [x] Playground and generated usage snippet expose the existing single/multiple mode consistently; single mode uses a non-multiple picker and replaces an existing selection, while multiple mode enforces the count ceiling.
 - [x] Selected is explicitly separate from transfer completion; transport/status/progress are host-controlled. No fake network progress is used.
@@ -64,3 +65,10 @@
 - [x] Added a sample row, enabled the playground disabled option, and confirmed the Dropzone trigger and queued File Item removal action were both exposed disabled in the browser accessibility tree; generated Vue usage added `disabled`.
 - [x] Disabled state was turned off and the sample queue cleared; the idle Dropzone and usage snippet returned to default.
 - [ ] This does not verify native file input selection/validity, OS drag/drop, reduced motion, or independent screen-reader output.
+
+## Avatar Upload native form synchronization — 2026-11-14
+
+- [x] `NoratoAvatarUpload` now mirrors its controlled `modelValue` through the shared native FileList helper, binds an optional `name`, clears the picker value only before opening, and restores the controlled value on cancel.
+- [x] Fresh local File Upload render after the change preserves the existing RTL layout and the existing circular Avatar Upload specimen; no style selectors changed.
+- [x] `pnpm test:file-upload` passed 8/8; `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck, Vue build and `git diff --check` passed.
+- [ ] Browser selection/cancel/reselection, native `ValidityState`, and named `FormData` remain unverified. Clicking the Dropzone in the current in-app browser does not surface the OS chooser; source and helper checks do not substitute for those browser results.

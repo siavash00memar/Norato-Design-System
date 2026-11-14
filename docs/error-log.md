@@ -1880,3 +1880,11 @@
 - **Correction:** Added family-scoped frame and card geometry, increased static card padding, and disabled the live-chart minimum width only in the inert preview. The live adapter's scrolling behavior and Norato yellow series palette are unchanged.
 - **Verification:** Desktop frame/card are 635.98×332px and 368×244px versus 636×331.69px and 367.2×243.74px. At 390/320px, frame widths match 327/257px; card/plot geometry is within 4px, no inert inner scrollbar appears, and local documents have no overflow. Token/catalog/type/build/diff and prohibited-name gates pass; browser console has no errors.
 - **Prevention:** Compare frame, card and actual SVG bounds separately at desktop and narrow viewports; don't infer plot fit from document overflow alone.
+
+## ERR-241 — Avatar Upload cleared native required state after selection (2026-11-14)
+
+- **Observed:** Source inspection showed Avatar Upload emitted the selected File to `modelValue` and then immediately cleared the native file input. A required Avatar Upload could therefore appear filled while the browser form still saw an empty file input; the adapter also could not contribute a named field to host FormData.
+- **Cause:** The change handler reset the input unconditionally to support same-file reselection, without restoring the controlled FileList; the API lacked a `name` prop.
+- **Correction:** Reuse `syncNativeFileList` to mirror the controlled File and clear, expose optional `name`, clear only before opening the chooser, and restore the controlled File on chooser cancel.
+- **Verification:** Source review confirms the native control, controlled model and name binding now share the intended contract. Local browser automation did not surface the native file chooser, so required validity, FormData, cancellation and reselection remain explicitly unverified; see `specs/013-design-system-parity/updates/2026-11-14-avatar-upload-native-form/checklist.md`.
+- **Prevention:** For native file inputs, verify `ValidityState` and `FormData` after changes and clears; do not clear the successful FileList solely to reset picker change detection.
