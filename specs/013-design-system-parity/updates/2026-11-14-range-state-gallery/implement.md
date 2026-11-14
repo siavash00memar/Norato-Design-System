@@ -4,4 +4,5 @@
 - Scope: static States showcase only; the live NoratoRange adapter is unchanged.
 - Browser evidence: fresh local screenshot at 305px shows all five state illustrations, RTL yellow fill, muted Disabled, yellow Focus, and a centered compact knob. Desktop recapture and exact scroll-width measurement remain open.
 - Technical gates: token integrity, 49-route catalog integrity, Vue typecheck, Vue production build and `git diff --check` all passed. Build completes; existing large-chunk advisory remains.
+- GitHub: implementation commit `a767918` pushed to `origin/master`; Vercel was not deployed.
 - DoD: targeted implementation and mobile visual pass; keep the targeted desktop/overflow checklist and broader independent screen-reader/full-state screenshot matrix open.
