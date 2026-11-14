@@ -7,5 +7,6 @@
 - [x] Re-render locally; screenshots show neutral fill, secondary text, subtle inset border, RTL wrapping, and no yellow treatment on descriptive labels.
 - [x] The shared axis base rule remains untouched and the dynamic marker is only added when the Parts page family is Input.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
+- [x] Commit `4137d309a0b117bf1b7edb2434202d62c7c7dd9a` was pushed to `origin/master`; `git ls-remote` confirmed the same hash.
 - [ ] Push the verified checkpoint and confirm `origin/master`; no deployment.
 - [ ] Input's complete visual cross-product and independent screen-reader review remain open.
