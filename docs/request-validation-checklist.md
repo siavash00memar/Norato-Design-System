@@ -3260,3 +3260,11 @@
 - [x] Screenshot confirms RTL, 36px capsule within 48px target, neutral Default/Disabled, Norato-yellow Hover/Typing/Filled and semantic Error strokes; no stretched field controls.
 - [x] Narrow local render places states in one column without horizontal clipping; medium-width rule is two columns. Existing playground value and component galleries remain unchanged.
 - [ ] Exhaustive per-cell screenshot archive, controlled cold-load fallback capture, and independent screen-reader review remain open.
+
+## Empty State specimen gallery polish — 2026-11-14
+- [x] Matched desktop captures confirm three equal 64×36px rounded bars labeled Small/Medium/Large in the Sizes stage; the live API visual scale remains 40/48/64px.
+- [x] At 390×844 and 320×844, stage and bars remain bounded; at 320px the final bar wraps to a centered second row. Local document client/scroll widths are 375/375 and 305/305px.
+- [x] Variants, Anatomy/Parts, Usage, Accessibility, and Tokens use neutral/yellow Norato styling for descriptive markers; computed styles contain no inherited blue metadata in Empty State. Semantic error/success/warning colors remain for their stated meanings.
+- [x] States presents an explanatory no-independent-state note, not a simulated control; source diff confirms the live playground, API, and generated code are unchanged.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed.
+- [ ] Overall Empty State Final DoD remains open for independent screen-reader review and exhaustive behavior coverage.

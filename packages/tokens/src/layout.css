@@ -106,6 +106,8 @@
   --norato-empty-state-gap: var(--norato-space-4);
   --norato-empty-state-padding: var(--norato-space-4);
   --norato-empty-state-content-max: 360px;
+  --norato-empty-state-size-gallery-frame-inline-size: 636px;
+  --norato-empty-state-size-gallery-frame-mobile-inline-size: 328px;
   --norato-avatar-size-xs: 24px;
   --norato-avatar-size-s: 32px;
   --norato-avatar-size-m: 40px;

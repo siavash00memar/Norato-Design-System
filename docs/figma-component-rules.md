@@ -510,6 +510,9 @@
 
 - Use `design reference as the composition reference; retain Norato semantic color, Vazirmatn/Estedad and RTL-first layout.
 - The documentation specimen uses the shared Button dotted/glass frame and Default marker. The component itself has no frame unless `container="card"` is set.
+- In the Sizes section, use three inert 64×36px rounded bars with Small/Medium/Large labels; these documentation markers do not represent the API's 40/48/64px visual sizes. Keep the reference's wrap at 320px without compressing the bars.
+- Keep Variants axis chips, Anatomy/Parts number badges, Usage/Accessibility markers, and token-type markers neutral/yellow with Norato surface/text/Stroke tokens. Do not inherit generic informational blue for descriptive markers; preserve semantic status colors in visual-tone examples.
+- States has no independent interaction or data state. Show an explanatory note with the Norato yellow accent instead of a fabricated control state.
 - Visual is fixed-size and decorative; horizontal layout places it at logical inline-start, and narrow screens stack without clipping. Titles/descriptions provide all meaning.
 - Actions remain caller-owned slots with native, named buttons/links and 48px minimum targets. Do not add implicit navigation or a live region to static content.
 

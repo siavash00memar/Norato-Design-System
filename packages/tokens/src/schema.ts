@@ -122,6 +122,8 @@ export const productPatternTokens = {
   chipPaddingInline: '--norato-chip-padding-inline',
   chipSpecimenScale: '--norato-chip-specimen-scale',
   chartPreviewCardInlineSize: '--norato-chart-preview-card-inline-size',
+  emptyStateSizeGalleryFrameInlineSize: '--norato-empty-state-size-gallery-frame-inline-size',
+  emptyStateSizeGalleryFrameMobileInlineSize: '--norato-empty-state-size-gallery-frame-mobile-inline-size',
   chartPreviewFrameInlineSize: '--norato-chart-preview-frame-inline-size',
   chartPreviewFrameMobileInlineSize: '--norato-chart-preview-frame-mobile-inline-size',
   chartPreviewFrameBlockSize: '--norato-chart-preview-frame-block-size',

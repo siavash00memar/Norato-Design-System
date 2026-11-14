@@ -47,6 +47,13 @@
 - [x] After resetting the temporary viewport, desktop frame remains 635.98×300px and document client/scroll widths remain 1905/1905px.
 - [ ] Independent screen-reader review, custom slot cases and exhaustive behavior cross-product remain open; Empty State DoD is not closed.
 
+## Documentation Sizes/States/metadata gallery follow-up — 2026-11-14
+- [x] Reference-shaped inert Size bars and accurate no-independent-state note are browser-verified at matched desktop, 390px and 320px viewports.
+- [x] Empty State Variants axis chips and Anatomy/Parts number markers use neutral Norato tokens without altering shared styles; Usage/Accessibility and token-type specimens also use the family-scoped palette.
+- [x] Live API visual sizes (40/48/64), keyboard behavior, generated Vue example, and action slots remain unchanged by the page-only source diff.
+- [x] Token/catalog/typecheck/build/diff gates pass after this change.
+- [ ] Independent screen-reader review and full behavior cross-product remain open; this gallery follow-up does not close family DoD.
+
 ## Baseline visual re-audit — 2026-11-10
 
 - [x] Fresh matched desktop browser renders show the same centered RTL hierarchy: visual, title, description, then secondary and primary actions. The local preview uses Norato yellow for the primary action and a soft visual halo; no stretch or clipping is visible.

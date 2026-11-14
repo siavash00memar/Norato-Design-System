@@ -1952,3 +1952,11 @@
 - **Correction:** Marked the initial inventory as historical and added `empty-state-implement.md` to record the delivered APIs, page integration, validation evidence, and still-open DoD. Linked the new artifact from the task ledger.
 - **Verification:** Current Vue component/export/page evidence and the existing family checklist were inspected; all eight required workflow artifacts now exist. Independent screen-reader review and exhaustive behavior coverage remain open; no UI or runtime behavior changed.
 - **Prevention:** Preserve the original analysis as a dated snapshot and record delivered state in a dedicated Implement artifact.
+
+## ERR-250 — Empty State documentation inherited generic blue metadata (2026-11-14)
+
+- **Observed:** The Empty State Sizes gallery rendered generic blue circles instead of the reference's equal 64×36px rounded bars. Its States section simulated a control despite the component having no independent state. Variants, Anatomy/Parts, Usage, Accessibility, and Tokens also inherited shared informational-blue markers.
+- **Cause:** The shared documentation renderer applies generic size, state, axis-chip, and part-index visuals without accounting for Empty State's non-interactive contract or Norato's family palette requirements.
+- **Correction:** Add Empty State-specific inert specimens and one family-scoped neutral/yellow metadata treatment. Keep the actual Empty State Visual API scale, other component families, and semantic tone examples unchanged.
+- **Verification:** Matched viewport measurements: desktop local 635.98×134.20px vs reference 636×134.125px; at 390px local 327×134.20px vs reference 327×134.125px; at 320px local 257×214.41px vs reference 257×214.25px. All sample bars are 64×36px; 320px wraps the final sample to a centered row. Local document widths match client widths at 1250, 375, and 305px. Computed styles show no blue descriptive markers in the family, while error/success/warning semantic colors remain. Token/catalog/typecheck/build/diff gates pass. Independent screen-reader review and exhaustive runtime behavior coverage remain open.
+- **Prevention:** Review every rendered section of a family page, including metadata and generic fallback samples, against the component contract and the approved Norato palette.

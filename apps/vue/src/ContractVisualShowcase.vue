@@ -202,6 +202,11 @@ const progressSizeSamples = [
   { id: 'medium', label: 'Medium', linear: '۸px', circle: '۳۲px' },
   { id: 'large', label: 'Large', linear: '۱۲px', circle: '۴۰px' },
 ]
+const emptyStateSizeSamples = [
+  { id: 'small', label: 'Small' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'large', label: 'Large' },
+]
 const progressToneSamples = [
   { id: 'default', label: 'پیش‌فرض' },
   { id: 'success', label: 'موفق' },
@@ -369,7 +374,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 </script>
 
 <template>
-  <div class="contract-visual" :class="[`contract-visual--${title}`, { 'contract-visual--tag': name === 'Tag', 'contract-visual--chip': name === 'Chip' }]" :data-component="name" :data-section="section" dir="rtl">
+  <div class="contract-visual" :class="[`contract-visual--${title}`, { 'contract-visual--tag': name === 'Tag', 'contract-visual--chip': name === 'Chip', 'contract-visual--empty-state': name === 'Empty State' }]" :data-component="name" :data-section="section" dir="rtl">
     <MenuContractShowcase v-if="name === 'Menu' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <CommandPaletteContractShowcase v-if="name === 'Command Palette' && ['Anatomy', 'Variants', 'Sizes', 'States', 'Parts'].includes(section)" :section="section" />
     <template v-else-if="section === 'Overview'">
@@ -684,6 +689,12 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span>
         </article>
       </div>
+      <div v-else-if="name === 'Empty State'" class="empty-state-size-gallery" aria-hidden="true" inert dir="ltr">
+        <div v-for="size in emptyStateSizeSamples" :key="size.id" class="empty-state-size-sample">
+          <i aria-hidden="true" />
+          <strong>{{ size.label }}</strong>
+        </div>
+      </div>
       <div v-else class="size-visual">
         <div v-if="sizeValues.length" class="size-scale" aria-label="مقیاس اندازه‌های ثبت‌شده">
           <div v-for="(size, index) in sizeValues" :key="size" class="size-step">
@@ -742,6 +753,10 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <small dir="auto">{{ entry.detail }}</small>
           <span class="visual-kind">{{ entry.detail.includes('Indeterminate') ? 'برای مدت نامعلوم از Spinner استفاده کن' : 'نمونهٔ Progress با هندسهٔ ذاتی' }}</span>
         </article>
+      </div>
+      <div v-else-if="name === 'Empty State'" class="empty-state-state-note">
+        <i aria-hidden="true" />
+        <span><strong>بدون حالت تعاملی مستقل</strong><small>{{ entries[0]?.detail }}</small></span>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--range': name === 'Range', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
         <article v-for="entry in name === 'Select' ? selectStateEntries : stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
@@ -946,4 +961,20 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .input-family-matrix :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 .part-axes--input :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 .variant-visual-grid--select :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
+.contract-visual--empty-state :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
+.contract-visual--empty-state :deep(.part-index){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary)}
+.contract-visual--empty-state :deep(.usage-indicator),.contract-visual--empty-state :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
+.contract-visual--empty-state :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
+.contract-visual--empty-state :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
+.contract-visual--empty-state :deep(.token-mark[data-kind="type"]){background:linear-gradient(to bottom,var(--norato-color-brand-yellow) 0 var(--norato-border-medium),transparent var(--norato-border-medium) var(--norato-space-3),var(--norato-color-border-default) var(--norato-space-3) calc(var(--norato-space-3) + var(--norato-border-thin)),transparent calc(var(--norato-space-3) + var(--norato-border-thin)) 100%)}
+.empty-state-size-gallery{display:flex;flex-wrap:wrap;inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-empty-state-size-gallery-frame-inline-size));justify-content:center;gap:var(--norato-space-4);min-inline-size:0;margin-inline:auto;padding:calc(var(--norato-space-8) + var(--norato-border-medium)) var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background-color:var(--norato-color-glass-surface);background-image:radial-gradient(ellipse at 20% 15%,color-mix(in srgb,var(--norato-color-brand-yellow) 12%,transparent),transparent 56%),radial-gradient(color-mix(in srgb,var(--norato-color-border-strong) 22%,transparent) var(--norato-border-thin),transparent var(--norato-border-thin));background-size:auto,var(--norato-space-3) var(--norato-space-3);box-shadow:var(--norato-elevation-box)}
+.empty-state-size-sample{display:grid;grid-template-rows:var(--norato-control-visual-height) auto;justify-items:center;align-content:center;gap:var(--norato-space-2);min-inline-size:0;font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);line-height:calc(var(--norato-type-body-small-line-height) * var(--norato-type-body-small-size) + var(--norato-border-thin));text-align:center}
+.empty-state-size-sample>i{display:block;inline-size:var(--norato-empty-state-visual-large);block-size:var(--norato-control-visual-height);border-radius:var(--norato-radius-control);background:var(--norato-color-glass-surface-strong)}
+.empty-state-size-sample>strong{color:var(--norato-color-text-primary);font-weight:var(--norato-type-body-bold-weight)}
+@media(max-width:599px){.empty-state-size-gallery{inline-size:min(100%,calc(100vw - var(--norato-space-16) + var(--norato-border-thin)),var(--norato-empty-state-size-gallery-frame-mobile-inline-size));gap:var(--norato-space-4);padding-inline:var(--norato-space-4)}}
+.empty-state-state-note{display:flex;align-items:center;gap:var(--norato-space-3);max-inline-size:100%;margin-inline:auto;padding:var(--norato-space-3) var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
+.empty-state-state-note>i{flex:none;inline-size:var(--norato-space-2);block-size:var(--norato-space-2);border-radius:var(--norato-radius-pill);background:var(--norato-color-brand-yellow)}
+.empty-state-state-note>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
+.empty-state-state-note strong{color:var(--norato-color-text-primary);font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);font-weight:var(--norato-type-body-bold-weight)}
+.empty-state-state-note small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-small-size);line-height:var(--norato-type-body-small-line-height)}
 </style>
