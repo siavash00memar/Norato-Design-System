@@ -199,7 +199,8 @@
   --norato-stepper-preview-frame-block-size: 300px;
   --norato-stepper-preview-radius: 24px;
   --norato-stepper-preview-content-inline-size: 416px;
-  --norato-divider-preview-rule-inline-size: 320px;
+  --norato-divider-preview-rule-inline-size: 360px;
+  --norato-divider-preview-rule-mobile-inline-size: 320px;
   --norato-accordion-preview-inline-size: 320px;
   --norato-modal-width-small: 384px;
   --norato-modal-width-medium: 480px;

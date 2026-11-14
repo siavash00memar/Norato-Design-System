@@ -47,7 +47,7 @@ Status meanings:
 | Avatar | Evidence recorded; audit open | Existing responsive and focus evidence. |
 | Timeline | Evidence recorded; audit open | Existing responsive and direction/layout evidence. |
 | Charts | Evidence recorded; audit open | Existing responsive and chart interaction evidence. |
-| Divider | Evidence recorded; audit open | Existing responsive and contract evidence. |
+| Divider | Baseline passed | Matched 1265×713 desktop and 375×844 mobile renders show a centered one-pixel rule without capsule/stretched geometry. The async fallback now uses the same line; width caps are 360px desktop and 320px mobile. Decorative/semantic AX, RTL defaults and static N/A interaction are recorded in `divider-checklist.md`; independent screen-reader review remains Final DoD. |
 | Accordion | Baseline passed | Matched desktop and 390/320px comparisons, bounded mobile layout, RTL title/chevron order and non-stretched row heights are recorded; fresh local/reference renders confirm the open-first-row hierarchy and compact row rhythm. Controlled single/multiple behavior, disabled skipping, keyboard activation, focus ring, reduced-motion and 48px+ live targets are verified. Independent screen-reader review remains Final DoD. |
 | Modal | Evidence recorded; audit open | Existing responsive, keyboard and dialog evidence. |
 | Drawer | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **40/48 families (83.3%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, Tooltip, Empty State, Badge, Popover, Image, Carousel, Chat, Spinner, Progress, List, Card, Skeleton, Table and Notification Center. The remaining 8 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **41/48 families (85.4%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, Tooltip, Empty State, Badge, Popover, Image, Carousel, Chat, Spinner, Progress, List, Card, Skeleton, Table, Notification Center and Divider. The remaining 7 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.

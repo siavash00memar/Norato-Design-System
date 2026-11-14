@@ -43,6 +43,12 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
   min-block-size: var(--norato-split-button-preview-frame-block-size);
 }
 
+.component-specimen-loading[data-component="Divider"] .specimen-loading-control {
+  inline-size: min(100%, var(--norato-divider-preview-rule-inline-size));
+  block-size: var(--norato-border-thin);
+  border-radius: 0;
+}
+
 .component-specimen-loading[data-component="Combobox"] {
   inline-size: min(calc(100% + var(--norato-space-1)), var(--norato-combobox-preview-frame-inline-size));
   min-block-size: var(--norato-combobox-preview-frame-min-block-size);
@@ -128,6 +134,10 @@ const largeFrame = computed(() => !['Tabs', 'Breadcrumbs', 'Chat'].includes(prop
     inline-size: min(100%, var(--norato-split-button-preview-frame-mobile-inline-size));
     min-inline-size: 0;
     padding-inline: var(--norato-space-2);
+  }
+
+  .component-specimen-loading[data-component="Divider"] .specimen-loading-control {
+    inline-size: min(100%, var(--norato-divider-preview-rule-mobile-inline-size));
   }
 
   .component-specimen-loading[data-component="Combobox"]:not(.compact) {
