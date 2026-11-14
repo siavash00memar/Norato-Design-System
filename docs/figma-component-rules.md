@@ -412,6 +412,7 @@
 - Use Norato's own semantic palette, RTL direction and Persian fonts. Use a direction-stable SVG chevron pointing left in RTL, per the user's explicit 2026-11-02 correction; slash is neutral.
 - For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
 - Keep labels intrinsic and prevent wrapping; at narrow widths allow the trail itself to scroll rather than stretching links or creating page overflow.
+- In the inert default specimen, show the current-page label on a compact raised glass surface using Norato semantic tokens; preserve the reference's intrinsic ~29px visual height without changing 48px link/disclosure targets.
 
 ## Pagination — 2026-11-02
 

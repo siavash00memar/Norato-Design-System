@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Breadcrumbs current-page specimen — 2026-11-14
+
+- [x] Matched 1280×720 local/reference render: current capsules measure 88.27×28.80px and 88.10×29.16px; glass fill matches `rgba(255,255,255,.78)`. Local semantic radius is 12px versus reference 8px; local shadow uses Norato's glass-shadow token. Static 300px frame and RTL trail remain bounded, with no visible stretching/clipping.
+- [x] Live disclosure remains a 48px control; opening shows the three middle links with `aria-expanded=true`, and closing restores the default collapsed state.
+- [ ] This CSS-only specimen correction has no fresh 390/320 capture; full style/state hover/focus coverage and independent screen-reader review remain open.
+
 ## Tabs per-trigger keyboard focus — 2026-11-14
 
 - [x] Live local Tabs page reviewed; all three enabled triggers receive `:focus-visible` during RTL keyboard navigation. Computed focus contrast outline is 1.6 CSS px with a 2px Norato-yellow halo.
