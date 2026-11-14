@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Tabs per-trigger keyboard focus — 2026-11-14
+
+- [x] Live local Tabs page reviewed; all three enabled triggers receive `:focus-visible` during RTL keyboard navigation. Computed focus contrast outline is 1.6 CSS px with a 2px Norato-yellow halo.
+- [x] ArrowLeft moved through the RTL trigger order, skipped the individually disabled trigger, and updated the selected state and associated panel. The playground was restored to its default selection and configuration.
+- [ ] Pointer hover-only coverage for each trigger and independent screen-reader review remain open; this browser path did not provide pointer movement without activating a tab.
+
 ## Avatar Upload native form and validity browser follow-up — 2026-11-14
 
 - [x] The runnable preview now uses a native form with no submit button or action. It keeps the same class and contents; the matched 320px render shows no visual change, preserves RTL, and measures 305/305px document width.

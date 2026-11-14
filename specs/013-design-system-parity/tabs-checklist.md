@@ -24,3 +24,10 @@
 - [x] At 390×844, reference and local frame measure 327×300px at x=24; at 320×844 they measure 257×300px at x=24. Local documents remain 375px/305px wide with no overflow, and HTML direction is RTL.
 - [x] All three inert labels remain 48px high and RTL. At 320px the row's `overflow-y:hidden` removes the 1px vertical native-scrollbar defect; horizontal scrolling remains available, with no current horizontal content overflow.
 - [ ] Interactive playground behavior was previously verified and its CSS/API were untouched; exhaustive per-trigger hover/focus and independent screen-reader review remain open. Tabs DoD remains open.
+
+## Tabs per-trigger keyboard focus — 2026-11-14
+
+- [x] Fresh local render at `http://127.0.0.1:5175/#component-tabs`: keyboard focus traversed each enabled trigger (همه، فعال، بایگانی). All three matched `:focus-visible`; computed focus contrast outline was `rgb(128, 90, 0) solid 1.6px` with the Norato-yellow `2px` halo (`rgb(253, 193, 1)`).
+- [x] Each keyboard move selected its target and updated the linked panel; browser AX exposed the triggers as tabs with the selected state and associated active tabpanel. The individually disabled پیش‌نویس trigger remained disabled and was skipped by roving focus.
+- [x] Playground selection was restored to Line/Medium/Horizontal, enabled, همه. Screenshot review showed RTL ordering and no stretching in the live row.
+- [ ] Independent screen-reader review and per-trigger hover-only verification remain open. The available browser interaction did not expose pointer movement without a click, so this pass does not claim fresh hover-only evidence or close Tabs DoD.
