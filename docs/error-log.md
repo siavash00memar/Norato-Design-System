@@ -1864,3 +1864,11 @@
 - **Correction:** Removed the icon override, kept 56px native size, tokenized a specimen-only 1.08 scale, and added a scoped mobile frame token/rule.
 - **Verification:** Browser reports initials type and Persian initials, 60.48×60.48 visual size; frames are 327×300 at 390 (x=24) and 257×300 at 320 (x=24), without document overflow. Token/catalog checks, Vue typecheck/build, `git diff --check`, and prohibited-name scan pass.
 - **Prevention:** Ensure static Default controls reflect the adapter default and measure both intrinsic content and preview frame at matched viewports.
+
+## ERR-239 — Timeline preview row cadence and narrow-screen rail drift (2026-11-14)
+
+- **Observed:** The static Timeline frame was too short, two event markers were oversized icons, the final event row had no bottom cadence, and at 320px the rail shifted about 4px from the reference axis.
+- **Cause:** The shared 300px sample height was used for a taller component; marker types and spacing did not match the current four-dot default; narrow content constraints changed the marker's logical offset.
+- **Correction:** Added scoped frame/content tokens, matched the default four-event composition and semantic dot sizes, preserved equal row cadence through the last event, and adjusted the narrow RTL marker/rail offset together below 360px.
+- **Verification:** Matched desktop frame is 635.98×328px vs 636×327.5px; matched 390/320 frames are 327/257×311.5px. Marker offsets differ by under 0.5px at mobile widths; local documents measure 375px/305px without overflow. Token/catalog checks, Vue typecheck/build and diff check pass.
+- **Prevention:** Compare both the outer specimen and inner event rail at desktop and mobile widths; measure first/middle/last rows rather than inferring spacing from the frame alone.

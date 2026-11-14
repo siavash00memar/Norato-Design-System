@@ -116,6 +116,15 @@
   --norato-avatar-group-overlap-xl: 14px;
   --norato-avatar-label-gap: var(--norato-space-2);
   --norato-avatar-status-gap: var(--norato-space-1);
+  --norato-timeline-preview-frame-inline-size: 636px;
+  --norato-timeline-preview-content-inline-size: 312px;
+  --norato-timeline-preview-frame-mobile-inline-size: 328px;
+  --norato-timeline-preview-frame-block-size: 328px;
+  --norato-timeline-preview-frame-mobile-block-size: 311.5px;
+  --norato-timeline-item-block-gap: 16.73px;
+  --norato-timeline-marker-dot-size: 10.8px;
+  --norato-timeline-marker-active-dot-size: 12.96px;
+  --norato-timeline-marker-dot-block-offset: 6px;
   --norato-tree-preview-frame-inline-size: 640px;
   --norato-tree-preview-frame-block-size: 300px;
   --norato-tree-preview-compact-block-size: 112px;
@@ -405,6 +414,12 @@
   --norato-tooltip-arrow-inline-size: 10px;
   --norato-tooltip-arrow-block-size: 5px;
   --norato-layer-tooltip: 15;
+}
+
+@media (max-width: 599px) {
+  :root {
+    --norato-timeline-item-block-gap: 18px;
+  }
 }
 
 [dir='rtl'] { direction: rtl; }

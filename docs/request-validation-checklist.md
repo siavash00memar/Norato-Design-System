@@ -1,5 +1,13 @@
 # Norato Request Validation Checklist
 
+## Timeline specimen geometry and mobile rail alignment — 2026-11-14
+
+- [x] Same-viewport desktop render (1265×713): local/reference frames measure 635.98×328px and 636×327.5px. Event rows are 59.797px and 59.805px; marker relative position differs by less than 1px. The overall local frame sits 17.5px left because its documentation columns differ.
+- [x] At 390×844, local/reference frames both measure 327×311.5px at x=24px; rows differ by 0.415px and the first marker x/y offsets by 0.39/0.35px. At 320×844, frames both measure 257×311.5px at x=24px; the first marker x differs by 0.27px. Local document widths equal client widths (375px and 305px), so there is no horizontal overflow.
+- [x] Rendered marker geometry remains 10.8px dots, 12.96px active dots, and 32px square icon/avatar markers. RTL event order and rail remain aligned; inert visual preview has zero focusable descendants.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass.
+- [ ] Independent screen-reader review and exhaustive final visual/state review remain open for Timeline Final DoD.
+
 ## Notification Center mobile reference comparison — 2026-11-14
 
 - [x] At a matched 375×844 browser viewport, the Norato and design-reference notification panels are similarly sized and bounded. Norato's specimen frame is slightly wider due to its documentation column; inner rows, avatars and RTL text do not visibly stretch or clip.

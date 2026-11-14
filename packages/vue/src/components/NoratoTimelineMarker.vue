@@ -36,7 +36,8 @@ const toneLabels = { neutral: 'خنثی', active: 'فعال', success: 'موفق
 
 <style scoped>
 .norato-timeline-marker{position:relative;z-index:1;display:grid;place-items:center;flex:none;box-sizing:border-box;inline-size:var(--norato-space-8);block-size:var(--norato-space-8);overflow:hidden;border:var(--norato-border-thin) solid transparent;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted);color:var(--norato-color-text-secondary);font-family:var(--norato-font-body);font-size:var(--norato-type-body-caption-size);font-weight:var(--norato-type-body-bold-weight)}
-.norato-timeline-marker[data-type="dot"]{inline-size:var(--norato-space-4);block-size:var(--norato-space-4);margin:var(--norato-space-2);background:var(--norato-color-border-strong)}
+.norato-timeline-marker[data-type="dot"]{inline-size:var(--norato-timeline-marker-dot-size);block-size:var(--norato-timeline-marker-dot-size);margin-block:var(--norato-timeline-marker-dot-block-offset) 0;margin-inline:calc((var(--norato-space-8) - var(--norato-timeline-marker-dot-size))/2);background:var(--norato-color-border-strong)}
+.norato-timeline-marker[data-type="dot"][data-tone="active"]{inline-size:var(--norato-timeline-marker-active-dot-size);block-size:var(--norato-timeline-marker-active-dot-size);margin-block:var(--norato-timeline-marker-dot-block-offset) 0;margin-inline:calc((var(--norato-space-8) - var(--norato-timeline-marker-active-dot-size))/2)}
 .norato-timeline-marker__dot{display:grid;place-items:center;inline-size:100%;block-size:100%;border-radius:inherit;color:inherit;line-height:1}
 .norato-timeline-marker[data-type="dot"][data-tone="neutral"] .norato-timeline-marker__dot,.norato-timeline-marker[data-type="dot"][data-tone="active"] .norato-timeline-marker__dot{font-size:0}
 .norato-timeline-marker[data-type="dot"][data-tone="success"]{background:var(--norato-color-status-success);color:var(--norato-color-surface-default)}
@@ -50,4 +51,5 @@ const toneLabels = { neutral: 'خنثی', active: 'فعال', success: 'موفق
 .norato-timeline-marker[data-type="avatar"]{background:var(--norato-color-surface-subtle);font-size:var(--norato-type-body-caption-size)}
 .norato-timeline-marker[data-type="avatar"] img{inline-size:100%;block-size:100%;object-fit:cover}
 .norato-timeline-marker__initials{max-inline-size:100%;overflow:hidden;text-overflow:clip;white-space:nowrap}
+@media(max-width:359px){.norato-timeline-marker[data-type="dot"]{margin-inline-start:calc((var(--norato-space-8) - var(--norato-timeline-marker-dot-size))/2 - var(--norato-space-1))}.norato-timeline-marker[data-type="dot"][data-tone="active"]{margin-inline-start:calc((var(--norato-space-8) - var(--norato-timeline-marker-active-dot-size))/2 - var(--norato-space-1))}}
 </style>
