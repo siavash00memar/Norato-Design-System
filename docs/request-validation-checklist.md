@@ -3167,3 +3167,5 @@
 ## File Upload specimen icon correction — 2026-11-14
 - [x] Local browser render at http://127.0.0.1:5175/#component-file-upload confirms rounded-square neutral icon tile, yellow glyph, and unchanged RTL dropzone composition.
 - [ ] Exact matched-viewport reference recheck and mobile review remain open; this does not close File Upload Final DoD.
+## File Upload required-state recheck — 2026-11-14
+- [x] Browser accessibility tree exposes «پیوست‌ها الزامی» on both Dropzone controls and generated Vue example includes `required`; resetting the option restores both. Native form submission/file validity remain unverified.

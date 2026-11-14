@@ -46,3 +46,4 @@
 - [x] Same-viewport local desktop render after correction shows a compact rounded-square neutral tile with Norato-yellow SVG glyph, replacing the oversized solid-yellow circular tile. Surrounding dotted frame, dropzone, text and RTL layout remain intact.
 - [x] CSS-only specimen change uses existing semantic spacing/surface/radius tokens; executable Dropzone behavior is unchanged.
 - [ ] Exact matched-viewport reference recheck, mobile review for this correction and complete File Upload Final DoD remain open.
+- [x] Fresh browser state check: toggling Required on exposes «پیوست‌ها الزامی» for both Dropzone controls and adds `required` to generated Vue usage; toggling it off restores the default names and snippet. This does not verify native form submission or actual file transfer.
