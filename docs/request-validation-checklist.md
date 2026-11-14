@@ -4,7 +4,13 @@
 
 - [x] Live local Tabs page reviewed; all three enabled triggers receive `:focus-visible` during RTL keyboard navigation. Computed focus contrast outline is 1.6 CSS px with a 2px Norato-yellow halo.
 - [x] ArrowLeft moved through the RTL trigger order, skipped the individually disabled trigger, and updated the selected state and associated panel. The playground was restored to its default selection and configuration.
-- [ ] Pointer hover-only coverage for each trigger and independent screen-reader review remain open; this browser path did not provide pointer movement without activating a tab.
+- [ ] The subsequent 2026-11-14 hover pass covers each trigger in the default configuration; the full style/size/orientation/trigger cross-product and independent screen-reader review remain open.
+
+## Tabs per-trigger hover — 2026-11-14
+
+- [x] In the default Line/Medium/Horizontal playground, pointer movement hovered each enabled trigger without activation. Each unselected trigger computed the pale-yellow `rgb(255, 248, 224)` surface with no shadow; pointer over the disabled trigger left its surface transparent with no shadow.
+- [x] Selection was restored to همه and text selection from the pointer-drag inspection was cleared; final screenshot shows the clean default render.
+- [ ] Hover/focus cross-product across all styles, sizes and orientations, and independent screen-reader review remain open.
 
 ## Avatar Upload native form and validity browser follow-up — 2026-11-14
 
