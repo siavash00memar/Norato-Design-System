@@ -20,6 +20,7 @@ import './badge-specimen.css'
 import './alert-specimen.css'
 import './banner-specimen.css'
 import './avatar-specimen.css'
+import './avatar-specimen-frame.css'
 import './notification-center-specimen.css'
 import './list-specimen.css'
 import './card-specimen.css'
@@ -80,7 +81,7 @@ onBeforeUnmount(() => { if (name === 'Stepper') stepperViewport.removeEventListe
     <div v-else-if="name==='Card'" class="sample-card-preview" dir="rtl"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoContentCard id="card-reference-preview" class="sample-card-preview__card" title="ساختن یک دیزاین سیستم فارسی" description="از توکن‌ها تا کامپوننت‌ها، قدم‌به‌قدم." layout="vertical" dir="rtl"><template #media><div class="sample-card-preview__art" aria-hidden="true" /></template><template #tag>طراحی</template><template #footer>نگار محمدی <span aria-hidden="true">·</span> ۵ دقیقه</template></NoratoContentCard></div>
     <template v-else-if="name==='Tag'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoTag tone="neutral" appearance="soft" size="small" dot dir="rtl">برچسب</NoratoTag></template>
     <template v-else-if="name==='Chip'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoChip label="طراحی" mode="filter" :model-value="false" size="medium" dir="rtl" /></template>
-    <div v-else-if="name==='Avatar'" class="sample-avatar-layout" dir="rtl"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoAvatar name="نمونهٔ آواتار" type="icon" size="xl" shape="circle" decorative /></div>
+    <div v-else-if="name==='Avatar'" class="sample-avatar-layout" dir="rtl"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoAvatar name="سارا محمدی" size="xl" shape="circle" decorative /></div>
     <div v-else-if="name==='Timeline'" class="sample-timeline-specimen" dir="rtl"><NoratoTimeline label="تاریخچهٔ سفارش" :events="[{id:'created',title:'سفارش ثبت شد',time:'۱۰:۲۰',tone:'success',markerType:'dot'},{id:'paid',title:'پرداخت تأیید شد',time:'۱۰:۲۲',tone:'success',markerType:'icon',icon:'check'},{id:'shipping',title:'سفارش در مسیر ارسال',time:'۱۰:۳۵',tone:'active',markerType:'icon',icon:'package'},{id:'delivered',title:'تحویل به گیرنده',time:'فردا',tone:'neutral',markerType:'dot'}]" layout="default" /></div>
       <div v-else-if="name==='Charts'" class="sample-charts-content" dir="rtl"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoChartCard title="فروش ماهانه" subtitle="نیمهٔ اول ۱۴۰۵" :categories="['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور']" :series="[{id:'online',label:'آنلاین',values:[34,58,42,72,51,66]}]" type="bar"><template #action><span class="sample-chart-more" aria-hidden="true">…</span></template></NoratoChartCard></div>
     <template v-else-if="name==='Divider'"><span class="sample-checkbox-state" dir="ltr">Default<i aria-hidden="true" /></span><NoratoDivider orientation="horizontal" type="line" :spacing="0" tone="subtle" /></template>

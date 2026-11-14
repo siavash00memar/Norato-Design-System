@@ -1,1 +1,2 @@
 .sample-avatar-layout{display:grid;place-items:center;inline-size:100%;min-inline-size:0}
+.sample-avatar-preview:not(.compact) .sample-avatar-layout>.norato-avatar{transform:scale(var(--norato-avatar-specimen-scale))}

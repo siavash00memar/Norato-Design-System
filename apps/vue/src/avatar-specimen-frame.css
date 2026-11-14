@@ -1,0 +1,1 @@
+@media(max-width:599px){.component-sample.sample-avatar-preview:not(.compact){box-sizing:border-box;inline-size:min(calc(100vw - var(--norato-space-16) + var(--norato-border-thin)),var(--norato-avatar-preview-frame-mobile-inline-size));min-inline-size:0;margin-inline:auto}}

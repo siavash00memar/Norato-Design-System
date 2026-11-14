@@ -9,11 +9,11 @@
 
 ## Visual and responsive
 
-- [x] Matched same-desktop-viewport captures compare the reference preview/anatomy/variant tiles with Norato's dotted Button-style specimen and 55-variant playground; keep Norato's yellow/neutral palette. Local frame is about 580×288px versus the reference frame about 630×300px, constrained by the narrower documentation column.
+- [x] Matched desktop capture compares the reference preview/anatomy/variant tiles with Norato's dotted Button-style specimen and 55-variant playground; keep Norato's yellow/neutral palette. Fresh 1265×713 render measures reference frame 636×300px at x=317 and Norato frame 631.98×300px at x=316.52; the residual width is constrained by the docs column. The static default renders the component's 56px initials body at a 60.48px visual size (1.08 specimen-only scale).
 - [x] Rendered all 36 Avatar, 12 Group, 3 Label and 4 Status variants. Token/CSS geometry is fixed: Avatar 24/32/40/48/56/64px; Group 32/40/48/56px with 8/10/12/14px overlap; Label avatars 32/40/48px; presence dot 10px. Browser screenshots show circle/square crops, fallback glyphs and overlapping groups without visible stretching or clipping.
-- [x] Browser tree confirms all 55 configured variants, image-fallback accessible output, six sizes, and both shapes; pixel geometry still needs measurement.
+- [x] Browser tree confirms all 55 configured variants, image-fallback accessible output, six sizes, and both shapes. Intrinsic geometry across every tile and group overlap still need exhaustive pixel measurement.
 - [x] RTL/LTR group order and overlap are confirmed in browser captures: first member is on the right in RTL and left in LTR; `+N` mirrors to the opposite edge. Presence remains bottom-left.
-- [x] At 390×844 and 320×844, Avatar page document widths are 375px and 305px with no horizontal overflow. The live playground remains within 343px/273px; all group-grid cells fit their 273px mobile container, and no playground descendant extends beyond the viewport.
+- [x] At 390×844 and 320×844, Avatar document widths are 375px and 305px without overflow. Static specimen frames match recorded reference geometry at 327×300px and 257×300px, both x=24; live playground remains within its available width and group-grid cells fit the 273px narrow container.
 - [x] Live browser screenshots confirm the presence dot stays at physical bottom-left in both directions, and the generated example tracks the selected RTL/LTR mode.
 
 ## Behavior and accessibility

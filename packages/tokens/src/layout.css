@@ -106,6 +106,8 @@
   --norato-avatar-size-l: 48px;
   --norato-avatar-size-xl: 56px;
   --norato-avatar-size-2xl: 64px;
+  --norato-avatar-specimen-scale: 1.08;
+  --norato-avatar-preview-frame-mobile-inline-size: 328px;
   --norato-avatar-ring-width: var(--norato-border-medium);
   --norato-avatar-status-size: 10px;
   --norato-avatar-group-overlap-s: 8px;

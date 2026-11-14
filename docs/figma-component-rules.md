@@ -607,3 +607,9 @@
 - At mobile widths, center the inert Table specimen at 16px less than its parent width using the semantic `space-4` token. Do not apply the inset to the live table or desktop frame.
 - Exact 390/320 post-change browser measurements remain an open validation item until captured.
 File Upload — وقتی انتخاب فایل الزامی است، واژهٔ «الزامی» در نام دسترس‌پذیر Dropzone قرار می‌گیرد؛ ستارهٔ کنار عنوان فقط نشان بصری است و به‌تنهایی جایگزین اعلام دسترس‌پذیر نمی‌شود.
+
+## Avatar — static default specimen
+
+- «Default» ایستا باید حالت پیش‌فرض adapter یعنی initials را نشان دهد. اندازهٔ XL با مقیاس specimen-only برابر 1.08 نمایش داده می‌شود؛ اندازهٔ عمومی 56px و playground تغییر نمی‌کنند.
+- در عرض حداکثر 599px، قاب نمونه 300px ارتفاع و حداکثر 328px عرض دارد؛ در viewportهای 390 و 320 پیکسل به‌ترتیب 327 و 257px شده و در x=24 مرکز می‌شود. این قاعده به قاب ایستا محدود است.
+- رنگ Norato، نام فارسی، RTL، عدم کشیدگی محتوای Avatar و semantics نمونهٔ inert حفظ می‌شوند.

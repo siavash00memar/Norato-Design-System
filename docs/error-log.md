@@ -1856,3 +1856,11 @@
 - **Correction:** Set the specimen to unselected, aligned intrinsic dimensions and text/padding to the measured reference using semantic tokens, applied the specimen-only scale, and capped the mobile frame with existing layout tokens.
 - **Verification:** Matched desktop capsule size differs by 0.12px in width; 390/320px frame dimensions match; the 20-case local matrix, keyboard behavior, RTL and no-overflow checks pass. Required token/catalog/type/build/diff gates pass. Independent screen-reader review remains open for strict Final DoD.
 - **Prevention:** Verify that the displayed Default marker agrees with controlled component state, and compare both intrinsic control geometry and outer specimen frame at matched viewport widths.
+
+## ERR-238 — Avatar Default specimen type and mobile frame diverged (2026-11-14)
+
+- **Observed:** The inert Avatar specimen labeled Default explicitly forced icon type, though the adapter defaults to initials. Its native 56px XL avatar rendered smaller than the reference's 60.48px visual specimen; mobile frame widths were previously 343px at 390 and 300px at 320 versus 327px/257px reference.
+- **Cause:** The static specimen overrode the documented default and generic Button-style frame filled the available docs column.
+- **Correction:** Removed the icon override, kept 56px native size, tokenized a specimen-only 1.08 scale, and added a scoped mobile frame token/rule.
+- **Verification:** Browser reports initials type and Persian initials, 60.48×60.48 visual size; frames are 327×300 at 390 (x=24) and 257×300 at 320 (x=24), without document overflow. Token/catalog checks, Vue typecheck/build, `git diff --check`, and prohibited-name scan pass.
+- **Prevention:** Ensure static Default controls reflect the adapter default and measure both intrinsic content and preview frame at matched viewports.

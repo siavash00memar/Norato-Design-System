@@ -3114,6 +3114,13 @@
 - [x] Fresh same-viewport mobile comparison at 390×844: reference and Norato frames both measure 327×300px; at 320×640 both measure 257×300px. Norato document has no horizontal overflow at either width. The reference page's 320px document scroll width is 326px due to surrounding documentation, while its Tag specimen remains bounded.
 - [ ] Independent screen-reader review remains open for strict Final DoD.
 
+## Avatar default specimen and responsive frame — 2026-11-14
+
+- [x] Same-viewport 1265×713 review: Norato frame is 631.98×300px at x=316.52; reference frame is 636×300px at x=317. Local static XL Avatar renders at 60.48×60.48px from a 56px native size, matching the reference's 1.08 specimen scale.
+- [x] Static Default now uses the adapter's default initials (`سم`) rather than forcing icon type; computed component `data-type=initials`, Persian name, RTL and inert/aria-hidden treatment are retained.
+- [x] At 390×844, static frame is 327×300px at x=24; at 320×844, 257×300px at x=24. Document client/scroll widths are 375/375 and 305/305 respectively, so neither viewport has horizontal overflow.
+- [ ] Full 55-variant intrinsic-geometry/overlap measurement, playground focus and state matrix, and independent screen-reader review remain open for Avatar Final DoD.
+
 ## Chip default specimen correction and responsive review — 2026-11-14
 
 - [x] Same-viewport desktop comparison: the local neutral capsule measures 65.188×34.56px versus 65.07×34.56px in the reference. The enclosing local docs frame is 631.98×300px versus 636×300px reference; this small width/centering difference is retained as a docs-layout residual.
