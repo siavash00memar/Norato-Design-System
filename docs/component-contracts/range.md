@@ -34,6 +34,8 @@
 - **Range Input:** Default، Disabled
 - **Slider Thumb:** Default، Hover، Pressed، Disabled، Focus
 
+گالری States برای Range، نمونهٔ واقعی rail، fill و thumb را نمایش می‌دهد؛ حالت Hover/Pressed هالهٔ زرد، Disabled خاکستری و Focus حلقهٔ زرد Norato دارد. نمونه‌ها بصری و inert هستند و هدف ۴۸px را حفظ می‌کنند.
+
 ## Parts
 
 - **Range Input — 8 variant:** اسلایدر تک‌مقداری یا بازه‌ای. ابعاد/حالت‌ها: Type: Single، Range؛ Size: Small، Medium؛ State: Default، Disabled

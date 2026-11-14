@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Range state gallery palette and geometry — 2026-11-14
+
+- [ ] Desktop and mobile browser screenshots show the dedicated RTL rail/fill/thumb sample in Default, Hover, Pressed, Disabled and Focus; Norato yellow is the accent and no blue dot/line remains. Current local 305px browser screenshot confirms the five-state visual and RTL yellow fill; matched desktop recapture is pending.
+- [ ] The visual knob stays centered inside its 48px target and the sample does not stretch vertically or overflow. CSS uses the existing 48px target token; exact browser scroll-width measurement is pending.
+- [ ] Keyboard/focus/disabled/error behavior of the live adapter is unchanged; broader Range DoD remains open.
+
 ## Breadcrumbs current-page specimen — 2026-11-14
 
 - [x] Matched 1280×720 local/reference render: current capsules measure 88.27×28.80px and 88.10×29.16px; glass fill matches `rgba(255,255,255,.78)`. Local semantic radius is 12px versus reference 8px; local shadow uses Norato's glass-shadow token. Static 300px frame and RTL trail remain bounded, with no visible stretching/clipping.

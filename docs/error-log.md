@@ -723,6 +723,14 @@
 
 ## Range fill boundary and thumb state — 2026-11-02
 
+## ERR-246 — Range state gallery inherited a blue generic control (2026-11-14)
+
+- **Observed:** Static Range States reused the shared generic `state-shape`; its blue dot/line looked unrelated to a slider and violated the Norato yellow accent rule.
+- **Cause:** Shared showcase markup represented all non-specialized families with one pill-and-dot illustration.
+- **Correction:** Range States now render an isolated RTL track, yellow fill, 48px thumb target, white visual thumb, and state-specific hover/pressed/disabled/focus treatment using semantic tokens.
+- **Prevention:** Keep family-specific controls out of generic sample styles; review the rendered state gallery for palette and target geometry.
+- **Verification:** Fresh local browser screenshot at a 305px viewport shows the yellow RTL fill, centered compact thumb, muted Disabled, and yellow Focus; the prior generic blue marker is absent. Token/catalog/typecheck/build/diff gates pass. Matched desktop recapture, exact overflow measurement and independent screen-reader review remain open.
+
 - The user screenshot reports an apparent offset between the Range fill and thumb.
 - Cause: legacy thumb `::before` painted a second yellow track segment across half of the 48px target; duplicate unconditional `::after` styles also made enabled thumbs gray.
 - Remove the stale pseudo-track and consolidate the Range CSS into one rule per part/state. Use Reka's fill only and constrain disabled colors to disabled state.

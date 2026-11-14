@@ -707,10 +707,11 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           <small>{{ state.description }}</small>
         </article>
       </div>
-      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
+      <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--range': name === 'Range', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
         <article v-for="entry in name === 'Select' ? selectStateEntries : stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
-          <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
-            <span class="state-shape"><i /><i /></span>
+          <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :class="{ 'state-preview--range': name === 'Range' }" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
+            <span v-if="name === 'Range'" class="range-state-sample" :data-state="stateKind(entry)"><i class="range-state-rail"><i class="range-state-fill" /></i><i class="range-state-target"><i class="range-state-thumb" /></i></span>
+            <span v-else class="state-shape"><i /><i /></span>
           </div>
           <template v-if="name === 'Select'">
             <div class="select-state-heading"><strong>{{ entry.label }}</strong><i aria-hidden="true" /></div>

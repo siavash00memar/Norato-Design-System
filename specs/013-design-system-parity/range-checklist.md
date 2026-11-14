@@ -20,3 +20,9 @@
 - [x] Default thumb is white with dark 2px stroke; disabled thumb and track are gray, with no yellow pseudo-track residue.
 - [x] Keyboard focus remains visible on the 20px visual knob; target stays 48×48px. RTL keyboard Home/End and Arrow keys, pointer clicks at both visible rail endpoints (0/100), focus ring, disabled colors, and the two-thumb range fill were checked.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, Vue production build and `git diff --check` pass; production build reports an 812.63KB JavaScript chunk warning.
+
+## State gallery Range sample — 2026-11-14
+
+- [x] Static Range states use a dedicated compact rail/fill/target/thumb illustration rather than the shared generic shape; default/hover/pressed/disabled/focus use Norato yellow/neutral and contain no blue accent.
+- [ ] Browser review confirms desktop and narrow mobile geometry, RTL fill direction, 48px target, no vertical stretch, and no overflow. Current 305px local browser capture confirms yellow RTL fill, distinct muted Disabled and centered compact thumb visually; desktop recapture and exact scroll-width measurement remain open.
+- [x] Token/catalog/typecheck/build/diff gates pass. Live Range behavior remains unchanged; full family DoD remains open for screenshot matrix and independent screen-reader review.

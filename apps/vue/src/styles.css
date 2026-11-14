@@ -45,3 +45,16 @@
 @media(prefers-reduced-motion:reduce){.input-state-field{transition:none}.input-state-spinner{animation-duration:.01ms;animation-iteration-count:1}}
 @media(min-width:840px){.component-doc>#doc-preview.doc-preview-tooltip .component-sample{inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-split-button-preview-frame-inline-size))}}
 @media(max-width:599px){.component-doc>#doc-preview.doc-preview-tooltip .component-sample{box-sizing:border-box;inline-size:min(100%,var(--norato-split-button-preview-frame-mobile-inline-size));min-inline-size:0;margin-inline:auto}}
+
+/* Range state gallery: compact slider anatomy, isolated from shared generic samples. */
+.state-visual-grid--range .state-preview--range{inline-size:100%;min-block-size:var(--norato-control-target-min)}
+.range-state-sample{position:relative;display:block;inline-size:min(100%,calc(var(--norato-control-target-min) * 2));block-size:var(--norato-control-target-min);direction:rtl}
+.range-state-rail{position:absolute;inset-block-start:50%;inset-inline:0;block-size:var(--norato-range-track-medium-block-size);overflow:hidden;border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-muted);transform:translateY(-50%)}
+.range-state-fill{position:absolute;inset-block:0;inset-inline-start:0;inline-size:50%;border-radius:inherit;background:var(--norato-color-brand-yellow)}
+.range-state-target{position:absolute;inset-block-start:50%;inset-inline-start:50%;display:grid;place-items:center;inline-size:var(--norato-range-thumb-target-size);block-size:var(--norato-range-thumb-target-size);border-radius:var(--norato-radius-pill);transform:translateX(50%);}
+.range-state-thumb{display:block;box-sizing:border-box;inline-size:var(--norato-range-thumb-visual-size);block-size:var(--norato-range-thumb-visual-size);border:var(--norato-border-medium) solid var(--norato-color-text-primary);border-radius:var(--norato-radius-pill);background:var(--norato-color-surface-default);box-shadow:var(--norato-elevation-box)}
+.state-is-hover .range-state-thumb,.state-is-pressed .range-state-thumb{box-shadow:0 0 0 var(--norato-range-thumb-halo-size) var(--norato-color-warning-container),var(--norato-elevation-box)}
+.state-is-disabled .range-state-rail{background:var(--norato-color-border-default)}
+.state-is-disabled .range-state-fill{background:var(--norato-color-text-disabled)}
+.state-is-disabled .range-state-thumb{border-color:var(--norato-color-border-strong);background:var(--norato-color-surface-muted);box-shadow:none}
+.state-is-focus .range-state-thumb{outline:var(--norato-border-focus) solid var(--norato-color-focus-contrast);outline-offset:var(--norato-space-1);box-shadow:0 0 0 var(--norato-border-focus) var(--norato-color-focus-ring),var(--norato-elevation-box)}
