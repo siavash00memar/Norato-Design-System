@@ -1,5 +1,7 @@
 # Input — Definition of Done Checklist
 
+- [x] Sizes page gallery renders four inert capsule samples with 36px visible bodies and at least 48px target area; the dotted frame was visually compared with the reference at 1265×713.
+- [ ] Exact computed browser rectangles for the full sizes gallery, independent screen-reader review and the full Input family matrix remain open in `updates/2026-11-14-input-size-gallery/`. Six-cell OTP wrap geometry is verified in `updates/2026-11-15-otp-balanced-mobile-wrap/`.
 - [x] Eight distinct public Vue adapters exist with typed props and controlled v-model events.
 - [x] Existing `NoratoField` export and `NoratoTextarea` export/API are retained; typecheck/build passed.
 - [x] Each adapter is represented in the Persian RTL Input playground and in the public usage example.
@@ -14,9 +16,11 @@
 - [x] Amount grouping preserves exact digits above `Number.MAX_SAFE_INTEGER`: `9007199254740993` displays `۹٬۰۰۷٬۱۹۹٬۲۵۴٬۷۴۰٬۹۹۳`; unsafe values do not receive misleading amount words.
 - [x] Search clear emptied the field; Ctrl+K focused Search from a non-editable target and did not steal focus from another text input.
 - [x] Each shared state was isolated in the mobile playground: Required exposes 8 required inputs; Error exposes 8 alerts and `aria-invalid` on 13 controls (the six OTP cells plus seven single controls); Disabled/Loading disable 16 controls/actions; Loading exposes 8 busy adapters and 8 indicators; Success appears on all eight adapters; Read-only makes all 13 value controls read-only and disables Number actions. Measured action targets are 48×48px; keyboard focus on the Password action has a 4px outline offset.
+- [x] 2026-11-15 fresh hover-only review covered all eight live adapters at 1265×713; the page's main content container retained AX focus while each field body rendered yellow Stroke. See `input-stroke-checklist.md` for the exact coverage and remaining limits.
 - [x] design reference and Norato mobile top previews were visually reviewed at 390×844: Norato document is 375px wide, its bounded glass frame does not overflow, and the preview field is 48px high. Prior matched measurements recorded design reference frame 327.2×300px/field 321.4×41px and Norato frame 320×288px; after the size refinement desktop field geometry is 50/52/56/60px outside and 62/64/68/72px inside. The current desktop viewport was 1280×720.
 - [x] Fresh mobile browser review at the active viewport compared the default Input specimen to the reference: the title, RTL capsule field, adjacent envelope icon and placeholder remain aligned within their frame. The Norato sample omits the example address/helper per the approved project rule; no visible stretch, clipping or page overflow appeared.
 - [x] At all four mobile sizes, document width remained 375px; six OTP cells wrap at Large/XLarge without horizontal overflow, with cell sizes 48/52/56/60px. Textarea height increases monotonically (103/108/120/128px) and does not stretch to the gallery height.
+- [x] Fresh 390px/320px review: six Medium OTP targets stay on one row at 390px (343px group; six 52×52px targets) and wrap 4+2 at 320px (273px group); both rows are centered after the narrow-wrap correction. Local document width is 375/375 at 390px and 305/305 at 320px. The reference page shows horizontal overflow at 320px (305px client / 326px scroll), which Norato does not reproduce.
 - [x] Native number spinners are hidden where the dedicated stepper exists; mobile screenshot shows one pair of increment/decrement actions and ArrowUp still respects max (`98→99`).
 - [x] All 41 documented Input family/state references now render bounded mini controls in design reference-like state cards. At 390×844 the 343px gallery uses two 167.5px columns; every card fits and the document remains 375px. Default/Hover/Active/Error/Disabled/Loading/Success/Read-only/Filled/Typing show their correct state color or treatment; Error and Success have descriptions, OTP/Number/Amount/Phone/Search use their own anatomy. Gallery is inert and hidden from assistive technology; interactive behaviors remain in the playground.
 - [x] Four sizes were crossed with each of six isolated shared states (24 live combinations); all 32 keyboard focus targets in the Input playground showed a visible focus ring. Combined state sequences are recorded below; remaining adapter-specific state/visual interactions are not inferred from the inert gallery.
@@ -157,3 +161,37 @@
 - [x] Scoped the existing approved neutral fill/text/Stroke treatment to Input's Parts axis group only; the shared `.variant-axis` base and other family rules remain unchanged.
 - [x] Fresh local screenshots show all eight Input adapter rows with neutral axis chips; the labels remain legible and wrap within the RTL content column. Norato yellow remains reserved for actual active/focused examples.
 - [ ] Full Input visual variant cross-product and independent screen-reader review remain open; Input DoD stays open.
+
+## Shared Error + Disabled + Loading browser recheck — 2026-11-15
+
+- [x] At the live 1265×713 playground, Error + Disabled exposed all eight adapters' value controls as disabled; Number increment/decrement actions and Password visibility were also disabled. The rendered Number, Amount and Search fields retained neutral muted surfaces.
+- [x] Adding Loading kept the controls disabled and exposed a loading message plus the associated error message for each of the eight adapters in the accessibility tree.
+- [x] Restored Loading, Disabled and Error to off; all eight adapter controls returned to enabled and the generated snippet returned to the default state.
+- [ ] This shared-state pass does not close the full visual-state cross-product, mobile review, or independent screen-reader review; Input DoD remains open.
+
+## Live page structure comparison with Button — 2026-11-15
+
+- [x] At the local browser, the Input and Button accessibility trees expose the same leading detail order: Preview, Vue implementation, Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens.
+- [x] Input's additional Variant gallery and input-state matrix follow the nine shared contract sections rather than interrupting their order.
+- [ ] This confirms section order and presence, not equal content quality or matched geometry; full visual comparison and independent screen-reader review remain open.
+
+## Fresh matched desktop specimen comparison — 2026-11-15
+
+- [x] Captured the reference and local Input pages in separate browser tabs at the same 1265×713 viewport. The dotted preview frames and centered capsule fields have closely aligned apparent widths and proportions; no vertical stretch is visible in the local field.
+- [x] Local specimen keeps the approved RTL placeholder and envelope icon beside the Email title; it omits the reference sample address and helper line per the user's explicit Input rules.
+- [ ] This is a screenshot-level visual comparison, not a new DOM geometry measurement. Mobile recapture, full state-by-state comparison and independent screen-reader review remain open; Input DoD stays open.
+
+## Fresh matched desktop DOM geometry — 2026-11-15
+
+- [x] With both pages at a 1265×713 CSS viewport, the reference stage measured 636×300px and the local stage 635.984×300px; the width delta is 0.016px and height is equal.
+- [x] The reference field box measured 324×41.04px. The local interactive target measured 324×48px, with a 36px outer visual capsule (34px content + 1px top/bottom border), matching the user's Norato height rule. The local shell is fully pill-shaped; the reference sample uses a 12px radius, an intentional project-specific difference.
+- [x] Local title computes to Estedad 12px/700. Placeholder computes to Vazir 12px/300, `#a1a1a1`, right-aligned and RTL. The local sample omits the reference value/helper line per the user's explicit rule.
+- [x] Reference stage x=317px and local stage x=307.016px (about 9.984px left). Both are centered in their own preview parent; inspected parent grids differ (reference documentation uses 180/636/160px columns with 48px gaps, local docs use 706/208px columns with a 16px gap). This is page-shell positioning, not a distorted or miscentered Input specimen; no component-level offset was added.
+- [ ] Exact mobile DOM geometry, full state-by-state visual comparison and independent screen-reader review remain open; Input DoD stays open.
+
+## OTP required native-form completion — 2026-11-15
+
+- [x] Browser reproduced the defect with Required enabled: only the first of six cells had native `required`; after entering only that first digit all six controls reported valid.
+- [x] After the fix, 4/5/6-cell runs each expose native `required` on every configured cell; partial values leave respectively 3/4/5 positions missing and only one cell valid, while complete values make all configured cells valid.
+- [x] With Required disabled and an empty 4-cell code, all cells are optional and valid. Six-digit paste filled all positions and focused the last cell; ArrowLeft moved to the prior cell and Backspace from an empty cell moved backward.
+- [x] Playground reloaded to its default state after the review. This fix changes constraint validation only; independent screen-reader review and the broader Input visual matrix remain open.

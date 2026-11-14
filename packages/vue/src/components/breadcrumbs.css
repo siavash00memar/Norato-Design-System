@@ -1,0 +1,8 @@
+.norato-breadcrumbs__list {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.norato-breadcrumbs__list::-webkit-scrollbar {
+  display: none;
+}

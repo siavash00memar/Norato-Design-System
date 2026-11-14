@@ -11,6 +11,9 @@ Status: in progress
 
 ## Visual and runtime review
 
+- [x] Fresh same-viewport desktop render at 1265×713 was compared side by side with the design reference. The Card frame, inset content card, RTL title/body hierarchy, rounded media area and Norato yellow/neutral palette remain visually aligned; no visible stretching or clipping appeared in the static specimen.
+- [x] Live Card playground changed Content layout from Vertical to Horizontal and long-copy from Short to Long. The accessibility tree reported the selected values, and the generated Vue usage updated `layout="horizontal"` and the longer Persian copy. Both controls were restored to Vertical/Short; the visible page returned to its default content.
+- [x] Horizontal playground media bounds are covered by the independent measured 16-combination matrix below. The fresh 2026-11-15 runtime recheck showed no obvious stretch and confirmed the live horizontal layout; the Card adapter/media styles have not changed, so the existing measurements remain applicable. Re-measure if the media slot or layout rules change.
 - [x] Compare local and reference screenshots at the same 1905×951 desktop viewport. The Norato frame/card measured approximately 580×288px / 272×248px; the reference frame/card measured about 630×299px / 270×250px. The page frame remains narrower because of Norato's docs column; the content card now matches the reference card dimensions and has an inset, rounded media panel.
 - [x] Exercise all four base styles, base selected/disabled, four content layouts, all three stat trends, both profile layouts, pricing featured toggle and selectable radio/checkbox modes. Browser confirmed generated code synchronizes with each newly added base-state, stat-trend and profile-cover selection. Pricing feature state and selectable radio/checkbox behavior were already verified.
 - [x] Verify selection, radio group behavior, checkbox toggle, keyboard focus and disabled behavior in the browser. Radio group ArrowDown and Space update the controlled selection; screenshot shows the 2px yellow focus ring; checkbox mode toggles; disabled radios are exposed as disabled; activating the named article link navigates to `/guide`.
@@ -32,3 +35,10 @@ Status: in progress
 - [x] Scan project text for the prohibited external reference name (no matches; lockfile, dependencies and build output excluded).
 
 Do not close until each required browser and technical item is evidenced.
+
+## Live horizontal-layout recheck — 2026-11-15
+
+- [x] In a fresh local browser session, the live Content Card playground changed from Vertical to Horizontal; the accessibility tree exposed Horizontal as selected and the generated example changed to `layout="horizontal"`.
+- [x] The live screenshot showed the media as a bounded square beside the RTL content, with no obvious vertical stretching. This visual review did not measure the media bounds; the measured 16-combination matrix above remains the geometry evidence.
+- [x] Restored the playground layout to Vertical and confirmed the generated example returned to `layout="vertical"`.
+- [ ] Independent screen-reader announcement review remains open.

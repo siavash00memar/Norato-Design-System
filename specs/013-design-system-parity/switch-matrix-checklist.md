@@ -37,3 +37,18 @@
 - [x] Fresh local browser: the separate playground adapter measures 48×48px with a 40×24px medium track and begins at `aria-checked=false`.
 - [x] Pointer activation changes the control to `aria-checked=true`; Space changes it back to false. It remains enabled and has no invalid state. Playground default is restored.
 - [ ] This confirms one live path only. Independent screen-reader review remains open; Switch DoD is not closed.
+
+## Live Switch off/on visual and state recheck — 2026-11-14
+
+- [x] Opened the live local Switch page and the reference Switch page in the browser. The reference Default preview shows the same labeled switch-and-description hierarchy; Norato keeps its approved yellow accent.
+- [x] Toggled the live Norato switch off → on → off. The accessibility tree changed false → true → false, and the generated Vue example tracked `ref(false)` → `ref(true)` → `ref(false)`.
+- [x] In the checked screenshot, the track is yellow, the knob is white and moves to the physical left in RTL. In the restored unchecked screenshot, the track is neutral; the yellow halo is the visible focus treatment while the control has focus.
+- [ ] This recheck does not close the independent screen-reader review or exhaustive combined-state DoD.
+
+
+## Switch تازه — نمایش و مسیرهای زنده (2026-11-15)
+
+- [x] نمای Switch محلی در ۱۲۶۵×۷۱۳ با صفحهٔ مرجع هم‌viewport مرور شد؛ کارت نقطه‌ای، جای label/description، Switch متوسط و چیدمان RTL هم‌ساختارند. در وضعیت خاموش track خنثی و knob سفید از هم قابل‌تشخیص‌اند؛ در روشن track زرد و knob سفید است. کشیدگی یا بیرون‌زدگی دیده نشد.
+- [x] مقدار زنده با کلیک، Space و Enter به‌ترتیب بین false/true تغییر کرد؛ مقدار در درخت دسترس‌پذیری و کد Vue تولیدشده هم‌زمان تغییر کرد. فوکوس پس از کیبورد روی Switch ماند.
+- [x] ترکیب Error+Disabled در هر دو مقدار بررسی شد؛ کنترل در هر دو حالت غیرفعال ماند و ظاهر track خنثی بود. سپس error، disabled و مقدار کنترل به پیش‌فرض خاموش/فعال/بدون‌خطا برگشتند.
+- [ ] ارزیابی مستقل با صفحه‌خوان و پوشش تمام ترکیب‌های زندهٔ اندازه×مقدار×وضعیت همچنان باز است؛ DoD نهایی Switch بسته نیست.

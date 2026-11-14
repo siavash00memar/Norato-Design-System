@@ -91,6 +91,8 @@ const stateEntries = computed(() => entries.value.flatMap(entry => {
   if (values.length < 2 || values.some(value => value.length > 42)) return [entry]
   return values.map((value, index) => ({ ...entry, id: entry.id * 100 + index, label: value, detail: entry.label, source: value }))
 }))
+const rangeStateEntries = computed(() => stateEntries.value.filter(entry => ['Range Input', 'Slider Thumb'].includes(entry.detail)))
+const rangeStateNote = computed(() => stateEntries.value.find(entry => !['Range Input', 'Slider Thumb'].includes(entry.detail))?.detail ?? '')
 const selectStateEntries = computed(() => {
   const preferred = new Map<string, Entry>()
   for (const entry of stateEntries.value) {
@@ -665,6 +667,16 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
     <template v-else-if="section === 'Sizes'">
       <SplitButtonShowcase v-if="name === 'Split Button'" :section="section" :copied-key="copiedKey || ''" @copy="(key, value) => emit('copy', key, value)" />
       <StepperContractShowcase v-else-if="name === 'Stepper'" section="Sizes" />
+      <div v-else-if="name === 'Input'" class="input-size-gallery" aria-label="اندازه‌های Input" aria-hidden="true" inert dir="rtl">
+        <div class="input-size-stage">
+          <article v-for="size in ['کوچک', 'متوسط', 'بزرگ', 'خیلی بزرگ']" :key="size" class="input-size-card">
+            <div class="input-size-target"><span class="input-size-pill">متن نمونه</span></div>
+            <strong>{{ size }}</strong>
+            <small dir="ltr">36px</small>
+          </article>
+        </div>
+        <p class="visual-kind">ارتفاع بدنهٔ دیداری همهٔ فیلدها ۳۶ پیکسل است؛ هدف تعاملی حداقل ۴۸ پیکسل می‌ماند. مقیاس مرجع ۳۲، ۴۰، ۴۸ و ۵۶ پیکسل است.</p>
+      </div>
       <div v-else-if="name === 'Tag'" class="tag-size-grid" aria-label="چهار اندازهٔ Tag" aria-hidden="true" inert>
         <article v-for="item in tagVariantSizes" :key="item.id" class="tag-size-card">
           <div class="tag-size-stage"><NoratoTag tone="info" appearance="soft" :size="item.id" dir="rtl">برچسب</NoratoTag></div>
@@ -677,16 +689,11 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         <article v-for="item in chipSizes" :key="item.id" class="chip-size-card"><div><NoratoChip label="فیلتر" mode="filter" :model-value="true" :size="item.id" dir="rtl" /></div><strong>{{ item.label }}</strong><small dir="ltr">{{ item.height }}px · min-height</small></article>
         <span class="visual-kind">ارتفاع دیداری بر اساس اندازه تغییر می‌کند؛ هدف تعاملی همچنان ۴۸ پیکسل است.</span>
       </div>
-      <div v-else-if="name === 'Progress'" class="progress-size-list" aria-label="اندازه‌های خطی و دایره‌ای Progress" aria-hidden="true" inert>
-        <article v-for="entry in entries" :key="entry.id" class="progress-size-item">
-          <div v-if="entry.detail.includes('Linear')" class="progress-size-lines">
-            <span v-for="size in progressSizeSamples" :key="size.id" class="progress-size-line" :data-size="size.id"><i /><b dir="ltr">{{ size.linear }}</b></span>
-          </div>
-          <div v-else-if="entry.detail.includes('Circular')" class="progress-size-circles">
-            <span v-for="size in progressSizeSamples" :key="size.id" class="progress-size-circle" :data-size="size.id"><i /><b dir="ltr">{{ size.circle }}</b></span>
-          </div>
-          <span v-else class="progress-size-note-mark" aria-hidden="true" />
-          <span><strong>{{ entry.label }}</strong><small dir="auto">{{ entry.detail }}</small></span>
+      <div v-else-if="name === 'Progress'" class="progress-size-gallery" aria-hidden="true" inert dir="rtl">
+        <article v-for="size in progressSizeSamples" :key="size.id" class="progress-size-card" :data-size="size.id">
+          <strong>{{ size.label }}</strong>
+          <span class="progress-size-sample progress-size-line" :data-size="size.id"><i /><small>خطی <b dir="ltr">{{ size.linear }}</b></small></span>
+          <span class="progress-size-sample progress-size-circle" :data-size="size.id"><i /><small>دایره‌ای <b dir="ltr">{{ size.circle }}</b></small></span>
         </article>
       </div>
       <div v-else-if="name === 'Empty State'" class="empty-state-size-gallery" aria-hidden="true" inert dir="ltr">
@@ -759,7 +766,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
         <span><strong>بدون حالت تعاملی مستقل</strong><small>{{ entries[0]?.detail }}</small></span>
       </div>
       <div v-else class="state-visual-grid" :class="{ 'state-visual-grid--select': name === 'Select', 'state-visual-grid--range': name === 'Range', 'state-visual-grid--field': name === 'Radio Button' || name === 'Switch' }">
-        <article v-for="entry in name === 'Select' ? selectStateEntries : stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
+        <article v-for="entry in name === 'Select' ? selectStateEntries : name === 'Range' ? rangeStateEntries : stateEntries" :key="entry.id" class="contract-state-card" :class="`state-is-${stateKind(entry)}`">
           <div v-if="name !== 'Select' && name !== 'Radio Button' && name !== 'Switch'" class="state-preview" :class="{ 'state-preview--range': name === 'Range' }" :data-kind="sampleKind(entry)" aria-hidden="true" inert>
             <span v-if="name === 'Range'" class="range-state-sample" :data-state="stateKind(entry)"><i class="range-state-rail"><i class="range-state-fill" /></i><i class="range-state-target"><i class="range-state-thumb" /></i></span>
             <span v-else class="state-shape"><i /><i /></span>
@@ -779,6 +786,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
           </template>
         </article>
       </div>
+      <p v-if="name === 'Range' && rangeStateNote" class="range-state-note" dir="auto">{{ rangeStateNote }}</p>
     </template>
 
     <template v-else-if="section === 'ماتریس حالت‌های ورودی' && name === 'Input'">
@@ -882,6 +890,14 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .tag-part-sample{display:grid;place-items:center;min-block-size:64px;padding:var(--norato-space-3);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
 .tag-part-status{justify-self:start;padding:var(--norato-space-1) var(--norato-space-2);border-radius:var(--norato-radius-full);background:var(--norato-color-warning-container);color:var(--norato-color-text-primary);font-size:var(--norato-type-body-min-size)}
 .tag-size-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
+.input-size-gallery{display:grid;gap:var(--norato-space-2);min-inline-size:0}
+.input-size-stage{box-sizing:border-box;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:var(--norato-space-2);inline-size:100%;min-block-size:var(--norato-input-sizes-gallery-block-size);padding:var(--norato-space-3);border:var(--norato-border-thin) dotted var(--norato-color-border-strong);border-radius:var(--norato-radius-card);background-color:var(--norato-color-glass-surface);background-image:radial-gradient(var(--norato-color-border-default) var(--norato-preview-dot-size),transparent var(--norato-preview-dot-size)),radial-gradient(ellipse at 8% 5%,var(--norato-color-warning-container),transparent 55%),radial-gradient(ellipse at 92% 100%,var(--norato-color-info-container),transparent 55%);background-size:var(--norato-preview-grid-size) var(--norato-preview-grid-size),100% 100%,100% 100%;box-shadow:var(--norato-elevation-box)}
+.input-size-card{display:grid;align-content:center;justify-items:stretch;gap:var(--norato-space-1);min-inline-size:0;padding:var(--norato-space-2);text-align:center}
+.input-size-target{display:grid;place-items:center;box-sizing:border-box;min-block-size:var(--norato-control-target-min);padding:var(--norato-space-1);border-radius:var(--norato-radius-control);background:transparent}
+.input-size-pill{display:flex;align-items:center;box-sizing:border-box;inline-size:100%;min-inline-size:0;block-size:var(--norato-control-visual-height);padding-inline:var(--norato-space-3);overflow:hidden;border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-pill);background:var(--norato-color-glass-surface-strong);color:var(--norato-color-text-placeholder-subtle);font-family:var(--norato-font-body);font-size:var(--norato-type-body-caption-size);font-weight:var(--norato-type-body-light-weight);text-align:start;white-space:nowrap}
+.input-size-card>strong{font-family:var(--norato-font-heading);font-weight:var(--norato-type-body-bold-weight)}
+.input-size-card>small{color:var(--norato-color-text-secondary);font-size:var(--norato-type-body-caption-size)}
+.input-size-gallery>.visual-kind{margin:0}
 .tag-size-card{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);text-align:center}
 .tag-size-stage{display:grid;place-items:center;inline-size:100%;min-block-size:var(--norato-control-target-min);padding:var(--norato-space-2);border-radius:var(--norato-radius-control);background:var(--norato-color-surface-subtle)}
 .tag-size-card>small{color:var(--norato-color-text-secondary)}
@@ -889,11 +905,6 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .tag-state-note{display:grid;gap:var(--norato-space-3);min-inline-size:0}
 .tag-state-note>article{display:flex;align-items:center;gap:var(--norato-space-3);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default)}
 .tag-state-note>article>span{display:grid;gap:var(--norato-space-1);min-inline-size:0}
-.contract-visual--tag :deep(.usage-indicator){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
-.contract-visual--tag :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
-.contract-visual--tag :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
-.contract-visual--tag :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
-.contract-visual--tag :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 .chip-anatomy,.chip-parts-grid{display:grid;gap:var(--norato-space-4);min-inline-size:0}
 .chip-anatomy-preview{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:var(--norato-space-3);min-block-size:128px;padding:var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:linear-gradient(135deg,var(--norato-color-surface-default),var(--norato-color-surface-subtle))}
 .chip-anatomy-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--norato-space-2);margin:0;padding:0;list-style:none}
@@ -922,11 +933,6 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .chip-state-card{display:grid;justify-items:center;align-content:start;gap:var(--norato-space-2);min-inline-size:0;padding:var(--norato-space-3);border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-surface-default);text-align:center}
 .chip-state-card[data-state="hover"] :deep(.norato-chip__surface){border-color:var(--norato-color-brand-yellow);background:var(--norato-color-warning-container)}
 .chip-state-card[data-state="focus"] :deep(.norato-chip)::after{position:absolute;inset:var(--norato-space-1);border:var(--norato-border-focus) solid var(--norato-color-brand-yellow);border-radius:var(--norato-radius-pill);content:"";pointer-events:none}
-.contract-visual--chip :deep(.usage-indicator){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
-.contract-visual--chip :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
-.contract-visual--chip :deep(.usage-is-rtl .usage-indicator){background:var(--norato-color-brand-yellow);color:var(--norato-color-text-primary)}
-.contract-visual--chip :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
-.contract-visual--chip :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
 .combobox-state-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--norato-space-3);min-inline-size:0}
 .combobox-state-card{display:grid;gap:var(--norato-space-1);min-inline-size:0;padding-block:var(--norato-space-2);border-block-end:var(--norato-border-thin) solid var(--norato-color-border-default)}
 .combobox-state-target{display:flex;align-items:center;min-block-size:var(--norato-control-target-min);min-inline-size:0}
@@ -942,7 +948,7 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 @media(max-width:599px){.combobox-state-grid{grid-template-columns:minmax(0,1fr)}}
 @media(min-width:600px) and (max-width:899px){.combobox-state-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.tag-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:599px){.tag-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.input-size-stage{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:599px){.chip-variant-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.chip-size-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .input-core-states-grid{display:grid;inline-size:calc(100% + var(--norato-space-1));grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:1fr;gap:calc(var(--norato-space-2) + var(--norato-border-medium));min-inline-size:0;margin-inline:calc(-1 * var(--norato-border-medium))}
 .input-core-state-card{display:grid;align-content:start;gap:calc(var(--norato-space-1) + var(--norato-border-thin));min-inline-size:0;padding:var(--norato-space-3) calc(var(--norato-space-3) + var(--norato-border-medium));border:var(--norato-border-thin) solid var(--norato-color-border-default);border-radius:var(--norato-radius-card);background:var(--norato-color-glass-surface-strong)}
@@ -963,9 +969,6 @@ const buttonOverviewLabels = ['کاربرد و ظاهر', 'مرز API Vue', 'م�
 .variant-visual-grid--select :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 .contract-visual--empty-state :deep(.variant-axis > span){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary);box-shadow:inset 0 0 0 var(--norato-border-thin) var(--norato-color-border-default)}
 .contract-visual--empty-state :deep(.part-index){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-secondary)}
-.contract-visual--empty-state :deep(.usage-indicator),.contract-visual--empty-state :deep(.accessibility-symbol){background:var(--norato-color-warning-container);color:var(--norato-color-text-primary)}
-.contract-visual--empty-state :deep(.usage-is-avoid .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-status-error)}
-.contract-visual--empty-state :deep(.usage-is-implementation .usage-indicator){background:var(--norato-color-surface-subtle);color:var(--norato-color-text-primary)}
 .contract-visual--empty-state :deep(.token-mark[data-kind="type"]){background:linear-gradient(to bottom,var(--norato-color-brand-yellow) 0 var(--norato-border-medium),transparent var(--norato-border-medium) var(--norato-space-3),var(--norato-color-border-default) var(--norato-space-3) calc(var(--norato-space-3) + var(--norato-border-thin)),transparent calc(var(--norato-space-3) + var(--norato-border-thin)) 100%)}
 .empty-state-size-gallery{display:flex;flex-wrap:wrap;inline-size:min(calc(100% + var(--norato-space-1)),var(--norato-empty-state-size-gallery-frame-inline-size));justify-content:center;gap:var(--norato-space-4);min-inline-size:0;margin-inline:auto;padding:calc(var(--norato-space-8) + var(--norato-border-medium)) var(--norato-space-4);border:var(--norato-border-thin) solid var(--norato-color-glass-line);border-radius:var(--norato-radius-card);background-color:var(--norato-color-glass-surface);background-image:radial-gradient(ellipse at 20% 15%,color-mix(in srgb,var(--norato-color-brand-yellow) 12%,transparent),transparent 56%),radial-gradient(color-mix(in srgb,var(--norato-color-border-strong) 22%,transparent) var(--norato-border-thin),transparent var(--norato-border-thin));background-size:auto,var(--norato-space-3) var(--norato-space-3);box-shadow:var(--norato-elevation-box)}
 .empty-state-size-sample{display:grid;grid-template-rows:var(--norato-control-visual-height) auto;justify-items:center;align-content:center;gap:var(--norato-space-2);min-inline-size:0;font-family:var(--norato-font-heading);font-size:var(--norato-type-body-small-size);line-height:calc(var(--norato-type-body-small-line-height) * var(--norato-type-body-small-size) + var(--norato-border-thin));text-align:center}

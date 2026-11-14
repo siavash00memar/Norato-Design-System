@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DialogContent, DialogDescription, DialogPortal, DialogRoot, DialogTitle } from 'reka-ui'
+import { DialogContent, DialogDescription, DialogPortal, DialogRoot, DialogTitle, DialogTrigger } from 'reka-ui'
 import '../modal.css'
 
 export type NoratoModalSize = 'small' | 'medium' | 'large'
@@ -29,6 +29,10 @@ const props = withDefaults(defineProps<{
 
 const open = defineModel<boolean>('open', { default: false })
 
+function close() {
+  open.value = false
+}
+
 function preventEscape(event: Event) {
   if (!props.dismissible) event.preventDefault()
 }
@@ -40,6 +44,9 @@ function preventOutside(event: Event) {
 
 <template>
   <DialogRoot v-model:open="open">
+    <DialogTrigger v-if="$slots.trigger" as-child>
+      <slot name="trigger" :open="open" />
+    </DialogTrigger>
     <DialogPortal>
       <div v-if="open" class="norato-modal__overlay" />
       <DialogContent
@@ -62,8 +69,8 @@ function preventOutside(event: Event) {
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" /></svg>
           </button>
         </header>
-        <div class="norato-modal__body"><slot /></div>
-        <footer v-if="$slots.footer" class="norato-modal__footer"><slot name="footer" /></footer>
+        <div class="norato-modal__body"><slot :open="open" :close="close" /></div>
+        <footer v-if="$slots.footer" class="norato-modal__footer"><slot name="footer" :open="open" :close="close" /></footer>
       </DialogContent>
     </DialogPortal>
   </DialogRoot>

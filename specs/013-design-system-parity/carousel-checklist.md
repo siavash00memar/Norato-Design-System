@@ -73,3 +73,41 @@
 - [x] With `prefers-reduced-motion: reduce` emulated at both widths, `matchMedia` is true and track `scroll-behavior` is `auto`. Advancing from slide 1 to 2 through the host control leaves slide 2 centered within 0.23px at 390px and 0.04px at 320px; document widths remain 390/390 and 320/320.
 - [ ] CDP touch input delivered pointer/touch start, move and end events to the track but did not produce native horizontal scroll; synthesized touch scroll also did not move it. This automation result does not verify real-device touch scrolling, so keep touch review open.
 - [ ] Independent screen-reader review remains open.
+
+## Native horizontal track-scroll follow-up — 2026-11-14
+
+- [x] In the live RTL playground, horizontal scroll input over the carousel track moved the centered active slide from 1 to 2 and then to 3; the active yellow indicator followed. The delayed scroll-settle handler briefly left the accessibility-tree model at 2, then updated it to 3 on the next snapshot.
+- [x] The accessibility tree exposes the named carousel region, next/previous controls with disabled boundary state, each slide's position/name, and a named controlled-index selector. Selecting Slide 1 through the selector restored the first slide, synchronized the model and disabled Previous.
+- [x] Fresh screenshot confirms first slide at the right and its yellow active dot; playground returned to RTL, Medium, five slides and index 1.
+- [ ] This wheel/track-scroll emulation does not prove real-device touch scrolling. Independent screen-reader review and real-device touch review remain open; Carousel DoD is not closed.
+
+## Live slide image proportions — 2026-11-15
+
+- [x] At the current 499×932 local browser viewport, all five live slide images reported the same intrinsic 260×150 source size and rendered 340.75×191.67 with CSS `aspect-ratio: 16 / 9` and `object-fit: cover`; no image was stretched to fill a different ratio.
+- [x] Visual screenshot review shows the active and adjacent slide art remains bounded inside the RTL carousel track; the active indicator and controls remain visible.
+- [ ] The small crop from the source artwork into the 16:9 frame is intentional `object-fit: cover`, not a distortion check for arbitrary consumer-provided slots. Real-device touch scrolling and independent screen-reader review remain open.
+
+## RTL mouse-drag interaction — 2026-11-15
+
+- [x] In the local RTL playground, a real browser pointer drag to the right moved the controlled slide from 1 to 2 and synchronized the selector and active indicator; dragging left returned to the first slide. Focus stayed on the track after the gesture.
+- [x] After the check, the live model was at the first slide, the page returned to scroll position 0, and the browser remained on the Carousel detail route.
+- [ ] This exercises the custom mouse-pointer drag path, not touch input. Real-device touch scrolling and independent screen-reader review remain open; Carousel DoD stays open.
+
+## Controlled next/previous button synchronization — 2026-11-15
+
+- [x] Fresh local browser check on the live RTL playground: activating «بعدی» changed the controlled index and status from slide 1 to slide 2, enabled «قبلی», and retained focus on the activated control.
+- [x] Activating «قبلی» returned the controlled index/status to slide 1 and restored the disabled boundary state; the browser was left at the original Carousel route and default slide.
+- [ ] This spot check does not cover every slide/state combination, real-device touch scrolling, or independent screen-reader output. Carousel DoD remains open.
+
+## Fresh RTL arrow-key navigation — 2026-11-15
+
+- [x] In the live local RTL playground, ArrowLeft on the focused track advanced the controlled index/status from slide 1 to slide 2.
+- [x] ArrowRight returned the index/status to slide 1; the Previous control returned to its disabled boundary state and focus remained on the track.
+- [ ] This focused browser check does not cover every direction/slide combination or independent screen-reader output; touch review also remains open.
+
+## Fresh LTR arrow-key navigation — 2026-11-15
+
+- [x] In the live local playground, selecting LTR changed the next/previous button names and boundary state to match the direction.
+- [x] ArrowRight advanced the controlled index/status from slide 1 to slide 2; ArrowLeft restored slide 1 and disabled Next.
+- [x] Restored RTL and slide 1 after the check.
+- [ ] This confirms the keyboard direction mapping only; screen-reader review and real-device touch review remain open.

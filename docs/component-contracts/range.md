@@ -34,7 +34,7 @@
 - **Range Input:** Default، Disabled
 - **Slider Thumb:** Default، Hover، Pressed، Disabled، Focus
 
-گالری States برای Range، نمونهٔ واقعی rail، fill و thumb را نمایش می‌دهد؛ حالت Hover/Pressed هالهٔ زرد، Disabled خاکستری و Focus حلقهٔ زرد Norato دارد. نمونه‌ها بصری و inert هستند و هدف ۴۸px را حفظ می‌کنند.
+گالری States برای Range، نمونهٔ واقعی rail، fill و thumb را نمایش می‌دهد؛ حالت Hover/Pressed هالهٔ زرد، Disabled خاکستری و Focus حلقهٔ زرد Norato دارد. فقط حالت‌های ثبت‌شده کارت نمونه می‌گیرند؛ توضیح قرارداد زیر گالری تمام‌عرض می‌آید. در عرض حداکثر 599px کارت‌ها در دو ستون RTL چیده می‌شوند. نمونه‌ها بصری و inert هستند و هدف ۴۸px را حفظ می‌کنند.
 
 ## Parts
 

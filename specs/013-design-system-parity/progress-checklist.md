@@ -18,8 +18,17 @@
 
 - [x] Sizes renders only Progress-specific intrinsic samples: semantic 4/8/12px linear thickness and 24/32/40px ring diameters; generic multicolor rulers are absent.
 - [x] States renders yellow RTL Determinate and Default, tokenized Success/Warning/Danger, and explanatory unsupported Indeterminate; generic blue pill/dot is absent.
-- [x] Current 305px local browser screenshot shows no visible narrow clipping/stretch. Matched desktop recapture and exact overflow metrics remain open; independent screen-reader and full 120-state evidence remain open.
-- [x] Token integrity, 49-route catalog, Vue typecheck/build and `git diff --check` pass for this gallery change; production build completes with its existing bundle-size advisory.
+- [x] Matched desktop capture at 1265×713: local gallery 631.984×134.125px, reference 636×134.125px. All six markers retain token geometry and yellow accent.
+- [x] At 390×844, local/reference gallery frames are both 327×134.125px; local document is 375/375px. At 320×844, frames are 257×216.375px and 257×214.25px; the local last size card is centered on row two, all markers remain intrinsic, and local document is 305/305px.
+- [x] The gallery stays inert and hidden from the accessibility tree; live Progress adapter/playground are unchanged. No visible stretch or clipping appears at the three checked widths.
+- [ ] Independent screen-reader review remains open for the full Progress DoD.
+- [x] Token integrity, 49-route catalog, Vue typecheck/build and `git diff --check` pass for the gallery change; production build completes with its existing bundle-size advisory.
+
+### Follow-up rendered size matrix — 2026-11-14
+
+- [x] At 1265×713, the reference Sizes stage is 636×134.125px. The local three-card stage measures 631.984×134.125px because the Norato documentation column is slightly narrower; its composition, dotted surface and height match.
+- [x] At 390×844, local/reference stages both measure 327×134.125px at x=24px. At 320×844, both measure 257px wide at x=24px; local height is 216.375px vs reference 214.25px because each card identifies both Linear and Circular dimensions. The last card is centered on row two, matching the reference reflow.
+- [x] Local document measurements: 1250/1250px desktop client/scroll width, 375/375px at 390px, and 305/305px at 320px. The reference document measures 305/326px at 320px due to unrelated surrounding content; its gallery remains bounded.
 
 ## Current matched mobile comparison — 2026-11-11
 

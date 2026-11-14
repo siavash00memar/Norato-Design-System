@@ -44,6 +44,9 @@
   --norato-chart-preview-card-block-size: 244px;
   --norato-chart-preview-card-mobile-block-size: 222px;
   --norato-image-preview-media-inline-size: 320px;
+  --norato-image-thumbnail-small-size: 48px;
+  --norato-image-thumbnail-medium-size: 64px;
+  --norato-image-thumbnail-large-size: 80px;
   --norato-chart-stat-min-block-size: 88px;
   --norato-chart-stat-spark-inline-size: 72px;
   --norato-chart-stat-spark-block-size: 36px;
@@ -174,6 +177,7 @@
   --norato-input-preview-frame-mobile-inline-size: 328px;
   --norato-input-preview-frame-block-size: 300px;
   --norato-input-preview-frame-radius: 24px;
+  --norato-input-sizes-gallery-block-size: 176px;
   --norato-select-preview-inline-size: 300px;
   --norato-select-preview-frame-inline-size: 640px;
   --norato-select-preview-frame-mobile-inline-size: 328px;
@@ -265,6 +269,7 @@
   --norato-progress-linear-small: 4px;
   --norato-progress-linear-medium: 8px;
   --norato-progress-linear-large: 12px;
+  --norato-progress-size-gallery-block-size: 134.125px;
   --norato-progress-circle-small: 24px;
   --norato-progress-circle-medium: 32px;
   --norato-progress-circle-large: 40px;

@@ -1,23 +1,133 @@
 # Norato Request Validation Checklist
 
+## File Upload matched responsive geometry — before correction — 2026-11-15
+
+- [x] At viewport 390px (layout client width 375px), local frame/inner Dropzone measure 328×300px and 310×152px; reference measures 327×300px and 320.76×153.63px. Neither document overflows.
+- [x] At viewport 320px (layout client width 305px), local frame/inner Dropzone measure 273×300px and 255×152px; local document is 305/305px client/scroll. Reference measures 257×300px and 245.16×174.42px; its document is 305/326px and shows horizontal overflow.
+- [x] Actual screenshots reviewed at both widths: local RTL content stays within the viewport with the inner panel at its contracted fixed height; no visible clipping or vertical stretching. The difference from the taller reference panel at 320px is explicit and remains a visual parity gap.
+- [ ] This closes only narrow viewport measurement and comparison. File Upload state/keyboard matrix, direct FileList-entry inspection, chooser cancellation, native OS drop and independent screen-reader review remain open.
+
+## File Upload matched responsive geometry — after correction — 2026-11-15
+
+- [x] At 390px the local frame remains 328×300px and the inner Dropzone is 318×152px (reference: 327×300px and 320.76×153.63px). Local document remains bounded at 375/375px.
+- [x] At 320px the local frame is 257×300px and inner Dropzone is 247×152px (reference: 257×300px and 245.16×174.42px). Local document remains bounded at 305/305px.
+- [x] Browser screenshots confirm RTL wrapping and fixed inner height with no visible clipping or vertical stretch.
+- [ ] Reference document still has horizontal overflow at 320px (305/326px); local content remains bounded. Native FileList/FormData submission proof, picker cancel/reselection, OS drag/drop, complete behavior/state matrix, and independent screen-reader review remain open.
+
+## File Upload named form payload — 2026-11-15
+
+- [x] Added a local-only submit action in the Vue playground. It constructs `new FormData(form)` and renders only field name, filename and byte size in an RTL `role="status"` region; `@submit.prevent` keeps the page local.
+- [x] A browser-selected PNG appeared under both names when both controls held a file: `attachments: edited-landing-mobile.png (174524 bytes)` and `avatar: edited-landing-mobile.png (174524 bytes)`. Enter activated the submit control; its measured height is 48px.
+- [x] Removing the Dropzone item and submitting again showed «attachments: بدون فایل». Clearing Avatar after a report removed stale output and emptied its native value. Re-selecting the same PNG succeeded for Dropzone after removal and Avatar after clear.
+- [x] With Required on and both inputs empty, browser validity reported `valueMissing=true` and blocked submit with its native validation message. When both held a file, both native validity states were valid. No route navigation occurred; submission remains prevented.
+- [x] At 390px and 320px the page document remained bounded at 375/375px and 305/305px. The submit target measured 343×48px and 273×48px respectively; the payload lines wrap within the panel without horizontal overflow.
+- [ ] Native picker cancel/restoration, OS drag/drop payload and independent screen-reader speech remain open. The bridge still hides direct `FileList` entries; this pass verifies the browser's actual `FormData` output instead.
+
+## Input computed hover Stroke — 2026-11-15
+
+- [x] In the actual local browser at 1265×713, computed hover Stroke is `rgb(253, 193, 1)` at `1px` with no shadow on Text, Password, Phone, OTP, Textarea, Amount, and Search. The Text rest state is `rgb(232, 232, 232)` at `1px` with no shadow after pointer exit.
+- [x] For the captured hover-only states, AX focus remained on the main page container; Password and Phone remained unfocused. Number is not counted in this computed-color pass because the pointer action focused it.
+- [ ] Number isolated hover, mobile Stroke-state review, disabled/error combinations, and independent screen-reader review remain open under the Input DoD.
+
+## OTP narrow viewport rows — 2026-11-15
+
+- [x] At 390px, all six 52×52px targets fit on a single row within the 343px group. At 320px, four plus two cells wrap into two centered rows inside the 273px group; all targets retain 52×52px.
+- [x] Local document width is bounded at both sizes: 375/375 at 390px and 305/305 at 320px. The reference page at 320px is 305/326px and visibly overflows horizontally; Norato preserves the bounded layout.
+- [x] Fresh screenshots show centered rows at 320px, unchanged LTR input order, capsule shape, and no clipping or visible stretch.
+- [x] ArrowRight from OTP cell 1 focuses cell 2 at 320px; all six values remained empty after the keyboard check.
+
+## Sidebar active route and refresh recovery — 2026-11-15
+
+- [x] At the 1265×713 desktop render, Charts is highlighted in the component side-index after selection. The page content and `#component-charts` fragment update in-place; source inspection confirms the app uses reactive state plus `history.pushState`.
+- [x] Reloading the Charts fragment restores the Charts page and yellow active treatment. This recheck did not navigate to another domain or deploy the project.
+- [x] The documented Sidebar Usage SFC passed Vue TypeScript validation against the public package exports; the temporary validation file was removed.
+- [ ] Native link Tab order, full Sidebar visual/state matrix, standalone consumer build, and independent screen-reader review remain open.
+
+## Accordion fresh browser review — 2026-11-15
+
+- [x] Matched 1265×713 local/reference screenshots show the grouped RTL layout, open first row, right-aligned titles, left-side chevrons and yellow expanded state. No visible stretching or clipping appeared; the local rows are slightly narrower/taller.
+- [x] Live single mode collapsed row 1 when row 2 opened. Multiple mode retained both open rows; switching back restored the valid default selection and matching Vue snippet.
+- [x] ArrowDown moved focus from row 1 to row 2, and the screenshot showed the yellow keyboard-focus ring. Playground defaults were restored.
+- [ ] Independent screen-reader speech review and reduced-motion recheck were not part of this pass; those remain separate DoD items.
+
+## Card fresh browser review — 2026-11-15
+
+- [x] Local Card and design-reference pages were viewed at the same 1265×713 viewport. The static specimen keeps the rounded inset media/content composition, RTL hierarchy, and Norato yellow/neutral palette; no visible stretching or clipping was observed.
+- [x] In the local live playground, Vertical→Horizontal and Short→Long selections updated the accessibility state and generated Vue snippet. Both controls were restored to Vertical/Short afterward.
+- [ ] This pass did not measure horizontal playground media bounds; the existing 16-case measured geometry matrix remains the supporting evidence. Independent screen-reader review remains open.
+
+## Input Sizes gallery — 2026-11-14
+
+- [x] Added an Input-only four-capsule gallery; all samples use the existing 36px visible-control token and a 48px minimum target token. Other families keep the generic size visualization.
+- [x] At the local 484×900 render, the new stage is dotted, yellow/neutral, RTL and two-column; capsules are visually centered and a duplicate outer stroke was removed. No visible clipping at this viewport; playground settings stayed at defaults.
+- [x] The reference Sizes section was reviewed at 1265×713: one dotted frame with four capsules and the documented 32/40/48/56px heights. Norato keeps the user's fixed 36px field-body rule.
+- [x] Matched 1265×713 review shows local and reference as a single dotted capsule gallery. Local stage uses the new 176px semantic block-size token and is visually close in frame width/height; Norato preserves the fixed 36px field body instead of varying body heights.
+- [x] At the 484×900 narrow in-app viewport, four examples wrap into two RTL columns, the capsule strokes remain neutral and no horizontal clipping is visible.
+- [ ] Exact computed bounding rectangles and 390px/320px wrapping remain unverified; keep this validation item open.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
+- [ ] Input family DoD remains open for the full adapter/state matrix, matched visual matrix and independent screen-reader review.
+
+## Input yellow Stroke recheck — 2026-11-14
+
+- [x] Existing same-viewport local/reference record verifies the Input specimen geometry and neutral rest state; the local frame matches 635.98×300px against the 636×300px reference and retains RTL 36px capsule styling.
+- [x] In the local browser, pointer hover on each of the eight adapters at Medium showed yellow Stroke while AX focus remained on the Disabled showcase checkbox, distinguishing hover from focus. No dark outer ring or duplicate Stroke was visible. All eight adapters also stayed yellow when focused with the pointer moved away.
+- [x] Disabled toggle exposed all eight adapters as disabled in AX; the visible muted fields retained neutral styling when Amount was hovered. Playground was restored. This recheck introduced no runtime CSS change.
+- [x] Selected Small, Large, and XLarge in the live playground; all eight adapter props and the generated Vue snippet tracked the selected size. Narrow rendering retained capsule shape without obvious stretch/clipping; Medium was restored.
+- [ ] Exact per-adapter geometry and matched-reference comparison at each size, computed-color capture, independent screen-reader review, matched 390px/320px state recapture, and exhaustive state matrix remain open; Input Final DoD stays open.
+
+## Shared contract marker semantics — 2026-11-14
+
+- [ ] Browser computed styles show semantic success for Usage “Do”, semantic error for “Avoid”, yellow for RTL, neutral for implementation, and neutral Accessibility tiles on representative pages.
+- [ ] Verify consistency on Tag, Chip, Empty State and a standard family page; confirm RTL and 48px marker dimensions remain unchanged and preserve legitimate blue links/info.
+- [ ] Shared styling evidence does not close family-specific interaction, responsive, keyboard or screen-reader DoD.
+
+## Generic component marker colors — 2026-11-14
+
+- [x] Matched local Button Parts/Usage sections were compared with the same reference page. Generic axes/indexes are neutral; primary/selected controls use yellow; Success/Don't remain semantic green/red; RTL remains yellow.
+- [x] Fresh Carousel local render confirms its decorative art and unselected indicator track are neutral, the active indicator is yellow, and no blue decorative accent appears.
+- [x] Audited shared CSS selectors: edited only generic documentation marks, preserved genuine blue link/status selectors and RTL/layout rules.
+- [x] Full family interaction/responsive/keyboard and independent screen-reader DoD remains open; this visual correction does not close it.
+
+## Breadcrumbs live hover/focus — 2026-11-14
+
+- [x] In the local browser, all 12 Plain/Glass × Small/Medium/Large × Chevron/Slash combinations were exercised with the long path collapsed.
+- [x] Each combination passed RTL and single-current-page checks; the visible and revealed middle links showed the pale-yellow hover surface. Keyboard Space opened/closed the disclosure; its 2px contrast outline and 2px yellow ring were visible, and Tab reached a hidden RTL link with visible focus.
+- [ ] Remaining: all 42 documented part/state variants and an independent screen-reader review. Breadcrumbs DoD stays open.
+
+## Breadcrumbs disclosure hover — 2026-11-14
+
+- [x] Matched reference States section confirms Hover is a documented pointer-over state; it does not specify a component fill color. Norato's existing token contract therefore governs the accent.
+- [x] In all six Plain/Glass × Small/Medium/Large combinations, resting fill is pale yellow, pointer hover changes it to brand yellow `rgb(253, 193, 1)` with primary text, and pointer exit restores the resting fill.
+- [x] All disclosure targets remain 48px. Space opens/closes the route; keyboard focus keeps its separate 2px contrast outline and 2px yellow halo.
+- [ ] Full 42-part state matrix and independent screen-reader review remain open.
+
+## Breadcrumbs separator size/type — 2026-11-14
+
+- [x] Browser review covers all six Small/Medium/Large × Chevron/Slash combinations with RTL preserved.
+- [x] Every collapsed trail has three decorative separators with `aria-hidden="true"`; Chevron is a 16×16px left-facing SVG and Slash remains `/`.
+- [ ] The rest of the full component/state matrix and independent screen-reader review remain open.
+
 ## Progress Sizes/States use component geometry — 2026-11-14
 
-- [x] At the current 305px local viewport, Sizes shows intrinsic tokenized 4/8/12px bars and 24/32/40px rings; States shows RTL yellow Determinate, four semantic tone bars, and explanatory unsupported Indeterminate without a fake control.
+- [x] Sizes shows three labeled Small/Medium/Large cards pairing intrinsic 4/8/12px bars and 24/32/40px rings; States shows RTL yellow Determinate, semantic tone bars, and explanatory unsupported Indeterminate without a fake control.
 - [x] Generic blue pill/dot/ruler samples are absent from the reviewed Progress sections; no visible vertical stretch or mobile clipping appears.
-- [ ] Matched desktop recapture and exact document scroll-width measurement remain pending.
+- [x] Matched 1265×713 desktop stage is 631.984×134.125px vs reference 636×134.125px; document client/scroll widths are 1250/1250px.
 - [ ] Live adapter behavior is unchanged; the full 120-case/RTL/LTR Progress DoD and independent screen-reader review remain open.
+- [x] At 390×844, local/reference Sizes frames both measure 327×134.125px and the local document is 375/375px. At 320×844, frames are 257×216.375px and 257×214.25px; the local document is 305/305px and the last size card wraps centered without clipping.
 
 ## Range state gallery palette and geometry — 2026-11-14
 
-- [ ] Desktop and mobile browser screenshots show the dedicated RTL rail/fill/thumb sample in Default, Hover, Pressed, Disabled and Focus; Norato yellow is the accent and no blue dot/line remains. Current local 305px browser screenshot confirms the five-state visual and RTL yellow fill; matched desktop recapture is pending.
-- [ ] The visual knob stays centered inside its 48px target and the sample does not stretch vertically or overflow. CSS uses the existing 48px target token; exact browser scroll-width measurement is pending.
+- [x] Matched 1265×713 desktop review shows the dedicated RTL rail/fill/thumb samples in Default, Hover, Pressed, Disabled and Focus; Norato yellow/neutral states are visible and no blue accent remains. Local client/scroll widths are 1250/1250px; each target is 48×48px, rail 96×6px and visible thumb 20×20px.
+- [x] At 390×844 and 320×844, local document widths match client widths (375/375px and 305/305px); target, rail and thumb retain 48×48, 96×6 and 20×20px geometry with RTL intact.
+- [x] Mobile state gallery uses two columns through 599px; seven actual states occupy four even rows and the explanatory contract note spans below them. The height dropped from 1164.56px to 549.5px at 390px, without reducing the thumb's 48px target or causing overflow.
 - [ ] Keyboard/focus/disabled/error behavior of the live adapter is unchanged; broader Range DoD remains open.
 
 ## Breadcrumbs current-page specimen — 2026-11-14
 
 - [x] Matched 1280×720 local/reference render: current capsules measure 88.27×28.80px and 88.10×29.16px; glass fill matches `rgba(255,255,255,.78)`. Local semantic radius is 12px versus reference 8px; local shadow uses Norato's glass-shadow token. Static 300px frame and RTL trail remain bounded, with no visible stretching/clipping.
 - [x] Live disclosure remains a 48px control; opening shows the three middle links with `aria-expanded=true`, and closing restores the default collapsed state.
-- [ ] This CSS-only specimen correction has no fresh 390/320 capture; full style/state hover/focus coverage and independent screen-reader review remain open.
+- [x] Matched 390×844 and 320×844 local/reference frame recapture: both are 327×300px and 257×300px at x=24. Local document widths match client widths (375px and 305px); RTL trail and left-pointing separators remain, without local overflow. The reference document is 326px wide at 320px, but its overflow is not reproduced locally.
+- [ ] The 12-combination live hover/focus sample and disclosure hover correction are recorded above; the exhaustive 42-part hover/focus matrix and independent screen-reader review remain open.
 
 ## Tabs per-trigger keyboard focus — 2026-11-14
 
@@ -39,6 +149,15 @@
 - [x] Selecting the same PNG after the picker value was cleared restores its value and preview. The shared Disabled control disables both named file inputs and re-enables them when turned off.
 - [ ] `FormData` contents remain unverified: this browser's read-only inspection API does not provide a constructible `FormData` global. The chooser-cancel event is also unavailable through file chooser automation.
 - [x] `pnpm test:file-upload` (8/8), `pnpm check:tokens`, `pnpm check:catalog` (49), Vue typecheck/build and `git diff --check` pass.
+
+## File Upload native required recheck — 2026-11-14
+- [x] Read-only DOM inspection confirms `attachments` and `avatar` are named native file inputs; enabling Required sets their native `required` properties and empty inputs report `validity.valueMissing=true`. Returning the playground toggle to off clears that state.
+- [ ] A fresh click on the Dropzone did not produce a file-chooser event in this in-app browser session; this pass does not establish selected FileList contents, `FormData`, or chooser-cancel restoration. Existing earlier real-chooser evidence remains recorded separately.
+
+## File Upload required, disabled and selection-mode recheck — 2026-11-14
+- [x] Live accessibility state confirms Required adds «الزامی» to Dropzone names and the generated Vue usage gains `required`; Disabled exposes both Dropzone buttons and Avatar Upload as disabled and adds `disabled` to the example.
+- [x] Changing the selection mode updates the generated Vue usage between `:multiple="false"` and `:multiple="true"`; mode, Required and Disabled were restored to their defaults with an empty sample queue.
+- [ ] The native picker did not open in this browser interaction, so this pass does not verify native FileList/FormData, cancel, removal sync, or OS drop.
 
 ## Modal controlled open and focus return — 2026-11-14
 
@@ -134,7 +253,8 @@
 
 ## File Upload native form FileList sync — 2026-11-10
 
-- [x] Source audit confirmed `onChange` previously emptied the native file input after each selection, leaving the controlled queue and native `required`/`name` state inconsistent.
+- [x] Source audit confirmed `onChange` previously emptied the native file input after each selection, leaving the controlled queue and native `required`/
+ame` state inconsistent.
 - [x] The input now mirrors actual queued `File` objects and restores them on picker cancel; rejected selections resync to the prior controlled queue.
 - [ ] Native chooser selection/cancel, required validity after success, `FormData` contents, removal sync, and real OS drop still need a browser check. The current browser automation did not open a file chooser.
 
@@ -187,6 +307,12 @@
 - [x] Selecting the documented Error state exposed the named fallback in the browser tree; returning to Default restored the image.
 - [x] Lightbox exposed its named dialog and controls; Escape closed it and returned focus to its opener.
 - [ ] This pass did not emulate reduced motion, induce a real network failure, or use independent screen-reader software. Those Image DoD items remain open.
+
+## Image thumbnail dimensions — 2026-11-15
+
+- [x] Replaced hardcoded 48/64/80px thumbnail dimensions with three Norato layout tokens; each token controls both inline and block size, so the thumbnail remains square.
+- [x] Local RTL Image playground rendered after the token change. Its image frame remained 4:3; selecting Small changed the control state and generated snippet to `size="small"`.
+- [ ] Exact browser-computed pixel bounds were not available through this browser surface. Existing size-matrix evidence covers all three dimensions; reduced-motion and independent screen-reader review remain open.
 
 ## Combobox direct-load browser recheck — 2026-11-10
 
@@ -2925,6 +3051,11 @@
 - [x] Pointer activation changed `aria-checked` false→true; Space changed it true→false. Enabled/default state and generated example were restored.
 - [ ] This focused path does not close Switch DoD; independent screen-reader review remains open.
 
+## Switch live off/on visual and state recheck — 2026-11-14
+- [x] In the local browser, toggling the live Switch off → on → off updated the accessibility value and generated Vue model in step; the final value and sample were restored to off.
+- [x] The checked render shows a yellow track and white knob moving left for RTL. The unchecked track is neutral; the yellow halo appears while the focused control remains focused. The reference page was reopened to compare the labeled preview hierarchy.
+- [ ] Independent screen-reader review and exhaustive combined-state validation remain open for Switch.
+
 # Table mobile specimen frame inset — 2026-11-10
 
 - [x] Live local desktop browser confirms RTL and a 635.984×345px Table preview frame / 562×258.5px inner table at a 1920×903 viewport; document client/scroll widths are both 1905px.
@@ -3041,6 +3172,18 @@
 - [x] نمونهٔ موبایل Navbar در viewport یکسان با مرجع مقایسه شد: برند سمت راست، ترتیب لینک‌ها در RTL و اکشن زرد Norato حفظ‌اند و قاب/ردیف بدون سرریز یا کشیدگی آشکار دیده شدند.
 - [x] مقایسه‌های اندازه‌گیری‌شدهٔ دسکتاپ و 390/320px، هدف‌های 48px و مسیرهای اصلی صفحه‌کلید/اشاره‌گر در چک‌لیست خانواده ثبت‌اند. ماتریس کامل حالت/فوکوس و صفحه‌خوان مستقل برای DoD نهایی باز می‌مانند.
 - [x] Baseline مستند پس از این ممیزی: 18/48 خانواده (37.5%).
+
+## Navbar — اندازه‌گیری تکمیلی عرض موبایل — 2026-11-14
+
+- [x] در مرورگر محلی، viewportهای 390×844 و 320×844 بررسی شدند؛ عرض سند در هر دو اندازه با عرض قابل‌نمایش برابر بود و چهار نوع هدر موبایل داخل قاب ماندند. ارتفاع‌های مشاهده‌شده: Default و Back برابر 65px، Search برابر 130px و Large Title برابر 154px.
+- [x] در 320px، Drawer با ابعاد 288×844 به لبهٔ راست RTL تراز شد؛ Escape آن را بست و focus را به دکمهٔ بازکننده برگرداند. دکمه‌های Back، منو و جست‌وجو حداقل هدف 48px داشتند.
+
+## Navbar — بازبینی زندهٔ Drawer موبایل و زیرمنو — 2026-11-15
+
+- [x] Drawer در صفحهٔ محلی RTL باز شد؛ درخت دسترس‌پذیری عنوان dialog، دکمهٔ بستن، فهرست ناوبری، پیوندها و actionها را نشان داد.
+- [x] زیرمنوی «محصولات» باز شد و سه پیوند فرزند به‌همراه مورد غیرفعال در فهرست تو‌در‌تو ظاهر شدند؛ Escape drawer را بست و focus را به trigger ناوبری موبایل برگرداند.
+- [ ] آزمون مستقل صفحه‌خوان، بستن با کلیک بیرون، اندازه‌گیری چیدمان دسکتاپ/پیوند جاری و ماتریس کامل حالت‌های responsive هنوز باز است.
+- [ ] ماتریس کامل لینک‌های جاری/غیرفعال/focus و آزمون مستقل صفحه‌خوان همچنان برای DoD نهایی باز هستند؛ این بررسی فقط موارد واکنش‌گرایی موبایل را می‌بندد.
 
 ## ممیزی Baseline و مقایسهٔ موبایل Sidebar — 2026-11-10
 
@@ -3268,3 +3411,298 @@
 - [x] States presents an explanatory no-independent-state note, not a simulated control; source diff confirms the live playground, API, and generated code are unchanged.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed.
 - [ ] Overall Empty State Final DoD remains open for independent screen-reader review and exhaustive behavior coverage.
+
+## Tree View reduced-motion preference — 2026-11-14
+
+- [x] Local browser reported `matchMedia('(prefers-reduced-motion: reduce)').matches === true`; all four playground chevrons computed to `transition-property: none` and `transition-duration: 0s`.
+- [x] Clicking the Projects chevron collapsed the folder immediately (visible treeitems: 6 → 2), preserved selected `readme`, and reopening restored six treeitems and the same selection.
+- [ ] Coarse-pointer/touch validation and independent screen-reader review remain open; Tree View DoD stays open.
+
+## Shared implementation marker text — 2026-11-14
+
+- [x] In the local 484×900 browser render, Split Button shows a neutral gray implementation glyph/tile; green Do, red Avoid, and yellow RTL remain semantically distinct. Chip and Empty State retain neutral Accessibility tiles; Empty State Do remains green.
+- [x] Review confirms the CSS change touches only the shared implementation marker foreground token; no visible marker geometry, RTL, or spacing change appears.
+- [x] This is a screenshot-based render check; exact computed browser styles and pixel dimensions were not exposed by the available browser surface and are not claimed here.
+- [ ] Independent screen-reader review remains open; this shared marker correction does not close component-family DoDs.
+
+## Popover static preview composition — 2026-11-14
+
+- [x] Local browser at the available 484×900 viewport shows a centered panel-only static preview, top arrow, upper-right Default marker, RTL content, and compact link row; no visible trigger or distortion.
+- [x] Live Popover playground retains its trigger; it opened, Escape closed it, and the trigger returned to collapsed.
+- [ ] Exact 390×844 and 320×640 frame/panel measurements after the static composition change remain open; do not infer them from the current narrow browser view.
+- [ ] Independent screen-reader review remains open in Popover DoD.
+
+## Modal uncontrolled trigger — 2026-11-14
+- [x] Local `#component-modal`: selecting internal-open mode removes the external launcher and exposes one Norato trigger inside `NoratoModal`; the generated Vue snippet matches the selected mode.
+- [x] Trigger opens a named RTL `dialog`; accessibility tree shows the title, description, close control and labeled input. Cancel closes and returns focus to the trigger; valid Persian form submission announces success and closes.
+- [x] Uncontrolled Escape and the close icon both close and restore focus to the trigger; outside click closes the dialog.
+- [x] Existing controlled playground mode remains the default and the component's controlled API is unchanged. Independent screen-reader review remains open.
+
+## File Upload fresh local baseline — 2026-11-14
+- [x] At the available 484×900 local viewport, the live page shows the labeled RTL Dropzone, supported file types and size guidance, plus separate Upload Tile, Avatar Upload and File Item examples; the dropzone and square/circular previews are bounded with no visible vertical stretching.
+- [x] Browser accessibility tree exposes the Dropzone button as «پیوست‌ها», the selection instruction and allowed types; the four File Item actions have names, and the uploading specimen exposes a named progress indicator at 68.
+- [ ] This pass did not verify a native chooser result, required form submission, OS drag/drop, reduced motion or independent screen-reader announcements; their existing DoD items remain open.
+
+## File Upload native chooser and required validity — 2026-11-14
+- [x] A fresh local chooser selected `edited-landing-mobile.png`; the controlled queue displayed the selected file and the named native input exposed the browser's fake-path value ending in `edited-landing-mobile.png`.
+- [x] With Required enabled, the selected input reported `valid=true` and `valueMissing=false`; clearing the queue emptied its value and returned `valueMissing=true`. Required was then disabled and the playground returned to its empty default state.
+- [ ] This inspection surface does not expose a usable `FormData` constructor, so named payload contents remain unverified. A second chooser event timed out; same-file reselection, cancel restoration, native form submission, OS drag/drop, reduced motion and independent screen-reader review remain open.
+
+## Drawer static specimen mobile geometry — 2026-11-14
+- [x] At 390×844, local sample/scene/panel measure 343×326px, 333×300px and 193.1×236px; document client/scroll widths are 375/375px.
+- [x] At 320×844, local sample/scene/panel measure 273×326px, 263×300px and 152.5×236px; document client/scroll widths are 305/305px. The panel and scene retain their heights at both widths, with no visible vertical stretch or horizontal overflow.
+- [ ] This recapture is local geometry only; it does not add a same-viewport reference screenshot comparison or close Drawer’s independent screen-reader DoD.
+
+## Table inert specimen mobile geometry — 2026-11-14
+- [x] At 390×844, frame/wrapper/inner table measure 327×345px, 317×262.5px and 299×192.5px. Document client/scroll widths are 375/375px; frame and inner table have no local horizontal overflow.
+- [x] At 320×844, frame/wrapper/inner table measure 257×345px, 247×262.5px and 229×192.5px. Document client/scroll widths are 305/305px; header and body rows remain 48px high.
+- [ ] This confirms post-change local geometry only; it does not close the full state gallery or independent screen-reader review.
+
+## Select States gallery desktop comparison — 2026-11-14
+
+- [x] Local and reference States galleries were inspected at the same 1280×720 viewport. Local grid measures 632×280px and reference 636×286px; each local card measures 152×88px versus 152×89px in the reference. Both use four RTL columns for the first eight cards, followed by the ninth Focus card; no visible stretch or clipping was observed.
+- [ ] Independent screen-reader review remains open for Select; browser visual/AX inspection is not a substitute.
+
+## Select live accessibility-tree review — 2026-11-14
+
+- [x] At the current local Select route, the trigger is announced as the named combobox «شهر». Opening exposes a listbox, labeled search field, grouped options, selected Tehran and disabled «به‌زودی»; the page remains RTL.
+- [x] ArrowDown from search focuses Tehran, then Isfahan; Enter updates the visible value and status to Isfahan. Reopening and confirming Tehran returns the playground to its default.
+- [ ] This is browser accessibility-tree and keyboard evidence, not an independent screen-reader test; that review remains open.
+
+## Input capsule mobile matrix and state priority — 2026-11-14
+
+- [x] At 390×844 and 320×844, all eight live adapters were inspected at Small/Medium/Large/XLarge. Separately, the 41 inert state specimens were measured at their fixed gallery size. Document widths are 375px/305px with no overflow; the static field capsules stay 36px high with a 50px radius. Runtime adapters stay within the page: standard shells are 48px high, OTP targets scale 48/52/56/60px, and Textarea remains bounded at 102.8/108/120/128px.
+- [x] At 320px, Error, Error+Disabled, then Error+Disabled+Loading+Success were checked. Disabled controls keep `aria-invalid` and error descriptions while the visual stroke becomes neutral `#e8e8e8`; loading exposes `aria-busy` and status, disables controls and preserves resolved `aria-describedby` references; Success remains suppressed. OTP/shell capsules retain the 50px radius.
+- [x] Restored Medium, enabled, no-error/no-loading/no-success; viewport override reset to the normal 1280×720 view.
+- [ ] Full per-adapter pixel-state comparison and independent screen-reader review remain open; this pass verifies mobile geometry and documented combined-state precedence, not the full visual matrix.
+
+## Radio small-size accessibility and state spot check — 2026-11-14
+
+- [x] Full browser accessibility-tree snapshot exposes the Radio group and option names/descriptions plus named playground controls; the earlier incremental snapshot was incomplete.
+- [x] At 16px, Error+Focus retained the yellow keyboard ring alongside the red error message; Error+Disabled exposed native disabled options, neutral control styling, the visible error message and disabled-priority status.
+- [x] Required+empty showed the required alert and no-selection status; selecting Yearly cleared the empty/error state and synchronized the value/status/Vue snippet.
+- [x] Playground restored to Monthly, 20px, enabled, optional, no-error and non-empty.
+- [ ] Full live cross-product and independent screen-reader review remain open.
+
+## Breadcrumbs narrow live trail scrollbar — 2026-11-14
+
+- [x] In the narrow local browser render, the live path remains horizontally scrollable while native scrollbar chrome is no longer visible; item labels, RTL sequence and left-facing separators remain intact.
+- [x] Scrolling left/right moved the path; the disclosure opened with `aria-expanded`, exposed its hidden links, closed with Space, and Tab reached the next visible link.
+- [ ] Exact post-change 390px/320px matched geometry and independent screen-reader review remain open.
+
+## Date Picker reverse-order range — 2026-11-14
+
+- [x] In the live Jalali Range playground, selecting 27 Aban then 17 Aban normalized the controlled range to 17–27 Aban; the displayed Persian value and generated Vue example agreed.
+- [x] Reopening the calendar showed the continuous selected interval and two endpoints; the calendar remained RTL.
+- [x] Reset restored the default single date after returning the playground to Single/Medium/enabled/no-error.
+- [ ] This focused range check does not replace the independent screen-reader review or close Date Picker DoD.
+
+## Carousel native track scrolling — 2026-11-14
+
+- [x] In the live RTL playground, horizontal track scrolling moved the centered active slide 1→2→3 and the active yellow indicator followed. A delayed AX/model update settled to slide 3 on the next snapshot.
+- [x] AX names the carousel region, navigation controls, slide positions and controlled-index selector. Selecting index 1 restored the first slide and disabled Previous.
+- [x] Playground restored to RTL, Medium, five slides and index 1; fresh screenshot confirms the rightmost first slide and its yellow active marker.
+- [ ] This does not verify real-device touch scrolling or replace an independent screen-reader review.
+
+## File Upload keyboard focus recheck — 2026-11-14
+
+- [x] In the local browser, Tab reached the Dropzone; its screenshot showed the visible Norato-yellow focus ring. Further Tab presses reached the sample-state action, Upload Tile chooser, and File Item action.
+- [x] No files or playground values were changed; the browser was returned to its original Carousel page.
+- [ ] This does not verify all keyboard/state combinations, native chooser behavior, OS drag/drop, reduced motion, or independent screen-reader output.
+
+## Cross-family technical gate sweep — 2026-11-14
+
+- [x] `pnpm check:tokens` passed; all three token files are present.
+- [x] `pnpm check:catalog` passed with 49 unique routes, 49 contracts, readiness entries, and Vue exports.
+- [x] `pnpm --dir apps/vue typecheck` passed.
+- [x] `pnpm --dir apps/vue build` passed after transforming 1,132 modules; the main JavaScript chunk is 456.45KB.
+- [x] `git diff --check` passed. Git printed line-ending normalization warnings for existing edited files; no whitespace errors were reported.
+
+## Radio Button small-size keyboard follow-up — 2026-11-14
+
+- [x] At 16px in the live playground, Tab focused Monthly and the screenshot showed the yellow focus ring; ArrowDown selected Quarterly and synchronized the status and Vue snippet.
+- [x] ArrowUp restored Monthly; size returned to 20px and the browser returned to its previous Carousel page.
+- [ ] This spot check does not replace full visual/focus state coverage or independent screen-reader review.
+
+## Breadcrumbs matched mobile re-capture — 2026-11-14
+
+- [x] At 390×844, local/reference specimen frames both measured 327×300px; local document width remained 375/375px.
+- [x] At 320×844, local/reference frames both measured 257×300px; local document remained 305/305px. Reference page overflowed 21px from surrounding navigation while its component frame stayed bounded.
+- [x] Compared fresh RTL screenshots and confirmed centered breadcrumb content, intrinsic shape and the Norato yellow emphasis; reset the viewport to its original 499×932 browser size and returned the local tab to Carousel.
+- [ ] The full 42-part Breadcrumbs visual matrix and independent screen-reader review remain open.
+
+## Date Picker range mobile geometry — 2026-11-14
+
+- [x] At 390×844, the open RTL Range panel measured 358×490.78px at x=12 inside the viewport; document width stayed 375/375px.
+- [x] At 320×844, the panel measured 288×490.78px at x=12, with a 262px calendar grid and seven 48px week rows; document width stayed 305/305px.
+- [x] The selected 1–7 Aban interval, endpoint states and range hint remained visible without clipping or stretched artwork. Playground returned to Single/Medium/default date and browser returned to Carousel at its original viewport.
+- [ ] Independent screen-reader review remains open.
+
+## Table responsive breakpoint recheck — 2026-11-14
+- [x] The live page at its current 499px viewport showed the whole static RTL table inside its dotted preview after the Table-only compact layout breakpoint was aligned with the 600px specimen-frame breakpoint; all four columns and three data rows remained visible.
+- [x] The previously selected row remains Norato yellow; no fixed row/frame height was introduced to conceal clipping.
+- [ ] Exact matched-reference recheck at 390px/320px and independent screen-reader review remain open.
+
+## Select custom-menu browser recheck — 2026-11-14
+- [x] Audited component/playground source: no native `<select>` tags remain in the Vue app or exported Vue component folder.
+- [x] In the local RTL Select page, the live trigger opens a custom grouped listbox; current selected option and disabled option are exposed in the accessibility tree. The focused trigger/search and selected option render with the intended yellow Norato emphasis.
+- [x] ArrowDown opens the list and Escape closes it; the playground remains at its original «تهران» selection.
+- [ ] Full screenshot matrix and independent screen-reader review remain open.
+
+## Component documentation navigation follow-up — 2026-11-14
+- [x] Local browser selection changed Sidebar and Charts detail routes through `#component-sidebar` and `#component-charts` while rendering the matching detail in the existing page; browser Back returned to the inventory.
+- [x] Source confirms the component list binds active styling and `aria-current="page"` to the selected component.
+- [x] 2026-11-15 desktop recheck at 1265×713: the component side-index is visible and the active Navbar entry has a yellow background. Selecting Charts changed the hash and content in place; its side-index entry became the yellow active item. This matches the documented `history.pushState` route handling.
+- [ ] Independent screen-reader review of the side-index remains open.
+- [x] 2026-11-15 local recheck: selecting Charts from the inventory changed the hash to `#component-charts` and rendered the Charts page; returning to the inventory and selecting Carousel restored `#component-carousel`. `App.vue` uses `history.pushState`, so these transitions stay within the app. The embedded browser measured 484px wide and hides `.side-index` below 839px; desktop active styling was separately confirmed at 1265×713 above.
+
+## Charts live type sweep — 2026-11-14
+- [x] In the local browser, all six chart types switched the live heading/summary while preserving a usable data disclosure; series counts matched the selected type's playground configuration.
+- [x] The opened data disclosure exposed the captioned semantic table, category and series headers, and fixture values.
+- [x] Restored Bar/RTL, closed the disclosure, and returned the browser to Carousel.
+- [x] Fresh `pnpm test:charts` passed 8/8; token/catalog checks, Vue typecheck, production build, and targeted `git diff --check` passed.
+- [ ] Full type × series-count screenshot matrix and independent screen-reader review remain open.
+
+## File Upload native picker/required validity — 2026-11-15
+- [x] Captured the browser's native file-chooser event, selected the repository PNG fixture in multiple mode, and confirmed the accepted filename appeared in the selected queue.
+- [x] Required validity passed while the file was selected and failed after removing it; the accessible Dropzone name gained «الزامی» while required was on.
+- [x] Restored an empty queue, required off, and browser route to Carousel. No network upload was triggered.
+- [ ] The live playground form owns the named file inputs but prevents submit and has no submit action. The read-only inspection scope exposes no `FormData` constructor or selected `FileList` entries, so direct payload inspection remains open with picker cancel/reselection, OS drop, and independent screen-reader review.
+
+## File Upload reduced motion and focus — 2026-11-15
+- [x] With the local browser preference set to reduce, the live Dropzone computed to no transition or animation; its reduced-motion media query was confirmed in the shipped stylesheet.
+- [x] Keyboard focus showed the 2px yellow focus ring and Tab moved directly from Dropzone to the following sample action, without a hidden-input tab stop.
+- [x] Visual screenshot review at the current narrow viewport showed the RTL Dropzone and image upload tiles contained without visible distortion.
+- [x] Fresh `pnpm test:file-upload` passed 8/8.
+- [ ] This does not verify native OS drop, picker cancel/reselection, submitted FileList/FormData payload, every combined state/keyboard path, or independent screen-reader output.
+
+## File Upload multiple native selection and removal — 2026-11-15
+- [x] Native chooser selected two repository PNGs in multiple mode; both rendered as separate queue rows.
+- [x] With Required enabled, both selected files satisfied native validity; removing one retained the other and stayed valid; removing the final file emptied the native value and set `valueMissing=true` / `valid=false`.
+- [x] Required was restored off, the queue cleared, and browser route returned to Carousel.
+- [ ] Browser inspection still cannot expose actual FileList entries or named FormData serialization. Picker cancellation/reselection, OS file drop and independent screen-reader output remain open.
+
+## Carousel image proportions — 2026-11-15
+- [x] On the live Carousel page at 499×932, all five slide images share a 260×150 intrinsic source and render at 340.75×191.67 in the 16:9 frame with `object-fit: cover`; the frame does not distort their ratio.
+- [x] Screenshot review confirms the current RTL track keeps the image cards bounded and the active indicator visible.
+- [ ] This only covers bundled carousel artwork; arbitrary slot content, real-device touch, and independent screen-reader review remain open.
+
+## Carousel RTL mouse drag — 2026-11-15
+- [x] Pointer dragging right advanced the live RTL carousel 1→2 and synchronized its active indicator and index selector; dragging left returned to the first slide.
+- [x] Focus remained on the carousel track; page scroll and selected index were restored after review.
+- [ ] Mouse pointer emulation does not prove touch scrolling on a device. Independent screen-reader review also remains open.
+
+## Divider semantic orientation — 2026-11-15
+- [x] Live playground switched from decorative horizontal to semantic vertical; status text and generated Vue usage followed the selected settings.
+- [x] In labeled vertical mode, the AX tree exposed a named separator; DOM attributes reported `aria-orientation="vertical"`, and the label remained horizontal in RTL. Simple vertical rule measured 1×48px.
+- [x] Restored the horizontal/simple/decorative/RTL defaults and returned the local browser to Carousel.
+- [ ] Independent screen-reader review remains unverified; browser AX is not an independent screen-reader test.
+
+## Carousel controlled navigation — 2026-11-15
+- [x] On the live local RTL page, «بعدی» moved the selected index/status from 1 to 2 and enabled «قبلی»; focus stayed on the action.
+- [x] «قبلی» restored index 1 and its disabled boundary state. Returned the browser to the starting Carousel route/default slide.
+- [ ] Real-device touch and independent screen-reader checks remain open.
+
+## List RTL switch knob placement — 2026-11-15
+- [x] Fresh local render exposed the checked-state knob escaping the RTL track. Reversing the inline-direction translations kept the white knob fully inset: checked at physical left, unchecked at physical right.
+- [x] Toggling the live `role="switch"` changed AX value 1→0→1; its initial checked state was restored after the check.
+- [ ] LTR runtime and independent screen-reader review remain open.
+
+## List RTL/LTR direction playground — 2026-11-15
+- [x] The direction selector defaults to RTL; LTR selection updates the preview, live group content, and generated usage. Generated code shows `dir="ltr"` on the List, Groups, and each Item.
+- [x] LTR screenshot confirms leading content at left and trailing switch/value/chevrons at right. Checked and unchecked switch screenshots place the white thumb inset at the correct opposite ends of the track.
+- [x] Grouped LTR state renders both headings and all rows without clipping. Restored RTL, inset layout, and the initially checked notification switch.
+- [ ] Exact mobile LTR visual comparison and independent screen-reader review remain open.
+
+## Input hover Stroke across eight adapters — 2026-11-15
+- [x] In the 1265×713 local Input playground, independently hovered Text, Password, Phone, one OTP cell, Textarea, Number, Amount, and Search; the accessibility focus stayed on the main content container throughout.
+- [x] All eight screenshots showed the yellow Norato field Stroke in hover without relying on the field's keyboard focus. No playground values were changed.
+- [ ] Computed CSS color capture, mobile recheck, full state matrix, and independent screen-reader review remain open.
+
+
+## Switch — بررسی تازهٔ RTL، ظاهر و کیبورد (2026-11-15)
+
+- [x] در نمای هم‌viewport، سلسله‌مراتب کارت نقطه‌ای و Switch Field با مرجع بصری هم‌راستا بود؛ Switch خاموش track خنثی و knob سفید، و Switch روشن track زرد و knob سفید داشت. تفاوت پالت مطابق قرارداد Norato است؛ کشیدگی یا خروج knob مشاهده نشد.
+- [x] کلیک، Space و Enter مقدار کنترل را عوض کردند و کد Vue تولیدشده با مقدار ref(false) / ref(true) همگام ماند. فوکوس کیبورد روی کنترل باقی ماند.
+- [x] Error+Disabled در هر دو مقدار دیده شد؛ ظاهر خنثی و disabled حفظ شد. playground در پایان به خاموش، فعال، بدون خطا و اندازهٔ متوسط بازگردانده شد.
+- [ ] بررسی مستقل صفحه‌خوان و cross-product زندهٔ کامل هنوز انجام نشده است.
+
+## Radio — اندازهٔ کوچک و ترکیب وضعیت‌ها (2026-11-15)
+
+- [x] در اندازهٔ ۱۶px، Error همراه فوکوس کیبورد حفظ شد؛ ArrowDown انتخاب ماهانه را به سه‌ماهه برد و مقدار status و کد Vue همگام تغییر کرد.
+- [x] Required + Error + بدون انتخاب مقدار `undefined` و پیام الزامی را نشان داد. با فعال‌کردن Disabled همهٔ گزینه‌ها غیرفعال شدند؛ تلاش برای انتخاب سالانه تغییری در مقدار ایجاد نکرد و status حالت غیرفعال را اعلام کرد.
+- [x] playground به Monthly، اندازهٔ ۲۰px، اختیاری، فعال، بدون خطا و با انتخاب بازگردانده شد.
+- [ ] بررسی مستقل صفحه‌خوان و تمام ترکیب‌های زندهٔ وضعیت Radio باز هستند.
+
+## Date Picker — ترکیب Invalid، Disabled و Loading (2026-11-15)
+
+- [x] در Single/Medium، حالت Invalid حاشیه و پیام خطا را نشان داد و مقدار جلالی منتخب و کد Vue را حفظ کرد.
+- [x] در Error+Disabled، درخت دسترس‌پذیری فیلد و دکمهٔ تقویم را disabled نشان داد؛ ظاهر فیلد خنثی شد و پیام خطا باقی ماند.
+- [x] در Error+Disabled+Loading، spinner و نام قابل‌دسترسی «در حال بارگذاری تقویم» ظاهر شدند؛ کنترل‌ها غیرفعال ماندند و پیام خطا نیز دیده شد. وضعیت به Single/Medium، فعال، بدون بارگذاری و خطا، با تاریخ ۱۴۰۵-۰۸-۰۱ برگشت.
+- [ ] اندازه‌گیری موبایل Date Input و بررسی مستقل اعلان/ترتیب خواندن با صفحه‌خوان همچنان باز است.
+
+## Card — بازبینی تازهٔ layout افقی در مرورگر (2026-11-15)
+
+- [x] در playground زنده، انتخاب چیدمان از عمودی به افقی تغییر کرد؛ درخت دسترس‌پذیری حالت افقی را نشان داد و نمونهٔ Vue به `layout="horizontal"` تغییر کرد.
+- [x] تصویر مرورگر کارت افقی را با رسانهٔ مربعیِ محدود کنار محتوای RTL نشان داد؛ کشیدگی عمودی آشکاری دیده نشد. اندازه‌گیری هندسی تازه انجام نشد و ماتریس ۱۶حالتهٔ ثبت‌شده همچنان شاهد عددی این رفتار است.
+- [x] playground به حالت عمودی برگشت و کد Vue نیز به `layout="vertical"` بازگشت.
+- [ ] اندازه‌گیری رسانه در این بازبینی و بررسی مستقل صفحه‌خوان هنوز باز است.
+
+## Date Picker — مشاهدهٔ ورودی در نمای باریک (2026-11-15)
+
+- [x] صفحهٔ محلی در تصویر مرورگر ۴۸۴×۹۰۴ پیکسل بررسی شد؛ Date Input و دکمهٔ تقویم در قاب playground دیده شدند و بریدگی آشکاری نداشتند.
+- [ ] این اندازه تصویر، viewport دقیق CSS نیست و هم‌اندازهٔ مرجع ثبت نشد؛ سنجش دقیق ۳۲۰/۳۹۰px، مقایسهٔ هم‌viewport و بررسی مستقل صفحه‌خوان همچنان باز است.
+
+## Select — اولویت Stroke در ترکیب Error و Disabled (2026-11-15)
+
+- [x] در حالت Error فعال، Stroke خطا دیده شد؛ با فعال‌کردن Disabled، قاب خنثی و سطح muted شد و متن خطا باقی ماند. درخت دسترس‌پذیری trigger را disabled نشان داد.
+- [x] در Error + Disabled + Loading، قاب خنثی ماند؛ پیام خطا و وضعیت «در حال بارگذاری گزینه‌ها» قابل مشاهده/اعلام بودند و مقدار تهران تغییر نکرد.
+- [x] حالت playground به تهران، جست‌وجو روشن، فعال، بدون خطا/بارگذاری، اندازه بزرگ، برچسب بیرونی و نمایش Chips برگشت.
+- [ ] مقایسهٔ پیکسلی همهٔ حالت‌های Select و بررسی مستقل صفحه‌خوان همچنان باز است.
+
+## Carousel — کلیدهای جهت‌دار RTL (2026-11-15)
+
+- [x] در playground زنده، ArrowLeft شاخص را از اسلاید ۱ به ۲ برد؛ ArrowRight آن را به ۱ برگرداند.
+- [x] پس از بازگشت، دکمهٔ «قبلی» غیرفعال بود و فوکوس روی track ماند.
+- [ ] این بررسی مستقل صفحه‌خوان، همهٔ جهت‌ها/اسلایدها یا لمس واقعی دستگاه را پوشش نمی‌دهد؛ DoD کاروسل باز است.
+
+## Carousel — کلیدهای جهت‌دار LTR (2026-11-15)
+
+- [x] انتخاب LTR نام دکمه‌های بعدی/قبلی و حالت مرزی را متناسب تغییر داد.
+- [x] ArrowRight شاخص را از اسلاید ۱ به ۲ برد؛ ArrowLeft به اسلاید ۱ برگرداند.
+- [x] وضعیت پس از بررسی به RTL و اسلاید ۱ بازگشت.
+- [ ] بررسی صفحه‌خوان مستقل و لمس واقعی دستگاه همچنان باز است.
+
+## Input — بازبینی زندهٔ Error + Disabled + Loading (2026-11-15)
+
+- [x] در رندر ۱۲۶۵×۷۱۳، Error+Disabled همهٔ کنترل‌های هشت adapter و اکشن‌های وابسته را disabled کرد؛ فیلدهای قابل‌مشاهدهٔ Number، Amount و Search سطح خنثی و muted داشتند.
+- [x] با افزودن Loading، هر هشت adapter پیام بارگذاری و متن خطای خود را در درخت دسترس‌پذیری حفظ کردند و ورودی‌ها disabled ماندند.
+- [x] سه toggle بارگذاری، غیرفعال و خطا خاموش شدند؛ همهٔ ورودی‌ها دوباره فعال و snippet به حالت پایه برگشت.
+- [ ] این بررسی جایگزین ماتریس کامل تصویری، مرور موبایل یا صفحه‌خوان مستقل نیست؛ DoD خانوادهٔ Input باز می‌ماند.
+
+## Input — تطبیق ترتیب صفحه با Button (2026-11-15)
+
+- [x] درخت دسترس‌پذیری دو صفحهٔ محلی یک ترتیب مشترک داشت: Preview، استفاده در Vue، سپس Overview تا Tokens.
+- [x] گالری Variant و ماتریس اختصاصی Input پس از بخش‌های مشترک قرار دارند.
+- [ ] این مقایسه فقط ترتیب و حضور بخش‌ها را ثابت می‌کند؛ هندسهٔ هم‌اندازه و کیفیت محتوای همهٔ بخش‌ها هنوز جداگانه باید بررسی شود.
+
+## Input — مقایسهٔ تازهٔ نمونهٔ دسکتاپ (2026-11-15)
+
+- [x] رندر مرجع و محلی در دو تب و viewport یکسان ۱۲۶۵×۷۱۳ دیده شدند؛ عرض و نسبت کلی قاب نقطه‌ای و کپسول فیلد نزدیک است و کشیدگی عمودی آشکاری در نمونهٔ محلی دیده نشد.
+- [x] placeholder محلی راست‌چین و آیکن کنار عنوان است؛ حذف مقدار نمونه و توضیح زیر فیلد، مطابق قاعدهٔ صریح Norato باقی ماند.
+- [ ] این بررسی فقط مقایسهٔ تصویری است و اندازه‌گیری تازهٔ DOM نیست؛ بازبینی موبایل، حالت‌به‌حالت و صفحه‌خوان مستقل همچنان بازند.
+
+## Input — اندازه‌گیری DOM در viewport هم‌اندازه (2026-11-15)
+
+- [x] در viewport برابر ۱۲۶۵×۷۱۳، قاب مرجع ۶۳۶×۳۰۰ و قاب محلی ۶۳۵٫۹۸۴×۳۰۰ پیکسل است؛ اختلاف عرض ۰٫۰۱۶ پیکسل و ارتفاع برابر است.
+- [x] قاب فیلد مرجع ۳۲۴×۴۱٫۰۴؛ هدف تعاملی محلی ۳۲۴×۴۸ و capsule دیداری محلی ۳۶px است. capsule محلی pill و شعاع نمونهٔ مرجع ۱۲px است؛ تفاوت طبق قرارداد صریح Norato نگه داشته شد.
+- [x] عنوان محلی Estedad 12px/700 است؛ placeholder برابر Vazir 12px/300، رنگ `#a1a1a1` و راست‌چین/RTL محاسبه شد.
+- [x] قاب محلی ۹٫۹۸۴ پیکسل چپ‌تر از قاب مرجع قرار دارد، اما هر دو در مرکز parent خود هستند. شبکهٔ پوستهٔ مستندات متفاوت است؛ جابه‌جایی صفحه‌ای به خود کامپوننت اضافه نشد.
+- [ ] بررسی عددی موبایل، مقایسهٔ کامل حالت‌ها و صفحه‌خوان مستقل باز است.
+
+## Input OTP — تکمیل اعتبارسنجی Required — 2026-11-15
+
+- [x] رندر واقعی playground محلی بررسی شد: هر ۴/۵/۶ سلول در حالت Required ویژگی native `required` دارد؛ مقدار ناقص نامعتبر و مقدار کامل معتبر است.
+- [x] مقدار خالی در حالت اختیاری معتبر است. Paste شش رقم، ترتیب LTR سلول‌ها، حرکت ArrowLeft و برگشت Backspace از سلول خالی بررسی شد.
+- [x] Playground پس از بررسی بازنشانی شد؛ این تغییر ظاهر و اندازهٔ سلول‌ها را دست نمی‌زند.
+- [ ] بررسی مستقل صفحه‌خوان و ماتریس کامل دیداری Input همچنان باز است.

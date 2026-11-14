@@ -1790,7 +1790,7 @@
 - **Observed:** Source audit found the `change` handler unconditionally reset the native file input while accepted `File` objects remained in the controlled queue. This made native `required` validity and `name`-based form data disagree with component state.
 - **Cause:** The input was cleared to permit reselecting the same file, without restoring the controlled queue to its native `FileList`.
 - **Correction:** Mirror actual queued `File` objects into the native input with `DataTransfer`, clear only before opening the chooser, restore on native picker cancellation, and resync after processing a selection so rejected files cannot remain submitted.
-- **Verification:** Vue typecheck and pure file-validation tests pass. Required validity after successful selection, native `FormData`, picker cancellation/reselection, and OS drop remain unverified because this browser automation session did not expose its file chooser.
+- **Verification:** Vue typecheck and pure file-validation tests pass. On 2026-11-15, the live browser file chooser accepted repository PNG fixtures in single and multiple mode; with Required enabled, selecting two files was valid, removing one retained the other and stayed valid, and removing the last emptied the native input value and made it invalid. The accessible Dropzone name reflected required state. A reduced-motion follow-up confirmed no Dropzone transition/animation, a 2px Norato-yellow focus ring, and Tab to the next visible action. The live playground form owns both named file inputs but prevents submit and has no submit control; the read-only inspection scope exposes no `FormData` constructor or selected `FileList` entries. Direct payload inspection, picker cancellation/reselection, and OS drop remain unverified.
 - **Prevention:** Include selected/removed files, rejected files, picker cancellation, and native form data in File Upload browser checks; do not treat the controlled queue and native input as separate sources of truth.
 
 ## ERR-228 — Unexported HTML Select helper emitted browser-native UI (2026-11-10)
@@ -1960,3 +1960,116 @@
 - **Correction:** Add Empty State-specific inert specimens and one family-scoped neutral/yellow metadata treatment. Keep the actual Empty State Visual API scale, other component families, and semantic tone examples unchanged.
 - **Verification:** Matched viewport measurements: desktop local 635.98×134.20px vs reference 636×134.125px; at 390px local 327×134.20px vs reference 327×134.125px; at 320px local 257×214.41px vs reference 257×214.25px. All sample bars are 64×36px; 320px wraps the final sample to a centered row. Local document widths match client widths at 1250, 375, and 305px. Computed styles show no blue descriptive markers in the family, while error/success/warning semantic colors remain. Token/catalog/typecheck/build/diff gates pass. Independent screen-reader review and exhaustive runtime behavior coverage remain open.
 - **Prevention:** Review every rendered section of a family page, including metadata and generic fallback samples, against the component contract and the approved Norato palette.
+
+## ERR-251 — Progress Sizes gallery was over-height and missed the reference stage (2026-11-14)
+
+- **Observed:** At 1265×713, the reference Sizes stage measured 636×134.125px while the local Progress gallery measured 631.984×339.984px, with three description rows and no shared dotted stage.
+- **Cause:** The gallery repeated explanatory copy beside separate Linear and Circular rows instead of using the compact three-size composition shown by the reference.
+- **Correction:** Replaced the rows with three Small/Medium/Large cards that pair both Progress forms, preserve all six tokenized geometries, use a shared dotted Norato stage, and wrap the final card at 320px.
+- **Verification:** Local stage measures 631.984×134.125px at 1265×713, 327×134.125px at 390×844, and 257×216.375px at 320×844; the reference measures 636×134.125px, 327×134.125px, and 257×214.25px. Local document widths match client widths (1250, 375, 305px). All six computed markers match their tokens. Independent screen-reader review remains open.
+- **Prevention:** Compare every page section's frame and vertical rhythm at matched desktop/mobile widths; preserve meaningful component geometry inside the shared composition.
+
+## ERR-252 — Range state gallery became unnecessarily tall on mobile (2026-11-14)
+
+- **Observed:** The generic mobile rule placed Range samples in a single column. The parser also presented a long contract paragraph as an eighth state, stretching the final cards.
+- **Cause:** The shared state-grid breakpoint forced every family to one column, while prose from the contract was not separated from actual state entries.
+- **Correction:** Added a Range-scoped two-column rule through 599px; limited its cards to actual short state entries and retained the full explanatory text as a note below the gallery. No live Range behavior or other family layout changed.
+- **Verification:** At 1265×713, the gallery has seven real cards in three desktop columns and the explanation below; document client/scroll widths are 1250/1250px. At 390×844 and 320×844, widths are 375/375px and 305/305px; four even rows measure 549.5px total with no horizontal overflow. RTL, 48×48px target, 96×6px rail, 20×20px thumb, and explanatory note remain. Token, catalog, typecheck, build and diff gates pass; browser console has no errors.
+- **Prevention:** Compare mobile section rhythm as well as control geometry; override generic mobile layouts only with a documented family-specific rule supported by measured intrinsic dimensions.
+
+## ERR-253 — Breadcrumbs specimen missed its mobile inset (2026-11-14)
+
+- **Observed:** At 390px, local frame was 328×300px at x=23.5 while the reference was 327×300px at x=24. At 320px, local frame filled 273×300px from x=16 while the reference was 257×300px at x=24.
+- **Cause:** The mobile rule capped the specimen width but did not subtract the reference's 16px inner inset from its parent or center the result.
+- **Correction:** Scope an inset and auto margins to the inert Breadcrumbs specimen, using the existing `space-4` token and 328px cap. Desktop and live trail behavior are unchanged.
+- **Verification:** Local/reference frame bounds now match at 390×844 (327×300px, x=24) and 320×844 (257×300px, x=24). Local document widths match client widths at 375px and 305px; RTL and left-pointing arrows are visible. Token, catalog, Vue typecheck/build and diff gates pass. The reference's 320px document overflows to 326px; Norato remains at 305px.
+- **Prevention:** Measure the actual specimen frame and x-position at both the standard and narrow mobile breakpoints; a width cap alone does not guarantee the required inset.
+
+## ERR-254 — Breadcrumbs disclosure had no visible hover state (2026-11-14)
+
+- **Observed:** The disclosure exposed a documented Hover state, but its computed fill remained pale yellow (`#FFF8E0`) at rest and while hovered in Small, Medium, and Large.
+- **Cause:** The default disclosure fill and the generic link-hover fill shared the same semantic warning container; no disclosure-specific hover selector existed.
+- **Correction:** Add a scoped `:hover:not(:focus-visible)` rule that uses the Norato brand-yellow token. Preserve primary text, the existing resting fill, focus ring, and 48px target.
+- **Verification:** Matched reference States review confirmed pointer-hover as the state definition without prescribing a component fill. Browser verification passes all six Plain/Glass × Small/Medium/Large cases: hover fill changes to `#FDC101`, pointer exit restores the resting fill, focus retains its 2px outline/2px ring, and Space continues to open/close. Token/catalog/typecheck/build/diff gates pass.
+- **Prevention:** Compare each documented interactive state to its computed style; a state that toggles behavior but has no visual distinction is not a completed visual state.
+
+## ERR-255 — Shared contract guidance used informational blue for generic markers (2026-11-14)
+
+- **Observed:** Usage “Do” markers used blue and Accessibility glyph tiles used blue despite representing generic guidance. Tag, Chip and Empty State also overrode shared Usage/Accessibility treatments.
+- **Cause:** Shared marker styles borrowed informational colors, while family-specific overrides introduced palette drift.
+- **Correction:** Use semantic success for “Do”, semantic error for “Avoid”, brand yellow for RTL, and neutral surfaces for implementation and Accessibility markers. Remove the conflicting family-level palette overrides.
+- **Verification:** Local browser review on Empty State, Tag, Chip and Split Button shows pale-green/green Do markers, pale-red/red Avoid markers, yellow RTL markers and neutral implementation/Accessibility tiles. Token and catalog checks, Vue typecheck, production build and `git diff --check` pass.
+- **Prevention:** Assign semantic colors by meaning in shared documentation components and avoid family-level overrides unless a component contract explicitly requires them.
+
+## ERR-256 — Generic component gallery decoration read as a blue brand accent (2026-11-14)
+
+- **Observed:** Shared Anatomy/Parts/Variants/Sizes/States and selected-option illustrations used blue/info-container for decoration, making blue appear to be a default accent throughout component pages.
+- **Cause:** Generic documentation marks inherited the informational palette rather than the established neutral-unless-active rule.
+- **Correction:** Structural, sizing and generic state marks now use neutral tokens; selected/active samples and loading marks use Norato yellow. Informational links and real status markers are preserved.
+- **Verification:** Local Button Parts/Usage was compared with the corresponding reference sections. Local structural numbering/axes are neutral, selected controls yellow, and success/error/RTL semantics remain intact; no visible RTL/layout drift. A fresh local Carousel render confirms neutral decorative art and tracks, yellow active dot and no visible frame/card geometry change. Token/catalog checks, Vue typecheck, production build and `git diff --check` pass.
+- **Prevention:** Classify each colored specimen by meaning: link/status, active state, or neutral structure before choosing its token.
+
+## ERR-257 — Shared implementation marker inherited success text color (2026-11-14)
+
+- **Observed:** In Split Button Usage, the implementation/API icon had a neutral tile but its glyph remained green beside the neutral implementation copy. The base “Do” selector supplies green text, while the implementation modifier overrode only the background.
+- **Cause:** Incomplete variant cascade in `.usage-is-implementation .usage-indicator`.
+- **Correction:** Set the implementation glyph to `--norato-color-text-secondary` on the existing neutral surface. Do/Avoid/RTL and Accessibility rules remain unchanged.
+- **Verification:** Fresh local browser review shows gray implementation glyph/tile, green Do, red Avoid, yellow RTL, neutral Accessibility tiles, and unchanged RTL placement. `pnpm check:tokens`, `pnpm check:catalog` (49 routes/contracts/exports), `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. The existing 454KB main JS chunk advisory remains. This correction does not complete any component family DoD or independent screen-reader review.
+- **Prevention:** Check both background and foreground when a shared marker overrides the base state style.
+
+## ERR-258 — Popover static preview included its live trigger (2026-11-14)
+
+- **Observed:** The local inert specimen showed a share trigger below its panel and an arrow at the panel bottom. The reference specimen shows a centered panel with an arrow attached to its top and no visible trigger. Its sample link row was also missing.
+- **Cause:** The static specimen reused an anchor wrapper and bottom-positioned popup composition. The real interactive playground is a separate component and does not depend on that wrapper.
+- **Correction:** Remove only the inert trigger/anchor, center the panel in the existing frame, move the arrow to the top, and add a compact neutral link row with a decorative SVG copy icon. Keep the live playground and public adapter unchanged.
+- **Verification:** At the available 484×900 local browser viewport, the panel is centered, RTL and bounded, with a top arrow and no trigger. The Default marker remains at the frame's upper-right. The live trigger opens and Escape closes it. Exact post-change 390/320 measurements remain open. Token/catalog checks, Vue typecheck/build, and `git diff --check` pass; build has the existing 454.48KB main JS chunk advisory. A repository-wide scan found no prohibited reference-brand strings.
+- **Prevention:** Keep static specimen composition separate from the interactive playground and compare arrow direction and trigger visibility against the reference screenshot.
+
+## ERR-259 — Modal could not open without a parent model (2026-11-14)
+
+- **Observed:** `NoratoModal` defaulted its internal `open` model to false but exposed no child trigger. Consumers omitting `v-model:open` had no way to open it; form footer controls also had no way to close that internal state.
+- **Cause:** The adapter rendered DialogContent without an optional DialogTrigger and did not expose a close callback to its content slots.
+- **Correction:** Add an optional `trigger` slot backed by Reka `DialogTrigger`; expose `{ open, close }` to body and footer slots. Add a controlled/internal-open playground toggle and mode-matched Vue usage snippet; document both APIs.
+- **Verification:** Local browser opens the RTL dialog from its internal Norato button, exposes its title/description and labeled field, closes from Cancel with focus returned to the trigger, and closes after valid Persian form submission with a success status. Direct recheck confirms Escape and the close icon close and restore trigger focus; outside click closes. The default controlled playground remains available. Token/catalog checks, Vue typecheck/build and `git diff --check` pass. Independent screen-reader review remains open.
+- **Prevention:** For any uncontrolled overlay API, demonstrate a reachable opener and a close path owned by the overlay itself; verify focus restoration to the actual trigger.
+
+## ERR-260 — Native scrollbar controls appeared in a narrow Breadcrumbs trail (2026-11-14)
+
+- **Observed:** In the narrow local render, the Breadcrumbs row preserved its long labels through horizontal scrolling but exposed native scrollbar chrome beside the path.
+- **Cause:** The live ordered list used `overflow-x: auto` without suppressing the browser scrollbar.
+- **Correction:** Imported a small Breadcrumbs-scoped stylesheet that hides scrollbar chrome in Firefox, legacy Microsoft browsers, and WebKit while keeping native overflow scrolling intact.
+- **Verification:** Fresh browser screenshot shows the scrollbar chrome gone. A left/right scroll action still moves the path; disclosure opens with its hidden links, closes with Space, and Tab reaches the following visible link. RTL order and left-facing separators remain. Token/catalog checks, Vue typecheck/build, and `git diff --check` pass. Exact 390px/320px post-change geometry, matched viewport recapture, and independent screen-reader review remain open; no family DoD is closed by this correction.
+- **Prevention:** For overflow containers in component specimens, verify both the scrolling interaction and the rendered scrollbar treatment at a narrow viewport; hide browser chrome only when the design calls for it and keep the underlying scrolling behavior.
+Cannot overwrite variable Error because it is read-only or constant.
+
+## ERR-261 — Table inert preview overflowed in the frame breakpoint gap (2026-11-14)
+
+- **Observed:** At the live 499px browser viewport, the Table preview frame was already in its mobile inset range while its inner table still retained a 440px minimum width, clipping columns inside the frame.
+- **Cause:** The frame used a 600px responsive breakpoint, but the table's wrapping/fixed-column rules only started at 480px.
+- **Correction:** Extended the existing Table-only responsive rule to 600px; did not add a second override or force the specimen height.
+- **Verification:** A fresh local browser render at 499px shows the whole RTL table, all columns, and three rows inside the dotted frame with the selected row still yellow. Exact 390px/320px same-viewport reference comparison and independent screen-reader review remain open.
+- **Prevention:** Keep the responsive threshold of a static specimen aligned with the threshold used by its containing frame; inspect intermediate widths, not only phone presets.
+
+## ERR-262 — List switch thumb translated outward in RTL (2026-11-15)
+
+- **Observed:** The checked List switch placed its white thumb beyond the track's physical right edge in RTL.
+- **Cause:** The checked-state `translateX` sign was assigned as if `inline-start` always meant physical left; the existing LTR override used the opposite sign.
+- **Correction:** Reverse the base RTL translation and the LTR override so the thumb travels from inline-start toward inline-end while remaining inset.
+- **Verification:** Fresh local browser screenshots show checked thumb inset at physical left and unchecked thumb inset at physical right in RTL; LTR is also verified in both values with the thumb inset at the opposite ends. AX reports the live switch changing 1→0→1 in RTL, and the initial checked state is restored. The List playground now exposes direction and emits explicit parent/group/item `dir`; grouped LTR layout and generated usage were reviewed. Tokens, catalog, Vue typecheck/build, and `git diff --check` pass. Exact mobile LTR and independent screen-reader validation remain open.
+- **Prevention:** Validate thumb movement using both logical direction and physical screenshot position; never infer transform direction from `inline-start` alone.
+
+## ERR-263 — Select Error Stroke overrode the disabled surface (2026-11-15)
+
+- **Observed:** In the live Select playground, Error + Disabled and Error + Disabled + Loading showed a red Stroke instead of the neutral disabled border, although the trigger was disabled.
+- **Cause:** The invalid-group pseudo-element selector was more specific than the base disabled pseudo-element selector.
+- **Correction:** Added a scoped invalid+disabled rule in `select-field.css` so neutral border/muted surface win; the error message, `aria-invalid`, disabled status and loading announcement remain unchanged.
+- **Verification:** Browser screenshots show red Stroke only for enabled Error; disabled and disabled+loading screenshots show neutral muted styling with the error text visible. AX exposes the trigger as disabled; loading text is announced; the Tehran value remains intact and the playground returns to its default state. Full state screenshot matrix and independent screen-reader review remain open.
+- **Prevention:** Verify state precedence in mixed validation/availability states and compare the implemented CSS cascade with the intended tokenized state contract.
+
+## ERR-264 — Required OTP accepted an incomplete code (2026-11-15)
+
+- **Observed:** With Required enabled, entering only the first digit left the first OTP input valid and every remaining cell optional, allowing an incomplete code to pass native form constraints.
+- **Cause:** `NoratoOtpInput` applied the `required` prop only to cell zero.
+- **Correction:** Apply the existing `required` prop to every configured native cell; keep all cells optional when the prop is false.
+- **Verification:** Live browser checks cover incomplete and complete 4/5/6-cell values and an empty optional value; full code and paste behavior are retained. Project validation outcomes are recorded in the OTP required-completion update.
+- **Prevention:** For segmented values, validate group completeness against native form semantics, not only the first cell or visible required marker.

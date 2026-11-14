@@ -6,6 +6,7 @@
 - Brand Yellow is `#FDC101`; brand Blue is `#134F89`. Old direct link blues `#2A60E7` and `#2D81FF` remain documented as inconsistent legacy instances, not brand tokens.
 - Keyboard focus pairs the Norato-yellow outer ring with a dark amber contrast outline (`--norato-color-focus-contrast: #805A00`) so the indicator remains visible against white and yellow surfaces without using blue as the focus accent.
 - Use brand yellow for component accents and selected/active emphasis. Reserve brand blue for links and informational/status semantics; generic anatomy markers stay neutral unless they represent an active item.
+- In shared contract guidance, Usage “Do” markers use the semantic success container/status tokens, “Avoid” markers use semantic error tokens, RTL markers use brand yellow, and implementation markers stay neutral. Accessibility glyph tiles are neutral because they describe requirements rather than an informational status.
 - Observed info/tag pairs are kept distinct: Info `#FFF8E0/#FBEAB2`; Tag Blue `#E4F2FF/#B0D7FE`.
 - Source spacing values are evidence, not a regular product scale. Documentation-only page gutters/gaps are not promoted to component tokens.
 - Source radii `5/12/25/36/50px`, observed component surface `25px`, and observed elevation styles live as evidence-named tokens; component-specific accepted contracts remain authoritative.
@@ -75,6 +76,7 @@
 - State/variant galleries remain inert references. Behavioral claims belong to the live playground/adapters. Full state/focus matrices and independent screen-reader review remain open until verified.
 - The primary Input States section uses ten compact title/description cards in four desktop columns and two mobile columns, with Persian RTL copy and Norato semantic status colors. Keep the 41 adapter-specific inert field examples in a clearly secondary gallery after the canonical nine sections; use bounded controls and two columns on mobile. These specimens remain inert; never substitute them for adapter behavior checks.
 - Input field shells and OTP cells are capsule-shaped at all sizes and states; use Norato's semantic `--norato-radius-pill` token. Keep this radius scoped to the Input family.
+- When `NoratoOtpInput` is required, mark every native digit cell `required`; an OTP is complete only when every configured position is filled. Keep every cell optional when the adapter is not required.
 - Neutral Input and OTP strokes use a 1px `--norato-color-border-default` (`#e8e8e8`) border at rest. Pointer hover and keyboard focus use a 1px `--norato-color-brand-yellow` stroke; this is the capsule's own stroke, and the layout wrapper stays transparent so it cannot add a second gray line. Disabled fields keep a neutral stroke even when invalid; preserve `aria-invalid` and the linked error message. Hover on disabled fields does not recolor the Stroke. Remove contrast outlines and glow shadows. Error and success keep their semantic status colors at rest.
 - Focus takes precedence over the Input error/success border while the field is focused; its visible message/icon continues to communicate the status.
 - Simultaneous status priority: Error suppresses Success; Loading suppresses Success until processing completes. Keep existing Error visible during Loading, expose `aria-busy`, and never reference a status message ID that is not rendered.
@@ -99,6 +101,7 @@
 - در برچسب داخلی Select، متن برچسب و مقدار/Chip در یک کنترل ۵۶px قرار می‌گیرند؛ فاصلهٔ داخلی نباید دو خط را به ارتفاع ۶۵px بکشد. حداقل هدف تعاملی همچنان ۴۸px است.
 - Multi Select در نمای Chips یک مقدار به‌همراه شمارندهٔ بقیه را نشان می‌دهد؛ همهٔ انتخاب‌ها در منوی باز و Summary در دسترس می‌مانند و خود فیلد با افزایش انتخاب‌ها قد نمی‌کشد.
 - بخش States صفحهٔ مستندات Select از ۹ کارت یکتا با عنوان+توضیح مانند مرجع طراحی استفاده می‌کند: Default، Hover، Open، Filled، Error، Disabled، Read-only، Selected، Focus. نام خانوادهٔ تکراری روی کارت‌ها نمی‌آید؛ حالت‌های Select Option و Multi Select در Parts و playground باقی می‌مانند. accent هر حالت از semantic token نوراتو می‌آید. گالری static/inert است، کارت‌ها حداقل ارتفاع یکسان و عرض خودکار tokenized دارند؛ desktop چهار ستون و viewport باریک یک ستون دارد.
+- در ترکیب Selectِ Error + Disabled، پیام خطا و معنای `aria-invalid` باقی می‌مانند ولی Stroke و سطح دیداری از حالت disabled می‌آیند؛ Loading هم کنترل را غیرفعال و وضعیت را اعلام می‌کند. disabled neutral ظاهر بر Error red اولویت دارد.
 
 ## Combobox
 
@@ -418,7 +421,10 @@
 - Use Norato's own semantic palette, RTL direction and Persian fonts. Use a direction-stable SVG chevron pointing left in RTL, per the user's explicit 2026-11-02 correction; slash is neutral.
 - For long paths collapse middle destinations behind a 48px disclosure trigger. Keep the first and final two destinations visible, reveal actual links when expanded, and use `aria-expanded`/`aria-controls`.
 - Keep labels intrinsic and prevent wrapping; at narrow widths allow the trail itself to scroll rather than stretching links or creating page overflow.
+- Hide native scrollbar chrome on the horizontally scrolling live trail; preserve its scroll behavior and keyboard-reachable links.
 - In the inert default specimen, show the current-page label on a compact raised glass surface using Norato semantic tokens; preserve the reference's intrinsic ~29px visual height without changing 48px link/disclosure targets.
+- Keep the disclosure's default surface pale yellow and make pointer hover visibly stronger with the Norato brand-yellow token; keyboard focus keeps its separate contrast outline and yellow ring.
+- On mobile, center the inert 300px-tall specimen at a 24px viewport inset: 327px wide at 390px and 257px at 320px. Keep this bound scoped to the static specimen; preserve live trail scrolling and avoid copying unrelated reference-page overflow.
 
 ## Pagination — 2026-11-02
 
@@ -490,8 +496,8 @@
 - Use Norato yellow as the default fill, semantic green/amber/red for status tones, and neutral track. RTL linear fill begins at inline-start/right; circular begins at 12 o'clock and retains fixed geometry.
 - Reka ProgressRoot owns accessible progressbar values; the progress is noninteractive and does not receive focus. Unknown duration belongs to Spinner.
 - Match design reference's Linear composition: label and localized percentage share a metadata row above a full-width track. Keep RTL/LTR fill anchored to logical inline-start and circular geometry fixed.
-- Progress Sizes/States gallery uses token-sized 4/8/12px linear bars and 24/32/40px rings, yellow Determinate/Default fill and semantic status tones. Do not use the shared blue pill/dot sample; Indeterminate is not part of this API.
-- **Remaining:** matched browser render, 120-state visual matrix, mobile overflow and screen-reader review remain open.
+- Progress Sizes uses one dotted stage with three Small/Medium/Large cards; each card pairs token-sized 4/8/12px Linear thickness and 24/32/40px Circular diameter. Keep Norato yellow for Default and semantic status tones for States. Do not use shared blue pill/dot samples; Indeterminate is not part of this API.
+- **Remaining:** independent screen-reader review remains open; the matched browser composition, 120-state runtime matrix, and 390/320 local overflow checks are recorded in the Progress DoD checklist.
 
 ## Spinner — 2026-11-08
 - Match design reference's Ring (30% arc), Dots and custom-brand spinner (45% arc), three tones and five intrinsic square sizes; make Norato's default yellow rather than design reference's dark default.
@@ -562,6 +568,7 @@
 ## Carousel — RTL order and intrinsic media
 
 - First slide and first pagination dot belong on the right in RTL. The next action advances left; ArrowLeft advances and ArrowRight goes back.
+- In LTR, the first slide belongs on the left; ArrowRight advances and ArrowLeft goes back. Previous/next button names follow the selected direction.
 - Show a portion of the adjacent slide. Keep slide media at an intrinsic aspect ratio; never force a shared fixed height that stretches images.
 - Norato's active pagination uses the yellow brand accent. The control remains keyboard reachable with at least a 48px hit target.
 - **Observation:** at 385px, arrow navigation initially scrolled the page vertically and immediate scroll events could reset the active dot.
@@ -636,3 +643,8 @@ File Upload — وقتی انتخاب فایل الزامی است، واژهٔ 
 - قاب نمودار ایستا 636×332px در دسکتاپ، 327×300px در عرض390 و 257×300px در عرض320 است؛ روی موبایل در x=24 مرکز می‌شود.
 - کارت ایستا و SVG بدون کشیدگی fit می‌شوند؛ نمودار ثابت در 320px اسکرول داخلی نشان نمی‌دهد. نمودارهای اجرایی همچنان حداقل عرض خوانا و اسکرول محلی خود را حفظ می‌کنند.
 - سری اول زرد Norato می‌ماند؛ جهت عنوان و کارت RTL است و محور SVG از چپ به راست نگه داشته می‌شود.
+
+## Range — mobile state gallery
+
+- At widths up to 599px, arrange the inert Range state specimens in two equal RTL columns to keep the state list compact.
+- Preserve the 48×48px target, 96×6px rail, and 20×20px visual thumb. This responsive rule applies only to the documentation gallery, not the live slider.

@@ -59,6 +59,11 @@
   background: var(--norato-color-surface-muted);
 }
 
+.norato-select-group.is-invalid .norato-select__trigger:disabled::before {
+  border-color: var(--norato-color-border-default);
+  background: var(--norato-color-surface-muted);
+}
+
 .norato-select__trigger:focus-visible {
   border-color: transparent;
   outline: none;

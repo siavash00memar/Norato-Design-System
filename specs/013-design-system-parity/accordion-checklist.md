@@ -11,6 +11,10 @@
 
 ## Browser review evidence (2026-11-08)
 
+- [x] Fresh same-viewport desktop comparison at 1265×713: Norato keeps the three-row grouped RTL composition, open first answer, right-aligned titles, left-side chevrons and yellow open state. The local frame is visually close to the reference frame; its accordion rows are slightly narrower/taller, with no apparent stretching or clipping.
+- [x] Fresh live interaction: opening row 2 in single mode closes row 1; enabling multiple mode starts with a valid single selection, and then opening row 2 leaves both rows open. Disabling multiple restores the default single selection and the generated snippet returns to its default configuration.
+- [x] ArrowDown from row 1 moves focus to row 2; the browser accessibility state reports row 2 focused and the screenshot shows its yellow focus ring. RTL was preserved.
+- [ ] Independent screen-reader review remains open; this fresh pass used the browser accessibility tree, not spoken output.
 - [x] Same browser viewport screenshot comparison at 1536×642: reference frame about 632×300px, Norato frame about 578×286px; Norato documentation column constrains the sample. Both frames center a compact accordion, keep Persian titles right and chevrons left, and show the first row expanded. Norato preview follows the shared dotted Button frame and its own yellow palette.
 - [x] Page hierarchy and rendered preview/playground/content are present. In the inert preview, first item is open and no visible vertical stretching occurs.
 - [x] In the live default single mode, opening the second row collapses the first; the accessibility tree reports only the second trigger expanded and its content region visible.

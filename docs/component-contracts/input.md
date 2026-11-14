@@ -47,9 +47,10 @@
 
 ## Sizes
 
-- **مرجع مرجع طراحی:** Small 32px، Medium 40px، Large 48px، XLarge 56px. این اعداد مقیاس بصری مرجع‌اند.
+- **مقیاس ثبت‌شده در مرجع بصری:** Small 32px، Medium 40px، Large 48px، XLarge 56px. این اعداد مقیاس بصری مرجع‌اند.
+- **گالری Norato:** چهار نمونهٔ نام‌گذاری‌شده در صفحه نمایش داده می‌شوند؛ بدنهٔ دیداری هر چهار نمونه طبق قرارداد ثابت 36px است و هر نمونه در هدف حداقل 48px قرار می‌گیرد. این گالری مقیاس اندازهٔ اجرایی جدیدی برای adapterها تعریف نمی‌کند.
 - **هدف تعاملی Norato:** کنترل اجرایی از 48px کوچک‌تر نمی‌شود. در adapterهای تک‌خطی و Label Outside، اندازه‌های مرورشده Small/Medium/Large/XLarge به‌ترتیب 50/52/56/60px هستند؛ Label Inside به‌ترتیب 62/64/68/72px فضا می‌گیرد تا برچسب و مقدار روی هم نیفتند.
-- **OTP:** اندازهٔ سلول‌ها 48/52/56/60px است. در عرض محدود، سلول‌ها به ردیف بعد می‌روند و عرض صفحه را نمی‌شکنند.
+- **OTP:** اندازهٔ سلول‌ها 48/52/56/60px است. در عرض محدود، سلول‌ها به ردیف بعد می‌روند، هر ردیف در گروه OTP وسط‌چین می‌شود و عرض صفحه را نمی‌شکند.
 - **Textarea:** ارتفاع به `rows` و size وابسته است؛ با سه ردیف ارتفاع‌های مرورشده 103/108/120/128px هستند. این اندازهٔ چندخطی است، نه target تک‌خطی.
 
 ## States
@@ -83,7 +84,7 @@
 - `NoratoTextInput`: text field, label placement, native text attributes and common field states. An optional `label` slot customizes outside-label content while keeping the slot inside the associated native `<label>`; required status remains appended automatically.
 - `NoratoPasswordInput`: controlled visibility and caller-provided strength (`empty|weak|fair|good|strong`).
 - `NoratoPhoneInput`: LTR phone entry and configurable calling code (default `+98`).
-- `NoratoOtpInput`: 4/5/6 cells, sequential entry, paste, Backspace and directional arrows.
+- `NoratoOtpInput`: 4/5/6 cells, sequential entry, paste, Backspace and directional arrows. When `required` is true, every native cell is required so an incomplete code cannot pass form constraint validation; when false, all cells remain optional.
 - `NoratoTextarea`: legacy export with row/character limit, read-only and success support.
 - `NoratoNumberInput`: bounded native numeric entry plus 48px increment/decrement actions.
 - `NoratoAmountInput`: canonical unsigned integer string model, exact Persian digit grouping (including values above JavaScript's safe integer range), Persian amount words for safe integers and configurable currency (default `تومان`).
@@ -111,7 +112,7 @@ Shared adapters accept `id`, `label`, `modelValue`/`v-model`, `placeholder`, `he
 
 ## Tokens
 
-**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
+**توکن‌های semantic Norato:** `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-border-default`، `--norato-input-preview-inline-size`، `--norato-input-preview-frame-inline-size`، `--norato-input-preview-frame-mobile-inline-size`، `--norato-input-preview-frame-block-size`، `--norato-input-preview-frame-radius`، `--norato-input-sizes-gallery-block-size` و توکن‌های فاصلهٔ تعریف‌شده برای همان کامپوننت.
 
 ## گالری Variantها
 

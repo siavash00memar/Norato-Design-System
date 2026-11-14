@@ -74,7 +74,7 @@ const weeklySummary = ref(false)
 </template>
 ```
 
-برای `action="link"` مقدار `href` بده؛ برای دکمهٔ قابل‌انتخاب `selectable` و مقدار `selected` را از میزبان کنترل کن. checkbox و switch از `v-model` پشتیبانی می‌کنند.
+برای `action="link"` مقدار `href` بده؛ برای دکمهٔ قابل‌انتخاب `selectable` و مقدار `selected` را از میزبان کنترل کن. checkbox و switch از `v-model` پشتیبانی می‌کنند. برای تغییر جهت، مقدار یکسان `dir` را روی `NoratoList`، هر `NoratoListGroup` و هر `NoratoListItem` بگذار؛ هر adapter جهت صریح خودش را دارد و به ارث‌بری از والد متکی نیست.
 
 ## Accessibility
 

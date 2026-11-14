@@ -17,3 +17,10 @@
 - [ ] Full live focus/hover/state cross-product and independent screen-reader validation remain open; static 20-cell matrix and this focused runtime pass do not close the family DoD.
 
 - [x] 2026-11-09 responsive frame correction: at 320×844 the frame is 257×300px vs 256.8×300px reference, with 305px document width and no overflow; at 390×844 it is 327.4×300px vs 327.2×300px and document width is 375px. The frame selector does not alter 16px/20px radio geometry or RTL.
+
+## Live required/error/disabled interaction — small size — 2026-11-15
+
+- [x] At 16px, enabling Error and focusing the Monthly option with the keyboard preserved the red group/message treatment; ArrowDown moved selection to Quarterly and synchronized the generated Vue value.
+- [x] Required + Error + no selection displayed the required marker/message, kept the value undefined, and synchronized `required` in generated usage. Adding Disabled left all options natively disabled and unselected; attempting to activate Yearly did not change the value, while the status announced the disabled group.
+- [x] Cleared Disabled, Required, Error and no-selection simulation, selected Monthly, restored 20px, and confirmed the generated example returned to its default controlled state.
+- [ ] Independent screen-reader review and the full live checked × size × hover/focus × error/disabled/required cross-product remain open.

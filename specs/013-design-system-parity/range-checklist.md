@@ -24,5 +24,6 @@
 ## State gallery Range sample — 2026-11-14
 
 - [x] Static Range states use a dedicated compact rail/fill/target/thumb illustration rather than the shared generic shape; default/hover/pressed/disabled/focus use Norato yellow/neutral and contain no blue accent.
-- [ ] Browser review confirms desktop and narrow mobile geometry, RTL fill direction, 48px target, no vertical stretch, and no overflow. Current 305px local browser capture confirms yellow RTL fill, distinct muted Disabled and centered compact thumb visually; desktop recapture and exact scroll-width measurement remain open.
+- [x] Matched 1265×713 desktop browser review: client/scroll width 1250/1250px; every target 48×48px, rail 96×6px and visual thumb 20×20px. Gallery RTL fill and all five visual states are visible without blue accents.
+- [x] Matched 390×844 and 320×844 mobile reviews: document widths 375/375px and 305/305px; target/rail/thumb remain 48×48/96×6/20×20px, RTL, and no horizontal overflow. Seven actual states fit four even 131.375px rows in the two-column gallery; the long explanatory note is below the cards instead of a fake eighth slider state.
 - [x] Token/catalog/typecheck/build/diff gates pass. Live Range behavior remains unchanged; full family DoD remains open for screenshot matrix and independent screen-reader review.

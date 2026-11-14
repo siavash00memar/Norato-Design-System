@@ -48,7 +48,7 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 
 ## Table mobile preview frame inset — 2026-11-10
 
-- [ ] Confirm exact 390×844 and 320×844 post-change browser measurements. The scoped rule subtracts the 16px space-4 token from the centered inert frame only; exact viewport recheck remains open because the current browser control exposes no viewport override in this run.
+- [x] Fresh exact local viewport measurements after the centered inert-frame inset: at 390×844 the frame is 327×345px, sample wrapper 317×262.5px, and inner table 299×192.5px; at 320×844 they are 257×345px, 247×262.5px, and 229×192.5px. Document client/scroll widths match at 375/375px and 305/305px; frame/table scroll widths equal their client widths. Header and data rows stay 48px high at both widths. This closes the responsive measurement item; the separate matched-reference comparison and complete visual state matrix remain as recorded above.
 - [x] Desktop live render remains 635.98×345px at 1920×903, RTL is active, and document client/scroll width both measure 1905px.
 - [ ] Full visual state matrix and independent screen-reader behavior remain open.
 
@@ -57,3 +57,10 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 - [x] Re-opened the design-reference Table page and Norato Table page in the browser at the same 1265×713 viewport. The toolbar/search, RTL column order, three data rows, selected first row, status treatment and pagination anatomy align; both dotted specimen frames and inner tables remain bounded and proportionally similar. Norato's yellow action/selection treatment is retained.
 - [x] Compared the same pages at 375×844. The frame widths are visually aligned; Norato keeps all RTL columns, the selected row, status indicators and controls inside a bounded frame without obvious horizontal/vertical stretch or clipping.
 - [ ] These matched comparison renders do not replace the exact 390×844 and 320×844 frame measurements after the scoped mobile inset; those measurements remain open in the follow-up above.
+
+## Table inert preview breakpoint — 2026-11-14
+
+- [x] Audited the existing `.sample-table` responsive rule and found its 480px threshold ended before the Table preview frame's 600px mobile range.
+- [x] Expanded only that existing Table rule to 600px. At the user's live 499px-wide browser viewport, the table now uses the fixed, wrapping column layout and remains inside the RTL specimen frame; all four columns and all three rows are visible in the captured browser render.
+- [x] Yellow selected-row treatment and table content remain intact; no forced row/frame height was added.
+- [ ] Repeat the exact 390×844/320×844 same-viewport reference comparison and complete the independent screen-reader review before closing Table DoD.

@@ -32,3 +32,25 @@
 - [x] Latest RTL keyboard-activation evidence pushed to `origin/master`; checkpoint `c4188a0`.
 
 **DoD decision:** Do not mark this family complete until the independent screen-reader review passes. Full prior evidence is in `specs/006-norato-date-picker/tasks.md`, the request-validation record, and the linked preview-frame follow-up.
+
+## Range reverse-order confirmation — 2026-11-14
+
+- [x] In the live Range playground, selected 1405-08-27 first and then selected 1405-08-17. The controlled value normalized to start 1405-08-17 and end 1405-08-27; the Persian field and generated Vue example matched.
+- [x] Reopened the calendar and confirmed the selected interval rendered continuously with the two endpoints distinguished visually; RTL weekday order and keyboard-focused calendar semantics remained exposed.
+- [x] Reset returned the Range value to 1405-08-01 through 1405-08-07; returning the playground to Single restored 1405-08-01, Medium, enabled, no-error state.
+- [ ] Independent screen-reader announcement and reading-order review remains open. This browser AX/visual check does not close Date Picker DoD.
+
+## Open range calendar mobile geometry — 2026-11-14
+
+- [x] At 390×844, the live Range input retains a 48px control target; the open calendar panel measures 358×490.78px at x=12 and remains within the viewport. The document measures 375/375px client/scroll width.
+- [x] At 320×844, the live Range panel measures 288×490.78px at x=12; its one-month grid is 262px wide with seven natural 48px week rows. The document measures 305/305px without horizontal overflow.
+- [x] Both screenshots show the same RTL one-month calendar, selected 1–7 Aban range band and distinguished endpoints. No calendar or day cell is visibly stretched; the range hint remains inside the panel.
+- [x] Closed the calendar, restored Single/Medium/enabled/no-error with the default 1 Aban value, returned the browser to Carousel, and reset the viewport to its original 499×932.
+- [ ] Independent screen-reader announcement and reading-order review remains open; this responsive geometry check does not close Date Picker DoD.
+
+## Date Input invalid, disabled and loading combination — 2026-11-15
+
+- [x] In the live Single/Medium playground, Invalid showed the error Stroke and message while keeping the selected Jalali value and generated Vue example synchronized.
+- [x] Error + Disabled exposed both the field and calendar action as disabled in the browser accessibility tree; the input returned to the neutral disabled appearance while the error message remained visible.
+- [x] Error + Disabled + Loading showed the spinner and loading announcement, kept both controls disabled, and retained the error message. The playground was restored to Single/Medium, enabled, not loading, not invalid, with 1405-08-01 selected.
+- [ ] This desktop state review does not close the mobile Date Input sizing comparison or independent screen-reader announcement/reading-order review.

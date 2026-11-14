@@ -41,5 +41,5 @@ Popover remains in progress until the independent screen-reader review is comple
 
 - [x] Fresh matched desktop renders confirm the panel remains bounded, its arrow is intrinsic, and its simple content keeps natural proportions without stretch or clipping.
 - [x] Existing 390×844 and 320×640 local/reference measurements, RTL arrow-to-trigger behavior, collision fallback, 48px trigger, and primary pointer/keyboard dismissal paths cover Baseline.
-- [ ] The local static preview visibly includes its trigger below the panel; the reference static preview omits the trigger. Keep this composition difference for Final visual review.
+- [x] Static preview composition corrected: local sample now shows a centered panel only with a top arrow; the live playground retains the trigger. See `updates/2026-11-14-popover-static-preview-composition/`. Exact 390/320 post-change measurements remain open.
 - [ ] Independent screen-reader announcement review remains open for Final DoD.

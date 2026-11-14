@@ -18,13 +18,15 @@
 - [x] Browser accessibility tree exposes the confirmation as a named `alertdialog` and the form as a named `dialog`, each with its title and description references resolving to live elements.
 - [x] Disabled confirmation remains open and cannot emit confirm. Tab and Shift+Tab wrap between Dialog actions; keyboard focus on the confirm button renders the yellow 2px ring. LTR direction propagates to the form field. At 320×640, the 288px dialog stays inside the viewport and its body scrolls 758px of content within 396px. Empty required form state exposes `aria-invalid=true` and an associated error; valid input clears the error and submits.
 - [x] Controlled `open` path: in the live playground, the trigger opened the named `alertdialog`; Cancel closed it, announced cancellation, and restored focus to the opener.
-- [ ] Uncontrolled `open` path and independent screen-reader review remain unverified. Browser accessibility-tree inspection is not an independent screen-reader review.
+- [x] Uncontrolled `open` path: optional trigger opens the named `dialog`; Cancel closes it, announces cancellation, and restores focus to the trigger. A valid Persian project name submits, announces success, and closes through the footer's `close` callback.
+- [x] Uncontrolled Escape closes and restores focus to the trigger; clicking outside closes; the close icon closes and restores focus to the trigger. Browser accessibility-tree inspection is not an independent screen-reader review.
+- [ ] Independent screen-reader review remains unverified; browser accessibility-tree inspection is not an independent screen-reader review.
 - [x] Reduced-motion browser emulation at 390×844: Chromium reported `prefers-reduced-motion: reduce`; opening the live Dialog produced a 320px-wide RTL `alertdialog` with no horizontal document overflow. Computed dialog and overlay styles both reported `transition: none` and `animation-name: none`; Cancel closed the dialog. The browser's inert animation duration was `1e-05s`, but no animation was active. The temporary browser target was closed after the check.
 ## Technical and delivery gates
 
 - [x] `pnpm check:tokens` and `pnpm check:catalog` pass; catalog reports 49 unique routes/contracts.
 - [x] Vue typecheck and production build pass; build retains the existing JavaScript chunk advisory.
 - [x] Repository scan for prohibited reference-brand text reports no matches.
-- [x] `git diff --check` passes; latest browser findings and the updated checklist are included in the current commit checkpoint.
+- [x] `git diff --check` passes; latest browser findings and the updated checklist are recorded in the working tree. These changes are not committed or pushed.
 
 Do not mark the Modal family complete until every required check above is closed or explicitly accepted as a documented limitation.

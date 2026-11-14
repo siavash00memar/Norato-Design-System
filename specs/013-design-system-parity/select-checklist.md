@@ -69,3 +69,15 @@
 - [x] At 320×844, the menu bottom is y=762 and the fixed navigation starts at y=788. Manual scroll brought the final disabled option into view above navigation; keyboard ArrowDown reached «رشت», and Escape closed the menu and returned focus to the Tehran trigger. AX still exposes all grouped/selected/disabled options and RTL remains intact.
 - [ ] Exact 390×844 visual check and desktop geometry regression remain unverified in the current browser viewport; broader state screenshot-matrix and independent screen-reader review also remain open.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. The focused repair does not close Select's broader DoD.
+
+## Select accessibility-tree review — 2026-11-14
+
+- [x] The live trigger is exposed as a named combobox. Opening it exposes a listbox, a search field named «جست‌وجوی شهر», grouped options, the selected Tehran option, and the disabled «به‌زودی» option.
+- [x] Keyboard review: ArrowDown from search focuses the first option; a second ArrowDown focuses Isfahan; Enter commits the value and updates the trigger/status. Reopening and selecting Tehran restores the playground default.
+- [ ] This browser accessibility-tree review is not an independent screen-reader test. Full per-state visual capture and screen-reader review remain open.
+
+## Select native-control and keyboard recheck — 2026-11-14
+- [x] Source scan of `apps/vue/src` and `packages/vue/src/components` found no native `<select>` markup; the public Vue Select adapter uses Reka UI Select primitives.
+- [x] Live mobile browser opened the named «شهر» combobox as a custom grouped listbox. The open render showed a capsule yellow stroke on the focused trigger/search field, RTL group/option alignment, a soft-yellow selected row, and a visible disabled option.
+- [x] ArrowDown opened the list; Escape returned the page to its closed state while preserving the selected «تهران» value. No value was changed during this recheck.
+- [ ] This confirms only the open/close and current visual state; it does not replace the full variant screenshot matrix or independent screen-reader review.

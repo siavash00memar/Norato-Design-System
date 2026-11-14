@@ -9,7 +9,7 @@
 
 ## Overview
 
-`NoratoModal` پنجرهٔ عمومی برای فرم یا محتوای تکمیلی است و `NoratoDialog` گفت‌وگوی تأیید را با لحن‌های پیش‌فرض، موفقیت، هشدار و خطر آماده می‌کند. هر دو وضعیت `v-model:open` دارند و از primitiveهای Dialog در Reka برای portal، مهار focus و چرخهٔ بستن استفاده می‌کنند؛ سطح، ابعاد، رنگ‌ها و کنترل‌ها متعلق به Norato هستند.
+`NoratoModal` پنجرهٔ عمومی برای فرم یا محتوای تکمیلی است و `NoratoDialog` گفت‌وگوی تأیید را با لحن‌های پیش‌فرض، موفقیت، هشدار و خطر آماده می‌کند. Modal می‌تواند با `v-model:open` کنترل شود یا با slot اختیاری `trigger` وضعیت داخلی داشته باشد. هر دو adapter از primitiveهای Dialog در Reka برای portal، مهار focus و چرخهٔ بستن استفاده می‌کنند؛ سطح، ابعاد، رنگ‌ها و کنترل‌ها متعلق به Norato هستند.
 
 ## Anatomy
 
@@ -22,7 +22,7 @@
 
 ## Variants
 
-- **Modal:** اندازهٔ `small | medium | large`، عنوان/شرح، slot محتوای اصلی و footer اختیاری.
+- **Modal:** اندازهٔ `small | medium | large`، عنوان/شرح، slot محتوای اصلی و footer اختیاری؛ وضعیت کنترل‌شده یا trigger داخلی.
 - **Dialog:** لحن `default | success | warning | danger`، اندازه‌های Modal و actionهای تأیید/انصراف.
 - **Create Project:** نمونهٔ فرم کاربردی ساخته‌شده با `NoratoModal` و فیلدها و دکمه‌های Norato؛ variant مجزای adapter نیست.
 - **Overlay:** لایهٔ پس‌زمینه در هر دو adapter مشترک است.
@@ -49,7 +49,7 @@ Dialog با اندازهٔ Small از `--norato-modal-dialog-width-small`، بر
 
 ## Parts
 
-- **NoratoModal:** `id`, `title`, `description?`, `size`, `dismissible`, `showClose`, `closeLabel`, `role`, `variant`, `busy`, `dir`; `v-model:open`; slotهای `default`, `title`, `description`, `footer`.
+- **NoratoModal:** `id`, `title`, `description?`, `size`, `dismissible`, `showClose`, `closeLabel`, `role`, `variant`, `busy`, `dir`; `v-model:open` اختیاری؛ slotهای `trigger` اختیاری، `default`, `title`, `description`, `footer`. Slotهای `default` و `footer` مقدارهای `{ open, close }` می‌گیرند. `close()` پنجره را در هر دو حالت کنترل‌شده و داخلی می‌بندد؛ در حالت کنترل‌شده، مقدار تازه از طریق `update:open` به میزبان می‌رسد.
 - **NoratoDialog:** `id`, `title`, `description`, `tone`, `size`, `confirmLabel`, `cancelLabel`, `confirmDisabled`, `busy`, `dismissible`, `dir`; `v-model:open`; eventهای `confirm` و `cancel`.
 - `NoratoDialog` با تأیید، event `confirm` را منتشر می‌کند و پنجره را باز نگه می‌دارد تا میزبان بعد از پایان عملیات، `open` را ببندد؛ این امکان نمایش وضعیت busy را می‌دهد. انصراف `cancel` را منتشر و پنجره را می‌بندد.
 - نقش accessibility برای Modal برابر `dialog` و برای تأیید برابر `alertdialog` است.
@@ -81,11 +81,37 @@ function removeProject() {
 </template>
 ```
 
+برای یک فرم ساده که وضعیت بازبودن را در والد نگه نمی‌دارد، محرک را داخل خود Modal قرار بده و callback بستن را از slot بگیر:
+
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+import { NoratoButton, NoratoModal, NoratoTextInput } from '@norato/vue'
+
+const projectName = ref('')
+function saveProject(close: () => void) {
+  // پس از ذخیرهٔ موفق پروژه، پنجره را ببند.
+  close()
+}
+</script>
+
+<template>
+  <NoratoModal id="create-project" title="ساخت پروژه" description="برای پروژهٔ جدید یک نام انتخاب کن.">
+    <template #trigger><NoratoButton label="ساخت پروژه" /></template>
+    <NoratoTextInput id="project-name" v-model="projectName" label="نام پروژه" required />
+    <template #footer="{ close }">
+      <NoratoButton label="انصراف" variant="secondary" @click="close" />
+      <NoratoButton label="ثبت" @click="saveProject(close)" />
+    </template>
+  </NoratoModal>
+</template>
+```
+
 - Modal را برای کار مشخص، فرم یا تصمیم برگشت‌پذیر بگشا؛ پیام کوتاه را inline یا با Toast نمایش بده.
 - محتوا را کوتاه و قابل پیمایش نگه دار؛ Modal را داخل Modal باز نکن.
 - عنوان را مستقل از شرح بنویس و action اصلی را با فعل روشن نام‌گذاری کن.
 - در RTL، ترتیب DOM را انصراف سپس تأیید قرار بده تا دکمهٔ اصلی در سمت چپ دیده شود.
-- مقدار `open` را برای بستن پس از موفقیت عملیات میزبان به‌روز کن.
+- در مسیر کنترل‌شده، مقدار `open` را برای بستن پس از موفقیت عملیات میزبان به‌روز کن؛ در مسیر داخلی، از callback `close` در slot بدنه یا footer استفاده کن.
 
 ## Accessibility
 

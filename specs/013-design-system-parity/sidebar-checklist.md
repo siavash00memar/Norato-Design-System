@@ -1,12 +1,12 @@
 # Sidebar Checklist
 
-- [ ] design reference Sidebar 42 variants/6 parts represented or intentional Norato mapping documented.
+- [x] Sidebar's six mapped families document the 42 variant breakdown; mobile trigger/drawer and active indicator are intentionally recorded as parts/anatomy rather than counted variants.
 - [x] Preview is inert and bounded; fresh same-viewport desktop and mobile geometry comparison recorded in the 2026-11-10 specimen parity follow-up.
 - [x] Desktop expanded/collapsed, Glass/Bar, active/disabled/focus and child links verified in the live playground.
 - [x] Keyboard collapse/expand, direct and nested `aria-current`, 2px focus ring and accessible collapsed labels verified.
 - [x] Mobile modal drawer trigger, Escape/focus restoration, outside dismissal, child selection and no-overflow checks verified at 390px/320px.
 - [x] All sampled interactive targets are at least 48px; icons and marks retain intrinsic geometry.
-- [ ] Usage snippet compiles against exports.
+- [x] Vue usage snippet type-checks against the public `@norato/vue` exports.
 - [x] Tokens, catalog, typecheck, build and diff checks pass (fresh recheck 2026-11-10; see technical recheck below).
 - [ ] Independent screen-reader review documented if available.
 
@@ -80,3 +80,16 @@
 - [ ] The usage example is visible in the browser and matches the public export names; compiling the rendered documentation snippet as a standalone consumer project is not yet verified.
 - [x] Six static gallery groups render the contract axes for Sidebar (4), Item (20), Sub Item (8), Section Title (2), Header (4), and Footer (4), totaling 42; samples are inert and do not add undersized interactive targets.
 - [ ] Exact desktop and 390px/320px visual comparison, native link Tab-order verification, standalone consumer compilation, and independent screen-reader review remain open.
+
+## Sidebar — component documentation route follow-up (2026-11-14)
+
+- [x] In the live local app at its current narrow viewport, selecting Sidebar from the component inventory changed the hash to `#component-sidebar` and rendered the Sidebar detail in the existing page. Returning to the inventory and selecting Charts changed the hash to `#component-charts` and rendered the Charts detail; browser Back returned to the inventory.
+- [x] Source inspection confirms `openComponent` updates in-memory selection/page state and uses `history.pushState`; the component navigation binds `.active` and `aria-current="page"` to the selected component and scrolls it into view.
+- [ ] This viewport hides the desktop side-index, so its rendered active treatment and `aria-current` were not independently observed in-browser in this follow-up. Desktop visual check and independent screen-reader review remain open.
+
+## Sidebar — active component and route restore recheck (2026-11-15)
+
+- [x] At the 1265×713 desktop render, the current component is visibly highlighted in the side-index. Selecting Charts updated the URL fragment, page heading and content in-place; `App.vue` updates reactive page state and calls `history.pushState` instead of navigating away.
+- [x] Reloading `#component-charts` reconstructed the Charts detail and kept Charts highlighted in yellow, so the current component is recoverable from the URL.
+- [x] The published Sidebar Usage SFC was copied verbatim into a temporary Vue SFC and passed `pnpm --dir apps/vue typecheck` against the real package exports. The temporary validation file was removed; a separate consumer-project build is still unverified.
+- [ ] Native link Tab order, full Glass/Bar × expanded/collapsed screenshot matrix, and independent screen-reader review remain open.

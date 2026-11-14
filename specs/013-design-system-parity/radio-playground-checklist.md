@@ -62,3 +62,19 @@
 - [x] At 16px, Error + Disabled natively disabled all radios, prioritized the neutral disabled control treatment, retained the error message/invalid semantics, and reported disabled status.
 - [x] Restored Monthly, 20px, optional, enabled, no-error; fresh screenshot confirms the playground reset.
 - [ ] These focused pairs do not prove the complete checked × size × hover/focus × error/disabled/required cross-product or independent screen-reader behavior.
+
+## Small-size accessibility and combined-state spot check — 2026-11-14
+
+- [x] Full browser accessibility-tree snapshot exposes the group name, all three radio option names (including the quarterly description), named required/error/disabled/empty controls, current selection, and status. The earlier incremental tree had omitted names; this full snapshot confirms they are present.
+- [x] At 16px, Error + keyboard Focus keeps the red group/error treatment and the visible yellow focus ring around the selected option.
+- [x] At 16px, Error + Disabled exposes every radio as disabled, keeps the error message, and gives the status the disabled priority; the selected control switches to the neutral disabled appearance.
+- [x] At 16px, Required + empty shows the required message, reports no selection, and includes `required` in the generated Vue example. Selecting Yearly clears the empty/error state and synchronizes the selected radio, status and snippet.
+- [x] Restored Monthly selected, 20px, optional, enabled, no-error, non-empty state.
+- [ ] This spot check does not cover every live visual-state/focus combination or independent screen-reader behavior; Radio DoD remains open.
+
+## Small-size default keyboard follow-up — 2026-11-14
+
+- [x] At 16px and Default state, Tab focused the selected Monthly option and the live screenshot showed the yellow focus ring around the proportional radio control.
+- [x] ArrowDown selected Quarterly and updated the status plus generated Vue snippet; ArrowUp restored Monthly and synchronized them again.
+- [x] Restored the playground to Monthly, 20px, optional, enabled, no-error; returned the browser to its original Carousel page.
+- [ ] This focused default-state path does not close the full visual/focus combination matrix or independent screen-reader review.

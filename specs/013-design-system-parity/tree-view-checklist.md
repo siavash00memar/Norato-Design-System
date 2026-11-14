@@ -11,7 +11,7 @@
 - [x] RTL indentation is 20px per depth; file rows add the 16px alignment offset; arrows face down/open and left/closed; folder/file SVGs keep intrinsic 20px geometry.
 - [x] Default, selected, disabled and keyboard-focus states use semantic Norato colors without blue accent or stretch.
 - [x] Fine-pointer Chrome review confirms neutral hover only on enabled, unselected rows; selected rows keep the yellow selection surface, disabled rows do not gain hover, and the keyboard focus outline remains distinct. See `updates/2026-11-10-tree-view-pointer-hover/` and `updates/2026-11-10-tree-view-selected-hover-priority/`.
-- [ ] Coarse-pointer/touch hover behavior remains open; reduced-motion and independent screen-reader review remain open below.
+- [ ] Coarse-pointer/touch hover behavior and independent screen-reader review remain open below; reduced-motion browser behavior is verified below.
 - [x] At desktop, 390×844 and 320×844, Tree View and its documentation content stay within the viewport. Document widths are 375px/305px; interactive rows remain 48px high, with intrinsic 18px icons and 16px chevrons. Fixed a narrow-width overflow in the shared accessibility contract cards; Tree View and Input now both measure 305px document width at 320px.
 
 ## Behavior and accessibility
@@ -19,9 +19,9 @@
 - [x] Up/Down, Home/End, Left/Right, Enter/Space, typeahead and RTL direction work; disabled rows are excluded from focus and cannot select/expand.
 - [x] Pointer folder activation selects and expands; chevron toggles without changing selection; controlled and uncontrolled selection/expanded models update and generated snippets match.
 - [x] Focus visibility, controlled/uncontrolled use, global disabled and keyboard Tab entry/exit work.
-- [ ] Reduced-motion emulation remains open.
+- [x] Local browser reports `prefers-reduced-motion: reduce`; Tree View chevrons compute to `transition-property: none` and `transition-duration: 0s`. Collapsing and reopening the Projects folder is immediate, preserves the selected `readme`, and restores all six visible items.
 - [ ] Independent screen-reader review is recorded; do not close DoD without it.
 
 ## Engineering
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass.
-- [ ] Coarse-pointer hover, reduced-motion emulation and independent screen-reader review remain before closing the family DoD. Fine-pointer hover is verified; responsive measurements are recorded, and the shared accessibility card correction is verified on Tree View and Input.
+- [ ] Coarse-pointer hover and independent screen-reader review remain before closing the family DoD. Fine-pointer hover and reduced-motion behavior are verified; responsive measurements are recorded, and the shared accessibility card correction is verified on Tree View and Input.

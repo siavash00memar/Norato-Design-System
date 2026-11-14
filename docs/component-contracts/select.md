@@ -38,6 +38,7 @@
 ## States
 
 - **Select:** Default، Hover، Open، Filled، Error، Disabled، Read-only
+- **ترکیب Error + Disabled:** پیام خطا و `aria-invalid` باقی می‌مانند، اما ظاهر غیرفعال بر Stroke خطا اولویت دارد و قاب از border خنثی و سطح muted استفاده می‌کند؛ Loading نیز کنترل را disabled و پیام وضعیت را اعلام می‌کند.
 - **Multi Select:** Default، Hover، Open، Filled، Error، Disabled
 - **Select Option:** Default، Hover، Selected، Disabled، Focus
 - **گالری States:** دقیقاً ۹ کارت یکتا برای Default، Hover، Open، Filled، Error، Disabled، Read-only، Selected و Focus؛ Selected و Focus از قرارداد Select Option می‌آیند تا حالت‌های مشترک تکرار نشوند. کارت‌ها هم‌قد و responsive هستند. جزئیات Multi Select و Select Option در Parts و playground باقی می‌ماند.

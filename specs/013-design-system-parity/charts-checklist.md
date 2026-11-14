@@ -34,3 +34,11 @@
 - [x] Browser evidence, error log and remaining limitations recorded.
 - [x] Checkpoint commit `c9b2344` pushed to `origin/master`; `git ls-remote` matched `HEAD` at verification time.
 - [x] 2026-11-14 preview follow-up gates: `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck/build, and `git diff --check` pass. The prohibited-name scan returns no matches.
+
+## Charts live type and data-table follow-up — 2026-11-14
+
+- [x] In the local browser, switched the live chart through Bar, Grouped Bar, Horizontal Bar, Line, Area, and Donut. The live heading and summary followed the selected type; grouped/line/area exposed two series while the single-series types exposed one.
+- [x] Opened the data disclosure and confirmed a semantic table with the chart caption, category labels, series header, and fixture values. The disclosure remained available across the type changes.
+- [x] Restored the playground to Bar, RTL, collapsed data disclosure, and returned the local browser to Carousel.
+- [x] Fresh technical recheck: `pnpm test:charts` passed 8/8; token/catalog checks, Vue typecheck, production build, and `git diff --check` passed. Build retains the existing 456.45KB main-bundle advisory.
+- [ ] This spot check does not cover every series-count/state combination, matched screenshots for each live type, or independent screen-reader output; Charts strict Final DoD remains open.

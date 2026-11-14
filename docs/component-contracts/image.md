@@ -62,4 +62,4 @@
 
 ## Tokens
 
-از توکن‌های معنایی Norato استفاده کن: `--norato-color-surface-subtle`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-scrim`، توکن‌های `--norato-radius-*`، `--norato-space-*`، `--norato-control-target-min`، `--norato-layer-modal` و `--norato-image-preview-media-inline-size`. قاب رسانه با `aspect-ratio` هندسی تعریف می‌شود و ارتفاع ثابتی ندارد.
+از توکن‌های معنایی Norato استفاده کن: `--norato-color-surface-subtle`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-scrim`، توکن‌های `--norato-radius-*`، `--norato-space-*`، `--norato-control-target-min`، `--norato-layer-modal`، `--norato-image-preview-media-inline-size` و `--norato-image-thumbnail-{small,medium,large}-size`. هر بندانگشتی از توکن اندازهٔ خودش برای محور inline و block استفاده می‌کند تا بدون کشیدگی مربع بماند. قاب رسانه با `aspect-ratio` هندسی تعریف می‌شود و ارتفاع ثابتی ندارد.

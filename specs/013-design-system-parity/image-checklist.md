@@ -48,3 +48,9 @@ Do not mark the family DoD complete until every required evidence item is observ
 - [x] Fresh matched desktop renders confirm the same 4:3 media ratio and bottom caption over a shade. The image remains intrinsic; local/reference frame size and vertical placement differ slightly with the documentation layout, as recorded above.
 - [x] Existing matched 390×844 and 320×844 comparisons show proportional media, bounded RTL layouts and no horizontal overflow; gallery, thumbnail, Lightbox and primary keyboard paths cover the Baseline interaction gate.
 - [ ] Reduced-motion emulation, real network failure/recovery and independent screen-reader review remain open for Final DoD.
+
+## Thumbnail dimension tokens — 2026-11-15
+
+- [x] Replaced the three hardcoded thumbnail dimensions with component tokens: Small 48px, Medium 64px and Large 80px. Each size token drives both inline and block dimensions, preserving a square thumbnail.
+- [x] The live RTL Image route rendered after the change; the 4:3 source stayed proportional. The playground changed to Small and the generated Vue snippet followed with `size="small"`.
+- [ ] This refactor does not close reduced-motion emulation, real network failure/recovery or independent screen-reader review.
