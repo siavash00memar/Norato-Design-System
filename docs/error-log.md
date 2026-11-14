@@ -1848,3 +1848,11 @@
 - **Correction:** Added a Progress-only mobile frame rule using existing Norato tokens. Updated both static specimen and live playground default to 60%, preserving Norato yellow and the public API.
 - **Verification:** At 390px, local/reference frames are 327.2×300px at x=24px and document widths are both 375px. At 320px, frames are 256.8×300px at x=24px; local document width is 305px without overflow (reference document 326px due surrounding layout). RTL, current ARIA value, pointer and keyboard selection paths passed.
 - **Prevention:** Compare fresh local/reference mobile samples before treating earlier screenshots as the current default contract.
+
+## ERR-237 — Chip default specimen was rendered selected and undersized (2026-11-14)
+
+- **Observed:** The static Chip preview said Default but rendered selected with a check icon; its capsule was shorter and narrower than the current reference, and its mobile frame filled the docs column.
+- **Cause:** The inert specimen explicitly passed `modelValue=true`, while its sizing and mobile frame did not match the currently rendered reference.
+- **Correction:** Set the specimen to unselected, aligned intrinsic dimensions and text/padding to the measured reference using semantic tokens, applied the specimen-only scale, and capped the mobile frame with existing layout tokens.
+- **Verification:** Matched desktop capsule size differs by 0.12px in width; 390/320px frame dimensions match; the 20-case local matrix, keyboard behavior, RTL and no-overflow checks pass. Required token/catalog/type/build/diff gates pass. Independent screen-reader review remains open for strict Final DoD.
+- **Prevention:** Verify that the displayed Default marker agrees with controlled component state, and compare both intrinsic control geometry and outer specimen frame at matched viewport widths.

@@ -173,9 +173,9 @@ const tagSizeHeights: Record<NoratoTagSize, number> = { small: 24, medium: 28, l
 const tagVariantCombos = tagVariantAppearances.flatMap(appearance => tagVariantSizes.map(size => ({ appearance, size })))
 const chipSizes: { id: NoratoChipSize; label: string; height: number }[] = [
   { id: 'small', label: 'کوچک', height: 24 },
-  { id: 'medium', label: 'متوسط', height: 28 },
-  { id: 'large', label: 'بزرگ', height: 32 },
-  { id: 'xlarge', label: 'خیلی بزرگ', height: 36 },
+  { id: 'medium', label: 'متوسط', height: 32 },
+  { id: 'large', label: 'بزرگ', height: 36 },
+  { id: 'xlarge', label: 'خیلی بزرگ', height: 40 },
 ]
 const chipStates = [
   { id: 'default', label: 'عادی' },

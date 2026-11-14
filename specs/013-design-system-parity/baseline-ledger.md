@@ -43,7 +43,7 @@ Status meanings:
 | List | Baseline passed | Matched desktop and 414px mobile comparison, bounded three-row RTL specimen, ≥48px targets and primary pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Card | Baseline passed | Matched desktop and mobile comparisons, six adapter coverage, bounded media/text without stretch, RTL, ≥48px interactive controls and pointer/keyboard paths are recorded. Final screen-reader review remains separate. |
 | Tag | Baseline passed | Fresh desktop and matched 390/320px mobile comparisons confirm the neutral, soft, small «برچسب» default, exact frame dimensions and bounded responsive layout. RTL, non-interactive semantics, playground/snippet synchronization and global technical gates pass; independent screen-reader review remains Final DoD. |
-| Chip | Evidence recorded; audit open | Existing responsive and keyboard evidence. |
+| Chip | Baseline passed | Same-viewport default specimen comparison and exact 390/320px mobile frame geometry; 20-case local state matrix, RTL, primary keyboard/removal flows and no-overflow checks recorded. Independent screen-reader review remains Final DoD. |
 | Avatar | Evidence recorded; audit open | Existing responsive and focus evidence. |
 | Timeline | Evidence recorded; audit open | Existing responsive and direction/layout evidence. |
 | Charts | Evidence recorded; audit open | Existing responsive and chart interaction evidence. |
@@ -59,7 +59,7 @@ Status meanings:
 ## Summary
 
 - **Audit correction (2026-11-10):** the earlier 48/48 Baseline pass claim was unsupported and is withdrawn. Responsive/interaction notes alone do not prove each required matched desktop/mobile comparison.
-- Baseline DoD verified: **42/48 families (87.5%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, Tooltip, Empty State, Badge, Popover, Image, Carousel, Chat, Spinner, Progress, List, Card, Skeleton, Table, Notification Center, Divider and Tag. The remaining 6 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
+- Baseline DoD verified: **43/48 families (89.6%)** — Split Button, Input, Select, Combobox, Checkbox, Radio Button, Switch, Segmented Control, Range, Rating, Date Picker, Time Picker, File Upload, Navbar, Sidebar, Tabs, Breadcrumbs, Pagination, Stepper, Menu, Command Palette, Tree View, Accordion, Alert, Banner, Toast, Tooltip, Empty State, Badge, Popover, Image, Carousel, Chat, Spinner, Progress, List, Card, Skeleton, Table, Notification Center, Divider, Tag and Chip. The remaining 5 family rows stay open pending the same evidence mapping; this is a verified-stage rate, not a measure of all implementation work already completed.
 - Shared Button-like page structure: confirmed in the common renderer and a live family page; catalog validation is included in the technical gate.
 - The Baseline stage remains open until all family rows and global technical gates are independently reconciled.
 - Final DoD completion remains tracked by `checklist.md` and family-specific records.

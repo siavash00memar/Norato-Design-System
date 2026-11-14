@@ -108,6 +108,8 @@ export const productPatternTokens = {
   chipHeightLarge: '--norato-chip-height-large',
   chipHeightXlarge: '--norato-chip-height-xlarge',
   chipMaxInlineSize: '--norato-chip-max-inline-size',
+  chipPaddingInline: '--norato-chip-padding-inline',
+  chipSpecimenScale: '--norato-chip-specimen-scale',
   chartPreviewCardInlineSize: '--norato-chart-preview-card-inline-size',
   imagePreviewMediaInlineSize: '--norato-image-preview-media-inline-size',
   accordionPreviewInlineSize: '--norato-accordion-preview-inline-size',

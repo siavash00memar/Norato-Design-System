@@ -18,9 +18,11 @@
   --norato-tag-icon-size: 14px;
   --norato-tag-dot-size: 6px;
   --norato-chip-height-small: 24px;
-  --norato-chip-height-medium: 28px;
-  --norato-chip-height-large: 32px;
-  --norato-chip-height-xlarge: 36px;
+  --norato-chip-height-medium: 32px;
+  --norato-chip-height-large: 36px;
+  --norato-chip-height-xlarge: 40px;
+  --norato-chip-padding-inline: calc(var(--norato-space-3) + var(--norato-space-observed-2));
+  --norato-chip-specimen-scale: 1.08;
   --norato-chip-max-inline-size: 240px;
   --norato-chat-avatar-size: 40px;
   --norato-chat-layout-min-block-size: 360px;

@@ -3113,3 +3113,12 @@
 - [x] Playground begins in neutral/soft/small/RTL/short-text with dot enabled. Selecting Success updates the preview and generated Vue snippet; restoring Neutral returns the new default.
 - [x] Fresh same-viewport mobile comparison at 390×844: reference and Norato frames both measure 327×300px; at 320×640 both measure 257×300px. Norato document has no horizontal overflow at either width. The reference page's 320px document scroll width is 326px due to surrounding documentation, while its Tag specimen remains bounded.
 - [ ] Independent screen-reader review remains open for strict Final DoD.
+
+## Chip default specimen correction and responsive review — 2026-11-14
+
+- [x] Same-viewport desktop comparison: the local neutral capsule measures 65.188×34.56px versus 65.07×34.56px in the reference. The enclosing local docs frame is 631.98×300px versus 636×300px reference; this small width/centering difference is retained as a docs-layout residual.
+- [x] Matched mobile frame review: local and reference both measure 327×300px at 390×844 and 257×300px at 320×640. Local document widths match client widths (375px and 305px), without horizontal overflow.
+- [x] State review: static default is `aria-pressed=false` with no check icon; neutral surface has a 1px `#E8E8E8` stroke, while the separate selected state uses Norato yellow. The 20-case local matrix has correct 24/32/36/40px intrinsic heights.
+- [x] Interaction review: Space/Enter toggle; input removal announces status, focuses Restore, and restoration returns focus to Remove. RTL is preserved.
+- [x] Required gates passed: token/catalog checks, Vue typecheck, production build and `git diff --check`. Repository scan found no prohibited reference-name strings.
+- [ ] Independent screen-reader review remains open for strict Final DoD.
