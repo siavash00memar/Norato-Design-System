@@ -1,5 +1,10 @@
 # Norato Request Validation Checklist
 
+## Modal controlled open and focus return — 2026-11-14
+
+- [x] In the live playground, activating the opener displayed the named confirmation `alertdialog`; activating Cancel closed it, changed the live status to «درخواست لغو شد.» and restored focus to the opener.
+- [ ] Uncontrolled `open` path and independent screen-reader review remain unverified in the Modal Final DoD.
+
 ## Modal preview backdrop and geometry — 2026-11-14
 
 - [x] Same-window 1265×713 comparison: local/reference frames 625×298px / 629×344px; inner scenes 445×252px / 446×255px; dialogs 297×196px / 299×198px. Norato keeps its shared ~300px specimen frame while scene/dialog bounds now closely match.
