@@ -226,10 +226,10 @@
   --norato-modal-width-large: 640px;
   --norato-modal-max-block-size: 640px;
   --norato-modal-dialog-width-small: 320px;
-  --norato-modal-specimen-scene-inline-size: 420px;
-  --norato-modal-specimen-scene-block-size: 232px;
+  --norato-modal-specimen-scene-inline-size: 450px;
+  --norato-modal-specimen-scene-block-size: 256px;
   --norato-modal-specimen-scene-mobile-block-size: 280px;
-  --norato-modal-specimen-card-inline-size: 320px;
+  --norato-modal-specimen-card-inline-size: 300px;
   --norato-drawer-width-small: 320px;
   --norato-drawer-width-medium: 400px;
   --norato-drawer-width-large: 480px;

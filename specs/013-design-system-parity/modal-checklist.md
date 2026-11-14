@@ -3,7 +3,7 @@
 ## Visual parity
 
 - [x] Page follows the Button structure: inert specimen, live playground, copyable Vue example and documented contract.
-- [x] Compared local and reference desktop captures in the same browser window. Both show a centered destructive confirmation in the dotted frame; the local frame is narrower and shorter because of the documentation layout.
+- [x] Same-window 1265×713 comparison: outer frame 625×298px locally vs 629×344px in the reference; inner scene 445×252px vs 446×255px; dialog 297×196px vs 299×198px. Norato retains its shared ~300px frame height for consistency with other component specimens; the preview's inner geometry now closely matches and its dotted background shows through the softened scrim.
 - [x] Default playground confirmation uses the destructive tone and Norato palette; its neutral cancel and danger action retain RTL order.
 - [x] Browser measured the dialog at all three sizes and four tones on desktop: small 320px, medium 480px and large 640px; all 12 combinations kept a natural 256px content height. At 390px and 320px viewports, the dialog stayed within the viewport (320px and 288px wide) with no horizontal document overflow.
 - [x] Desktop hover/full visual-state pass at matched 1280×720: Dialog cancel/confirm, Form cancel/create/close, and the nested project-name field were reviewed. Interactive actions show the expected Norato yellow/neutral hover surfaces without activation or layout movement; the close action keeps a 48×48px target. The input stays 36px high with 50px radius, `#e8e8e8` resting Stroke, and one 1px yellow hover/focus Stroke. The available reference exposes only the static confirmation specimen, so interactive Form hover parity is not directly comparable there.

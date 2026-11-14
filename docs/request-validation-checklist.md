@@ -1,5 +1,12 @@
 # Norato Request Validation Checklist
 
+## Modal preview backdrop and geometry — 2026-11-14
+
+- [x] Same-window 1265×713 comparison: local/reference frames 625×298px / 629×344px; inner scenes 445×252px / 446×255px; dialogs 297×196px / 299×198px. Norato keeps its shared ~300px specimen frame while scene/dialog bounds now closely match.
+- [x] Dotted gradient surface is visible through the softened scrim; title/actions remain centered and RTL, with neutral cancel styling and the Norato-yellow action treatment.
+- [x] Changed only static specimen styling and Modal layout tokens; live overlay token and adapter CSS are untouched. Existing 390/320px Modal layout evidence remains in the canonical checklist; this refinement has desktop-only fresh visual capture.
+- [ ] Controlled/uncontrolled `open` and independent screen-reader review remain open in Modal Final DoD.
+
 ## Charts preview geometry and mobile fit — 2026-11-14
 
 - [x] Same-viewport desktop review at 1265×713: frame is 635.98×332px vs 636×331.69px; inner card 368×244px vs 367.2×243.74px; SVG 336×157.66px vs 334.8×156.94px. Relative card placement within the frame matches within 0.1px.
