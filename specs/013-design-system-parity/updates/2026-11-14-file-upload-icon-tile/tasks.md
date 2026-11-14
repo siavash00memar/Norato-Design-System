@@ -1,0 +1,4 @@
+- [x] Replace circular full-yellow preview tile with compact rounded-square tile.
+- [x] Review the local browser render.
+- [x] Run token/catalog, Vue typecheck, build and diff gates.
+- [ ] Exact matched-viewport reference recheck and mobile review.

@@ -3163,3 +3163,7 @@
 - [x] Interaction review: Space/Enter toggle; input removal announces status, focuses Restore, and restoration returns focus to Remove. RTL is preserved.
 - [x] Required gates passed: token/catalog checks, Vue typecheck, production build and `git diff --check`. Repository scan found no prohibited reference-name strings.
 - [ ] Independent screen-reader review remains open for strict Final DoD.
+
+## File Upload specimen icon correction — 2026-11-14
+- [x] Local browser render at http://127.0.0.1:5175/#component-file-upload confirms rounded-square neutral icon tile, yellow glyph, and unchanged RTL dropzone composition.
+- [ ] Exact matched-viewport reference recheck and mobile review remain open; this does not close File Upload Final DoD.

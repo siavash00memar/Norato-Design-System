@@ -40,3 +40,9 @@
 - [x] Real chooser tests cover pointer and Enter/Space, accepted PNG, unsupported type, size/count rejection, single replacement and multiple limit. Public `multiple` control and generated snippet were verified.
 - [x] Live and inert upload glyphs now use line SVG and a yellow/dark action treatment; the secondary specimen wash is neutral, with no blue action accent.
 - [ ] Actual OS drag/drop payload, independent screen-reader review, reduced-motion and remaining combined keyboard/state cases are still open; keep maturity Adapted.
+
+## Specimen icon review — 2026-11-14
+
+- [x] Same-viewport local desktop render after correction shows a compact rounded-square neutral tile with Norato-yellow SVG glyph, replacing the oversized solid-yellow circular tile. Surrounding dotted frame, dropzone, text and RTL layout remain intact.
+- [x] CSS-only specimen change uses existing semantic spacing/surface/radius tokens; executable Dropzone behavior is unchanged.
+- [ ] Exact matched-viewport reference recheck, mobile review for this correction and complete File Upload Final DoD remain open.

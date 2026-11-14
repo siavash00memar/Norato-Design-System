@@ -1,0 +1,4 @@
+- [x] CSS uses semantic spacing, surface and radius tokens; SVG glyph remains Norato yellow with neutral contrast.
+- [x] Local browser render after change confirms compact rounded-square tile; the dropzone frame, copy and RTL composition remain intact.
+- [x] Token/catalog checks, Vue typecheck, production build and `git diff --check` pass.
+- [ ] Exact matched-viewport reference recheck and mobile review.
