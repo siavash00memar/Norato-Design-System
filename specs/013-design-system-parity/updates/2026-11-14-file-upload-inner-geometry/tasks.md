@@ -3,3 +3,5 @@
 - [x] Compare matched desktop screenshots after change.
 - [x] Run token/catalog, Vue typecheck/build and diff gates.
 - [ ] Recheck narrow viewport containment in browser.
+- [x] Inspect narrow-breakpoint CSS bounds for static and live Dropzone.
+- [ ] Recheck rendered local 390px and 320px widths when a responsive viewport is available.

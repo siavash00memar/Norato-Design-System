@@ -2,3 +2,5 @@
 - [x] Same-viewport local screenshot compared after the change; the inner Dropzone now aligns closely with the reference and keeps the neutral tile/yellow glyph.
 - [x] Existing mobile `min(100%, token)` containment rule and compact-size override remain unchanged; no narrow-viewport measurement was made in this pass.
 - [x] Token/catalog, Vue typecheck/build and diff gates pass.
+- [x] Static responsive-rule audit: mobile specimen frame uses min(100%, mobile-frame-token); inner preview Dropzone and live playground Dropzone use inline-size:100% under the narrow breakpoint. This supports bounded width by CSS, but is not a rendered viewport measurement.
+- [ ] Exact local 390px and 320px post-token-change screenshots/overflow measurements remain open because the available browser session did not expose a working viewport override.

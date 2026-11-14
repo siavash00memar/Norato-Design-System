@@ -3173,3 +3173,7 @@
 ## File Upload inner Dropzone geometry — 2026-11-14
 - [x] Same-viewport local/reference screenshots showed the local inner panel oversize; shared token correction to 364×152px visibly aligns the panel proportions while preserving Norato yellow and RTL content.
 - [ ] Narrow viewport remeasurement and remaining File Upload Final DoD are open.
+
+## File Upload responsive rule audit — 2026-11-14
+- [x] Reviewed narrow-breakpoint CSS: the preview frame is max-width bounded and both static and live Dropzones use 100% of the available inline space.
+- [ ] Rendered 390px/320px comparison remains unverified because the available browser viewport could not be changed in this session.

@@ -52,3 +52,8 @@
 
 - [x] Fresh local/reference browser screenshots at the same 1265×713 viewport showed the local inner Dropzone visibly wider and taller. Shared size tokens now use 364×152px; the refreshed render brings the inner panel close to the reference while preserving the outer frame, yellow Norato glyph, neutral tile and RTL text.
 - [ ] Narrow viewport remeasurement remains open; existing max-width containment rule is unchanged. File Upload Final DoD remains open.
+
+## Static responsive rule audit — 2026-11-14
+
+- [x] Narrow-breakpoint CSS caps the specimen frame with min(100%, mobile token), sets the inner specimen Dropzone to 100%, and sets the live playground Dropzone to 100%; this provides code-level evidence against width overflow.
+- [ ] Rendered 390px and 320px checks after the token change are still open; this audit does not claim measured mobile DoD.
