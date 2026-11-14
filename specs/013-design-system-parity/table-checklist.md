@@ -55,4 +55,5 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 ## Fresh same-viewport reference comparison — 2026-11-14
 
 - [x] Re-opened the design-reference Table page and Norato Table page in the browser at the same 1265×713 viewport. The toolbar/search, RTL column order, three data rows, selected first row, status treatment and pagination anatomy align; both dotted specimen frames and inner tables remain bounded and proportionally similar. Norato's yellow action/selection treatment is retained.
-- [ ] This desktop visual check does not replace exact 390×844 and 320×844 measurements after the scoped mobile frame inset; those checks remain open in the follow-up above.
+- [x] Compared the same pages at 375×844. The frame widths are visually aligned; Norato keeps all RTL columns, the selected row, status indicators and controls inside a bounded frame without obvious horizontal/vertical stretch or clipping.
+- [ ] These matched comparison renders do not replace the exact 390×844 and 320×844 frame measurements after the scoped mobile inset; those measurements remain open in the follow-up above.

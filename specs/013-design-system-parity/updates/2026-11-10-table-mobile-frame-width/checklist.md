@@ -1,6 +1,6 @@
 # Checklist — Table mobile frame width
 
-- [ ] Confirm the CSS selector is limited to the inert Table specimen at widths ≤600px.
+- [x] Source audit confirms the rule is limited to `.component-doc>#doc-preview:has(.sample-table-preview) .component-sample.sample-table-preview:not(.compact)` under `max-width:600px`; it affects only the inert Table preview frame.
 - [ ] At 390×844, frame measures 327px at x=24px; RTL is preserved and the document has no horizontal overflow.
 - [ ] At 320×844, frame measures 257px at x=24px; inner table remains contained and the document has no horizontal overflow.
 - [ ] At 1536×703, frame remains approximately 636×345px and the desktop rule is unaffected.
