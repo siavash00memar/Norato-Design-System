@@ -22,5 +22,6 @@
 
 - [x] At a matched 390×844 browser viewport, the Norato and design-reference specimens keep the same bounded card silhouette and near-matching frame height; the Norato page document is 375px wide with no horizontal overflow. No vertical stretch was visible.
 - [x] Replaced generic generated section titles with named Skeleton-specific contract labels in Variants, Sizes, States, Parts, Usage, Accessibility, Tokens and DoD.
-- [ ] Re-capture after the contract edit and re-check the primary playground pointer/keyboard path; Baseline remains open until this and global evidence reconciliation are complete.
+- [x] Fresh post-edit browser render shows the named family-specific headings. At 390×844, the local/reference card silhouettes and frame heights align visually; the local document is 375px with no horizontal overflow. The 36px visible playground capsules retain a 48px absolute pointer hit area.
+- [x] Keyboard: Enter opens the type listbox, ArrowDown focuses Shape, and Enter changes Pattern → Shape while updating the generated Vue snippet. Pointer: selecting LTR updates the trigger and generated `dir="ltr"` snippet. The playground was restored to Pattern/Avatar Text/Pulse/RTL.
 - [ ] Independent screen-reader review remains open for Final DoD.

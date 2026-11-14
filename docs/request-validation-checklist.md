@@ -4,7 +4,9 @@
 
 - [x] At matched 390×844 viewport, the local and reference Skeleton previews retain the same bounded card silhouette and near-matching frame height; local document client/scroll widths are both 375px. No visible avatar or text-block stretch was observed.
 - [x] The Skeleton contract now gives its previously auto-numbered Variants, Sizes, States, Parts, Usage, Accessibility, Tokens and DoD entries meaningful family-specific headings.
-- [ ] Refresh the local browser after the documentation edit and verify the displayed headings and primary pointer/keyboard playground flow. Do not close Skeleton Baseline until verified.
+- [x] Fresh local render confirms the family-specific headings. Keyboard Enter → ArrowDown → Enter changes Pattern to Shape and updates the snippet; pointer selection changes RTL to LTR and updates `dir`. Both state changes were restored to the original playground defaults.
+- [x] At 390px viewport, local page width is 375px with no overflow; the visible 36px playground field has a 48px pointer pseudo-target. The 390px local/reference preview silhouettes remain bounded without visible stretch.
+- [ ] Independent screen-reader review remains open for Skeleton Final DoD.
 
 ## Input descriptive axis chip palette — 2026-11-10
 
