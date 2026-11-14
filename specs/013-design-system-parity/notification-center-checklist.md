@@ -56,3 +56,9 @@ Record same-viewport dimensions, tested interactions, viewport sizes, console fi
 - [x] Switching to Panel closes the Popover; opening the Panel exposes the named close action and notification content. Escape closes it and restores focus to the bell trigger.
 - [x] Disabling the bell via the playground exposes a disabled trigger; Reset restores the default Popover, two unread notifications and enabled bell. No persistent user data is involved in the fixture.
 - [ ] Matched visual viewport recapture and independent screen-reader review remain open; these live-state checks do not close the overall DoD.
+
+## Fresh matched mobile comparison — 2026-11-14
+
+- [x] Compared the design-reference and Norato pages at the same 375×844 viewport. The inner notification panels are approximately 308px wide in both; reference and Norato specimen frames are about 316px and 330px respectively because each sits in a different documentation column. Rows, badges and avatars remain intrinsically sized, RTL text stays within the panel, and no obvious stretch or clipping appears. Norato retains its yellow unread surface.
+- [x] Pointer-opened the playground Popover; the accessibility tree exposed the named bell, grouped notifications, filters and row actions. Selecting Mentions checked that filter and removed nonmatching rows; Reset restored All, the two unread count and the default notification set. Escape closed the Popover and returned focus to the bell.
+- [ ] Independent screen-reader review remains open for Final DoD; exact 390/320 measurements remain recorded above.

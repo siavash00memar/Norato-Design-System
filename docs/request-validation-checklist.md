@@ -1,5 +1,11 @@
 # Norato Request Validation Checklist
 
+## Notification Center mobile reference comparison — 2026-11-14
+
+- [x] At a matched 375×844 browser viewport, the Norato and design-reference notification panels are similarly sized and bounded. Norato's specimen frame is slightly wider due to its documentation column; inner rows, avatars and RTL text do not visibly stretch or clip.
+- [x] Fresh live browser interaction opens the Popover, selects Mentions, restores All, and closes with Escape; the notification fixture returns to its defaults.
+- [ ] Independent screen-reader review remains open for Notification Center Final DoD.
+
 ## Skeleton mobile comparison and section-label cleanup — 2026-11-14
 
 - [x] At matched 390×844 viewport, the local and reference Skeleton previews retain the same bounded card silhouette and near-matching frame height; local document client/scroll widths are both 375px. No visible avatar or text-block stretch was observed.
