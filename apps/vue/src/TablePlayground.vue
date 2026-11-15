@@ -12,24 +12,42 @@ const expandable = ref(false)
 const loading = ref(false)
 const direction = ref<'rtl' | 'ltr'>('rtl')
 const dataSet = ref<'sample' | 'empty'>('sample')
+const showAccessibleCells = ref(false)
 const selected = ref<Array<string | number>>(['sara'])
-const columns: NoratoTableColumn[] = [
-  { key: 'projects', label: 'پروژه', type: 'number', align: 'start', sortable: true },
-  { key: 'status', label: 'وضعیت', type: 'status', align: 'center', sortable: true },
-  { key: 'name', label: 'نام', type: 'user', sortable: true },
-]
+const sampleImageSvg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#fff8dc"/><circle cx="46" cy="18" r="9" fill="#fdc101"/><path d="M5 55 25 29l12 15 8-10 15 21Z" fill="#d7bd70"/><path d="m5 55 18-9 12 7 12-8 13 10v9H5Z" fill="#8b7151"/></svg>'
+const sampleImageSrc = `data:image/svg+xml,${encodeURIComponent(sampleImageSvg)}`
+const columns = computed<NoratoTableColumn[]>(() => {
+  const currentColumns: NoratoTableColumn[] = [
+    { key: 'projects', label: 'پروژه', type: 'number', align: 'start', sortable: true },
+    { key: 'status', label: 'وضعیت', type: 'status', align: 'center', sortable: true },
+    { key: 'name', label: 'نام', type: 'user', sortable: true },
+  ]
+  if (showAccessibleCells.value) currentColumns.push(
+    { key: 'progress', label: 'پیشرفت پروژه (درصد)', type: 'progress', align: 'center' },
+    { key: 'image', label: 'تصویر پروژه', type: 'image', align: 'center' },
+  )
+  return currentColumns
+})
 const sampleRows: NoratoTableRow[] = [
-  { id: 'sara', name: { name: 'سارا محمدی', description: 'طراح محصول' }, status: 'فعال', projects: 12, detail: 'عضو تیم طراحی محصول؛ آخرین فعالیت امروز.' },
-  { id: 'ali', name: { name: 'علی رضایی', description: 'توسعه‌دهنده' }, status: 'مرخصی', projects: 7, detail: 'عضو تیم توسعه؛ بازگشت به کار شنبه.' },
-  { id: 'negar', name: { name: 'نگار کریمی', description: 'مدیر محصول' }, status: 'فعال', projects: 21, detail: 'مدیر محصول پروژه‌های اصلی.' },
-  { id: 'kian', name: { name: 'کیان موسوی', description: 'طراح تجربه' }, status: 'در انتظار', projects: 4, detail: 'در انتظار تخصیص به پروژه.' },
-  { id: 'mina', name: { name: 'مینا احمدی', description: 'پژوهشگر' }, status: 'فعال', projects: 9, detail: 'پژوهشگر تیم تجربهٔ کاربری.' },
+  { id: 'sara', name: { name: 'سارا محمدی', description: 'طراح محصول' }, status: 'فعال', projects: 12, progress: 72, image: { src: sampleImageSrc, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' }, detail: 'عضو تیم طراحی محصول؛ آخرین فعالیت امروز.' },
+  { id: 'ali', name: { name: 'علی رضایی', description: 'توسعه‌دهنده' }, status: 'مرخصی', projects: 7, progress: 46, image: { src: sampleImageSrc, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' }, detail: 'عضو تیم توسعه؛ بازگشت به کار شنبه.' },
+  { id: 'negar', name: { name: 'نگار کریمی', description: 'مدیر محصول' }, status: 'فعال', projects: 21, progress: 100, image: { src: sampleImageSrc, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' }, detail: 'مدیر محصول پروژه‌های اصلی.' },
+  { id: 'kian', name: { name: 'کیان موسوی', description: 'طراح تجربه' }, status: 'در انتظار', projects: 4, progress: 18, image: { src: sampleImageSrc, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' }, detail: 'در انتظار تخصیص به پروژه.' },
+  { id: 'mina', name: { name: 'مینا احمدی', description: 'پژوهشگر' }, status: 'فعال', projects: 9, progress: 85, image: { src: sampleImageSrc, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' }, detail: 'پژوهشگر تیم تجربهٔ کاربری.' },
 ]
 const rows = computed(() => dataSet.value === 'empty' ? [] : sampleRows)
 const sizeOptions = [{ value: 'compact', label: 'فشرده' }, { value: 'default', label: 'معمولی' }, { value: 'comfortable', label: 'آزاد' }]
 const dataSetOptions = [{ value: 'sample', label: 'دادهٔ نمونه' }, { value: 'empty', label: 'بدون داده' }]
 const directionOptions = [{ value: 'rtl', label: 'راست‌به‌چپ' }, { value: 'ltr', label: 'چپ‌به‌راست' }]
-const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoTable, type NoratoTableColumn, type NoratoTableRow } from '@norato/vue'\nconst selected = ref<Array<string | number>>(['sara'])\nconst columns: NoratoTableColumn[] = [\n  { key: 'projects', label: 'پروژه', type: 'number', sortable: true },\n  { key: 'status', label: 'وضعیت', type: 'status', sortable: true },\n  { key: 'name', label: 'نام', type: 'user', sortable: true },\n]\nconst rows: NoratoTableRow[] = ${dataSet.value === 'empty' ? '[]' : '[/* داده‌های جدول */]'}\n<\\/script>\n<template>\n  <NoratoTable id="team" label="اعضای تیم" :columns="columns" :rows="rows" row-key="id" v-model="selected" size="${size.value}" dir="${direction.value}" selectable${searchable.value ? ' searchable' : ''}${expandable.value ? ' expandable' : ''}${loading.value ? ' loading' : ''} :page-size="3" />\n</template>`)
+const snippet = computed(() => {
+  const optionalColumns = showAccessibleCells.value
+    ? `\n  { key: 'progress', label: 'پیشرفت پروژه (درصد)', type: 'progress' },\n  { key: 'image', label: 'تصویر پروژه', type: 'image' },`
+    : ''
+  const imageExample = showAccessibleCells.value && dataSet.value === 'sample'
+    ? `const sampleImage = ${JSON.stringify(sampleImageSrc)}\nconst rows: NoratoTableRow[] = [{ id: 'sara', name: { name: 'سارا محمدی', description: 'طراح محصول' }, status: 'فعال', projects: 12, progress: 72, image: { src: sampleImage, alt: 'منظرهٔ نمونه با خورشید زرد و تپه‌ها' } }]`
+    : `const rows: NoratoTableRow[] = ${dataSet.value === 'empty' ? '[]' : '[/* داده‌های جدول */]'}`
+  return `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoTable, type NoratoTableColumn, type NoratoTableRow } from '@norato/vue'\nconst selected = ref<Array<string | number>>(['sara'])\nconst columns: NoratoTableColumn[] = [\n  { key: 'projects', label: 'پروژه', type: 'number', sortable: true },\n  { key: 'status', label: 'وضعیت', type: 'status', sortable: true },\n  { key: 'name', label: 'نام', type: 'user', sortable: true },${optionalColumns}\n]\n${imageExample}\n<\/script>\n<template>\n  <NoratoTable id="team" label="اعضای تیم" :columns="columns" :rows="rows" row-key="id" v-model="selected" size="${size.value}" dir="${direction.value}" selectable${searchable.value ? ' searchable' : ''}${expandable.value ? ' expandable' : ''}${loading.value ? ' loading' : ''} :page-size="3" />\n</template>`
+})
 </script>
 
 <template>
@@ -43,6 +61,7 @@ const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'v
       <NoratoCheckbox id="table-searchable" v-model="searchable" label="جستجو" />
       <NoratoCheckbox id="table-expandable" v-model="expandable" label="جزئیات ردیف" />
       <NoratoCheckbox id="table-loading" v-model="loading" label="در حال بارگذاری" />
+      <NoratoCheckbox id="table-accessibility-cells" v-model="showAccessibleCells" label="سلول‌های تصویر و پیشرفت" />
     </div>
     <div class="table-playground__stage"><NoratoTable id="team-table" v-model="selected" label="اعضای تیم" :columns="columns" :rows="rows" row-key="id" :size="size" :dir="direction" :selectable="selectable" :searchable="searchable" :expandable="expandable" :loading="loading" :page-size="3" /></div>
     <div class="table-playground__code"><div class="table-playground__code-head"><strong>نمونهٔ Vue</strong><button class="copy-section-button" type="button" @click="emit('copy', 'table-example', snippet)">{{ props.copiedKey === 'table-example' ? 'کپی شد' : 'کپی کد' }}</button></div><pre dir="ltr"><code>{{ snippet }}</code></pre></div>

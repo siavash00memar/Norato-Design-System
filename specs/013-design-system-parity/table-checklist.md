@@ -18,13 +18,15 @@ Status: in progress. Last reviewed: 2026-11-09.
 - [x] Verify responsive behavior at 390px and 320px viewport widths; confirm no horizontal document overflow and review stacked row content.
 - [x] Keyboard-only review: search focus shows one yellow stroke; Tab reaches bulk clear, sort controls and row selection; Space sorts/selects; row detail opens from Space with a yellow ring; pagination boundaries move focus to the available opposite control. LTR and RTL page arrows point in the expected directions. The page indicator exposes `aria-live="polite"`; screen-reader speech remains unverified.
 - [x] Browser review: loading displays status and disables select-all/sort; empty source shows the no-data message even while a query remains; populated source with unmatched query shows no-results, and matching data returns. Selection persists through sort and page changes; previous/next are disabled at their bounds; Compact/Default/Comfortable row treatments render at the specified 48/56/64px tokens.
-- [ ] Review screen-reader announcements with an independent screen reader; inspect progress/image alt semantics where those cell types are used.
+- [x] Browser accessibility-tree review of opt-in image/progress rows: named `progressbar`, current values and informative image `alt` are exposed (details in `table-accessibility-cells-implement.md`).
+- [ ] Review spoken announcements with an independent screen reader; inspect the full keyboard/state matrix and exact target geometry before closing Table DoD.
 
 ## Progress and image semantics source review — 2026-11-15
 
 - [x] Audited the runtime renderers: `progress` exposes a labeled `progressbar` with bounded 0–100 value semantics; its visible percentage is retained. The image renderer forwards object `alt` text and uses empty alt for URL-string images.
 - [x] Clarified the public contract: pass `{ src, alt }` with meaningful alternative text for informative images; use a URL string only for decorative images. Progress column labels should clearly name the measure and unit.
-- [ ] Browser accessibility-tree verification with live progress and informative-image rows, plus independent screen-reader announcements, remain open. The default playground does not currently include these cell types; do not treat source inspection as runtime or spoken-output evidence.
+- [x] Browser accessibility-tree verification with live progress and informative-image rows is recorded in `table-accessibility-cells-implement.md`.
+- [ ] Independent screen-reader announcements remain open; browser tree evidence does not prove speech quality.
 
 ## Current evidence and limits
 
