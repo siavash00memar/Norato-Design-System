@@ -13,6 +13,7 @@
 - [x] The live local/reference comparison and seven-mode visual review are recorded in `docs/request-validation-checklist.md`.
 - [x] Latest inert preview-frame follow-up: desktop 628×300px at 1280×720; mobile 327×300px at 390×844 and 257×300px at 320×844 (reference 256.8×300px at 320px).
 - [x] RTL, 24px mobile inset and no horizontal overflow are verified. The mobile range panel uses one month while desktop range uses two.
+- [x] Date Input matched-width follow-up (2026-11-15): at 390×844 the reference field is 258×39.21px and Norato's visual capsule is 287×36px inside a 48px target; at 320×844 the reference is 215×32.68px and Norato's capsule is 217×36px inside a 48px target. Local document width has no horizontal overflow at either width; Norato retains the approved 36px field visual and 48px target.
 - [x] Norato yellow palette, dotted shared stage, 48px interaction targets and absence of stretched calendar artwork are recorded in the prior browser evidence.
 
 ## Behavior and accessibility evidence
@@ -53,4 +54,5 @@
 - [x] In the live Single/Medium playground, Invalid showed the error Stroke and message while keeping the selected Jalali value and generated Vue example synchronized.
 - [x] Error + Disabled exposed both the field and calendar action as disabled in the browser accessibility tree; the input returned to the neutral disabled appearance while the error message remained visible.
 - [x] Error + Disabled + Loading showed the spinner and loading announcement, kept both controls disabled, and retained the error message. The playground was restored to Single/Medium, enabled, not loading, not invalid, with 1405-08-01 selected.
-- [ ] This desktop state review does not close the mobile Date Input sizing comparison or independent screen-reader announcement/reading-order review.
+- [x] The mobile Date Input sizing comparison is recorded above and in `docs/request-validation-checklist.md`.
+- [ ] Independent screen-reader announcement and reading-order review remains open; browser AX and geometry evidence do not close this item.

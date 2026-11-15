@@ -2424,7 +2424,7 @@ ame` state inconsistent.
 - [x] Table search uses a 36px visible capsule centered in its 48px interaction target; browser focus shows the single yellow Stroke and keeps the search field accessible.
 - [ ] Table search mobile sizing and same-viewport reference comparison remain open.
 - [x] Date Picker value field now uses a 36px capsule within its 48px target. Local browser confirmed keyboard opening, Escape close/focus return, hover/focus yellow Stroke, invalid state, and muted disabled state. The calendar action retains its 48px target.
-- [ ] Date Picker field mobile sizing and same-viewport reference comparison remain open.
+- [x] Date Picker field mobile sizing and same-viewport reference comparison are recorded in the 2026-11-15 follow-up below.
 - [x] Select trigger and internal search now use 36px capsule surfaces inside their minimum 48px interaction targets. Desktop browser review confirms one yellow Stroke on the open trigger and focused search field, with no duplicate outer border.
 - [ ] Select capsule mobile sizing and same-viewport reference comparison remain open.
 - [x] Combobox: after selecting `پژوهش کاربر`, reopening no longer filters suggestions by the selected label; the two recent choices return and the committed label stays visible. Typing `پژوهش` shows its matching option and create action; selecting the existing option, closing with Escape and reopening all preserve the correct selected label. Multi mode shows the selected chip with an empty search field and no duplicated label.
@@ -3659,7 +3659,10 @@ ame` state inconsistent.
 ## Date Picker — مشاهدهٔ ورودی در نمای باریک (2026-11-15)
 
 - [x] صفحهٔ محلی در تصویر مرورگر ۴۸۴×۹۰۴ پیکسل بررسی شد؛ Date Input و دکمهٔ تقویم در قاب playground دیده شدند و بریدگی آشکاری نداشتند.
-- [ ] این اندازه تصویر، viewport دقیق CSS نیست و هم‌اندازهٔ مرجع ثبت نشد؛ سنجش دقیق ۳۲۰/۳۹۰px، مقایسهٔ هم‌viewport و بررسی مستقل صفحه‌خوان همچنان باز است.
+- [x] در viewport دقیق ۳۹۰×۸۴۴، نمونهٔ مرجع ۲۵۸×۳۹٫۲۱px بود؛ پوستهٔ محلی ۲۸۷×۳۶px در هدف ۴۸px قرار گرفت. عرض client/scroll سند در هر دو صفحه ۳۷۵/۳۷۵px بود.
+- [x] در viewport دقیق ۳۲۰×۸۴۴، مرجع ورودی ۲۱۵×۳۲٫۶۸px بود؛ پوستهٔ محلی ۲۱۷×۳۶px در هدف ۴۸px قرار گرفت. دکمهٔ تقویم محلی در هر دو عرض ۴۸×۴۸px بود؛ سند محلی ۳۰۵/۳۰۵px بود. سند مرجع ۳۰۵/۳۲۶px اسکرول افقی داشت، اما نمونهٔ تقویم در قاب ۲۵۷×۳۰۰px ماند.
+- [x] در هر دو عرض، جهت محلی RTL، Stroke پیش‌فرض پوسته `#e8e8e8` و شعاع کپسولی بود؛ عنوان، دکمه و فیلد از قاب بیرون نزدند یا به‌صورت عمودی کش نیامدند. اختلاف ارتفاع مرجع و محلی ثبت‌شده است؛ قرارداد Norato برای ورودی ۳۶px و هدف تعاملی ۴۸px حفظ می‌شود.
+- [ ] بررسی مستقل صفحه‌خوان و لمس واقعی دستگاه همچنان باز است؛ این مقایسهٔ هندسی به‌تنهایی DoD خانواده را نمی‌بندد.
 
 ## Select — اولویت Stroke در ترکیب Error و Disabled (2026-11-15)
 
