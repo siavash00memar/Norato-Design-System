@@ -37,4 +37,11 @@
 - [x] Keyboard focus returned to the value input after Escape with one yellow stroke and no visible dark/duplicate ring. ArrowDown moved hour focus 14→15; Space selected 15:30 and updated both field and generated Vue example.
 - [x] Error showed the semantic red capsule stroke. Error+Disabled changed the field to neutral disabled treatment and exposed both value and trigger as disabled. Loading exposed its status announcement while controls stayed disabled.
 - [x] Playground was restored to Single/Columns/Medium/5-minute/enabled/no-error/no-loading/optional with 14:30.
-- [ ] Exact computed geometry, direct pointer-hover appearance, matched 390/320px responsive widths, and independent screen-reader review remain open; family DoD stays open.
+- [ ] Direct pointer-hover appearance and independent screen-reader review remain open; family DoD stays open.
+
+## Time Picker field geometry and responsive width — 2026-11-15
+
+- [x] Live DOM computed styles at 390×844 and 320×720 confirm all four sizes keep a 36px capsule (`border-radius: 50px`, 1px `rgb(232, 232, 232)` resting stroke) inside an RTL field target. Small/Medium/Large targets are 48px; XLarge is 56px while the capsule remains 36px.
+- [x] Field widths at 390px are 287px for Small/Medium/Large and 279px for XLarge; at 320px they are 217px and 209px respectively. Document client/scroll widths match at both breakpoints: 375/375px and 305/305px. Value direction remains LTR.
+- [x] Playground was restored to Single/Columns/Medium/5-minute/enabled/no-error/no-loading/optional with 14:30, and temporary viewport overrides were cleared.
+- [ ] This closes exact DOM geometry and responsive width only. Direct pointer-hover isolation and independent screen-reader review remain open; Time Picker Final DoD stays open.
