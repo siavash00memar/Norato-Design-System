@@ -4217,3 +4217,10 @@ ame` state inconsistent.
 - [x] In the live playground, Single mode changed generated usage to `multiple=false`; adding one synthetic row showed a count of one and disabled the add-example action.
 - [x] Cleared the sample row, restored Multiple mode, and returned the browser to Accordion.
 - [ ] Native replacement/chooser behavior, OS drag/drop, complete combined keyboard/state paths, and independent screen-reader output remain open.
+
+## Breadcrumbs — disclosure popup clipping and keyboard access — 2026-11-16
+
+- [x] In the live narrow browser, the expanded intermediate-link popup is visible below the ellipsis instead of being clipped by the horizontally scrolling trail.
+- [x] Enter opened it; Tab reached the first hidden link; Escape closed it and restored focus to the disclosure button. The closed hidden list is absent from the accessibility tree.
+- [x] Browser returned to Accordion after the check.
+- [ ] Full visual-state coverage, matched narrow-viewport dimensions, and independent screen-reader speech remain open.

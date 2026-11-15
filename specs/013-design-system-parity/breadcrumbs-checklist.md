@@ -82,3 +82,11 @@
 
 - [x] Opened the local Breadcrumbs page and the user-provided visual reference in separate browser tabs. Both show the same Persian trail structure: home at the right, left-facing separators, and the current page at the left; the local dotted specimen frame is visible without obvious clipping at the current narrow view.
 - [ ] The two captures used different viewport sizes, so this review is structural/visual only and does not establish matched dimensions. Exact 390px/320px post-change bounds remain open in the narrow-path scrollbar checklist; full 42-part coverage and independent screen-reader review remain open.
+
+## Breadcrumb disclosure popup clipping correction — 2026-11-16
+
+- [x] Live narrow-browser review found that expanded intermediate links were present in the accessibility tree but visually clipped by the horizontal breadcrumb scroller.
+- [x] Moved the disclosure list to a fixed viewport layer positioned from the disclosure button, using the Norato spacing token for edge/gap and direction-aware RTL/LTR alignment. The opened menu now appears below the ellipsis and remains visible above adjacent page controls.
+- [x] Verified mouse activation exposes the hidden links, Enter opens the disclosure, Tab from the trigger reaches the first hidden link, and Escape closes it and returns focus to the trigger. The closed list is removed from the accessibility tree.
+- [x] Restored the browser to Accordion after review.
+- [ ] This correction does not close the full 42-part hover/focus visual matrix, matched 390px/320px measurements, or independent screen-reader review.

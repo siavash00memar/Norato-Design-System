@@ -1,9 +1,59 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 export type NoratoBreadcrumbItem = { label: string; home?: boolean } & ({ href: string; current?: false } | { href?: never; current: true })
 const props = withDefaults(defineProps<{ id: string; label?: string; items: NoratoBreadcrumbItem[]; style?: 'plain' | 'glass'; size?: 'small' | 'medium' | 'large'; separator?: 'chevron' | 'slash'; collapsed?: boolean; dir?: 'rtl' | 'ltr' }>(), { label: 'مسیر صفحه', style: 'plain', size: 'medium', separator: 'chevron', collapsed: true, dir: 'rtl' })
 const expanded = ref(false)
+const disclosure = ref<HTMLButtonElement>()
+const hiddenList = ref<HTMLOListElement>()
+const hiddenListPosition = ref({ left: '0px', top: '0px' })
+function positionHiddenList() {
+  const anchor = disclosure.value
+  const list = hiddenList.value
+  if (!anchor || !list) return
+  const gap = Number.parseFloat(getComputedStyle(anchor).getPropertyValue('--norato-space-2'))
+  const anchorRect = anchor.getBoundingClientRect()
+  const listRect = list.getBoundingClientRect()
+  const desiredLeft = props.dir === 'rtl' ? anchorRect.right - listRect.width : anchorRect.left
+  const left = Math.max(gap, Math.min(desiredLeft, window.innerWidth - listRect.width - gap))
+  const below = anchorRect.bottom + gap
+  const top = below + listRect.height <= window.innerHeight - gap ? below : Math.max(gap, anchorRect.top - listRect.height - gap)
+  hiddenListPosition.value = { left: `${left}px`, top: `${top}px` }
+}
+function closeDisclosure() { expanded.value = false }
+function onDocumentPointerDown(event: PointerEvent) {
+  const target = event.target
+  if (target instanceof Node && !disclosure.value?.contains(target) && !hiddenList.value?.contains(target)) closeDisclosure()
+}
+function onDisclosureKeydown(event: KeyboardEvent) {
+  if (event.key === 'Escape' && expanded.value) {
+    closeDisclosure()
+    disclosure.value?.focus()
+  }
+}
+watch(expanded, async open => {
+  if (open) {
+    await nextTick()
+    if (!expanded.value) return
+    if (!hiddenList.value) return
+    positionHiddenList()
+    window.addEventListener('resize', positionHiddenList)
+    window.addEventListener('scroll', positionHiddenList, true)
+    document.addEventListener('pointerdown', onDocumentPointerDown)
+    document.addEventListener('keydown', onDisclosureKeydown)
+  } else {
+    window.removeEventListener('resize', positionHiddenList)
+    window.removeEventListener('scroll', positionHiddenList, true)
+    document.removeEventListener('pointerdown', onDocumentPointerDown)
+    document.removeEventListener('keydown', onDisclosureKeydown)
+  }
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', positionHiddenList)
+  window.removeEventListener('scroll', positionHiddenList, true)
+  document.removeEventListener('pointerdown', onDocumentPointerDown)
+  document.removeEventListener('keydown', onDisclosureKeydown)
+})
 const currentIndex = computed(() => {
   const explicit = props.items.findIndex(item => item.current)
   return explicit >= 0 ? explicit : props.items.findIndex((item, index) => index === props.items.length - 1 && !item.href)
@@ -25,12 +75,10 @@ const isCurrent = (item: NoratoBreadcrumbItem, index: number) => index === curre
           <span class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
         <li class="norato-breadcrumbs__item norato-breadcrumbs__collapse">
-          <button class="norato-breadcrumbs__disclosure" type="button" :aria-expanded="expanded" :aria-controls="`${id}-hidden`" @click="expanded = !expanded">
+          <button ref="disclosure" class="norato-breadcrumbs__disclosure" type="button" :aria-expanded="expanded" :aria-controls="`${id}-hidden`" @click="expanded = !expanded">
             <span aria-hidden="true">…</span><span class="norato-breadcrumbs__sr-only">نمایش مسیرهای میانی</span>
           </button>
-          <ol v-show="expanded" :id="`${id}-hidden`" class="norato-breadcrumbs__hidden-list">
-            <li v-for="hidden in hiddenItems" :key="hidden.label"><a :href="hidden.href">{{ hidden.label }}</a></li>
-          </ol>
+          <ol v-show="expanded" ref="hiddenList" :style="hiddenListPosition" :id="`${id}-hidden`" class="norato-breadcrumbs__hidden-list"><li v-for="hidden in hiddenItems" :key="hidden.label"><a :href="hidden.href">{{ hidden.label }}</a></li></ol>
           <span class="norato-breadcrumbs__separator" aria-hidden="true"><template v-if="separator === 'slash'">/</template><svg v-else viewBox="0 0 16 16" focusable="false"><path d="m10 3-5 5 5 5" /></svg></span>
         </li>
         <li v-for="(item, index) in items.slice(-2)" :key="item.label" class="norato-breadcrumbs__item">
