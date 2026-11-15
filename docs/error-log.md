@@ -2191,3 +2191,12 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Removed the duplicate Chip branch. The catalog gate now checks the opening ten contract headings, shared detail-section anchor order, and unique named playground branches.
 - **Verification:** All 49 contracts passed the exact heading sequence check. Local browser AX confirms Button and Chip pages share Preview, Vue implementation, Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens; Chip's playground controls and generated example remain visible. Token, catalog, Vue type/build, and diff gates pass.
 - **Prevention:** Keep page-order and route-uniqueness checks in the existing catalog integrity gate so drift fails before delivery.
+
+## ERR-279 — Accordion specimen appeared too narrow at matched desktop width — 2026-11-16
+
+- **Observed:** At a same-size 1265×713 browser view, local and reference preview frames were close in width, but the local accordion group was visibly narrower.
+- **Cause:** `--norato-accordion-preview-inline-size` capped both inert and live preview groups at 320px.
+- **Correction:** Raised the semantic cap to 344px and documented the contract. Both specimen and playground continue using `min(100%, …)` so the width contracts in narrow frames.
+- **Verification:** Refreshed desktop screenshots show the local group width visually aligned with the reference; a narrow local screenshot remains inside its frame with no visible horizontal overflow or vertical stretching. Token/catalog/typecheck/build checks passed.
+- **Remaining:** This visual comparison is not an exact DOM measurement. Independent screen-reader review and the complete Accordion DoD remain open.
+- **Prevention:** Compare the intrinsic component geometry as well as the shared specimen frame at the same viewport; update the existing semantic token when the frame matches but the content scale does not.

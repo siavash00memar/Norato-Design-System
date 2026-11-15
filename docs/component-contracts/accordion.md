@@ -90,4 +90,4 @@ const items: NoratoAccordionItem[] = [
 - رنگ: `--norato-color-surface-default`، `--norato-color-glass-surface-strong`، `--norato-color-glass-line`، `--norato-color-border-default`، `--norato-color-text-primary`، `--norato-color-text-secondary`، `--norato-color-text-disabled`، `--norato-color-warning-container`، `--norato-color-brand-yellow`.
 - اندازه و فاصله: `--norato-control-target-min`، `--norato-space-1`، `--norato-space-2`، `--norato-space-3`، `--norato-space-4`، `--norato-radius-card`، `--norato-icon-sm`.
 - تایپوگرافی و motion: توکن‌های `NoratoAccordion` در جدول Sizes و `--norato-motion-duration-press`، `--norato-motion-ease-out`.
-- پیش‌نمایش: `--norato-accordion-preview-inline-size`؛ فقط اندازهٔ قاب نمونه را تعیین می‌کند، نه اندازهٔ adapter اجرایی.
+- پیش‌نمایش: `--norato-accordion-preview-inline-size` عرض بیشینهٔ ۳۴۴px را برای نمونهٔ دیداری و playground تعیین می‌کند؛ با `min(100%, …)` در قاب‌های باریک‌تر منقبض می‌شود و اندازهٔ adapter را تحمیل نمی‌کند.

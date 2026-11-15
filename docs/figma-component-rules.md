@@ -566,6 +566,7 @@
 
 - Open trigger uses Norato's warning-container fill, distinct from the white expanded content region.
 - Keep every sibling title visible when selection changes; the prior row's panel may close in single mode, but its trigger/title remains.
+- The inert specimen and live playground cap the centered accordion at 344px; use the semantic `--norato-accordion-preview-inline-size` token with `min(100%, …)` so the group contracts inside narrow frames without stretching.
 
 ## Carousel — RTL order and intrinsic media
 

@@ -4135,3 +4135,9 @@ ame` state inconsistent.
 
 - [x] Local and external reference screenshots both show the expected three-row RTL composition, first row expanded, titles on the right and chevrons on the left; no visible stretching or clipping in the captured samples.
 - [ ] Viewport sizes differed, so this is qualitative only; it does not add matched-viewport geometry evidence.
+
+## Accordion — matched desktop width correction — 2026-11-16
+
+- [x] In same-viewport 1265×713 screenshots, the local accordion was visibly narrower than the reference within near-equal preview frames. Raised the local semantic maximum-width token from 320px to 344px and rechecked the live desktop render; the group now appears aligned in width.
+- [x] Narrow local screenshot remains bounded with no visible horizontal overflow or stretching; CSS continues to cap width by available space.
+- [ ] Screenshot comparison only; no exact DOM geometry measurement is claimed. Accordion final DoD remains open.

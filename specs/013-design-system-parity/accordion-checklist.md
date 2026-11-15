@@ -51,3 +51,10 @@
 - [x] Fresh local and reference screenshots both show three RTL rows, the first row open, right-aligned Persian titles, left-side chevrons, and compact intrinsic row content. Norato uses its yellow open-state surface.
 - [x] No visible vertical stretching or clipping appeared in either captured sample.
 - [ ] The captures were at different viewport sizes (local narrow; reference desktop), so this pass provides qualitative structure evidence only and is not a new pixel/geometry parity measurement. Existing matched-viewport evidence remains the source for geometry.
+
+## Accordion — matched desktop width correction — 2026-11-16
+
+- [x] Before correction, same-viewport 1265×713 screenshots showed the local accordion visibly narrower than the reference inside similarly sized preview frames; the local maximum was constrained by the 320px token.
+- [x] Raised `--norato-accordion-preview-inline-size` to 344px. The centered local group now visually matches the reference width in the refreshed desktop capture; the existing `min(100%, …)` rule keeps it bounded and allows contraction.
+- [x] Refreshed narrow local screenshot shows the accordion within its frame with no visible horizontal overflow or vertical stretching.
+- [ ] This is a visual screenshot comparison, not a DOM bounding-box measurement. The independent screen-reader review and final Accordion DoD remain open.
