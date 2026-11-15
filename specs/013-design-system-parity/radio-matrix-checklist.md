@@ -34,3 +34,4 @@
 - [x] 2026-11-16 live mobile follow-up at 16px: Required+Error+empty kept `undefined` synchronized; Disabled blocked changes for all options; selecting Quarterly then ArrowDown selected Yearly and updated the Vue snippet; disabling selected Yearly preserved its value and rendered neutrally.
 - [x] Restored Monthly, 20px, optional, enabled, no-error after the interaction pass.
 - [ ] Full live cross-product and independent screen-reader validation remain open.
+- [ ] Fresh attempt to launch the installed Windows Narrator failed before UI interaction with `GetCursorPos failed: Access is denied`; this is a host interaction limitation, not evidence of Radio behavior. Independent screen-reader validation remains unverified.
