@@ -3011,6 +3011,14 @@ ame` state inconsistent.
 - [x] Escape closes and restores focus. Home + Enter returns to Horizontal; Address and the default code sample are restored.
 - [ ] Exhaustive keyboard/focus combinations and independent screen-reader review remain open in `stepper-checklist.md`.
 
+## Stepper — اندازه‌گیری عمودی RTL موبایل — 2026-11-15
+
+- [x] در viewport برابر ۳۲۰ پیکسل، client/scroll سند ۳۰۵/۳۰۵ و عرض preview برابر ۲۷۳ پیکسل است؛ لیست عمودی ۲۵۵×۲۰۸٫۷۵ پیکسل است و client/scroll آن برابر می‌ماند.
+- [x] در viewport برابر ۳۹۰ پیکسل، client/scroll سند ۳۷۵/۳۷۵ و عرض preview برابر ۳۴۳ پیکسل است؛ لیست عمودی ۳۲۵×۲۰۸٫۷۵ پیکسل است و client/scroll آن برابر می‌ماند.
+- [x] هر چهار نشانگر ۳۲×۳۲ پیکسل در ستون راست RTL باقی می‌مانند و متن/توضیح در ستون چپ است؛ اتصال‌ها روی محور نشانگرها هستند. سند و لیست overflow افقی ندارند.
+- [x] حالت playground به افقی، Medium، مرحلهٔ آدرس، بدون خطا و RTL بازگشت.
+- [ ] این بررسی جایگزین ماتریس کامل keyboard/focus و آزمون مستقل صفحه‌خوان Stepper نیست.
+
 # Tooltip preview width correction — 2026-11-10
 
 - [x] In a matched 1265×720 render, Tooltip was 631.98×300px versus a 636×300px reference stage. The correction is scoped to its specimen frame; the shared detail shell remains unchanged.

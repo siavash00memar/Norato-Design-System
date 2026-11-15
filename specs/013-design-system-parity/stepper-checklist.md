@@ -10,7 +10,7 @@
 ## Runtime, semantics and accessibility
 - [x] Controlled current step, derived states, error override and live announcement tested in the desktop browser.
 - [x] Fresh live follow-up: selecting Payment updates the ordered status list, current-step announcement and generated snippet; marking Payment as error adds the visible red marker/explanation and includes the message in the live status. Keyboard focus on the direction control shows the yellow focus ring; the playground was restored to Address/No error.
-- [x] RTL/LTR first-step ordering and vertical indicator alignment reviewed; vertical RTL/mobile viewport pass remains open.
+- [x] RTL/LTR first-step ordering and vertical indicator alignment reviewed. Exact vertical RTL measurements at 320px and 390px, including right-side indicator placement and overflow, are recorded in the 2026-11-15 follow-up below.
 - [x] Optional descriptions and three Step Indicator sizes are represented; Dots Small/Medium/Large scaling and circular ring geometry were reviewed in the live playground.
 - [x] Runtime handling for blank/duplicate ids, invalid current id and empty lists was exercised in the 2026-11-10 follow-up below.
 - [x] Stepper has no false buttons/links; one current step in the named ordered list and polite “step N of M” status observed in the browser accessibility tree.
@@ -51,3 +51,11 @@
 - [x] `packages/components/src/catalog.ts` and the family ledger both report `Implemented`; the strict family completion checkbox remains open because exhaustive keyboard/focus coverage and independent screen-reader review are unfinished.
 - [x] Stepper evidence commits `45d8764`, `0c4e92a` and `074665a` are ancestors of the verified `origin/master` revision `2c2e467d84c2d7ff850f8fe18055859ffad79315`.
 - [x] The token, catalog, Vue typecheck, production build and diff gates are recorded as passing in the family checklist and request-validation history.
+
+## Stepper vertical RTL mobile geometry — 2026-11-15
+
+- [x] At a 320px viewport, document client/scroll width is 305/305px; preview width is 273px; the Stepper/list is 255px wide with matching client/scroll width and 208.75px height.
+- [x] At a 390px viewport, document client/scroll width is 375/375px; preview width is 343px; the Stepper/list is 325px wide with matching client/scroll width and 208.75px height.
+- [x] In both renders, `dir="rtl"` places all four 32×32px indicators in the right grid column and labels/descriptions in the left column. The vertical connector remains centered on the indicators; the list and document have no horizontal overflow.
+- [x] Restored the playground to Horizontal, Medium, Address current, no error, RTL, and reset the viewport.
+- [ ] Full keyboard/focus cross-product and independent screen-reader review remain open; this closes only the vertical RTL/mobile geometry item.
