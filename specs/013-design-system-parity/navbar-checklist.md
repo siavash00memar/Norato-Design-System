@@ -13,7 +13,7 @@
 - [x] Public adapter and browser tree confirm RTL/navigation semantics, nested links, current-page semantics, disabled behavior and consumer slots.
 - [x] Keyboard review: Enter opens the Products submenu; Escape closes it and restores focus to the trigger. Screenshot review after the color refinement shows one yellow focus outline.
 - [ ] Measure desktop nav and action target dimensions; reduced-motion has a CSS rule.
-- [ ] App, Website and Centered align correctly; all three styles were measured as bounded, but Transparent readability still depends on host background and needs visual validation.
+- [x] App, Website and Centered align correctly; all three styles were measured as bounded, and Transparent text/link/action contrast was visually validated on the Navbar specimen's warm neutral host surface.
 - [x] At both 390×844 and 320×844, the drawer fits the viewport (at 320px: 288×844, aligned to the RTL edge); Escape closes it and returns focus to the menu trigger. All four mobile header variants fit without horizontal overflow.
 - [x] Button-style page structure confirmed in browser: inert preview, executable playground, synchronized copy control and nine contract sections.
 - [x] Desktop 1280×720 comparison/measurements completed against design reference. Same-viewport mobile comparison and full component family/state matrix remain open.
@@ -47,3 +47,9 @@
 - [x] In the local RTL Navbar playground, opened the mobile navigation dialog; the accessibility tree exposed its named dialog, close button, navigation list, links and action buttons.
 - [x] Expanded «محصولات»; its three child links and disabled item appeared in the nested list. Escape closed the dialog and restored focus to the mobile navigation trigger.
 - [ ] This narrow embedded-browser check does not replace independent screen-reader review, outside-dismiss testing, desktop geometry/current-link styling, or the complete responsive state matrix.
+
+## Transparent contrast live recheck — 2026-11-15
+
+- [x] At 1280×720, the live Website Navbar was switched from Bar to Transparent on the specimen's warm dotted host background. Brand, navigation links, active link, and primary action remained legible without adding a local opaque fill or changing the Norato yellow accent.
+- [x] The playground style was returned to Bar afterward; the generated Vue snippet reflected both selected styles during review.
+- [ ] Exact desktop link/action box measurements, the full responsive combination matrix, and independent screen-reader review remain open.
