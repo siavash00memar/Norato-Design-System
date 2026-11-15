@@ -4273,3 +4273,11 @@ ame` state inconsistent.
 - [x] Horizontal ArrowLeft/ArrowRight navigation followed RTL order, wrapped at the enabled boundary, skipped disabled «پیش‌نویس», and updated the active tabpanel. Vertical ArrowUp/ArrowDown navigation wrapped and also skipped the disabled tab.
 - [x] Playground was restored to Line/Medium/Horizontal with «همه» selected; local browser returned to Accordion.
 - [ ] The 320px matched comparison, mobile configuration/state cross-product, all hover/focus combinations, and independent screen-reader review remain open.
+
+## Range — narrow live keyboard and error/disabled recheck — 2026-11-15
+
+- [x] At the local 390×844 viewport, the specimen stayed inside its RTL frame without visible stretch; label/value share a row and yellow fill grows from the right-side minimum.
+- [x] Home/End moved the Single value to 0/100; Home then ArrowLeft changed it to 1. The accessible value and generated Vue example stayed synchronized.
+- [x] Range mode exposed two named sliders at 25/75 and generated a tuple model; End moved the upper thumb to 100. Error displayed its message, and Disabled exposed both thumbs as disabled.
+- [x] Restored the browser to Accordion after review.
+- [ ] Lower-thumb non-crossing at its boundary, pointer drag, direct error-description relation, matched 320px reference, full visual-state matrix, and independent screen-reader output remain unverified.

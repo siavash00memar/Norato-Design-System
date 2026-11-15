@@ -36,3 +36,12 @@
 - [x] Fresh same-viewport 1265×713 local/reference screenshot review confirms the label and current value share the top row while the thumb, RTL rail and yellow fill retain their geometry. A 375px-wide live Range view shows both ordered endpoints (`25–75`) fit in the same row; no visible clipping or horizontal overflow occurred.
 - [x] Returned the mobile playground to Single, value 60, Medium, enabled, no error. Browser AX exposes the slider and generated usage at the restored value.
 - [ ] Independent screen-reader review and the remaining strict state/visual matrix remain open; Range DoD is not closed.
+
+## Range — narrow live keyboard and error/disabled states — 2026-11-15
+
+- [x] At the local 390×844 browser viewport, the Range specimen remained within the RTL frame with no visible vertical stretching. The rendered visual shows the value and label on one row, the minimum at physical right, and Norato-yellow fill.
+- [x] In the live Single playground, Home set the value to 0, End set it to 100, and Home followed by ArrowLeft changed it to 1. The accessible current value and generated Vue `v-model` snippet stayed synchronized.
+- [x] Switching to Range rendered two separately named slider thumbs («حداقل انتخاب» 25 and «حداکثر انتخاب» 75); the generated code switched to a tuple model. The upper thumb reached 100 with End.
+- [x] Small size and Error toggles updated their playground state; the error message «مقدار خارج از محدودهٔ مجاز است.» appeared. With Disabled enabled, both range thumbs were exposed disabled in the accessibility tree.
+- [x] Browser returned to Accordion after review.
+- [ ] This pass does not prove lower-thumb non-crossing at the upper bound, pointer dragging, exact error `aria-describedby` relation, matched 320px reference comparison, full hover/pressed/focus matrix, or independent screen-reader speech. Range DoD remains open.
