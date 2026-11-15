@@ -3969,3 +3969,10 @@ ame` state inconsistent.
 - [x] Both pages report document/client widths of 1250/1250px; screenshots show the default dark Tooltip, dotted frame and centered icon without clipping.
 - [x] No source correction was needed; the existing `--norato-space-1` allowance and shared frame cap pass the matched-browser comparison.
 - [ ] Independent screen-reader review remains open under the Tooltip family DoD.
+
+## Tooltip keyboard focus and description recheck — 2026-11-15
+
+- [x] With forced display off and pointer outside, Shift+Tab from the labeled text field moved keyboard focus to the live trigger; `:focus-visible=true`, trigger state `instant-open`, and `aria-describedby` resolved to a `role=tooltip` description containing «کپی لینک».
+- [x] The visible live bubble reported `data-state=instant-open`, `data-side=top`, and RTL direction. The host ring computed to yellow `rgb(253, 193, 1)`, 2px solid, 4px offset, and no duplicate shadow.
+- [x] Escape closed the visible bubble, removed `aria-describedby`, set trigger state to closed, and retained keyboard focus and the visible ring.
+- [ ] This is browser DOM/accessibility-tree evidence, not independent screen-reader announcement or reading-order review; Tooltip DoD remains open.

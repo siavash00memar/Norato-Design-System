@@ -35,3 +35,10 @@
 - [x] At the 320px narrow viewport, the local stage shrinks to available width (about 273×300px) without document overflow; the component-specific rule does not alter other preview frames.
 - [x] Re-rendered reference and local pages confirm centered, intrinsic Tooltip trigger/bubble and RTL placement; the reference uses a dark bubble while local Norato retains its semantic palette.
 - [ ] Independent screen-reader review remains Final DoD.
+
+## Keyboard focus and Escape recheck — 2026-11-15
+
+- [x] With forced display off and pointer outside, Shift+Tab from the text field focused the live trigger. The trigger opened as `instant-open`; `aria-describedby` resolved to a `role=tooltip` description with the expected title.
+- [x] The visible bubble remained RTL at `data-side=top`. Focus ring was one 2px yellow outline with 4px offset and no box shadow.
+- [x] Escape closed the visible bubble and removed the description association while retaining trigger focus; no page navigation occurred.
+- [ ] Independent screen-reader announcement and reading-order review remain open; do not close family DoD on browser-tree evidence alone.
