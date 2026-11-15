@@ -202,3 +202,10 @@
 - [x] هر هفت پوستهٔ استاندارد ورودیِ قابل‌مشاهده ۴۸px هدف تعاملی و ۳۶px قاب دیداری pseudo-border دارند؛ Stroke برابر ۱px `#e8e8e8` است. OTP و textarea عمداً اندازهٔ مخصوص خود را دارند.
 - [x] عنوان نمونه Estedad 700 و placeholder برابر Vazir 300 با رنگ `#a1a1a1` و جهت RTL محاسبه شد.
 - [ ] این بازبینی موبایل یک viewport و حالت پایه را پوشش می‌دهد؛ ماتریس کامل حالت/اندازه، مقایسهٔ کامل دیداری و صفحه‌خوان مستقل همچنان باز است.
+
+## Matched viewport review and shared page-shell comparison — 2026-11-15
+
+- [x] The reference and local Input pages were captured at the same 1265×713 browser viewport. Both preview frames are approximately 628–630px wide and 298px tall; the local capsule remains bounded and visibly unstretched, with the approved RTL placeholder and email icon beside its title.
+- [x] Compared the local Button and Input pages against their matching reference pages at that viewport. The local preview begins about 50px above the reference on Input and about 70px above it on Button; the offset is therefore shared page-shell/header composition, not an Input-only sizing defect. The local Input starts about 21px below local Button because its longer summary wraps to an additional line.
+- [ ] Review the shared page-shell vertical composition across representative component families and decide a tokenized, Button-consistent adjustment before changing any individual specimen. This comparison is evidence of a layout difference; it does not by itself prove a component defect or close Input Final DoD.
+- [ ] Full adapter/state visual matrix, exact mobile geometry, and independent screen-reader review remain open.
