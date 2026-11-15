@@ -4074,4 +4074,4 @@ ame` state inconsistent.
 - [x] Live List switch changed on → off → on; AX values followed the control and the checked default was restored. Screenshot shows the off track neutral and its white knob inset.
 - [x] Selecting the profile row changed the exclusive selection and the visible status, then returned to the original language row. Toggling the disabled-help-link option removed the row from link semantics; turning it off restored the link.
 - [x] The screenshot shows the list rows contained without visible clipping or stretching. Existing RTL default and card-inset style are restored.
-- [ ] This current pass does not close mobile reference comparison, all three layout/state combinations, or independent screen-reader verification; List Final DoD remains open.
+- [ ] This current pass does not close matched 390/320px comparison across all layouts and states or independent screen-reader verification; List Final DoD remains open. The existing 414px matched specimen and mobile direction checks are documented in `specs/013-design-system-parity/list-checklist.md`.
