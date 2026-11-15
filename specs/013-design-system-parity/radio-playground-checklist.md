@@ -88,3 +88,12 @@
 - [x] At 20px, Error + Disabled exposed all three radios as disabled; selected Quarterly stayed checked with the neutral disabled appearance.
 - [x] Restored the live playground to Monthly, 20px, optional, enabled and no-error; the generated Vue example and live status match.
 - [ ] These focused live pairs do not enumerate every checked × size × hover/focus/error/disabled combination; independent screen-reader announcement and reading-order review also remain open.
+
+## Live required/error/disabled and value synchronization — 2026-11-15
+
+- [x] At 16px, Required + Error + empty exposed the linked error, required state, `undefined` model and matching generated Vue snippet. Adding Disabled marked all three radio controls disabled and retained the error semantics.
+- [x] At 16px, selecting Yearly while enabled and then re-enabling Disabled preserved the checked value; the rendered controls were neutral and disabled.
+- [x] At 20px, monthly, quarterly and yearly were each selected in turn; each selection updated exactly one radio, status and generated `v-model` value in sync.
+- [x] At 20px, Required + Error + Disabled kept the checked value and all three disabled options. The screenshot retained the RTL layout, labels/descriptions and neutral disabled circles beneath the required group label.
+- [x] Restored Monthly, 20px, optional, enabled, no-error and selected; live value, status and generated usage agree.
+- [ ] Full live state cross-product, mobile state-by-state visual review and independent screen-reader announcement/reading-order review remain open.
