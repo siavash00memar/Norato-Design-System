@@ -2137,3 +2137,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Applied the existing `.button.secondary` class; no local override or new token was added. Queue limit and click behavior are unchanged.
 - **Verification:** At the live 375px RTL page, screenshot showed the secondary pill. Five sample rows reached the configured limit and AX exposed the button as disabled; clearing restored zero rows and the enabled button. Tab reached the first row status action. Technical gates are recorded in the scoped update checklist.
 - **Prevention:** Review every playground action against the shared Button contract; plain buttons need an explicit semantic Norato style.
+
+## ERR-273 — File Upload playground state actions looked like plain text (2026-11-15)
+
+- **Observed:** Queue status actions and Tile/Avatar state/clear controls had no Norato style, leaving them visually inconsistent with the shared sample action.
+- **Cause:** Playground-only `<button>` elements had no design-system class.
+- **Correction:** Applied the shared `.button.secondary` class to these controls without changing handlers, state conditions, or component APIs.
+- **Verification:** At 320×720 and 390×844, Tile controls wrapped in RTL rows without visible clipping. Keyboard Tab/Space reached and activated Uploading with its accessible progress indicator; Complete changed a queued row to uploaded, and reset restored the empty queue. Tokens, catalog, 8 File Upload tests, Vue typecheck/build and diff check pass.
+- **Prevention:** Audit all visible playground mutation and reset actions, not only the primary example action, against the shared Button treatment.

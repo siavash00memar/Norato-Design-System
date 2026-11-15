@@ -3596,6 +3596,14 @@ ame` state inconsistent.
 - [x] Added five sample items to the configured limit; the accessibility tree exposed the action as disabled. Clearing restored zero items and the enabled action.
 - [x] Tab from the sample action reached the first row status action; playground was restored. Full family DoD remains open for OS drag/drop, independent screen-reader review, and combined state paths.
 
+## File Upload playground action consistency — 2026-11-15
+
+- [x] In the narrow live RTL render, queue status actions now appear as separate secondary capsules and remain visually associated with their filename.
+- [x] Activating Complete changes the queued row to uploaded; reset removes the sample and restores zero queued files.
+- [x] At 320×720 and 390×844, the Tile actions wrap into RTL rows within the viewport with no visible horizontal clipping.
+- [x] Tab/Space activate Tile state actions and expose the progress indicator; Complete updates a queued row, and reset clears it.
+- [x] Tokens, catalog (49), File Upload contract tests (8/8), Vue typecheck/build, and diff checks pass; strict family DoD remains open.
+
 ## Carousel image proportions — 2026-11-15
 - [x] On the live Carousel page at 499×932, all five slide images share a 260×150 intrinsic source and render at 340.75×191.67 in the 16:9 frame with `object-fit: cover`; the frame does not distort their ratio.
 - [x] Screenshot review confirms the current RTL track keeps the image cards bounded and the active indicator visible.

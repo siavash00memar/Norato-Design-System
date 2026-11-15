@@ -655,5 +655,5 @@ File Upload — وقتی انتخاب فایل الزامی است، واژهٔ 
 
 ## File Upload — playground sample action (2026-11-15)
 
-- The action that adds an example queue item uses the shared secondary Button class, preserving the common pill appearance and minimum 48px target.
-- Keep the existing Persian label, RTL flow, queue limit, and disabled semantics; do not add a page-local button treatment.
+- Playground actions that add examples, change queued statuses, select a Tile state, or clear sample files use the shared secondary Button class, preserving the common pill appearance and minimum 48px target.
+- Keep the existing Persian labels, RTL flow, queue limits, conditional visibility, and disabled semantics; do not add a page-local button treatment.

@@ -128,6 +128,15 @@
 - [x] Five sample rows reached the configured limit and the action became disabled in the browser accessibility tree; clearing restored the empty queue and enabled action.
 - [ ] Native OS drag/drop, independent screen-reader review, and full combined keyboard/state paths remain open; File Upload DoD stays open.
 
+## File Upload playground action consistency — 2026-11-15
+
+- [x] Styled the queue status, Tile state, and conditional clear controls with the shared secondary Button class.
+- [x] Browser screenshot at the narrow current viewport shows queued status actions as distinct capsules; activating Complete changed the row status, and reset returned to an empty queue.
+- [x] At 320×720 and 390×844, Tile's four actions wrap in RTL rows within the page without visible horizontal clipping.
+- [x] Tab and Space operate the Tile state controls; Uploading exposes its named progress indicator. Complete updates a queue row, and reset restores defaults.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49), `pnpm test:file-upload` (8/8), Vue typecheck/build, and `git diff --check` all pass.
+- [ ] Native OS drag/drop, independent screen-reader review, and the full combined state matrix remain open; File Upload DoD stays open.
+
 ## Matched responsive geometry before correction — 2026-11-15
 
 - [x] Fresh local and reference pages were measured at the same 390px and 320px viewport widths. At 390px both document client widths are 375px and neither document overflows: Norato frame 328×300px / inner Dropzone 310×152px; reference frame 327×300px / inner Dropzone 320.76×153.63px.
