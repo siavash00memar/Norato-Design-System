@@ -99,3 +99,10 @@
 - [x] In the live desktop Sidebar playground, keyboard Tab from the Overview link advances through Projects, its Active and Archive children, Reports, then the Glass style control and the next form control in visual/semantic order.
 - [x] Each visible sidebar row measures 230×48px. The Overview link is a native anchor with `aria-current="page"`; child and sibling items remain anchors.
 - [ ] This desktop pass does not cover collapsed/mobile order, the full Glass/Bar × expanded/collapsed state screenshots, or independent screen-reader review; Sidebar DoD remains open.
+
+## Sidebar — mobile outside dismissal and focus restore — 2026-11-16
+
+- [x] In the local narrow browser at `#component-sidebar`, the mobile drawer opened as a named «نوراتو» dialog with its close button focused.
+- [x] Clicking the visible backdrop outside the drawer closed the dialog; the accessibility tree returned to the page and focus returned to the mobile trigger «باز کردن ناوبری».
+- [x] The drawer screenshot showed the panel and dimmed backdrop; this confirms the close interaction at the observed narrow viewport only.
+- [ ] This does not close the matched-reference comparison, full Glass/Bar × expanded/collapsed screenshot matrix, collapsed/mobile link order, or independent screen-reader review. Sidebar DoD remains open.

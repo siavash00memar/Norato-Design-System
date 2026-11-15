@@ -4224,3 +4224,10 @@ ame` state inconsistent.
 - [x] Enter opened it; Tab reached the first hidden link; Escape closed it and restored focus to the disclosure button. The closed hidden list is absent from the accessibility tree.
 - [x] Browser returned to Accordion after the check.
 - [ ] Full visual-state coverage, matched narrow-viewport dimensions, and independent screen-reader speech remain open.
+
+## Sidebar — mobile outside dismissal and focus restore — 2026-11-16
+
+- [x] At the local `#component-sidebar` page, opening the mobile drawer exposed the named «نوراتو» dialog and focused its close button.
+- [x] Clicking the visible backdrop outside the drawer closed it and restored focus to «باز کردن ناوبری»; the page remained on the same component route.
+- [x] Screenshot review showed the right-side dimmed page area outside the drawer, where the dismissal click was made.
+- [ ] This narrow-viewport interaction check does not complete the matched reference comparison, full sidebar visual/state matrix, collapsed/mobile link order, or independent screen-reader review.
