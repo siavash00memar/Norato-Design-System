@@ -221,3 +221,10 @@
 - [x] At the same 1265×713 browser viewport, fresh screenshots show the same Norato page-section order for Input and Button. The Input preview is lower because its longer summary wraps; both specimens use the same bounded 300px stage and neither shows vertical stretching.
 - [x] The Input reference page and local page were also captured at this viewport. The preview frame proportions remain close; the shared local page header places both Input and Button previews above the corresponding reference preview, so no Input-specific offset was introduced.
 - [ ] This comparison is screenshot-level, not new DOM measurement. The shared page-shell vertical composition across further families and Input mobile reference geometry remain open.
+
+## Matched mobile Input specimen review — 2026-11-15
+
+- [x] Local and reference screenshots were captured at the same 375×844 viewport after the async specimen finished loading. Both show the Input sample inside a bounded dotted card with a capsule field; no vertical stretching or clipping of the field is visible.
+- [x] Local title/icon placement is adjacent and RTL; the placeholder is Persian and right-aligned. Local intentionally omits the sample address and helper text. Field and frame proportions are visually close at this viewport.
+- [x] The local preview begins higher because the page shell and introductory content differ; the frame itself is the same compact 300px specimen. No Input-only vertical offset was added.
+- [ ] This is a screenshot comparison, not exact mobile DOM measurement. Mobile state-by-state comparison and independent screen-reader review remain open.
