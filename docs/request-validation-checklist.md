@@ -4252,3 +4252,10 @@ ame` state inconsistent.
 - [x] Clicking the dimmed backdrop outside the drawer closed it and restored focus to the mobile navigation trigger; the URL stayed at `#component-navbar`.
 - [x] The Website / Bar / Default / Bar / Pill / Medium configuration, submenu enabled, and Disabled off were preserved. Browser returned to Accordion afterward.
 - [ ] Matched outside-dismiss visuals, full responsive states, desktop geometry/current link, and independent screen-reader output remain open.
+
+## Select — fresh narrow visual and custom-menu recheck — 2026-11-16
+
+- [x] Matched narrow screenshots show reference/local Select fields with RTL label placement, left chevrons, and compact capsule geometry; Norato keeps its own yellow/neutral palette and dotted specimen frame.
+- [x] The local open control is a custom grouped listbox with search, selected and disabled options, not a browser-native select menu. Its popup stayed above the fixed mobile navigation.
+- [x] Escape closed the listbox and restored focus to the trigger; the selected value and generated Vue sample remained Tehran. Browser returned to Accordion.
+- [ ] Exact 390px/320px post-change dimensions, full state screenshot matrix, and independent screen-reader review remain open.

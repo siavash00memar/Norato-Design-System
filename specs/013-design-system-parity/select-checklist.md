@@ -88,3 +88,10 @@
 - [x] The live trigger was exposed as disabled; clicking it left the menu closed and did not change the selected value.
 - [x] The browser render showed a muted neutral disabled field and retained the explanatory text; no blue or yellow active stroke appeared on the disabled field.
 - [ ] This is one live combination only. Full visual state captures and independent screen-reader review remain open; Select DoD is not closed.
+
+## Select — fresh narrow visual and custom-menu recheck — 2026-11-16
+
+- [x] At the same narrow embedded-browser size, fresh reference and local screenshots show the field label on the right, left-side chevron, and compact capsule field. Norato retains its own yellow/neutral palette and the dotted specimen frame.
+- [x] Opening the live local trigger exposed a custom Reka listbox and search field, grouped RTL options, the selected Tehran row, and a disabled option; no native browser select menu appeared.
+- [x] The popup remained inside the narrow viewport above the fixed bottom navigation. Escape closed it and restored focus to the Tehran trigger; value and generated sample stayed at Tehran.
+- [ ] This recheck does not close the full state-by-state screenshot matrix, exact 390px/320px post-change measurement, or independent screen-reader review; Select DoD remains open.
