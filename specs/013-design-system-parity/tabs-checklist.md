@@ -32,3 +32,11 @@
 - [x] Playground selection was restored to Line/Medium/Horizontal, enabled, همه. Screenshot review showed RTL ordering and no stretching in the live row.
 - [x] On the same default Line/Medium/Horizontal configuration, each enabled trigger was hovered without activation by moving the pointer from an empty area; all three remained unselected and computed the pale-yellow surface `rgb(255, 248, 224)` with no shadow. The disabled پیش‌نویس trigger received the pointer but kept a transparent surface and no shadow. Selection was restored to همه.
 - [ ] The full style × size × orientation × trigger hover/focus cross-product and independent screen-reader review remain open. This pass verifies each trigger only in the default configuration; Tabs DoD remains open.
+
+## Tabs — narrow RTL keyboard and visual spot check — 2026-11-15
+
+- [x] At the local narrow viewport (390×844), the horizontal tablist kept RTL order and stayed inside the specimen; the matched reference/local screenshots showed the same tab sequence and bounded composition, with Norato’s yellow active underline.
+- [x] In horizontal RTL mode, ArrowLeft from «همه» selected «فعال», then «بایگانی», then wrapped to «همه» while skipping disabled «پیش‌نویس». ArrowRight from «همه» selected «بایگانی»; selected state and panel content followed keyboard movement.
+- [x] In vertical mode, the tablist stayed at the RTL inline end without visible stretch; ArrowDown from «بایگانی» wrapped to «همه» and ArrowUp returned to «بایگانی», skipping the disabled tab.
+- [x] Restored Line/Medium/Horizontal and selected «همه»; browser returned to Accordion after review.
+- [ ] This is a targeted narrow keyboard/visual spot check. Exact 320px comparison, full per-trigger hover/focus cross-product, exhaustive state matrix at mobile size, and independent screen-reader review remain open; Tabs DoD remains open.

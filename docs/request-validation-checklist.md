@@ -4266,3 +4266,10 @@ ame` state inconsistent.
 - [x] The mobile screenshot showed the compact progress line bounded inside the content area, without visible clipping or vertical stretch.
 - [x] Restored Compact / Medium / Address / RTL / no error. Browser returned to Accordion.
 - [ ] Full keyboard/focus combinations, matched screenshot archive, and independent screen-reader output remain open.
+
+## Tabs — narrow RTL keyboard and matched visual spot check — 2026-11-15
+
+- [x] At the local 390×844 mobile viewport, matched reference/local screenshots showed the same RTL tab order and bounded row; the active local indicator uses Norato yellow. No visible tab stretching was found.
+- [x] Horizontal ArrowLeft/ArrowRight navigation followed RTL order, wrapped at the enabled boundary, skipped disabled «پیش‌نویس», and updated the active tabpanel. Vertical ArrowUp/ArrowDown navigation wrapped and also skipped the disabled tab.
+- [x] Playground was restored to Line/Medium/Horizontal with «همه» selected; local browser returned to Accordion.
+- [ ] The 320px matched comparison, mobile configuration/state cross-product, all hover/focus combinations, and independent screen-reader review remain open.
