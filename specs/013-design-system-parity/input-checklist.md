@@ -215,3 +215,9 @@
 - [x] Fresh local browser screenshot at 375×844 shows the Button-style specimen card, Default marker, adjacent email icon/title, and a single RTL pill field. No obvious vertical stretching or clipped field is visible in the specimen.
 - [x] No Input settings were changed during this visual spot check; the executable playground remains at its default values and states.
 - [ ] This screenshot does not compare the reference page or measure exact mobile geometry; full state-by-state visual review and independent screen-reader review remain open.
+
+## Matched desktop page structure — 2026-11-15
+
+- [x] At the same 1265×713 browser viewport, fresh screenshots show the same Norato page-section order for Input and Button. The Input preview is lower because its longer summary wraps; both specimens use the same bounded 300px stage and neither shows vertical stretching.
+- [x] The Input reference page and local page were also captured at this viewport. The preview frame proportions remain close; the shared local page header places both Input and Button previews above the corresponding reference preview, so no Input-specific offset was introduced.
+- [ ] This comparison is screenshot-level, not new DOM measurement. The shared page-shell vertical composition across further families and Input mobile reference geometry remain open.
