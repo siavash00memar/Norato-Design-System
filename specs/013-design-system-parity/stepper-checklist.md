@@ -59,3 +59,11 @@
 - [x] In both renders, `dir="rtl"` places all four 32×32px indicators in the right grid column and labels/descriptions in the left column. The vertical connector remains centered on the indicators; the list and document have no horizontal overflow.
 - [x] Restored the playground to Horizontal, Medium, Address current, no error, RTL, and reset the viewport.
 - [ ] Full keyboard/focus cross-product and independent screen-reader review remain open; this closes only the vertical RTL/mobile geometry item.
+
+## Stepper — compact first/last boundary recheck — 2026-11-16
+
+- [x] In the RTL Compact playground, setting the current step to the first item announced «مرحلهٔ ۱ از ۴», marked Cart current in the semantic ordered list, synchronized the generated example, and disabled Previous.
+- [x] Setting the current step to the last item announced «مرحلهٔ ۴ از ۴», marked Confirm current with prior steps completed, synchronized the example, and disabled Next.
+- [x] A screenshot of the last-step compact state showed the horizontal progress line within the mobile content width without visible clipping or vertical stretch.
+- [x] Restored the default Compact/Medium/RTL/no-error configuration with Address current; browser returned to Accordion.
+- [ ] This boundary check does not close the full keyboard/focus combination matrix, matched state screenshot archive, or independent screen-reader review.

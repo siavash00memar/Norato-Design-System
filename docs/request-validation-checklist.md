@@ -4259,3 +4259,10 @@ ame` state inconsistent.
 - [x] The local open control is a custom grouped listbox with search, selected and disabled options, not a browser-native select menu. Its popup stayed above the fixed mobile navigation.
 - [x] Escape closed the listbox and restored focus to the trigger; the selected value and generated Vue sample remained Tehran. Browser returned to Accordion.
 - [ ] Exact 390px/320px post-change dimensions, full state screenshot matrix, and independent screen-reader review remain open.
+
+## Stepper — compact first/last boundary recheck — 2026-11-16
+
+- [x] In RTL Compact mode, first step reported 1 of 4 and disabled Previous; last step reported 4 of 4 and disabled Next. Semantic current/completed states and generated Vue code synchronized.
+- [x] The mobile screenshot showed the compact progress line bounded inside the content area, without visible clipping or vertical stretch.
+- [x] Restored Compact / Medium / Address / RTL / no error. Browser returned to Accordion.
+- [ ] Full keyboard/focus combinations, matched screenshot archive, and independent screen-reader output remain open.
