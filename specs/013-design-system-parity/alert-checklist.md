@@ -4,6 +4,7 @@
 - [x] Public API, source, export, catalog, usage and contract agree.
 - [x] Page has Button's section order; preview is inert and playground is interactive.
 - [x] Legacy Alert selectors audited and removed from generic specimen rules.
+- [x] Inert preview shows the optional close glyph at inline-start; same-viewport browser comparison measured the close target at 48×48px and confirmed the wrapper retains `aria-hidden="true"` and the `inert` attribute.
 
 ## Visual
 - [x] Same-viewport design reference/Norato comparison at 499×932: design reference frame/alert 436×300 / 410×74px; Norato frame/alert 452×288 / 420×69px. Inline layout, hierarchy and icon placement compared; page columns differ slightly.

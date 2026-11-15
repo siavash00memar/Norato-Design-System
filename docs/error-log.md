@@ -2096,3 +2096,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Investigation:** Adding explicit `role=button` did not change the bridge output; the redundant role was reverted. DOM reports native buttons and the correct true/false pressed state through implicit semantics.
 - **Disposition:** No component/API change is justified by this bridge-only discrepancy. Independent screen-reader output is still needed to determine its user impact.
 - **Prevention:** Verify DOM semantics and browser accessibility output separately; do not treat bridge serialization as screen-reader speech evidence.
+
+## ERR-268 — Alert inert specimen omitted the close affordance (2026-11-15)
+
+- **Observed:** The matched reference specimen showed a close glyph at inline-start, while the Norato specimen omitted it.
+- **Cause:** The static specimen used the Alert's persistent default, even though its existing component supports an optional close affordance.
+- **Correction:** Enable `dismissible` only on the Alert inside the existing `aria-hidden` and `inert` specimen wrapper; leave the public adapter and live playground behavior unchanged.
+- **Verification:** Fresh local/reference screenshots at 1280×720 show the same close affordance at inline-start. Local frame remains 631.984×300px, Alert measures 420×68.69px, and the close target is 48×48px. DOM confirms the specimen wrapper remains `aria-hidden="true"` with the `inert` attribute.
+- **Prevention:** Compare the whole inert specimen anatomy against the reference, including optional visible controls, while keeping the specimen itself inert.

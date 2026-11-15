@@ -9,3 +9,4 @@
 - [x] Implement adapter, usage, specimen/playground and Button-style docs.
 - [x] Browser review and current DoD evidence recorded; responsive, full visual-matrix, screen-reader and uncontrolled-dismiss checks remain open.
 - [x] Run gates and record residuals; GitHub checkpoint follows this entry.
+- [x] Scoped specimen correction: show the close affordance present in the design reference without enabling interaction in the inert preview; verify same-viewport rendering.

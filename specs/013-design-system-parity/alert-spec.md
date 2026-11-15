@@ -16,6 +16,7 @@ Toast timing/queue behavior, automatic dismissal, and product-specific navigatio
 
 ## Acceptance
 - Composition follows design reference's alert anatomy and visual density, but all colors, radii, typography and spacing resolve to semantic Norato tokens.
+- The inert default specimen visibly includes the optional close affordance shown by the reference; the containing specimen remains `aria-hidden` and inert, so the visual affordance cannot dismiss the example.
 - No stretched icons or rows; responsive layout must wrap actions and description without horizontal overflow.
 - Dismiss button is at least 48×48px and named; severity is conveyed by text and icon as well as color.
 - Keyboard, screen-reader role, RTL placement, all 20 variants, 390px and 320px widths, and all required repo gates are checked before DoD closure.
