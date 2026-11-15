@@ -4118,3 +4118,9 @@ ame` state inconsistent.
 - [x] Typing «پژوهش» exposed the existing «پژوهش کاربر» match and the separate create action. Enter on the visibly highlighted match committed `research` and synchronized the field, status and generated Vue sample.
 - [x] ArrowDown + Enter committed the create action as the exact query `پژوهش`; this differed from Enter on the highlighted existing match. The route was reloaded and confirmed back at its original `design` / Large / Outside defaults.
 - [ ] This focused behavior pass does not cover a matched reference viewport, full-state screenshot archive, throttled cold-load fallback or independent screen-reader output.
+
+## Date Picker — live mobile range recheck — 2026-11-16
+
+- [x] The actual local browser confirmed Range mode updates both the Persian field and generated Vue example to 1–7 Aban 1405.
+- [x] Selecting 9 then 14 Aban closed the calendar and synchronized both outputs to 1405-08-09 through 1405-08-14; Reset returned to 1–7 Aban. Screenshot reviewed the resulting RTL playground and snippet.
+- [ ] This browser pass does not prove independent screen-reader speech or close the full Date Picker DoD.

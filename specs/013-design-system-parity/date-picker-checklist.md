@@ -64,3 +64,10 @@
 - [x] The open one-month calendar remained visually inside the narrow viewport, preserved RTL weekday order and showed distinct yellow endpoints with a pale range band. No obvious vertical stretch or clipping was visible in this spot-check; this is visual evidence, not a DOM geometry measurement.
 - [x] Reset the value and restored Single/Medium/enabled/no-error with 1 Aban 1405; the playground remained at its initial state after review.
 - [ ] This interaction spot-check does not replace the complete mode/state matrix or independent screen-reader review; Date Picker DoD remains open.
+
+## Date Picker — live mobile range recheck — 2026-11-16
+
+- [x] In the live local Date Picker playground, switched from Single to Range. The controlled Persian field and generated Vue example both changed to the seeded `1405-08-01`–`1405-08-07` range.
+- [x] Opened the calendar, selected 9 Aban then 14 Aban. The calendar closed after the second endpoint; field and generated sample both reported `start: 1405-08-09` and `end: 1405-08-14`.
+- [x] Reset restored the seeded 1–7 Aban range. The screenshot shows the range field, calendar action, playground controls and matching generated code in the RTL layout.
+- [ ] This confirms one additional live range path only. Independent screen-reader announcements/reading order and broader mode/state matrix remain open; Date Picker DoD is not complete.
