@@ -17,4 +17,11 @@
 
 - [x] At 390×844, the live Medium/3-item Contrast state retained 48px item targets, RTL order, Norato yellow selection, and a 30px selected pseudo-surface inset 8px from its top edge. The group (about 165px wide) stayed inside the 343px preview frame; document client/scroll widths were both 375px.
 - [x] Restored the playground to Glass/Medium/3 items, Daily selected, enabled group and items.
-- [ ] This representative geometry check does not close the full live style × size × item-count runtime matrix, mobile state comparison, or independent screen-reader review.
+- [x] Follow-up below expands the live base-state geometry check to every style × size × item-count combination at 390×844 and 320×720; selected/disabled/focus mobile-state comparison and independent screen-reader review remain open.
+
+## Full mobile base-state geometry matrix — 2026-11-15
+
+- [x] At both 390×844 (document 375px, frame 343px) and 320×720 (document 305px, frame 273px), manually selected all 2 styles × 4 sizes × 3 option counts in the live playground: 48 measured combinations total.
+- [x] Every item remained 48px high for Small/Medium/Large and 56px for XLarge; selected surface color matched Glass white or Norato yellow as appropriate; labels remained RTL; each group fit its frame and document client/scroll widths matched.
+- [x] Four-item XLarge at 320×720 fit the 273px frame exactly with no horizontal page overflow. The playground was restored to Glass/Medium/three options/Daily/enabled.
+- [ ] This covers base selected geometry only. Mobile selected-disabled/focus/hover state comparison against the reference, saved per-cell screenshots, and independent screen-reader review remain open.
