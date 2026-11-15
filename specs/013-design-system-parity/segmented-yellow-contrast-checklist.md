@@ -12,3 +12,9 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` pass. Build completed with a 1,024.79KB JavaScript bundle; no separate warning was printed in this run.
 - [x] Component contract, Figma rule, error log and request-validation record agree with the implementation.
 - [x] 2026-11-10 Baseline visual audit: at a narrow mobile viewport, the local page and reference both show a bounded RTL segmented control, a distinct selected segment and no obvious stretch or clipping. Existing 390/320px measures and ≥48px targets are linked in the family evidence. Independent screen-reader review and the full live runtime matrix remain open for Final DoD.
+
+## Live mobile geometry spot-check — 2026-11-15
+
+- [x] At 390×844, the live Medium/3-item Contrast state retained 48px item targets, RTL order, Norato yellow selection, and a 30px selected pseudo-surface inset 8px from its top edge. The group (about 165px wide) stayed inside the 343px preview frame; document client/scroll widths were both 375px.
+- [x] Restored the playground to Glass/Medium/3 items, Daily selected, enabled group and items.
+- [ ] This representative geometry check does not close the full live style × size × item-count runtime matrix, mobile state comparison, or independent screen-reader review.
