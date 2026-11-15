@@ -56,3 +56,11 @@
 - [x] Error + Disabled + Loading showed the spinner and loading announcement, kept both controls disabled, and retained the error message. The playground was restored to Single/Medium, enabled, not loading, not invalid, with 1405-08-01 selected.
 - [x] The mobile Date Input sizing comparison is recorded above and in `docs/request-validation-checklist.md`.
 - [ ] Independent screen-reader announcement and reading-order review remains open; browser AX and geometry evidence do not close this item.
+
+## Live range interaction in mobile viewport — 2026-11-15
+
+- [x] In the 375×844 mobile browser viewport, changed the playground from Single to Range; the controlled Persian field and generated Vue example both updated to the seeded 1–7 Aban 1405 range.
+- [x] Opened the range calendar and selected 9 Aban followed by 14 Aban. The calendar completed selection, the popup closed, and both the field and generated Vue example reported `start: 1405-08-09` and `end: 1405-08-14`.
+- [x] The open one-month calendar remained visually inside the narrow viewport, preserved RTL weekday order and showed distinct yellow endpoints with a pale range band. No obvious vertical stretch or clipping was visible in this spot-check; this is visual evidence, not a DOM geometry measurement.
+- [x] Reset the value and restored Single/Medium/enabled/no-error with 1 Aban 1405; the playground remained at its initial state after review.
+- [ ] This interaction spot-check does not replace the complete mode/state matrix or independent screen-reader review; Date Picker DoD remains open.
