@@ -2225,3 +2225,12 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Verification:** Live browser checks cover both thumbs' Home/End, ordered tuple/example synchronization, retained focus, the `[99,100]` one-step boundary, and ArrowLeft on the upper thumb after boundary navigation. Token, catalog, TypeScript, build, and diff gates are run for this correction.
 - **Remaining:** Independent screen-reader review and the rest of Range's visual/state matrix remain open; this correction does not close the Range family DoD.
 - **Prevention:** For multi-value primitives, verify keyboard keys against each separately focused thumb; a passing single-slider keyboard check does not prove per-thumb behavior.
+
+## ERR-283 — Component specimen starts earlier than the visual reference
+
+- **Observed:** Fresh same-viewport desktop screenshots at 1265×713 show the local Button specimen beginning roughly 70px above the matching reference specimen. The local heading aligns closely with the reference heading; the vertical difference accumulates before the specimen.
+- **Cause:** The reference header includes category context, variant-count chips, and a longer component introduction. The current shared Norato header renders the title, readiness status, and one concise implementation note. This points to missing shared header information, not a component-specific specimen height or offset.
+- **Correction:** No specimen-local spacing was added. Keep the shared page-shell analysis open and resolve the metadata contract at the catalog/header level before adjusting individual component pages.
+- **Verification:** The matched screenshots show a 1265×713 viewport; visual estimate places the local specimen top near y=249 and the reference near y=321. Source inspection confirms `ComponentRecord` has tags/status/note but no variant-count metadata. The estimate is screenshot-level, not DOM measurement.
+- **Remaining:** Decide and implement a trustworthy catalog-driven header summary/count contract, then compare representative component pages at the same viewport. Input and Button DoDs remain open.
+- **Prevention:** Compare page-header content and specimen placement together; do not compensate for missing shared metadata with per-component specimen offsets.

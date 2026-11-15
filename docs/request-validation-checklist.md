@@ -4308,3 +4308,9 @@ ame` state inconsistent.
 - [x] In the local browser, loading state displays its Persian status, removes sample data rows, disables select-all and sortable headers, and updates the generated Vue usage.
 - [x] Restored the non-loading sample rows and confirmed its generated usage returns to the non-loading variant.
 - [ ] This narrow check does not close the full Table DoD or screen-reader review.
+
+## Shared component detail header comparison — 2026-11-16
+
+- [x] Fresh local Button and visual-reference captures at the same 1265×713 viewport show aligned titles but a roughly 70px earlier local specimen start; prior matched Input evidence shows the same shared pattern.
+- [x] Source inspection finds category tags and concise readiness notes in the shared catalog, but no count metadata. No specimen-local offset or raw spacing override was added; the discrepancy is recorded as a shared header metadata issue in ERR-283.
+- [ ] This is an analysis result only; catalog-driven header metadata and the component-specific DoDs remain open.

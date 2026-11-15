@@ -215,7 +215,7 @@
 
 - [x] The reference and local Input pages were captured at the same 1265×713 browser viewport. Both preview frames are approximately 628–630px wide and 298px tall; the local capsule remains bounded and visibly unstretched, with the approved RTL placeholder and email icon beside its title.
 - [x] Compared the local Button and Input pages against their matching reference pages at that viewport. The local preview begins about 50px above the reference on Input and about 70px above it on Button; the offset is therefore shared page-shell/header composition, not an Input-only sizing defect. The local Input starts about 21px below local Button because its longer summary wraps to an additional line.
-- [ ] Review the shared page-shell vertical composition across representative component families and decide a tokenized, Button-consistent adjustment before changing any individual specimen. This comparison is evidence of a layout difference; it does not by itself prove a component defect or close Input Final DoD.
+- [x] Reviewed the shared Button/Input page-shell composition at the same 1265×713 viewport. A fresh Button render shows the local title aligned with the reference while the specimen begins about 70px earlier; prior matched Input evidence shows the same shared pattern. The difference comes from less header metadata/content before the specimen, not specimen stretch. No per-component offset or spacing token was added; catalog-driven header metadata is tracked in ERR-283. This analysis does not close Input Final DoD.
 - [ ] Full adapter/state visual matrix, exact mobile geometry, and independent screen-reader review remain open.
 
 ## Input mobile specimen spot check — 2026-11-15
