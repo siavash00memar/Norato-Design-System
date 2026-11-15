@@ -4097,3 +4097,10 @@ ame` state inconsistent.
 - [x] Global Disabled exposed Dropzone, Avatar Upload and the local form-check action as disabled; generated Vue usage gained `disabled`. The control was restored and the prop disappeared.
 - [x] Required added «الزامی» to both the Dropzone button/input accessible names and `required` to the generated Vue sample. The control was restored to optional afterward. No file was chosen or sent.
 - [ ] This does not add evidence for native chooser cancellation, OS drag/drop, full combined keyboard/state coverage, matched state screenshots, or independent screen-reader output; File Upload DoD remains open.
+
+## Tooltip — fresh narrow focus and Escape recheck — 2026-11-15
+
+- [x] In the live local narrow browser, Shift+Tab from the playground text field focused the Tooltip trigger and opened the dark RTL bubble above it. The screenshot showed one yellow trigger focus ring and no visible clipping at this viewport.
+- [x] Escape removed the tooltip content and retained trigger focus without navigation.
+- [x] Browser AX exposed trigger and content text/ID while open and removed the content after Escape; this does not establish the role/relation or spoken output for an independent screen reader.
+- [ ] No same-viewport reference capture was made in this pass. Matched responsive comparison and independent screen-reader output remain unverified.

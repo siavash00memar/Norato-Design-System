@@ -42,3 +42,10 @@
 - [x] The visible bubble remained RTL at `data-side=top`. Focus ring was one 2px yellow outline with 4px offset and no box shadow.
 - [x] Escape closed the visible bubble and removed the description association while retaining trigger focus; no page navigation occurred.
 - [ ] Independent screen-reader announcement and reading-order review remain open; do not close family DoD on browser-tree evidence alone.
+
+## Fresh narrow keyboard and AX recheck — 2026-11-15
+
+- [x] At the live local narrow render, Shift+Tab from the playground text field focused the Tooltip trigger and opened its bubble. The screenshot showed the dark bubble above the trigger, RTL text, and a single yellow focus ring; no clipping was visible in this viewport.
+- [x] Escape removed the live bubble and kept focus on the trigger; the page did not navigate.
+- [x] The browser AX tree exposed the trigger and the tooltip content text/ID while open, then removed the content on Escape. This surface did not expose a spoken announcement or a sufficiently explicit role/relation, so it is not counted as an independent screen-reader result.
+- [ ] This narrow local screenshot was not captured at the same viewport as the reference. Matched visual review and independent screen-reader announcement/reading-order review remain open; Tooltip DoD stays open.
