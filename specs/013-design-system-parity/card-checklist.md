@@ -42,3 +42,10 @@ Do not close until each required browser and technical item is evidenced.
 - [x] The live screenshot showed the media as a bounded square beside the RTL content, with no obvious vertical stretching. This visual review did not measure the media bounds; the measured 16-combination matrix above remains the geometry evidence.
 - [x] Restored the playground layout to Vertical and confirmed the generated example returned to `layout="vertical"`.
 - [ ] Independent screen-reader announcement review remains open.
+
+## Live disabled Content Card recheck — 2026-11-15
+
+- [x] In the local Card playground, the interaction state was set to Disabled. The rendered content card appeared visually muted, and the generated Vue example included the `disabled` prop.
+- [x] The browser accessibility tree retained the card title and content as text/heading, with no active link for the disabled card. The route stayed on `#component-card` while changing the playground state.
+- [x] Restored the user's browser tab to Accordion after the review.
+- [ ] Independent screen-reader announcement review remains open; this AX snapshot is not a substitute for spoken output.

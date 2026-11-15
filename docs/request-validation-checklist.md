@@ -4198,3 +4198,10 @@ ame` state inconsistent.
 - [x] At the narrow local view, vertical + centered «یا» + semantic mode retained horizontal label text; the browser accessibility view exposed `splitter یا` and the generated sample synchronized.
 - [x] In unlabeled simple semantic mode, the browser snapshot did not expose a named node; no screen-reader claim is made. Defaults were restored afterward.
 - [ ] Independent screen-reader review remains open, especially for an unlabeled semantic separator.
+
+## Card — disabled Content Card live recheck — 2026-11-15
+
+- [x] The local Card playground showed the Content Card in a visually muted disabled state, and the generated Vue example included `disabled`.
+- [x] Browser AX retained the card title/content but showed no active link for the disabled card. The playground remained on `#component-card` while its state changed.
+- [x] Returned the browser to Accordion after the review.
+- [ ] This does not establish independent screen-reader speech; Card DoD remains open for that review.
