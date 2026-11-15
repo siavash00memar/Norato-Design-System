@@ -31,3 +31,6 @@
 - [x] In the live mobile playground, no-selection + Required + Error was captured at 20px and 16px. All options remained visible, the required/error messages appeared, and no horizontal overflow or circle stretching was visible.
 - [x] Restored the playground to Monthly, 20px, optional, enabled, no-error and selected; `value`, status and generated Vue snippet agree.
 - [ ] Full live cross-product for checked × size × hover/focus × error/disabled/required and independent screen-reader validation remain open; this mobile state check does not close Radio DoD.
+- [x] 2026-11-16 live mobile follow-up at 16px: Required+Error+empty kept `undefined` synchronized; Disabled blocked changes for all options; selecting Quarterly then ArrowDown selected Yearly and updated the Vue snippet; disabling selected Yearly preserved its value and rendered neutrally.
+- [x] Restored Monthly, 20px, optional, enabled, no-error after the interaction pass.
+- [ ] Full live cross-product and independent screen-reader validation remain open.
