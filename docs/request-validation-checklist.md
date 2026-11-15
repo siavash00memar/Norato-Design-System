@@ -4205,3 +4205,9 @@ ame` state inconsistent.
 - [x] Browser AX retained the card title/content but showed no active link for the disabled card. The playground remained on `#component-card` while its state changed.
 - [x] Returned the browser to Accordion after the review.
 - [ ] This does not establish independent screen-reader speech; Card DoD remains open for that review.
+
+## Input — Amount example initial value — 2026-11-16
+
+- [x] The rendered Amount starts at Persian `۱٬۲۵۰٬۰۰۰`; its generated Vue example now initializes `amount` to `1250000`.
+- [x] Setting the live Amount field to `2500` changed its displayed number and Persian words. Reload restored the default field and example; browser returned to Accordion.
+- [ ] This spot check does not close the full Input state/size matrix or independent screen-reader review.

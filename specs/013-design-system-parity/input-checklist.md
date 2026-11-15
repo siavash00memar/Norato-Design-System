@@ -252,3 +252,10 @@
 - [x] در Error، پیام خطای Number در درخت دسترس‌پذیری ظاهر شد. با Error+Disabled، فیلد و دکمه‌های گام غیرفعال شدند، پیام خطا باقی ماند و تلاش برای افزایش مقدار، مقدار ۱ را تغییر نداد.
 - [x] Playground به حالت پیش‌فرض برگشت: مقدار ۱، enabled، بدون Error، RTL، Medium و Stepper.
 - [ ] این مرور روی یک اندازه و یک زیرنوع بود؛ هندسهٔ محاسبه‌شده، Hover مستقل از فوکوس، تمام ترکیب‌های Input و بررسی مستقل صفحه‌خوان هنوز برای DoD نهایی لازم‌اند.
+
+## Input — Amount initial example consistency — 2026-11-16
+
+- [x] The live Amount field starts at `1,250,000` and exposes the matching Persian amount words. The generated Vue example previously initialized its model to an empty string.
+- [x] Changed the example initializer to `1250000`. After reload, the browser showed the formatted `۱٬۲۵۰٬۰۰۰` value and the generated example used `ref('1250000')`.
+- [x] Changing the live field to `2500` updated its Persian formatted value and amount words; reloading restored the documented initial value and generated example.
+- [ ] This is a scoped initial-value consistency correction; it does not close Input's visual/state cross-product, responsive geometry, or independent screen-reader review.
