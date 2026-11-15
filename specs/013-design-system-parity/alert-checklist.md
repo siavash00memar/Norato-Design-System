@@ -15,6 +15,7 @@
 ## Behavior/accessibility
 - [x] Inline and Expanded render correct content; caller action slot renders only for Expanded.
 - [x] Controlled dismiss updates `v-model`; Space closes; focus outline is 2px yellow with 4px offset; close target is 48×48px.
+- [x] Keyboard focus on the live close control shows one 2px yellow outline with a 4px offset and `box-shadow: none`; the shared second halo is neutralized only on this control.
 - [x] Danger exposes alert role; other tones expose status role; decorative icons are `aria-hidden`.
 - [x] Tone is included as screen-reader-only text alongside the status message; visual icons differ by severity, so color is not the only cue.
 - [x] Fresh local-browser follow-up: switching the live playground from Info to Success updates the selected tone, rendered icon/color, accessible close label, and generated Vue snippet together. Closing the controlled Success Alert replaces it with the closed status and restore action; restoring it and returning the tone to Info returns the playground to its default state. Turning off “dismissible” removes the close button from the live preview. Follow-up keyboard review found focus previously fell to the document root after dismissing the controlled preview. The playground now focuses “نمایش دوباره” after Space/Enter dismissal and returns focus to the close control after re-opening; browser screenshots show the yellow keyboard ring. This does not verify uncontrolled adapter dismissal or independent screen-reader behavior.

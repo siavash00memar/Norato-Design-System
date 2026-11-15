@@ -102,7 +102,7 @@ function dismiss() {
 .norato-alert__actions{display:flex;flex-wrap:wrap;gap:var(--norato-space-2);margin-block-start:var(--norato-space-1)}
 .norato-alert__close{display:grid;place-items:center;flex:0 0 var(--norato-control-target-min);inline-size:var(--norato-control-target-min);block-size:var(--norato-control-target-min);margin-block-start:calc(-1 * var(--norato-space-2));margin-inline-start:calc(-1 * var(--norato-space-2));border:0;border-radius:var(--norato-radius-card);background:transparent;color:var(--alert-tone);cursor:pointer}
 .norato-alert__close:hover{background:var(--norato-color-surface-subtle)}
-.norato-alert__close:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1)}
+.norato-alert__close:focus-visible{outline:var(--norato-border-focus) solid var(--norato-color-focus-ring);outline-offset:var(--norato-space-1);box-shadow:none}
 .norato-alert__close svg{inline-size:var(--norato-icon-sm);block-size:var(--norato-icon-sm);fill:none;stroke:currentColor;stroke-width:var(--norato-border-focus);stroke-linecap:round}
 .norato-alert.is-inline{align-items:center;min-block-size:var(--norato-control-target-min)}
 .norato-alert.is-inline .norato-alert__icon{margin-block-start:0}

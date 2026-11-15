@@ -10,3 +10,8 @@
 
 - Evidence: a fresh matched desktop render showed the reference specimen with a close glyph at inline-start while Norato's inert specimen omitted it.
 - Acceptance: enable only the existing dismiss affordance on the inert static example; preserve its `aria-hidden`/`inert` wrapper and do not change the live adapter API or playground behavior.
+
+## Scoped focus correction — Alert close control
+
+- Evidence: keyboard-focused close control displayed both the component outline and the shared button focus halo.
+- Acceptance: retain one 2px yellow outline with the existing token offset; neutralize only the duplicate shared shadow for this control.

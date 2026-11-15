@@ -2104,3 +2104,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Enable `dismissible` only on the Alert inside the existing `aria-hidden` and `inert` specimen wrapper; leave the public adapter and live playground behavior unchanged.
 - **Verification:** Fresh local/reference screenshots at 1280×720 show the same close affordance at inline-start. Local frame remains 631.984×300px, Alert measures 420×68.69px, and the close target is 48×48px. DOM confirms the specimen wrapper remains `aria-hidden="true"` with the `inert` attribute.
 - **Prevention:** Compare the whole inert specimen anatomy against the reference, including optional visible controls, while keeping the specimen itself inert.
+
+## ERR-269 — Alert close focus rendered a duplicate ring (2026-11-15)
+
+- **Observed:** The keyboard-focused close button showed an outline and a second yellow halo in the live playground.
+- **Cause:** The shared `button:focus-visible` rule adds both outline and box-shadow; Alert also defines a component-specific outline.
+- **Correction:** Set `box-shadow:none` only on `.norato-alert__close:focus-visible`; retained the existing 2px semantic yellow outline and spacing-token offset.
+- **Verification:** After Space dismissal and restore, the live browser focused the close button. Computed style was `rgb(253, 193, 1) solid 2px`, `outline-offset: 4px`, `box-shadow: none`; screenshot showed a single ring.
+- **Prevention:** When a component owns its focus outline, explicitly inspect shared focus styles for a second ring.
