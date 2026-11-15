@@ -4075,3 +4075,10 @@ ame` state inconsistent.
 - [x] Selecting the profile row changed the exclusive selection and the visible status, then returned to the original language row. Toggling the disabled-help-link option removed the row from link semantics; turning it off restored the link.
 - [x] The screenshot shows the list rows contained without visible clipping or stretching. Existing RTL default and card-inset style are restored.
 - [ ] This current pass does not close matched 390/320px comparison across all layouts and states or independent screen-reader verification; List Final DoD remains open. The existing 414px matched specimen and mobile direction checks are documented in `specs/013-design-system-parity/list-checklist.md`.
+
+## Card — fresh selectable-state and matched desktop review — 2026-11-15
+
+- [x] At 1265×713, the local static Content Card and reference share the same vertical media/title/body hierarchy, rounded card surface and RTL alignment. Norato keeps its yellow/neutral visual palette; no visible stretching or clipping appeared.
+- [x] Switched the live playground from Content to Selectable. Choosing «پایه» changed the checked radio and selected-plan status from `pro` to `basic`; choosing «حرفه‌ای» restored both to `pro`.
+- [x] Returned the playground to Content / Glass / Vertical / Short / RTL. The accessible tree and generated usage returned to `NoratoContentCard` with `layout="vertical"`.
+- [ ] This fresh check does not replace the six-adapter visual/state matrix or independent screen-reader announcement review; Card Final DoD remains open for the latter.
