@@ -77,3 +77,8 @@
 - [x] Fresh local browser review covers all six Small/Medium/Large × Chevron/Slash combinations in RTL.
 - [x] Each collapsed trail exposes exactly three decorative separators with `aria-hidden="true"`. Chevron stays a 16×16px left-pointing SVG (`m10 3-5 5 5 5`); Slash remains `/` at all sizes.
 - [ ] This closes only the separator submatrix; remaining 42-part visual coverage and independent screen-reader review keep the family DoD open.
+
+## Fresh specimen comparison — 2026-11-16
+
+- [x] Opened the local Breadcrumbs page and the user-provided visual reference in separate browser tabs. Both show the same Persian trail structure: home at the right, left-facing separators, and the current page at the left; the local dotted specimen frame is visible without obvious clipping at the current narrow view.
+- [ ] The two captures used different viewport sizes, so this review is structural/visual only and does not establish matched dimensions. Exact 390px/320px post-change bounds remain open in the narrow-path scrollbar checklist; full 42-part coverage and independent screen-reader review remain open.

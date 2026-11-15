@@ -4163,3 +4163,8 @@ ame` state inconsistent.
 - [x] Error exposed its message. Error+Disabled retained that message while marking the field and increment/decrement buttons disabled; activating the disabled increment button left the value at 1.
 - [x] Restored the playground to value 1, enabled, no error, Medium, RTL, Stepper. This was a local browser review; no remote deployment or Git push was performed.
 - [ ] This single-size Number check does not complete Input’s visual/state matrix, exact mobile geometry, or independent screen-reader review.
+
+## Breadcrumbs — fresh reference comparison — 2026-11-16
+
+- [x] Local and reference views show the same RTL trail order, left-facing separators, current-page placement, and dotted specimen frame. No obvious clipping appears in the local view.
+- [ ] Viewport sizes differ, so no dimensional parity claim is made; the 320px/390px post-change bounding-box capture remains open.
