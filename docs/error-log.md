@@ -2150,3 +2150,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Applied the shared `.button.secondary` class to these controls without changing handlers, state conditions, or component APIs.
 - **Verification:** At 320×720 and 390×844, Tile controls wrapped in RTL rows without visible clipping. Keyboard Tab/Space reached and activated Uploading with its accessible progress indicator; Complete changed a queued row to uploaded, and reset restored the empty queue. Tokens, catalog, 8 File Upload tests, Vue typecheck/build and diff check pass.
 - **Prevention:** Audit all visible playground mutation and reset actions, not only the primary example action, against the shared Button treatment.
+
+## ERR-274 — Segmented static specimen diverged from its live surface — 2026-11-15
+
+- **Observed:** At 390px, the inert specimen painted selection across an 86.7×48px button; the reference capsule measured 82.08×28.08px with a 9px radius. The live adapter had a shorter surface but retained a pill radius and did not match the specimen/reference geometry.
+- **Cause:** The static selected fill was painted directly on the full button; the static and live pseudo-surfaces used different geometry and inherited the full pill radius.
+- **Correction:** Removed the broad static selected-fill rule; put Glass fill/elevation on an inset pseudo-surface and placed the label above it. Added the observed 9px radius token and applied the same 28px-high, 9px-radius visual surface to static and live items, preserving 48px/56px targets and API.
+- **Verification:** At 390px, local static surface measured 82.66×28px with a 9px radius inside an 86.66×48px target. Live Medium remained 48px target/28px surface; XLarge remained 56px/36px. Contrast selected remained yellow; selected+disabled remained neutral with no shadow. At 320px local document width remained bounded at 305/305px and both static/live targets stayed 48px.
+- **Prevention:** Compare selected-surface height, width and radius separately from the interaction target; keep static specimen and live adapter geometry sourced from the same tokens.

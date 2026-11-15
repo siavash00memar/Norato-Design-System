@@ -29,7 +29,7 @@
 
 مرجع مرجع طراحی اندازه‌های بصری ۳۲، ۴۰، ۴۸ و ۵۶px را ثبت می‌کند. Norato برای کنترل تعاملی حداقل هدف ۴۸px را حفظ می‌کند؛ Small، Medium و Large هدف ۴۸px و XLarge هدف ۵۶px دارد. متن و فاصلهٔ افقی بین اندازه‌ها تغییر می‌کند؛ متن به‌ترتیب ۱۲، ۱۳، ۱۴ و ۱۶px است.
 
-سطح بصری گزینهٔ انتخاب‌شده درون هدف تعاملی عمودی ۸px inset دارد؛ در نتیجه ارتفاع کپسول از target جداست و برای هدف‌های ۴۸/۵۶px به‌ترتیب ۳۲/۴۰px محاسبه می‌شود. اندازهٔ هدف، متن و رفتار کنترل تغییر نمی‌کنند.
+سطح بصری گزینهٔ انتخاب‌شده از لبهٔ هدف تعاملی ۹px فاصله دارد؛ این فاصله از ترکیب توکن ۸px و Stroke یک‌پیکسلی ساخته می‌شود تا هدف‌های ۴۸/۵۶px، سطح بصری ۲۸/۳۶px داشته باشند. شعاع سطح منتخب ۹px است؛ هدف، متن و رفتار کنترل تغییر نمی‌کنند.
 
 ## States
 
@@ -71,4 +71,4 @@ Reka `ToggleGroupRoot` و `ToggleGroupItem` را با `type="single"`، `dir="rt
 
 ## Tokens
 
-از `--norato-color-glass-surface`، `--norato-color-surface-default`، `--norato-color-brand-yellow`، `--norato-color-text-primary`، `--norato-color-warning-container`، `--norato-color-info-container`، `--norato-color-border-default`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، توکن‌های spacing، `--norato-radius-pill`، `--norato-elevation-box` و `--norato-control-target-min` استفاده می‌شود. ابعاد قاب و XLarge از توکن‌های `--norato-segmented-preview-*` و `--norato-segmented-xlarge-visual-block-size` می‌آیند.
+از `--norato-color-glass-surface`، `--norato-color-surface-default`، `--norato-color-brand-yellow`، `--norato-color-text-primary`، `--norato-color-warning-container`، `--norato-color-info-container`، `--norato-color-border-default`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، توکن‌های spacing، `--norato-radius-pill`، `--norato-radius-observed-9`، `--norato-elevation-box` و `--norato-control-target-min` استفاده می‌شود. ابعاد قاب و XLarge از توکن‌های `--norato-segmented-preview-*` و `--norato-segmented-xlarge-visual-block-size` می‌آیند.

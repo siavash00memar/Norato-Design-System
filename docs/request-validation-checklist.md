@@ -3953,3 +3953,11 @@ ame` state inconsistent.
 - [x] در ۳۹۰×۸۴۴، Hover روی گزینهٔ منتخب در هر دو سبک بدون فوکوس تأیید شد: `:hover=true` و `:focus=false`; Glass سفید برجسته و Contrast زرد ماند.
 - [x] Playground به Glass/Medium/سه گزینه/روزانه/فعال برگشت و viewport به ۳۹۰×۸۴۴ بازگردانده شد.
 - [ ] مقایسهٔ تصویری همین حالت‌ها با مرجع، آرشیو تصویر هر حالت و صفحه‌خوان مستقل همچنان باز است.
+
+## Segmented selected-surface responsive review — 2026-11-15
+
+- [x] At 390×844, matched browser comparison measured the reference frame 327×300px and the local frame 328×300px. The reference active capsule is 82.08×28.08px with 9px radius; local static selected surface is 82.66×28px with 9px radius inside an 86.66×48px target.
+- [x] The live adapter uses the same 28px/9px selected surface. At Medium, its selected target remains 48px; XLarge measured 56px target and 36px visual surface. Contrast remains Norato yellow; selected+disabled remains neutral with no shadow and disabled text.
+- [x] At 320×844, the local frame is 273×300px, the document is bounded at 305/305px, direction stays RTL, and static/live targets remain 48px with a 28px selected surface.
+- [ ] Direct matched reference capture at 320px, full state cross-product and independent screen-reader review remain open under the Segmented DoD.
+- [x] `pnpm check:tokens`, `pnpm check:catalog` (49), Vue TypeScript, Vue production build and `git diff --check` pass for this correction.
