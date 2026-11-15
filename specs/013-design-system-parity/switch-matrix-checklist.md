@@ -45,6 +45,13 @@
 - [x] In the checked screenshot, the track is yellow, the knob is white and moves to the physical left in RTL. In the restored unchecked screenshot, the track is neutral; the yellow halo is the visible focus treatment while the control has focus.
 - [ ] This recheck does not close the independent screen-reader review or exhaustive combined-state DoD.
 
+## Focus-free off/on geometry recheck — 2026-11-16
+
+- [x] At the 390×844 local browser viewport, the focus-free, non-hovered off state measures a 48×48px target and 40×24px track; the track is `rgb(242, 242, 242)` with a 1px `rgb(232, 232, 232)` border. The 16px knob is white, borderless, shadowless and inset 5px from the RTL right edge.
+- [x] After activation and moving the pointer off the control, `aria-checked=true`; the track and its border are both `rgb(253, 193, 1)`. The same white, borderless, shadowless 16px knob is inset 5px from the physical left edge, matching RTL on-direction.
+- [x] Deactivation restores `aria-checked=false`, status «خاموش», generated `ref(false)`, the neutral off track and right-side knob position. No focus ring remained in the final restored view.
+- [ ] This confirms the reported knob/stroke treatment in Medium only; other sizes and the independent screen-reader review remain covered by their prior records/open DoD.
+
 
 ## Switch تازه — نمایش و مسیرهای زنده (2026-11-15)
 

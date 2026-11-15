@@ -53,6 +53,21 @@
 ## Card fresh browser review — 2026-11-15
 
 - [x] Local Card and design-reference pages were viewed at the same 1265×713 viewport. The static specimen keeps the rounded inset media/content composition, RTL hierarchy, and Norato yellow/neutral palette; no visible stretching or clipping was observed.
+
+## Radio mobile overflow audit — 2026-11-16
+
+- [x] Actual local browser viewport 320×720: `innerWidth=320`, document client/scroll width 305/305px; horizontal overflow is false.
+- [x] Actual local browser viewport 390×844: document client/scroll width 375/375px; horizontal overflow is false.
+- [x] Live playground circles measure 20×20px; option rows measure 48/48.8/48px and computed direction is RTL. No circle stretching or clipping is visible.
+- [x] ArrowDown changes Monthly to Quarterly, updating checked state, status and Vue snippet; ArrowUp restores Monthly. Screenshot after restore confirms the initial selection.
+- [ ] The reported overflow did not reproduce, so no speculative CSS was applied. This does not close the full Radio state/focus cross-product or independent screen-reader review.
+
+## Switch off/on knob stroke and inset — 2026-11-16
+
+- [x] At 390×844, the focus-free off track measures 40×24px with `#f2f2f2` fill and `#e8e8e8` 1px border; its white 16px knob has no border or shadow and a 5px right inset in RTL.
+- [x] On activation, `aria-checked=true`; fill and border both become Norato yellow `#fdc101`, and the white borderless/shadowless knob moves to a 5px left inset. No gray stroke appears in the on state.
+- [x] Toggle back restores the off status and `ref(false)` snippet; final view is off, non-hovered and without focus ring.
+- [ ] This fresh geometry pass covers Medium only. Existing three-size interaction/state coverage is recorded separately; independent screen-reader review remains open.
 - [x] In the local live playground, Vertical→Horizontal and Short→Long selections updated the accessibility state and generated Vue snippet. Both controls were restored to Vertical/Short afterward.
 - [ ] This pass did not measure horizontal playground media bounds; the existing 16-case measured geometry matrix remains the supporting evidence. Independent screen-reader review remains open.
 
@@ -3983,3 +3998,11 @@ ame` state inconsistent.
 - [x] Vue sample synchronized to `disabled` plus `error-text`; the field rendered with a muted neutral surface/stroke and the explanatory text remained visible. No blue or yellow active stroke appeared on the disabled field.
 - [x] Screenshot review showed the RTL label, value, chevron, helper/error text, and playground controls within the page; no visible stretching or clipping at this viewport.
 - [ ] This was a single desktop combination. It does not complete the Select state/size/mode visual matrix, responsive state-by-state comparison, or independent screen-reader review.
+
+## Combobox — generated model sample synchronization — 2026-11-16
+
+- [x] At the local browser page, cleared single selection then typed «پژوهش»: before commit, the sample remained `ref('')`. ArrowDown + Enter selected the result; input/status showed the committed value and sample became `ref("پژوهش")`.
+- [x] Multi mode with research then interface selected rendered the same ordered Persian value array in the sample. Clear produced `ref<string[]>([])` and the empty-selection status.
+- [x] Restored single «طراحی محصول» / `design`, Large size, outside label, optional, enabled, no-error and no-loading. Screenshot shows the RTL field and playground controls; no component visual/layout styles changed.
+- [x] Token, catalog, Vue typecheck/build and `git diff --check` gates passed.
+- [ ] This addresses sample/value synchronization only; responsive state matrix, cold-load fallback and independent screen-reader review remain open.

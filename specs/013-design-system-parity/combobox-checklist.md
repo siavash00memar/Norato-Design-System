@@ -62,3 +62,12 @@
 - [x] Fresh browser DOM measurement of the live Large field at a 375px viewport: target is 343×48px, RTL; its capsule pseudo-surface uses a 1px `rgb(232, 232, 232)` border and 50px radius. The 48px target minus 6px inset on both block edges gives a 36px visible capsule; computed content height is 34px plus the two 1px borders.
 - [x] Playwright accessible-role queries resolve the main Combobox as «مهارت‌ها», its trigger as «مهارت‌ها، نمایش پیشنهادها», and both size/label-placement selectors. All seven playground switches resolve by their visible Persian names. The lower-level accessibility snapshot omitted those names, so the DOM role/name query was used as the direct evidence.
 - [ ] This targeted check does not replace independent screen-reader review, throttled cold-load fallback capture, or the full live-state screenshot archive; Combobox Final DoD remains open.
+
+## Generated model sample synchronization — 2026-11-16
+
+- [x] Browser reproduction found stale code: after clearing and selecting «پژوهش» by ArrowDown + Enter, field/status changed while the sample remained `design`.
+- [x] After correction, single clear produced `ref('')`; query text did not enter the model before commit; selecting «پژوهش» synchronized field, status and sample as `ref("پژوهش")`.
+- [x] Multi mode serialized the ordered selection as `ref<string[]>(["پژوهش","طراحی رابط"])`; clear synchronized to `ref<string[]>([])` and the empty-selection status.
+- [x] Playground returned to single `design`, Large, outside label, optional, enabled, no-error and no-loading; the page remained RTL.
+- [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --filter @norato/vue-app build` (includes Vue TypeScript validation), and `git diff --check` pass.
+- [ ] Full visual-state screenshot archive, responsive behavior matrix, cold-load fallback capture and independent screen-reader review remain open; this correction does not close Combobox DoD.

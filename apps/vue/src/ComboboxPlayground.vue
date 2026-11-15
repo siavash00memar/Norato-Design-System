@@ -29,11 +29,14 @@ const selectedLabels = computed(() => {
   return skills.value.filter((option) => values.includes(option.value)).map((option) => option.label)
 })
 const selectedText = computed(() => selectedLabels.value.join('، '))
+const modelDeclaration = computed(() => Array.isArray(value.value)
+  ? `const skill = ref<string[]>(${JSON.stringify(value.value)})`
+  : `const skill = ref(${value.value ? JSON.stringify(value.value) : "''"})`)
 const addCreatedOption = (text: string) => {
   const newOption = { value: text, label: text }
   skills.value = [...skills.value, newOption]
 }
-const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoCombobox } from '@norato/vue'\nconst skill = ref(${multiple.value ? "['design']" : "'design'"})\nconst skills = [\n  { value: 'design', label: 'طراحی محصول' },\n  { value: 'research', label: 'پژوهش کاربر' },\n  { value: 'interface', label: 'طراحی رابط کاربری' },\n]\n<\/script>\n\n<template>\n  <NoratoCombobox id="skill" v-model="skill" label="مهارت‌ها" :options="skills" placeholder="جست‌وجو یا انتخاب کنید…"${multiple.value ? ' multiple' : ''}${size.value !== 'large' ? ` size="${size.value}"` : ''}${labelPlacement.value !== 'outside' ? ' label-placement="inside"' : ''}${required.value ? ' required' : ''}${disabled.value ? ' disabled' : ''}${loading.value ? ' loading' : ''}${creatable.value ? ' creatable' : ''}${invalid.value ? ' error-text="یک مهارت انتخاب کنید"' : ' helper-text="برای جست‌وجو شروع به نوشتن کنید"'} />\n</template>`)
+const snippet = computed(() => `<script setup lang="ts">\nimport { ref } from 'vue'\nimport { NoratoCombobox } from '@norato/vue'\n${modelDeclaration.value}\nconst skills = [\n  { value: 'design', label: 'طراحی محصول' },\n  { value: 'research', label: 'پژوهش کاربر' },\n  { value: 'interface', label: 'طراحی رابط کاربری' },\n]\n<\/script>\n\n<template>\n  <NoratoCombobox id="skill" v-model="skill" label="مهارت‌ها" :options="skills" placeholder="جست‌وجو یا انتخاب کنید…"${multiple.value ? ' multiple' : ''}${size.value !== 'large' ? ` size="${size.value}"` : ''}${labelPlacement.value !== 'outside' ? ' label-placement="inside"' : ''}${required.value ? ' required' : ''}${disabled.value ? ' disabled' : ''}${loading.value ? ' loading' : ''}${creatable.value ? ' creatable' : ''}${invalid.value ? ' error-text="یک مهارت انتخاب کنید"' : ' helper-text="برای جست‌وجو شروع به نوشتن کنید"'} />\n</template>`)
 watch(multiple, (enabled) => {
   const current = Array.isArray(value.value) ? value.value : [value.value]
   value.value = enabled ? current : current[0] ?? ''

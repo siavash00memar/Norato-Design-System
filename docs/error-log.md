@@ -2166,3 +2166,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** No code change was necessary. Retained the Tooltip-only `--norato-space-1` width extension and documented its shared maximum cap.
 - **Verification:** At 1265×720, local Tooltip measured 635.98×300px versus 636×300px in the reference. Button/Input/Select measured 631.98/635.98/633.98×300px; their parent does not match the Tooltip-specific selector. Both documents remained 1250/1250px and RTL.
 - **Prevention:** Record actual post-change frame measurements and confirm adjacent component selectors remain outside a page-local rule before closing a visual fix.
+
+## ERR-276 — Combobox sample kept the initial model after selection — 2026-11-16
+
+- **Observed:** In the live playground, clearing the single selection and choosing «پژوهش» updated the field and status, while the generated Vue sample still declared `design`. The multi-mode sample also hard-coded the initial `['design']` array.
+- **Cause:** The model initializer in `ComboboxPlayground.vue` was literal text instead of a projection of the committed `value` and `multiple` state.
+- **Correction:** Derive the sample model declaration from the committed value. Serialize single values safely and preserve the ordered array in multi mode; empty single/multi values render as `''`/`[]`.
+- **Verification:** Browser checks confirmed search text stays out of the model before commit; ArrowDown + Enter synchronizes a Persian single selection; multiple selection and clear synchronize the array; the fixture was restored to `design`. Token/catalog/typecheck/build and diff gates pass.
+- **Prevention:** Any live playground that exposes a generated example must update model values and mode flags from the same state that drives the component.

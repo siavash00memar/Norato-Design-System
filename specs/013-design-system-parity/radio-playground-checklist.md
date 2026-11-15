@@ -97,3 +97,10 @@
 - [x] At 20px, Required + Error + Disabled kept the checked value and all three disabled options. The screenshot retained the RTL layout, labels/descriptions and neutral disabled circles beneath the required group label.
 - [x] Restored Monthly, 20px, optional, enabled, no-error and selected; live value, status and generated usage agree.
 - [ ] Full live state cross-product, mobile state-by-state visual review and independent screen-reader announcement/reading-order review remain open.
+
+## Mobile viewport overflow audit — 2026-11-16
+
+- [x] At viewport 320×720, browser metrics show document client/scroll widths 305/305px; no horizontal overflow. The live playground circles measure 20×20px and rows 48/48.8/48px.
+- [x] At viewport 390×844, document client/scroll widths are 375/375px; the live group remains bounded and RTL.
+- [x] ArrowDown selected Quarterly and updated the live status and Vue snippet; ArrowUp restored Monthly. Final browser render shows Monthly selected.
+- [ ] The reported overflow is not reproducible in these tested viewports, so no CSS fix was applied. Full live state/focus cross-product and independent screen-reader validation remain open.
