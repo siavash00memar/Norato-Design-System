@@ -4186,3 +4186,9 @@ ame` state inconsistent.
 - [x] At the narrow local view, Avatar Text kept its square avatar and proportionate lines without obvious stretching or clipping; Shimmer and LTR selections synchronized to the generated example before restoring Pulse/RTL.
 - [x] The browser accessibility view exposed the live label «در حال بارگذاری محتوا».
 - [ ] This view did not expose the source-declared `role="region"` or `aria-busy`; a higher-fidelity accessibility inspection and independent screen-reader review remain open.
+
+## Timeline — live layout and direction recheck — 2026-11-16
+
+- [x] Narrow local render retained proportionate timeline rows and markers. Card, Avatar, Success, LTR and Compact selections each updated the live playground and generated Vue sample.
+- [x] The accessible view preserved the five-event order and their labels; reload restored Default/Active Dot/RTL/Default and the browser returned to Accordion.
+- [ ] This pass does not close the independent screen-reader review.

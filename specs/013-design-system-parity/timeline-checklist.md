@@ -24,3 +24,10 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue typecheck, production build, and `git diff --check` pass for the 2026-11-14 specimen update.
 - [x] Evidence and unresolved gates are recorded in request checklist and error log.
 - [x] Verified checkpoint `37565c0547c5cf834119dd06821583c9fc158ac8` is pushed; `git ls-remote` confirms the remote branch has the same hash.
+
+## Timeline — live layout and feed configuration recheck (2026-11-16)
+
+- [x] In the local narrow browser view, Card layout, Avatar marker, Success tone, LTR direction and Compact feed all applied; the generated Vue sample reflected each selected setting.
+- [x] Timeline labels and five-event sequence remained present in the accessibility view; the screenshot showed proportionate avatar markers and event rows without obvious stretch or clipping.
+- [x] Reload restored the original default state (Default layout, Active Dot, RTL, Default feed); the local browser returned to Accordion afterward.
+- [ ] This recheck does not replace the independent screen-reader review already open for Timeline.
