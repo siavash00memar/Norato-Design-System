@@ -2112,3 +2112,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Set `box-shadow:none` only on `.norato-alert__close:focus-visible`; retained the existing 2px semantic yellow outline and spacing-token offset.
 - **Verification:** After Space dismissal and restore, the live browser focused the close button. Computed style was `rgb(253, 193, 1) solid 2px`, `outline-offset: 4px`, `box-shadow: none`; screenshot showed a single ring.
 - **Prevention:** When a component owns its focus outline, explicitly inspect shared focus styles for a second ring.
+
+## ERR-270 — Segmented selected capsule filled the full hit target (2026-11-15)
+
+- **Observed:** In a same-viewport local/reference review, the Norato selected background filled the entire 48px button target and looked nearly circular beside short Persian labels; the reference highlight was vertically inset.
+- **Cause:** The selected background was painted directly on the full-height ToggleGroupItem rather than on a separate visual layer.
+- **Correction:** Moved selected fill/elevation to an 8px-token-inset pseudo-element while preserving the 48px/56px interactive item target. A follow-up screenshot exposed a Contrast+Disabled specificity conflict; an equally scoped disabled rule now keeps the pseudo-surface neutral in both styles.
+- **Verification:** Desktop local/reference screenshots were compared at 1265×713. Glass and Contrast active capsules are visibly shorter; Contrast retains yellow with dark text. Selected+Disabled is neutral in both styles, and RTL ArrowLeft/Space selection, controlled status/snippet and keyboard focus were rechecked. Post-change mobile captures and independent screen-reader review remain open.
+- **Prevention:** Keep visual surfaces separate from minimum interaction boxes; when moving state styling to a pseudo-element, re-audit selector priority for style×state combinations.

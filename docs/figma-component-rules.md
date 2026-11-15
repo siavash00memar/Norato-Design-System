@@ -351,6 +351,7 @@
 - Disabled styling takes precedence over selected styling in both Glass and Contrast; a disabled selected item uses a neutral surface/text and no elevation. Yellow Contrast is reserved for enabled selection.
 - In the controlled Vue API, a parent may retain the current value when its item becomes disabled; the Playground exposes this Selected + Disabled state without silently changing the model.
 - Support 2–4 options, 2 styles and 4 documented sizes. Small/Medium/Large retain 48px hit targets; XLarge is 56px.
+- Keep the full 48px/56px item target; inset the selected visual capsule vertically by the semantic 8px spacing token so the highlight does not fill the target like a circle.
 - Keep the specimen centered in a dotted-glass 640×288 desktop / 320×288 narrow frame. Use its small Default marker; leave the specimen inert and put working state exploration in the executable Vue playground.
 - Use a single controlled selection and Reka ToggleGroup keyboard/focus behavior; labels stay compact and items do not wrap vertically.
 - The Variants section includes an inert 64-cell Segment Item matrix: both styles × four sizes × selected/unselected × Default/Hover/Disabled/Focus. This matrix is visual documentation only; keep the playground as the interactive source.
