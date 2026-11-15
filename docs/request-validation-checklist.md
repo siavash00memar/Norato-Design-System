@@ -4067,3 +4067,11 @@ ame` state inconsistent.
 - [x] Focused the name sort button through its accessible control and used Enter, Space, then Enter: ascending and descending orders appeared, and the original order returned. Screenshot showed the focused header ring; selection remained intact.
 - [x] From the browser's initial page focus, Tab reached the skip link; activating it moved focus to the main region. Subsequent Tab traversal passed the live playground controls and search field to the name sort button. Space → Enter → Space completed the sort cycle while focus and the selected row remained intact.
 - [ ] Tab traversal across every remaining table control, the full sort-by-column cross-product, mobile matched comparison, independent screen-reader review, and Table Final DoD remain open.
+
+## List — matched desktop specimen and live state recheck — 2026-11-15
+
+- [x] At matched 1265×713 browser views, the local and reference specimens both show three RTL settings rows in a centered rounded card within a dotted frame. Leading icons, title/description, and trailing switch/value/chevron keep the same relationships; Norato uses its yellow switch and selection colors.
+- [x] Live List switch changed on → off → on; AX values followed the control and the checked default was restored. Screenshot shows the off track neutral and its white knob inset.
+- [x] Selecting the profile row changed the exclusive selection and the visible status, then returned to the original language row. Toggling the disabled-help-link option removed the row from link semantics; turning it off restored the link.
+- [x] The screenshot shows the list rows contained without visible clipping or stretching. Existing RTL default and card-inset style are restored.
+- [ ] This current pass does not close mobile reference comparison, all three layout/state combinations, or independent screen-reader verification; List Final DoD remains open.
