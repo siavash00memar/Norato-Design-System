@@ -6,4 +6,4 @@
 - [x] Duplicate branch found during audit is removed without changing the selected component's rendered behavior.
 - [x] Browser inspection confirms Button and Chip render the same shared section structure; both accessibility trees show Preview, Vue implementation, Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, Vue build/typecheck, and `git diff --check` pass.
-- [ ] Changes are pushed to Git; no Vercel deployment occurs.
+- [x] Changes are pushed to Git; no Vercel deployment occurs.

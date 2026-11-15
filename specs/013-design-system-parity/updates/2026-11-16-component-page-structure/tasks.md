@@ -5,4 +5,4 @@
 - [x] T003 Add exact heading-order, shared shell-order, and named playground uniqueness checks.
 - [x] T004 Remove the duplicate Chip playground branch found in the renderer.
 - [x] T005 Verify Button and Chip in the local browser; token/catalog/Vue build/typecheck/diff gates pass.
-- [ ] T006 Update validation/error records, commit, and push to Git; keep Vercel untouched.
+- [x] T006 Update validation/error records and push commit `aa0b1ba` to `origin/master`; no Vercel deployment.
