@@ -2158,3 +2158,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Removed the broad static selected-fill rule; put Glass fill/elevation on an inset pseudo-surface and placed the label above it. Added the observed 9px radius token and applied the same 28px-high, 9px-radius visual surface to static and live items, preserving 48px/56px targets and API.
 - **Verification:** At 390px, local static surface measured 82.66×28px with a 9px radius inside an 86.66×48px target. Live Medium remained 48px target/28px surface; XLarge remained 56px/36px. Contrast selected remained yellow; selected+disabled remained neutral with no shadow. At 320px local document width remained bounded at 305/305px and both static/live targets stayed 48px.
 - **Prevention:** Compare selected-surface height, width and radius separately from the interaction target; keep static specimen and live adapter geometry sourced from the same tokens.
+
+## ERR-275 — Tooltip frame allowance lacked post-correction browser proof — 2026-11-15
+
+- **Observed:** The Tooltip contract recorded a scoped 4px width allowance, but its post-correction render and adjacent frame regressions had not been measured.
+- **Cause:** The source correction was recorded before a same-viewport verification result was added to the contract.
+- **Correction:** No code change was necessary. Retained the Tooltip-only `--norato-space-1` width extension and documented its shared maximum cap.
+- **Verification:** At 1265×720, local Tooltip measured 635.98×300px versus 636×300px in the reference. Button/Input/Select measured 631.98/635.98/633.98×300px; their parent does not match the Tooltip-specific selector. Both documents remained 1250/1250px and RTL.
+- **Prevention:** Record actual post-change frame measurements and confirm adjacent component selectors remain outside a page-local rule before closing a visual fix.

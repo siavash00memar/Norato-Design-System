@@ -3961,3 +3961,11 @@ ame` state inconsistent.
 - [x] At 320×844, the local frame is 273×300px, the document is bounded at 305/305px, direction stays RTL, and static/live targets remain 48px with a 28px selected surface.
 - [ ] Direct matched reference capture at 320px, full state cross-product and independent screen-reader review remain open under the Segmented DoD.
 - [x] `pnpm check:tokens`, `pnpm check:catalog` (49), Vue TypeScript, Vue production build and `git diff --check` pass for this correction.
+
+## Tooltip frame verification — 2026-11-15
+
+- [x] At a matched inner viewport of 1265×720, local Tooltip frame measured 635.98×300px and reference frame 636×300px; direction is RTL.
+- [x] Current Button/Input/Select frames measured 631.98×300, 635.98×300 and 633.98×300px. Their `#doc-preview` parent does not carry `.doc-preview-tooltip`, so the scoped 4px allowance cannot affect them.
+- [x] Both pages report document/client widths of 1250/1250px; screenshots show the default dark Tooltip, dotted frame and centered icon without clipping.
+- [x] No source correction was needed; the existing `--norato-space-1` allowance and shared frame cap pass the matched-browser comparison.
+- [ ] Independent screen-reader review remains open under the Tooltip family DoD.
