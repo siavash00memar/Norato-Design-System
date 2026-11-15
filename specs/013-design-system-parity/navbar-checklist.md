@@ -63,3 +63,10 @@
 - [x] Enabled the playground's global Disabled setting. The mobile-navigation trigger became disabled in the accessibility tree; activating it left the dialog closed. Restored Disabled to off and confirmed the default Website / Bar / Default / Bar / Pill / Medium playground values and submenu-on state.
 - [x] Fresh local screenshot shows the mobile brand/menu row remains inside the narrow viewport without visible stretching or clipping. Reference screenshot was refreshed at desktop width, so this pass does not claim a matched-viewport visual comparison.
 - [ ] Outside-click dismissal, desktop geometry/current-link styling, the full responsive state matrix, and independent screen-reader review remain open.
+
+## Mobile drawer outside-dismiss recheck — 2026-11-16
+
+- [x] At the local narrow Navbar playground, the mobile menu opened as the named «ناوبری موبایل» dialog, with its close button focused and RTL links/actions visible.
+- [x] Clicking the dimmed area outside the drawer closed the dialog and restored focus to the «ناوبری موبایل» trigger; the route remained `#component-navbar`.
+- [x] The playground remained Website / Bar / Default / Bar / Pill / Medium with submenu enabled and Disabled off.
+- [ ] This interaction check does not close exact outside-dismiss visual comparison, the complete responsive state matrix, desktop geometry/current-link styling, or independent screen-reader review.

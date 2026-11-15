@@ -4245,3 +4245,10 @@ ame` state inconsistent.
 - [x] The accessibility tree retained the names Overview, Projects, and Reports while collapsed. Tab advanced Overview → Projects → Reports → Glass style control.
 - [x] Restored the playground to expanded, enabled, Glass, `/overview` active. The existing mobile tab remains at Accordion.
 - [ ] The reference was viewed at the same viewport only in its default state; matched collapsed-state visual evidence and independent screen-reader output are still missing.
+
+## Navbar — mobile drawer outside-dismiss — 2026-11-16
+
+- [x] In the local narrow viewport, the Navbar menu opened a named RTL dialog with its close button focused, navigation links, and actions.
+- [x] Clicking the dimmed backdrop outside the drawer closed it and restored focus to the mobile navigation trigger; the URL stayed at `#component-navbar`.
+- [x] The Website / Bar / Default / Bar / Pill / Medium configuration, submenu enabled, and Disabled off were preserved. Browser returned to Accordion afterward.
+- [ ] Matched outside-dismiss visuals, full responsive states, desktop geometry/current link, and independent screen-reader output remain open.
