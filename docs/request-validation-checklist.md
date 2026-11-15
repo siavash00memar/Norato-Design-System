@@ -4168,3 +4168,9 @@ ame` state inconsistent.
 
 - [x] Local and reference views show the same RTL trail order, left-facing separators, current-page placement, and dotted specimen frame. No obvious clipping appears in the local view.
 - [ ] Viewport sizes differ, so no dimensional parity claim is made; the 320px/390px post-change bounding-box capture remains open.
+
+## Combobox — partial query and multi-select — 2026-11-16
+
+- [x] At the local narrow view, RTL query «پژوهش» exposed both the matching existing option and the create option. Enter on the active match selected the existing value `research`.
+- [x] In multi mode, the model, selected status and generated Vue sample synchronized to `design` plus `research`; the playground was restored to single `design`.
+- [ ] This targeted keyboard check does not replace the Combobox visual-state archive, full responsive matrix, controlled cold-load capture or independent screen-reader review.

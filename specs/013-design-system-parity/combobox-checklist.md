@@ -79,3 +79,10 @@
 - [x] Playground returned to single `design`, Large, outside label, optional, enabled, no-error and no-loading; the page remained RTL.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --filter @norato/vue-app build` (includes Vue TypeScript validation), and `git diff --check` pass.
 - [ ] Full visual-state screenshot archive, responsive behavior matrix, cold-load fallback capture and independent screen-reader review remain open; this correction does not close Combobox DoD.
+
+## Partial-query and multi-selection keyboard review — 2026-11-16
+
+- [x] In RTL multi mode, the partial query «پژوهش» displayed both the existing match «پژوهش کاربر» and the creatable «پژوهش» entry; Enter without moving the active option selected the existing item.
+- [x] The selected value appended `research` to the prior `design` model; the live status and generated Vue snippet both showed «طراحی محصول، پژوهش کاربر» and `ref<string[]>(["design","research"])`.
+- [x] After the interaction, selection was cleared, multi mode turned off, and the playground restored to its original single «طراحی محصول» / `design` state.
+- [ ] This focused keyboard check does not close the full visual-state archive, responsive behavior matrix, cold-load fallback capture, or independent screen-reader review.
