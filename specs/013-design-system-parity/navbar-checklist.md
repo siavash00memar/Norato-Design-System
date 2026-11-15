@@ -55,3 +55,11 @@
 - [x] At 1280×720, the live Website Navbar was switched from Bar to Transparent on the specimen's warm dotted host background. Brand, navigation links, active link, and primary action remained legible without adding a local opaque fill or changing the Norato yellow accent.
 - [x] The playground style was returned to Bar afterward; the generated Vue snippet reflected both selected styles during review.
 - [ ] Exact desktop link/action box measurements, the full responsive combination matrix, and independent screen-reader review remain open.
+
+## Mobile drawer disabled-state recheck — 2026-11-16
+
+- [x] At the live local Navbar playground in its narrow embedded viewport, opened the mobile drawer. The accessibility tree exposed a named dialog, close button, navigation list, RTL links, primary action and account action; focus landed on the close button.
+- [x] Escape closed the dialog and focus returned to the mobile-navigation trigger.
+- [x] Enabled the playground's global Disabled setting. The mobile-navigation trigger became disabled in the accessibility tree; activating it left the dialog closed. Restored Disabled to off and confirmed the default Website / Bar / Default / Bar / Pill / Medium playground values and submenu-on state.
+- [x] Fresh local screenshot shows the mobile brand/menu row remains inside the narrow viewport without visible stretching or clipping. Reference screenshot was refreshed at desktop width, so this pass does not claim a matched-viewport visual comparison.
+- [ ] Outside-click dismissal, desktop geometry/current-link styling, the full responsive state matrix, and independent screen-reader review remain open.

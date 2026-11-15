@@ -4082,3 +4082,11 @@ ame` state inconsistent.
 - [x] Switched the live playground from Content to Selectable. Choosing «پایه» changed the checked radio and selected-plan status from `pro` to `basic`; choosing «حرفه‌ای» restored both to `pro`.
 - [x] Returned the playground to Content / Glass / Vertical / Short / RTL. The accessible tree and generated usage returned to `NoratoContentCard` with `layout="vertical"`.
 - [ ] This fresh check does not replace the six-adapter visual/state matrix or independent screen-reader announcement review; Card Final DoD remains open for the latter.
+
+## Navbar — mobile drawer disabled-state and keyboard recheck — 2026-11-16
+
+- [x] In the actual local browser, opened the RTL mobile navigation drawer; its accessibility tree exposed the named dialog, close action, navigation list, links, and both actions. Focus moved into the dialog to its close button.
+- [x] Escape closed the dialog and restored focus to the mobile navigation trigger.
+- [x] With global Disabled on, the trigger was exposed as disabled and activation did not open the drawer. Restored Disabled off and confirmed the original Website / Bar / Default / Bar / Pill / Medium settings and visible submenu setting.
+- [x] The current narrow local screenshot shows the brand/menu row within its mobile layout without obvious stretch or clipping. The external reference was viewed at desktop width; because widths differed, no matched visual-parity claim is made for this pass.
+- [ ] Outside-click dismissal, desktop target measurements/current-link styling, full responsive combinations, and independent screen-reader review remain open.
