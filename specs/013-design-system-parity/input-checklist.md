@@ -196,6 +196,14 @@
 - [x] With Required disabled and an empty 4-cell code, all cells are optional and valid. Six-digit paste filled all positions and focused the last cell; ArrowLeft moved to the prior cell and Backspace from an empty cell moved backward.
 - [x] Playground reloaded to its default state after the review. This fix changes constraint validation only; independent screen-reader review and the broader Input visual matrix remain open.
 
+## Input — generated shared-state and subtype settings — 2026-11-16
+
+- [x] In the local live playground, Disabled, Required, Read-only, Error, Success, and Loading were toggled and the generated Vue lines were checked for all eight adapters. Each active common prop appeared on every supported adapter line.
+- [x] With Error and Success both enabled, the accessible UI showed each adapter's error copy and not its success copy, consistent with the documented error precedence.
+- [x] Small/Medium/Large/XLarge each propagated to all eight lines. Inside/Outside label placement propagated to seven supporting adapters and was omitted for OTP. OTP length (4/6) and Number presentation (stepper/stacked) matched the generated props.
+- [x] Restored defaults: Medium, Outside, RTL Textarea, six OTP cells, Stepper Number, enabled/optional, no error/loading/success/read-only, +98 and Search shortcut on. No field content was edited.
+- [ ] Input's complete visual state cross-product, exact responsive state matrix, and independent screen-reader review remain open; this pass closes code-snippet synchronization only.
+
 ## Input — بازبینی هندسهٔ موبایل — 2026-11-15
 
 - [x] در viewport واقعی ۳۲۰×۸۴۴، عرض client/scroll سند ۳۰۵/۳۰۵ پیکسل است.

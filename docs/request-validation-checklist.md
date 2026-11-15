@@ -4006,3 +4006,11 @@ ame` state inconsistent.
 - [x] Restored single «طراحی محصول» / `design`, Large size, outside label, optional, enabled, no-error and no-loading. Screenshot shows the RTL field and playground controls; no component visual/layout styles changed.
 - [x] Token, catalog, Vue typecheck/build and `git diff --check` gates passed.
 - [ ] This addresses sample/value synchronization only; responsive state matrix, cold-load fallback and independent screen-reader review remain open.
+
+## Input — generated shared-state and subtype settings — 2026-11-16
+
+- [x] On the live local Input page, toggled Disabled, Required, Read-only, Error, Success, and Loading; all eight generated adapter lines reflected each active shared state. Browser accessibility state confirmed disabled controls and loading messages across all eight.
+- [x] With Error and Success together, the per-adapter error messages remained visible and success messages were suppressed. Error text in the generated sample matched the live wording.
+- [x] Four sizes updated on all eight lines; Inside/Outside label placement updated the seven supporting adapters and stayed absent on OTP. OTP length and Number presentation settings synchronized with their generated props.
+- [x] Restored the live page to default state: Medium, Outside, RTL, six OTP digits, Number stepper, enabled and optional, no error/loading/success/read-only, +98, Search shortcut on. Default snippet reflects the same settings.
+- [ ] This verifies generated usage synchronization only. Full visual state/size comparison, responsive cross-product, and independent screen-reader review remain open for Input Final DoD.

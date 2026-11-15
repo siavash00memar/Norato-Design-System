@@ -2174,3 +2174,12 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Derive the sample model declaration from the committed value. Serialize single values safely and preserve the ordered array in multi mode; empty single/multi values render as `''`/`[]`.
 - **Verification:** Browser checks confirmed search text stays out of the model before commit; ArrowDown + Enter synchronizes a Persian single selection; multiple selection and clear synchronize the array; the fixture was restored to `design`. Token/catalog/typecheck/build and diff gates pass.
 - **Prevention:** Any live playground that exposes a generated example must update model values and mode flags from the same state that drives the component.
+
+## ERR-277 — Input generated usage omitted shared adapter states — 2026-11-16
+
+- **Observed:** The live Input playground applied required, disabled, loading, read-only, success and error states to all eight adapters, while the generated Vue example exposed only a subset on Text Input.
+- **Cause:** Generated usage lines were maintained as independent literal strings rather than projected from the shared playground state.
+- **Correction:** Added a shared formatter for common props and applied it to all eight generated adapter lines, preserving subtype configuration and the OTP-specific omission of label placement.
+- **Verification:** Live browser checks confirmed all six shared states across all eight snippet lines; error precedence, per-adapter messages, all four sizes, both supported label placements, OTP length, and Number presentation synchronized correctly. The playground returned to defaults. Token/catalog/TypeScript/build and diff checks passed on this source version.
+- **Remaining:** Full Input visual matrix and independent screen-reader review remain open; this entry tracks sample synchronization only.
+- **Prevention:** Keep generated examples derived from the same state values as the rendered controls; verify shared and subtype props across every adapter line.
