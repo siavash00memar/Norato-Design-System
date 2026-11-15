@@ -31,13 +31,14 @@
 
 ## Sizes
 
-`size`: `small`، `medium`، `large` و `xlarge`. اندازهٔ ظاهری تایپوگرافی با این prop تغییر می‌کند؛ hit target کنترل‌ها کمتر از ۴۸px نمی‌شود.
+`size`: `small`، `medium`، `large` و `xlarge`. اندازهٔ ظاهری تایپوگرافی با این prop تغییر می‌کند؛ hit target کنترل‌ها کمتر از ۴۸px نمی‌شود. فیلد ساعت یک کپسول دیداری ۳۶px با Stroke یک‌پیکسلی خنثی درون هدف ورودی ۴۸px دارد؛ در XLarge هدف می‌تواند ۵۶px باشد، اما پوستهٔ دیداری همچنان ۳۶px می‌ماند.
 
 ## States
 
-- Default، باز، فوکوس، خطا، disabled و loading.
+- Default با Stroke یک‌پیکسلی `--norato-color-border-default`، Hover و Focus با Stroke زرد Norato، باز، خطا، disabled و loading.
 - `disabled` و `loading` بازکردن/انتخاب را مسدود می‌کنند.
 - `errorText` پیام مرتبط را با `aria-invalid` و `aria-describedby` ارائه می‌کند.
+- فیلد در حالت Error از رنگ خطای معنایی استفاده می‌کند؛ Disabled/Loading ظاهر خنثی دارند و بر رنگ Hover/Focus اولویت دارند.
 - `required` روی ورودی بومی اعمال می‌شود؛ `helperText` نیز به ورودی متصل است.
 
 ## Parts
@@ -71,4 +72,4 @@
 
 ## Tokens
 
-از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-brand-yellow`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-control-target-min` و توکن‌های فاصله، مرز، شعاع و لایه استفاده می‌شود. قاب preview از توکن‌های اختصاصی `--norato-time-picker-preview-*` استفاده می‌کند.
+از `--norato-color-surface-default`، `--norato-color-text-primary`، `--norato-color-border-default`، `--norato-color-brand-yellow`، `--norato-color-focus-contrast`، `--norato-color-focus-ring`، `--norato-control-target-min`، `--norato-control-visual-height` و `--norato-radius-pill` به‌همراه توکن‌های فاصله، مرز و لایه استفاده می‌شود. قاب preview از توکن‌های اختصاصی `--norato-time-picker-preview-*` استفاده می‌کند.

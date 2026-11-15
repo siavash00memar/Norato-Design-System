@@ -141,7 +141,9 @@ onBeforeUnmount(() => { if (typeof window !== 'undefined') { window.removeEventL
   <div ref="root" class="norato-time-picker" :class="{ 'is-invalid': errorText, 'is-open': open, 'is-disabled': disabled, 'is-loading': loading }" :dir="dir" :data-size="size" :data-type="type" :data-variant="variant" @focusout="onFocusOut">
     <label class="norato-time-picker__label" :for="`${id}-value`">{{ label }}<span v-if="required" aria-hidden="true"> *</span></label>
     <div class="norato-time-picker__control" :aria-busy="loading ? 'true' : undefined">
-      <input ref="trigger" :id="`${id}-value`" class="norato-time-picker__input" type="text" :value="formatted" :placeholder="placeholder" readonly :disabled="disabled" :required="required" :aria-invalid="errorText ? 'true' : undefined" :aria-describedby="descriptionIds" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" aria-haspopup="dialog" dir="ltr" @click="openPanel" @keydown.enter.prevent="openPanel" @keydown.space.prevent="openPanel" />
+      <div class="norato-time-picker__field">
+        <input ref="trigger" :id="`${id}-value`" class="norato-time-picker__input" type="text" :value="formatted" :placeholder="placeholder" readonly :disabled="disabled" :required="required" :aria-invalid="errorText ? 'true' : undefined" :aria-describedby="descriptionIds" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" aria-haspopup="dialog" dir="ltr" @click="openPanel" @keydown.enter.prevent="openPanel" @keydown.space.prevent="openPanel" />
+      </div>
       <button class="norato-time-picker__trigger" type="button" :aria-label="open ? 'بستن انتخاب ساعت' : 'باز کردن انتخاب ساعت'" :aria-expanded="open" :aria-controls="open ? `${id}-panel` : undefined" aria-haspopup="dialog" :disabled="disabled" @click="openPanel"><span v-if="loading" class="norato-time-picker__spinner" aria-hidden="true" /><svg v-else aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></button>
       <input v-if="name" type="hidden" :name="name" :value="isRange ? `${modelStart}/${modelEnd}` : modelStart" :disabled="disabled" />
     </div>

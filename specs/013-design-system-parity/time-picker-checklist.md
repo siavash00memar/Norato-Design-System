@@ -29,3 +29,12 @@
 - At desktop 1280×720, the static selected cells and the interactive `aria-pressed=true` cells both compute to `rgb(253, 193, 1)` with `rgb(26, 26, 26)` text. The static frame remains 584×288px.
 - At mobile 499×932, the static frame remains 452×288px vs design reference's 436×300px. Both documents are 484px wide (no horizontal overflow); Norato's selected cells remain yellow/dark while design reference's are black per its own reference theme. Static card stays centered and bounded.
 - Independent screen-reader review remains open, so component maturity stays Adapted.
+
+## Time Picker input capsule follow-up — 2026-11-15
+
+- [x] The local 375×844 browser render shows a 36px-looking pill field inside the separate clock control target. The 24-hour value remains centered and LTR within the RTL form.
+- [x] Small, Medium, Large and XLarge screenshots show the capsule height/radius remain compact; XLarge grows the surrounding target while the capsule remains inset and does not stretch.
+- [x] Keyboard focus returned to the value input after Escape with one yellow stroke and no visible dark/duplicate ring. ArrowDown moved hour focus 14→15; Space selected 15:30 and updated both field and generated Vue example.
+- [x] Error showed the semantic red capsule stroke. Error+Disabled changed the field to neutral disabled treatment and exposed both value and trigger as disabled. Loading exposed its status announcement while controls stayed disabled.
+- [x] Playground was restored to Single/Columns/Medium/5-minute/enabled/no-error/no-loading/optional with 14:30.
+- [ ] Exact computed geometry, direct pointer-hover appearance, matched 390/320px responsive widths, and independent screen-reader review remain open; family DoD stays open.

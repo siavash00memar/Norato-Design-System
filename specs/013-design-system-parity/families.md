@@ -109,3 +109,7 @@ Reconciled the component contract with the current approved preview phrase and 3
 - design reference's live Input field radius is 12px. Norato gallery fields and OTP cells previously inherited 25px `--norato-radius-control`, while live shared Input shells were already 12px.
 - Input specimens, all 41 state shells, gallery/runtime OTP cells and playground field controls now use `--norato-radius-card` (12px); unrelated component radii are unchanged.
 - Local browser confirms the measured radius in RTL. Mobile and interactive state combinations were not re-exercised for this visual-only correction. Token/catalog/typecheck/build/diff checks pass; build warning remains for the 813.05KB JS chunk. Commit `28c12ce` is pushed to `origin/master`.
+
+### Time Picker field capsule follow-up — 2026-11-15
+
+The field now separates its approved 36px pill surface from the native 48px interactive target; the formatted time stays LTR. A 375×844 browser review covered four sizes, keyboard selection/focus return, error, disabled and loading states. Pointer-hover evidence, exact computed geometry, matched 390/320 widths and independent screen-reader review remain open; family maturity stays Adapted and DoD remains unchecked. Details: `time-picker-checklist.md` and `updates/2026-11-15-time-picker-field-capsule/`.
