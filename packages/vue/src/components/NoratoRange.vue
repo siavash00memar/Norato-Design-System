@@ -21,8 +21,8 @@ const props = withDefaults(defineProps<{
 const emit = defineEmits<{ 'update:modelValue': [value: RangeValue] }>()
 const values = computed(() => Array.isArray(props.modelValue) ? props.modelValue : [props.modelValue])
 const format = (value: number) => new Intl.NumberFormat('fa-IR', { maximumFractionDigits: 3 }).format(value)
+const displayValue = computed(() => values.value.map(format).join(' – '))
 const describedBy = computed(() => props.error ? `${props.id}-error` : undefined)
-const valueStyle = (value: number) => ({ insetInlineStart: `calc(${((value - props.min) / (props.max - props.min)) * 100}% - var(--norato-space-4))` })
 function update(payload: number[] | undefined) {
   const next = payload ?? values.value
   if (props.type === 'range') emit('update:modelValue', [next[0] ?? props.min, next[1] ?? props.max])
@@ -32,7 +32,7 @@ function update(payload: number[] | undefined) {
 
 <template>
   <div class="norato-range-field" :class="[`norato-range-field--${size}`, { 'norato-range-field--disabled': disabled, 'norato-range-field--invalid': error }]" dir="rtl">
-    <div class="norato-range-field__label-row"><span :id="`${id}-label`">{{ label }}</span></div>
+    <div class="norato-range-field__label-row"><span :id="`${id}-label`">{{ label }}</span><span class="norato-range-field__value" dir="ltr" aria-hidden="true">{{ displayValue }}</span></div>
     <div class="norato-range-field__control">
       <SliderRoot
         :id="id"
@@ -52,7 +52,7 @@ function update(payload: number[] | undefined) {
         @update:model-value="update"
       >
         <SliderTrack class="norato-range__track"><span class="norato-range__visual-rail"><SliderRange class="norato-range__fill" /></span></SliderTrack>
-        <SliderThumb v-for="(value, index) in values" :id="`${id}-thumb-${index}`" :key="index" class="norato-range__thumb" :aria-label="type === 'range' ? `${label}، ${index === 0 ? 'حداقل انتخاب' : 'حداکثر انتخاب'}` : label" :aria-disabled="disabled ? 'true' : undefined" :aria-invalid="error ? 'true' : undefined" :aria-describedby="describedBy"><span class="norato-range-field__thumb-value" aria-hidden="true">{{ format(value) }}</span></SliderThumb>
+        <SliderThumb v-for="(value, index) in values" :id="`${id}-thumb-${index}`" :key="index" class="norato-range__thumb" :aria-label="type === 'range' ? `${label}، ${index === 0 ? 'حداقل انتخاب' : 'حداکثر انتخاب'}` : label" :aria-disabled="disabled ? 'true' : undefined" :aria-invalid="error ? 'true' : undefined" :aria-describedby="describedBy" />
       </SliderRoot>
     </div>
     <div class="norato-range-field__bounds"><span>{{ minLabel || format(min) }}</span><span>{{ maxLabel || format(max) }}</span></div>

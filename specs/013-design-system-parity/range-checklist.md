@@ -3,7 +3,7 @@
 - [x] design reference and Norato exact component pages inspected at desktop (1280×720) and mobile (390×844) viewport sizes.
 - [x] Preview shows one compact labeled value slider and Default marker; proportions and spacing compared with design reference. Norato desktop frame is 584×288px due to the detail column; mobile frame is 320×288px.
 - [x] Single and two-thumb range values work through controlled Vue `v-model`.
-- [x] RTL is explicit: minimum at physical right, fill grows right-to-left, and value labels stay with their thumbs.
+- [x] RTL is explicit: minimum at physical right and fill grows right-to-left. The label row shows the current value, or both ordered endpoints in Range mode.
 - [x] Track/thumb geometry measured. At desktop and mobile, all 16 combinations of type/size/disabled passed; the slider remains 48px high and every thumb 48×48px.
 - [x] ArrowLeft/Right, Home/End, pointer drag, 2px focus ring with 4px offset, disabled, error association, and non-crossing ordered range behavior verified.
 - [x] Accessibility tree exposes named slider(s), min/max/current value, disabled state, and associated error description.
@@ -27,3 +27,12 @@
 - [x] Matched 1265×713 desktop browser review: client/scroll width 1250/1250px; every target 48×48px, rail 96×6px and visual thumb 20×20px. Gallery RTL fill and all five visual states are visible without blue accents.
 - [x] Matched 390×844 and 320×844 mobile reviews: document widths 375/375px and 305/305px; target/rail/thumb remain 48×48/96×6/20×20px, RTL, and no horizontal overflow. Seven actual states fit four even 131.375px rows in the two-column gallery; the long explanatory note is below the cards instead of a fake eighth slider state.
 - [x] Token/catalog/typecheck/build/diff gates pass. Live Range behavior remains unchanged; full family DoD remains open for screenshot matrix and independent screen-reader review.
+
+## Range — matched desktop value placement correction — 2026-11-16
+
+- [x] Same-viewport 1265×713 screenshots showed the reference places «میزان صدا» and `60` together in the label row, while the local build placed `60` above the thumb. The component anatomy contract also defines the label row as label plus current value.
+- [x] Moved the visible value into the shared label row. Range mode renders its two model endpoints in order; min/max remain below the rail. Thumb size, rail geometry, 48px target and keyboard model behavior are unchanged.
+- [x] Live keyboard check: ArrowLeft changed the single value 60→61 and updated the generated Vue example; ArrowRight restored 60 and the example. RTL and the initial model are restored.
+- [x] Fresh same-viewport 1265×713 local/reference screenshot review confirms the label and current value share the top row while the thumb, RTL rail and yellow fill retain their geometry. A 375px-wide live Range view shows both ordered endpoints (`25–75`) fit in the same row; no visible clipping or horizontal overflow occurred.
+- [x] Returned the mobile playground to Single, value 60, Medium, enabled, no error. Browser AX exposes the slider and generated usage at the restored value.
+- [ ] Independent screen-reader review and the remaining strict state/visual matrix remain open; Range DoD is not closed.

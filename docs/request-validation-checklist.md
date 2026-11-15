@@ -4147,3 +4147,11 @@ ame` state inconsistent.
 - [x] Same-viewport screenshots showed a circular 48px local anchor versus a rounded-square reference anchor. Changed the inert sample from capsule radius to semantic card radius.
 - [x] Fresh 1265×713 screenshot shows the rounded-square anchor and RTL top-left Badge. Live AX name remains «اعلان‌ها، ۳ مورد» with count 3; the executable adapter was not changed.
 - [ ] This does not close independent screen-reader review or Badge Final DoD.
+
+## Range — live value placement correction — 2026-11-16
+
+- [x] Matched 1265×713 screenshots showed the reference label and value in one row; local value was positioned above the moving thumb. Moved current value into the label row and ordered both endpoints for Range mode.
+- [x] ArrowLeft changed the live value and generated usage from 60 to 61; ArrowRight restored 60. RTL and model value remained synchronized.
+- [x] Fresh same-viewport 1265×713 screenshot shows local label/value sharing a row as in the reference; thumb/rail remain proportionate and RTL.
+- [x] At the 375px-wide local view, Range mode exposed two sliders at 25 and 75; the visible value read in ascending order and stayed within the row. Returned to Single/60 with matching generated code.
+- [ ] Independent screen-reader review and the complete Range state matrix remain open.

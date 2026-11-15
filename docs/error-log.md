@@ -2208,3 +2208,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Changed the inert Badge anchor to the semantic card radius; retained its 48×48px size and kept the live adapter untouched.
 - **Verification:** Fresh 1265×713 local screenshot confirms the rounded-square anchor and RTL Badge placement; browser AX still exposes the live host name/count. Token, catalog, TypeScript, build and diff gates pass.
 - **Prevention:** Use the semantic card radius for square specimen anchors; reserve the control radius for capsule-shaped controls.
+
+## ERR-281 — Range value was detached from the label row — 2026-11-16
+
+- **Observed:** Same-viewport comparison showed the reference label and current value together above the slider, while the local component put the value above the moving thumb. This also conflicted with the documented `Label Row` anatomy.
+- **Cause:** The current value was rendered inside each SliderThumb, and the label row omitted it.
+- **Correction:** Render the current single value beside the label; in Range mode, render both ordered endpoints there. Remove the thumb-attached duplicate; retain min/max labels under the rail and all thumb geometry/behavior.
+- **Verification:** Live keyboard check changed 60→61 and restored 60; both changes synchronized to the usage example. Fresh 1265×713 local/reference screenshots show the value sharing the label row. At a 375px-wide local view, Range mode exposes 25 and 75 as two named sliders and displays the ordered `25–75` value without visible clipping; returned to single 60. Token/catalog/typecheck/build/diff gates pass.
+- **Prevention:** Keep visible parts aligned with the component's documented Anatomy and verify the actual current reference rendering at matched viewport size.

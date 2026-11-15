@@ -338,8 +338,8 @@
 
 ## Range — 2026-11-01
 
-- Use design reference's compact one-field specimen structure: Persian label, numeric value above the thumb, track, range fill, and min/max beneath. Preserve Default marker and dotted-glass preview frame.
-- In RTL, minimum is on the physical right and fill grows right-to-left. Keep values anchored to their thumb positions. Keep the interactive SliderTrack full width; inset the visual rail by 24px (half the 48px thumb target) and render SliderRange inside that rail so fill endpoints meet thumb centers without changing pointer mapping.
+- Use the compact one-field specimen structure: Persian label and current numeric value share one row above the track; show min/max below the rail. For a two-thumb range, show both ordered endpoints in the value position. Preserve Default marker and dotted-glass preview frame.
+- In RTL, minimum is on the physical right and fill grows right-to-left. Keep the interactive SliderTrack full width; inset the visual rail by 24px (half the 48px thumb target) and render SliderRange inside that rail so fill endpoints meet thumb centers without changing pointer mapping.
 - Use Norato semantic colors. Keep visible thumb/rail compact while the actual pointer/keyboard target is at least 48px; Small/Medium affect rail and thumb appearance only.
 - Exact values should pair with a numeric input; the slider alone communicates approximate adjustment.
 - گالری حالت‌های Range باید rail و fill زرد، thumb سفید با Stroke خنثی، Disabled خاکستری و Focus زرد را نشان دهد؛ نمونهٔ عمومی نقطه/خط آبی برای این خانواده مناسب نیست.
