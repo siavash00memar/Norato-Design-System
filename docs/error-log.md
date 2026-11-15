@@ -2081,3 +2081,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Cap the inert specimen wrapper with the existing medium slide maximum plus one spacing token, using `min(100%, …)` so narrower parents can still constrain it. The live adapter is untouched.
 - **Verification:** At the same 1280×720 viewport, the local compact composition measures 368px vs the reference's 367.2px; the local frame is 631.984×300px vs 636×300px. Three square cards measure about 114.66px each, and the RTL title, arrows and centered indicator visually align. A fresh 390/320 browser render after the change remains open; existing pre-change mobile evidence showed no overflow.
 - **Prevention:** Measure the complete specimen composition, not only the slide track, so sibling header elements cannot escape the track's intrinsic width.
+
+## ERR-266 — Chat specimen and live message bubbles used mismatched geometry (2026-11-15)
+
+- **Observed:** The inert specimen used smaller caption text, denser line-height and a 12px generic radius; both it and the live message placed the 6px corner at the top rather than the lower sender-side edge.
+- **Cause:** The specimen and runtime relied on generic card values and the wrong logical corner mapping, with no shared semantic Chat tokens for message typography and radius.
+- **Correction:** Added semantic Chat radius and line-height tokens; aligned specimen and live bubble type to body-small and line-height 1.8; moved the 6px corner to the lower sender-side edge and mirrored it in LTR. Kept the Norato yellow outgoing fill and shared Button frame.
+- **Verification:** Fresh 1280×720 local and reference browser screenshots were reviewed side by side. The 6px corner position, text scale/line rhythm and incoming-right/outgoing-left composition now align more closely; current live AX state shows the messages and controls. Previous same-origin 320/390 measurements remain valid for the unchanged frame and overflow rules, but the full responsive and sender/type matrix has not been recaptured after this update. Independent screen-reader review remains open.
+- **Prevention:** Keep static specimen and runtime styles on the same semantic component tokens and verify logical corner placement at both text directions.

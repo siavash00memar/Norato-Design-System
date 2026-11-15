@@ -32,6 +32,8 @@ export const productPatternTokens = {
   chatLayoutMinBlockSize: '--norato-chat-layout-min-block-size',
   chatLayoutMaxBlockSize: '--norato-chat-layout-max-block-size',
   chatBubbleMaxInlineSize: '--norato-chat-bubble-max-inline-size',
+  chatBubbleRadius: '--norato-chat-bubble-radius',
+  chatMessageLineHeight: '--norato-chat-message-line-height',
   chatMediaMaxInlineSize: '--norato-chat-media-max-inline-size',
   chatFileIconInlineSize: '--norato-chat-file-icon-inline-size',
   chatWaveBarInlineSize: '--norato-chat-wave-bar-inline-size',

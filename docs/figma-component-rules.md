@@ -584,6 +584,7 @@
 - The inert Chat specimen uses the shared Button dotted frame at 640×300 and shows two opposite message bubbles with timestamp/read metadata; keep the full header and composer in the separate live playground.
 - In RTL, incoming remains right aligned and outgoing remains left aligned. Do not rely on color alone to identify sender.
 - The outgoing bubble uses Norato yellow with primary text; incoming uses a neutral surface. Keep text bubbles below the available conversation width.
+- Use the body-small type token and Chat message line-height token in the specimen and live bubble. The bubble uses the semantic Chat radius token; its 6px sender-side corner is on the lower edge (RTL incoming lower-right, outgoing lower-left), mirrored in LTR.
 - Reduce vertical spacing only between consecutive messages from the same sender. Preserve the normal gap when the sender changes.
 - Images retain intrinsic proportion and audio/file controls keep their accessible names and 48px target.
 - **Validation:** local mobile page was reviewed alongside the matching reference capture. Enter sent a typed outgoing message and reset the composer; the message-type selector exposed its image alternative text, and the display-only recording state disabled text input.

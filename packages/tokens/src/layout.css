@@ -28,6 +28,8 @@
   --norato-chat-layout-min-block-size: 360px;
   --norato-chat-layout-max-block-size: 620px;
   --norato-chat-bubble-max-inline-size: 420px;
+  --norato-chat-bubble-radius: var(--norato-radius-modal);
+  --norato-chat-message-line-height: 1.8;
   --norato-chat-media-max-inline-size: 280px;
   --norato-chat-file-icon-inline-size: 36px;
   --norato-chat-wave-bar-inline-size: 2px;

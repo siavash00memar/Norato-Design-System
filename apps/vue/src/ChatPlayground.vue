@@ -21,7 +21,7 @@ const variantMessage = computed<NoratoChatMessageData>(() => ({
 const messages = computed(() => [
   ...(showSampleMessages.value ? [
     { id: 'incoming-one', sender: 'incoming', type: 'text', text: 'سلام! فایل راهنما رو دیدی؟', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:00+03:30', senderName: 'سارا' },
-    { id: 'outgoing-one', sender: 'outgoing', type: 'text', text: 'بله، ساختارش خیلی روشنه.', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:30+03:30', read: true },
+    { id: 'outgoing-one', sender: 'outgoing', type: 'text', text: 'آره، خیلی تمیز و مرتب شده.', time: '۱۰:۳۰', dateTime: '2026-11-08T10:30:30+03:30', read: true },
     variantMessage.value,
   ] as NoratoChatMessageData[] : []),
   ...sent.value,
