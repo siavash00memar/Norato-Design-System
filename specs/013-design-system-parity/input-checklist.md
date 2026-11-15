@@ -209,3 +209,9 @@
 - [x] Compared the local Button and Input pages against their matching reference pages at that viewport. The local preview begins about 50px above the reference on Input and about 70px above it on Button; the offset is therefore shared page-shell/header composition, not an Input-only sizing defect. The local Input starts about 21px below local Button because its longer summary wraps to an additional line.
 - [ ] Review the shared page-shell vertical composition across representative component families and decide a tokenized, Button-consistent adjustment before changing any individual specimen. This comparison is evidence of a layout difference; it does not by itself prove a component defect or close Input Final DoD.
 - [ ] Full adapter/state visual matrix, exact mobile geometry, and independent screen-reader review remain open.
+
+## Input mobile specimen spot check — 2026-11-15
+
+- [x] Fresh local browser screenshot at 375×844 shows the Button-style specimen card, Default marker, adjacent email icon/title, and a single RTL pill field. No obvious vertical stretching or clipped field is visible in the specimen.
+- [x] No Input settings were changed during this visual spot check; the executable playground remains at its default values and states.
+- [ ] This screenshot does not compare the reference page or measure exact mobile geometry; full state-by-state visual review and independent screen-reader review remain open.
