@@ -2089,3 +2089,10 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Added semantic Chat radius and line-height tokens; aligned specimen and live bubble type to body-small and line-height 1.8; moved the 6px corner to the lower sender-side edge and mirrored it in LTR. Kept the Norato yellow outgoing fill and shared Button frame.
 - **Verification:** Fresh 1280×720 local and reference browser screenshots were reviewed side by side. The 6px corner position, text scale/line rhythm and incoming-right/outgoing-left composition now align more closely. The live selector traversed all 10 sender/type combinations; AX reflected each selected message, incoming/outgoing image/file rendered, the 16:9 image was visually reviewed, and LTR mirrored before RTL defaults were restored. Previous same-origin 320/390 measurements remain valid for the unchanged frame and overflow rules. A full saved screenshot matrix, fresh responsive captures, and independent screen-reader review remain open.
 - **Prevention:** Keep static specimen and runtime styles on the same semantic component tokens and verify logical corner placement at both text directions.
+
+## ERR-267 — Browser accessibility bridge reports selectable List rows as checkbox (2026-11-15)
+
+- **Observed:** Live DOM contains native BUTTON rows with `aria-pressed`, but the browser accessibility bridge serialized selectable rows as checkboxes.
+- **Investigation:** Adding explicit `role=button` did not change the bridge output; the redundant role was reverted. DOM reports native buttons and the correct true/false pressed state through implicit semantics.
+- **Disposition:** No component/API change is justified by this bridge-only discrepancy. Independent screen-reader output is still needed to determine its user impact.
+- **Prevention:** Verify DOM semantics and browser accessibility output separately; do not treat bridge serialization as screen-reader speech evidence.
