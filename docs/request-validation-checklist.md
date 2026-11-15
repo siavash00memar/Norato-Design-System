@@ -4014,3 +4014,10 @@ ame` state inconsistent.
 - [x] Four sizes updated on all eight lines; Inside/Outside label placement updated the seven supporting adapters and stayed absent on OTP. OTP length and Number presentation settings synchronized with their generated props.
 - [x] Restored the live page to default state: Medium, Outside, RTL, six OTP digits, Number stepper, enabled and optional, no error/loading/success/read-only, +98, Search shortcut on. Default snippet reflects the same settings.
 - [ ] This verifies generated usage synchronization only. Full visual state/size comparison, responsive cross-product, and independent screen-reader review remain open for Input Final DoD.
+
+## Input desktop Stroke and frame recheck — 2026-11-16
+
+- [x] Matched live browser render at 1265×713: local specimen frame measured 635.984×300px; reference frame measured 636×300px.
+- [x] Standard field interaction target is 48px and the visible capsule is 36px (34px pseudo-element body plus 1px borders); resting Stroke is `#e8e8e8` with no shadow.
+- [x] Error + Disabled retains `aria-invalid` and error text while all seven standard field capsules use neutral 1px Stroke and muted surface. Focus/hover changes the Error Stroke to Norato yellow; pointer exit restores the red error Stroke.
+- [ ] Mobile viewport resizing did not take effect in this browser session (the page remained 1265×713). No new mobile evidence is claimed; Input's full state matrix and independent screen-reader review remain open.

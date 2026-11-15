@@ -236,3 +236,11 @@
 - [x] Local title/icon placement is adjacent and RTL; the placeholder is Persian and right-aligned. Local intentionally omits the sample address and helper text. Field and frame proportions are visually close at this viewport.
 - [x] The local preview begins higher because the page shell and introductory content differ; the frame itself is the same compact 300px specimen. No Input-only vertical offset was added.
 - [ ] This is a screenshot comparison, not exact mobile DOM measurement. Mobile state-by-state comparison and independent screen-reader review remain open.
+
+## Input — تازه‌سنجی دسکتاپ Stroke و قاب — 2026-11-16
+
+- [x] در مرورگر زنده و viewport برابر ۱۲۶۵×۷۱۳، قاب نمونهٔ محلی ۶۳۵٫۹۸×۳۰۰px و قاب مرجع ۶۳۶×۳۰۰px اندازه‌گیری شد؛ اختلاف عرض ۰٫۰۲px است.
+- [x] پوستهٔ محلی هدف تعاملی ۴۸px دارد؛ کپسول دیداری ۳۶px است (۳۴px بدنه به‌علاوهٔ Stroke یک‌پیکسلی در دو طرف). حالت عادی `#e8e8e8` و بدون سایه/هاله است.
+- [x] ترکیب Error+Disabled روی هر هفت پوستهٔ استاندارد Input، Stroke خنثی یک‌پیکسلی و سطح غیرفعال داشت؛ `aria-invalid` و متن خطا حفظ شدند. پس از فعال‌شدن فیلد، Focus/hover زرد شد و با خروج pointer، Stroke خطا به قرمز برگشت.
+- [x] عنوان محلی Estedad 12px/700 و placeholder فارسی Vazir 12px/300، `#a1a1a1`، راست‌چین و RTL است؛ نمونه مقدار ایمیل و متن راهنما ندارد.
+- [ ] تلاش برای تنظیم viewport موبایل در این نشست مؤثر نبود و مرورگر روی ۱۲۶۵×۷۱۳ ماند؛ اندازه‌گیری موبایل در این نوبت انجام نشد. ماتریس کامل بصری/حالت‌ها و بررسی مستقل صفحه‌خوان همچنان باز است؛ DoD نهایی Input بسته نیست.
