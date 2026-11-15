@@ -21,3 +21,10 @@
 - [x] With a centered label, the browser AX tree exposed `separator «یا»`; DOM inspection confirmed `aria-orientation="vertical"`, RTL context, a 1px rule axis, and the label remained horizontal rather than rotating. The labeled composite measured 7.625×48px; the simple vertical rule measured 1×48px.
 - [x] Restored horizontal, simple line, subtle tone, spacing 8, decorative true and RTL; the AX separator disappeared and the generated snippet returned to defaults. Browser returned to Carousel at scroll position 0.
 - [ ] Independent screen-reader review remains a Final DoD item; browser AX observation is not a substitute.
+
+## Divider — fresh narrow semantic-label check (2026-11-16)
+
+- [x] In the narrow local playground, vertical + centered-label + `decorative=false` kept «یا» horizontal between the vertical rule segments; the browser accessibility view exposed the named node as `splitter یا`, and generated Vue props matched the selection.
+- [x] With `decorative=false` and an unlabeled simple vertical rule, this browser snapshot did not expose a separately named node. This is distinct from the labeled semantic case; no screen-reader behavior is inferred from the snapshot.
+- [x] Reload restored horizontal/simple/subtle/spacing 8/decorative/RTL defaults and the generated sample. The user browser returned to Accordion.
+- [ ] Independent screen-reader review remains open; verify unlabeled semantic separator announcement in a full assistive-technology session.

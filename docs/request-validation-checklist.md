@@ -4192,3 +4192,9 @@ ame` state inconsistent.
 - [x] Narrow local render retained proportionate timeline rows and markers. Card, Avatar, Success, LTR and Compact selections each updated the live playground and generated Vue sample.
 - [x] The accessible view preserved the five-event order and their labels; reload restored Default/Active Dot/RTL/Default and the browser returned to Accordion.
 - [ ] This pass does not close the independent screen-reader review.
+
+## Divider — vertical semantic label — 2026-11-16
+
+- [x] At the narrow local view, vertical + centered «یا» + semantic mode retained horizontal label text; the browser accessibility view exposed `splitter یا` and the generated sample synchronized.
+- [x] In unlabeled simple semantic mode, the browser snapshot did not expose a named node; no screen-reader claim is made. Defaults were restored afterward.
+- [ ] Independent screen-reader review remains open, especially for an unlabeled semantic separator.
