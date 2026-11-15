@@ -3976,3 +3976,10 @@ ame` state inconsistent.
 - [x] The visible live bubble reported `data-state=instant-open`, `data-side=top`, and RTL direction. The host ring computed to yellow `rgb(253, 193, 1)`, 2px solid, 4px offset, and no duplicate shadow.
 - [x] Escape closed the visible bubble, removed `aria-describedby`, set trigger state to closed, and retained keyboard focus and the visible ring.
 - [ ] This is browser DOM/accessibility-tree evidence, not independent screen-reader announcement or reading-order review; Tooltip DoD remains open.
+
+## Select — Error + Disabled interaction recheck — 2026-11-16
+
+- [x] Actual local browser render at 1265×713: with Error and Disabled enabled, the selected value «تهران» remained, the trigger was disabled, and clicking it did not open the menu or alter the value.
+- [x] Vue sample synchronized to `disabled` plus `error-text`; the field rendered with a muted neutral surface/stroke and the explanatory text remained visible. No blue or yellow active stroke appeared on the disabled field.
+- [x] Screenshot review showed the RTL label, value, chevron, helper/error text, and playground controls within the page; no visible stretching or clipping at this viewport.
+- [ ] This was a single desktop combination. It does not complete the Select state/size/mode visual matrix, responsive state-by-state comparison, or independent screen-reader review.

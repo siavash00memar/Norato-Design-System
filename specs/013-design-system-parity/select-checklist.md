@@ -81,3 +81,10 @@
 - [x] Live mobile browser opened the named «شهر» combobox as a custom grouped listbox. The open render showed a capsule yellow stroke on the focused trigger/search field, RTL group/option alignment, a soft-yellow selected row, and a visible disabled option.
 - [x] ArrowDown opened the list; Escape returned the page to its closed state while preserving the selected «تهران» value. No value was changed during this recheck.
 - [ ] This confirms only the open/close and current visual state; it does not replace the full variant screenshot matrix or independent screen-reader review.
+
+## Select — Error + Disabled interaction — 2026-11-16
+
+- [x] In the local browser at 1265×713, enabling Error and Disabled together retained the selected «تهران» value and generated both `disabled` and `error-text` props.
+- [x] The live trigger was exposed as disabled; clicking it left the menu closed and did not change the selected value.
+- [x] The browser render showed a muted neutral disabled field and retained the explanatory text; no blue or yellow active stroke appeared on the disabled field.
+- [ ] This is one live combination only. Full visual state captures and independent screen-reader review remain open; Select DoD is not closed.
