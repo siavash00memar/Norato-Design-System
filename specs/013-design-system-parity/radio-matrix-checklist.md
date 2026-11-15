@@ -1,5 +1,12 @@
 # Radio Matrix — Checklist
 
+## Fresh 16px Required + Error + Disabled combination — 2026-11-15
+
+- [x] In the live RTL playground at 16px, selected Yearly, then enabled Error, Required and Disabled together. All three radios were exposed disabled; the selected value stayed in the generated Vue sample, and an attempted activation of Quarterly did not change it.
+- [x] Turning on the no-selection simulation set the controlled value and Vue sample to `undefined`; the required/error content remained exposed and the disabled-status message took priority. The screenshot showed all three circles neutral and no visible stretch.
+- [x] Restored Monthly, 20px, optional, enabled, no-error and selection simulation off; the browser tree, visible selected state and generated snippet agree.
+- [ ] This additional combination does not close the exhaustive live state/focus/hover cross-product or independent screen-reader validation; Radio DoD remains open.
+
 - [x] Five state groups each render four cells: 2 checked values × 2 sizes × 5 states (20 total), confirmed in the actual browser screenshot.
 - [x] Fresh matched desktop review at 1280×720 confirms design reference's four specimen cards plus property selector and Norato's five state groups with 20 documented cells. design reference's Variants gallery is 636px wide; Norato's content column constrains the matrix to 584px. Norato preserves the extra Focus combination required by its contract.
 - [x] Radio glyphs are circular, proportional (16px/20px), and not stretched; desktop screenshot confirms 16px and 20px circles plus the selected dot.

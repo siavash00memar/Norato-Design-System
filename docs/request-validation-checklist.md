@@ -4104,3 +4104,10 @@ ame` state inconsistent.
 - [x] Escape removed the tooltip content and retained trigger focus without navigation.
 - [x] Browser AX exposed trigger and content text/ID while open and removed the content after Escape; this does not establish the role/relation or spoken output for an independent screen reader.
 - [ ] No same-viewport reference capture was made in this pass. Matched responsive comparison and independent screen-reader output remain unverified.
+
+## Radio — fresh small-size combined-state recheck — 2026-11-15
+
+- [x] At the live local 16px RTL group, Yearly stayed selected and synchronized with the Vue sample under Error + Required + Disabled. An activation attempt on Quarterly did not alter the selection.
+- [x] The no-selection simulation synchronized `undefined` into the Vue sample while required/error content remained exposed and disabled status took priority. The screenshot showed neutral, proportionate circles.
+- [x] Restored Monthly, 20px, optional, enabled, no-error and normal selection behavior; visible state and generated snippet match.
+- [ ] This single additional combination does not cover all focus/hover/state combinations or independent screen-reader output; Radio Final DoD remains open.
