@@ -95,6 +95,27 @@ const scrollToSection = (id: string) => document.getElementById(id)?.scrollIntoV
 const scrollToFoundation = (id: string) => document.getElementById(`foundation-${id}`)?.scrollIntoView({ behavior: 'smooth' })
 const sectionId = (title: string) => `doc-${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
 const selectedItem = computed(() => componentByName.get(selectedComponent.value))
+const selectedContractMarkdown = computed(() => {
+  const component = selectedItem.value
+  if (!component) return ''
+  const key = `../../../${component.contractPath}`
+  return contractDocs[key] || Object.entries(contractDocs).find(([file]) => file.endsWith(component.contractPath))?.[1] || ''
+})
+const selectedHeaderArea = computed(() => selectedContractMarkdown.value.match(/^\*\*حوزه:\*\*\s*(.+?)\s*$/m)?.[1]?.trim() || '')
+const selectedHeaderSummary = computed(() => {
+  const overview = selectedContractMarkdown.value.split(/^## /m).slice(1)
+    .find(block => block.startsWith('Overview\n') || block.startsWith('Overview\r\n'))
+  if (!overview) return ''
+  const body = overview.slice(overview.indexOf('\n') + 1)
+  const firstParagraph = body.split(/\r?\n\s*\r?\n/, 1)[0]
+  return firstParagraph
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim()
+})
 const copiedKey = ref('')
 const copyFeedback = ref('')
 let copyFeedbackTimer: ReturnType<typeof setTimeout> | undefined
@@ -127,11 +148,8 @@ const syncRouteFromHash = () => {
   void nextTick(updateActiveSection)
 }
 const contractSections = computed(() => {
-  const component = selectedItem.value
-  if (!component) return []
-  const key = `../../../${component.contractPath}`
-  const raw = contractDocs[key] || Object.entries(contractDocs).find(([path]) => path.endsWith(component.contractPath))?.[1] || ''
-  return raw.split(/^## /m).slice(1).map(block => {
+  if (!selectedContractMarkdown.value) return []
+  return selectedContractMarkdown.value.split(/^## /m).slice(1).map(block => {
     const newline = block.indexOf('\n')
     return { title: block.slice(0, newline).trim(), body: block.slice(newline + 1).trim() }
   }).filter(section => section.title && section.title !== 'Preview')
