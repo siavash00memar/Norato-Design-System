@@ -120,6 +120,14 @@
 - [x] Required was switched off, the playground returned to empty, and the local browser returned to Carousel.
 - [ ] The browser inspection layer exposes only the native input's fake path/validity, not `FileList` entries or named `FormData` contents. This confirms selected/removed validity but not the serialized form payload; picker cancellation/reselection, OS drop and independent screen-reader review remain open.
 
+## File Upload sample action Button consistency — 2026-11-15
+
+- [x] Source audit found the “افزودن آیتم نمونه برای بررسی وضعیت‌ها” playground action had no Norato class and inherited browser-default chrome.
+- [x] Applied the shared secondary Button class; the existing event, RTL container, queue limit, and disabled condition remain unchanged.
+- [x] Live 375px browser render shows the shared secondary pill within the RTL playground; the shared Button contract supplies the 48px minimum target.
+- [x] Five sample rows reached the configured limit and the action became disabled in the browser accessibility tree; clearing restored the empty queue and enabled action.
+- [ ] Native OS drag/drop, independent screen-reader review, and full combined keyboard/state paths remain open; File Upload DoD stays open.
+
 ## Matched responsive geometry before correction — 2026-11-15
 
 - [x] Fresh local and reference pages were measured at the same 390px and 320px viewport widths. At 390px both document client widths are 375px and neither document overflows: Norato frame 328×300px / inner Dropzone 310×152px; reference frame 327×300px / inner Dropzone 320.76×153.63px.

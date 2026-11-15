@@ -3590,6 +3590,12 @@ ame` state inconsistent.
 - [x] Required was restored off, the queue cleared, and browser route returned to Carousel.
 - [ ] Browser inspection still cannot expose actual FileList entries or named FormData serialization. Picker cancellation/reselection, OS file drop and independent screen-reader output remain open.
 
+## File Upload sample action Button consistency — 2026-11-15
+
+- [x] At the live 375px File Upload render, the sample action shows the shared secondary pill treatment inside the RTL flow. Its 48px minimum is inherited from the shared Button contract; DOM computed geometry was not available in this pass.
+- [x] Added five sample items to the configured limit; the accessibility tree exposed the action as disabled. Clearing restored zero items and the enabled action.
+- [x] Tab from the sample action reached the first row status action; playground was restored. Full family DoD remains open for OS drag/drop, independent screen-reader review, and combined state paths.
+
 ## Carousel image proportions — 2026-11-15
 - [x] On the live Carousel page at 499×932, all five slide images share a 260×150 intrinsic source and render at 340.75×191.67 in the 16:9 frame with `object-fit: cover`; the frame does not distort their ratio.
 - [x] Screenshot review confirms the current RTL track keeps the image cards bounded and the active indicator visible.

@@ -652,3 +652,8 @@ File Upload — وقتی انتخاب فایل الزامی است، واژهٔ 
 
 - At widths up to 599px, arrange the inert Range state specimens in two equal RTL columns to keep the state list compact.
 - Preserve the 48×48px target, 96×6px rail, and 20×20px visual thumb. This responsive rule applies only to the documentation gallery, not the live slider.
+
+## File Upload — playground sample action (2026-11-15)
+
+- The action that adds an example queue item uses the shared secondary Button class, preserving the common pill appearance and minimum 48px target.
+- Keep the existing Persian label, RTL flow, queue limit, and disabled semantics; do not add a page-local button treatment.

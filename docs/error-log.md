@@ -2129,3 +2129,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Verification:** At 375×844, screenshots across all four sizes show a compact capsule; keyboard focus shows one yellow stroke, invalid shows semantic red, and disabled/loading remain neutral. ArrowDown/Space changed 14:30 to 15:30 and synchronized the example; Escape closed the panel and returned focus. Playground restored to default.
 - **Remaining:** Exact DOM measurements, direct pointer-hover screenshot, matched 390/320px geometry, and independent screen-reader review are still open.
 - **Prevention:** For read-only or trigger-like fields, audit the visible surface separately from the native interactive target; do not let a component-specific card radius bypass the shared input contract.
+
+## ERR-272 — File Upload sample action used browser-default button chrome (2026-11-15)
+
+- **Observed:** The File Upload playground's “افزودن آیتم نمونه برای بررسی وضعیت‌ها” action appeared as a small gray native button, unlike the shared Norato Button system.
+- **Cause:** Its `<button>` had no design-system class, and the global reset only inherited color and font.
+- **Correction:** Applied the existing `.button.secondary` class; no local override or new token was added. Queue limit and click behavior are unchanged.
+- **Verification:** At the live 375px RTL page, screenshot showed the secondary pill. Five sample rows reached the configured limit and AX exposed the button as disabled; clearing restored zero rows and the enabled button. Tab reached the first row status action. Technical gates are recorded in the scoped update checklist.
+- **Prevention:** Review every playground action against the shared Button contract; plain buttons need an explicit semantic Norato style.
