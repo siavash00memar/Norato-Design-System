@@ -25,3 +25,10 @@
 - [x] Fresh post-edit browser render shows the named family-specific headings. At 390×844, the local/reference card silhouettes and frame heights align visually; the local document is 375px with no horizontal overflow. The 36px visible playground capsules retain a 48px absolute pointer hit area.
 - [x] Keyboard: Enter opens the type listbox, ArrowDown focuses Shape, and Enter changes Pattern → Shape while updating the generated Vue snippet. Pointer: selecting LTR updates the trigger and generated `dir="ltr"` snippet. The playground was restored to Pattern/Avatar Text/Pulse/RTL.
 - [ ] Independent screen-reader review remains open for Final DoD.
+
+## Skeleton — fresh mobile and direction review (2026-11-16)
+
+- [x] Fresh local narrow screenshot of Avatar Text shows a square 40px avatar beside proportionate lines within the preview and playground; no obvious vertical stretch or clipping.
+- [x] Switching Pulse→Shimmer and RTL→LTR updates the generated Vue sample to each selected effect/direction. The playground was restored to Avatar Text/Pulse/RTL.
+- [x] The browser accessibility view announced «در حال بارگذاری محتوا» for the live placeholder.
+- [ ] This browser accessibility view rendered the named placeholder as a generic container and did not expose `region` or `aria-busy`; the adapter source declares both. Runtime semantics need a higher-fidelity accessibility-tree or screen-reader check. Independent screen-reader review remains open.

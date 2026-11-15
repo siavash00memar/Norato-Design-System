@@ -4180,3 +4180,9 @@ ame` state inconsistent.
 - [x] The narrow local specimen remains inside its dotted frame with RTL order and no obvious stretch/clipping.
 - [x] In controlled mode, «ببین» announced its feedback without changing the route. Dismiss removed the Banner and announced its closed state; «نمایش دوباره» restored the same sample. Reload returned the playground to its default visible/controlled state.
 - [ ] Independent screen-reader review and full Banner state/visual coverage remain open.
+
+## Skeleton — fresh mobile direction and AX review — 2026-11-16
+
+- [x] At the narrow local view, Avatar Text kept its square avatar and proportionate lines without obvious stretching or clipping; Shimmer and LTR selections synchronized to the generated example before restoring Pulse/RTL.
+- [x] The browser accessibility view exposed the live label «در حال بارگذاری محتوا».
+- [ ] This view did not expose the source-declared `role="region"` or `aria-busy`; a higher-fidelity accessibility inspection and independent screen-reader review remain open.
