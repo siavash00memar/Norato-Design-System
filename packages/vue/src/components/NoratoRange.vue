@@ -28,6 +28,47 @@ function update(payload: number[] | undefined) {
   if (props.type === 'range') emit('update:modelValue', [next[0] ?? props.min, next[1] ?? props.max])
   else emit('update:modelValue', next[0] ?? props.min)
 }
+function handleRangeBoundaryKeydown(event: KeyboardEvent) {
+  if (props.type !== 'range' || (event.key !== 'Home' && event.key !== 'End')) return
+
+  const root = event.currentTarget as HTMLElement
+  const thumb = (event.target as HTMLElement).closest<HTMLElement>('[role="slider"]')
+  const thumbs = Array.from(root.querySelectorAll<HTMLElement>('[role="slider"]'))
+  const index = thumb ? thumbs.indexOf(thumb) : -1
+  if (index < 0 || values.value[index] === undefined) return
+
+  event.preventDefault()
+  event.stopPropagation()
+
+  const precision = Math.max(
+    ...[props.min, props.max, props.step].map(value => String(value).split('.')[1]?.length ?? 0),
+  )
+  const factor = 10 ** precision
+  const minUnits = Math.round(props.min * factor)
+  const stepUnits = Math.max(1, Math.round(props.step * factor))
+  const roundUnits = (units: number) => Number((units / factor).toFixed(precision))
+  const currentValues = values.value
+  let nextValue: number
+
+  if (event.key === 'Home') {
+    if (index === 0) nextValue = props.min
+    else {
+      const lowerUnits = Math.round((currentValues[index - 1] + props.step) * factor)
+      const stepIndex = Math.ceil((lowerUnits - minUnits) / stepUnits)
+      nextValue = roundUnits(minUnits + stepIndex * stepUnits)
+    }
+  } else if (index === currentValues.length - 1) nextValue = props.max
+  else {
+    const upperUnits = Math.round((currentValues[index + 1] - props.step) * factor)
+    const stepIndex = Math.floor((upperUnits - minUnits) / stepUnits)
+    nextValue = roundUnits(minUnits + stepIndex * stepUnits)
+  }
+
+  if (nextValue === currentValues[index]) return
+  const next = [...currentValues]
+  next[index] = nextValue
+  emit('update:modelValue', next as [number, number])
+}
 </script>
 
 <template>
@@ -49,6 +90,7 @@ function update(payload: number[] | undefined) {
         :aria-describedby="describedBy"
         :aria-invalid="error ? 'true' : undefined"
         :min-steps-between-thumbs="type === 'range' ? 1 : 0"
+        @keydown.capture="handleRangeBoundaryKeydown"
         @update:model-value="update"
       >
         <SliderTrack class="norato-range__track"><span class="norato-range__visual-rail"><SliderRange class="norato-range__fill" /></span></SliderTrack>

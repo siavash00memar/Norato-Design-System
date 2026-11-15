@@ -49,5 +49,13 @@
 ## Range — per-thumb keyboard follow-up — 2026-11-15
 
 - [x] The live browser targeted the lower thumb by its accessible element; ArrowLeft changed its value from 25 to 26 and the generated tuple snippet changed from `[25, 75]` to `[26, 75]`.
-- [ ] Home/End behavior on the lower thumb did not remain isolated in the browser evidence: after a lower-thumb-targeted End, AX reported the upper thumb at 100 and focus on the upper thumb. This could be component behavior or browser automation focus targeting; do not claim boundary non-crossing until repeated with a reliable direct interaction path.
+- [x] Reproduced the lower-thumb `End` issue with direct coordinate focus and keyboard input: the upper endpoint changed from 75 to 100. Inspection of the installed Reka Slider source showed `End` always targets the last thumb and `Home` always targets the first, irrespective of focus.
+- [x] Norato now handles Range `Home`/`End` on the focused thumb and clamps it against its neighbor by one step. Browser checks confirmed lower `End` changed 25→74 while upper remained 75; lower `Home` changed 74→0 while upper remained 75; upper `Home` changed 75→1 while lower remained 0; upper `End` changed 1→100; lower `End` against 100 changed 0→99; focus stayed on the operated thumb. Generated tuple values matched each result. Arrow navigation on the upper thumb after boundary navigation changed 99→100 on that same thumb.
 - [ ] Independent keyboard/screen-reader reproduction of both thumbs' Home/End and boundary behavior remains open; Range DoD stays open.
+
+## Range — direct per-thumb boundary-key correction — 2026-11-16
+
+- [x] Same live browser session reproduced Reka's hard-coded first/last-thumb boundary behavior, then verified the Norato capture handler affects only the focused thumb.
+- [x] Both lower and upper Home/End transitions were checked, including one-step non-crossing at `[99, 100]`; focus, accessible values, and generated Vue tuple stayed synchronized.
+- [x] Browser returned to the default Single/60 state after the Range review.
+- [ ] Independent screen-reader review, pointer drag, exact error-description relation, matched 320px reference, and full hover/pressed/focus state matrix remain open. Range DoD remains open.

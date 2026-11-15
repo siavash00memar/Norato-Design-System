@@ -4285,4 +4285,5 @@ ame` state inconsistent.
 ## Range — per-thumb keyboard follow-up — 2026-11-15
 
 - [x] Targeting the lower thumb in the live Range playground and pressing ArrowLeft changed the value 25→26; the accessible value and generated tuple snippet both updated.
-- [ ] A lower-thumb-targeted End sequence reported the upper thumb at 100 and focus on that thumb. The browser action did not isolate the target consistently, so boundary/non-crossing behavior is unresolved pending direct reproduction.
+- [x] Direct coordinate focus reproduced that the Reka Slider boundary handler changed the upper endpoint when `End` was sent to the lower thumb. Norato now captures Range Home/End and clamps only the focused thumb; browser checks verified `[25,75]` → `[74,75]` on lower End, `[74,75]` → `[0,75]` on lower Home, `[0,75]` → `[0,1]` on upper Home, `[0,1]` → `[0,100]` on upper End, and lower End at the upper bound → `[99,100]`. Focus remained on the operated thumb and the code example matched.
+- [x] ArrowLeft on the focused upper thumb after boundary navigation changed only its value 99→100. Returned the browser to Single/60.

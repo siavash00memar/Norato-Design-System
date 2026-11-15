@@ -1,7 +1,7 @@
 # Range — قرارداد کامپوننت نوراتو
 
 **حوزه:** Forms & Inputs  
-**وضعیت نوراتو:** Implemented — adapter، رفتار و ماتریس DoD دسکتاپ/موبایل بررسی شدند
+**وضعیت نوراتو:** Implemented — adapter و رفتار پایه آماده‌اند؛ بررسی نهایی DoD هنوز باز است
 
 ## Preview
 
@@ -61,7 +61,7 @@
 
 `NoratoRange` با `id`، `label`، `modelValue`، `min`، `max`، `step`، `type`، `size`، `disabled`، `error`، `minLabel` و `maxLabel` مقدار تکی یا tuple دو عضوی را می‌پذیرد و `update:modelValue` با همان شکل منتشر می‌کند. Reka Slider برای pointer و keyboard استفاده می‌شود؛ حداقل در RTL سمت راست است و fill به سمت چپ رشد می‌کند. هر thumb هدف ۴۸px دارد.
 
-با کلیدهای جهت مقدار قدم‌به‌قدم تغییر می‌کنه. `Home` و `End` به min و max می‌روند؛ هر thumb نام، min/max/current value دارد و خطا با `aria-describedby` متصل است.
+با کلیدهای جهت، مقدار دستگیرهٔ فوکوس‌شده قدم‌به‌قدم تغییر می‌کند. در حالت بازه، `Home` و `End` فقط همان دستگیره را به نزدیک‌ترین حد مجاز می‌برند؛ فاصلهٔ حداقل یک `step` بین دو دستگیره حفظ می‌شود و دستگیره‌ها از هم عبور نمی‌کنند. هر thumb نام، min/max/current value دارد و خطا با `aria-describedby` متصل است.
 
 ### قاعدهٔ عمومی Focus در Norato
 

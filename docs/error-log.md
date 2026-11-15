@@ -2216,3 +2216,12 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Correction:** Render the current single value beside the label; in Range mode, render both ordered endpoints there. Remove the thumb-attached duplicate; retain min/max labels under the rail and all thumb geometry/behavior.
 - **Verification:** Live keyboard check changed 60→61 and restored 60; both changes synchronized to the usage example. Fresh 1265×713 local/reference screenshots show the value sharing the label row. At a 375px-wide local view, Range mode exposes 25 and 75 as two named sliders and displays the ordered `25–75` value without visible clipping; returned to single 60. Token/catalog/typecheck/build/diff gates pass.
 - **Prevention:** Keep visible parts aligned with the component's documented Anatomy and verify the actual current reference rendering at matched viewport size.
+
+## ERR-282 — Range Home/End targeted the wrong thumb — 2026-11-16
+
+- **Observed:** In the live two-thumb playground, focusing the lower thumb and pressing `End` changed the upper endpoint from 75 to 100. The inverse `Home` behavior was also tied to the first thumb rather than the active thumb.
+- **Cause:** The installed Reka Slider 2.11.0 root implementation hard-codes Home to index 0 and End to the final index, ignoring which thumb dispatched the key.
+- **Correction:** Norato intercepts Home/End during capture only in Range mode, finds the focused slider thumb, updates its endpoint, and clamps it to the adjacent endpoint by one `step`. Single mode and directional-key behavior remain on Reka.
+- **Verification:** Live browser checks cover both thumbs' Home/End, ordered tuple/example synchronization, retained focus, the `[99,100]` one-step boundary, and ArrowLeft on the upper thumb after boundary navigation. Token, catalog, TypeScript, build, and diff gates are run for this correction.
+- **Remaining:** Independent screen-reader review and the rest of Range's visual/state matrix remain open; this correction does not close the Range family DoD.
+- **Prevention:** For multi-value primitives, verify keyboard keys against each separately focused thumb; a passing single-slider keyboard check does not prove per-thumb behavior.
