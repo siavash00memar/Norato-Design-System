@@ -4174,3 +4174,9 @@ ame` state inconsistent.
 - [x] At the local narrow view, RTL query «پژوهش» exposed both the matching existing option and the create option. Enter on the active match selected the existing value `research`.
 - [x] In multi mode, the model, selected status and generated Vue sample synchronized to `design` plus `research`; the playground was restored to single `design`.
 - [ ] This targeted keyboard check does not replace the Combobox visual-state archive, full responsive matrix, controlled cold-load capture or independent screen-reader review.
+
+## Banner — controlled action and dismiss — 2026-11-16
+
+- [x] The narrow local specimen remains inside its dotted frame with RTL order and no obvious stretch/clipping.
+- [x] In controlled mode, «ببین» announced its feedback without changing the route. Dismiss removed the Banner and announced its closed state; «نمایش دوباره» restored the same sample. Reload returned the playground to its default visible/controlled state.
+- [ ] Independent screen-reader review and full Banner state/visual coverage remain open.

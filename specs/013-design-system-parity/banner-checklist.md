@@ -36,3 +36,10 @@
 - [x] Scoped a desktop-only max width to the inert specimen using the shared frame and spacing tokens. Fresh browser measurement is 584×49px (within 1px of the reference); live Banner playground and mobile specimens are not targeted by this rule.
 - [x] The reference's Variants section exposes only static Info and Inverse samples; its Tone/Layout chips do not change the specimen. All six local tones and both layouts were captured separately for the 12-case geometry/state review.
 - [ ] Independent screen-reader review remains open.
+
+## Fresh controlled Banner action/dismiss review — 2026-11-16
+
+- [x] At the current narrow browser view, the inert Banner specimen remains inside the dotted frame; the RTL icon/text/action/close arrangement shows no obvious clipping or stretching.
+- [x] With the playground in its default controlled mode, activating «ببین» announces «اقدام بنر فعال شد.» and leaves the route unchanged. Activating «بستن اطلاعیه» removes the banner and announces «بنر بسته شد.»; «نمایش دوباره» restores the controlled sample.
+- [x] Reload restored the default controlled playground, visible banner and RTL specimen. No code changes were needed for this pass.
+- [ ] Independent screen-reader review remains open; this narrow-view interaction recheck does not replace the documented 36-case role/direction/target matrix or matched visual screenshots.
