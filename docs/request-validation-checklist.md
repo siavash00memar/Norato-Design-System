@@ -4141,3 +4141,9 @@ ame` state inconsistent.
 - [x] In same-viewport 1265×713 screenshots, the local accordion was visibly narrower than the reference within near-equal preview frames. Raised the local semantic maximum-width token from 320px to 344px and rechecked the live desktop render; the group now appears aligned in width.
 - [x] Narrow local screenshot remains bounded with no visible horizontal overflow or stretching; CSS continues to cap width by available space.
 - [ ] Screenshot comparison only; no exact DOM geometry measurement is claimed. Accordion final DoD remains open.
+
+## Badge — matched desktop specimen anchor shape — 2026-11-16
+
+- [x] Same-viewport screenshots showed a circular 48px local anchor versus a rounded-square reference anchor. Changed the inert sample from capsule radius to semantic card radius.
+- [x] Fresh 1265×713 screenshot shows the rounded-square anchor and RTL top-left Badge. Live AX name remains «اعلان‌ها، ۳ مورد» with count 3; the executable adapter was not changed.
+- [ ] This does not close independent screen-reader review or Badge Final DoD.

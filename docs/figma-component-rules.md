@@ -568,6 +568,10 @@
 - Keep every sibling title visible when selection changes; the prior row's panel may close in single mode, but its trigger/title remains.
 - The inert specimen and live playground cap the centered accordion at 344px; use the semantic `--norato-accordion-preview-inline-size` token with `min(100%, …)` so the group contracts inside narrow frames without stretching.
 
+## Badge — rounded-square anchor
+
+- Keep the 48×48px specimen anchor square with the semantic card radius; do not use the capsule control radius on a square anchor. The Badge marker stays over its top-left corner in RTL.
+
 ## Carousel — RTL order and intrinsic media
 
 - First slide and first pagination dot belong on the right in RTL. The next action advances left; ArrowLeft advances and ArrowRight goes back.

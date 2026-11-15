@@ -2200,3 +2200,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Verification:** Refreshed desktop screenshots show the local group width visually aligned with the reference; a narrow local screenshot remains inside its frame with no visible horizontal overflow or vertical stretching. Token/catalog/typecheck/build checks passed.
 - **Remaining:** This visual comparison is not an exact DOM measurement. Independent screen-reader review and the complete Accordion DoD remain open.
 - **Prevention:** Compare the intrinsic component geometry as well as the shared specimen frame at the same viewport; update the existing semantic token when the frame matches but the content scale does not.
+
+## ERR-280 — Badge specimen anchor rendered circular instead of rounded-square — 2026-11-16
+
+- **Observed:** Same-viewport screenshots showed a circular local Badge anchor while the reference specimen uses a rounded-square icon surface.
+- **Cause:** The 48×48px square anchor used the 25px capsule control radius.
+- **Correction:** Changed the inert Badge anchor to the semantic card radius; retained its 48×48px size and kept the live adapter untouched.
+- **Verification:** Fresh 1265×713 local screenshot confirms the rounded-square anchor and RTL Badge placement; browser AX still exposes the live host name/count. Token, catalog, TypeScript, build and diff gates pass.
+- **Prevention:** Use the semantic card radius for square specimen anchors; reserve the control radius for capsule-shaped controls.

@@ -31,3 +31,10 @@
 - [x] Fresh matched desktop browser renders show the Badge marker anchored at the same corner of the icon button in local and reference specimens; the glyph remains intrinsic and the specimen has no visible stretch.
 - [x] Existing exact 390×844 and 320×844 local/reference geometry, RTL, no-overflow observations, 48×48px host target, count boundaries, and keyboard/focus/disabled evidence cover the remaining Baseline gates.
 - [ ] Independent screen-reader review remains open for Final DoD.
+
+## Badge — matched desktop anchor-shape correction — 2026-11-16
+
+- [x] Same-viewport 1265×713 local/reference screenshots showed the local square 48px anchor rendered circular because it used the 25px control radius; the reference anchor is a rounded square.
+- [x] Changed only the inert specimen anchor to the semantic 12px card radius. Its 48×48px dimensions, icon, Badge position and executable adapter are unchanged.
+- [x] Fresh 1265×713 local screenshot confirms the anchor reads as a rounded square with the Badge at its RTL top-left. Browser AX still exposes the live host action as «اعلان‌ها، ۳ مورد» and the count control remains 3.
+- [ ] Independent screen-reader review remains open; this inert-sample shape correction does not close Badge DoD.
