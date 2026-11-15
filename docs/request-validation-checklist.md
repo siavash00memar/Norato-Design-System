@@ -3729,6 +3729,14 @@ ame` state inconsistent.
 - [x] در ۲۰px، Error + Disabled هر سه گزینه را غیرفعال کرد و مقدار انتخاب‌شده را با ظاهر خنثی نگه داشت. وضعیت به Monthly، اندازهٔ ۲۰، اختیاری، فعال و بدون خطا برگشت؛ status و کد Vue همگام بودند.
 - [ ] این جفت‌های زنده تمام ترکیب‌های checked/size/state/hover/focus را پوشش نمی‌دهند؛ بررسی مستقل صفحه‌خوان و ماتریس کامل زنده همچنان باز است.
 
+## Radio — both sizes and keyboard focus — 2026-11-15
+
+- [x] At 390×844, document client/scroll width was 375/375px. Live controls measured 16×16px or 20×20px and retained 48px minimum rows in RTL.
+- [x] At 16px, ArrowDown changed Monthly→Quarterly with a visible 2px Norato-yellow focus ring and 6px yellow dot; selecting Yearly and Monthly synchronized checked state, status, and Vue `ref`.
+- [x] At 20px, ArrowDown cycled Monthly→Quarterly→Yearly→Monthly. Each step synchronized the checked radio, accessibility focus, status and generated value; selected dot remained 8px and focus ring 2px.
+- [x] Restored the live playground to Monthly, 20px, optional, enabled, no-error; browser returned to Accordion.
+- [ ] Hover/error/disabled/required cross-product and independent screen-reader review remain open.
+
 ## Radio — همگامی انتخاب و ترکیب Required/Error/Disabled (2026-11-15)
 
 - [x] در ۱۶px، Required + Error + بدون انتخاب مقدار `undefined` و پیام‌های مرتبط را نشان داد؛ با Disabled هر سه گزینه بومی غیرفعال شدند.

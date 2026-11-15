@@ -72,6 +72,14 @@
 - [x] Restored Monthly selected, 20px, optional, enabled, no-error, non-empty state.
 - [ ] This spot check does not cover every live visual-state/focus combination or independent screen-reader behavior; Radio DoD remains open.
 
+## Browser verification — both sizes and keyboard focus — 2026-11-15
+
+- [x] At 390×844, document client/scroll width was 375/375px. At 16px, radio controls measured 16×16px and rows 48/48.78px; at 20px, controls measured 20×20px and rows 48/48.78px. Both sizes remained RTL and bounded.
+- [x] At 16px, ArrowDown moved Monthly→Quarterly with `:focus-visible`, a 2px Norato-yellow ring, and the proportional 6px selected dot. Selecting Yearly and Monthly updated the checked value, status and generated Vue ref.
+- [x] At 20px, ArrowDown moved Monthly→Quarterly→Yearly, then wrapped to Monthly. Accessibility state, focus, status and generated Vue value synchronized at each step. The 8px selected dot and 20×20px input remained proportional; focus ring measured 2px.
+- [x] Restored Monthly / 20px / optional / enabled / no-error / selected. Browser returned to Accordion.
+- [ ] This pass does not close the full live hover/error/disabled/required cross-product or independent screen-reader review; Radio DoD remains open.
+
 ## Small-size default keyboard follow-up — 2026-11-14
 
 - [x] At 16px and Default state, Tab focused the selected Monthly option and the live screenshot showed the yellow focus ring around the proportional radio control.
