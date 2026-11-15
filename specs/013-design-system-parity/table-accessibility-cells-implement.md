@@ -13,7 +13,8 @@
 - At 390px and 320px viewports, the responsive layout displayed vertically stacked row cards with readable RTL labels and bounded image/progress cells. This was a screenshot review; exact document scroll-width measurements were not collected.
 - The browser accessibility tree exposed three progress indicators named «پیشرفت پروژه (درصد)» with values 72, 46 and 100, and images named «منظرهٔ نمونه با خورشید زرد و تپه‌ها».
 - After toggling the option off, the checkbox returned to value 0 and the generated snippet returned to the baseline rows without optional columns.
-- Independent screen-reader speech, keyboard focus, 48px target size, and exact mobile overflow geometry remain open.
+- Space toggles the checkbox on and off; the focused control has the visible yellow focus ring. Its full-width label row has a tokenized 48px minimum block size.
+- Independent screen-reader speech and exact mobile overflow geometry remain open.
 
 ## Technical checks
 
