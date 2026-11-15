@@ -72,3 +72,10 @@ The live browser was reviewed at the desktop viewport and at real 390×844 and 3
 - [x] Expanded only that existing Table rule to 600px. At the user's live 499px-wide browser viewport, the table now uses the fixed, wrapping column layout and remains inside the RTL specimen frame; all four columns and all three rows are visible in the captured browser render.
 - [x] Yellow selected-row treatment and table content remain intact; no forced row/frame height was added.
 - [ ] Repeat the exact 390×844/320×844 same-viewport reference comparison and complete the independent screen-reader review before closing Table DoD.
+
+## Table loading-state browser recheck — 2026-11-16
+
+- [x] In the live local Table playground, enabling Loading shows the visible «در حال بارگذاری» status and replaces data rows with a loading row.
+- [x] While loading, the accessibility tree marks select-all and all three sortable headers disabled; loading also appears in the generated Vue example.
+- [x] Restored Loading off and confirmed the sample rows, selection and generated example returned.
+- [ ] This verifies one state only; the remaining state matrix, exact mobile reference comparison and independent screen-reader output remain open.

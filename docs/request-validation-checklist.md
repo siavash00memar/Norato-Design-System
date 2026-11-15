@@ -4302,3 +4302,9 @@ ame` state inconsistent.
 - [x] With Error enabled, both named thumbs exposed `aria-invalid="true"` and the same `aria-describedby` ID; the ID resolves to the visible error text.
 - [x] Pointer drag changed the lower thumb 25→38 while the upper thumb remained 75; accessibility values and generated Vue tuple synchronized to `[38, 75]`.
 - [x] Reloaded Range to restore its initial single-value playground, then returned the browser to Accordion.
+
+## Table — loading-state recheck — 2026-11-16
+
+- [x] In the local browser, loading state displays its Persian status, removes sample data rows, disables select-all and sortable headers, and updates the generated Vue usage.
+- [x] Restored the non-loading sample rows and confirmed its generated usage returns to the non-loading variant.
+- [ ] This narrow check does not close the full Table DoD or screen-reader review.
