@@ -4057,3 +4057,11 @@ ame` state inconsistent.
 - [x] Removed an unreachable duplicate Chip playground branch; the live Chip playground and its generated Vue example still render.
 - [x] The catalog integrity gate now enforces canonical heading order, shared page-shell anchor order, and unique named playground branches.
 - [ ] This structural parity check does not close component-specific visual/behavior DoDs or independent screen-reader review.
+
+## Table — live sort cycle and matched specimen review — 2026-11-15
+
+- [x] At the local Table page in a 1265×713 browser viewport, the live name header completed None → Ascending → Descending → None. The row order changed on both sorting states and returned to the original dataset order on the third activation.
+- [x] The selected «سارا محمدی» row remained selected through the sort cycle; after reset, the mixed select-all state and original three visible rows were restored.
+- [x] Matched desktop screenshots show the same 3-row RTL table specimen, toolbar/search, selected row, rounded table surface, and dotted preview frame as the selected visual reference. Norato keeps its yellow brand action and selection palette.
+- [x] Accessibility tree exposes sortable headers as buttons, row-selection checkboxes, the table label, and pagination controls. The local specimen remains RTL and contained within its preview frame.
+- [ ] This focused pass does not close the full sort-by-column cross-product, mobile matched comparison, keyboard-only sort cycle, independent screen-reader review, or Table Final DoD.
