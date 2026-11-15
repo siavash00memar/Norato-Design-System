@@ -4021,3 +4021,11 @@ ame` state inconsistent.
 - [x] Standard field interaction target is 48px and the visible capsule is 36px (34px pseudo-element body plus 1px borders); resting Stroke is `#e8e8e8` with no shadow.
 - [x] Error + Disabled retains `aria-invalid` and error text while all seven standard field capsules use neutral 1px Stroke and muted surface. Focus/hover changes the Error Stroke to Norato yellow; pointer exit restores the red error Stroke.
 - [ ] Mobile viewport resizing did not take effect in this browser session (the page remained 1265×713). No new mobile evidence is claimed; Input's full state matrix and independent screen-reader review remain open.
+
+## Component page structure — Button and Chip — 2026-11-16
+
+- [x] Source audit confirms all 49 independent contracts begin with the same ten headings as Button, in the same order: Preview, Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens.
+- [x] Local browser accessibility trees for Button and Chip expose the same rendered order, including their Vue implementation section. Fresh screenshots show both pages use the shared detail-page shell and preview placement.
+- [x] Removed an unreachable duplicate Chip playground branch; the live Chip playground and its generated Vue example still render.
+- [x] The catalog integrity gate now enforces canonical heading order, shared page-shell anchor order, and unique named playground branches.
+- [ ] This structural parity check does not close component-specific visual/behavior DoDs or independent screen-reader review.

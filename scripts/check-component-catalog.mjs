@@ -24,6 +24,7 @@ for (const [fieldIndex, label] of [[1, 'id'], [2, 'slug'], [3, 'name']]) {
 const listedContracts = new Set()
 const allowedUsageKeys = new Set(['button', 'split-button', 'input', 'select', 'combobox', 'checkbox', 'radio', 'switch', 'segmented', 'range', 'rating', 'date-picker', 'time-picker', 'file-upload', 'navbar', 'sidebar', 'tabs', 'breadcrumbs', 'pagination', 'stepper', 'menu', 'command-palette', 'tree-view', 'alert', 'banner', 'toast', 'tooltip', 'progress', 'spinner', 'skeleton', 'empty-state', 'divider', 'accordion', 'modal', 'drawer', 'popover', 'badge', 'tag', 'chip', 'table', 'list', 'card', 'avatar', 'timeline', 'charts', 'image', 'carousel', 'chat', 'notification-center'])
 const requiredContractSections = ['Overview', 'Anatomy', 'Variants', 'Sizes', 'States', 'Parts', 'Usage', 'Accessibility', 'Tokens']
+const canonicalContractSections = ['Preview', ...requiredContractSections]
 const specimenSource = fs.readFileSync(path.join(root, 'apps/vue/src/ComponentSpecimen.vue'), 'utf8')
 const usageSource = fs.readFileSync(path.join(root, 'apps/vue/src/usage-examples.ts'), 'utf8')
 for (const row of rows) {
@@ -36,6 +37,11 @@ for (const row of rows) {
   if (!fs.existsSync(contractFile)) fail(`${name}: missing contract ${contractPath}.`)
   else {
     const contract = fs.readFileSync(contractFile, 'utf8')
+    const headings = [...contract.matchAll(/^##\s+(.+?)\s*$/gm)].map(match => match[1])
+    const openingSections = headings.slice(0, canonicalContractSections.length)
+    if (openingSections.join('|') !== canonicalContractSections.join('|')) {
+      fail(`${name}: first ${canonicalContractSections.length} contract sections must follow Button order (${canonicalContractSections.join(' → ')}).`)
+    }
     for (const section of requiredContractSections) if (!new RegExp(`^## ${section}$`, 'm').test(contract)) fail(`${name}: contract is missing its ${section} section.`)
   }
   listedContracts.add(path.basename(contractPath))
@@ -61,6 +67,22 @@ if (contractFiles.length !== 49) fail(`Expected 49 independent contracts; found 
 for (const file of contractFiles) if (!listedContracts.has(file)) fail(`Contract ${file} is not reachable from the canonical catalog.`)
 
 const appSource = fs.readFileSync(path.join(root, 'apps/vue/src/App.vue'), 'utf8')
+const sharedPageAnchors = [
+  ['Preview', appSource.indexOf('id="doc-preview"')],
+  ['Vue implementation', appSource.indexOf('id="doc-implementation"')],
+  ['contract sections', appSource.indexOf('<article v-for="section in contractSections"')],
+  ['on-page section navigation', appSource.indexOf('<button v-for="section in contractSections"')],
+]
+if (sharedPageAnchors.some(([, position]) => position < 0)
+  || sharedPageAnchors.some(([, position], index) => index > 0 && position <= sharedPageAnchors[index - 1][1])) {
+  fail('Shared component detail page must order Preview, optional Vue implementation, contract sections, and their on-page navigation.')
+}
+const playgroundBranches = [...appSource.matchAll(/v-else-if="selectedItem\.name === '([^']+)'"><([A-Za-z0-9]+Playground)/g)]
+const playgroundBranchNames = playgroundBranches.map(match => match[1])
+if (new Set(playgroundBranchNames).size !== playgroundBranchNames.length) {
+  const duplicates = [...new Set(playgroundBranchNames.filter((name, index) => playgroundBranchNames.indexOf(name) !== index))]
+  fail(`Component playground branches must be unique; duplicate names: ${duplicates.join(', ')}.`)
+}
 const catalogIds = new Set(rows.map(row => row[1]))
 const primitiveMap = fs.readFileSync(path.join(root, 'packages/components/src/primitive-map.ts'), 'utf8')
 for (const [, id] of primitiveMap.matchAll(/^\s*'?(?:([^':]+))'?: \{ candidate:/gm)) if (!catalogIds.has(id.trim())) fail(`Primitive decision references unknown catalog ID ${id.trim()}.`)
@@ -77,5 +99,5 @@ if (errors.length) {
   console.error(`Component catalog integrity failed (${errors.length} findings):\n- ${errors.join('\n- ')}`)
   process.exitCode = 1
 } else {
-  console.log(`Component catalog integrity passed: ${rows.length} unique routes, 49 contracts, explicit readiness and Vue exports.`)
+  console.log(`Component catalog integrity passed: ${rows.length} unique routes, ordered Button-style contracts, shared page structure, unique playground mappings, explicit readiness and Vue exports.`)
 }

@@ -2183,3 +2183,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Verification:** Live browser checks confirmed all six shared states across all eight snippet lines; error precedence, per-adapter messages, all four sizes, both supported label placements, OTP length, and Number presentation synchronized correctly. The playground returned to defaults. Token/catalog/TypeScript/build and diff checks passed on this source version.
 - **Remaining:** Full Input visual matrix and independent screen-reader review remain open; this entry tracks sample synchronization only.
 - **Prevention:** Keep generated examples derived from the same state values as the rendered controls; verify shared and subtype props across every adapter line.
+
+## ERR-278 — Duplicate Chip playground branch and unchecked page-section order — 2026-11-16
+
+- **Observed:** The shared Vue detail renderer contained two identical Chip playground branches; the second branch was unreachable. The catalog gate checked contract section presence but not the Button section order.
+- **Cause:** The renderer had no uniqueness assertion for named playground routes, and contract validation did not compare the ordered headings.
+- **Correction:** Removed the duplicate Chip branch. The catalog gate now checks the opening ten contract headings, shared detail-section anchor order, and unique named playground branches.
+- **Verification:** All 49 contracts passed the exact heading sequence check. Local browser AX confirms Button and Chip pages share Preview, Vue implementation, Overview, Anatomy, Variants, Sizes, States, Parts, Usage, Accessibility, Tokens; Chip's playground controls and generated example remain visible. Token, catalog, Vue type/build, and diff gates pass.
+- **Prevention:** Keep page-order and route-uniqueness checks in the existing catalog integrity gate so drift fails before delivery.
