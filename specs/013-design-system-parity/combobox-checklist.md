@@ -1,5 +1,13 @@
 # Combobox — Checklist
 
+## Live partial-query and keyboard selection follow-up — 2026-11-15
+
+- [x] Opened the preselected single-value field; the recent list appeared while «طراحی محصول» and the model `design` remained selected.
+- [x] Typing «پژوهش» showed both the matching existing option «پژوهش کاربر» and the create action. The screenshot showed the existing match highlighted. Enter selected that match and synchronized the field/status/sample to «پژوهش کاربر» / `research`.
+- [x] In the same menu, ArrowDown + Enter committed the create action as the exact typed value `پژوهش`; clearing and choosing the existing match afterward confirmed these are distinct, keyboard-accessible outcomes.
+- [x] Reloaded the local route and confirmed the initial single-value `design`, Large size, Outside label, and default enabled/optional/no-error/no-loading settings were restored.
+- [ ] This is a focused local behavior check, not a matched-viewport visual comparison or complete state screenshot archive. Throttled cold-load fallback and independent screen-reader review remain open; Combobox DoD stays open.
+
 - [x] Constitution, Specify, Clarify and Plan gates recorded in sequence.
 - [x] Existing contract, implementation, playground, CSS and prior evidence inspected.
 - [x] design reference/Norato desktop screenshot and frame/field/menu measurements recorded at matching 1195×765; post-fix mobile screenshots were captured at 390×844 in the active browser window.

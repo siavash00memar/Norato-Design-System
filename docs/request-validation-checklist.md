@@ -4111,3 +4111,10 @@ ame` state inconsistent.
 - [x] The no-selection simulation synchronized `undefined` into the Vue sample while required/error content remained exposed and disabled status took priority. The screenshot showed neutral, proportionate circles.
 - [x] Restored Monthly, 20px, optional, enabled, no-error and normal selection behavior; visible state and generated snippet match.
 - [ ] This single additional combination does not cover all focus/hover/state combinations or independent screen-reader output; Radio Final DoD remains open.
+
+## Combobox — partial query, existing match and create action — 2026-11-15
+
+- [x] In the local RTL playground, opening the preselected field showed recent options while retaining `design` as the selected value.
+- [x] Typing «پژوهش» exposed the existing «پژوهش کاربر» match and the separate create action. Enter on the visibly highlighted match committed `research` and synchronized the field, status and generated Vue sample.
+- [x] ArrowDown + Enter committed the create action as the exact query `پژوهش`; this differed from Enter on the highlighted existing match. The route was reloaded and confirmed back at its original `design` / Large / Outside defaults.
+- [ ] This focused behavior pass does not cover a matched reference viewport, full-state screenshot archive, throttled cold-load fallback or independent screen-reader output.
