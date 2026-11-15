@@ -56,3 +56,9 @@
 - [x] Screenshot confirms 36px capsules inside 48px targets and no vertical stretch. At the narrow local viewport, the gallery is one column and remains inside page bounds.
 - [x] The change is scoped to the inert Combobox gallery; live playground value/options, Parts, and other component galleries remain unchanged.
 - [ ] Full live-state screenshot archive, throttled cold-load fallback capture, and independent screen-reader review remain open; Combobox DoD stays open.
+
+## Combobox field geometry and playground names — 2026-11-15
+
+- [x] Fresh browser DOM measurement of the live Large field at a 375px viewport: target is 343×48px, RTL; its capsule pseudo-surface uses a 1px `rgb(232, 232, 232)` border and 50px radius. The 48px target minus 6px inset on both block edges gives a 36px visible capsule; computed content height is 34px plus the two 1px borders.
+- [x] Playwright accessible-role queries resolve the main Combobox as «مهارت‌ها», its trigger as «مهارت‌ها، نمایش پیشنهادها», and both size/label-placement selectors. All seven playground switches resolve by their visible Persian names. The lower-level accessibility snapshot omitted those names, so the DOM role/name query was used as the direct evidence.
+- [ ] This targeted check does not replace independent screen-reader review, throttled cold-load fallback capture, or the full live-state screenshot archive; Combobox Final DoD remains open.

@@ -3604,6 +3604,12 @@ ame` state inconsistent.
 - [x] Tab/Space activate Tile state actions and expose the progress indicator; Complete updates a queued row, and reset clears it.
 - [x] Tokens, catalog (49), File Upload contract tests (8/8), Vue typecheck/build, and diff checks pass; strict family DoD remains open.
 
+## Combobox target geometry and accessible names — 2026-11-15
+
+- [x] At the 375px render, live Large Combobox target measures 343×48px in RTL; the capsule is 36px overall with a 1px `#e8e8e8` resting border and pill radius.
+- [x] Browser role/name queries resolve the Combobox, its trigger, both selectors and all seven Persian-labeled playground switches.
+- [ ] Independent screen-reader review, throttled cold-load fallback evidence, and exhaustive screenshot archive remain open for strict Combobox DoD.
+
 ## Carousel image proportions — 2026-11-15
 - [x] On the live Carousel page at 499×932, all five slide images share a 260×150 intrinsic source and render at 340.75×191.67 in the 16:9 frame with `object-fit: cover`; the frame does not distort their ratio.
 - [x] Screenshot review confirms the current RTL track keeps the image cards bounded and the active indicator visible.
