@@ -33,7 +33,9 @@
 - **Table Row Detail:** جزئیات پیش‌فرض یا slot میزبان
 - **Table Empty State:** No Data یا No Results؛ پیام با slot `empty` قابل تکمیل است
 
-مقادیر `NoratoTableColumn.type` برای `text`, `number`, `user`, `status`, `tags`, `progress`, `link`, `image`, `empty` renderer آماده دارند. انواع تعاملی/ترکیبی (`checkbox`, `avatar-group`, `switch`, `button`, `actions`, `input`, `select`, `expand`, `drag`, `skeleton`) در type عمومی حضور دارند و با slot `cell` یا `cell-{key}` پیاده می‌شوند؛ adapter رفتار دادهٔ محصول را حدس نمی‌زند. مقدار تصویر رشتهٔ URL یا شیء `{ src, alt }` است.
+مقادیر `NoratoTableColumn.type` برای `text`, `number`, `user`, `status`, `tags`, `progress`, `link`, `image`, `empty` renderer آماده دارند. انواع تعاملی/ترکیبی (`checkbox`, `avatar-group`, `switch`, `button`, `actions`, `input`, `select`, `expand`, `drag`, `skeleton`) در type عمومی حضور دارند و با slot `cell` یا `cell-{key}` پیاده می‌شوند؛ adapter رفتار دادهٔ محصول را حدس نمی‌زند. مقدار تصویر می‌تواند URL رشته‌ای یا شیء `{ src, alt }` باشد. URL رشته‌ای تصویر تزئینی و دارای `alt=""` در نظر گرفته می‌شود؛ برای تصویری که اطلاعات می‌رساند، شیء با متن جایگزین معنادار بفرست.
+
+سلول `progress` مقدار عددی را به بازهٔ ۰ تا ۱۰۰ محدود می‌کند و با نقش `progressbar`، نام برگرفته از `column.label` و `aria-valuenow`/`aria-valuemin`/`aria-valuemax` ارائه می‌شود. خود برچسب ستون را معنادار و همراه واحد بنویس؛ متن درصد هم در سلول به‌صورت دیداری حضور دارد.
 
 ## Sizes
 
@@ -87,7 +89,7 @@ const rows: NoratoTableRow[] = [{ id: 'sara', name: { name: 'سارا محمدی
 
 ## Accessibility
 
-ساختار بومی `table`, `thead`, `tbody`, `th scope="col"` استفاده می‌شود. مرتب‌سازی از دکمهٔ واقعی و `aria-sort`، انتخاب از checkbox بومی، جستجو از label پنهان، صفحه‌بندی از نام فارسی و دادهٔ جاری از `aria-busy`/`role="status"` پشتیبانی می‌شود. همهٔ کنترل‌های مستقیم هدف حداقل ۴۸px و focus ring زرد ۲px دارند. وضعیت selection فقط با رنگ منتقل نمی‌شود و checkbox آن را هم اعلام می‌کند.
+ساختار بومی `table`, `thead`, `tbody`, `th scope="col"` استفاده می‌شود. مرتب‌سازی از دکمهٔ واقعی و `aria-sort`، انتخاب از checkbox بومی، جستجو از label پنهان، صفحه‌بندی از نام فارسی و دادهٔ جاری از `aria-busy`/`role="status"` پشتیبانی می‌شود. Progress مقدار فعلی و بازهٔ معتبر را اعلام می‌کند؛ نام ستون باید قابل‌فهم باشد. تصاویر معنادار باید با `{ src, alt }` و متن جایگزین توصیفی ارائه شوند؛ URL رشته‌ای فقط برای تصویر تزئینی است. همهٔ کنترل‌های مستقیم هدف حداقل ۴۸px و focus ring زرد ۲px دارند. وضعیت selection فقط با رنگ منتقل نمی‌شود و checkbox آن را هم اعلام می‌کند.
 
 ### قاعدهٔ عمومی Focus در Norato
 
