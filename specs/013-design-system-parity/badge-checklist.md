@@ -18,6 +18,7 @@
 - [x] Anchor's slot-provided accessible name includes the marker meaning; visible Badge is hidden from the accessibility tree.
 - [x] Anchor keyboard/focus/disabled behavior remains owned by host: keyboard focus is visible, native disabled is exposed and skipped by Tab.
 - [x] Browser accessibility tree reviewed; the host control exposes its name, focus and disabled semantics.
+- [x] 2026-11-15 live boundary follow-up: 999 displays as ۹۹+ and the anchor name becomes «اعلان‌ها، ۹۹+ مورد»; the marker expands horizontally to 23.25×20px while the host target remains 48×48px. Dot ignores the count, measures 10×10px at Medium, and changes the name to «اعلان‌ها، مورد جدید». In LTR the marker mirrors to the anchor's top-right; RTL/count/default 3 were restored.
 
 - [ ] Independent screen-reader review remains open; the desktop and mobile visual checks do not replace it.
 
