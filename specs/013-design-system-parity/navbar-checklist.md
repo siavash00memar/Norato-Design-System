@@ -13,6 +13,8 @@
 - [x] Public adapter and browser tree confirm RTL/navigation semantics, nested links, current-page semantics, disabled behavior and consumer slots.
 - [x] Keyboard review: Enter opens the Products submenu; Escape closes it and restores focus to the trigger. Screenshot review after the color refinement shows one yellow focus outline.
 - [ ] Measure desktop nav and action target dimensions; reduced-motion has a CSS rule.
+- [x] Source audit confirms desktop brand link, brand mark, nav links and NoratoButton actions use the shared 48px minimum-target token; menu/back buttons use 48×48px, and the `prefers-reduced-motion` rule disables transition/animation motion.
+- [ ] Exact live DOM width/height for each desktop target is not exposed by the current browser observation surface, so the rendered-box measurement remains open. A same-viewport screenshot visually confirms the controls are not compressed.
 - [x] App, Website and Centered align correctly; all three styles were measured as bounded, and Transparent text/link/action contrast was visually validated on the Navbar specimen's warm neutral host surface.
 - [x] At both 390×844 and 320×844, the drawer fits the viewport (at 320px: 288×844, aligned to the RTL edge); Escape closes it and returns focus to the menu trigger. All four mobile header variants fit without horizontal overflow.
 - [x] Button-style page structure confirmed in browser: inert preview, executable playground, synchronized copy control and nine contract sections.
