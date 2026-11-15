@@ -15,5 +15,7 @@
 
 - [x] Fresh local and reference screenshots were reviewed at the same 1280×720 browser viewport; RTL sample placement, typography rhythm, and sender-side lower corners were visually inspected.
 - [x] Live Chat AX snapshot exposes the incoming/outgoing fixture messages and playground controls after the update.
+- [x] The playground selector traversed all 10 sender × message-type combinations; AX reflected the selected sender and content. Incoming/outgoing image and file states rendered, the image's 16:9 frame was visually reviewed, and Voice exposed its named playback control.
+- [x] LTR was selected and visually reviewed: message sides and composer actions mirrored; the playground was returned to its default RTL/incoming/text state.
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build`, and `git diff --check` passed.
-- [ ] Responsive 390/320 recapture, full sender/type screenshot matrix, and independent screen-reader review still need completion before closing this update.
+- [ ] Responsive 390/320 recapture, complete screenshot matrix for all ten states, and independent screen-reader review still need completion before closing this update.

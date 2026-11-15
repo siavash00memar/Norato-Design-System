@@ -5,5 +5,6 @@
 - Kept the shared Button preview frame, Norato yellow outgoing accent, message behavior, and Chat public API unchanged.
 - Simplified the outgoing Persian fixture text to keep its visual width closer to the short reference example without copying its branding.
 - Current browser evidence: fresh local/reference screenshots at 1280×720 were reviewed, and the live Chat accessibility tree shows the expected fixture messages and named controls.
+- The playground selector traversed all ten sender/type combinations. Incoming/outgoing image and file states rendered; the image ratio and mirrored LTR layout were visually checked. The browser was returned to default RTL/incoming/text.
 - Technical gates passed: token checker, catalog checker, Vue typecheck, Vue production build, and `git diff --check`.
-- Remaining: responsive 390/320 recapture, the full sender × message-type screenshot matrix after this update, and independent screen-reader review. The Chat Final DoD stays open.
+- Remaining: responsive 390/320 recapture, a saved screenshot matrix for all ten states, and independent screen-reader review. The Chat Final DoD stays open.

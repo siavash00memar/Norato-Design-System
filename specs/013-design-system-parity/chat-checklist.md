@@ -78,4 +78,5 @@
 - [x] Static specimen and live adapter now share semantic body-small text, Chat line-height 1.8 and the 20px Chat bubble radius token.
 - [x] In RTL the 6px tight corner sits at the lower sender-side edge; LTR mirrors the edge mapping. Norato yellow and Button-sized specimen frame remain unchanged.
 - [x] Fresh local/reference screenshots at 1280×720 were reviewed side by side; the current live accessibility tree exposes the message sequence and named controls.
+- [x] In the live playground, all 10 sender × type selections were traversed; accessible message content updated for each. Incoming/outgoing image and file states rendered, Voice exposed its named playback action, and a screenshot confirmed 16:9 image geometry. LTR placement was visually mirrored and the playground returned to default RTL.
 - [ ] The 390/320 and all 10 sender × message-type screenshots need a fresh post-change pass; independent screen-reader review and full mobile playground comparison remain open for Final DoD.
