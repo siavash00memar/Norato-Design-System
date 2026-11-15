@@ -2130,6 +2130,11 @@ Cannot overwrite variable Error because it is read-only or constant.
 - **Remaining:** Direct pointer-hover isolation and independent screen-reader review remain open.
 - **Prevention:** For read-only or trigger-like fields, audit the visible surface separately from the native interactive target; do not let a component-specific card radius bypass the shared input contract.
 
+### ERR-271 verification follow-up — pure pointer-hover (2026-11-15)
+
+- **Evidence:** On the live local 375×844 Time Picker page, the pointer remained over the input field while keyboard focus moved to the adjacent clock trigger. Read-only DOM state reported `:hover=true`, `:focus-within=false`; computed pseudo-element Stroke was `rgb(253, 193, 1)` and visual height was 36px.
+- **Result:** Isolated hover appearance is verified. Independent screen-reader review remains open; family DoD remains open.
+
 ## ERR-272 — File Upload sample action used browser-default button chrome (2026-11-15)
 
 - **Observed:** The File Upload playground's “افزودن آیتم نمونه برای بررسی وضعیت‌ها” action appeared as a small gray native button, unlike the shared Norato Button system.

@@ -45,3 +45,10 @@
 - [x] Field widths at 390px are 287px for Small/Medium/Large and 279px for XLarge; at 320px they are 217px and 209px respectively. Document client/scroll widths match at both breakpoints: 375/375px and 305/305px. Value direction remains LTR.
 - [x] Playground was restored to Single/Columns/Medium/5-minute/enabled/no-error/no-loading/optional with 14:30, and temporary viewport overrides were cleared.
 - [ ] This closes exact DOM geometry and responsive width only. Direct pointer-hover isolation and independent screen-reader review remain open; Time Picker Final DoD stays open.
+
+## Time Picker pure pointer-hover follow-up — 2026-11-15
+
+- [x] With the live local page open at 375×844, the pointer was left over the field while keyboard focus moved to its adjacent clock trigger.
+- [x] Read-only DOM inspection confirmed `field.matches(':hover') === true` and `field.matches(':focus-within') === false`; computed `::before` Stroke was Norato yellow (`rgb(253, 193, 1)`) at 36px visual height.
+- [x] The test panel was closed and the playground returned to the default 14:30 value. This closes the isolated hover appearance check only.
+- [ ] Independent screen-reader review remains open; Time Picker Final DoD stays open.
