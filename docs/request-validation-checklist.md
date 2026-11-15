@@ -137,6 +137,13 @@
 - [x] Mobile state gallery uses two columns through 599px; seven actual states occupy four even rows and the explanatory contract note spans below them. The height dropped from 1164.56px to 549.5px at 390px, without reducing the thumb's 48px target or causing overflow.
 - [ ] Keyboard/focus/disabled/error behavior of the live adapter is unchanged; broader Range DoD remains open.
 
+## Range — fresh mobile Home/End and RTL keyboard sync (2026-11-16)
+
+- [x] At the live 375×844 mobile viewport, Home moved the focused single-value slider from 60 to min 0 and End moved it to max 100; accessibility value and generated Vue `ref` matched both endpoints.
+- [x] The screenshot at 100 placed the thumb at the physical left endpoint while the RTL minimum is on the right, consistent with the value direction. The track was clicked to 62; ArrowRight decreased 62→61→60, confirming keyboard direction in RTL.
+- [x] The playground was restored to 60 and its generated Vue snippet returned to `ref(60)`.
+- [ ] This fresh pass covers a single-value slider only; range-thumb keyboard interaction, full error/disabled combinations and independent screen-reader review remain open.
+
 ## Breadcrumbs current-page specimen — 2026-11-14
 
 - [x] Matched 1280×720 local/reference render: current capsules measure 88.27×28.80px and 88.10×29.16px; glass fill matches `rgba(255,255,255,.78)`. Local semantic radius is 12px versus reference 8px; local shadow uses Norato's glass-shadow token. Static 300px frame and RTL trail remain bounded, with no visible stretching/clipping.
