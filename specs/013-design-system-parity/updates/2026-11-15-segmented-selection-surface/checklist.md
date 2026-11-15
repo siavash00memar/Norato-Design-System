@@ -7,5 +7,5 @@
 - [x] Compare same-viewport local/reference desktop renders; post-change mobile screenshots at 390×844 and 320×720 confirm the selected capsule and all three labels remain inside the specimen frame without horizontal clipping.
 - [x] Update component contract, Figma rule, error log and request-validation record.
 - [x] Run token check, Vue typecheck/build and `git diff --check`; commit verified work locally.
-- [ ] Mobile visual review of the complete selected/disabled/focus state set against the reference, including saved per-cell screenshots, remains open. Base-state runtime geometry is now measured across every style × size × item-count combination at 390×844 and 320×720; see the family checklist.
+- [ ] Matched-reference mobile screenshots of selected-disabled/focus/hover states and saved per-cell captures remain open. Local browser checks now cover selected-disabled at 390/320, keyboard focus at 390/320, and selected hover without focus in both styles at 390; see the family checklist.
 - [ ] Leave independent screen-reader review open unless actually performed.

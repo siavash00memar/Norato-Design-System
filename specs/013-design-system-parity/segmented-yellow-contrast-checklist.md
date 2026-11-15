@@ -24,4 +24,14 @@
 - [x] At both 390×844 (document 375px, frame 343px) and 320×720 (document 305px, frame 273px), manually selected all 2 styles × 4 sizes × 3 option counts in the live playground: 48 measured combinations total.
 - [x] Every item remained 48px high for Small/Medium/Large and 56px for XLarge; selected surface color matched Glass white or Norato yellow as appropriate; labels remained RTL; each group fit its frame and document client/scroll widths matched.
 - [x] Four-item XLarge at 320×720 fit the 273px frame exactly with no horizontal page overflow. The playground was restored to Glass/Medium/three options/Daily/enabled.
-- [ ] This covers base selected geometry only. Mobile selected-disabled/focus/hover state comparison against the reference, saved per-cell screenshots, and independent screen-reader review remain open.
+- [x] Live mobile state follow-up below verifies selected-disabled and keyboard-focus behavior at both widths, plus isolated selected Hover in both styles at 390×844.
+- [ ] Matched-reference mobile screenshots for the selected-disabled/focus/hover states, saved per-cell captures, and independent screen-reader review remain open.
+
+## Mobile live state interaction follow-up — 2026-11-15
+
+- [x] At 390×844 and 320×720, selected Month was disabled in both Glass and Contrast. The controlled value stayed selected; the item became disabled with neutral `rgb(245, 245, 245)` surface, disabled text, and no elevation. Document widths remained 375/375px and 305/305px.
+- [x] At 390×844, disabling the whole Contrast group disabled all items while preserving the selected value and neutral disabled treatment.
+- [x] Keyboard ArrowLeft moved focus from selected Month to Daily without changing the value at both viewport widths. Focus-visible measured a 2px outline plus 2px yellow halo; Space selected Daily and synchronized the visible status and Vue snippet.
+- [x] At 390×844, pointer Hover remained on the selected item while focus moved to the Style control: `:hover=true`, `:focus=false`, `:focus-visible=false`. Glass kept its raised white surface; Contrast kept Norato yellow.
+- [x] Restored Glass/Medium/three options/Daily/enabled and returned the viewport to its default 390×844 size.
+- [ ] Independent screen-reader review and matched-reference captures for these mobile states remain open.
