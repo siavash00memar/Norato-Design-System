@@ -24,3 +24,10 @@
 - [x] Required + Error + no selection displayed the required marker/message, kept the value undefined, and synchronized `required` in generated usage. Adding Disabled left all options natively disabled and unselected; attempting to activate Yearly did not change the value, while the status announced the disabled group.
 - [x] Cleared Disabled, Required, Error and no-selection simulation, selected Monthly, restored 20px, and confirmed the generated example returned to its default controlled state.
 - [ ] Independent screen-reader review and the full live checked × size × hover/focus × error/disabled/required cross-product remain open.
+
+## Mobile required/error state recheck — 2026-11-16
+
+- [x] Matched 390×844 local/reference screenshots show the same three-option RTL group and card composition; the selected dot is yellow in Norato and dark in the reference, as intended by the Norato palette.
+- [x] In the live mobile playground, no-selection + Required + Error was captured at 20px and 16px. All options remained visible, the required/error messages appeared, and no horizontal overflow or circle stretching was visible.
+- [x] Restored the playground to Monthly, 20px, optional, enabled, no-error and selected; `value`, status and generated Vue snippet agree.
+- [ ] Full live cross-product for checked × size × hover/focus × error/disabled/required and independent screen-reader validation remain open; this mobile state check does not close Radio DoD.
