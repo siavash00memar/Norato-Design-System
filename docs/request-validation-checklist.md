@@ -4124,3 +4124,9 @@ ame` state inconsistent.
 - [x] The actual local browser confirmed Range mode updates both the Persian field and generated Vue example to 1–7 Aban 1405.
 - [x] Selecting 9 then 14 Aban closed the calendar and synchronized both outputs to 1405-08-09 through 1405-08-14; Reset returned to 1–7 Aban. Screenshot reviewed the resulting RTL playground and snippet.
 - [ ] This browser pass does not prove independent screen-reader speech or close the full Date Picker DoD.
+
+## Accordion — live single/multiple recheck — 2026-11-16
+
+- [x] Actual browser interaction confirmed single mode closes the previously open row; multiple mode kept both rows open and announced the count in the visible status.
+- [x] Returning to single mode restored the first-row default and synchronized the generated Vue usage. Screenshot reviewed the RTL playground with intrinsic row sizing.
+- [ ] Independent screen-reader speech remains unverified and the Accordion DoD remains open.

@@ -38,3 +38,10 @@
 - [x] `pnpm check:tokens`, `pnpm check:catalog`, `pnpm --dir apps/vue typecheck`, `pnpm --dir apps/vue build` and `git diff --check` pass. Build reports the existing >500kB JavaScript chunk advisory.
 
 **DoD decision:** Keep Accordion open until an independent screen-reader review passes. Reduced-motion behavior is verified in an isolated browser target. Desktop and mobile checks are evidence of a close structural match, not proof of the complete component DoD.
+
+## Accordion — fresh live single/multiple recheck — 2026-11-16
+
+- [x] In the live RTL playground, opening «حالت تیره هم دارد؟» collapsed «نوراتـو رایگانه؟»; AX reported the first trigger collapsed and the second expanded, with its associated panel present.
+- [x] Enabling multiple mode reset to a valid single default selection. Opening the second row then left both triggers expanded and the live status reported two open rows.
+- [x] Disabling multiple restored the initial single-mode value, first row expanded, second row collapsed, and the generated Vue snippet returned to `expanded='free'` without the `multiple` prop. The screenshot shows natural row heights and the RTL layout.
+- [ ] This focused browser recheck does not replace independent screen-reader speech review; Accordion Final DoD remains open.
