@@ -45,3 +45,9 @@
 - [x] Enabling multiple mode reset to a valid single default selection. Opening the second row then left both triggers expanded and the live status reported two open rows.
 - [x] Disabling multiple restored the initial single-mode value, first row expanded, second row collapsed, and the generated Vue snippet returned to `expanded='free'` without the `multiple` prop. The screenshot shows natural row heights and the RTL layout.
 - [ ] This focused browser recheck does not replace independent screen-reader speech review; Accordion Final DoD remains open.
+
+## Accordion — fresh visual cross-check — 2026-11-16
+
+- [x] Fresh local and reference screenshots both show three RTL rows, the first row open, right-aligned Persian titles, left-side chevrons, and compact intrinsic row content. Norato uses its yellow open-state surface.
+- [x] No visible vertical stretching or clipping appeared in either captured sample.
+- [ ] The captures were at different viewport sizes (local narrow; reference desktop), so this pass provides qualitative structure evidence only and is not a new pixel/geometry parity measurement. Existing matched-viewport evidence remains the source for geometry.

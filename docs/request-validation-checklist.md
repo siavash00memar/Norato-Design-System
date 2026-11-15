@@ -4130,3 +4130,8 @@ ame` state inconsistent.
 - [x] Actual browser interaction confirmed single mode closes the previously open row; multiple mode kept both rows open and announced the count in the visible status.
 - [x] Returning to single mode restored the first-row default and synchronized the generated Vue usage. Screenshot reviewed the RTL playground with intrinsic row sizing.
 - [ ] Independent screen-reader speech remains unverified and the Accordion DoD remains open.
+
+## Accordion — fresh visual cross-check — 2026-11-16
+
+- [x] Local and external reference screenshots both show the expected three-row RTL composition, first row expanded, titles on the right and chevrons on the left; no visible stretching or clipping in the captured samples.
+- [ ] Viewport sizes differed, so this is qualitative only; it does not add matched-viewport geometry evidence.
