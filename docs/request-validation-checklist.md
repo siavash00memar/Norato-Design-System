@@ -4064,4 +4064,5 @@ ame` state inconsistent.
 - [x] The selected «سارا محمدی» row remained selected through the sort cycle; after reset, the mixed select-all state and original three visible rows were restored.
 - [x] Matched desktop screenshots show the same 3-row RTL table specimen, toolbar/search, selected row, rounded table surface, and dotted preview frame as the selected visual reference. Norato keeps its yellow brand action and selection palette.
 - [x] Accessibility tree exposes sortable headers as buttons, row-selection checkboxes, the table label, and pagination controls. The local specimen remains RTL and contained within its preview frame.
-- [ ] This focused pass does not close the full sort-by-column cross-product, mobile matched comparison, keyboard-only sort cycle, independent screen-reader review, or Table Final DoD.
+- [x] Focused the name sort button through its accessible control and used Enter, Space, then Enter: ascending and descending orders appeared, and the original order returned. Screenshot showed the focused header ring; selection remained intact.
+- [ ] This focused pass does not close actual Tab traversal through the whole table, the full sort-by-column cross-product, mobile matched comparison, independent screen-reader review, or Table Final DoD.
