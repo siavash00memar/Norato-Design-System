@@ -106,3 +106,10 @@
 - [x] Clicking the visible backdrop outside the drawer closed the dialog; the accessibility tree returned to the page and focus returned to the mobile trigger «باز کردن ناوبری».
 - [x] The drawer screenshot showed the panel and dimmed backdrop; this confirms the close interaction at the observed narrow viewport only.
 - [ ] This does not close the matched-reference comparison, full Glass/Bar × expanded/collapsed screenshot matrix, collapsed/mobile link order, or independent screen-reader review. Sidebar DoD remains open.
+
+## Sidebar — mobile dialog Tab sequence — 2026-11-16
+
+- [x] In the live mobile dialog, Tab moved from the focused close button to Overview, Projects, Active, Archive, and Reports in DOM/visual order.
+- [x] Tab from Reports returned to the close button, confirming keyboard focus remains within the modal dialog. Escape closed it and restored focus to the mobile trigger.
+- [x] Browser returned to `#component-accordion` after the Sidebar interaction check.
+- [ ] This does not verify collapsed desktop Tab order, matched visual comparison/state screenshots, or independent screen-reader output; Sidebar DoD remains open.

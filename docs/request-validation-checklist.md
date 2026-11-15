@@ -4231,3 +4231,10 @@ ame` state inconsistent.
 - [x] Clicking the visible backdrop outside the drawer closed it and restored focus to «باز کردن ناوبری»; the page remained on the same component route.
 - [x] Screenshot review showed the right-side dimmed page area outside the drawer, where the dismissal click was made.
 - [ ] This narrow-viewport interaction check does not complete the matched reference comparison, full sidebar visual/state matrix, collapsed/mobile link order, or independent screen-reader review.
+
+## Sidebar — mobile dialog Tab sequence — 2026-11-16
+
+- [x] In the live mobile dialog, Tab moved from Close to Overview, Projects, Active, Archive, and Reports in order.
+- [x] The next Tab from Reports returned to Close, keeping focus inside the modal. Escape closed the dialog and restored focus to the mobile trigger.
+- [x] Browser was returned to `#component-accordion` after the check.
+- [ ] Collapsed desktop Tab order, matched visual comparison/state screenshots, and independent screen-reader output remain open.
