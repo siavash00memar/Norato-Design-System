@@ -4155,3 +4155,11 @@ ame` state inconsistent.
 - [x] Fresh same-viewport 1265×713 screenshot shows local label/value sharing a row as in the reference; thumb/rail remain proportionate and RTL.
 - [x] At the 375px-wide local view, Range mode exposed two sliders at 25 and 75; the visible value read in ascending order and stayed within the row. Returned to Single/60 with matching generated code.
 - [ ] Independent screen-reader review and the complete Range state matrix remain open.
+
+## Input — Number enabled/error/disabled follow-up — 2026-11-16
+
+- [x] In the local narrow browser view (~375px), the Number field showed its capsule shape and yellow focus Stroke without a black/blue outer ring.
+- [x] Increase changed the value from 1 to 2; decrease restored 1, with the accessible stepper value and generated Vue snippet synchronized.
+- [x] Error exposed its message. Error+Disabled retained that message while marking the field and increment/decrement buttons disabled; activating the disabled increment button left the value at 1.
+- [x] Restored the playground to value 1, enabled, no error, Medium, RTL, Stepper. This was a local browser review; no remote deployment or Git push was performed.
+- [ ] This single-size Number check does not complete Input’s visual/state matrix, exact mobile geometry, or independent screen-reader review.
