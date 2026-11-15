@@ -4281,3 +4281,8 @@ ame` state inconsistent.
 - [x] Range mode exposed two named sliders at 25/75 and generated a tuple model; End moved the upper thumb to 100. Error displayed its message, and Disabled exposed both thumbs as disabled.
 - [x] Restored the browser to Accordion after review.
 - [ ] Lower-thumb non-crossing at its boundary, pointer drag, direct error-description relation, matched 320px reference, full visual-state matrix, and independent screen-reader output remain unverified.
+
+## Range — per-thumb keyboard follow-up — 2026-11-15
+
+- [x] Targeting the lower thumb in the live Range playground and pressing ArrowLeft changed the value 25→26; the accessible value and generated tuple snippet both updated.
+- [ ] A lower-thumb-targeted End sequence reported the upper thumb at 100 and focus on that thumb. The browser action did not isolate the target consistently, so boundary/non-crossing behavior is unresolved pending direct reproduction.

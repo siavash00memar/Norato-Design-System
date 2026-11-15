@@ -45,3 +45,9 @@
 - [x] Small size and Error toggles updated their playground state; the error message «مقدار خارج از محدودهٔ مجاز است.» appeared. With Disabled enabled, both range thumbs were exposed disabled in the accessibility tree.
 - [x] Browser returned to Accordion after review.
 - [ ] This pass does not prove lower-thumb non-crossing at the upper bound, pointer dragging, exact error `aria-describedby` relation, matched 320px reference comparison, full hover/pressed/focus matrix, or independent screen-reader speech. Range DoD remains open.
+
+## Range — per-thumb keyboard follow-up — 2026-11-15
+
+- [x] The live browser targeted the lower thumb by its accessible element; ArrowLeft changed its value from 25 to 26 and the generated tuple snippet changed from `[25, 75]` to `[26, 75]`.
+- [ ] Home/End behavior on the lower thumb did not remain isolated in the browser evidence: after a lower-thumb-targeted End, AX reported the upper thumb at 100 and focus on the upper thumb. This could be component behavior or browser automation focus targeting; do not claim boundary non-crossing until repeated with a reliable direct interaction path.
+- [ ] Independent keyboard/screen-reader reproduction of both thumbs' Home/End and boundary behavior remains open; Range DoD stays open.
