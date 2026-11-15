@@ -157,3 +157,10 @@
 - [x] At 320px, local document client/scroll remains 305/305px. The narrow frame is now 257×300px and the inner Dropzone 247×152px, within 1.84px of the reference's 245.16px width and matching its 257px frame width.
 - [x] Fresh local screenshots at both widths show the Dropzone fully contained, RTL content naturally wrapped, and inner height fixed at 152px with no visible vertical stretch.
 - [ ] Reference page still overflows horizontally at 320px (305/326px); local page remains bounded. File Upload Final DoD remains open for behavior/state coverage, direct FileList-entry inspection, OS drop, picker cancellation and independent screen-reader review.
+
+## File Upload single-mode playground cap — 2026-11-16
+
+- [x] Selecting single-file mode changed the generated Vue usage to `multiple=false` while retaining the configured `max-files=5` option.
+- [x] Adding one synthetic queue item showed one selected row and disabled the add-example action; the playground's effective single-file cap is one.
+- [x] Cleared the synthetic row, restored multiple-file mode (`multiple=true`), and returned the browser to Accordion.
+- [ ] This verifies the playground's synthetic queue cap only; it does not verify replacing a real native file selection, native chooser behavior, OS drag/drop payload, or independent screen-reader output.

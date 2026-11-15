@@ -4211,3 +4211,9 @@ ame` state inconsistent.
 - [x] The rendered Amount starts at Persian `۱٬۲۵۰٬۰۰۰`; its generated Vue example now initializes `amount` to `1250000`.
 - [x] Setting the live Amount field to `2500` changed its displayed number and Persian words. Reload restored the default field and example; browser returned to Accordion.
 - [ ] This spot check does not close the full Input state/size matrix or independent screen-reader review.
+
+## File Upload — single-mode queue cap — 2026-11-16
+
+- [x] In the live playground, Single mode changed generated usage to `multiple=false`; adding one synthetic row showed a count of one and disabled the add-example action.
+- [x] Cleared the sample row, restored Multiple mode, and returned the browser to Accordion.
+- [ ] Native replacement/chooser behavior, OS drag/drop, complete combined keyboard/state paths, and independent screen-reader output remain open.
