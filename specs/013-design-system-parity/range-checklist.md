@@ -58,4 +58,12 @@
 - [x] Same live browser session reproduced Reka's hard-coded first/last-thumb boundary behavior, then verified the Norato capture handler affects only the focused thumb.
 - [x] Both lower and upper Home/End transitions were checked, including one-step non-crossing at `[99, 100]`; focus, accessible values, and generated Vue tuple stayed synchronized.
 - [x] Browser returned to the default Single/60 state after the Range review.
-- [ ] Independent screen-reader review, pointer drag, exact error-description relation, matched 320px reference, and full hover/pressed/focus state matrix remain open. Range DoD remains open.
+- [ ] Independent screen-reader review, matched 320px reference, and full hover/pressed/focus state matrix remain open. Range DoD remains open.
+
+## Range — live drag and error association — 2026-11-15
+
+- [x] At viewport 390×844 (document 375/375px), both live range thumbs measured 48×48px and stayed within the RTL layout.
+- [x] With Error enabled, both named thumbs exposed `aria-invalid="true"` and `aria-describedby="range-playground-pair-error"`; that ID resolves to the visible error message.
+- [x] Dragged the lower thumb from 25 to 38. The upper thumb remained 75, the accessible value updated, and the generated tuple became `[38, 75]`.
+- [x] Reloaded the Range page to restore its default single value, then returned the browser to Accordion.
+- [ ] Matched 320px comparison, full live state matrix and independent screen-reader review remain open; Range DoD remains open.

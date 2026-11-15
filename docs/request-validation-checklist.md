@@ -4287,3 +4287,10 @@ ame` state inconsistent.
 - [x] Targeting the lower thumb in the live Range playground and pressing ArrowLeft changed the value 25→26; the accessible value and generated tuple snippet both updated.
 - [x] Direct coordinate focus reproduced that the Reka Slider boundary handler changed the upper endpoint when `End` was sent to the lower thumb. Norato now captures Range Home/End and clamps only the focused thumb; browser checks verified `[25,75]` → `[74,75]` on lower End, `[74,75]` → `[0,75]` on lower Home, `[0,75]` → `[0,1]` on upper Home, `[0,1]` → `[0,100]` on upper End, and lower End at the upper bound → `[99,100]`. Focus remained on the operated thumb and the code example matched.
 - [x] ArrowLeft on the focused upper thumb after boundary navigation changed only its value 99→100. Returned the browser to Single/60.
+
+## Range — live drag and error association — 2026-11-15
+
+- [x] At viewport 390×844, document client/scroll width was 375/375px and both thumb targets measured 48×48px.
+- [x] With Error enabled, both named thumbs exposed `aria-invalid="true"` and the same `aria-describedby` ID; the ID resolves to the visible error text.
+- [x] Pointer drag changed the lower thumb 25→38 while the upper thumb remained 75; accessibility values and generated Vue tuple synchronized to `[38, 75]`.
+- [x] Reloaded Range to restore its initial single-value playground, then returned the browser to Accordion.
