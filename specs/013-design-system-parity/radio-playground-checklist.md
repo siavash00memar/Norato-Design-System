@@ -78,3 +78,13 @@
 - [x] ArrowDown selected Quarterly and updated the status plus generated Vue snippet; ArrowUp restored Monthly and synchronized them again.
 - [x] Restored the playground to Monthly, 20px, optional, enabled, no-error; returned the browser to its original Carousel page.
 - [ ] This focused default-state path does not close the full visual/focus combination matrix or independent screen-reader review.
+
+## Live Focus, Error and Disabled pairs at both sizes — 2026-11-15
+
+- [x] At 16px, keyboard focus on checked Monthly showed a 2px Norato-yellow ring; the radio remained 16×16px and its RTL row was 48px high.
+- [x] At 16px, Error + keyboard Focus selected Quarterly; the group exposed `aria-invalid="true"` and its linked error text, the checked radio kept the red error border, and the yellow focus ring remained 2px.
+- [x] At 16px, Error + Disabled marked all radios disabled; checked Quarterly remained selected with neutral disabled fill/border, while unchecked rows kept the neutral border.
+- [x] At 20px, checked Monthly had a 20×20px control, a 48px RTL row and a 2px yellow keyboard ring. Error + Focus on Quarterly retained the linked invalid message, red border and yellow 2px ring.
+- [x] At 20px, Error + Disabled exposed all three radios as disabled; selected Quarterly stayed checked with the neutral disabled appearance.
+- [x] Restored the live playground to Monthly, 20px, optional, enabled and no-error; the generated Vue example and live status match.
+- [ ] These focused live pairs do not enumerate every checked × size × hover/focus/error/disabled combination; independent screen-reader announcement and reading-order review also remain open.
