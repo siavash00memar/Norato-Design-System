@@ -113,3 +113,10 @@
 - [x] Tab from Reports returned to the close button, confirming keyboard focus remains within the modal dialog. Escape closed it and restored focus to the mobile trigger.
 - [x] Browser returned to `#component-accordion` after the Sidebar interaction check.
 - [ ] This does not verify collapsed desktop Tab order, matched visual comparison/state screenshots, or independent screen-reader output; Sidebar DoD remains open.
+
+## Sidebar — collapsed desktop Tab order and visual check — 2026-11-16
+
+- [x] At the 1265×713 local render, collapsed mode showed an icon rail without visible stretching; the playground collapsed control and live component state agreed.
+- [x] In the collapsed live accessibility tree, Overview, Projects, and Reports retained their accessible names. Tab from Overview moved to Projects, then Reports, then the Glass style selector in DOM order.
+- [x] The playground was restored to expanded, enabled, Glass, with `/overview` active. The separate mobile tab remains at Accordion.
+- [ ] The external reference was inspected at the same viewport in its default state, but a matched collapsed-state reference capture was not obtained. Full visual matrix and independent screen-reader review remain open.

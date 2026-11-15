@@ -4238,3 +4238,10 @@ ame` state inconsistent.
 - [x] The next Tab from Reports returned to Close, keeping focus inside the modal. Escape closed the dialog and restored focus to the mobile trigger.
 - [x] Browser was returned to `#component-accordion` after the check.
 - [ ] Collapsed desktop Tab order, matched visual comparison/state screenshots, and independent screen-reader output remain open.
+
+## Sidebar — collapsed desktop Tab order and visual check — 2026-11-16
+
+- [x] At 1265×713, the local collapsed Sidebar displayed an icon rail with no visible stretching; its playground control matched the rendered state.
+- [x] The accessibility tree retained the names Overview, Projects, and Reports while collapsed. Tab advanced Overview → Projects → Reports → Glass style control.
+- [x] Restored the playground to expanded, enabled, Glass, `/overview` active. The existing mobile tab remains at Accordion.
+- [ ] The reference was viewed at the same viewport only in its default state; matched collapsed-state visual evidence and independent screen-reader output are still missing.
