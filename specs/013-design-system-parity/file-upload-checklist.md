@@ -1,5 +1,12 @@
 # File Upload — DoD checklist
 
+## Narrow live Disabled and Required state recheck — 2026-11-16
+
+- [x] At the actual narrow local render, the Dropzone, square Upload Tile and circular Avatar Upload remain proportioned; the visible rows stay within the page column. This is a local-only screenshot review, not a fresh matched-reference comparison.
+- [x] Enabling global Disabled exposed the Dropzone, Avatar Upload and form-check action as disabled in the browser accessibility tree; the generated Vue sample added `disabled`. Turning it off restored all three controls and removed the prop.
+- [x] Enabling Required added «الزامی» to the Dropzone's accessible name and added `required` to its generated Vue sample. Turning it off restored the original optional sample. No file was selected or transmitted during this check.
+- [ ] This recheck does not close native picker cancellation, real OS drag/drop payload, the full combined keyboard/state matrix, matched visual states, or independent screen-reader review; File Upload DoD remains open.
+
 - [x] design reference and Norato exact pages reviewed at matched desktop 1280×720 and narrow mobile 499×932 viewports; desktop design reference frame 636×300px, Norato column-constrained frame 584×288px. Mobile Norato frame 320×288px; visual equality is not claimed where the documentation column differs.
 - [x] Inert specimen has design reference's centered inner dropzone/default marker hierarchy, bounded dotted-glass frame and fixed inner height. At 1280×720: design reference 636×300px with inner 367×154px; Norato 584×288px with inner 380×160px because the docs column is narrower. At 390×844: design reference 327×300px with inner 321×154px; Norato 320×288px with inner 302×160px. Both document widths are 375px. The only branch-shadowing defect is removed.
 - [x] Same-size 1265×713 browser comparison on 2026-11-10: design reference File Item uses a neutral icon tile; local File Item icons render on Norato neutral surface with secondary text after replacing the decorative `info-container`/brand-blue treatment. Dropzone action stays yellow; no error or progress colors changed.

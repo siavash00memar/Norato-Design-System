@@ -4090,3 +4090,10 @@ ame` state inconsistent.
 - [x] With global Disabled on, the trigger was exposed as disabled and activation did not open the drawer. Restored Disabled off and confirmed the original Website / Bar / Default / Bar / Pill / Medium settings and visible submenu setting.
 - [x] The current narrow local screenshot shows the brand/menu row within its mobile layout without obvious stretch or clipping. The external reference was viewed at desktop width; because widths differed, no matched visual-parity claim is made for this pass.
 - [ ] Outside-click dismissal, desktop target measurements/current-link styling, full responsive combinations, and independent screen-reader review remain open.
+
+## File Upload — narrow Disabled and Required states — 2026-11-16
+
+- [x] At the actual narrow local browser render, the dotted stage, Dropzone, square Upload Tile, circular Avatar Upload and File Item rows remain bounded in the RTL page column; this pass did not compare against a same-viewport external capture.
+- [x] Global Disabled exposed Dropzone, Avatar Upload and the local form-check action as disabled; generated Vue usage gained `disabled`. The control was restored and the prop disappeared.
+- [x] Required added «الزامی» to both the Dropzone button/input accessible names and `required` to the generated Vue sample. The control was restored to optional afterward. No file was chosen or sent.
+- [ ] This does not add evidence for native chooser cancellation, OS drag/drop, full combined keyboard/state coverage, matched state screenshots, or independent screen-reader output; File Upload DoD remains open.
